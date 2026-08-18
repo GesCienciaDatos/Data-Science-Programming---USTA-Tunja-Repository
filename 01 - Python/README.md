@@ -8,7 +8,7 @@ Bienvenido al primer módulo de **Programación para Ciencia de Datos (USTA Tunj
 2. Dominar las estructuras de datos nativas (listas, tuplas, diccionarios).
 3. Aplicar flujo de control (condicionales y bucles) y modularización con funciones.
 4. Manipular y dar formato a cadenas de texto.
-5. Namespaces, Scopes, Modulos y Paquetes
+5. Comprender el funcionamiento de los Namespaces y Scopes, y organizar el código mediante Módulos y Paquetes.
 
 ## 📂 Contenido del directorio
 
