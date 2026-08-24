@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Escudo_de_la_Universidad_Santo_Tom%C3%A1s_%28Colombia%29.svg/1200px-Escudo_de_la_Universidad_Santo_Tom%C3%A1s_%28Colombia%29.svg.png" width="120" alt="USTA Logo"/>
+  <img src="https://aquiyahora.santototunja.edu.co/wp-content/uploads/2023/11/Logo_Santoto_Multicampus_light.png" width="120" alt="USTA Logo"/>
   <br>
   <h1 style="border-bottom: none; margin-bottom: 0;">Data Science Programming</h1>
   <h3 style="margin-top: 0; color: #666;">Universidad Santo Tomás - Sede Tunja</h3>
