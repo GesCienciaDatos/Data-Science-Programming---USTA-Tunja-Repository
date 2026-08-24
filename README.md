@@ -1,12 +1,12 @@
 <div align="center">
-  <img src="https://aquiyahora.santototunja.edu.co/wp-content/uploads/2023/11/Logo_Santoto_Multicampus_light.png" width="120" alt="USTA Logo"/>
+  <img src="https://aquiyahora.santototunja.edu.co/wp-content/uploads/2023/11/Logo_Santoto_Multicampus_light.png" width="200" alt="USTA Logo"/>
   <br>
   <h1 style="border-bottom: none; margin-bottom: 0;">Data Science Programming</h1>
   <h3 style="margin-top: 0; color: #666;">Universidad Santo Tomás - Sede Tunja</h3>
   <br>
   
   <p>
-    <b>Material docente utilizado en las sesiones de laboratorio de la asignatura <br> <i>Programación para Ciencia de Datos</i>.</b>
+    <b>Material guia para aprender conceptos de programación para ciencia de datos <br> <i>Programación para Ciencia de Datos</i>.</b>
   </p>
 
   <p>
