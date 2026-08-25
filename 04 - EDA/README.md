@@ -1,13 +1,45 @@
-# Módulo 4: Análisis Exploratorio de Datos (EDA)
+# Módulo 04: Análisis Exploratorio de Datos (EDA) 📊
 
-Este módulo integra Pandas, Matplotlib y Seaborn para realizar el Análisis Exploratorio de Datos, la fase más crítica antes de aplicar modelos de Machine Learning.
+> **Especialización en Ciencia de Datos**  
+> **Universidad Santo Tomás — Seccional Tunja**  
+> **Docente:** Santiago A. Zúñiga M.  
+> **Contacto:** [gestorvirtualcienciadatos@ustatunja.edu.co](mailto:gestorvirtualcienciadatos@ustatunja.edu.co)
 
-## Contenido
+---
 
-1. **[Introducción al EDA](00_Introduccion_EDA.ipynb)**: Conceptos teóricos.
-2. **[Exploración Preliminar](01_Exploracion_Preliminar_EDA.ipynb)**: `.info()`, `.head()`, `.describe()`.
-3. **[Estadística Descriptiva](02_Estadistica_Descriptiva_EDA.ipynb)**: Resumen y métricas estadísticas.
-4. **[Visualización de Datos](03_Visualizacion_de_Datos_EDA.ipynb)**: El Cuarteto de Anscombe y gráficos base.
-5. **[Librerías de Visualización Avanzadas](04_Librerias_de_Visualizacion_EDA.ipynb)**: Datasets complejos, manipulación de features y FacetGrid.
-6. **[Comparación de Librerías](05_Comparacion_Librerias_Visualizacion.ipynb)**: Seaborn vs Matplotlib vs Pandas.
-7. **[Hoja de Trucos y Resumen](06_Resumen_de_Funciones_EDA.ipynb)**: Glosario de funciones y cuándo usar cada una.
+## 📌 Descripción General
+
+El **Análisis Exploratorio de Datos (*Exploratory Data Analysis - EDA*)** es la fase fundamental de investigación estadística y visual que precede a cualquier modelado de Machine Learning o analítica avanzada.
+
+En este módulo aprenderás a formular hipótesis, identificar patrones ocultos, anomalías y relaciones multivariadas utilizando la sinergia de **Pandas**, **Matplotlib** y **Seaborn**. Descubrirás por qué la visualización es indispensable frente al resumen estadístico simple (a través del histórico *Cuarteto de Anscombe*) y cómo estructurar tableros y visualizaciones con estándares de diseño profesional.
+
+---
+
+## 🗺️ Estructura del Módulo
+
+| # | Cuaderno | Temas Principales | Dificultad |
+|---|---|---|:---:|
+| **00** | [**Introducción al EDA**](00_Introduccion_EDA.ipynb) | Conceptos fundamentales, etapas del EDA, objetivos de negocio y flujo de trabajo estructurado. | 🟢 Básico |
+| **01** | [**Exploración Preliminar de Datos**](01_Exploracion_Preliminar_EDA.ipynb) | Diagnóstico inicial de estructura, dimensionalidad, tipos de variables y detección de valores atípicos y nulos. | 🟢 Básico |
+| **02** | [**Estadística Descriptiva para EDA**](02_Estadistica_Descriptiva_EDA.ipynb) | Medidas de tendencia central (media, mediana, moda), dispersión (varianza, desviación estándar, IQR), asimetría (*skewness*) y curtosis. | 🟡 Intermedio |
+| **03** | [**Visualización de Datos y Cuarteto de Anscombe**](03_Visualizacion_de_Datos_EDA.ipynb) | El Cuarteto de Anscombe (por qué ver los datos es vital), gráficos de dispersión, histogramas y boxplots base. | 🟡 Intermedio |
+| **04** | [**Librerías de Visualización Avanzadas (Seaborn)**](04_Librerias_de_Visualizacion_EDA.ipynb) | Gráficos relacionales (`scatterplot`, `lineplot`), categóricos (`boxplot`, `violinplot`, `countplot`) y multivariados (`pairplot`, `heatmap` de correlación). | 🟡 Intermedio |
+| **05** | [**Comparación de Librerías de Visualización**](05_Comparacion_Librerias_Visualizacion.ipynb) | Comparativa directa entre Pandas Plotting, Matplotlib (control de bajo nivel) y Seaborn (estética estadística de alto nivel). | 🟡 Intermedio |
+| **06** | [**Resumen de Funciones y Guía Rápida**](06_Resumen_de_Funciones_EDA.ipynb) | Glosario interactivo de funciones clave, matriz de decisión de gráficos según el tipo de variable y buenas prácticas de visualización. | 🟢 Básico |
+
+---
+
+## 📂 Conjuntos de Datos (*Datasets*)
+
+En los cuadernos de este módulo se utilizan conjuntos de datos clásicos y reales:
+- `anscombe`: El famoso Cuarteto de Anscombe que demuestra la necesidad de visualizar distribuciones.
+- `tips`: Datos de propinas en restaurantes según variables demográficas y consumo.
+- `iris`: Medidas morfológicas de flores de la especie Iris.
+- `titanic`: Supervivencia de pasajeros del Titanic según clase, género y edad.
+
+---
+
+## 📂 Taller Práctico Evaluativo (*Homework*)
+
+Al finalizar el módulo de EDA, el estudiante debe resolver el taller práctico correspondiente:
+- 📝 **[04_EDA_Hands_On.ipynb](../homeworks/04_EDA_Hands_On.ipynb)**: Taller integral de análisis exploratorio, generación de hipótesis estadísticas y visualización multivariada con datos reales.
