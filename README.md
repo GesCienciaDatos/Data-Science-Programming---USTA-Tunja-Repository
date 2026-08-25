@@ -17,6 +17,8 @@
     <img src="https://img.shields.io/badge/Pandas-2.0+-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
     <img src="https://img.shields.io/badge/NumPy-1.24+-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" />
     <img src="https://img.shields.io/badge/Scikit--Learn-1.3+-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn" />
+    <img src="https://img.shields.io/badge/Video%20Clases-HD%201080p-7C3AED?style=for-the-badge&logo=youtube&logoColor=white" alt="Video Clases" />
+    <img src="https://img.shields.io/badge/Gu%C3%ADas%20PDF-Visor%20Interactivo-059669?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Guías PDF" />
   </p>
   
   <p style="margin-top: 10px;">
@@ -28,11 +30,11 @@
 
 ---
 
-## 👨‍🏫 Información del Docente y Soporte
+## 👨‍💻 Información y Soporte del Proyecto
 
 | Rol | Nombre | Contacto |
 |---|---|---|
-| **Docente / Gestor Virtual** | **Santiago A. Zúñiga M.** | ✉️ [gestorvirtualcienciadatos@ustatunja.edu.co](mailto:gestorvirtualcienciadatos@ustatunja.edu.co) |
+| **Desarrollador / Gestor Virtual** | **Ing. Santiago Alejandro Zúñiga Melo** | ✉️ [gestorvirtualcienciadatos@ustatunja.edu.co](mailto:gestorvirtualcienciadatos@ustatunja.edu.co) |
 | **Institución** | **Universidad Santo Tomás — Sede Tunja** | 🏛️ Especialización en Ciencia de Datos |
 
 ---

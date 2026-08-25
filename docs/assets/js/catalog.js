@@ -898,6 +898,32 @@ const VIRTUAL_LAB_CATALOG = {
     "total_notebooks": 54,
     "total_modules": 7,
     "total_homeworks": 6,
-    "total_datasets": 16
-  }
+    "total_datasets": 16,
+    "total_guias": 1,
+    "total_videos": 1
+  },
+  "videos": [
+    {
+      "id": "vid_1",
+      "filename": "Instalacion Python_compressed.mp4",
+      "title": "Instalacion Python",
+      "module": "🐍 Módulo 01: Python",
+      "size_mb": 54.5,
+      "path": "Contenido/Instalacion Python_compressed.mp4",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/master/Contenido/Instalacion%20Python_compressed.mp4",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/master/Contenido/Instalacion%20Python_compressed.mp4"
+    }
+  ],
+  "guias": [
+    {
+      "id": "guia_1",
+      "filename": "Instalación_Python.pdf",
+      "title": "Instalación Python",
+      "module": "🐍 Módulo 01: Python",
+      "size_str": "878 KB",
+      "path": "Guias/Instalación_Python.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/master/Guias/Instalación_Python.pdf",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/master/Guias/Instalación_Python.pdf"
+    }
+  ]
 };

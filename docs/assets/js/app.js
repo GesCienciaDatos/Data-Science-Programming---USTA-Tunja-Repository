@@ -204,11 +204,10 @@ document.addEventListener('DOMContentLoaded', () => {
               <b>Características:</b> ${ds.features}
             </p>
           </div>
-          <div>
-            <button class="copy-snippet-btn" onclick="copySnippet('${ds.name}', '${ds.snippet}')">
-              <span>📋 Copiar pd.read_csv()</span>
-              <span style="font-size: 0.9rem;">⚡</span>
-            </button>
+          <div class="pt-3">
+            <a href="https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/master/${encodeURIComponent(ds.path).replace(/%2F/g, '/')}" download="${ds.name}" target="_blank" class="btn-action btn-github" style="width: 100%; text-decoration: none;">
+              <span>📥 Descargar Dataset (${ds.name})</span>
+            </a>
           </div>
         </div>
       `;
