@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio Virtual de Programación para Ciencia de Datos | USTA Tunja</title>
+  <meta name="description" content="Portal interactivo y laboratorio virtual de programación para Ciencia de Datos de la Universidad Santo Tomás Seccional Tunja. Cuadernos interactivos, Google Colab y Datasets.">
+  <link rel="icon" href="https://aquiyahora.santototunja.edu.co/wp-content/uploads/2023/11/cropped-favicon-32x32.png" sizes="32x32">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <a href="#" class="nav-brand">
+      <div class="nav-logo-badge">USTA</div>
+      <div class="nav-titles">
+        <h1>Laboratorio Virtual de Ciencia de Datos</h1>
+        <p>Especialización en Ciencia de Datos — Seccional Tunja</p>
+      </div>
+    </a>
+    <div class="nav-actions">
+      <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Cambiar tema">
+        🌙 Modo Oscuro
+      </button>
+      <a href="https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository" target="_blank" rel="noopener noreferrer" class="nav-link" title="Ver repositorio en GitHub">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Station -->
+  <section class="hero">
+    <div class="hero-tag">
+      <span>🚀</span> Laboratorio Virtual Interactivo 2026
+    </div>
+    <h2 class="hero-title">
+      Programación para <span class="gradient-text">Ciencia de Datos</span>
+    </h2>
+    <p class="hero-subtitle">
+      Estación de trabajo y catálogo integral con 54 cuadernos interactivos, conjuntos de datos reales y talleres prácticos ejecutables en 1-clic con Google Colab.
+    </p>
+
+    <!-- Stat Counters -->
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-icon">📚</div>
+        <div class="stat-info">
+          <div class="stat-number">54</div>
+          <div class="stat-label">Cuadernos Interactivos</div>
+        </div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">🧩</div>
+        <div class="stat-info">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Módulos Temáticos</div>
+        </div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">📊</div>
+        <div class="stat-info">
+          <div class="stat-number">16</div>
+          <div class="stat-label">Datasets Reales</div>
+        </div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon">📝</div>
+        <div class="stat-info">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Talleres Hands-On</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Live Search -->
+    <div class="search-container">
+      <div class="search-input-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="globalSearchInput" class="search-input" placeholder="Buscar por tema, algoritmo, dataset o técnica (ej. OLS, PCA, Pandas, VIF)..." autocomplete="off">
+        <span class="search-shortcut">/</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation View Tabs -->
+  <section class="tabs-section">
+    <div class="tabs-wrapper">
+      <button id="navNotebooksTab" class="tab-btn active">
+        📚 Cuadernos y Módulos
+      </button>
+      <button id="navDatasetsTab" class="tab-btn">
+        🗄️ Data Warehouse (Datasets)
+      </button>
+      <button id="navCheatsheetsTab" class="tab-btn">
+        🧪 Cheat Sheets y Fórmulas
+      </button>
+    </div>
+  </section>
+
+  <!-- Main Container -->
+  <main class="main-container">
+
+    <!-- SECTION 1: NOTEBOOKS & MODULES -->
+    <div id="sectionNotebooks">
+      <!-- Sub-tabs (Module selector) -->
+      <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+        <div class="tabs-wrapper" id="moduleTabsWrapper"></div>
+      </div>
+
+      <!-- Filter Controls Bar -->
+      <div class="filter-bar">
+        <div class="filter-group">
+          <span class="filter-label">Dificultad:</span>
+          <select id="difficultyFilter" class="select-control">
+            <option value="all">Todas las dificultades</option>
+            <option value="Básico">🟢 Básico</option>
+            <option value="Intermedio">🟡 Intermedio</option>
+            <option value="Avanzado">🧗 Avanzado</option>
+          </select>
+
+          <span class="filter-label">Tipo:</span>
+          <select id="typeFilter" class="select-control">
+            <option value="all">Todos los tipos</option>
+            <option value="Introducción">📖 Introducción</option>
+            <option value="Teoría y Práctica">💡 Teoría y Práctica</option>
+            <option value="Práctica Avanzada">🧗 Práctica Avanzada</option>
+            <option value="Taller Evaluativo">📝 Taller Evaluativo</option>
+          </select>
+        </div>
+
+        <div class="results-count" id="resultsCount">
+          Cargando cuadernos...
+        </div>
+      </div>
+
+      <!-- Notebooks Grid -->
+      <div class="notebooks-grid" id="notebooksGrid"></div>
+    </div>
+
+    <!-- SECTION 2: DATASETS HUB (DATA WAREHOUSE) -->
+    <div id="sectionDatasets" style="display: none;">
+      <div style="margin-bottom: 2rem; text-align: center;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem;">
+          🗄️ Repositorio de Datos (*Data Warehouse*)
+        </h2>
+        <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+          Conjuntos de datos estructurados para las prácticas de Machine Learning, Ingeniería de Características y Regresión. Puedes copiar la línea de carga en Pandas con un solo clic.
+        </p>
+      </div>
+
+      <div class="datasets-grid" id="datasetsGrid"></div>
+    </div>
+
+    <!-- SECTION 3: CHEAT SHEETS & FORMULAS -->
+    <div id="sectionCheatsheets" style="display: none;">
+      <div style="margin-bottom: 2rem; text-align: center;">
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 800; margin-bottom: 0.5rem;">
+          🧪 Laboratorio de Fórmulas y Cheat Sheets
+        </h2>
+        <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto;">
+          Resumen conceptual y matemático de los supuestos, modelos y flujos del curso de Ciencia de Datos.
+        </p>
+      </div>
+
+      <div class="cheatsheet-grid">
+        <div class="cheat-card">
+          <h3>📐 Regresión Lineal OLS</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+            Ecuación Normal de Mínimos Cuadrados Ordinarios:
+          </p>
+          <div style="background: var(--bg-tertiary); padding: 0.8rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.95rem; text-align: center; margin-bottom: 0.8rem;">
+            θ = (X<sup>T</sup> X)<sup>-1</sup> X<sup>T</sup> y
+          </div>
+          <ul>
+            <li><b>MSE:</b> Error Cuadrático Medio = (1/n) ∑ (y<sub>i</sub> - ŷ<sub>i</sub>)<sup>2</sup></li>
+            <li><b>R²:</b> Coeficiente de Determinación = 1 - (SS<sub>res</sub> / SS<sub>tot</sub>)</li>
+            <li><b>Interpretación:</b> β<sub>j</sub> = cambio en y por unidad en x<sub>j</sub> ceteris paribus.</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card">
+          <h3>🔍 Supuestos de Gauss-Markov</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+            Para que OLS sea el mejor estimador lineal insesgado (BLUE):
+          </p>
+          <ul>
+            <li><b>Linealidad:</b> Relación lineal en los parámetros.</li>
+            <li><b>Homocedasticidad:</b> Varianza constante de los residuos (Var(ε) = σ²).</li>
+            <li><b>Normalidad:</b> Residuos distribuidos normalmente ε ~ N(0, σ²).</li>
+            <li><b>Independencia:</b> Sin autocorrelación serial (Durbin-Watson ≈ 2).</li>
+            <li><b>Sin Multicolinealidad:</b> VIF<sub>j</sub> &lt; 5 (VIF = 1 / (1 - R<sub>j</sub>²)).</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card">
+          <h3>⚖️ Técnicas de Regularización</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+            Control de sobreajuste y complejidad:
+          </p>
+          <ul>
+            <li><b>Ridge (L2):</b> Minimiza MSE + λ ∑ β<sub>j</sub>² (encoge coeficientes hacia cero).</li>
+            <li><b>Lasso (L1):</b> Minimiza MSE + λ ∑ |β<sub>j</sub>| (genera dispersión y selección automática).</li>
+            <li><b>ElasticNet:</b> Combina L1 y L2 con ponderación r.</li>
+            <li><b>Regla de Oro:</b> ¡Siempre estandarizar variables antes de regularizar!</li>
+          </ul>
+        </div>
+
+        <div class="cheat-card">
+          <h3>🔄 Cross-Validation y Pipelines</h3>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+            Buenas prácticas contra Data Leakage:
+          </p>
+          <ul>
+            <li><b>k-Fold CV:</b> Divide en k pliegues y promedia las métricas de prueba.</li>
+            <li><b>Pipeline:</b> Encapsula escaladores y transformadores dentro de cada pliegue.</li>
+            <li><b>Scikit-Learn:</b> La API siempre maximiza scores (MSE se devuelve negativo).</li>
+            <li><b>k-NN:</b> Requiere escalado obligatorio MinMaxScaler / StandardScaler.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>
+      © 2026 <b>Universidad Santo Tomás — Seccional Tunja</b><br>
+      <i>Especialización en Ciencia de Datos | Programación para Ciencia de Datos</i><br>
+      Docente: Santiago A. Zúñiga M. • <a href="mailto:gestorvirtualcienciadatos@ustatunja.edu.co" style="color: var(--primary); text-decoration: none;">gestorvirtualcienciadatos@ustatunja.edu.co</a>
+    </p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/catalog.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

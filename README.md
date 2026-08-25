@@ -9,12 +9,20 @@
   </p>
 
   <p>
+    <a href="https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/">
+      <img src="https://img.shields.io/badge/🌐%20Laboratorio%20Virtual-GitHub%20Pages-0284C7?style=for-the-badge&logo=githubpages&logoColor=white" alt="Virtual Lab Pages" />
+    </a>
     <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
     <img src="https://img.shields.io/badge/Jupyter-Lab%20%2F%20Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter" />
     <img src="https://img.shields.io/badge/Pandas-2.0+-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
     <img src="https://img.shields.io/badge/NumPy-1.24+-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" />
     <img src="https://img.shields.io/badge/Scikit--Learn-1.3+-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn" />
-    <img src="https://img.shields.io/badge/Seaborn-0.13+-388E3C?style=for-the-badge&logo=seaborn&logoColor=white" alt="Seaborn" />
+  </p>
+  
+  <p style="margin-top: 10px;">
+    <a href="https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/" style="background: #1e3a8a; color: #ffffff; padding: 10px 22px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.95em; box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3); display: inline-block;">
+      🚀 Acceder al Laboratorio Virtual Interactivo
+    </a>
   </p>
 </div>
 
