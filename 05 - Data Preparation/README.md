@@ -29,9 +29,9 @@ En este módulo aprenderás las metodologías estándar para diagnosticar y trat
 ## 📂 Conjuntos de Datos (*Datasets*)
 
 En este módulo se emplean los siguientes datasets ubicados en la carpeta `data/`:
-- `Building_Permits.csv`: Registro de permisos de construcción en San Francisco (diagnóstico masivo de valores nulos).
-- `ks-projects-201801.csv`: Proyectos de Kickstarter (escalado numérico y análisis temporal).
-- `pakistan_intellectual_capital.csv`: Registro académico con entradas de texto desestructuradas y nombres de ciudades con errores ortográficos (*Fuzzy Matching*).
+- `hepatitis.csv`: Registros clínicos de pacientes con hepatitis (diagnóstico de valores nulos e imputación con Scikit-Learn).
+- `landslide-events.csv`: Base de datos de eventos de deslizamientos de tierra a nivel global (parseo de fechas y análisis temporal).
+- `pakistan_intellectual_capital.csv`: Registro académico con entradas de texto y nombres de países con errores tipográficos (*Fuzzy Matching* con distancia de Levenshtein).
 
 ---
 

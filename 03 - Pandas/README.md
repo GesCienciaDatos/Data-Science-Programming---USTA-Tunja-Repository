@@ -34,8 +34,9 @@ A lo largo de este módulo dominarás las estructuras de datos fundamentales (`S
 ## 📂 Conjuntos de Datos (*Datasets*)
 
 En este módulo se emplean los siguientes datasets ubicados en la carpeta `data/`:
-- `melb_data.csv`: Precios y características de viviendas en Melbourne.
-- `winemag-data-130k-v2.csv`: Reseñas y calificaciones de vinos a nivel internacional.
+- `winemag-data-130k-v2.csv`: Reseñas y calificaciones de más de 130,000 vinos a nivel internacional.
+- `climate_precip.csv`: Mediciones de precipitaciones por estación meteorológica y fecha.
+- `climate_temp.csv`: Registros de temperaturas mínimas y máximas por estación meteorológica y fecha.
 
 ---
 

@@ -92,9 +92,19 @@ Haz clic en cada módulo para desplegar la descripción y acceder a los cuaderno
 <details style="margin-bottom: 12px;">
   <summary style="font-size: 1.15em; font-weight: bold; cursor: pointer; padding: 8px; background: #f8fafc; border-left: 5px solid #7C3AED; border-radius: 4px;">⚙️ [06 - Feature Engineering](06%20-%20Feature%20Engineering/README.md) — Ingeniería de Características</summary>
   <div style="padding: 10px 15px;">
-    <p>Estrategias de codificación categórica (Ordinal, One-Hot, Mean Target Encoding), regularización con suavizado (<i>Smoothing / m-estimate</i>), creación de características (transformaciones matemáticas, logaritmos, conteos booleanos, descomposición de cadenas, transformaciones grupales sin data leakage), tratamiento de outliers, PCA e Información Mutua.</p>
+    <p>Estrategias de codificación categórica (Ordinal, One-Hot, Mean Target Encoding), regularización con suavizado (<i>Smoothing / m-estimate</i>), creación de características (transformaciones matemáticas, logaritmos, conteos booleanos, descomposición de cadenas, transformaciones grupales sin data leakage), Análisis de Componentes Principales (PCA), y Selección de Características con Información Mutua (Filter, Wrapper y Embedded).</p>
     <ul>
       <li>📁 <a href="06%20-%20Feature%20Engineering/README.md">Ver guía y tabla de cuadernos del Módulo 06</a></li>
+    </ul>
+  </div>
+</details>
+
+<details style="margin-bottom: 12px;">
+  <summary style="font-size: 1.15em; font-weight: bold; cursor: pointer; padding: 8px; background: #f8fafc; border-left: 5px solid #0284C7; border-radius: 4px;">📈 [07 - Regression](07%20-%20Regression/README.md) — Modelos de Regresión y Aprendizaje Supervisado</summary>
+  <div style="padding: 10px 15px;">
+    <p>Fundamentos del Aprendizaje Supervisado, Regresión Lineal Simple y Múltiple por Mínimos Cuadrados Ordinarios (OLS), métricas de evaluación continua (MAE, MSE, RMSE, R²), diagnóstico de los 5 supuestos de Gauss-Markov, Regresión Polinomial, dilema Sesgo-Varianza, Regularización (Ridge L2, Lasso L1, ElasticNet) y regresión no paramétrica con k-NN Regressor.</p>
+    <ul>
+      <li>📁 <a href="07%20-%20Regression/README.md">Ver guía y tabla de cuadernos del Módulo 07</a></li>
     </ul>
   </div>
 </details>

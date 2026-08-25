@@ -31,11 +31,10 @@ En este módulo aprenderás a formular hipótesis, identificar patrones ocultos,
 
 ## 📂 Conjuntos de Datos (*Datasets*)
 
-En los cuadernos de este módulo se utilizan conjuntos de datos clásicos y reales:
-- `anscombe`: El famoso Cuarteto de Anscombe que demuestra la necesidad de visualizar distribuciones.
-- `tips`: Datos de propinas en restaurantes según variables demográficas y consumo.
-- `iris`: Medidas morfológicas de flores de la especie Iris.
-- `titanic`: Supervivencia de pasajeros del Titanic según clase, género y edad.
+En los cuadernos de este módulo se utilizan conjuntos de datos locales y de referencia:
+- `StudentsPerformance.csv`: Rendimiento académico y factores demográficos de estudiantes (local en `data/`).
+- `quartets.csv`: El famoso Cuarteto de Anscombe (local en `data/`) que demuestra la necesidad de visualizar distribuciones.
+- `tips`, `iris`, `titanic`: Datasets estadísticos clásicos integrados vía Seaborn.
 
 ---
 
