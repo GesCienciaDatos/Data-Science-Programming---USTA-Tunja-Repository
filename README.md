@@ -24,7 +24,7 @@
   <tr>
     <td align="center" style="padding: 20px;">
       💡 <b>Organización del repositorio:</b><br><br>
-      Dentro de cada directorio se encuentra un <i>notebook</i> teórico detalladamente comentado sobre el tema correspondiente, junto con una carpeta de ejercicios (<code>homework</code>) que contiene actividades prácticas y sus respectivas soluciones.
+      Dentro de cada directorio se encuentra un <i>notebook</i> teórico detalladamente comentado sobre el tema correspondiente, junto con una carpeta de ejercicios (<code>homework</code>) que contiene actividades prácticas
     </td>
   </tr>
 </table>
