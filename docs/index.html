@@ -42,7 +42,8 @@
           },
           backgroundImage: {
             'glow-gradient': 'radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15), transparent 70%)',
-            'card-glow': 'radial-gradient(circle at top right, rgba(99, 102, 241, 0.12), transparent 50%)'
+            'card-glow': 'radial-gradient(circle at top right, rgba(99, 102, 241, 0.12), transparent 50%)',
+            'cinema-glow': 'radial-gradient(ellipse at center, rgba(56, 189, 248, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%)'
           }
         }
       }
@@ -57,6 +58,9 @@
 
     .glow-effect {
       box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.25);
+    }
+    .cinema-shadow {
+      box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px 2px rgba(56, 189, 248, 0.15);
     }
     .glass-panel {
       background: rgba(17, 23, 38, 0.75);
@@ -115,7 +119,6 @@
       <button onclick="switchTab('datasets')" id="nav-btn-datasets" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap">
         🗄️ Data Warehouse (16)
       </button>
-      
       <button onclick="switchTab('quickstart')" id="nav-btn-quickstart" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap">
         🚀 Quick Start
       </button>
@@ -335,37 +338,63 @@
       </div>
     </div>
 
-    <!-- VIEW 3: VIDEO CLASSES & MULTIMEDIA PLAYER -->
+    <!-- VIEW 3: CINEMA MULTIMEDIA PLAYER & VIDEO ROOM -->
     <div id="view-videos" class="hidden">
       <div class="mb-8 text-center max-w-2xl mx-auto">
-        <h2 class="font-heading font-extrabold text-3xl text-white mb-2">🎬 Sala Multimedia & Video Clases</h2>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono font-medium mb-3">
+          <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
+          Streaming Directo ● FastStart Web Ready
+        </div>
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mb-2">🎬 Sala Multimedia de Video Clases</h2>
         <p class="text-sm text-slate-400">
-          Reproductor interactivo para las clases grabadas, guías de instalación y tutoriales prácticos de la carpeta <code class="text-sky-300 font-mono bg-slate-800 px-2 py-0.5 rounded">Contenido/</code>.
+          Reproductor audiovisual interactivo con aceleración por hardware para los talleres y clases grabadas de la carpeta <code class="text-purple-300 font-mono bg-slate-800 px-2 py-0.5 rounded">Contenido/</code>.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
-        <!-- Main Video Stage (Left 8 cols) -->
-        <div class="lg:col-span-8 space-y-4">
-          <div class="rounded-2xl overflow-hidden glass-panel border border-brand-border bg-black shadow-2xl glow-effect relative">
-            <video id="mainVideoPlayer" controls playsinline preload="auto" class="w-full aspect-video object-contain bg-black rounded-2xl">
-              Tu navegador no soporta el elemento de video HTML5.
+        <!-- Main Cinema Stage (Left 8 cols) -->
+        <div class="lg:col-span-8 space-y-5">
+          
+          <!-- Cinema Frame Container -->
+          <div class="relative rounded-2xl overflow-hidden cinema-shadow border border-slate-700/80 bg-black group">
+            
+            <!-- HTML5 FastStart Video Element -->
+            <video 
+              id="mainVideoPlayer" 
+              controls 
+              playsinline 
+              preload="auto" 
+              crossorigin="anonymous"
+              class="w-full aspect-video object-contain bg-black rounded-2xl"
+              poster="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200&auto=format&fit=crop"
+            >
+              <source id="videoSourceMain" src="Contenido/Instalacion%20Python_compressed.mp4" type="video/mp4">
+              Tu navegador no soporta el reproductor de video HTML5.
             </video>
+
+            <!-- Play Overlay Badge -->
+            <div id="videoStatusOverlay" class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[11px] font-mono text-emerald-400 flex items-center gap-1.5 pointer-events-none">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span id="playerStatusText">FastStart Listo</span>
+            </div>
           </div>
 
-          <!-- Video Details Card -->
+          <!-- Video Controls & Metadata Bar -->
           <div class="glass-panel p-5 rounded-2xl border border-brand-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <div class="flex items-center gap-2 mb-1.5">
-                <span id="playerVideoModule" class="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-500/30">
+            <div class="space-y-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span id="playerVideoModule" class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
                   🐍 Módulo 01: Python
                 </span>
-                <span id="playerVideoSize" class="text-[11px] font-mono text-slate-400 bg-brand-dark px-2 py-0.5 rounded border border-brand-border">
+                <span id="playerVideoSize" class="text-[11px] font-mono text-slate-400 bg-brand-dark px-2.5 py-0.5 rounded border border-brand-border">
                   54.5 MB
                 </span>
-                <span class="text-[10px] font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                  HD 1080p
+                <span class="text-[10px] font-mono font-bold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">
+                  1080p Full HD
+                </span>
+                <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                  ⚡ FastStart Web-Optimized
                 </span>
               </div>
               <h3 id="playerVideoTitle" class="font-heading font-bold text-xl text-white">
@@ -373,35 +402,49 @@
               </h3>
             </div>
 
-            <div class="flex items-center gap-2 w-full sm:w-auto">
-              <a id="playerDownloadBtn" href="#" download target="_blank" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-300 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
-                <span>📥 Descargar Video</span>
-              </a>
-              <a id="playerVideoExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-brand-border text-slate-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+              <button onclick="togglePlayPause()" class="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-600/20">
+                <span id="playBtnIcon">▶️</span> <span id="playBtnText">Reproducir</span>
+              </button>
+              <a id="playerVideoExternalBtn" href="Contenido/Instalacion%20Python_compressed.mp4" target="_blank" rel="noopener noreferrer" class="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-brand-border text-slate-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
                 <span>↗️ Pestaña Nueva</span>
+              </a>
+              <a id="playerDownloadBtn" href="Contenido/Instalacion%20Python_compressed.mp4" download="Instalacion Python_compressed.mp4" target="_blank" class="px-3.5 py-2.5 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+                <span>📥 Descargar</span>
               </a>
             </div>
           </div>
+
+          <!-- Video Quick Help Tip -->
+          <div class="bg-brand-card/60 p-4 rounded-xl border border-brand-border text-xs text-slate-400 flex items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+              <span class="text-sky-400 text-base">💡</span>
+              <span><b>Atajos de teclado:</b> Pulsa <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono text-[10px] text-slate-300">Espacio</kbd> para Pausar/Reproducir, <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono text-[10px] text-slate-300">F</kbd> para Pantalla Completa y <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono text-[10px] text-slate-300">M</kbd> para Silenciar.</span>
+            </div>
+          </div>
+
         </div>
 
         <!-- Video Playlist Box (Right 4 cols) -->
         <div class="lg:col-span-4 space-y-4">
-          <div class="glass-panel p-5 rounded-2xl border border-brand-border flex flex-col h-[520px]">
+          <div class="glass-panel p-5 rounded-2xl border border-brand-border flex flex-col h-[540px]">
             <div class="flex items-center justify-between mb-3 pb-3 border-b border-brand-border">
               <h4 class="font-heading font-bold text-white text-base flex items-center gap-2">
-                <span>📑</span> Lista de Videos Disponibles
+                <span>📑</span> Playlist de Clases
               </h4>
-              <span id="playlistCountBadge" class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-brand-dark text-slate-400 border border-brand-border">
+              <span id="playlistCountBadge" class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-brand-dark text-slate-400 border border-brand-border">
                 1 video
               </span>
             </div>
 
+            <!-- Playlist items -->
             <div class="space-y-2.5 overflow-y-auto flex-1 pr-1" id="videoPlaylistContainer"></div>
 
             <div class="mt-3 pt-3 border-t border-brand-border text-[11px] text-slate-400 flex items-start gap-2 bg-brand-dark/50 p-2.5 rounded-xl border border-brand-border">
-              <span class="text-sky-400 text-sm">💡</span>
+              <span class="text-purple-400 text-sm">💡</span>
               <p>
-                <b>¿Cómo subir más videos?</b> Guarda cualquier archivo <code>.mp4</code> dentro de la carpeta <code>Contenido/</code> de este repositorio y se listará automáticamente aquí.
+                <b>¿Cómo subir más clases?</b> Guarda cualquier video <code>.mp4</code> dentro de la carpeta <code>Contenido/</code> y se integrará automáticamente a esta lista.
               </p>
             </div>
           </div>
@@ -511,10 +554,6 @@
       if (tabId === 'guias') renderGuias();
       if (tabId === 'videos') {
         renderVideos();
-        const player = document.getElementById('mainVideoPlayer');
-        if (player && (!player.src || player.src === '') && CATALOG.videos && CATALOG.videos.length > 0) {
-          loadVideo(CATALOG.videos[0].id, false);
-        }
       }
       if (tabId === 'datasets') renderDatasets();
     }
@@ -715,19 +754,24 @@
         return;
       }
 
+      if (!currentPlayingVideoId) {
+        currentPlayingVideoId = videoList[0].id;
+        setupVideoPlayer(videoList[0]);
+      }
+
       container.innerHTML = videoList.map((vid, idx) => {
         const isCurrent = currentPlayingVideoId === vid.id;
         return `
-          <div onclick="loadVideo('${vid.id}', true)" class="p-3 rounded-xl border border-brand-border cursor-pointer transition-all hover:bg-slate-800/80 ${isCurrent ? 'active-item-selected' : 'bg-brand-dark/70'} flex items-start gap-3 group">
-            <div class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center flex-shrink-0 text-xs font-bold font-mono">
+          <div onclick="selectVideo('${vid.id}')" class="p-3.5 rounded-xl border border-brand-border cursor-pointer transition-all hover:bg-slate-800/90 ${isCurrent ? 'active-item-selected' : 'bg-brand-dark/70'} flex items-start gap-3 group">
+            <div class="w-9 h-9 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0 text-sm font-bold font-mono group-hover:scale-105 transition-transform">
               ${isCurrent ? '▶️' : (idx + 1)}
             </div>
             <div class="flex-1 min-w-0">
-              <div class="flex items-center justify-between gap-1 mb-0.5">
-                <span class="text-[10px] font-mono text-sky-400">${vid.module}</span>
-                <span class="text-[10px] font-mono text-slate-500">${vid.size_mb} MB</span>
+              <div class="flex items-center justify-between gap-1 mb-1">
+                <span class="text-[10px] font-mono text-purple-400">${vid.module}</span>
+                <span class="text-[10px] font-mono text-slate-400">${vid.size_mb} MB</span>
               </div>
-              <h5 class="text-xs font-heading font-semibold text-white truncate group-hover:text-sky-300">
+              <h5 class="text-xs font-heading font-semibold text-white truncate group-hover:text-purple-300">
                 ${vid.title}
               </h5>
               <div class="flex items-center gap-2 mt-1">
@@ -739,12 +783,7 @@
       }).join('');
     }
 
-    function loadVideo(vidId, autoplay) {
-      const vid = (CATALOG.videos || []).find(v => v.id === vidId);
-      if (!vid) return;
-
-      currentPlayingVideoId = vid.id;
-
+    function setupVideoPlayer(vid) {
       const player = document.getElementById('mainVideoPlayer');
       const titleEl = document.getElementById('playerVideoTitle');
       const moduleEl = document.getElementById('playerVideoModule');
@@ -753,15 +792,6 @@
       const extBtn = document.getElementById('playerVideoExternalBtn');
 
       const localPath = 'Contenido/' + encodeURIComponent(vid.filename);
-
-      if (player) {
-        player.pause();
-        player.src = localPath;
-        player.load();
-        if (autoplay) {
-          player.play().catch(e => console.log('Autoplay notice:', e));
-        }
-      }
 
       if (titleEl) titleEl.textContent = vid.title;
       if (moduleEl) moduleEl.textContent = vid.module;
@@ -774,7 +804,40 @@
         extBtn.href = localPath;
       }
 
+      if (player) {
+        player.src = localPath;
+      }
+    }
+
+    function selectVideo(vidId) {
+      const vid = (CATALOG.videos || []).find(v => v.id === vidId);
+      if (!vid) return;
+
+      currentPlayingVideoId = vid.id;
+      setupVideoPlayer(vid);
+      
+      const player = document.getElementById('mainVideoPlayer');
+      if (player) {
+        player.play().catch(e => console.log('Autoplay policy prevented immediate playback:', e));
+      }
       renderVideos();
+    }
+
+    function togglePlayPause() {
+      const player = document.getElementById('mainVideoPlayer');
+      const btnText = document.getElementById('playBtnText');
+      const btnIcon = document.getElementById('playBtnIcon');
+      if (!player) return;
+
+      if (player.paused || player.ended) {
+        player.play();
+        if (btnText) btnText.textContent = 'Pausar';
+        if (btnIcon) btnIcon.textContent = '⏸️';
+      } else {
+        player.pause();
+        if (btnText) btnText.textContent = 'Reproducir';
+        if (btnIcon) btnIcon.textContent = '▶️';
+      }
     }
 
     // Render Data Warehouse Datasets
@@ -842,6 +905,26 @@
     document.addEventListener('DOMContentLoaded', () => {
       renderPills();
       renderNotebooks();
+
+      const videoPlayer = document.getElementById('mainVideoPlayer');
+      if (videoPlayer) {
+        videoPlayer.addEventListener('play', () => {
+          const btnText = document.getElementById('playBtnText');
+          const btnIcon = document.getElementById('playBtnIcon');
+          const statusText = document.getElementById('playerStatusText');
+          if (btnText) btnText.textContent = 'Pausar';
+          if (btnIcon) btnIcon.textContent = '⏸️';
+          if (statusText) statusText.textContent = 'Reproduciendo ● 1080p';
+        });
+        videoPlayer.addEventListener('pause', () => {
+          const btnText = document.getElementById('playBtnText');
+          const btnIcon = document.getElementById('playBtnIcon');
+          const statusText = document.getElementById('playerStatusText');
+          if (btnText) btnText.textContent = 'Reproducir';
+          if (btnIcon) btnIcon.textContent = '▶️';
+          if (statusText) statusText.textContent = 'En Pausa';
+        });
+      }
 
       document.getElementById('searchInput')?.addEventListener('input', (e) => {
         currentSearch = e.target.value;
