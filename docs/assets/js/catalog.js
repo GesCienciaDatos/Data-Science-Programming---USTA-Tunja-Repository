@@ -910,8 +910,9 @@ const VIRTUAL_LAB_CATALOG = {
       "module": "🐍 Módulo 01: Python",
       "size_mb": 54.5,
       "path": "Contenido/Instalacion Python_compressed.mp4",
-      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/master/Contenido/Instalacion%20Python_compressed.mp4",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/master/Contenido/Instalacion%20Python_compressed.mp4"
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
     }
   ],
   "guias": [
@@ -922,8 +923,8 @@ const VIRTUAL_LAB_CATALOG = {
       "module": "🐍 Módulo 01: Python",
       "size_str": "878 KB",
       "path": "Guias/Instalación_Python.pdf",
-      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/master/Guias/Instalación_Python.pdf",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/master/Guias/Instalación_Python.pdf"
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Guias/Instalación_Python.pdf",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalación_Python.pdf"
     }
   ]
 };
