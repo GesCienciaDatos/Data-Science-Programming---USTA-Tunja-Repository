@@ -115,9 +115,7 @@
       <button onclick="switchTab('datasets')" id="nav-btn-datasets" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap">
         🗄️ Data Warehouse (16)
       </button>
-      <button onclick="switchTab('devtools')" id="nav-btn-devtools" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap">
-        🛠️ DevTools
-      </button>
+      
       <button onclick="switchTab('quickstart')" id="nav-btn-quickstart" class="px-3 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap">
         🚀 Quick Start
       </button>
@@ -323,12 +321,8 @@
               </span>
             </div>
 
-            <!-- PDF Items Container -->
-            <div class="space-y-2.5 overflow-y-auto flex-1 pr-1" id="guiasPlaylistContainer">
-              <!-- Injected via JS -->
-            </div>
+            <div class="space-y-2.5 overflow-y-auto flex-1 pr-1" id="guiasPlaylistContainer"></div>
 
-            <!-- Dynamic Info Box -->
             <div class="mt-3 pt-3 border-t border-brand-border text-[11px] text-slate-400 flex items-start gap-2 bg-brand-dark/50 p-2.5 rounded-xl border border-brand-border">
               <span class="text-emerald-400 text-sm">💡</span>
               <p>
@@ -355,8 +349,7 @@
         <!-- Main Video Stage (Left 8 cols) -->
         <div class="lg:col-span-8 space-y-4">
           <div class="rounded-2xl overflow-hidden glass-panel border border-brand-border bg-black shadow-2xl glow-effect relative">
-            <video id="mainVideoPlayer" controls playsinline preload="metadata" class="w-full aspect-video object-contain bg-black">
-              <source id="videoSource" src="" type="video/mp4">
+            <video id="mainVideoPlayer" controls playsinline preload="auto" class="w-full aspect-video object-contain bg-black rounded-2xl">
               Tu navegador no soporta el elemento de video HTML5.
             </video>
           </div>
@@ -383,6 +376,9 @@
             <div class="flex items-center gap-2 w-full sm:w-auto">
               <a id="playerDownloadBtn" href="#" download target="_blank" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-300 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
                 <span>📥 Descargar Video</span>
+              </a>
+              <a id="playerVideoExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-brand-border text-slate-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
+                <span>↗️ Pestaña Nueva</span>
               </a>
             </div>
           </div>
@@ -426,68 +422,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="datasetsContainer"></div>
     </div>
 
-    <!-- VIEW 5: DEVTOOLS & CHEAT SHEETS -->
-    <div id="view-devtools" class="hidden">
-      <div class="mb-8 text-center max-w-2xl mx-auto">
-        <h2 class="font-heading font-extrabold text-3xl text-white mb-2">🛠️ Laboratorio de Fórmulas y DevTools</h2>
-        <p class="text-sm text-slate-400">
-          Guías de referencia rápida para diagnósticos econométricos, algoritmos y pipelines de Scikit-Learn.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="glass-panel p-6 rounded-2xl border border-brand-border">
-          <div class="flex items-center gap-2 text-sky-400 font-heading font-bold text-lg mb-3">
-            <span>🔍</span> 5 Supuestos de Gauss-Markov (BLUE)
-          </div>
-          <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-            Condiciones indispensables para que el estimador OLS sea el Mejor Estimador Lineal Insesgado (*Best Linear Unbiased Estimator*):
-          </p>
-          <ul class="space-y-2 text-xs font-mono text-slate-300">
-            <li class="p-2 rounded bg-brand-dark/80 border border-brand-border flex justify-between">
-              <span>1. Linealidad en Parámetros:</span> <span class="text-emerald-400">y = Xβ + ε</span>
-            </li>
-            <li class="p-2 rounded bg-brand-dark/80 border border-brand-border flex justify-between">
-              <span>2. Homocedasticidad:</span> <span class="text-emerald-400">Var(εᵢ|X) = σ²</span>
-            </li>
-            <li class="p-2 rounded bg-brand-dark/80 border border-brand-border flex justify-between">
-              <span>3. No Autocorrelación:</span> <span class="text-emerald-400">Cov(εᵢ, εⱼ) = 0</span>
-            </li>
-            <li class="p-2 rounded bg-brand-dark/80 border border-brand-border flex justify-between">
-              <span>4. Normalidad de Residuos:</span> <span class="text-emerald-400">ε ~ N(0, σ²)</span>
-            </li>
-            <li class="p-2 rounded bg-brand-dark/80 border border-brand-border flex justify-between">
-              <span>5. No Multicolinealidad:</span> <span class="text-emerald-400">VIFⱼ &lt; 5.0</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="glass-panel p-6 rounded-2xl border border-brand-border">
-          <div class="flex items-center gap-2 text-yellow-300 font-heading font-bold text-lg mb-3">
-            <span>⚖️</span> Regresión OLS vs Regularización
-          </div>
-          <div class="space-y-3 text-xs font-mono">
-            <div class="p-3 rounded bg-brand-dark/80 border border-brand-border">
-              <div class="text-sky-400 font-bold mb-1">OLS (Mínimos Cuadrados):</div>
-              <div class="text-slate-200">θ = (Xᵀ X)⁻¹ Xᵀ y</div>
-              <div class="text-[11px] text-slate-400 mt-1">Sin penalización. Varianza alta si hay colinealidad.</div>
-            </div>
-            <div class="p-3 rounded bg-brand-dark/80 border border-brand-border">
-              <div class="text-amber-400 font-bold mb-1">Ridge Regression (L2):</div>
-              <div class="text-slate-200">Minimiza: MSE + λ ∑ βⱼ²</div>
-              <div class="text-[11px] text-slate-400 mt-1">Encoge coeficientes hacia cero pero no los anula.</div>
-            </div>
-            <div class="p-3 rounded bg-brand-dark/80 border border-brand-border">
-              <div class="text-purple-400 font-bold mb-1">Lasso Regression (L1):</div>
-              <div class="text-slate-200">Minimiza: MSE + λ ∑ |βⱼ|</div>
-              <div class="text-[11px] text-slate-400 mt-1">Genera dispersión y selección automática de variables.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- VIEW 6: QUICK START TERMINAL -->
+    <!-- VIEW 5: QUICK START TERMINAL -->
     <div id="view-quickstart" class="hidden">
       <div class="mb-8 text-center max-w-2xl mx-auto">
         <h2 class="font-heading font-extrabold text-3xl text-white mb-2">🚀 Configuración Local del Entorno</h2>
@@ -555,7 +490,7 @@
 
     // Switch Tabs
     function switchTab(tabId) {
-      ['notebooks', 'guias', 'videos', 'datasets', 'devtools', 'quickstart'].forEach(t => {
+      ['notebooks', 'guias', 'videos', 'datasets', 'quickstart'].forEach(t => {
         const view = document.getElementById(`view-${t}`);
         const btn = document.getElementById(`nav-btn-${t}`);
         if (view) view.classList.add('hidden');
@@ -574,7 +509,13 @@
       }
 
       if (tabId === 'guias') renderGuias();
-      if (tabId === 'videos') renderVideos();
+      if (tabId === 'videos') {
+        renderVideos();
+        const player = document.getElementById('mainVideoPlayer');
+        if (player && (!player.src || player.src === '') && CATALOG.videos && CATALOG.videos.length > 0) {
+          loadVideo(CATALOG.videos[0].id, false);
+        }
+      }
       if (tabId === 'datasets') renderDatasets();
     }
 
@@ -774,10 +715,6 @@
         return;
       }
 
-      if (!currentPlayingVideoId) {
-        loadVideo(videoList[0].id, false);
-      }
-
       container.innerHTML = videoList.map((vid, idx) => {
         const isCurrent = currentPlayingVideoId === vid.id;
         return `
@@ -809,20 +746,17 @@
       currentPlayingVideoId = vid.id;
 
       const player = document.getElementById('mainVideoPlayer');
-      const source = document.getElementById('videoSource');
       const titleEl = document.getElementById('playerVideoTitle');
       const moduleEl = document.getElementById('playerVideoModule');
       const sizeEl = document.getElementById('playerVideoSize');
       const dlBtn = document.getElementById('playerDownloadBtn');
+      const extBtn = document.getElementById('playerVideoExternalBtn');
 
-      if (source && player) {
-        const localPath = 'Contenido/' + encodeURIComponent(vid.filename);
-        source.src = localPath;
-        player.onerror = () => {
-          console.log('Falling back to remote raw URL');
-          source.src = vid.raw_url;
-          player.load();
-        };
+      const localPath = 'Contenido/' + encodeURIComponent(vid.filename);
+
+      if (player) {
+        player.pause();
+        player.src = localPath;
         player.load();
         if (autoplay) {
           player.play().catch(e => console.log('Autoplay notice:', e));
@@ -833,8 +767,11 @@
       if (moduleEl) moduleEl.textContent = vid.module;
       if (sizeEl) sizeEl.textContent = `${vid.size_mb} MB`;
       if (dlBtn) {
-        dlBtn.href = vid.raw_url;
+        dlBtn.href = localPath;
         dlBtn.setAttribute('download', vid.filename);
+      }
+      if (extBtn) {
+        extBtn.href = localPath;
       }
 
       renderVideos();
