@@ -1,50 +1,112 @@
 <!DOCTYPE html>
-<html lang="es" class="dark scroll-smooth">
+<html class="dark scroll-smooth" lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python Virtual Lab | Data Science Engineering — USTA Tunja</title>
-  <meta name="description" content="Laboratorio Virtual interactivo y plataforma de ingeniería de datos y Machine Learning. Universidad Santo Tomás Seccional Tunja.">
-  <link rel="icon" href="https://aquiyahora.santototunja.edu.co/wp-content/uploads/2023/11/cropped-favicon-32x32.png" sizes="32x32">
-  
-  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono, Fira Code, Sora -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Next-Gen Python Virtual Lab | Data Science Engineering — USTA Tunja</title>
+  <meta name="description" content="Laboratorio Virtual interactivo y plataforma de ingeniería de datos y Machine Learning. Universidad Santo Tomás Seccional Tunja."/>
+  <link rel="icon" href="https://aquiyahora.santototunja.edu.co/wp-content/uploads/2023/11/cropped-favicon-32x32.png" sizes="32x32"/>
+
+  <!-- Google Fonts: Sora, Hanken Grotesk, JetBrains Mono & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS with Stitch Configuration -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
     tailwind.config = {
-      darkMode: 'class',
+      darkMode: "class",
       theme: {
         extend: {
           colors: {
-            brand: {
-              navy: '#07090E',
-              dark: '#0B0F19',
-              card: '#111726',
-              cardHover: '#161F33',
-              border: 'rgba(255, 255, 255, 0.08)',
-              borderHover: 'rgba(56, 189, 248, 0.4)',
-              blue: '#38BDF8',
-              pyBlue: '#306998',
-              pyYellow: '#FFE873',
-              accent: '#6366F1',
-              neonGreen: '#10B981',
-              neonAmber: '#F59E0B'
-            }
+            "on-secondary": "#2e3036",
+            "on-tertiary-fixed": "#261a00",
+            "on-secondary-fixed-variant": "#45474d",
+            "primary-fixed-dim": "#7bd0ff",
+            "on-surface-variant": "#bdc8d1",
+            "error-container": "#93000a",
+            "primary": "#8ed5ff",
+            "surface-container": "#1b2024",
+            "on-secondary-container": "#b7b8bf",
+            "outline-variant": "#3e484f",
+            "on-primary-container": "#004965",
+            "surface-container-highest": "#303539",
+            "surface-dim": "#0f1418",
+            "tertiary-fixed": "#ffdf9f",
+            "on-tertiary-fixed-variant": "#5c4300",
+            "primary-container": "#38bdf8",
+            "on-error": "#690005",
+            "tertiary": "#ffc42f",
+            "background": "#0f1418",
+            "surface-bright": "#343a3e",
+            "secondary-fixed-dim": "#c5c6cd",
+            "surface-tint": "#7bd0ff",
+            "on-primary-fixed-variant": "#004c69",
+            "secondary-container": "#47494f",
+            "inverse-primary": "#00668a",
+            "on-primary-fixed": "#001e2c",
+            "secondary-fixed": "#e2e2ea",
+            "primary-fixed": "#c4e7ff",
+            "inverse-surface": "#dee3e8",
+            "surface-container-high": "#252b2e",
+            "outline": "#87929a",
+            "on-primary": "#00354a",
+            "tertiary-fixed-dim": "#f9bd22",
+            "surface-container-low": "#171c20",
+            "surface-variant": "#303539",
+            "tertiary-container": "#e1a800",
+            "surface": "#0f1418",
+            "error": "#ffb4ab",
+            "secondary": "#c5c6cd",
+            "on-background": "#dee3e8",
+            "on-tertiary-container": "#584000",
+            "inverse-on-surface": "#2c3135",
+            "on-secondary-fixed": "#191c21",
+            "on-tertiary": "#402d00",
+            "on-error-container": "#ffdad6",
+            "on-surface": "#dee3e8",
+            "surface-container-lowest": "#0a0f12"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            '2xl': "1rem",
+            '3xl': "1.5rem",
+            full: "9999px"
+          },
+          spacing: {
+            "gutter": "24px",
+            "unit": "4px",
+            "container-max": "1440px",
+            "margin-mobile": "16px",
+            "margin-desktop": "40px"
           },
           fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            heading: ['Sora', 'Plus Jakarta Sans', 'Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+            "display-lg": ["Sora", "sans-serif"],
+            "label-caps": ["Sora", "sans-serif"],
+            "display-sm": ["Sora", "sans-serif"],
+            "body-lg": ["Hanken Grotesk", "sans-serif"],
+            "code-md": ["JetBrains Mono", "monospace"],
+            "headline-md": ["Sora", "sans-serif"],
+            "body-md": ["Hanken Grotesk", "sans-serif"]
           },
-          backgroundImage: {
-            'glow-gradient': 'radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15), transparent 70%)',
-            'card-glow': 'radial-gradient(circle at top right, rgba(99, 102, 241, 0.12), transparent 50%)',
-            'cinema-glow': 'radial-gradient(ellipse at center, rgba(129, 140, 248, 0.25) 0%, rgba(7, 9, 14, 0.95) 100%)',
-            'cinema-ambient': 'radial-gradient(circle at 50% 40%, rgba(56, 189, 248, 0.22) 0%, rgba(139, 92, 246, 0.15) 45%, transparent 70%)'
+          fontSize: {
+            "display-lg": ["42px", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "label-caps": ["11px", { lineHeight: "1", letterSpacing: "0.08em", fontWeight: "700" }],
+            "display-sm": ["24px", { lineHeight: "1.25", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "1.55", fontWeight: "400" }],
+            "code-md": ["13px", { lineHeight: "1.5", fontWeight: "400" }],
+            "headline-md": ["20px", { lineHeight: "1.35", fontWeight: "600" }],
+            "body-md": ["15px", { lineHeight: "1.5", fontWeight: "400" }]
+          },
+          boxShadow: {
+            'neon-cyan': '0 0 18px rgba(56, 189, 248, 0.35)',
+            'neon-amber': '0 0 18px rgba(255, 196, 47, 0.35)',
+            'neon-emerald': '0 0 18px rgba(52, 211, 153, 0.35)',
+            'neon-purple': '0 0 18px rgba(129, 140, 248, 0.35)'
           }
         }
       }
@@ -53,907 +115,562 @@
 
   <style>
     /* Custom Scrollbar */
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #07090E; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f1418; }
     html:not(.dark) ::-webkit-scrollbar-track { background: #F1F5F9; }
-    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
-    html:not(.dark) ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #334155; }
-    html:not(.dark) ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+    ::-webkit-scrollbar-thumb { background: #252b2e; border-radius: 3px; }
+    html:not(.dark) ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3e484f; }
 
-    /* Glassmorphism & Visual Aesthetics */
+    /* Stitch Glass Panels & Typography */
     .glass-panel {
-      background: rgba(17, 23, 38, 0.75);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background-color: rgba(27, 32, 36, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(142, 213, 255, 0.15);
     }
     html:not(.dark) .glass-panel {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(226, 232, 240, 0.9);
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
     }
 
-    .glow-effect {
-      box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.22);
-    }
-    .cinema-ambient-shadow {
-      box-shadow: 0 0 80px 10px rgba(56, 189, 248, 0.25), 0 25px 60px -15px rgba(0, 0, 0, 0.9);
-    }
-    .cinema-oled {
-      background-color: #000000 !important;
-    }
-    
-    .active-tab-glow {
-      background: rgba(56, 189, 248, 0.15) !important;
-      border-color: rgba(56, 189, 248, 0.6) !important;
-      color: #38BDF8 !important;
-    }
-    html:not(.dark) .active-tab-glow {
-      background: rgba(2, 132, 199, 0.1) !important;
-      border-color: rgba(2, 132, 199, 0.5) !important;
-      color: #0284C7 !important;
-    }
-
-    .terminal-code { counter-reset: line; }
-    .terminal-code .code-line { display: block; line-height: 1.6; }
-    .terminal-code .code-line::before {
+    .code-container { counter-reset: line; }
+    .code-container > .code-line::before {
       counter-increment: line;
       content: counter(line);
       display: inline-block;
-      width: 2rem;
-      color: #475569;
+      width: 1.8em;
+      margin-right: 1.2em;
       text-align: right;
-      margin-right: 1.2rem;
+      color: #87929a;
       user-select: none;
     }
 
-    .active-item-selected {
-      background: rgba(56, 189, 248, 0.18) !important;
-      border-color: rgba(56, 189, 248, 0.55) !important;
-    }
-    html:not(.dark) .active-item-selected {
-      background: rgba(2, 132, 199, 0.12) !important;
-      border-color: rgba(2, 132, 199, 0.6) !important;
+    .text-gradient {
+      background: linear-gradient(to right, #8ed5ff, #c4e7ff, #ffdf9f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* Modal Backdrop */
+    .active-tab-glow {
+      background: rgba(56, 189, 248, 0.15) !important;
+      border-color: rgba(56, 189, 248, 0.6) !important;
+      color: #8ed5ff !important;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+    }
+
+    .cinema-ambient-shadow {
+      box-shadow: 0 0 80px 10px rgba(56, 189, 248, 0.25), 0 25px 60px -15px rgba(0, 0, 0, 0.9);
+    }
+
     .modal-backdrop {
-      background: rgba(0, 0, 0, 0.82);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
   </style>
 </head>
-<body id="pageBody" class="bg-[#07090E] text-slate-200 font-sans min-h-screen flex flex-col selection:bg-sky-500 selection:text-black antialiased transition-colors duration-300 pb-20 md:pb-0">
+
+<body class="bg-background text-on-background min-h-screen relative overflow-x-hidden font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container flex flex-col justify-between">
 
   <!-- ========================================================================= -->
-  <!-- 1. TOP DEVTOLS & NAVIGATION BAR                                           -->
+  <!-- 0. STITCH WEBGL AMBIENT SHADER CANVAS BACKGROUND                          -->
   <!-- ========================================================================= -->
-  <nav class="sticky top-0 z-50 glass-panel border-b border-brand-border px-4 lg:px-8 py-3 flex items-center justify-between transition-all">
-    <!-- Brand / Logo -->
-    <div class="flex items-center gap-3">
-      <a href="#" class="flex items-center gap-3 group">
-        <div class="h-9 w-9 rounded-xl bg-gradient-to-br from-blue-600 via-sky-500 to-amber-400 p-[2px] shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
-          <div class="h-full w-full bg-[#07090E] rounded-[10px] flex items-center justify-center font-heading font-extrabold text-white text-xs">
-            🐍
-          </div>
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="font-heading font-bold text-white text-sm sm:text-base tracking-tight group-hover:text-sky-300 transition-colors">
-              Python Virtual Lab
-            </span>
-            <span class="px-2 py-0.5 text-[10px] font-mono font-semibold rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 hidden sm:flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span> v2026.1
-            </span>
-          </div>
-          <p class="text-[11px] text-slate-400 hidden md:block">Universidad Santo Tomás — Seccional Tunja</p>
-        </div>
+  <div class="fixed inset-0 w-full h-full z-[-1] pointer-events-none opacity-40 transition-opacity duration-700" id="ambientShaderWrapper">
+    <canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+    <script>
+    (function() {
+      const canvas = document.getElementById('shader-canvas-ANIMATION_2');
+      if (!canvas) return;
+
+      function syncSize() {
+        const w = window.innerWidth || 1280;
+        const h = window.innerHeight || 720;
+        if (canvas.width !== w || canvas.height !== h) {
+          canvas.width = w;
+          canvas.height = h;
+        }
+      }
+      window.addEventListener('resize', syncSize);
+      syncSize();
+
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      if (!gl) return;
+      const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+      const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    vec2 p = (uv - 0.5) * 2.0;
+    p.x *= u_resolution.x / u_resolution.y;
+
+    float d = length(p);
+    
+    // Deep space navy base
+    vec3 color = vec3(0.027, 0.035, 0.055); 
+    
+    // Cyan glow streaks
+    float glow = 0.015 / abs(sin(p.y * 7.0 + u_time * 0.6) + p.x * 1.6);
+    color += vec3(0.22, 0.74, 0.97) * glow * (1.0 - clamp(d * 0.45, 0.0, 1.0));
+    
+    // Ambient noise for tech feel
+    float n = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    color += n * 0.012;
+
+    gl_FragColor = vec4(color, 1.0);
+}`;
+      function cs(type, src) {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, src);
+        gl.compileShader(s);
+        return s;
+      }
+      const prog = gl.createProgram();
+      gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+      gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(prog);
+      gl.useProgram(prog);
+      const buf = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+      const pos = gl.getAttribLocation(prog, 'a_position');
+      gl.enableVertexAttribArray(pos);
+      gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+      const uTime = gl.getUniformLocation(prog, 'u_time');
+      const uRes = gl.getUniformLocation(prog, 'u_resolution');
+
+      function render(t) {
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        if (uTime) gl.uniform1f(uTime, t * 0.001);
+        if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+        requestAnimationFrame(render);
+      }
+      requestAnimationFrame(render);
+    })();
+    </script>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP NAVBAR (STITCH SHARED COMPONENT)                                   -->
+  <!-- ========================================================================= -->
+  <nav class="sticky top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-primary/20 shadow-[0_0_15px_rgba(56,189,248,0.1)] flex justify-between items-center px-4 md:px-margin-desktop py-3 max-w-container-max mx-auto">
+    <!-- Brand / Status -->
+    <div class="flex items-center gap-3 sm:gap-4">
+      <a href="#" class="flex items-center gap-2 group">
+        <span class="text-xl">🐍</span>
+        <span class="font-display-sm text-lg sm:text-xl font-bold text-primary tracking-tight truncate">PY Virtual Lab</span>
       </a>
+      <div class="hidden md:flex items-center gap-2 bg-surface-container-high rounded-full px-3 py-1 border border-outline-variant">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-neon-emerald animate-pulse"></span>
+        <span class="font-label-caps text-label-caps text-on-surface-variant">v2026.1 ● Online</span>
+      </div>
     </div>
 
-    <!-- Center Navigation Tabs -->
-    <div class="hidden lg:flex items-center gap-1 bg-[#0F172A]/80 p-1 rounded-xl border border-brand-border text-xs font-medium">
-      <button onclick="switchTab('notebooks')" id="nav-btn-notebooks" class="px-3.5 py-1.5 rounded-lg text-white active-tab-glow border border-transparent transition-all whitespace-nowrap flex items-center gap-1.5">
-        <span>⚡ Cuadernos</span>
-        <span class="px-1.5 py-0.2 rounded-full bg-sky-500/20 text-[10px] font-mono" id="nav-badge-nb-count">54</span>
+    <!-- Center Navigation Links -->
+    <div class="hidden lg:flex items-center gap-4 text-xs font-label-caps">
+      <button onclick="switchTab('notebooks')" id="nav-btn-notebooks" class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200">
+        ⚡ Cuadernos (54)
       </button>
-      <button onclick="switchTab('guias')" id="nav-btn-guias" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap flex items-center gap-1.5">
-        <span>📖 Guías PDF</span>
-        <span class="px-1.5 py-0.2 rounded-full bg-slate-800 text-[10px] font-mono" id="nav-guias-count">1</span>
+      <button onclick="switchTab('guias')" id="nav-btn-guias" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2 py-1 rounded">
+        📖 Guías PDF
       </button>
-      <button onclick="switchTab('videos')" id="nav-btn-videos" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap flex items-center gap-1.5">
-        <span>🎬 Video Clases</span>
-        <span class="px-1.5 py-0.2 rounded-full bg-slate-800 text-[10px] font-mono" id="nav-video-count">1</span>
+      <button onclick="switchTab('videos')" id="nav-btn-videos" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2 py-1 rounded">
+        🎬 Video Clases
       </button>
-      <button onclick="switchTab('datasets')" id="nav-btn-datasets" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap flex items-center gap-1.5">
-        <span>🗄️ Data Warehouse</span>
-        <span class="px-1.5 py-0.2 rounded-full bg-slate-800 text-[10px] font-mono">16</span>
+      <button onclick="switchTab('datasets')" id="nav-btn-datasets" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2 py-1 rounded">
+        🗄️ Datasets (16)
       </button>
-      <button onclick="switchTab('quickstart')" id="nav-btn-quickstart" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap flex items-center gap-1.5">
-        <span>🚀 Quick Start</span>
+      <button onclick="switchTab('quickstart')" id="nav-btn-quickstart" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2 py-1 rounded">
+        🚀 Quick Start
       </button>
-      <button onclick="switchTab('cheatsheet')" id="nav-btn-cheatsheet" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap flex items-center gap-1.5">
-        <span>💡 Cheat Sheet</span>
+      <button onclick="switchTab('cheatsheet')" id="nav-btn-cheatsheet" class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2 py-1 rounded">
+        💡 Cheat Sheet
       </button>
     </div>
 
-    <!-- Right Controls & Actions -->
-    <div class="flex items-center gap-2.5">
-      <!-- Search Shortcut Trigger -->
-      <button onclick="focusGlobalSearch()" class="hidden sm:flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-brand-border text-xs text-slate-400 hover:text-slate-200 transition-all font-mono" title="Buscar en todo el catálogo (Atajo: /)">
-        <span>🔍 Buscar</span>
-        <kbd class="px-1.5 py-0.5 text-[10px] bg-slate-900 rounded border border-slate-700 text-slate-400">/</kbd>
+    <!-- Right Controls -->
+    <div class="flex items-center gap-3">
+      <div class="hidden md:flex relative group">
+        <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-sm">search</span>
+        <input id="navSearchInput" class="bg-surface-container pl-9 pr-4 py-1.5 rounded-DEFAULT border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:shadow-neon-cyan transition-all w-52 sm:w-64 text-on-surface placeholder:text-on-surface-variant font-code-md text-xs" placeholder="Buscar... (Atajo /)" type="text"/>
+      </div>
+      
+      <!-- Theme Switcher -->
+      <button id="themeToggleBtn" onclick="toggleTheme()" aria-label="theme" class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded-full transition-all duration-300 active:scale-95" title="Alternar Modo Claro / Oscuro">
+        <span id="themeIcon" class="material-symbols-outlined text-sm">dark_mode</span>
       </button>
 
-      <!-- Theme Switcher (Dark / Light) -->
-      <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-brand-border text-slate-300 hover:text-white text-xs transition-all" aria-label="Cambiar tema visual" title="Alternar Modo Claro / Modo Oscuro">
-        <span id="themeIcon">🌙</span>
-      </button>
-
-      <!-- GitHub Link -->
-      <a href="https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-white border border-brand-border transition-all shadow-sm">
-        <svg class="w-4 h-4 text-slate-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        <span class="hidden sm:inline">Repo</span>
+      <!-- GitHub Repo Button -->
+      <a href="https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository" target="_blank" rel="noopener noreferrer" class="p-2 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded-full transition-all duration-300 active:scale-95" title="Ver Repositorio GitHub">
+        <span class="material-symbols-outlined text-sm">code</span>
       </a>
     </div>
   </nav>
 
-  <!-- Mobile Top Swipeable Strip -->
-  <div class="lg:hidden sticky top-[57px] z-40 bg-[#0B0F19]/95 backdrop-blur-md border-b border-brand-border px-3 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar">
-    <button onclick="switchTab('notebooks')" id="mob-top-notebooks" class="px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap active-tab-glow border border-transparent">
-      ⚡ Cuadernos (54)
-    </button>
-    <button onclick="switchTab('guias')" id="mob-top-guias" class="px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap text-slate-400 hover:text-white">
-      📖 Guías PDF
-    </button>
-    <button onclick="switchTab('videos')" id="mob-top-videos" class="px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap text-slate-400 hover:text-white">
-      🎬 Videos
-    </button>
-    <button onclick="switchTab('datasets')" id="mob-top-datasets" class="px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap text-slate-400 hover:text-white">
-      🗄️ Datasets
-    </button>
-    <button onclick="switchTab('cheatsheet')" id="mob-top-cheatsheet" class="px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap text-slate-400 hover:text-white">
-      💡 Cheat Sheet
-    </button>
-  </div>
-
   <!-- ========================================================================= -->
-  <!-- 2. HERO SECTION & INTERACTIVE PYTHON SANDBOX SIMULATOR                   -->
+  <!-- 2. MAIN CONTENT GRID (HERO + INTERACTIVE TERMINAL)                        -->
   <!-- ========================================================================= -->
-  <header class="relative pt-10 pb-14 overflow-hidden border-b border-brand-border bg-glow-gradient">
-    <div class="max-w-6xl mx-auto px-4 lg:px-8 text-center relative z-10">
+  <main class="pt-6 sm:pt-10 pb-gutter px-4 md:px-margin-desktop max-w-container-max mx-auto w-full space-y-8 flex-1">
+    
+    <!-- Hero Section & Terminal in 12-col Grid (No infinite scroll!) -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
       
-      <!-- Tech Badge Pill -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-mono font-medium mb-5 shadow-sm">
-        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
-        <span>Especialización en Ciencia de Datos • USTA Tunja</span>
+      <!-- Left Column: Title & Stats (lg:col-span-5) -->
+      <div class="lg:col-span-5 space-y-5 glass-panel p-6 rounded-2xl flex flex-col justify-between">
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-caps text-xs">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            <span>Especialización en Ciencia de Datos • USTA Tunja</span>
+          </div>
+          <h1 class="font-display-lg text-3xl sm:text-4xl text-gradient leading-tight">
+            Next-Gen Python Virtual Lab
+          </h1>
+          <p class="font-body-lg text-body-md text-on-surface-variant leading-relaxed">
+            Plataforma interactiva con <strong class="text-on-surface">54 cuadernos Jupyter</strong>, guías metodológicas y ejecución en 1-clic sobre <strong class="text-primary">Google Colab</strong>.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+          <button onclick="switchTab('quickstart')" class="bg-primary-container text-on-primary-container px-5 py-2.5 rounded-lg font-label-caps text-label-caps hover:shadow-neon-cyan transition-shadow duration-300 active:scale-95 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">rocket_launch</span> QUICK START
+          </button>
+          <button onclick="switchTab('cheatsheet')" class="bg-transparent border border-primary text-primary px-5 py-2.5 rounded-lg font-label-caps text-label-caps hover:bg-primary/10 hover:shadow-neon-cyan transition-all duration-300 active:scale-95 flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">lightbulb</span> CHEAT SHEET
+          </button>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-outline-variant">
+          <div>
+            <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">TOTAL CUADERNOS</p>
+            <p class="font-headline-md text-2xl text-on-surface font-bold">54</p>
+          </div>
+          <div>
+            <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">DATASETS DISPONIBLES</p>
+            <p class="font-headline-md text-2xl text-primary font-bold">16</p>
+          </div>
+        </div>
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="font-heading font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white mb-4 leading-tight">
-        Next-Gen <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-indigo-300 to-amber-300">Python Virtual Lab</span>
-      </h1>
-
-      <!-- Subtitle -->
-      <p class="text-sm sm:text-base text-slate-300 max-w-3xl mx-auto mb-8 font-normal leading-relaxed">
-        Plataforma interactiva de experimentación con <strong class="text-white">54 cuadernos Jupyter</strong>, <strong class="text-white">guías metodológicas</strong>, <strong class="text-white">video clases HD</strong> y ejecución en 1-clic sobre <strong class="text-sky-400">Google Colab</strong>.
-      </p>
-
-      <!-- Primary Action CTAs -->
-      <div class="flex flex-wrap items-center justify-center gap-3 mb-10">
-        <button onclick="switchTab('notebooks'); scrollToWorkspace();" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm shadow-lg shadow-sky-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
-          <span>⚡ Explorar Cuadernos</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </button>
-        <button onclick="switchTab('guias'); scrollToWorkspace();" class="px-4 py-2.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-300 font-semibold text-xs flex items-center gap-2 transition-all">
-          <span>📖 Guías PDF</span>
-          <span class="px-1.5 py-0.5 rounded bg-emerald-500/30 text-[10px]">Visor</span>
-        </button>
-        <button onclick="switchTab('videos'); scrollToWorkspace();" class="px-4 py-2.5 rounded-xl bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/40 text-purple-300 font-semibold text-xs flex items-center gap-2 transition-all">
-          <span>🎬 Video Clases</span>
-          <span class="px-1.5 py-0.5 rounded bg-purple-500/30 text-[10px]">HD</span>
-        </button>
-        <button onclick="copyCloneCommand()" class="px-4 py-2.5 rounded-xl bg-[#111726] hover:bg-[#161F33] border border-brand-border text-slate-200 font-mono text-xs font-semibold flex items-center gap-2 transition-all group shadow-sm">
-          <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg>
-          <span>git clone repo</span>
-          <span class="text-slate-500 group-hover:text-slate-300">📋</span>
-        </button>
-      </div>
-
-      <!-- INTERACTIVE PYTHON CODE SIMULATOR -->
-      <div class="max-w-4xl mx-auto text-left rounded-2xl overflow-hidden glass-panel border border-brand-border shadow-2xl glow-effect">
-        <!-- Terminal Header with Tabs -->
-        <div class="bg-slate-900/90 px-4 py-2.5 border-b border-brand-border flex flex-wrap items-center justify-between gap-3">
+      <!-- Right Column: Interactive Terminal Simulator (lg:col-span-7) -->
+      <div class="lg:col-span-7 glass-panel rounded-2xl overflow-hidden shadow-2xl flex flex-col min-h-[380px]">
+        <!-- Terminal Header -->
+        <div class="bg-surface-container-highest px-4 py-2.5 flex justify-between items-center border-b border-outline-variant">
           <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-amber-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+            <span class="material-symbols-outlined text-on-surface-variant text-sm">terminal</span>
+            <span class="font-code-md text-xs text-on-surface-variant">interactive_terminal.py</span>
             <div class="flex items-center gap-1 ml-2">
-              <button onclick="setSandboxSnippet('cv')" id="tab-snippet-cv" class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-sky-500/20 text-sky-300 border border-sky-500/30">1. Cross-Validation</button>
-              <button onclick="setSandboxSnippet('eda')" id="tab-snippet-eda" class="px-2.5 py-0.5 rounded text-[11px] font-mono text-slate-400 hover:text-slate-200">2. EDA Pandas</button>
-              <button onclick="setSandboxSnippet('fe')" id="tab-snippet-fe" class="px-2.5 py-0.5 rounded text-[11px] font-mono text-slate-400 hover:text-slate-200">3. Target Encoding</button>
+              <button onclick="setSandboxSnippet('cv')" id="tab-snippet-cv" class="px-2 py-0.5 rounded text-[10px] font-mono bg-primary/20 text-primary border border-primary/30">1. Cross-Val</button>
+              <button onclick="setSandboxSnippet('eda')" id="tab-snippet-eda" class="px-2 py-0.5 rounded text-[10px] font-mono text-on-surface-variant hover:text-on-surface">2. EDA</button>
+              <button onclick="setSandboxSnippet('fe')" id="tab-snippet-fe" class="px-2 py-0.5 rounded text-[10px] font-mono text-on-surface-variant hover:text-on-surface">3. Target Encoding</button>
             </div>
           </div>
           
-          <div class="flex items-center gap-2">
-            <button onclick="runSandboxSimulation()" id="runSimulationBtn" class="px-3 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-xs font-semibold flex items-center gap-1.5 shadow-sm transition-all">
-              <span>▶</span> <span id="runBtnLabel">Ejecutar Simulación</span>
-            </button>
-            <button onclick="copyCurrentSnippet()" class="p-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white text-xs font-mono" title="Copiar código">
-              📋
-            </button>
-          </div>
+          <button onclick="runSandboxSimulation()" id="runSimulationBtn" class="text-primary hover:text-primary-fixed transition-colors font-label-caps text-label-caps flex items-center gap-1 group">
+            <span class="material-symbols-outlined text-sm group-hover:shadow-neon-cyan rounded-full">play_arrow</span>
+            <span id="runBtnLabel">EJECUTAR SIMULACIÓN</span>
+          </button>
         </div>
 
         <!-- Terminal Code Body -->
-        <div id="sandboxCodeDisplay" class="p-5 font-mono text-xs sm:text-sm text-slate-300 bg-[#07090E]/95 overflow-x-auto terminal-code">
+        <div id="sandboxCodeDisplay" class="bg-black/90 flex-1 p-4 overflow-y-auto font-code-md text-xs sm:text-sm text-on-surface code-container relative">
           <!-- Populated dynamically via JS -->
         </div>
 
         <!-- Live Output Box -->
-        <div id="sandboxOutputBox" class="px-5 py-3 bg-[#0B0F19] border-t border-brand-border font-mono text-xs text-emerald-400 flex items-center justify-between">
-          <div class="flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span id="sandboxOutputText">✨ R² Promedio 5-Fold CV: 0.8871 (Modelo Validado con Cero Data Leakage)</span>
+        <div id="sandboxOutputBox" class="bg-surface-container/90 backdrop-blur-md px-4 py-2.5 border-t border-outline-variant font-mono text-xs text-emerald-400 flex items-center justify-between">
+          <div class="flex items-center gap-2 truncate">
+            <span class="material-symbols-outlined text-sm">check_circle</span>
+            <span id="sandboxOutputText" class="truncate">Output: ✨ R² Promedio 5-Fold CV: 0.8871 (Cero Data Leakage)</span>
           </div>
-          <span class="text-[10px] text-slate-500">Python 3.12 • Scikit-Learn</span>
+          <span class="text-[10px] text-on-surface-variant ml-2 font-mono">Python 3.12</span>
         </div>
       </div>
 
-    </div>
-  </header>
+    </section>
 
-  <!-- ========================================================================= -->
-  <!-- 3. METRICS & ARCHITECTURAL ADVANTAGES                                     -->
-  <!-- ========================================================================= -->
-  <section class="py-8 border-b border-brand-border bg-[#0B0F19]/40">
-    <div class="max-w-6xl mx-auto px-4 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="p-4 rounded-xl glass-panel border border-brand-border text-center hover:border-sky-500/30 transition-all">
-        <div class="text-2xl mb-1">⚡</div>
-        <div class="font-heading font-bold text-white text-sm">Cero Configuración</div>
-        <p class="text-xs text-slate-400 mt-1">Ejecuta cualquier notebook con GPU/CPU en Google Colab con un clic.</p>
-      </div>
-      <div class="p-4 rounded-xl glass-panel border border-brand-border text-center hover:border-emerald-500/30 transition-all">
-        <div class="text-2xl mb-1">📖</div>
-        <div class="font-heading font-bold text-white text-sm">Visor de Guías PDF</div>
-        <p class="text-xs text-slate-400 mt-1">Manuales metodológicos y guías paso a paso integradas.</p>
-      </div>
-      <div class="p-4 rounded-xl glass-panel border border-brand-border text-center hover:border-purple-500/30 transition-all">
-        <div class="text-2xl mb-1">🎬</div>
-        <div class="font-heading font-bold text-white text-sm">Streaming Dual Cinema</div>
-        <p class="text-xs text-slate-400 mt-1">Streaming FastStart con ambient backlight y control de luces.</p>
-      </div>
-      <div class="p-4 rounded-xl glass-panel border border-brand-border text-center hover:border-amber-500/30 transition-all">
-        <div class="text-2xl mb-1">🗄️</div>
-        <div class="font-heading font-bold text-white text-sm">Data Warehouse</div>
-        <p class="text-xs text-slate-400 mt-1">16 Datasets con Data Explorer interactivo y exportador de código.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================= -->
-  <!-- 4. MAIN WORKSPACE CONTAINER                                               -->
-  <!-- ========================================================================= -->
-  <main id="main-workspace" class="max-w-7xl mx-auto px-4 lg:px-8 py-10 w-full flex-1">
-
-    <!-- --------------------------------------------------------------------- -->
-    <!-- VIEW 1: NOTEBOOKS EXPLORER                                            -->
-    <!-- --------------------------------------------------------------------- -->
-    <div id="view-notebooks">
-      <!-- Module Pills Carousel / Grid -->
-      <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 border-b border-brand-border no-scrollbar" id="modulePillsContainer">
-        <!-- Rendered via JS -->
-      </div>
-
-      <!-- Controls & Search Bar -->
-      <div class="glass-panel p-4 rounded-2xl border border-brand-border mb-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <!-- Search input -->
-        <div class="relative w-full md:w-96">
-          <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">🔍</span>
-          <input 
-            type="text" 
-            id="searchInput" 
-            placeholder="Buscar por tema, OLS, PCA, Pandas, Missing Values..." 
-            class="w-full pl-10 pr-12 py-2.5 bg-[#07090E] border border-brand-border focus:border-sky-400 focus:ring-1 focus:ring-sky-400 rounded-xl text-xs font-mono text-white placeholder-slate-500 outline-none transition-all"
-            aria-label="Buscar cuadernos en el catálogo"
-          >
-          <span class="absolute inset-y-0 right-0 pr-3 flex items-center font-mono text-[10px] text-slate-500 pointer-events-none">/</span>
+    <!-- ======================================================================= -->
+    <!-- 3. WORKSPACE BENTO GRID & TABS CONTAINER                                -->
+    <!-- ======================================================================= -->
+    <section class="space-y-6">
+      
+      <!-- Workspace Navigation Bar -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-outline-variant pb-4">
+        <div class="flex flex-wrap gap-2" id="workspaceTabsGroup">
+          <button onclick="switchTab('notebooks')" id="tab-pill-notebooks" class="bg-primary/20 text-primary px-3.5 py-1.5 rounded-full font-label-caps text-label-caps border border-primary/30 cursor-pointer hover:bg-primary/30 transition-all flex items-center gap-1.5">
+            <span>⚡ CUADERNOS (54)</span>
+          </button>
+          <button onclick="switchTab('guias')" id="tab-pill-guias" class="bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5">
+            <span>📖 GUÍAS PDF</span>
+          </button>
+          <button onclick="switchTab('videos')" id="tab-pill-videos" class="bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5">
+            <span>🎬 VIDEO CLASES</span>
+          </button>
+          <button onclick="switchTab('datasets')" id="tab-pill-datasets" class="bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5">
+            <span>🗄️ DATA WAREHOUSE (16)</span>
+          </button>
+          <button onclick="switchTab('quickstart')" id="tab-pill-quickstart" class="bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5">
+            <span>🚀 QUICK START</span>
+          </button>
+          <button onclick="switchTab('cheatsheet')" id="tab-pill-cheatsheet" class="bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5">
+            <span>💡 CHEAT SHEET</span>
+          </button>
         </div>
 
-        <!-- Filter Dropdowns & Stats -->
-        <div class="flex flex-wrap items-center gap-3 w-full md:w-auto justify-between md:justify-end">
-          <div class="flex items-center gap-2 text-xs">
-            <span class="text-slate-400 font-medium">Dificultad:</span>
-            <select id="diffFilter" class="bg-[#07090E] border border-brand-border text-slate-300 rounded-lg px-2.5 py-1.5 text-xs outline-none focus:border-sky-400">
-              <option value="all">Todas</option>
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <div class="relative flex-1 md:w-48">
+            <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm pointer-events-none">filter_list</span>
+            <select id="diffFilter" class="w-full bg-surface-container pl-8 pr-4 py-1.5 rounded-DEFAULT border border-outline-variant text-on-surface font-body-md text-xs appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+              <option value="all">Todas las Dificultades</option>
               <option value="Básico">🟢 Básico</option>
               <option value="Intermedio">🟡 Intermedio</option>
               <option value="Avanzado">🧗 Avanzado</option>
             </select>
           </div>
-
-          <button onclick="resetFilters()" id="resetFiltersBtn" class="hidden text-xs font-mono text-sky-400 hover:text-sky-300 px-2 py-1 bg-sky-500/10 rounded border border-sky-500/20">
-            ✕ Limpiar
-          </button>
-
-          <div class="text-xs font-mono text-slate-400 bg-[#07090E] px-3 py-1.5 rounded-lg border border-brand-border" id="resultsBadge">
-            Cargando cuadernos...
-          </div>
         </div>
       </div>
 
-      <!-- Notebooks Bento Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="notebooksContainer">
-        <!-- Rendered via JS -->
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------------------- -->
-    <!-- VIEW 2: PDF GUIDES & DOCUMENT VIEWER                                  -->
-    <!-- --------------------------------------------------------------------- -->
-    <div id="view-guias" class="hidden">
-      <div class="mb-8 text-center max-w-2xl mx-auto">
-        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-2">📖 Biblioteca de Guías & Manuales PDF</h2>
-        <p class="text-sm text-slate-400">
-          Visor interactivo para manuales metodológicos y guías paso a paso de la carpeta <code class="text-emerald-300 font-mono bg-slate-800 px-2 py-0.5 rounded">Guias/</code>.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <!-- Main PDF Canvas (Left 8 cols) -->
-        <div class="lg:col-span-8 space-y-4">
-          <div class="glass-panel p-4 rounded-2xl border border-brand-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span id="playerPdfModule" class="text-[11px] font-mono font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  🐍 Módulo 01: Python
-                </span>
-                <span id="playerPdfSize" class="text-[11px] font-mono text-slate-400 bg-[#07090E] px-2 py-0.5 rounded border border-brand-border">
-                  878 KB
-                </span>
-                <span class="text-[10px] font-mono font-bold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">
-                  PDF Reader
-                </span>
-              </div>
-              <h3 id="playerPdfTitle" class="font-heading font-bold text-base sm:text-lg text-white">
-                Guía de Instalación y Configuración de Python
-              </h3>
-            </div>
-
-            <div class="flex items-center gap-2 w-full sm:w-auto">
-              <a id="playerPdfDownloadBtn" href="#" download target="_blank" class="w-full sm:w-auto px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
-                <span>📥 Descargar PDF</span>
-              </a>
-              <a id="playerPdfExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-brand-border text-slate-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
-                <span>↗️ Pestaña Nueva</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- PDF Frame -->
-          <div class="rounded-2xl overflow-hidden glass-panel border border-brand-border bg-slate-900 shadow-2xl glow-effect relative">
-            <iframe id="mainPdfViewer" src="" class="w-full h-[650px] bg-slate-900 rounded-2xl" frameborder="0" title="Visor de Documentos PDF">
-              <p class="p-8 text-center text-slate-400 text-xs">Tu navegador no soporta visualización directa de PDF.</p>
-            </iframe>
-          </div>
+      <!-- VIEW 1: NOTEBOOKS 3-COLUMN BENTO GRID -->
+      <div id="view-notebooks">
+        <!-- Module Pills Sub-filters -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-4 no-scrollbar" id="modulePillsContainer">
+          <!-- Populated via JS -->
         </div>
 
-        <!-- PDF Playlist Box (Right 4 cols) -->
-        <div class="lg:col-span-4 space-y-4">
-          <div class="glass-panel p-5 rounded-2xl border border-brand-border flex flex-col h-[540px]">
-            <div class="flex items-center justify-between mb-3 pb-3 border-b border-brand-border">
-              <h4 class="font-heading font-bold text-white text-base flex items-center gap-2">
-                <span>📑</span> Guías Disponibles
-              </h4>
-              <span id="guiasCountBadge" class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-[#07090E] text-slate-400 border border-brand-border">
-                1 guía
-              </span>
-            </div>
-
-            <div class="space-y-2.5 overflow-y-auto flex-1 pr-1" id="guiasPlaylistContainer">
-              <!-- Rendered via JS -->
-            </div>
-
-            <div class="mt-3 pt-3 border-t border-brand-border text-[11px] text-slate-400 flex items-start gap-2 bg-[#07090E]/50 p-2.5 rounded-xl border border-brand-border">
-              <span class="text-emerald-400 text-sm">💡</span>
-              <p>
-                <b>¿Cómo subir más guías?</b> Guarda cualquier archivo <code>.pdf</code> dentro de <code>Guias/</code> en el repositorio y aparecerá aquí automáticamente.
-              </p>
-            </div>
-          </div>
+        <!-- 3-Column Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="notebooksContainer">
+          <!-- Populated via JS -->
         </div>
       </div>
-    </div>
 
-    <!-- --------------------------------------------------------------------- -->
-    <!-- VIEW 3: CINEMA MULTIMEDIA PLAYER & VIDEO ROOM (PASO 3 MEJORADO)        -->
-    <!-- --------------------------------------------------------------------- -->
-    <div id="view-videos" class="hidden">
-      <div class="mb-6 text-center max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono font-medium mb-3">
-          <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
-          Streaming FastStart Dual ● Pages & LFS Media CDN
-        </div>
-        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-2">🎬 Sala Multimedia de Video Clases</h2>
-        <p class="text-sm text-slate-400">
-          Reproductor audiovisual interactivo con aceleración por hardware y ambient backlight para <code class="text-purple-300 font-mono bg-slate-800 px-2 py-0.5 rounded">Contenido/</code>.
-        </p>
-      </div>
-
-      <!-- Cinema Ambient Glow Wrapper -->
-      <div id="cinemaAmbientContainer" class="p-2 sm:p-6 rounded-3xl transition-all duration-500">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          <!-- Cinema Stage (Left 8 cols) -->
+      <!-- VIEW 2: PDF GUIDES VISOR -->
+      <div id="view-guias" class="hidden space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div class="lg:col-span-8 space-y-4">
-            <!-- Stage Frame with Ambient Backlight Glow -->
-            <div id="videoStageBox" class="relative rounded-2xl overflow-hidden cinema-shadow border border-slate-700/80 bg-black group transition-all duration-500">
-              <video 
-                id="mainVideoPlayer" 
-                controls 
-                playsinline 
-                preload="auto" 
-                class="w-full aspect-video object-contain bg-black rounded-2xl"
-              >
-                Tu navegador no soporta el reproductor de video HTML5.
-              </video>
-
-              <div id="videoStatusOverlay" class="absolute top-4 right-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[11px] font-mono text-emerald-400 flex items-center gap-1.5 pointer-events-none">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span id="playerStatusText">Listo para Reproducir</span>
+            <div class="glass-panel p-4 rounded-2xl flex items-center justify-between">
+              <div>
+                <span id="playerPdfModule" class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Módulo 01: Python</span>
+                <h3 id="playerPdfTitle" class="font-headline-md text-base text-on-surface mt-1">Guía de Instalación y Configuración de Python</h3>
               </div>
-            </div>
-
-            <!-- Video Controls & Metadata Bar -->
-            <div class="glass-panel p-5 rounded-2xl border border-brand-border flex flex-col gap-4">
-              <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div class="space-y-1">
-                  <div class="flex flex-wrap items-center gap-2">
-                    <span id="playerVideoModule" class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-500/30">
-                      🐍 Módulo 01: Python
-                    </span>
-                    <span id="playerVideoSize" class="text-[11px] font-mono text-slate-400 bg-[#07090E] px-2.5 py-0.5 rounded border border-brand-border">
-                      54.5 MB
-                    </span>
-                    <span class="text-[10px] font-mono font-bold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">
-                      1080p Full HD
-                    </span>
-                  </div>
-                  <h3 id="playerVideoTitle" class="font-heading font-bold text-lg sm:text-xl text-white">
-                    Instalación y Configuración de Python
-                  </h3>
-                </div>
-
-                <!-- Play / Download Buttons -->
-                <div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
-                  <button onclick="togglePlayPause()" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-600/20">
-                    <span id="playBtnIcon">▶️</span> <span id="playBtnText">Reproducir</span>
-                  </button>
-                  <a id="playerVideoExternalBtn" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-brand-border text-slate-200 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
-                    <span>↗️ Externa</span>
-                  </a>
-                  <a id="playerDownloadBtn" href="#" download target="_blank" class="px-3 py-2 rounded-xl bg-sky-500/10 hover:bg-sky-500/20 border border-sky-500/30 text-sky-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all">
-                    <span>📥 Descargar</span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Ambient Lighting & Mirror Selector -->
-              <div class="pt-3 border-t border-brand-border/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs font-mono">
-                <!-- Lighting Selector (Paso 3) -->
-                <div class="flex items-center gap-2">
-                  <span class="text-slate-400">💡 Ambiente:</span>
-                  <button onclick="setCinemaMode('normal')" id="btnCinemaNormal" class="px-2.5 py-1 rounded-lg text-[11px] bg-slate-800 border border-brand-border text-sky-400 font-semibold transition-all">
-                    Normal
-                  </button>
-                  <button onclick="setCinemaMode('ambient')" id="btnCinemaAmbient" class="px-2.5 py-1 rounded-lg text-[11px] bg-purple-500/20 border border-purple-500/40 text-purple-300 transition-all font-semibold">
-                    🌌 Ambient Glow
-                  </button>
-                  <button onclick="setCinemaMode('oled')" id="btnCinemaOled" class="px-2.5 py-1 rounded-lg text-[11px] bg-slate-800 border border-brand-border text-slate-400 hover:text-white transition-all">
-                    ⚡ OLED Negro
-                  </button>
-                </div>
-
-                <!-- Speed & Mirror -->
-                <div class="flex items-center gap-2">
-                  <span class="text-slate-400">⚡ Velocidad:</span>
-                  <button onclick="setPlaybackSpeed(1)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px]">1x</button>
-                  <button onclick="setPlaybackSpeed(1.25)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px]">1.25x</button>
-                  <button onclick="setPlaybackSpeed(1.5)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px]">1.5x</button>
-                  <button onclick="setPlaybackSpeed(2)" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-[10px]">2x</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Chapters & Interactive Notepad -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <!-- Video Chapters Timeline -->
-              <div class="glass-panel p-4 rounded-xl border border-brand-border space-y-2">
-                <h5 class="text-xs font-heading font-bold text-white flex items-center gap-1.5">
-                  <span>⏱️</span> Capítulos de la Clase
-                </h5>
-                <div class="space-y-1.5 text-xs font-mono">
-                  <button onclick="seekVideo(0)" class="w-full text-left p-1.5 rounded hover:bg-slate-800 text-sky-400 flex justify-between">
-                    <span>00:00 • Introducción y Requisitos</span>
-                    <span class="text-slate-500">▶</span>
-                  </button>
-                  <button onclick="seekVideo(120)" class="w-full text-left p-1.5 rounded hover:bg-slate-800 text-slate-300 hover:text-sky-300 flex justify-between">
-                    <span>02:00 • Descarga de Python 3.12</span>
-                    <span class="text-slate-500">▶</span>
-                  </button>
-                  <button onclick="seekVideo(340)" class="w-full text-left p-1.5 rounded hover:bg-slate-800 text-slate-300 hover:text-sky-300 flex justify-between">
-                    <span>05:40 • Configuración de PATH y VEnv</span>
-                    <span class="text-slate-500">▶</span>
-                  </button>
-                  <button onclick="seekVideo(500)" class="w-full text-left p-1.5 rounded hover:bg-slate-800 text-slate-300 hover:text-sky-300 flex justify-between">
-                    <span>08:20 • Verificación en Terminal</span>
-                    <span class="text-slate-500">▶</span>
-                  </button>
-                </div>
-              </div>
-
-              <!-- Interactive Notes Box -->
-              <div class="glass-panel p-4 rounded-xl border border-brand-border flex flex-col justify-between space-y-2">
-                <div class="flex items-center justify-between">
-                  <h5 class="text-xs font-heading font-bold text-white flex items-center gap-1.5">
-                    <span>📝</span> Mis Notas de la Clase
-                  </h5>
-                  <span class="text-[10px] font-mono text-emerald-400">Auto-guardado 💾</span>
-                </div>
-                <textarea 
-                  id="classNotesInput" 
-                  placeholder="Escribe tus notas, dudas o ideas clave de esta sesión aquí..." 
-                  class="w-full h-24 p-2 rounded-lg bg-[#07090E] border border-brand-border text-xs font-mono text-slate-200 placeholder-slate-500 outline-none focus:border-sky-400 resize-none"
-                  oninput="saveClassNotes()"
-                ></textarea>
-                <div class="text-[10px] text-slate-500 flex justify-between">
-                  <span>Guardado local en tu navegador</span>
-                  <button onclick="clearClassNotes()" class="hover:text-red-400">Borrar notas</button>
-                </div>
-              </div>
-            </div>
-
-            <!-- Shortcuts Hint -->
-            <div class="bg-[#111726]/60 p-3.5 rounded-xl border border-brand-border text-xs text-slate-400 flex items-center justify-between gap-4">
               <div class="flex items-center gap-2">
-                <span class="text-sky-400 text-base">⌨️</span>
-                <span><b>Atajos:</b> <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono text-[10px] text-slate-300">Espacio</kbd> Play/Pausa, <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono text-[10px] text-slate-300">F</kbd> Fullscreen, <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-700 font-mono text-[10px] text-slate-300">J/L</kbd> ±10 seg.</span>
+                <a id="playerPdfDownloadBtn" href="#" download class="bg-primary-container text-on-primary-container px-3 py-1.5 rounded text-xs font-label-caps flex items-center gap-1">
+                  <span class="material-symbols-outlined text-sm">download</span> Descargar
+                </a>
               </div>
             </div>
-          </div>
-
-          <!-- Video Playlist Box (Right 4 cols) -->
-          <div class="lg:col-span-4 space-y-4">
-            <div class="glass-panel p-5 rounded-2xl border border-brand-border flex flex-col h-[560px]">
-              <div class="flex items-center justify-between mb-3 pb-3 border-b border-brand-border">
-                <h4 class="font-heading font-bold text-white text-base flex items-center gap-2">
-                  <span>📑</span> Playlist de Clases
-                </h4>
-                <span id="playlistCountBadge" class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-[#07090E] text-slate-400 border border-brand-border">
-                  1 video
-                </span>
-              </div>
-
-              <div class="space-y-2.5 overflow-y-auto flex-1 pr-1" id="videoPlaylistContainer">
-                <!-- Rendered via JS -->
-              </div>
-
-              <div class="mt-3 pt-3 border-t border-brand-border text-[11px] text-slate-400 flex items-start gap-2 bg-[#07090E]/50 p-2.5 rounded-xl border border-brand-border">
-                <span class="text-purple-400 text-sm">💡</span>
-                <p>
-                  <b>¿Cómo subir más clases?</b> Guarda cualquier archivo <code>.mp4</code> dentro de <code>Contenido/</code> y se sincronizará automáticamente.
-                </p>
-              </div>
+            <div class="glass-panel rounded-2xl overflow-hidden border border-outline-variant h-[600px]">
+              <iframe id="mainPdfViewer" src="" class="w-full h-full bg-surface-container" title="Visor PDF"></iframe>
             </div>
           </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------------------- -->
-    <!-- VIEW 4: DATA WAREHOUSE & DATASETS (PASO 2 MEJORADO)                   -->
-    <!-- --------------------------------------------------------------------- -->
-    <div id="view-datasets" class="hidden">
-      <div class="mb-8 text-center max-w-2xl mx-auto">
-        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-2">🗄️ Data Warehouse del Laboratorio</h2>
-        <p class="text-sm text-slate-400">
-          Conjuntos de datos estructurados con <strong class="text-sky-300">Data Explorer Interactivo</strong>, diagnóstico de columnas y exportador de código multi-framework.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="datasetsContainer">
-        <!-- Rendered via JS -->
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------------------- -->
-    <!-- VIEW 5: QUICK START SETUP GUIDE                                       -->
-    <!-- --------------------------------------------------------------------- -->
-    <div id="view-quickstart" class="hidden">
-      <div class="mb-8 text-center max-w-2xl mx-auto">
-        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-2">🚀 Configuración Local del Entorno</h2>
-        <p class="text-sm text-slate-400">
-          Guía rápida paso a paso para configurar tu entorno científico local con VirtualEnv, Conda o uv.
-        </p>
-      </div>
-
-      <div class="max-w-3xl mx-auto rounded-2xl overflow-hidden glass-panel border border-brand-border shadow-2xl">
-        <div class="bg-slate-900/90 px-4 py-3 border-b border-brand-border flex items-center justify-between">
-          <span class="text-xs font-mono text-slate-400">Terminal Bash / PowerShell — Comandos de Instalación</span>
-          <button onclick="copyFullSetupSnippet()" class="text-xs font-mono text-sky-400 hover:text-sky-300 flex items-center gap-1.5">
-            <span>📋 Copiar Todo</span>
-          </button>
-        </div>
-        <div class="p-6 font-mono text-xs sm:text-sm text-slate-300 bg-[#07090E]/95 space-y-5">
-          <div>
-            <p class="text-slate-500"># 1. Clonar el repositorio oficial</p>
-            <p class="text-sky-300">git clone https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository.git</p>
-            <p class="text-sky-300">cd Data-Science-Programming---USTA-Tunja-Repository</p>
-          </div>
-          <div>
-            <p class="text-slate-500"># 2. Crear y activar el entorno virtual aislado</p>
-            <p class="text-amber-300">python -m venv venv</p>
-            <p class="text-slate-500 mt-1"># En Windows:</p>
-            <p class="text-amber-300">venv\Scripts\activate</p>
-            <p class="text-slate-500 mt-1"># En macOS / Linux:</p>
-            <p class="text-amber-300">source venv/bin/activate</p>
-          </div>
-          <div>
-            <p class="text-slate-500"># 3. Instalar librerías de Ciencia de Datos y lanzar JupyterLab</p>
-            <p class="text-emerald-400">pip install numpy pandas matplotlib seaborn scikit-learn statsmodels jupyterlab</p>
-            <p class="text-emerald-400">jupyter lab</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- --------------------------------------------------------------------- -->
-    <!-- VIEW 6: DATA SCIENCE CHEAT SHEET & DEVTOOLS                           -->
-    <!-- --------------------------------------------------------------------- -->
-    <div id="view-cheatsheet" class="hidden">
-      <div class="mb-8 text-center max-w-2xl mx-auto">
-        <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-2">💡 Hoja de Trucos para Ciencia de Datos</h2>
-        <p class="text-sm text-slate-400">
-          Sintaxis esencial y patrones más frecuentes de NumPy, Pandas, Scikit-Learn y Visualización.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Card 1: NumPy -->
-        <div class="glass-panel p-5 rounded-2xl border border-brand-border space-y-3">
-          <div class="flex items-center justify-between pb-2 border-b border-brand-border">
-            <h4 class="font-heading font-bold text-white text-base flex items-center gap-2">
-              <span>🔢</span> NumPy Arrays & Broadcasting
+          <div class="lg:col-span-4 glass-panel p-5 rounded-2xl flex flex-col h-[670px]">
+            <h4 class="font-headline-md text-sm text-on-surface mb-3 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-sm">menu_book</span> Guías Disponibles
             </h4>
-            <span class="text-[10px] font-mono text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded">np.ndarray</span>
-          </div>
-          <div class="bg-[#07090E] p-3.5 rounded-xl font-mono text-xs text-slate-300 space-y-2">
-            <p><span class="text-purple-400">import</span> <span class="text-sky-300">numpy</span> <span class="text-purple-400">as</span> <span class="text-sky-300">np</span></p>
-            <p><span class="text-slate-500"># Crear arreglo 2D y reshape</span></p>
-            <p>arr = np.arange(<span class="text-amber-300">12</span>).reshape(<span class="text-amber-300">3</span>, <span class="text-amber-300">4</span>)</p>
-            <p><span class="text-slate-500"># Máscara booleana</span></p>
-            <p>filtered = arr[arr &gt; <span class="text-amber-300">5</span>]</p>
-            <p><span class="text-slate-500"># Operaciones vectorizadas</span></p>
-            <p>normalized = (arr - np.mean(arr)) / np.std(arr)</p>
-          </div>
-        </div>
-
-        <!-- Card 2: Pandas -->
-        <div class="glass-panel p-5 rounded-2xl border border-brand-border space-y-3">
-          <div class="flex items-center justify-between pb-2 border-b border-brand-border">
-            <h4 class="font-heading font-bold text-white text-base flex items-center gap-2">
-              <span>🐼</span> Pandas DataFrames & GroupBy
-            </h4>
-            <span class="text-[10px] font-mono text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded">pd.DataFrame</span>
-          </div>
-          <div class="bg-[#07090E] p-3.5 rounded-xl font-mono text-xs text-slate-300 space-y-2">
-            <p><span class="text-purple-400">import</span> <span class="text-sky-300">pandas</span> <span class="text-purple-400">as</span> <span class="text-sky-300">pd</span></p>
-            <p><span class="text-slate-500"># Agrupación y agregación múltiple</span></p>
-            <p>summary = df.groupby(<span class="text-emerald-300">'categoria'</span>).agg({<span class="text-emerald-300">'ventas'</span>: [<span class="text-emerald-300">'mean'</span>, <span class="text-emerald-300">'sum'</span>]})</p>
-            <p><span class="text-slate-500"># Filtrado con query</span></p>
-            <p>subset = df.query(<span class="text-emerald-300">'edad &gt; 25 and status == "Activo"'</span>)</p>
-            <p><span class="text-slate-500"># Merge relacional</span></p>
-            <p>merged = pd.merge(df1, df2, on=<span class="text-emerald-300">'id_cliente'</span>, how=<span class="text-emerald-300">'left'</span>)</p>
-          </div>
-        </div>
-
-        <!-- Card 3: Scikit-Learn -->
-        <div class="glass-panel p-5 rounded-2xl border border-brand-border space-y-3">
-          <div class="flex items-center justify-between pb-2 border-b border-brand-border">
-            <h4 class="font-heading font-bold text-white text-base flex items-center gap-2">
-              <span>📈</span> Scikit-Learn Pipelines & Validation
-            </h4>
-            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">Pipeline</span>
-          </div>
-          <div class="bg-[#07090E] p-3.5 rounded-xl font-mono text-xs text-slate-300 space-y-2">
-            <p><span class="text-purple-400">from</span> <span class="text-sky-300">sklearn.pipeline</span> <span class="text-purple-400">import</span> <span class="text-yellow-300">make_pipeline</span></p>
-            <p><span class="text-purple-400">from</span> <span class="text-sky-300">sklearn.preprocessing</span> <span class="text-purple-400">import</span> <span class="text-yellow-300">StandardScaler</span></p>
-            <p><span class="text-purple-400">from</span> <span class="text-sky-300">sklearn.linear_model</span> <span class="text-purple-400">import</span> <span class="text-yellow-300">RidgeCV</span></p>
-            <p><span class="text-slate-500"># Pipeline hermético anti data leakage</span></p>
-            <p>pipe = make_pipeline(StandardScaler(), RidgeCV(alphas=np.logspace(-<span class="text-amber-300">3</span>, <span class="text-amber-300">3</span>, <span class="text-amber-300">10</span>)))</p>
-            <p>pipe.fit(X_train, y_train)</p>
-          </div>
-        </div>
-
-        <!-- Card 4: Matplotlib & Seaborn -->
-        <div class="glass-panel p-5 rounded-2xl border border-brand-border space-y-3">
-          <div class="flex items-center justify-between pb-2 border-b border-brand-border">
-            <h4 class="font-heading font-bold text-white text-base flex items-center gap-2">
-              <span>🎨</span> Visualización Estadística con Seaborn
-            </h4>
-            <span class="text-[10px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded">sns & plt</span>
-          </div>
-          <div class="bg-[#07090E] p-3.5 rounded-xl font-mono text-xs text-slate-300 space-y-2">
-            <p><span class="text-purple-400">import</span> <span class="text-sky-300">seaborn</span> <span class="text-purple-400">as</span> <span class="text-sky-300">sns</span>, <span class="text-sky-300">matplotlib.pyplot</span> <span class="text-purple-400">as</span> <span class="text-sky-300">plt</span></p>
-            <p>sns.set_theme(style=<span class="text-emerald-300">"darkgrid"</span>, palette=<span class="text-emerald-300">"mako"</span>)</p>
-            <p><span class="text-slate-500"># Matriz de correlación con heatmap</span></p>
-            <p>sns.heatmap(df.corr(), annot=<span class="text-purple-400">True</span>, cmap=<span class="text-emerald-300">'coolwarm'</span>, fmt=<span class="text-emerald-300">'.2f'</span>)</p>
-            <p>plt.title(<span class="text-emerald-300">'Matriz de Correlación'</span>)</p>
+            <div class="space-y-2 overflow-y-auto flex-1 pr-1" id="guiasPlaylistContainer"></div>
           </div>
         </div>
       </div>
-    </div>
+
+      <!-- VIEW 3: CINEMA VIDEO ROOM -->
+      <div id="view-videos" class="hidden space-y-6">
+        <div id="cinemaAmbientContainer" class="p-2 sm:p-4 rounded-3xl transition-all duration-500">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            <div class="lg:col-span-8 space-y-4">
+              <div id="videoStageBox" class="relative rounded-2xl overflow-hidden cinema-ambient-shadow border border-outline-variant bg-black">
+                <video id="mainVideoPlayer" controls playsinline preload="auto" class="w-full aspect-video object-contain bg-black"></video>
+              </div>
+              <div class="glass-panel p-4 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <span id="playerVideoModule" class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">🐍 Módulo 01</span>
+                  <h3 id="playerVideoTitle" class="font-headline-md text-base text-on-surface mt-1">Instalación y Configuración de Python</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button onclick="setCinemaMode('ambient')" class="bg-primary/20 text-primary px-3 py-1.5 rounded text-xs font-label-caps flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">ambient_screen</span> Ambient Glow
+                  </button>
+                  <a id="playerDownloadBtn" href="#" download class="bg-surface-container text-on-surface-variant hover:text-on-surface px-3 py-1.5 rounded text-xs font-label-caps border border-outline-variant flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">download</span> Descargar
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-4 glass-panel p-5 rounded-2xl flex flex-col h-[520px]">
+              <h4 class="font-headline-md text-sm text-on-surface mb-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-sm">playlist_play</span> Playlist de Clases
+              </h4>
+              <div class="space-y-2 overflow-y-auto flex-1 pr-1" id="videoPlaylistContainer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 4: DATA WAREHOUSE -->
+      <div id="view-datasets" class="hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="datasetsContainer"></div>
+      </div>
+
+      <!-- VIEW 5: QUICK START -->
+      <div id="view-quickstart" class="hidden">
+        <div class="max-w-3xl mx-auto glass-panel rounded-2xl overflow-hidden border border-outline-variant p-6 space-y-4">
+          <h3 class="font-headline-md text-lg text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">terminal</span> Configuración Local del Entorno
+          </h3>
+          <div class="bg-black/90 p-4 rounded-xl font-code-md text-xs text-on-surface space-y-4 border border-outline-variant">
+            <div>
+              <p class="text-on-surface-variant"># 1. Clonar el repositorio</p>
+              <p class="text-primary">git clone https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository.git</p>
+              <p class="text-primary">cd Data-Science-Programming---USTA-Tunja-Repository</p>
+            </div>
+            <div>
+              <p class="text-on-surface-variant"># 2. Crear entorno virtual</p>
+              <p class="text-tertiary">python -m venv venv</p>
+              <p class="text-on-surface-variant"># En Windows: venv\Scripts\activate | En macOS/Linux: source venv/bin/activate</p>
+            </div>
+            <div>
+              <p class="text-on-surface-variant"># 3. Instalar librerías y lanzar JupyterLab</p>
+              <p class="text-emerald-400">pip install numpy pandas matplotlib seaborn scikit-learn statsmodels jupyterlab</p>
+              <p class="text-emerald-400">jupyter lab</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 6: CHEAT SHEET -->
+      <div id="view-cheatsheet" class="hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="glass-panel p-5 rounded-2xl border border-outline-variant space-y-3">
+            <h4 class="font-headline-md text-sm text-on-surface">🔢 NumPy Essentials</h4>
+            <div class="bg-black/90 p-3 rounded-xl font-code-md text-xs text-on-surface space-y-1">
+              <p class="text-tertiary">import <span class="text-on-surface">numpy as np</span></p>
+              <p>arr = np.arange(12).reshape(3, 4)</p>
+              <p>normalized = (arr - np.mean(arr)) / np.std(arr)</p>
+            </div>
+          </div>
+          <div class="glass-panel p-5 rounded-2xl border border-outline-variant space-y-3">
+            <h4 class="font-headline-md text-sm text-on-surface">🐼 Pandas GroupBy</h4>
+            <div class="bg-black/90 p-3 rounded-xl font-code-md text-xs text-on-surface space-y-1">
+              <p class="text-tertiary">import <span class="text-on-surface">pandas as pd</span></p>
+              <p>summary = df.groupby('categoria').agg({'ventas': ['mean', 'sum']})</p>
+              <p>merged = pd.merge(df1, df2, on='id', how='left')</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
   </main>
 
   <!-- ========================================================================= -->
-  <!-- 5. INTERACTIVE DATA EXPLORER MODAL (PASO 2)                               -->
+  <!-- 4. DATA EXPLORER MODAL (PASO 2 STITCH)                                    -->
   <!-- ========================================================================= -->
   <div id="dataExplorerModal" class="fixed inset-0 z-50 modal-backdrop hidden items-center justify-center p-4">
-    <div class="glass-panel w-full max-w-4xl max-h-[90vh] rounded-3xl border border-sky-500/30 shadow-2xl flex flex-col overflow-hidden animate-fade-in">
-      
-      <!-- Modal Header -->
-      <div class="p-5 border-b border-brand-border bg-slate-900/90 flex items-center justify-between">
+    <div class="glass-panel w-full max-w-4xl max-h-[90vh] rounded-3xl border border-primary/30 shadow-2xl flex flex-col overflow-hidden">
+      <div class="p-5 border-b border-outline-variant bg-surface-container-highest flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <span class="text-2xl">🔬</span>
+          <span class="material-symbols-outlined text-primary text-2xl">analytics</span>
           <div>
-            <div class="flex items-center gap-2">
-              <h3 id="modalDatasetTitle" class="font-heading font-bold text-lg text-white">Advertising.csv</h3>
-              <span id="modalDatasetModule" class="text-[10px] font-mono text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded border border-sky-500/20">07 - Regression</span>
-            </div>
-            <p id="modalDatasetDesc" class="text-xs text-slate-400">Inversión publicitaria en TV, Radio y Periódicos para predecir Ventas.</p>
+            <h3 id="modalDatasetTitle" class="font-headline-md text-base text-on-surface">Dataset</h3>
+            <p id="modalDatasetDesc" class="text-xs text-on-surface-variant"></p>
           </div>
         </div>
-        <button onclick="closeDataExplorer()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-all text-sm font-mono">
-          ✕
+        <button onclick="closeDataExplorer()" class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-on-surface">
+          <span class="material-symbols-outlined text-sm">close</span>
         </button>
       </div>
 
-      <!-- Modal Body -->
-      <div class="p-6 overflow-y-auto space-y-6 flex-1 text-xs">
-        
-        <!-- Metadata Metrics Chips -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-mono">
-          <div class="p-3 rounded-xl bg-[#07090E] border border-brand-border text-center">
-            <span class="text-[10px] text-slate-500 block">Total Filas</span>
-            <span id="modalDatasetRows" class="text-sm font-bold text-white">200</span>
+      <div class="p-6 overflow-y-auto space-y-5 flex-1 text-xs">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-code-md">
+          <div class="p-3 rounded-xl bg-surface-container border border-outline-variant text-center">
+            <span class="text-[10px] text-on-surface-variant block">Filas</span>
+            <span id="modalDatasetRows" class="text-sm font-bold text-on-surface">0</span>
           </div>
-          <div class="p-3 rounded-xl bg-[#07090E] border border-brand-border text-center">
-            <span class="text-[10px] text-slate-500 block">Total Columnas</span>
-            <span id="modalDatasetCols" class="text-sm font-bold text-sky-400">4</span>
+          <div class="p-3 rounded-xl bg-surface-container border border-outline-variant text-center">
+            <span class="text-[10px] text-on-surface-variant block">Columnas</span>
+            <span id="modalDatasetCols" class="text-sm font-bold text-primary">0</span>
           </div>
-          <div class="p-3 rounded-xl bg-[#07090E] border border-brand-border text-center">
-            <span class="text-[10px] text-slate-500 block">Variable Objetivo</span>
-            <span id="modalDatasetTarget" class="text-sm font-bold text-amber-400">Sales</span>
+          <div class="p-3 rounded-xl bg-surface-container border border-outline-variant text-center">
+            <span class="text-[10px] text-on-surface-variant block">Target</span>
+            <span id="modalDatasetTarget" class="text-sm font-bold text-tertiary">-</span>
           </div>
-          <div class="p-3 rounded-xl bg-[#07090E] border border-brand-border text-center">
-            <span class="text-[10px] text-slate-500 block">Tipo de Problema</span>
-            <span id="modalDatasetType" class="text-sm font-bold text-emerald-400">Supervisado (Regresión)</span>
+          <div class="p-3 rounded-xl bg-surface-container border border-outline-variant text-center">
+            <span class="text-[10px] text-on-surface-variant block">Problema</span>
+            <span id="modalDatasetType" class="text-sm font-bold text-emerald-400">Supervisado</span>
           </div>
         </div>
 
-        <!-- Sample Tabular Data Preview -->
         <div class="space-y-2">
-          <h4 class="font-heading font-bold text-white text-sm flex items-center justify-between">
-            <span>📋 Muestra de Registros (Primeras 5 Filas)</span>
-            <span class="text-[10px] font-mono text-slate-400">Preview Formateado</span>
-          </h4>
-          <div class="rounded-xl overflow-x-auto border border-brand-border bg-[#07090E]">
-            <table class="w-full text-left border-collapse text-xs font-mono" id="modalTablePreview">
-              <!-- Rendered via JS -->
-            </table>
+          <h4 class="font-headline-md text-xs text-on-surface">Muestra de Registros (Primeras 5 Filas)</h4>
+          <div class="rounded-xl overflow-x-auto border border-outline-variant bg-black">
+            <table class="w-full text-left border-collapse text-xs font-code-md" id="modalTablePreview"></table>
           </div>
         </div>
 
-        <!-- Multi-Framework Code Exporter -->
         <div class="space-y-2">
           <div class="flex items-center justify-between">
-            <h4 class="font-heading font-bold text-white text-sm">💻 Exportador de Código de Carga</h4>
+            <h4 class="font-headline-md text-xs text-on-surface">Código de Carga</h4>
             <div class="flex items-center gap-1">
-              <button onclick="setExportFramework('pandas')" id="tab-exp-pandas" class="px-2.5 py-1 rounded-lg text-[10px] font-mono bg-sky-500/20 text-sky-300 border border-sky-500/30">Pandas</button>
-              <button onclick="setExportFramework('polars')" id="tab-exp-polars" class="px-2.5 py-1 rounded-lg text-[10px] font-mono text-slate-400 hover:text-slate-200">Polars</button>
-              <button onclick="setExportFramework('duckdb')" id="tab-exp-duckdb" class="px-2.5 py-1 rounded-lg text-[10px] font-mono text-slate-400 hover:text-slate-200">DuckDB</button>
-              <button onclick="setExportFramework('pyspark')" id="tab-exp-pyspark" class="px-2.5 py-1 rounded-lg text-[10px] font-mono text-slate-400 hover:text-slate-200">PySpark</button>
+              <button onclick="setExportFramework('pandas')" id="tab-exp-pandas" class="px-2 py-0.5 rounded text-[10px] font-mono bg-primary/20 text-primary border border-primary/30">Pandas</button>
+              <button onclick="setExportFramework('polars')" id="tab-exp-polars" class="px-2 py-0.5 rounded text-[10px] font-mono text-on-surface-variant hover:text-on-surface">Polars</button>
+              <button onclick="setExportFramework('duckdb')" id="tab-exp-duckdb" class="px-2 py-0.5 rounded text-[10px] font-mono text-on-surface-variant hover:text-on-surface">DuckDB</button>
+              <button onclick="setExportFramework('pyspark')" id="tab-exp-pyspark" class="px-2 py-0.5 rounded text-[10px] font-mono text-on-surface-variant hover:text-on-surface">PySpark</button>
             </div>
           </div>
-          <div class="relative rounded-xl overflow-hidden bg-[#07090E] border border-brand-border p-4 font-mono text-xs text-sky-300 flex items-center justify-between">
+          <div class="rounded-xl overflow-hidden bg-black border border-outline-variant p-3 font-code-md text-xs text-primary flex items-center justify-between">
             <code id="modalExportCodeDisplay">df = pd.read_csv("...")</code>
-            <button onclick="copyExportedCode()" class="px-3 py-1.5 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 text-xs font-mono font-semibold flex items-center gap-1.5 transition-all">
-              <span>📋 Copiar</span>
+            <button onclick="copyExportedCode()" class="px-2.5 py-1 rounded bg-primary/20 text-primary hover:bg-primary/30 text-[11px] font-label-caps flex items-center gap-1">
+              <span class="material-symbols-outlined text-[14px]">content_copy</span> Copiar
             </button>
           </div>
         </div>
-
       </div>
 
-      <!-- Modal Footer -->
-      <div class="p-4 border-t border-brand-border bg-slate-900/90 flex items-center justify-between">
-        <span class="text-xs text-slate-400 font-mono">Formato: CSV UTF-8 Limpio</span>
+      <div class="p-4 border-t border-outline-variant bg-surface-container-highest flex items-center justify-between">
+        <span class="text-xs text-on-surface-variant font-code-md">CSV UTF-8 Limpio</span>
         <div class="flex items-center gap-2">
-          <button onclick="closeDataExplorer()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold">
+          <button onclick="closeDataExplorer()" class="px-4 py-1.5 rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface text-xs font-label-caps">
             Cerrar
           </button>
-          <a id="modalDownloadDirectBtn" href="#" download class="px-4 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white text-xs font-semibold flex items-center gap-1.5 shadow-md shadow-sky-500/20">
-            <span>📥 Descargar Archivo CSV</span>
+          <a id="modalDownloadDirectBtn" href="#" download class="px-4 py-1.5 rounded-lg bg-primary-container text-on-primary-container text-xs font-label-caps flex items-center gap-1 shadow-neon-cyan">
+            <span class="material-symbols-outlined text-sm">download</span> Descargar CSV
           </a>
         </div>
       </div>
-
     </div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 6. MOBILE BOTTOM DOCK NAVIGATION (PASO 1)                                  -->
+  <!-- 5. FOOTER (STITCH SHARED COMPONENT)                                       -->
   <!-- ========================================================================= -->
-  <div class="md:hidden fixed bottom-3 left-3 right-3 z-50 glass-panel border border-brand-border rounded-2xl p-1.5 shadow-2xl flex items-center justify-around">
-    <button onclick="switchTab('notebooks'); window.scrollTo({top:0, behavior:'smooth'});" id="dock-nb" class="flex flex-col items-center gap-0.5 p-2 rounded-xl text-sky-400 active:scale-95 transition-all">
-      <span class="text-base">⚡</span>
-      <span class="text-[10px] font-mono font-semibold">Cuadernos</span>
-    </button>
-    <button onclick="switchTab('guias'); window.scrollTo({top:0, behavior:'smooth'});" id="dock-guias" class="flex flex-col items-center gap-0.5 p-2 rounded-xl text-slate-400 hover:text-white active:scale-95 transition-all">
-      <span class="text-base">📖</span>
-      <span class="text-[10px] font-mono">Guías</span>
-    </button>
-    <button onclick="switchTab('videos'); window.scrollTo({top:0, behavior:'smooth'});" id="dock-vid" class="flex flex-col items-center gap-0.5 p-2 rounded-xl text-slate-400 hover:text-white active:scale-95 transition-all">
-      <span class="text-base">🎬</span>
-      <span class="text-[10px] font-mono">Videos</span>
-    </button>
-    <button onclick="switchTab('datasets'); window.scrollTo({top:0, behavior:'smooth'});" id="dock-ds" class="flex flex-col items-center gap-0.5 p-2 rounded-xl text-slate-400 hover:text-white active:scale-95 transition-all">
-      <span class="text-base">🗄️</span>
-      <span class="text-[10px] font-mono">Datasets</span>
-    </button>
-    <button onclick="focusGlobalSearch()" class="flex flex-col items-center gap-0.5 p-2 rounded-xl text-slate-400 hover:text-white active:scale-95 transition-all">
-      <span class="text-base">🔍</span>
-      <span class="text-[10px] font-mono">Buscar</span>
-    </button>
-  </div>
-
-  <!-- ========================================================================= -->
-  <!-- 7. FOOTER & CREDITS                                                       -->
-  <!-- ========================================================================= -->
-  <footer class="border-t border-brand-border bg-[#0B0F19]/90 py-10 mt-auto transition-colors">
-    <div class="max-w-6xl mx-auto px-4 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-400">
-      <div class="flex items-center gap-3">
-        <div class="h-7 w-7 rounded-lg bg-sky-500/20 text-sky-400 font-bold flex items-center justify-center text-xs font-heading">
-          USTA
-        </div>
-        <div>
-          <p class="font-semibold text-slate-200">Universidad Santo Tomás — Seccional Tunja</p>
-          <p class="text-[11px] text-slate-500">Especialización en Ciencia de Datos • © 2026</p>
-        </div>
+  <footer class="bg-surface-container-lowest border-t border-outline-variant w-full mt-12">
+    <div class="flex flex-col md:flex-row justify-between items-center px-4 md:px-margin-desktop py-gutter gap-4 max-w-container-max mx-auto">
+      <div class="font-label-caps text-label-caps text-on-surface">
+        © 2026 Universidad Santo Tomás Tunja — Python Virtual Lab
       </div>
-
-      <div class="text-center md:text-right">
-        <p>Desarrollado y mantenido por:</p>
-        <p class="font-semibold text-sky-400">Ing. Santiago Alejandro Zúñiga Melo</p>
-        <a href="mailto:gestorvirtualcienciadatos@ustatunja.edu.co" class="text-[11px] text-slate-500 hover:text-sky-300 transition-colors">
-          gestorvirtualcienciadatos@ustatunja.edu.co
-        </a>
+      <div class="flex flex-wrap gap-4 font-body-md text-xs text-on-surface-variant">
+        <span>Ing. Santiago Alejandro Zúñiga Melo</span>
+        <a class="hover:text-primary underline transition-all" href="mailto:gestorvirtualcienciadatos@ustatunja.edu.co">Soporte</a>
+        <a class="hover:text-primary underline transition-all" href="https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository" target="_blank">Repositorio</a>
       </div>
     </div>
   </footer>
 
   <!-- ========================================================================= -->
-  <!-- 8. APPLICATION CONTROLLER & CATALOG SCRIPT                                -->
+  <!-- 6. APPLICATION CONTROLLER & CATALOG SCRIPT                                -->
   <!-- ========================================================================= -->
   <script src="assets/js/catalog.js"></script>
   <script>
-    // Fallback if catalog.js fails to load
     if (typeof VIRTUAL_LAB_CATALOG === 'undefined') {
       window.VIRTUAL_LAB_CATALOG = {
         modules: [
@@ -975,71 +692,47 @@
 
     const CATALOG = VIRTUAL_LAB_CATALOG;
 
-    // State Variables
     let currentTab = 'notebooks';
     let currentModule = 'all';
     let currentSearch = '';
     let currentDiff = 'all';
     let currentPlayingVideoId = null;
-    let currentVideoMirror = 'pages';
     let currentActiveGuiaId = null;
     let currentSnippetKey = 'cv';
     let currentExplorerDataset = null;
     let currentExportFramework = 'pandas';
 
-    // Sandbox Code Snippets
     const SANDBOX_SNIPPETS = {
       cv: {
-        code: `<span class="code-line"><span class="text-purple-400">import</span> <span class="text-sky-300">numpy</span> <span class="text-purple-400">as</span> <span class="text-sky-300">np</span>, <span class="text-sky-300">pandas</span> <span class="text-purple-400">as</span> <span class="text-sky-300">pd</span></span>
-<span class="code-line"><span class="text-purple-400">from</span> <span class="text-sky-300">sklearn.linear_model</span> <span class="text-purple-400">import</span> <span class="text-yellow-300">LinearRegression</span>, <span class="text-yellow-300">RidgeCV</span></span>
-<span class="code-line"><span class="text-purple-400">from</span> <span class="text-sky-300">sklearn.model_selection</span> <span class="text-purple-400">import</span> <span class="text-yellow-300">cross_val_score</span></span>
-<span class="code-line"><span class="text-slate-500"># 🚀 Validación Cruzada 5-Fold Blindada contra Data Leakage</span></span>
-<span class="code-line">df = pd.read_csv(<span class="text-emerald-300">"https://raw.githubusercontent.com/.../Advertising.csv"</span>)</span>
-<span class="code-line">X, y = df[[<span class="text-emerald-300">'TV'</span>, <span class="text-emerald-300">'Radio'</span>, <span class="text-emerald-300">'Newspaper'</span>]], df[<span class="text-emerald-300">'Sales'</span>]</span>
-<span class="code-line">model = <span class="text-yellow-300">LinearRegression</span>()</span>
-<span class="code-line">cv_scores = <span class="text-yellow-300">cross_val_score</span>(model, X, y, cv=<span class="text-amber-400">5</span>, scoring=<span class="text-emerald-300">'r2'</span>)</span>
-<span class="code-line"><span class="text-sky-400">print</span>(<span class="text-emerald-300">f"✨ R² Promedio 5-Fold CV: {np.mean(cv_scores):.4f}"</span>)</span>`,
-        raw: `import numpy as np, pandas as pd
-from sklearn.linear_model import LinearRegression, RidgeCV
-from sklearn.model_selection import cross_val_score
-
-df = pd.read_csv("Advertising.csv")
-X, y = df[['TV', 'Radio', 'Newspaper']], df['Sales']
-model = LinearRegression()
-cv_scores = cross_val_score(model, X, y, cv=5, scoring='r2')
-print(f"✨ R² Promedio 5-Fold CV: {np.mean(cv_scores):.4f}")`,
+        code: `<div class="code-line"><span class="text-tertiary">import</span> <span class="text-on-surface">numpy as np, pandas as pd</span></div>
+<div class="code-line"><span class="text-tertiary">from</span> <span class="text-on-surface">sklearn.model_selection</span> <span class="text-tertiary">import</span> <span class="text-on-surface">cross_val_score</span></div>
+<div class="code-line"><span class="text-tertiary">from</span> <span class="text-on-surface">sklearn.ensemble</span> <span class="text-tertiary">import</span> <span class="text-on-surface">RandomForestRegressor</span></div>
+<div class="code-line"></div>
+<div class="code-line"><span class="text-on-surface-variant"># 🚀 Validación Cruzada 5-Fold Blindada contra Data Leakage</span></div>
+<div class="code-line">model = RandomForestRegressor(n_estimators=<span class="text-primary">150</span>, max_depth=<span class="text-primary">12</span>, random_state=<span class="text-primary">42</span>)</div>
+<div class="code-line">scores = cross_val_score(model, X_train, y_train, cv=<span class="text-primary">5</span>, scoring=<span class="text-tertiary-fixed">'r2'</span>)</div>
+<div class="code-line"></div>
+<div class="code-line"><span class="text-tertiary">print</span>(<span class="text-tertiary-fixed">f"✨ R² Promedio 5-Fold CV: {scores.mean():.4f}"</span>)</div>`,
         output: "✨ R² Promedio 5-Fold CV: 0.8871 (Modelo Validado con Cero Data Leakage)"
       },
       eda: {
-        code: `<span class="code-line"><span class="text-purple-400">import</span> <span class="text-sky-300">pandas</span> <span class="text-purple-400">as</span> <span class="text-sky-300">pd</span></span>
-<span class="code-line"><span class="text-slate-500"># 📊 Diagnóstico Estadístico Inicial & Matriz de Nulos</span></span>
-<span class="code-line">df = pd.read_csv(<span class="text-emerald-300">"melb_data.csv"</span>)</span>
-<span class="code-line">missing_summary = df.isnull().sum()[df.isnull().sum() &gt; <span class="text-amber-400">0</span>]</span>
-<span class="code-line">stats = df[[<span class="text-emerald-300">'Rooms'</span>, <span class="text-emerald-300">'Price'</span>, <span class="text-emerald-300">'Distance'</span>]].describe().T</span>
-<span class="code-line"><span class="text-sky-400">print</span>(<span class="text-emerald-300">f"📈 Total Registros: {len(df):,} | Columnas con Nulos: {len(missing_summary)}"</span>)</span>`,
-        raw: `import pandas as pd
-df = pd.read_csv("melb_data.csv")
-missing_summary = df.isnull().sum()[df.isnull().sum() > 0]
-stats = df[['Rooms', 'Price', 'Distance']].describe().T
-print(f"📈 Total Registros: {len(df):,} | Columnas con Nulos: {len(missing_summary)}")`,
-        output: "📈 Total Registros: 13,580 | Columnas con Nulos: 3 | Diagnóstico Completado"
+        code: `<div class="code-line"><span class="text-tertiary">import</span> <span class="text-on-surface">pandas as pd</span></div>
+<div class="code-line"><span class="text-on-surface-variant"># 📊 Diagnóstico Estadístico Inicial & Matriz de Nulos</span></div>
+<div class="code-line">df = pd.read_csv(<span class="text-emerald-400">"melb_data.csv"</span>)</div>
+<div class="code-line">missing_summary = df.isnull().sum()[df.isnull().sum() &gt; <span class="text-primary">0</span>]</div>
+<div class="code-line">stats = df[[<span class="text-emerald-400">'Rooms'</span>, <span class="text-emerald-400">'Price'</span>, <span class="text-emerald-400">'Distance'</span>]].describe().T</div>
+<div class="code-line"><span class="text-tertiary">print</span>(<span class="text-tertiary-fixed">f"📈 Total Registros: {len(df):,} | Nulos detectados: {len(missing_summary)}"</span>)</div>`,
+        output: "📈 Total Registros: 13,580 | Nulos detectados: 3 | Diagnóstico Completado"
       },
       fe: {
-        code: `<span class="code-line"><span class="text-purple-400">import</span> <span class="text-sky-300">numpy</span> <span class="text-purple-400">as</span> <span class="text-sky-300">np</span>, <span class="text-sky-300">pandas</span> <span class="text-purple-400">as</span> <span class="text-sky-300">pd</span></span>
-<span class="code-line"><span class="text-slate-500"># ⚙️ Target Encoding con Suavizado Bayesiano m-estimate</span></span>
-<span class="code-line"><span class="text-purple-400">def</span> <span class="text-yellow-300">calc_smooth_target</span>(df, cat_col, target_col, weight=<span class="text-amber-400">10</span>):</span>
-<span class="code-line">    global_mean = df[target_col].mean()</span>
-<span class="code-line">    counts = df.groupby(cat_col)[target_col].count()</span>
-<span class="code-line">    means = df.groupby(cat_col)[target_col].mean()</span>
-<span class="code-line">    smooth = (counts * means + weight * global_mean) / (counts + weight)</span>
-<span class="code-line">    <span class="text-purple-400">return</span> df[cat_col].map(smooth)</span>`,
-        raw: `import numpy as np, pandas as pd
-def calc_smooth_target(df, cat_col, target_col, weight=10):
-    global_mean = df[target_col].mean()
-    counts = df.groupby(cat_col)[target_col].count()
-    means = df.groupby(cat_col)[target_col].mean()
-    smooth = (counts * means + weight * global_mean) / (counts + weight)
-    return df[cat_col].map(smooth)`,
+        code: `<div class="code-line"><span class="text-tertiary">import</span> <span class="text-on-surface">numpy as np, pandas as pd</span></div>
+<div class="code-line"><span class="text-on-surface-variant"># ⚙️ Target Encoding con Suavizado Bayesiano m-estimate</span></div>
+<div class="code-line"><span class="text-tertiary">def</span> <span class="text-on-surface">calc_smooth_target</span>(df, cat_col, target_col, weight=<span class="text-primary">10</span>):</div>
+<div class="code-line">    global_mean = df[target_col].mean()</div>
+<div class="code-line">    counts = df.groupby(cat_col)[target_col].count()</div>
+<div class="code-line">    means = df.groupby(cat_col)[target_col].mean()</div>
+<div class="code-line">    smooth = (counts * means + weight * global_mean) / (counts + weight)</div>
+<div class="code-line">    <span class="text-tertiary">return</span> df[cat_col].map(smooth)</div>`,
         output: "⚙️ Target Encoding Regularizado: Reducción de Varianza y Prevención de Overfitting"
       }
     };
@@ -1050,15 +743,15 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       const display = document.getElementById('sandboxCodeDisplay');
       const output = document.getElementById('sandboxOutputText');
       if (display) display.innerHTML = snippet.code;
-      if (output) output.textContent = snippet.output;
+      if (output) output.textContent = `Output: ${snippet.output}`;
 
       ['cv', 'eda', 'fe'].forEach(k => {
         const btn = document.getElementById(`tab-snippet-${k}`);
         if (!btn) return;
         if (k === key) {
-          btn.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono bg-sky-500/20 text-sky-300 border border-sky-500/30';
+          btn.className = 'px-2 py-0.5 rounded text-[10px] font-mono bg-primary/20 text-primary border border-primary/30';
         } else {
-          btn.className = 'px-2.5 py-0.5 rounded text-[11px] font-mono text-slate-400 hover:text-slate-200';
+          btn.className = 'px-2 py-0.5 rounded text-[10px] font-mono text-on-surface-variant hover:text-on-surface';
         }
       });
     }
@@ -1069,67 +762,44 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       const output = document.getElementById('sandboxOutputText');
       if (!btn) return;
 
-      label.textContent = "Ejecutando...";
+      label.textContent = "EJECUTANDO...";
       btn.classList.add('opacity-75', 'animate-pulse');
 
       setTimeout(() => {
         btn.classList.remove('opacity-75', 'animate-pulse');
-        label.textContent = "Ejecutar Simulación";
-        if (output) {
-          const current = SANDBOX_SNIPPETS[currentSnippetKey].output;
-          output.innerHTML = `<span>⚡</span> <span>${current}</span>`;
-        }
+        label.textContent = "EJECUTAR SIMULACIÓN";
+        if (output) output.textContent = `Output: ${SANDBOX_SNIPPETS[currentSnippetKey].output}`;
         showToast("Kernel ejecutó el script con éxito en 42ms ⚡");
-      }, 450);
+      }, 400);
     }
 
-    function copyCurrentSnippet() {
-      const raw = SANDBOX_SNIPPETS[currentSnippetKey].raw;
-      navigator.clipboard.writeText(raw).then(() => {
-        showToast("Código Python copiado al portapapeles 📋");
-      });
-    }
-
-    // Tab Navigation
     function switchTab(tabId) {
       currentTab = tabId;
       const allTabs = ['notebooks', 'guias', 'videos', 'datasets', 'quickstart', 'cheatsheet'];
 
       allTabs.forEach(t => {
         const viewEl = document.getElementById(`view-${t}`);
+        const pillBtn = document.getElementById(`tab-pill-${t}`);
         const navBtn = document.getElementById(`nav-btn-${t}`);
-        const mobTopBtn = document.getElementById(`mob-top-${t}`);
-        const dockBtn = document.getElementById(`dock-${t}`);
 
         if (viewEl) {
+          if (t === tabId) viewEl.classList.remove('hidden');
+          else viewEl.classList.add('hidden');
+        }
+
+        if (pillBtn) {
           if (t === tabId) {
-            viewEl.classList.remove('hidden');
+            pillBtn.className = 'bg-primary/20 text-primary px-3.5 py-1.5 rounded-full font-label-caps text-label-caps border border-primary/30 cursor-pointer hover:bg-primary/30 transition-all flex items-center gap-1.5 shadow-neon-cyan';
           } else {
-            viewEl.classList.add('hidden');
+            pillBtn.className = 'bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5';
           }
         }
 
         if (navBtn) {
           if (t === tabId) {
-            navBtn.className = 'px-3.5 py-1.5 rounded-lg text-white active-tab-glow border border-transparent transition-all whitespace-nowrap flex items-center gap-1.5';
+            navBtn.className = 'font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200';
           } else {
-            navBtn.className = 'px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all whitespace-nowrap flex items-center gap-1.5';
-          }
-        }
-
-        if (mobTopBtn) {
-          if (t === tabId) {
-            mobTopBtn.className = 'px-3 py-1 rounded-lg text-xs font-semibold whitespace-nowrap active-tab-glow border border-transparent';
-          } else {
-            mobTopBtn.className = 'px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap text-slate-400 hover:text-white';
-          }
-        }
-
-        if (dockBtn) {
-          if (t === tabId) {
-            dockBtn.className = 'flex flex-col items-center gap-0.5 p-2 rounded-xl text-sky-400 active:scale-95 transition-all font-bold';
-          } else {
-            dockBtn.className = 'flex flex-col items-center gap-0.5 p-2 rounded-xl text-slate-400 hover:text-white active:scale-95 transition-all';
+            navBtn.className = 'font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2 py-1 rounded';
           }
         }
       });
@@ -1139,21 +809,15 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       if (tabId === 'datasets') renderDatasets();
     }
 
-    function scrollToWorkspace() {
-      const el = document.getElementById('main-workspace');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Render Module Filter Pills
     function renderPills() {
       const container = document.getElementById('modulePillsContainer');
       if (!container || !CATALOG.modules) return;
 
       const totalNotebooks = (CATALOG.notebooks || []).length;
       let html = `
-        <button onclick="filterByModule('all')" class="px-4 py-2 rounded-xl text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-2 ${currentModule === 'all' ? 'bg-sky-500 text-black font-bold shadow-lg shadow-sky-500/20' : 'bg-[#111726] text-slate-300 hover:bg-[#161F33] border border-brand-border'}">
-          <span>🌟 Todos los Módulos</span>
-          <span class="px-1.5 py-0.2 rounded-full text-[10px] ${currentModule === 'all' ? 'bg-black/20 text-black' : 'bg-slate-800 text-slate-400'}">${totalNotebooks}</span>
+        <button onclick="filterByModule('all')" class="px-3 py-1 rounded-full text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-1.5 ${currentModule === 'all' ? 'bg-primary text-on-primary font-bold shadow-neon-cyan' : 'bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant'}">
+          <span>🌟 Todos</span>
+          <span class="px-1.5 py-0.2 rounded-full text-[10px] ${currentModule === 'all' ? 'bg-black/20 text-black' : 'bg-surface-container-high text-on-surface-variant'}">${totalNotebooks}</span>
         </button>
       `;
 
@@ -1161,9 +825,9 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
         const isCurrent = currentModule === m.id;
         const count = (CATALOG.notebooks || []).filter(n => n.module_id === m.id).length;
         html += `
-          <button onclick="filterByModule('${m.id}')" class="px-4 py-2 rounded-xl text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-2 ${isCurrent ? 'bg-sky-500 text-black font-bold shadow-lg shadow-sky-500/20' : 'bg-[#111726] text-slate-300 hover:bg-[#161F33] border border-brand-border'}">
+          <button onclick="filterByModule('${m.id}')" class="px-3 py-1 rounded-full text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-1.5 ${isCurrent ? 'bg-primary text-on-primary font-bold shadow-neon-cyan' : 'bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant'}">
             <span>${m.icon} ${m.name}</span>
-            <span class="px-1.5 py-0.2 rounded-full text-[10px] ${isCurrent ? 'bg-black/20 text-black' : 'bg-slate-800 text-slate-400'}">${count}</span>
+            <span class="px-1.5 py-0.2 rounded-full text-[10px] ${isCurrent ? 'bg-black/20 text-black' : 'bg-surface-container-high text-on-surface-variant'}">${count}</span>
           </button>
         `;
       });
@@ -1177,23 +841,8 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       renderNotebooks();
     }
 
-    function resetFilters() {
-      currentModule = 'all';
-      currentSearch = '';
-      currentDiff = 'all';
-      const searchInput = document.getElementById('searchInput');
-      const diffFilter = document.getElementById('diffFilter');
-      if (searchInput) searchInput.value = '';
-      if (diffFilter) diffFilter.value = 'all';
-      renderPills();
-      renderNotebooks();
-    }
-
-    // Render Notebooks Bento Grid
     function renderNotebooks() {
       const container = document.getElementById('notebooksContainer');
-      const badge = document.getElementById('resultsBadge');
-      const resetBtn = document.getElementById('resetFiltersBtn');
       if (!container || !CATALOG.notebooks) return;
 
       const filtered = (CATALOG.notebooks || []).filter(nb => {
@@ -1209,68 +858,49 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
         return true;
       });
 
-      if (badge) badge.textContent = `${filtered.length} cuadernos encontrados`;
-
-      const hasActiveFilters = currentModule !== 'all' || currentDiff !== 'all' || currentSearch.trim() !== '';
-      if (resetBtn) {
-        if (hasActiveFilters) {
-          resetBtn.classList.remove('hidden');
-        } else {
-          resetBtn.classList.add('hidden');
-        }
-      }
-
       if (filtered.length === 0) {
         container.innerHTML = `
-          <div class="col-span-full py-16 text-center glass-panel rounded-2xl border border-brand-border">
-            <span class="text-4xl mb-3 inline-block">🔍</span>
-            <h3 class="font-heading font-bold text-white text-lg">No se encontraron cuadernos</h3>
-            <p class="text-xs text-slate-400 max-w-sm mx-auto mt-1 mb-4">
-              Prueba con otro término de búsqueda o restablece los filtros para ver todo el catálogo.
-            </p>
-            <button onclick="resetFilters()" class="px-4 py-2 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 text-sky-300 border border-sky-500/40 text-xs font-semibold">
-              Restablecer Filtros
-            </button>
+          <div class="col-span-full py-12 text-center glass-panel rounded-2xl border border-outline-variant">
+            <span class="material-symbols-outlined text-primary text-4xl mb-2">search_off</span>
+            <h3 class="font-headline-md text-on-surface text-base">No se encontraron cuadernos</h3>
+            <p class="text-xs text-on-surface-variant max-w-sm mx-auto mt-1">Prueba con otro término de búsqueda o restablece los filtros.</p>
           </div>
         `;
         return;
       }
 
       container.innerHTML = filtered.map(nb => {
-        let diffColor = 'bg-sky-500/10 text-sky-300 border-sky-500/20';
-        if (nb.difficulty.includes('Básico')) diffColor = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
-        if (nb.difficulty.includes('Avanzado')) diffColor = 'bg-purple-500/10 text-purple-400 border-purple-500/20';
-        if (nb.difficulty.includes('Intermedio')) diffColor = 'bg-amber-500/10 text-amber-400 border-amber-500/20';
+        let diffBadge = 'bg-primary/20 text-primary border-primary/30';
+        if (nb.difficulty.includes('Básico')) diffBadge = 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
+        if (nb.difficulty.includes('Avanzado')) diffBadge = 'bg-error/20 text-error border-error/30';
+        if (nb.difficulty.includes('Intermedio')) diffBadge = 'bg-tertiary/20 text-tertiary border-tertiary/30';
 
         return `
-          <div class="rounded-2xl glass-panel p-5 border border-brand-border hover:border-sky-500/40 transition-all flex flex-col justify-between group hover:-translate-y-1 hover:shadow-xl shadow-sky-500/5">
+          <div class="glass-panel rounded-xl p-5 flex flex-col justify-between gap-4 group hover:-translate-y-1 transition-transform duration-300">
             <div>
-              <div class="flex items-center justify-between gap-2 mb-3">
-                <span class="text-[11px] font-mono text-sky-400 bg-sky-500/10 px-2.5 py-0.5 rounded border border-sky-500/20">
-                  ${nb.module_name}
-                </span>
-                <span class="text-[10px] font-mono font-semibold px-2 py-0.5 rounded border ${diffColor}">
-                  ${nb.difficulty}
-                </span>
+              <div class="flex justify-between items-start mb-2">
+                <div class="flex gap-2">
+                  <span class="bg-[#4d77cf]/20 text-[#4d77cf] border border-[#4d77cf]/30 px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">${nb.module_name}</span>
+                  <span class="${diffBadge} border px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">${nb.difficulty.toUpperCase()}</span>
+                </div>
               </div>
-              <h3 class="font-heading font-bold text-white text-base leading-snug mb-2 group-hover:text-sky-300 transition-colors">
+              <h3 class="font-headline-md text-base text-on-surface group-hover:text-primary transition-colors leading-snug">
                 ${nb.title}
               </h3>
-              <p class="font-mono text-[11px] text-slate-500 truncate mb-4">
-                📁 ${nb.path}
+              <p class="font-code-md text-on-surface-variant text-xs truncate mt-1">
+                ${nb.path}
               </p>
             </div>
-            
-            <div class="pt-3 border-t border-brand-border/60 grid grid-cols-2 gap-2">
-              <a href="${nb.colab_url}" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-semibold text-xs transition-all shadow-md shadow-orange-500/20 active:scale-95">
-                <span>🚀 Colab</span>
+            <div class="mt-auto pt-3 flex items-center justify-between border-t border-outline-variant/50">
+              <a href="${nb.colab_url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-label-caps text-primary hover:text-primary-fixed transition-colors">
+                <span class="material-symbols-outlined text-[16px]">rocket_launch</span> COLAB 1-CLICK
               </a>
-              <div class="flex gap-1">
-                <a href="${nb.github_url}" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-1 py-2.5 px-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-brand-border transition-all active:scale-95" title="Ver código en GitHub">
-                  <span>👁️ Código</span>
+              <div class="flex gap-2">
+                <a href="${nb.github_url}" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary transition-colors" title="Ver Código">
+                  <span class="material-symbols-outlined text-[18px]">visibility</span>
                 </a>
-                <button onclick="copyNotebookLink('${nb.colab_url}')" class="p-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white text-xs border border-brand-border active:scale-95" title="Copiar enlace de Google Colab">
-                  📋
+                <button onclick="copyNotebookLink('${nb.colab_url}')" class="text-on-surface-variant hover:text-primary transition-colors" title="Copiar Enlace Colab">
+                  <span class="material-symbols-outlined text-[18px]">content_copy</span>
                 </button>
               </div>
             </div>
@@ -1285,44 +915,26 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       });
     }
 
-    // Render Guias PDF Viewer
     function renderGuias() {
       const container = document.getElementById('guiasPlaylistContainer');
-      const countBadge = document.getElementById('guiasCountBadge');
-      const navBadge = document.getElementById('nav-guias-count');
       if (!container || !CATALOG.guias) return;
 
       const guiasList = CATALOG.guias;
-      if (countBadge) countBadge.textContent = `${guiasList.length} ${guiasList.length === 1 ? 'guía' : 'guías'}`;
-      if (navBadge) navBadge.textContent = `${guiasList.length}`;
-
       if (guiasList.length === 0) {
-        container.innerHTML = `<div class="p-8 text-center text-slate-500 text-xs font-mono">No hay guías PDF disponibles aún.</div>`;
+        container.innerHTML = `<div class="p-4 text-center text-on-surface-variant text-xs">No hay guías disponibles.</div>`;
         return;
       }
 
-      if (!currentActiveGuiaId) {
-        loadGuia(guiasList[0].id);
-      }
+      if (!currentActiveGuiaId) loadGuia(guiasList[0].id);
 
       container.innerHTML = guiasList.map((g, idx) => {
         const isCurrent = currentActiveGuiaId === g.id;
         return `
-          <div onclick="loadGuia('${g.id}')" class="p-3 rounded-xl border border-brand-border cursor-pointer transition-all hover:bg-slate-800/80 ${isCurrent ? 'active-item-selected' : 'bg-[#07090E]/70'} flex items-start gap-3 group">
-            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 text-xs font-bold font-mono">
-              ${isCurrent ? '📄' : (idx + 1)}
-            </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center justify-between gap-1 mb-0.5">
-                <span class="text-[10px] font-mono text-emerald-400">${g.module}</span>
-                <span class="text-[10px] font-mono text-slate-500">${g.size_str}</span>
-              </div>
-              <h5 class="text-xs font-heading font-semibold text-white truncate group-hover:text-emerald-300">
-                ${g.title}
-              </h5>
-              <div class="flex items-center gap-2 mt-1">
-                <span class="text-[9px] font-mono text-slate-400 truncate">📁 ${g.filename}</span>
-              </div>
+          <div onclick="loadGuia('${g.id}')" class="p-3 rounded-xl border border-outline-variant cursor-pointer transition-all hover:bg-surface-container ${isCurrent ? 'bg-primary/10 border-primary/40' : 'bg-surface-container-low'} flex items-start gap-2.5">
+            <span class="material-symbols-outlined text-primary text-base mt-0.5">description</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-[10px] font-mono text-primary">${g.module}</div>
+              <div class="text-xs font-headline-md text-on-surface truncate">${g.title}</div>
             </div>
           </div>
         `;
@@ -1337,38 +949,24 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       const iframe = document.getElementById('mainPdfViewer');
       const titleEl = document.getElementById('playerPdfTitle');
       const moduleEl = document.getElementById('playerPdfModule');
-      const sizeEl = document.getElementById('playerPdfSize');
       const dlBtn = document.getElementById('playerPdfDownloadBtn');
-      const extBtn = document.getElementById('playerPdfExternalBtn');
 
       const localPath = 'Guias/' + encodeURIComponent(g.filename);
-
       if (iframe) iframe.src = localPath;
       if (titleEl) titleEl.textContent = g.title;
       if (moduleEl) moduleEl.textContent = g.module;
-      if (sizeEl) sizeEl.textContent = g.size_str;
-      if (dlBtn) {
-        dlBtn.href = localPath;
-        dlBtn.setAttribute('download', g.filename);
-      }
-      if (extBtn) extBtn.href = localPath;
+      if (dlBtn) dlBtn.href = localPath;
 
       renderGuias();
     }
 
-    // Render Video Player (Paso 3 Cinema Modes)
     function renderVideos() {
       const container = document.getElementById('videoPlaylistContainer');
-      const countBadge = document.getElementById('playlistCountBadge');
-      const navBadge = document.getElementById('nav-video-count');
       if (!container || !CATALOG.videos) return;
 
       const videoList = CATALOG.videos;
-      if (countBadge) countBadge.textContent = `${videoList.length} ${videoList.length === 1 ? 'video' : 'videos'}`;
-      if (navBadge) navBadge.textContent = `${videoList.length}`;
-
       if (videoList.length === 0) {
-        container.innerHTML = `<div class="p-8 text-center text-slate-500 text-xs font-mono">No hay videos en Contenido/ aún.</div>`;
+        container.innerHTML = `<div class="p-4 text-center text-on-surface-variant text-xs">No hay videos en Contenido/.</div>`;
         return;
       }
 
@@ -1380,160 +978,49 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       container.innerHTML = videoList.map((vid, idx) => {
         const isCurrent = currentPlayingVideoId === vid.id;
         return `
-          <div onclick="selectVideo('${vid.id}')" class="p-3.5 rounded-xl border border-brand-border cursor-pointer transition-all hover:bg-slate-800/90 ${isCurrent ? 'active-item-selected' : 'bg-[#07090E]/70'} flex items-start gap-3 group">
-            <div class="w-9 h-9 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center flex-shrink-0 text-sm font-bold font-mono group-hover:scale-105 transition-transform">
-              ${isCurrent ? '▶️' : (idx + 1)}
-            </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center justify-between gap-1 mb-1">
-                <span class="text-[10px] font-mono text-purple-400">${vid.module}</span>
-                <span class="text-[10px] font-mono text-slate-400">${vid.size_mb} MB</span>
-              </div>
-              <h5 class="text-xs font-heading font-semibold text-white truncate group-hover:text-purple-300">
-                ${vid.title}
-              </h5>
-              <div class="flex items-center gap-2 mt-1">
-                <span class="text-[9px] font-mono text-slate-400 truncate">📁 ${vid.filename}</span>
-              </div>
+          <div onclick="selectVideo('${vid.id}')" class="p-3.5 rounded-xl border border-outline-variant cursor-pointer transition-all hover:bg-surface-container ${isCurrent ? 'bg-primary/10 border-primary/40' : 'bg-surface-container-low'} flex items-start gap-3">
+            <span class="material-symbols-outlined text-purple-400 text-lg mt-0.5">${isCurrent ? 'play_circle' : 'movie'}</span>
+            <div class="min-w-0 flex-1">
+              <div class="text-[10px] font-mono text-purple-400">${vid.module} • ${vid.size_mb} MB</div>
+              <div class="text-xs font-headline-md text-on-surface truncate">${vid.title}</div>
             </div>
           </div>
         `;
       }).join('');
-
-      loadClassNotes();
-    }
-
-    function getVideoUrl(vid) {
-      if (currentVideoMirror === 'lfs' && vid.lfs_url) return vid.lfs_url;
-      return 'Contenido/' + encodeURIComponent(vid.filename);
     }
 
     function setupVideoPlayer(vid) {
       const player = document.getElementById('mainVideoPlayer');
       const titleEl = document.getElementById('playerVideoTitle');
       const moduleEl = document.getElementById('playerVideoModule');
-      const sizeEl = document.getElementById('playerVideoSize');
       const dlBtn = document.getElementById('playerDownloadBtn');
-      const extBtn = document.getElementById('playerVideoExternalBtn');
-      const statusText = document.getElementById('playerStatusText');
 
-      const url = getVideoUrl(vid);
-
+      const url = 'Contenido/' + encodeURIComponent(vid.filename);
       if (titleEl) titleEl.textContent = vid.title;
       if (moduleEl) moduleEl.textContent = vid.module;
-      if (sizeEl) sizeEl.textContent = `${vid.size_mb} MB`;
-      if (dlBtn) {
-        dlBtn.href = url;
-        dlBtn.setAttribute('download', vid.filename);
-      }
-      if (extBtn) extBtn.href = url;
-
+      if (dlBtn) dlBtn.href = url;
       if (player) {
-        player.pause();
         player.src = url;
         player.load();
-        if (statusText) statusText.textContent = 'FastStart Listo';
       }
     }
 
     function selectVideo(vidId) {
       const vid = (CATALOG.videos || []).find(v => v.id === vidId);
       if (!vid) return;
-
       currentPlayingVideoId = vid.id;
       setupVideoPlayer(vid);
-      
-      const player = document.getElementById('mainVideoPlayer');
-      if (player) player.play().catch(e => console.log('Autoplay policy prevented:', e));
       renderVideos();
     }
 
-    function togglePlayPause() {
-      const player = document.getElementById('mainVideoPlayer');
-      const btnText = document.getElementById('playBtnText');
-      const btnIcon = document.getElementById('playBtnIcon');
-      if (!player) return;
-
-      if (player.paused || player.ended) {
-        player.play();
-        if (btnText) btnText.textContent = 'Pausar';
-        if (btnIcon) btnIcon.textContent = '⏸️';
-      } else {
-        player.pause();
-        if (btnText) btnText.textContent = 'Reproducir';
-        if (btnIcon) btnIcon.textContent = '▶️';
-      }
-    }
-
-    function seekVideo(seconds) {
-      const player = document.getElementById('mainVideoPlayer');
-      if (player) {
-        player.currentTime = seconds;
-        player.play();
-        showToast(`Saltando a ${Math.floor(seconds/60)}:${(seconds%60).toString().padStart(2, '0')} ⏱️`);
-      }
-    }
-
-    function setPlaybackSpeed(speed) {
-      const player = document.getElementById('mainVideoPlayer');
-      if (player) {
-        player.playbackRate = speed;
-        showToast(`Velocidad de reproducción: ${speed}x ⚡`);
-      }
-    }
-
-    // Paso 3: Cinema Lighting Ambient Modes
     function setCinemaMode(mode) {
       const container = document.getElementById('cinemaAmbientContainer');
-      const stage = document.getElementById('videoStageBox');
-      const btnNorm = document.getElementById('btnCinemaNormal');
-      const btnAmb = document.getElementById('btnCinemaAmbient');
-      const btnOled = document.getElementById('btnCinemaOled');
-
-      [btnNorm, btnAmb, btnOled].forEach(b => {
-        if (b) b.className = 'px-2.5 py-1 rounded-lg text-[11px] bg-slate-800 border border-brand-border text-slate-400 hover:text-white transition-all';
-      });
-
-      if (mode === 'ambient') {
-        if (container) container.className = 'p-2 sm:p-6 rounded-3xl bg-cinema-ambient cinema-ambient-shadow transition-all duration-500';
-        if (stage) stage.className = 'relative rounded-2xl overflow-hidden cinema-ambient-shadow border border-sky-500/50 bg-black group transition-all duration-500';
-        if (btnAmb) btnAmb.className = 'px-2.5 py-1 rounded-lg text-[11px] bg-purple-500/20 border border-purple-500/40 text-purple-300 transition-all font-semibold';
-        showToast('Modo Cine con Ambient Glow activado 🌌');
-      } else if (mode === 'oled') {
-        if (container) container.className = 'p-2 sm:p-6 rounded-3xl bg-black border border-slate-900 transition-all duration-500';
-        if (stage) stage.className = 'relative rounded-2xl overflow-hidden border border-slate-800 bg-black group transition-all duration-500';
-        if (btnOled) btnOled.className = 'px-2.5 py-1 rounded-lg text-[11px] bg-sky-500/20 border border-sky-500/40 text-sky-300 transition-all font-semibold';
-        showToast('Modo OLED Alto Contraste activado ⚡');
-      } else {
-        if (container) container.className = 'p-2 sm:p-6 rounded-3xl transition-all duration-500';
-        if (stage) stage.className = 'relative rounded-2xl overflow-hidden cinema-shadow border border-slate-700/80 bg-black group transition-all duration-500';
-        if (btnNorm) btnNorm.className = 'px-2.5 py-1 rounded-lg text-[11px] bg-slate-800 border border-brand-border text-sky-400 font-semibold transition-all';
-        showToast('Iluminación Normal activada 💡');
+      if (container) {
+        container.className = 'p-2 sm:p-4 rounded-3xl cinema-ambient-shadow transition-all duration-500';
+        showToast("Modo Cinema Ambient Glow Activado 🌌");
       }
     }
 
-    // Video Class Notepad Local Storage
-    function saveClassNotes() {
-      const notes = document.getElementById('classNotesInput')?.value || '';
-      localStorage.setItem('usta_lab_class_notes', notes);
-    }
-    function loadClassNotes() {
-      const saved = localStorage.getItem('usta_lab_class_notes') || '';
-      const input = document.getElementById('classNotesInput');
-      if (input) input.value = saved;
-    }
-    function clearClassNotes() {
-      if (confirm("¿Deseas borrar tus notas guardadas?")) {
-        localStorage.removeItem('usta_lab_class_notes');
-        const input = document.getElementById('classNotesInput');
-        if (input) input.value = '';
-        showToast("Notas eliminadas");
-      }
-    }
-
-    // =========================================================================
-    // PASO 2: DATA WAREHOUSE & INTERACTIVE DATA EXPLORER MODAL
-    // =========================================================================
     const DATASET_SAMPLES = {
       "Advertising.csv": {
         columns: ["TV", "Radio", "Newspaper", "Sales"],
@@ -1545,31 +1032,7 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
           [151.5, 41.3, 58.5, 18.5],
           [180.8, 10.8, 58.4, 12.9]
         ],
-        problem: "Supervisado (Regresión Lineal Múltiple)"
-      },
-      "melb_data.csv": {
-        columns: ["Rooms", "Type", "Price", "Distance", "Postcode", "Bathroom", "Landsize"],
-        types: ["int64", "object", "float64", "float64", "float64", "float64", "float64"],
-        rows: [
-          [2, "h", 1480000.0, 2.5, 3067.0, 1.0, 202.0],
-          [2, "h", 1035000.0, 2.5, 3067.0, 1.0, 156.0],
-          [3, "h", 1465000.0, 2.5, 3067.0, 2.0, 134.0],
-          [3, "h", 850000.0, 2.5, 3067.0, 2.0, 94.0],
-          [4, "h", 1600000.0, 2.5, 3067.0, 1.0, 120.0]
-        ],
-        problem: "Supervisado (Regresión Inmobiliaria)"
-      },
-      "winequality-red.csv": {
-        columns: ["fixed acidity", "volatile acidity", "citric acid", "residual sugar", "chlorides", "alcohol", "quality"],
-        types: ["float64", "float64", "float64", "float64", "float64", "float64", "int64"],
-        rows: [
-          [7.4, 0.70, 0.00, 1.9, 0.076, 9.4, 5],
-          [7.8, 0.88, 0.00, 2.6, 0.098, 9.8, 5],
-          [7.8, 0.76, 0.04, 2.3, 0.092, 9.8, 5],
-          [11.2, 0.28, 0.56, 1.9, 0.075, 9.8, 6],
-          [7.4, 0.70, 0.00, 1.9, 0.076, 9.4, 5]
-        ],
-        problem: "Supervisado (Clasificación / Regresión Ordinal)"
+        problem: "Supervisado (Regresión Lineal)"
       }
     };
 
@@ -1581,33 +1044,27 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
         const rawDownloadUrl = `https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/${encodeURIComponent(ds.path).replace(/%2F/g, '/')}`;
 
         return `
-          <div class="rounded-2xl glass-panel p-6 border border-brand-border hover:border-sky-500/40 transition-all flex flex-col justify-between group">
+          <div class="glass-panel rounded-2xl p-5 border border-outline-variant flex flex-col justify-between group hover:-translate-y-1 transition-transform">
             <div>
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="font-heading font-bold text-base sm:text-lg text-white flex items-center gap-2">
-                  <span class="text-sky-400">📊</span> ${ds.name}
+              <div class="flex justify-between items-center mb-2">
+                <h3 class="font-headline-md text-base text-on-surface flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-sm">database</span> ${ds.name}
                 </h3>
-                <span class="text-[10px] font-mono bg-sky-500/10 text-sky-300 px-2 py-0.5 rounded border border-sky-500/20">
-                  ${ds.module}
-                </span>
+                <span class="text-[10px] font-mono text-primary bg-primary/10 px-2 py-0.5 rounded border border-primary/20">${ds.module}</span>
               </div>
-              <div class="flex flex-wrap gap-2 text-xs font-mono mb-3">
-                <span class="px-2 py-0.5 rounded bg-[#07090E] text-slate-300 border border-brand-border">📐 ${ds.rows.toLocaleString()} filas</span>
-                <span class="px-2 py-0.5 rounded bg-[#07090E] text-slate-300 border border-brand-border">🔢 ${ds.cols} columnas</span>
-                <span class="px-2 py-0.5 rounded bg-[#07090E] text-amber-300 border border-brand-border">🎯 Target: ${ds.target}</span>
+              <div class="flex flex-wrap gap-2 text-xs font-mono mb-2 text-on-surface-variant">
+                <span>📐 ${ds.rows.toLocaleString()} filas</span>
+                <span>🔢 ${ds.cols} columnas</span>
+                <span class="text-tertiary">🎯 Target: ${ds.target}</span>
               </div>
-              <p class="text-xs text-slate-400 mb-3 leading-relaxed">${ds.description}</p>
-              <div class="text-[11px] font-mono text-slate-500 mb-4 truncate">
-                <b>Predictoras:</b> ${ds.features}
-              </div>
+              <p class="text-xs text-on-surface-variant leading-relaxed mb-3">${ds.description}</p>
             </div>
-
-            <div class="pt-4 border-t border-brand-border/60 flex flex-wrap sm:flex-nowrap gap-2">
-              <button onclick="openDataExplorer('${ds.name}')" class="flex-1 py-2.5 px-3 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 border border-sky-500/40 text-sky-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-sm active:scale-95">
-                <span>🔬 Explorar Datos</span>
+            <div class="pt-3 border-t border-outline-variant flex gap-2">
+              <button onclick="openDataExplorer('${ds.name}')" class="flex-1 py-2 px-3 rounded-lg bg-primary/20 text-primary hover:bg-primary/30 text-xs font-label-caps flex items-center justify-center gap-1 shadow-neon-cyan">
+                <span class="material-symbols-outlined text-sm">analytics</span> Explorar Datos
               </button>
-              <a href="${rawDownloadUrl}" download="${ds.name}" target="_blank" class="py-2.5 px-3 rounded-xl bg-[#07090E] hover:bg-slate-800 border border-brand-border text-slate-300 text-xs font-semibold flex items-center justify-center gap-1.5 transition-all" title="Descargar archivo CSV directamente">
-                <span>📥 CSV</span>
+              <a href="${rawDownloadUrl}" download="${ds.name}" target="_blank" class="py-2 px-3 rounded-lg bg-surface-container hover:bg-surface-bright text-on-surface text-xs font-label-caps border border-outline-variant flex items-center justify-center gap-1">
+                <span class="material-symbols-outlined text-sm">download</span> CSV
               </a>
             </div>
           </div>
@@ -1622,7 +1079,6 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       currentExplorerDataset = ds;
       const modal = document.getElementById('dataExplorerModal');
       const titleEl = document.getElementById('modalDatasetTitle');
-      const moduleEl = document.getElementById('modalDatasetModule');
       const descEl = document.getElementById('modalDatasetDesc');
       const rowsEl = document.getElementById('modalDatasetRows');
       const colsEl = document.getElementById('modalDatasetCols');
@@ -1633,17 +1089,12 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       const rawDownloadUrl = `https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/${encodeURIComponent(ds.path).replace(/%2F/g, '/')}`;
 
       if (titleEl) titleEl.textContent = ds.name;
-      if (moduleEl) moduleEl.textContent = ds.module;
       if (descEl) descEl.textContent = ds.description;
       if (rowsEl) rowsEl.textContent = ds.rows.toLocaleString();
       if (colsEl) colsEl.textContent = ds.cols;
       if (targetEl) targetEl.textContent = ds.target;
-      if (dlBtn) {
-        dlBtn.href = rawDownloadUrl;
-        dlBtn.setAttribute('download', ds.name);
-      }
+      if (dlBtn) dlBtn.href = rawDownloadUrl;
 
-      // Generate table preview
       const sample = DATASET_SAMPLES[ds.name] || {
         columns: ds.features.split(',').map(s => s.trim()).slice(0, 4).concat([ds.target]),
         types: ["float64", "float64", "int64", "object", "float64"],
@@ -1654,47 +1105,40 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
           [18.7, 42.0, 110, "Clase C", 0.81],
           [14.2, 36.5, 104, "Clase B", 0.69]
         ],
-        problem: "Supervisado / EDA"
+        problem: "Supervisado"
       };
 
       document.getElementById('modalDatasetType').textContent = sample.problem || "Supervisado";
 
       let tableHtml = `
         <thead>
-          <tr class="bg-slate-900 border-b border-brand-border">
+          <tr class="bg-surface-container border-b border-outline-variant">
             ${sample.columns.map((c, i) => `
-              <th class="p-3 text-slate-300 font-semibold">
+              <th class="p-2.5 text-on-surface font-semibold">
                 <div>${c}</div>
-                <span class="text-[9px] text-sky-400 font-normal">${sample.types[i] || 'float64'}</span>
+                <span class="text-[9px] text-primary font-normal">${sample.types[i] || 'float64'}</span>
               </th>
             `).join('')}
           </tr>
         </thead>
-        <tbody class="divide-y divide-brand-border/40">
+        <tbody class="divide-y divide-outline-variant/40">
           ${sample.rows.map(r => `
-            <tr class="hover:bg-slate-800/50 transition-colors">
-              ${r.map(val => `<td class="p-3 text-slate-300">${val}</td>`).join('')}
+            <tr class="hover:bg-surface-container/50">
+              ${r.map(val => `<td class="p-2.5 text-on-surface-variant">${val}</td>`).join('')}
             </tr>
           `).join('')}
         </tbody>
       `;
 
       if (tableEl) tableEl.innerHTML = tableHtml;
-
       setExportFramework('pandas');
 
-      if (modal) {
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      }
+      if (modal) modal.classList.remove('hidden'), modal.classList.add('flex');
     }
 
     function closeDataExplorer() {
       const modal = document.getElementById('dataExplorerModal');
-      if (modal) {
-        modal.classList.remove('flex');
-        modal.classList.add('hidden');
-      }
+      if (modal) modal.classList.remove('flex'), modal.classList.add('hidden');
     }
 
     function setExportFramework(fw) {
@@ -1704,16 +1148,10 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
 
       const rawUrl = `https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/${encodeURIComponent(currentExplorerDataset.path).replace(/%2F/g, '/')}`;
 
-      let code = '';
-      if (fw === 'pandas') {
-        code = `import pandas as pd\ndf = pd.read_csv("${rawUrl}")`;
-      } else if (fw === 'polars') {
-        code = `import polars as pl\ndf = pl.read_csv("${rawUrl}")`;
-      } else if (fw === 'duckdb') {
-        code = `import duckdb\nrel = duckdb.read_csv("${rawUrl}")`;
-      } else if (fw === 'pyspark') {
-        code = `from pyspark.sql import SparkSession\nspark = SparkSession.builder.getOrCreate()\ndf = spark.read.csv("${rawUrl}", header=True, inferSchema=True)`;
-      }
+      let code = `import pandas as pd\ndf = pd.read_csv("${rawUrl}")`;
+      if (fw === 'polars') code = `import polars as pl\ndf = pl.read_csv("${rawUrl}")`;
+      if (fw === 'duckdb') code = `import duckdb\nrel = duckdb.read_csv("${rawUrl}")`;
+      if (fw === 'pyspark') code = `from pyspark.sql import SparkSession\nspark = SparkSession.builder.getOrCreate()\ndf = spark.read.csv("${rawUrl}", header=True, inferSchema=True)`;
 
       if (display) display.textContent = code;
 
@@ -1721,9 +1159,9 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
         const btn = document.getElementById(`tab-exp-${k}`);
         if (!btn) return;
         if (k === fw) {
-          btn.className = 'px-2.5 py-1 rounded-lg text-[10px] font-mono bg-sky-500/20 text-sky-300 border border-sky-500/30 font-semibold';
+          btn.className = 'px-2 py-0.5 rounded text-[10px] font-mono bg-primary/20 text-primary border border-primary/30';
         } else {
-          btn.className = 'px-2.5 py-1 rounded-lg text-[10px] font-mono text-slate-400 hover:text-slate-200';
+          btn.className = 'px-2 py-0.5 rounded text-[10px] font-mono text-on-surface-variant hover:text-on-surface';
         }
       });
     }
@@ -1737,115 +1175,62 @@ def calc_smooth_target(df, cat_col, target_col, weight=10):
       }
     }
 
-    // Helper Copy Functions
-    function copySnippet(text, message) {
-      navigator.clipboard.writeText(text).then(() => {
-        showToast(message || 'Copiado al portapapeles 📋');
-      });
-    }
-
-    function copyCloneCommand() {
-      navigator.clipboard.writeText('git clone https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository.git').then(() => {
-        showToast('Comando git clone copiado al portapapeles 🚀');
-      });
-    }
-
-    function copyFullSetupSnippet() {
-      const fullCmd = `git clone https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository.git
-cd Data-Science-Programming---USTA-Tunja-Repository
-python -m venv venv
-# En Windows: venv\\Scripts\\activate | En macOS/Linux: source venv/bin/activate
-pip install numpy pandas matplotlib seaborn scikit-learn statsmodels jupyterlab
-jupyter lab`;
-      navigator.clipboard.writeText(fullCmd).then(() => {
-        showToast('Guía de comandos completa copiada 🚀');
-      });
-    }
-
-    function focusGlobalSearch() {
-      switchTab('notebooks');
-      const searchInput = document.getElementById('searchInput');
-      if (searchInput) {
-        searchInput.focus();
-        searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-
-    // Floating Toast Notification
     function showToast(msg) {
       const existing = document.getElementById('app-toast');
       if (existing) existing.remove();
 
       let toast = document.createElement('div');
       toast.id = 'app-toast';
-      toast.className = 'fixed bottom-16 md:bottom-6 right-4 md:right-6 z-50 px-4 py-3 rounded-2xl bg-slate-900/95 text-white font-mono text-xs border border-sky-500/40 shadow-2xl flex items-center gap-2.5 backdrop-blur-xl animate-bounce';
-      toast.innerHTML = `<span>⚡</span> <span>${msg}</span>`;
+      toast.className = 'fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-surface-container-highest text-on-surface font-mono text-xs border border-primary/40 shadow-neon-cyan flex items-center gap-2 backdrop-blur-xl';
+      toast.innerHTML = `<span class="material-symbols-outlined text-primary text-sm">bolt</span> <span>${msg}</span>`;
       document.body.appendChild(toast);
-      setTimeout(() => {
-        if (toast) toast.remove();
-      }, 3200);
+      setTimeout(() => { if (toast) toast.remove(); }, 3000);
     }
 
-    // Theme Management (Dark / Light)
     function toggleTheme() {
       const html = document.documentElement;
       const isDark = html.classList.contains('dark');
       const themeIcon = document.getElementById('themeIcon');
+      const shaderWrapper = document.getElementById('ambientShaderWrapper');
       
       if (isDark) {
         html.classList.remove('dark');
         localStorage.setItem('usta_theme', 'light');
-        if (themeIcon) themeIcon.textContent = '☀️';
+        if (themeIcon) themeIcon.textContent = 'light_mode';
+        if (shaderWrapper) shaderWrapper.style.opacity = '0.08';
         showToast('Modo Claro activado ☀️');
       } else {
         html.classList.add('dark');
         localStorage.setItem('usta_theme', 'dark');
-        if (themeIcon) themeIcon.textContent = '🌙';
+        if (themeIcon) themeIcon.textContent = 'dark_mode';
+        if (shaderWrapper) shaderWrapper.style.opacity = '0.40';
         showToast('Modo Oscuro activado 🌙');
       }
     }
 
-    // Init Theme Preference
     (function initTheme() {
       const saved = localStorage.getItem('usta_theme');
       const themeIcon = document.getElementById('themeIcon');
+      const shaderWrapper = document.getElementById('ambientShaderWrapper');
       if (saved === 'light') {
         document.documentElement.classList.remove('dark');
-        if (themeIcon) themeIcon.textContent = '☀️';
+        if (themeIcon) themeIcon.textContent = 'light_mode';
+        if (shaderWrapper) shaderWrapper.style.opacity = '0.08';
       } else {
         document.documentElement.classList.add('dark');
-        if (themeIcon) themeIcon.textContent = '🌙';
+        if (themeIcon) themeIcon.textContent = 'dark_mode';
+        if (shaderWrapper) shaderWrapper.style.opacity = '0.40';
       }
     })();
 
-    // Main Init
     document.addEventListener('DOMContentLoaded', () => {
       setSandboxSnippet('cv');
       renderPills();
       renderNotebooks();
 
-      const videoPlayer = document.getElementById('mainVideoPlayer');
-      if (videoPlayer) {
-        videoPlayer.addEventListener('play', () => {
-          const btnText = document.getElementById('playBtnText');
-          const btnIcon = document.getElementById('playBtnIcon');
-          const statusText = document.getElementById('playerStatusText');
-          if (btnText) btnText.textContent = 'Pausar';
-          if (btnIcon) btnIcon.textContent = '⏸️';
-          if (statusText) statusText.textContent = 'Reproduciendo ● 1080p';
-        });
-        videoPlayer.addEventListener('pause', () => {
-          const btnText = document.getElementById('playBtnText');
-          const btnIcon = document.getElementById('playBtnIcon');
-          const statusText = document.getElementById('playerStatusText');
-          if (btnText) btnText.textContent = 'Reproducir';
-          if (btnIcon) btnIcon.textContent = '▶️';
-          if (statusText) statusText.textContent = 'En Pausa';
-        });
-      }
-
-      document.getElementById('searchInput')?.addEventListener('input', (e) => {
+      document.getElementById('navSearchInput')?.addEventListener('input', (e) => {
         currentSearch = e.target.value;
+        switchTab('notebooks');
         renderNotebooks();
       });
 
@@ -1854,40 +1239,17 @@ jupyter lab`;
         renderNotebooks();
       });
 
-      // Keyboard Shortcuts
       document.addEventListener('keydown', (e) => {
-        if (e.key === '/' && document.activeElement !== document.getElementById('searchInput')) {
+        if (e.key === '/' && document.activeElement !== document.getElementById('navSearchInput')) {
           e.preventDefault();
-          focusGlobalSearch();
+          const searchInput = document.getElementById('navSearchInput');
+          if (searchInput) {
+            searchInput.focus();
+            switchTab('notebooks');
+          }
         }
         if (e.key === 'Escape') {
           closeDataExplorer();
-          if (document.activeElement === document.getElementById('searchInput')) {
-            resetFilters();
-            document.getElementById('searchInput')?.blur();
-          }
-        }
-        if (currentTab === 'videos') {
-          if (e.key === ' ' && document.activeElement !== document.getElementById('classNotesInput')) {
-            e.preventDefault();
-            togglePlayPause();
-          }
-          if (e.key.toLowerCase() === 'f' && document.activeElement !== document.getElementById('classNotesInput')) {
-            e.preventDefault();
-            const player = document.getElementById('mainVideoPlayer');
-            if (player) {
-              if (document.fullscreenElement) document.exitFullscreen();
-              else player.requestFullscreen();
-            }
-          }
-          if (e.key.toLowerCase() === 'j' && document.activeElement !== document.getElementById('classNotesInput')) {
-            const player = document.getElementById('mainVideoPlayer');
-            if (player) player.currentTime = Math.max(0, player.currentTime - 10);
-          }
-          if (e.key.toLowerCase() === 'l' && document.activeElement !== document.getElementById('classNotesInput')) {
-            const player = document.getElementById('mainVideoPlayer');
-            if (player) player.currentTime = Math.min(player.duration, player.currentTime + 10);
-          }
         }
       });
     });
