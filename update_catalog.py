@@ -106,11 +106,24 @@ PALETTE = [
     {"icon": "🌐", "color": "#14B8A6"}
 ]
 
+KNOWN_TITLES = {
+    "Instalacion Python_compressed.mp4": "Instalación y Configuración de Python",
+    "Creacion de Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
+    "Creacion_Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
+    "Instalación_Python.pdf": "Guía de Instalación y Configuración de Python",
+    "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)"
+}
+
 def format_title(filename):
-    clean = filename.replace(".ipynb", "").replace(".pdf", "").replace(".mp4", "")
+    for k, v in KNOWN_TITLES.items():
+        if k.lower() == filename.lower():
+            return v
+    clean = filename.replace(".ipynb", "").replace(".pdf", "").replace(".mp4", "").replace(".mkv", "").replace(".webm", "")
     clean = re.sub(r'^\d+[a-z]?_', '', clean)
     clean = clean.replace("_compressed", "").replace("_", " ").replace("-", " ")
-    return clean.strip().capitalize()
+    words = clean.strip().split()
+    capitalized = " ".join(w.capitalize() if len(w) > 2 else w.lower() for w in words)
+    return capitalized.capitalize()
 
 def infer_difficulty(title, path):
     text = f"{title} {path}".lower()
@@ -139,7 +152,7 @@ def scan_modules():
     existing_ids = {m["id"] for m in modules}
 
     for item in sorted(BASE_DIR.iterdir()):
-        if item.is_dir():
+        if item.is_dir() and not item.name.startswith("."):
             match = re.match(r'^(\d{2})\s*-\s*(.+)$', item.name)
             if match:
                 mod_id = match.group(1)
@@ -159,7 +172,6 @@ def scan_modules():
 def scan_notebooks(modules):
     notebooks = []
     
-    # 1. Escanear carpetas de módulos
     for mod in modules:
         mod_dir = BASE_DIR / mod["name"]
         if mod_dir.exists() and mod_dir.is_dir():
@@ -192,14 +204,18 @@ def scan_datasets():
     seen = set()
 
     for data_dir in BASE_DIR.rglob("data"):
-        if data_dir.is_dir() and ".git" not in str(data_dir):
+        # Ignorar carpetas ocultas, .agents, docs, .git
+        rel_to_base = str(data_dir.relative_to(BASE_DIR))
+        if any(part.startswith(".") or part in ["docs", "tmp", "node_modules"] for part in data_dir.parts):
+            continue
+
+        if data_dir.is_dir():
             parent_name = data_dir.parent.name
             for csv_file in sorted(data_dir.glob("*.csv")):
                 if csv_file.name in seen:
                     continue
                 seen.add(csv_file.name)
 
-                # Intentar leer filas y columnas
                 rows_count = 100
                 cols_count = 5
                 headers = []
@@ -242,8 +258,7 @@ def scan_guias():
         for f in sorted(guias_dir.glob("*.pdf")):
             size_kb = round(f.stat().st_size / 1024)
             size_str = f"{size_kb} KB" if size_kb < 1024 else f"{size_kb/1024:.1f} MB"
-            clean_title = format_title(f.name)
-            title = clean_title if clean_title.lower().startswith("guía") or clean_title.lower().startswith("guia") else f"Guía de {clean_title}"
+            title = format_title(f.name)
             encoded_name = urllib.parse.quote(f.name)
 
             guias.append({
@@ -271,13 +286,13 @@ def scan_videos():
         for f in sorted(video_dir.iterdir()):
             if f.is_file() and f.suffix.lower() in video_exts:
                 size_mb = round(f.stat().st_size / (1024 * 1024), 1)
-                clean_title = format_title(f.name)
+                title = format_title(f.name)
                 encoded_name = urllib.parse.quote(f.name)
 
                 videos.append({
                     "id": f"vid_{idx}",
                     "filename": f.name,
-                    "title": clean_title,
+                    "title": title,
                     "module": "🐍 Módulo 01: Python",
                     "size_mb": size_mb,
                     "path": f"Contenido/{f.name}",
@@ -313,7 +328,7 @@ def rebuild_catalog_js():
         "guias": guias
     }
 
-    js_content = f"// Virtual Laboratory Catalog Database - Auto-generated\nconst VIRTUAL_LAB_CATALOG = {json.dumps(catalog_data, indent=2, ensure_ascii=False)};\n"
+    js_content = f"// Virtual Laboratory Catalog Database - Auto-generated\nwindow.VIRTUAL_LAB_CATALOG = {json.dumps(catalog_data, indent=2, ensure_ascii=False)};\nvar VIRTUAL_LAB_CATALOG = window.VIRTUAL_LAB_CATALOG;\n"
     CATALOG_JS_PATH.write_text(js_content, encoding="utf-8")
     
     print(f"✅ Catálogo reconstruido exitosamente en docs/assets/js/catalog.js:")

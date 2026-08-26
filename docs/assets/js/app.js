@@ -164,17 +164,17 @@
 
       if (pillBtn) {
         if (t === tabId) {
-          pillBtn.className = 'bg-primary/20 text-primary px-3.5 py-1.5 rounded-full font-label-caps text-label-caps border border-primary/30 cursor-pointer hover:bg-primary/30 transition-all flex items-center gap-1.5 shadow-neon-cyan';
+          pillBtn.className = 'bg-primary/20 text-primary px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap border border-primary/30 cursor-pointer hover:bg-primary/30 transition-all flex items-center gap-1.5 shadow-neon-cyan shrink-0';
         } else {
-          pillBtn.className = 'bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5';
+          pillBtn.className = 'bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5 shrink-0';
         }
       }
 
       if (navBtn) {
         if (t === tabId) {
-          navBtn.className = 'font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200 flex items-center gap-1';
+          navBtn.className = 'font-label-caps text-xs whitespace-nowrap text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200 flex items-center gap-1.5 shrink-0';
         } else {
-          navBtn.className = 'font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2 py-1 rounded flex items-center gap-1';
+          navBtn.className = 'font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2.5 py-1 rounded flex items-center gap-1.5 shrink-0';
         }
       }
     });

@@ -25,7 +25,18 @@
     { icon: "📝", color: "#DC2626" }
   ];
 
+  const KNOWN_TITLES = {
+    "Instalacion Python_compressed.mp4": "Instalación y Configuración de Python",
+    "Creacion de Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
+    "Creacion_Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
+    "Instalación_Python.pdf": "Guía de Instalación y Configuración de Python",
+    "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)"
+  };
+
   function formatTitle(str) {
+    for (const [k, v] of Object.entries(KNOWN_TITLES)) {
+      if (k.toLowerCase() === str.toLowerCase()) return v;
+    }
     let clean = str
       .replace(/\.[^/.]+$/, '')
       .replace(/^\d+[a-z]?_/, '')
@@ -34,7 +45,9 @@
       .trim();
     
     // Capitalización de palabras
-    return clean.charAt(0).toUpperCase() + clean.slice(1);
+    const words = clean.split(' ');
+    const capitalized = words.map(w => w.length > 2 ? w.charAt(0).toUpperCase() + w.slice(1) : w.toLowerCase()).join(' ');
+    return capitalized.charAt(0).toUpperCase() + capitalized.slice(1);
   }
 
   function inferDifficulty(title, path) {
@@ -46,6 +59,14 @@
       return "Avanzado";
     }
     return "Intermedio";
+  }
+
+  function normalizeKey(str) {
+    return (str || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[\s_\-\.]+/g, '');
   }
 
   async function fetchRepoTree() {
@@ -108,7 +129,6 @@
     let newModules = 0;
 
     // A. Detectar Módulos y Carpetas de la forma "XX - Nombre" o "homeworks"
-    const modulePaths = new Set();
     tree.forEach(item => {
       if (item.type === 'tree') {
         const match = item.path.match(/^(\d{2})\s*-\s*(.+)$/);
@@ -137,10 +157,13 @@
         const pathParts = item.path.split('/');
         const filename = pathParts[pathParts.length - 1];
         
-        // Excluir notebooks en carpetas temporales
-        if (item.path.startsWith('tmp/') || item.path.startsWith('.gemini/')) return;
+        // Excluir notebooks en carpetas temporales o internas
+        if (item.path.startsWith('tmp/') || item.path.startsWith('.gemini/') || item.path.startsWith('.agents/')) return;
 
-        const exists = cat.notebooks.some(n => n.path === item.path || n.filename === filename);
+        const exists = cat.notebooks.some(n => 
+          normalizeKey(n.path) === normalizeKey(item.path) || 
+          normalizeKey(n.filename) === normalizeKey(filename)
+        );
         if (!exists) {
           let moduleId = "01";
           let moduleName = "01 - Python";
@@ -178,13 +201,17 @@
       }
     });
 
-    // C. Detectar Datasets (.csv) en data/
+    // C. Detectar Datasets (.csv, .parquet) en data/
     tree.forEach(item => {
       if (item.type === 'blob' && (item.path.endsWith('.csv') || item.path.endsWith('.parquet'))) {
+        if (item.path.startsWith('.agents/') || item.path.startsWith('.git/') || item.path.startsWith('docs/')) return;
         const pathParts = item.path.split('/');
         const filename = pathParts[pathParts.length - 1];
         
-        const exists = cat.datasets.some(d => d.path === item.path || d.name === filename);
+        const exists = cat.datasets.some(d => 
+          normalizeKey(d.path) === normalizeKey(item.path) || 
+          normalizeKey(d.name) === normalizeKey(filename)
+        );
         if (!exists) {
           let moduleName = "General";
           const modMatch = item.path.match(/^(\d{2}\s*-\s*[^/]+)/);
@@ -212,18 +239,21 @@
         const pathParts = item.path.split('/');
         const filename = pathParts[pathParts.length - 1];
 
-        const exists = cat.guias.some(g => g.filename === filename);
+        const exists = cat.guias.some(g => 
+          normalizeKey(g.filename) === normalizeKey(filename) || 
+          normalizeKey(g.path) === normalizeKey(item.path) ||
+          normalizeKey(g.title) === normalizeKey(formatTitle(filename))
+        );
         if (!exists) {
           const sizeKb = Math.round((item.size || 200000) / 1024);
           const sizeStr = sizeKb < 1024 ? `${sizeKb} KB` : `${(sizeKb/1024).toFixed(1)} MB`;
           const cleanTitle = formatTitle(filename);
-          const title = cleanTitle.toLowerCase().startsWith('guia') ? cleanTitle : `Guía de ${cleanTitle}`;
           const encodedName = encodeURIComponent(filename);
 
           cat.guias.push({
             id: `guia_discovered_${cat.guias.length + 1}`,
             filename: filename,
-            title: title,
+            title: cleanTitle,
             module: "🐍 Módulo 01: Python",
             size_str: sizeStr,
             path: `Guias/${filename}`,
@@ -243,7 +273,11 @@
         const pathParts = item.path.split('/');
         const filename = pathParts[pathParts.length - 1];
 
-        const exists = cat.videos.some(v => v.filename === filename);
+        const exists = cat.videos.some(v => 
+          normalizeKey(v.filename) === normalizeKey(filename) || 
+          normalizeKey(v.path) === normalizeKey(item.path) ||
+          normalizeKey(v.title) === normalizeKey(formatTitle(filename))
+        );
         if (!exists) {
           const sizeMb = ((item.size || 35000000) / (1024 * 1024)).toFixed(1);
           const cleanTitle = formatTitle(filename);

@@ -1,5 +1,5 @@
 // Virtual Laboratory Catalog Database - Auto-generated
-const VIRTUAL_LAB_CATALOG = {
+window.VIRTUAL_LAB_CATALOG = {
   "modules": [
     {
       "id": "01",
@@ -892,153 +892,32 @@ const VIRTUAL_LAB_CATALOG = {
       "features": "season, month, holiday, day_of_week, workingday",
       "description": "Dataset de práctica para 07 - Regression.",
       "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/07%20-%20Regression/data/bikeshare.csv')"
-    },
-    {
-      "name": "charts.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/charts.csv",
-      "rows": 26,
-      "cols": 10,
-      "target": "Interactive Level",
-      "features": "No, Data Type, Keywords, Best Chart Type, Secondary Options",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/charts.csv')"
-    },
-    {
-      "name": "colors.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/colors.csv",
-      "rows": 97,
-      "cols": 9,
-      "target": "Notes",
-      "features": "No, Product Type, Primary (Hex), Secondary (Hex), CTA (Hex)",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/colors.csv')"
-    },
-    {
-      "name": "icons.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/icons.csv",
-      "rows": 101,
-      "cols": 9,
-      "target": "Style",
-      "features": "No, Category, Icon Name, Keywords, Library",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/icons.csv')"
-    },
-    {
-      "name": "landing.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/landing.csv",
-      "rows": 28,
-      "cols": 8,
-      "target": "Conversion Optimization",
-      "features": "No, Pattern Name, Keywords, Section Order, Primary CTA Placement",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/landing.csv')"
-    },
-    {
-      "name": "products.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/products.csv",
-      "rows": 97,
-      "cols": 9,
-      "target": "Key Considerations",
-      "features": "No, Product Type, Keywords, Primary Style Recommendation, Secondary Styles",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/products.csv')"
-    },
-    {
-      "name": "react-performance.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/react-performance.csv",
-      "rows": 45,
-      "cols": 11,
-      "target": "Severity",
-      "features": "No, Category, Issue, Keywords, Platform",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/react-performance.csv')"
-    },
-    {
-      "name": "styles.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/styles.csv",
-      "rows": 68,
-      "cols": 22,
-      "target": "Design System Variables",
-      "features": "No, Style Category, Type, Keywords, Primary Colors",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/styles.csv')"
-    },
-    {
-      "name": "typography.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/typography.csv",
-      "rows": 58,
-      "cols": 11,
-      "target": "Notes",
-      "features": "No, Font Pairing Name, Category, Heading Font, Body Font",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/typography.csv')"
-    },
-    {
-      "name": "ui-reasoning.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/ui-reasoning.csv",
-      "rows": 101,
-      "cols": 10,
-      "target": "Severity",
-      "features": "No, UI_Category, Recommended_Pattern, Style_Priority, Color_Mood",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/ui-reasoning.csv')"
-    },
-    {
-      "name": "ux-guidelines.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/ux-guidelines.csv",
-      "rows": 100,
-      "cols": 10,
-      "target": "Severity",
-      "features": "No, Category, Issue, Platform, Description",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/ux-guidelines.csv')"
-    },
-    {
-      "name": "web-interface.csv",
-      "module": "ui-ux-pro-max",
-      "path": "ui-ux-pro-max/data/web-interface.csv",
-      "rows": 31,
-      "cols": 11,
-      "target": "Severity",
-      "features": "No, Category, Issue, Keywords, Platform",
-      "description": "Dataset de práctica para ui-ux-pro-max.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/ui-ux-pro-max/data/web-interface.csv')"
     }
   ],
   "stats": {
     "total_notebooks": 54,
     "total_modules": 7,
     "total_homeworks": 6,
-    "total_datasets": 27,
+    "total_datasets": 16,
     "total_guias": 2,
     "total_videos": 2
   },
   "videos": [
     {
       "id": "vid_1",
-      "filename": "Creacion de Venv.mp4",
-      "title": "Creacion de venv",
+      "filename": "Creacion_Venv.mp4",
+      "title": "Creación y Gestión de Entornos Virtuales (VENV)",
       "module": "🐍 Módulo 01: Python",
       "size_mb": 34.4,
-      "path": "Contenido/Creacion de Venv.mp4",
-      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion%20de%20Venv.mp4",
-      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion%20de%20Venv.mp4",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion%20de%20Venv.mp4"
+      "path": "Contenido/Creacion_Venv.mp4",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
     },
     {
       "id": "vid_2",
       "filename": "Instalacion Python_compressed.mp4",
-      "title": "Instalacion python",
+      "title": "Instalación y Configuración de Python",
       "module": "🐍 Módulo 01: Python",
       "size_mb": 54.5,
       "path": "Contenido/Instalacion Python_compressed.mp4",
@@ -1051,7 +930,7 @@ const VIRTUAL_LAB_CATALOG = {
     {
       "id": "guia_1",
       "filename": "Creacion_VENV.pdf",
-      "title": "Guía de Creacion venv",
+      "title": "Guía de Creación de Entornos Virtuales (VENV)",
       "module": "🐍 Módulo 01: Python",
       "size_str": "179 KB",
       "path": "Guias/Creacion_VENV.pdf",
@@ -1061,7 +940,7 @@ const VIRTUAL_LAB_CATALOG = {
     {
       "id": "guia_2",
       "filename": "Instalación_Python.pdf",
-      "title": "Guía de Instalación python",
+      "title": "Guía de Instalación y Configuración de Python",
       "module": "🐍 Módulo 01: Python",
       "size_str": "878 KB",
       "path": "Guias/Instalación_Python.pdf",
@@ -1070,3 +949,4 @@ const VIRTUAL_LAB_CATALOG = {
     }
   ]
 };
+var VIRTUAL_LAB_CATALOG = window.VIRTUAL_LAB_CATALOG;
