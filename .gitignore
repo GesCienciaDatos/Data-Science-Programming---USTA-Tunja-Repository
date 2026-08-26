@@ -1,0 +1,166 @@
+# ==============================================================================
+# .gitignore — Python Data Science & Virtual Lab Repository (USTA Tunja)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Python Bytecode & Runtime Caches
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ------------------------------------------------------------------------------
+# 2. Virtual Environments & Package Managers
+# ------------------------------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+conda-env/
+pip-log.txt
+pip-delete-this-directory.txt
+.pdm-build/
+.uv/
+
+# ------------------------------------------------------------------------------
+# 3. Jupyter Notebooks & Checkpoints
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+*/.virtual_documents/*
+.virtual_documents/
+*.nbconvert.ipynb
+
+# ------------------------------------------------------------------------------
+# 4. Data Science Models, Temp Caches & Profiling
+# ------------------------------------------------------------------------------
+*.joblib
+*.pkl.tmp
+*.h5.tmp
+.dvc/
+.dvc/cache/
+.dvc/tmp/
+mlruns/
+.mlflow/
+wandb/
+
+# ------------------------------------------------------------------------------
+# 5. Testing, Code Coverage & Linting
+# ------------------------------------------------------------------------------
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+htmlcov/
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+# ------------------------------------------------------------------------------
+# 6. IDEs, Text Editors & Operating System Files
+# ------------------------------------------------------------------------------
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+.history/
+
+# PyCharm / IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Other Editors
+*.swp
+*.swo
+*~
+*.bak
+
+# ------------------------------------------------------------------------------
+# 7. Environment Variables, Secrets & Credentials
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+secrets.json
+credentials.json
+*.pem
+*.key
+*.cert
+
+# ------------------------------------------------------------------------------
+# 8. Temporary Logs & Scratch Files
+# ------------------------------------------------------------------------------
+*.log
+*.tmp
+tmp/
+temp/
+scratch/
+.gemini/
+
+# ------------------------------------------------------------------------------
+# 9. AI Assistants, Agents & Prompt Activation Files
+# ------------------------------------------------------------------------------
+.agents/
+.claude/
+.factory/
+.shared/
+UX_UI_SUPREME_ARCHITECT.md
+*UX_UI*.md
+design-system/
+
