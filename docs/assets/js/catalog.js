@@ -1,5 +1,1556 @@
-// Virtual Laboratory Catalog Database - Auto-generated
+// Virtual Laboratory Catalog Database - Auto-generated Multi-Course Architecture
 window.VIRTUAL_LAB_CATALOG = {
+  "active_course_id": "data-science-programming",
+  "courses": [
+    {
+      "id": "data-science-programming",
+      "name": "Data Science Programming",
+      "title": "Programación para Ciencia de Datos",
+      "folder": "Data Science programming",
+      "icon": "🐍",
+      "badge": "Activo / Disponible",
+      "badge_color": "emerald",
+      "color": "#38bdf8",
+      "gradient": "from-sky-500/20 via-blue-600/10 to-transparent",
+      "border_glow": "border-sky-500/40",
+      "description": "Pensamiento computacional avanzado, NumPy, Pandas, Análisis Exploratorio de Datos (EDA), Limpieza e Imputación, Feature Engineering regularizado y Modelos de Regresión supervisados.",
+      "level": "Especialización",
+      "semester": "Semestre I",
+      "active": true,
+      "modules": [
+        {
+          "id": "01",
+          "name": "01 - Python",
+          "title": "Fundamentos de Programación en Python",
+          "icon": "🐍",
+          "color": "#3776AB",
+          "description": "Pensamiento algorítmico, tipos primitivos, colecciones, control de flujo, funciones, POO y modularización."
+        },
+        {
+          "id": "02",
+          "name": "02 - Numpy",
+          "title": "Computación Científica con NumPy",
+          "icon": "🔢",
+          "color": "#013243",
+          "description": "Arreglos ndarray, operaciones vectorizadas, funciones universales (ufuncs), indexación, slicing y broadcasting."
+        },
+        {
+          "id": "03",
+          "name": "03 - Pandas",
+          "title": "Manipulación Tabular con Pandas",
+          "icon": "🐼",
+          "color": "#150458",
+          "description": "Series, DataFrames, operaciones de entrada/salida, transformaciones, agregaciones con groupby y merge/join."
+        },
+        {
+          "id": "04",
+          "name": "04 - EDA",
+          "title": "Análisis Exploratorio de Datos (EDA)",
+          "icon": "📊",
+          "color": "#388E3C",
+          "description": "Estadística descriptiva, cuarteto de Anscombe, visualización univariada y bivariada con Matplotlib y Seaborn."
+        },
+        {
+          "id": "05",
+          "name": "05 - Data Preparation",
+          "title": "Limpieza y Preparación de Datos",
+          "icon": "🧹",
+          "color": "#D97706",
+          "description": "Imputación de nulos (MCAR/MAR/MNAR), escalado de variables, parseo de fechas y fuzzy matching tipográfico."
+        },
+        {
+          "id": "06",
+          "name": "06 - Feature Engineering",
+          "title": "Ingeniería de Características",
+          "icon": "⚙️",
+          "color": "#7C3AED",
+          "description": "Codificación categórica, Target Encoding con suavizado, ratios, transformaciones grupales, PCA e Información Mutua."
+        },
+        {
+          "id": "07",
+          "name": "07 - Regression",
+          "title": "Modelos de Regresión y Aprendizaje Supervisado",
+          "icon": "📈",
+          "color": "#0284C7",
+          "description": "Regresión OLS, supuestos de Gauss-Markov, Regresión Polinomial, Ridge, Lasso, ElasticNet, CV y k-NN Regressor."
+        },
+        {
+          "id": "hw",
+          "name": "homeworks",
+          "title": "Talleres Prácticos Evaluativos (Hands-On)",
+          "icon": "📝",
+          "color": "#DC2626",
+          "description": "Talleres integradores de resolución autónoma con datos reales y desafíos de negocio."
+        }
+      ],
+      "notebooks": [
+        {
+          "id": "01_00_Introduccion_y_Conceptos_Basicos.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "00_Introduccion_y_Conceptos_Basicos.ipynb",
+          "title": "Introduccion y conceptos basicos 🐍",
+          "path": "Data Science programming/01 - Python/00_Introduccion_y_Conceptos_Basicos.ipynb",
+          "difficulty": "Básico",
+          "type": "Introducción",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/00_Introduccion_y_Conceptos_Basicos.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/00_Introduccion_y_Conceptos_Basicos.ipynb"
+        },
+        {
+          "id": "01_01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
+          "title": "Sintaxis variables y tipos de datos 🐍",
+          "path": "Data Science programming/01 - Python/01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
+          "difficulty": "Básico",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb"
+        },
+        {
+          "id": "01_02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
+          "title": "Estructuras listas tuplas conjuntos 🐍",
+          "path": "Data Science programming/01 - Python/02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb"
+        },
+        {
+          "id": "01_02b_Estructuras_Diccionarios.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "02b_Estructuras_Diccionarios.ipynb",
+          "title": "Estructuras diccionarios 🐍",
+          "path": "Data Science programming/01 - Python/02b_Estructuras_Diccionarios.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/02b_Estructuras_Diccionarios.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/02b_Estructuras_Diccionarios.ipynb"
+        },
+        {
+          "id": "01_03_Flujo_de_Control.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "03_Flujo_de_Control.ipynb",
+          "title": "Flujo de control 🐍",
+          "path": "Data Science programming/01 - Python/03_Flujo_de_Control.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/03_Flujo_de_Control.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/03_Flujo_de_Control.ipynb"
+        },
+        {
+          "id": "01_04_Funciones.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "04_Funciones.ipynb",
+          "title": "Funciones 🐍",
+          "path": "Data Science programming/01 - Python/04_Funciones.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/04_Funciones.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/04_Funciones.ipynb"
+        },
+        {
+          "id": "01_05_Clases_y_Objetos.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "05_Clases_y_Objetos.ipynb",
+          "title": "Clases y objetos 🐍",
+          "path": "Data Science programming/01 - Python/05_Clases_y_Objetos.ipynb",
+          "difficulty": "Avanzado",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/05_Clases_y_Objetos.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/05_Clases_y_Objetos.ipynb"
+        },
+        {
+          "id": "01_06_Manipulacion_de_Cadenas_de_Texto.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "06_Manipulacion_de_Cadenas_de_Texto.ipynb",
+          "title": "Manipulacion de cadenas de texto 🐍",
+          "path": "Data Science programming/01 - Python/06_Manipulacion_de_Cadenas_de_Texto.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/06_Manipulacion_de_Cadenas_de_Texto.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/06_Manipulacion_de_Cadenas_de_Texto.ipynb"
+        },
+        {
+          "id": "01_07_Namespaces_y_Scopes.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "07_Namespaces_y_Scopes.ipynb",
+          "title": "Namespaces y scopes 🐍",
+          "path": "Data Science programming/01 - Python/07_Namespaces_y_Scopes.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/07_Namespaces_y_Scopes.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/07_Namespaces_y_Scopes.ipynb"
+        },
+        {
+          "id": "01_08_Modulos_y_Paquetes.ipynb",
+          "module_id": "01",
+          "module_name": "01 - Python",
+          "filename": "08_Modulos_y_Paquetes.ipynb",
+          "title": "Modulos y paquetes 🐍",
+          "path": "Data Science programming/01 - Python/08_Modulos_y_Paquetes.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/08_Modulos_y_Paquetes.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/08_Modulos_y_Paquetes.ipynb"
+        },
+        {
+          "id": "02_00_Introduccion_Numpy.ipynb",
+          "module_id": "02",
+          "module_name": "02 - Numpy",
+          "filename": "00_Introduccion_Numpy.ipynb",
+          "title": "Introduccion numpy 🔢",
+          "path": "Data Science programming/02 - Numpy/00_Introduccion_Numpy.ipynb",
+          "difficulty": "Básico",
+          "type": "Introducción",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/00_Introduccion_Numpy.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/00_Introduccion_Numpy.ipynb"
+        },
+        {
+          "id": "02_01_Creacion_de_Arrays_Numpy.ipynb",
+          "module_id": "02",
+          "module_name": "02 - Numpy",
+          "filename": "01_Creacion_de_Arrays_Numpy.ipynb",
+          "title": "Creacion de arrays numpy 🔢",
+          "path": "Data Science programming/02 - Numpy/01_Creacion_de_Arrays_Numpy.ipynb",
+          "difficulty": "Básico",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/01_Creacion_de_Arrays_Numpy.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/01_Creacion_de_Arrays_Numpy.ipynb"
+        },
+        {
+          "id": "02_02_Operaciones_con_Arrays_Numpy.ipynb",
+          "module_id": "02",
+          "module_name": "02 - Numpy",
+          "filename": "02_Operaciones_con_Arrays_Numpy.ipynb",
+          "title": "Operaciones con arrays numpy 🔢",
+          "path": "Data Science programming/02 - Numpy/02_Operaciones_con_Arrays_Numpy.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/02_Operaciones_con_Arrays_Numpy.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/02_Operaciones_con_Arrays_Numpy.ipynb"
+        },
+        {
+          "id": "02_03_Indexacion_y_Slicing_Numpy.ipynb",
+          "module_id": "02",
+          "module_name": "02 - Numpy",
+          "filename": "03_Indexacion_y_Slicing_Numpy.ipynb",
+          "title": "Indexacion y slicing numpy 🔢",
+          "path": "Data Science programming/02 - Numpy/03_Indexacion_y_Slicing_Numpy.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/03_Indexacion_y_Slicing_Numpy.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/03_Indexacion_y_Slicing_Numpy.ipynb"
+        },
+        {
+          "id": "02_04_Reshaping_Numpy.ipynb",
+          "module_id": "02",
+          "module_name": "02 - Numpy",
+          "filename": "04_Reshaping_Numpy.ipynb",
+          "title": "Reshaping numpy 🔢",
+          "path": "Data Science programming/02 - Numpy/04_Reshaping_Numpy.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/04_Reshaping_Numpy.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/04_Reshaping_Numpy.ipynb"
+        },
+        {
+          "id": "02_05_Concatenacion_Numpy.ipynb",
+          "module_id": "02",
+          "module_name": "02 - Numpy",
+          "filename": "05_Concatenacion_Numpy.ipynb",
+          "title": "Concatenacion numpy 🔢",
+          "path": "Data Science programming/02 - Numpy/05_Concatenacion_Numpy.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/05_Concatenacion_Numpy.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/05_Concatenacion_Numpy.ipynb"
+        },
+        {
+          "id": "02_06_Temas_Avanzados_Numpy.ipynb",
+          "module_id": "02",
+          "module_name": "02 - Numpy",
+          "filename": "06_Temas_Avanzados_Numpy.ipynb",
+          "title": "Temas avanzados numpy 🔢",
+          "path": "Data Science programming/02 - Numpy/06_Temas_Avanzados_Numpy.ipynb",
+          "difficulty": "Avanzado",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/06_Temas_Avanzados_Numpy.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/06_Temas_Avanzados_Numpy.ipynb"
+        },
+        {
+          "id": "03_00_Introduccion_Pandas.ipynb",
+          "module_id": "03",
+          "module_name": "03 - Pandas",
+          "filename": "00_Introduccion_Pandas.ipynb",
+          "title": "Introduccion pandas 🐼",
+          "path": "Data Science programming/03 - Pandas/00_Introduccion_Pandas.ipynb",
+          "difficulty": "Básico",
+          "type": "Introducción",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/00_Introduccion_Pandas.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/00_Introduccion_Pandas.ipynb"
+        },
+        {
+          "id": "03_01_Estructuras_de_Datos_Pandas.ipynb",
+          "module_id": "03",
+          "module_name": "03 - Pandas",
+          "filename": "01_Estructuras_de_Datos_Pandas.ipynb",
+          "title": "Estructuras de datos pandas 🐼",
+          "path": "Data Science programming/03 - Pandas/01_Estructuras_de_Datos_Pandas.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/01_Estructuras_de_Datos_Pandas.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/01_Estructuras_de_Datos_Pandas.ipynb"
+        },
+        {
+          "id": "03_02_Importacion_y_Exportacion_Pandas.ipynb",
+          "module_id": "03",
+          "module_name": "03 - Pandas",
+          "filename": "02_Importacion_y_Exportacion_Pandas.ipynb",
+          "title": "Importacion y exportacion pandas 🐼",
+          "path": "Data Science programming/03 - Pandas/02_Importacion_y_Exportacion_Pandas.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/02_Importacion_y_Exportacion_Pandas.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/02_Importacion_y_Exportacion_Pandas.ipynb"
+        },
+        {
+          "id": "03_03_Exploracion_de_Datos_Pandas.ipynb",
+          "module_id": "03",
+          "module_name": "03 - Pandas",
+          "filename": "03_Exploracion_de_Datos_Pandas.ipynb",
+          "title": "Exploracion de datos pandas 🐼",
+          "path": "Data Science programming/03 - Pandas/03_Exploracion_de_Datos_Pandas.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/03_Exploracion_de_Datos_Pandas.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/03_Exploracion_de_Datos_Pandas.ipynb"
+        },
+        {
+          "id": "03_04_Indexacion_y_Seleccion_Pandas.ipynb",
+          "module_id": "03",
+          "module_name": "03 - Pandas",
+          "filename": "04_Indexacion_y_Seleccion_Pandas.ipynb",
+          "title": "Indexacion y seleccion pandas 🐼",
+          "path": "Data Science programming/03 - Pandas/04_Indexacion_y_Seleccion_Pandas.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/04_Indexacion_y_Seleccion_Pandas.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/04_Indexacion_y_Seleccion_Pandas.ipynb"
+        },
+        {
+          "id": "03_05_Asignacion_de_Datos_Pandas.ipynb",
+          "module_id": "03",
+          "module_name": "03 - Pandas",
+          "filename": "05_Asignacion_de_Datos_Pandas.ipynb",
+          "title": "Asignacion de datos pandas 🐼",
+          "path": "Data Science programming/03 - Pandas/05_Asignacion_de_Datos_Pandas.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/05_Asignacion_de_Datos_Pandas.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/05_Asignacion_de_Datos_Pandas.ipynb"
+        },
+        {
+          "id": "03_06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
+          "module_id": "03",
+          "module_name": "03 - Pandas",
+          "filename": "06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
+          "title": "Anadir y eliminar columnas pandas 🐼",
+          "path": "Data Science programming/03 - Pandas/06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/06_Anadir_y_Eliminar_Columnas_Pandas.ipynb"
+        },
+        {
+          "id": "03_07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
+          "module_id": "03",
+          "module_name": "03 - Pandas",
+          "filename": "07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
+          "title": "Agrupacion y ordenamiento pandas 🐼",
+          "path": "Data Science programming/03 - Pandas/07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/07_Agrupacion_y_Ordenamiento_Pandas.ipynb"
+        },
+        {
+          "id": "03_08_Fusion_de_Datos_Pandas.ipynb",
+          "module_id": "03",
+          "module_name": "03 - Pandas",
+          "filename": "08_Fusion_de_Datos_Pandas.ipynb",
+          "title": "Fusion de datos pandas 🐼",
+          "path": "Data Science programming/03 - Pandas/08_Fusion_de_Datos_Pandas.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/08_Fusion_de_Datos_Pandas.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/08_Fusion_de_Datos_Pandas.ipynb"
+        },
+        {
+          "id": "04_00_Introduccion_EDA.ipynb",
+          "module_id": "04",
+          "module_name": "04 - EDA",
+          "filename": "00_Introduccion_EDA.ipynb",
+          "title": "Introduccion eda 📊",
+          "path": "Data Science programming/04 - EDA/00_Introduccion_EDA.ipynb",
+          "difficulty": "Básico",
+          "type": "Introducción",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/00_Introduccion_EDA.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/00_Introduccion_EDA.ipynb"
+        },
+        {
+          "id": "04_01_Exploracion_Preliminar_EDA.ipynb",
+          "module_id": "04",
+          "module_name": "04 - EDA",
+          "filename": "01_Exploracion_Preliminar_EDA.ipynb",
+          "title": "Exploracion preliminar eda 📊",
+          "path": "Data Science programming/04 - EDA/01_Exploracion_Preliminar_EDA.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/01_Exploracion_Preliminar_EDA.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/01_Exploracion_Preliminar_EDA.ipynb"
+        },
+        {
+          "id": "04_02_Estadistica_Descriptiva_EDA.ipynb",
+          "module_id": "04",
+          "module_name": "04 - EDA",
+          "filename": "02_Estadistica_Descriptiva_EDA.ipynb",
+          "title": "Estadistica descriptiva eda 📊",
+          "path": "Data Science programming/04 - EDA/02_Estadistica_Descriptiva_EDA.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/02_Estadistica_Descriptiva_EDA.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/02_Estadistica_Descriptiva_EDA.ipynb"
+        },
+        {
+          "id": "04_03_Visualizacion_de_Datos_EDA.ipynb",
+          "module_id": "04",
+          "module_name": "04 - EDA",
+          "filename": "03_Visualizacion_de_Datos_EDA.ipynb",
+          "title": "Visualizacion de datos eda 📊",
+          "path": "Data Science programming/04 - EDA/03_Visualizacion_de_Datos_EDA.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/03_Visualizacion_de_Datos_EDA.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/03_Visualizacion_de_Datos_EDA.ipynb"
+        },
+        {
+          "id": "04_04_Librerias_de_Visualizacion_EDA.ipynb",
+          "module_id": "04",
+          "module_name": "04 - EDA",
+          "filename": "04_Librerias_de_Visualizacion_EDA.ipynb",
+          "title": "Librerias de visualizacion eda 📊",
+          "path": "Data Science programming/04 - EDA/04_Librerias_de_Visualizacion_EDA.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/04_Librerias_de_Visualizacion_EDA.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/04_Librerias_de_Visualizacion_EDA.ipynb"
+        },
+        {
+          "id": "04_05_Comparacion_Librerias_Visualizacion.ipynb",
+          "module_id": "04",
+          "module_name": "04 - EDA",
+          "filename": "05_Comparacion_Librerias_Visualizacion.ipynb",
+          "title": "Comparacion librerias visualizacion 📊",
+          "path": "Data Science programming/04 - EDA/05_Comparacion_Librerias_Visualizacion.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/05_Comparacion_Librerias_Visualizacion.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/05_Comparacion_Librerias_Visualizacion.ipynb"
+        },
+        {
+          "id": "04_06_Resumen_de_Funciones_EDA.ipynb",
+          "module_id": "04",
+          "module_name": "04 - EDA",
+          "filename": "06_Resumen_de_Funciones_EDA.ipynb",
+          "title": "Resumen de funciones eda 📊",
+          "path": "Data Science programming/04 - EDA/06_Resumen_de_Funciones_EDA.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/06_Resumen_de_Funciones_EDA.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/06_Resumen_de_Funciones_EDA.ipynb"
+        },
+        {
+          "id": "05_00_Introduccion_Data_Preparation.ipynb",
+          "module_id": "05",
+          "module_name": "05 - Data Preparation",
+          "filename": "00_Introduccion_Data_Preparation.ipynb",
+          "title": "Introduccion data preparation 🧹",
+          "path": "Data Science programming/05 - Data Preparation/00_Introduccion_Data_Preparation.ipynb",
+          "difficulty": "Básico",
+          "type": "Introducción",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/00_Introduccion_Data_Preparation.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/00_Introduccion_Data_Preparation.ipynb"
+        },
+        {
+          "id": "05_01_Valores_Faltantes_Data_Preparation.ipynb",
+          "module_id": "05",
+          "module_name": "05 - Data Preparation",
+          "filename": "01_Valores_Faltantes_Data_Preparation.ipynb",
+          "title": "Valores faltantes data preparation 🧹",
+          "path": "Data Science programming/05 - Data Preparation/01_Valores_Faltantes_Data_Preparation.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/01_Valores_Faltantes_Data_Preparation.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/01_Valores_Faltantes_Data_Preparation.ipynb"
+        },
+        {
+          "id": "05_02_Escalado_Caracteristicas_Data_Preparation.ipynb",
+          "module_id": "05",
+          "module_name": "05 - Data Preparation",
+          "filename": "02_Escalado_Caracteristicas_Data_Preparation.ipynb",
+          "title": "Escalado caracteristicas data preparation 🧹",
+          "path": "Data Science programming/05 - Data Preparation/02_Escalado_Caracteristicas_Data_Preparation.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/02_Escalado_Caracteristicas_Data_Preparation.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/02_Escalado_Caracteristicas_Data_Preparation.ipynb"
+        },
+        {
+          "id": "05_03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
+          "module_id": "05",
+          "module_name": "05 - Data Preparation",
+          "filename": "03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
+          "title": "Fechas y datos inconsistentes data preparation 🧹",
+          "path": "Data Science programming/05 - Data Preparation/03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb"
+        },
+        {
+          "id": "06_00_Introduccion_Feature_Engineering.ipynb",
+          "module_id": "06",
+          "module_name": "06 - Feature Engineering",
+          "filename": "00_Introduccion_Feature_Engineering.ipynb",
+          "title": "Introduccion feature engineering ⚙️",
+          "path": "Data Science programming/06 - Feature Engineering/00_Introduccion_Feature_Engineering.ipynb",
+          "difficulty": "Básico",
+          "type": "Introducción",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/00_Introduccion_Feature_Engineering.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/00_Introduccion_Feature_Engineering.ipynb"
+        },
+        {
+          "id": "06_01_Variables_Categoricas_Feature_Engineering.ipynb",
+          "module_id": "06",
+          "module_name": "06 - Feature Engineering",
+          "filename": "01_Variables_Categoricas_Feature_Engineering.ipynb",
+          "title": "Variables categoricas feature engineering ⚙️",
+          "path": "Data Science programming/06 - Feature Engineering/01_Variables_Categoricas_Feature_Engineering.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/01_Variables_Categoricas_Feature_Engineering.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/01_Variables_Categoricas_Feature_Engineering.ipynb"
+        },
+        {
+          "id": "06_02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
+          "module_id": "06",
+          "module_name": "06 - Feature Engineering",
+          "filename": "02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
+          "title": "Target encoding y suavizado feature engineering ⚙️",
+          "path": "Data Science programming/06 - Feature Engineering/02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb"
+        },
+        {
+          "id": "06_03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
+          "module_id": "06",
+          "module_name": "06 - Feature Engineering",
+          "filename": "03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
+          "title": "Creacion de caracteristicas feature engineering ⚙️",
+          "path": "Data Science programming/06 - Feature Engineering/03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
+          "difficulty": "Básico",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb"
+        },
+        {
+          "id": "06_04_PCA_Feature_Engineering.ipynb",
+          "module_id": "06",
+          "module_name": "06 - Feature Engineering",
+          "filename": "04_PCA_Feature_Engineering.ipynb",
+          "title": "Pca feature engineering ⚙️",
+          "path": "Data Science programming/06 - Feature Engineering/04_PCA_Feature_Engineering.ipynb",
+          "difficulty": "Avanzado",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/04_PCA_Feature_Engineering.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/04_PCA_Feature_Engineering.ipynb"
+        },
+        {
+          "id": "06_05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
+          "module_id": "06",
+          "module_name": "06 - Feature Engineering",
+          "filename": "05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
+          "title": "Seleccion caracteristicas y mutual information ⚙️",
+          "path": "Data Science programming/06 - Feature Engineering/05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb"
+        },
+        {
+          "id": "07_00_Introduccion_Regression.ipynb",
+          "module_id": "07",
+          "module_name": "07 - Regression",
+          "filename": "00_Introduccion_Regression.ipynb",
+          "title": "Introduccion regression 📈",
+          "path": "Data Science programming/07 - Regression/00_Introduccion_Regression.ipynb",
+          "difficulty": "Básico",
+          "type": "Introducción",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/00_Introduccion_Regression.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/00_Introduccion_Regression.ipynb"
+        },
+        {
+          "id": "07_01_Regresion_Lineal.ipynb",
+          "module_id": "07",
+          "module_name": "07 - Regression",
+          "filename": "01_Regresion_Lineal.ipynb",
+          "title": "Regresion lineal 📈",
+          "path": "Data Science programming/07 - Regression/01_Regresion_Lineal.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/01_Regresion_Lineal.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/01_Regresion_Lineal.ipynb"
+        },
+        {
+          "id": "07_02_Consideraciones_Regresion_Multiple.ipynb",
+          "module_id": "07",
+          "module_name": "07 - Regression",
+          "filename": "02_Consideraciones_Regresion_Multiple.ipynb",
+          "title": "Consideraciones regresion multiple 📈",
+          "path": "Data Science programming/07 - Regression/02_Consideraciones_Regresion_Multiple.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/02_Consideraciones_Regresion_Multiple.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/02_Consideraciones_Regresion_Multiple.ipynb"
+        },
+        {
+          "id": "07_03_Regresion_Polinomial_y_Regularizacion.ipynb",
+          "module_id": "07",
+          "module_name": "07 - Regression",
+          "filename": "03_Regresion_Polinomial_y_Regularizacion.ipynb",
+          "title": "Regresion polinomial y regularizacion 📈",
+          "path": "Data Science programming/07 - Regression/03_Regresion_Polinomial_y_Regularizacion.ipynb",
+          "difficulty": "Avanzado",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/03_Regresion_Polinomial_y_Regularizacion.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/03_Regresion_Polinomial_y_Regularizacion.ipynb"
+        },
+        {
+          "id": "07_04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
+          "module_id": "07",
+          "module_name": "07 - Regression",
+          "filename": "04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
+          "title": "Seleccion modelos validacion cruzada y knn 📈",
+          "path": "Data Science programming/07 - Regression/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
+          "difficulty": "Avanzado",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb"
+        },
+        {
+          "id": "hw_01_Python_Hands_On.ipynb",
+          "module_id": "hw",
+          "module_name": "homeworks",
+          "filename": "01_Python_Hands_On.ipynb",
+          "title": "Python hands on 📝",
+          "path": "Data Science programming/homeworks/01_Python_Hands_On.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Taller Evaluativo",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/01_Python_Hands_On.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/01_Python_Hands_On.ipynb"
+        },
+        {
+          "id": "hw_02_NumPy_Hands_On.ipynb",
+          "module_id": "hw",
+          "module_name": "homeworks",
+          "filename": "02_NumPy_Hands_On.ipynb",
+          "title": "Numpy hands on 📝",
+          "path": "Data Science programming/homeworks/02_NumPy_Hands_On.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Taller Evaluativo",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/02_NumPy_Hands_On.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/02_NumPy_Hands_On.ipynb"
+        },
+        {
+          "id": "hw_03a_Pandas_Hands_On_Local.ipynb",
+          "module_id": "hw",
+          "module_name": "homeworks",
+          "filename": "03a_Pandas_Hands_On_Local.ipynb",
+          "title": "Pandas hands on local 📝",
+          "path": "Data Science programming/homeworks/03a_Pandas_Hands_On_Local.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Taller Evaluativo",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/03a_Pandas_Hands_On_Local.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/03a_Pandas_Hands_On_Local.ipynb"
+        },
+        {
+          "id": "hw_03b_Pandas_Hands_On_Kaggle.ipynb",
+          "module_id": "hw",
+          "module_name": "homeworks",
+          "filename": "03b_Pandas_Hands_On_Kaggle.ipynb",
+          "title": "Pandas hands on kaggle 📝",
+          "path": "Data Science programming/homeworks/03b_Pandas_Hands_On_Kaggle.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Taller Evaluativo",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/03b_Pandas_Hands_On_Kaggle.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/03b_Pandas_Hands_On_Kaggle.ipynb"
+        },
+        {
+          "id": "hw_04_EDA_Hands_On.ipynb",
+          "module_id": "hw",
+          "module_name": "homeworks",
+          "filename": "04_EDA_Hands_On.ipynb",
+          "title": "Eda hands on 📝",
+          "path": "Data Science programming/homeworks/04_EDA_Hands_On.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Taller Evaluativo",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/04_EDA_Hands_On.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/04_EDA_Hands_On.ipynb"
+        },
+        {
+          "id": "hw_05_Data_Preparation_Hands_On.ipynb",
+          "module_id": "hw",
+          "module_name": "homeworks",
+          "filename": "05_Data_Preparation_Hands_On.ipynb",
+          "title": "Data preparation hands on 📝",
+          "path": "Data Science programming/homeworks/05_Data_Preparation_Hands_On.ipynb",
+          "difficulty": "Intermedio",
+          "type": "Taller Evaluativo",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/05_Data_Preparation_Hands_On.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/05_Data_Preparation_Hands_On.ipynb"
+        }
+      ],
+      "datasets": [
+        {
+          "name": "climate_precip.csv",
+          "module": "03 - Pandas",
+          "path": "Data Science programming/03 - Pandas/data/climate_precip.csv",
+          "rows": 151111,
+          "cols": 29,
+          "target": "DLY-SNOW-PCTALL-GE050TI",
+          "features": "STATION, STATION_NAME, DATE, DLY-PRCP-25PCTL, DLY-SNWD-25PCTL",
+          "description": "Dataset de práctica para 03 - Pandas.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/03%20-%20Pandas/data/climate_precip.csv')"
+        },
+        {
+          "name": "climate_temp.csv",
+          "module": "03 - Pandas",
+          "path": "Data Science programming/03 - Pandas/data/climate_temp.csv",
+          "rows": 127021,
+          "cols": 21,
+          "target": "DLY-HTDD-NORMAL",
+          "features": "STATION, STATION_NAME, ELEVATION, LATITUDE, LONGITUDE",
+          "description": "Dataset de práctica para 03 - Pandas.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/03%20-%20Pandas/data/climate_temp.csv')"
+        },
+        {
+          "name": "winemag-data-130k-v2.csv",
+          "module": "03 - Pandas",
+          "path": "Data Science programming/03 - Pandas/data/winemag-data-130k-v2.csv",
+          "rows": 129972,
+          "cols": 14,
+          "target": "winery",
+          "features": ", country, description, designation, points",
+          "description": "Dataset de práctica para 03 - Pandas.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/03%20-%20Pandas/data/winemag-data-130k-v2.csv')"
+        },
+        {
+          "name": "quartets.csv",
+          "module": "04 - EDA",
+          "path": "Data Science programming/04 - EDA/data/quartets.csv",
+          "rows": 45,
+          "cols": 4,
+          "target": "quartet",
+          "features": ", x, y, quartet",
+          "description": "Dataset de práctica para 04 - EDA.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/04%20-%20EDA/data/quartets.csv')"
+        },
+        {
+          "name": "StudentsPerformance.csv",
+          "module": "04 - EDA",
+          "path": "Data Science programming/04 - EDA/data/StudentsPerformance.csv",
+          "rows": 1001,
+          "cols": 8,
+          "target": "writing score",
+          "features": "gender, race/ethnicity, parental level of education, lunch, test preparation course",
+          "description": "Dataset de práctica para 04 - EDA.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/04%20-%20EDA/data/StudentsPerformance.csv')"
+        },
+        {
+          "name": "hepatitis.csv",
+          "module": "05 - Data Preparation",
+          "path": "Data Science programming/05 - Data Preparation/data/hepatitis.csv",
+          "rows": 156,
+          "cols": 20,
+          "target": "class",
+          "features": "age, sex, steroid, antivirals, fatigue",
+          "description": "Dataset de práctica para 05 - Data Preparation.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/05%20-%20Data%20Preparation/data/hepatitis.csv')"
+        },
+        {
+          "name": "landslide-events.csv",
+          "module": "05 - Data Preparation",
+          "path": "Data Science programming/05 - Data Preparation/data/landslide-events.csv",
+          "rows": 1694,
+          "cols": 23,
+          "target": "source_link",
+          "features": "id, date, time, continent_code, country_name",
+          "description": "Dataset de práctica para 05 - Data Preparation.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/05%20-%20Data%20Preparation/data/landslide-events.csv')"
+        },
+        {
+          "name": "pakistan_intellectual_capital.csv",
+          "module": "05 - Data Preparation",
+          "path": "Data Science programming/05 - Data Preparation/data/pakistan_intellectual_capital.csv",
+          "rows": 1143,
+          "cols": 13,
+          "target": "Other Information",
+          "features": ", S#, Teacher Name, University Currently Teaching, Department",
+          "description": "Dataset de práctica para 05 - Data Preparation.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/05%20-%20Data%20Preparation/data/pakistan_intellectual_capital.csv')"
+        },
+        {
+          "name": "accidents.csv",
+          "module": "06 - Feature Engineering",
+          "path": "Data Science programming/06 - Feature Engineering/data/accidents.csv",
+          "rows": 100001,
+          "cols": 29,
+          "target": "TrafficSignal",
+          "features": "Severity, StartTime, EndTime, StartLat, StartLng",
+          "description": "Dataset de práctica para 06 - Feature Engineering.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/accidents.csv')"
+        },
+        {
+          "name": "autos.csv",
+          "module": "06 - Feature Engineering",
+          "path": "Data Science programming/06 - Feature Engineering/data/autos.csv",
+          "rows": 194,
+          "cols": 25,
+          "target": "price",
+          "features": "symboling, make, fuel_type, aspiration, num_of_doors",
+          "description": "Dataset de práctica para 06 - Feature Engineering.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/autos.csv')"
+        },
+        {
+          "name": "concrete.csv",
+          "module": "06 - Feature Engineering",
+          "path": "Data Science programming/06 - Feature Engineering/data/concrete.csv",
+          "rows": 1031,
+          "cols": 9,
+          "target": "CompressiveStrength",
+          "features": "Cement, BlastFurnaceSlag, FlyAsh, Water, Superplasticizer",
+          "description": "Dataset de práctica para 06 - Feature Engineering.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/concrete.csv')"
+        },
+        {
+          "name": "customer.csv",
+          "module": "06 - Feature Engineering",
+          "path": "Data Science programming/06 - Feature Engineering/data/customer.csv",
+          "rows": 9135,
+          "cols": 25,
+          "target": "VehicleSize",
+          "features": ", Customer, State, CustomerLifetimeValue, Response",
+          "description": "Dataset de práctica para 06 - Feature Engineering.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/customer.csv')"
+        },
+        {
+          "name": "melb_data.csv",
+          "module": "06 - Feature Engineering",
+          "path": "Data Science programming/06 - Feature Engineering/data/melb_data.csv",
+          "rows": 13581,
+          "cols": 21,
+          "target": "Propertycount",
+          "features": "Suburb, Address, Rooms, Type, Price",
+          "description": "Dataset de práctica para 06 - Feature Engineering.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/melb_data.csv')"
+        },
+        {
+          "name": "movielens1m.csv",
+          "module": "06 - Feature Engineering",
+          "path": "Data Science programming/06 - Feature Engineering/data/movielens1m.csv",
+          "rows": 1000210,
+          "cols": 28,
+          "target": "Rating",
+          "features": "Movie ID, Action, Adventure, Animation, Children",
+          "description": "Dataset de práctica para 06 - Feature Engineering.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/movielens1m.csv')"
+        },
+        {
+          "name": "Advertising.csv",
+          "module": "07 - Regression",
+          "path": "Data Science programming/07 - Regression/data/Advertising.csv",
+          "rows": 201,
+          "cols": 5,
+          "target": "Sales",
+          "features": ", TV, Radio, Newspaper, Sales",
+          "description": "Dataset de práctica para 07 - Regression.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/07%20-%20Regression/data/Advertising.csv')"
+        },
+        {
+          "name": "bikeshare.csv",
+          "module": "07 - Regression",
+          "path": "Data Science programming/07 - Regression/data/bikeshare.csv",
+          "rows": 732,
+          "cols": 11,
+          "target": "count",
+          "features": "season, month, holiday, day_of_week, workingday",
+          "description": "Dataset de práctica para 07 - Regression.",
+          "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/07%20-%20Regression/data/bikeshare.csv')"
+        }
+      ],
+      "guias": [
+        {
+          "id": "guia_1",
+          "filename": "Creacion_VENV.pdf",
+          "title": "Guía de Creación de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "179 KB",
+          "path": "Guias/Creacion_VENV.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Creacion_VENV.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+        },
+        {
+          "id": "guia_2",
+          "filename": "Instalación_Python.pdf",
+          "title": "Guía de Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "878 KB",
+          "path": "Guias/Instalación_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Instalaci%C3%B3n_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Instalacion Python_compressed.mp4",
+          "title": "Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 54.5,
+          "path": "Contenido/Instalacion Python_compressed.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        }
+      ],
+      "stats": {
+        "total_notebooks": 54,
+        "total_modules": 7,
+        "total_homeworks": 6,
+        "total_datasets": 16,
+        "total_guias": 2,
+        "total_videos": 2
+      }
+    },
+    {
+      "id": "estadistica-analisis",
+      "name": "Estadística, Análisis y Representación de Datos",
+      "title": "Modelamiento Estadístico e Inferencia",
+      "folder": "Estadistica analisis y representacion de datos",
+      "icon": "📊",
+      "badge": "En Construcción",
+      "badge_color": "amber",
+      "color": "#f59e0b",
+      "gradient": "from-amber-500/20 via-yellow-600/10 to-transparent",
+      "border_glow": "border-amber-500/40",
+      "description": "Modelamiento probabilístico, inferencia estadística rigurosa, pruebas de hipótesis paramétricas y no paramétricas, análisis multivariado y técnicas avanzadas de representación.",
+      "level": "Especialización",
+      "semester": "Semestre I",
+      "active": false,
+      "modules": [],
+      "notebooks": [],
+      "datasets": [],
+      "guias": [
+        {
+          "id": "guia_1",
+          "filename": "Creacion_VENV.pdf",
+          "title": "Guía de Creación de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "179 KB",
+          "path": "Guias/Creacion_VENV.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Estadistica%20analisis%20y%20representacion%20de%20datos/Guias/Creacion_VENV.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+        },
+        {
+          "id": "guia_2",
+          "filename": "Instalación_Python.pdf",
+          "title": "Guía de Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "878 KB",
+          "path": "Guias/Instalación_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Estadistica%20analisis%20y%20representacion%20de%20datos/Guias/Instalaci%C3%B3n_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Instalacion Python_compressed.mp4",
+          "title": "Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 54.5,
+          "path": "Contenido/Instalacion Python_compressed.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        }
+      ],
+      "stats": {
+        "total_notebooks": 0,
+        "total_modules": 0,
+        "total_homeworks": 0,
+        "total_datasets": 0,
+        "total_guias": 2,
+        "total_videos": 2
+      }
+    },
+    {
+      "id": "adquisicion-gobernanza",
+      "name": "Adquisición, Gestión y Gobernanza de Datos",
+      "title": "Arquitectura, Calidad y Gestión de Datos",
+      "folder": "Adquision gestion y gobernanza de datos",
+      "icon": "🗄️",
+      "badge": "En Construcción",
+      "badge_color": "purple",
+      "color": "#a855f7",
+      "gradient": "from-purple-500/20 via-indigo-600/10 to-transparent",
+      "border_glow": "border-purple-500/40",
+      "description": "Ingeniería de pipelines ETL/ELT, arquitectura de bases de datos relacionales y NoSQL, calidad del dato, catálogos de metadatos y marcos de gobernanza DAMA-DMBOK.",
+      "level": "Especialización",
+      "semester": "Semestre I",
+      "active": false,
+      "modules": [],
+      "notebooks": [],
+      "datasets": [],
+      "guias": [
+        {
+          "id": "guia_1",
+          "filename": "Creacion_VENV.pdf",
+          "title": "Guía de Creación de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "179 KB",
+          "path": "Guias/Creacion_VENV.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Adquision%20gestion%20y%20gobernanza%20de%20datos/Guias/Creacion_VENV.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+        },
+        {
+          "id": "guia_2",
+          "filename": "Instalación_Python.pdf",
+          "title": "Guía de Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "878 KB",
+          "path": "Guias/Instalación_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Adquision%20gestion%20y%20gobernanza%20de%20datos/Guias/Instalaci%C3%B3n_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Instalacion Python_compressed.mp4",
+          "title": "Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 54.5,
+          "path": "Contenido/Instalacion Python_compressed.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        }
+      ],
+      "stats": {
+        "total_notebooks": 0,
+        "total_modules": 0,
+        "total_homeworks": 0,
+        "total_datasets": 0,
+        "total_guias": 2,
+        "total_videos": 2
+      }
+    },
+    {
+      "id": "privacidad-seguridad",
+      "name": "Privacidad, Seguridad e Integridad de los Datos",
+      "title": "Ciberseguridad y Ética en Datos",
+      "folder": "Privacidad, Seguridad e Integridad de los datos",
+      "icon": "🛡️",
+      "badge": "En Construcción",
+      "badge_color": "cyan",
+      "color": "#06b6d4",
+      "gradient": "from-cyan-500/20 via-teal-600/10 to-transparent",
+      "border_glow": "border-cyan-500/40",
+      "description": "Ciberseguridad analítica, anonimización y privacidad diferencial, criptografía aplicada a datos en reposo y tránsito, y cumplimiento normativo (Habeas Data / GDPR).",
+      "level": "Especialización",
+      "semester": "Semestre I",
+      "active": false,
+      "modules": [],
+      "notebooks": [],
+      "datasets": [],
+      "guias": [
+        {
+          "id": "guia_1",
+          "filename": "Creacion_VENV.pdf",
+          "title": "Guía de Creación de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "179 KB",
+          "path": "Guias/Creacion_VENV.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Privacidad%2C%20Seguridad%20e%20Integridad%20de%20los%20datos/Guias/Creacion_VENV.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+        },
+        {
+          "id": "guia_2",
+          "filename": "Instalación_Python.pdf",
+          "title": "Guía de Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "878 KB",
+          "path": "Guias/Instalación_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Privacidad%2C%20Seguridad%20e%20Integridad%20de%20los%20datos/Guias/Instalaci%C3%B3n_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Instalacion Python_compressed.mp4",
+          "title": "Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 54.5,
+          "path": "Contenido/Instalacion Python_compressed.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        }
+      ],
+      "stats": {
+        "total_notebooks": 0,
+        "total_modules": 0,
+        "total_homeworks": 0,
+        "total_datasets": 0,
+        "total_guias": 2,
+        "total_videos": 2
+      }
+    },
+    {
+      "id": "data-mining",
+      "name": "Data Mining",
+      "title": "Minería de Datos y Descubrimiento de Patrones",
+      "folder": "Data Mining",
+      "icon": "⛏️",
+      "badge": "En Construcción",
+      "badge_color": "rose",
+      "color": "#f43f5e",
+      "gradient": "from-rose-500/20 via-pink-600/10 to-transparent",
+      "border_glow": "border-rose-500/40",
+      "description": "Metodología KDD, reglas de asociación (Apriori, FP-Growth), detección de valores atípicos y patrones secuenciales en bases de datos complejas.",
+      "level": "Especialización",
+      "semester": "Semestre II",
+      "active": false,
+      "modules": [],
+      "notebooks": [],
+      "datasets": [],
+      "guias": [
+        {
+          "id": "guia_1",
+          "filename": "Creacion_VENV.pdf",
+          "title": "Guía de Creación de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "179 KB",
+          "path": "Guias/Creacion_VENV.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Mining/Guias/Creacion_VENV.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+        },
+        {
+          "id": "guia_2",
+          "filename": "Instalación_Python.pdf",
+          "title": "Guía de Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "878 KB",
+          "path": "Guias/Instalación_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Mining/Guias/Instalaci%C3%B3n_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Instalacion Python_compressed.mp4",
+          "title": "Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 54.5,
+          "path": "Contenido/Instalacion Python_compressed.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        }
+      ],
+      "stats": {
+        "total_notebooks": 0,
+        "total_modules": 0,
+        "total_homeworks": 0,
+        "total_datasets": 0,
+        "total_guias": 2,
+        "total_videos": 2
+      }
+    },
+    {
+      "id": "machine-learning",
+      "name": "Machine Learning",
+      "title": "Aprendizaje Automático Supervisado y No Supervisado",
+      "folder": "Machine Learning",
+      "icon": "🧠",
+      "badge": "En Construcción",
+      "badge_color": "violet",
+      "color": "#8b5cf6",
+      "gradient": "from-violet-500/20 via-purple-600/10 to-transparent",
+      "border_glow": "border-violet-500/40",
+      "description": "Algoritmos de clasificación supervisada, ensambles avanzados (Random Forest, XGBoost, LightGBM, CatBoost), clustering no supervisado y optimización de hiperparámetros.",
+      "level": "Especialización",
+      "semester": "Semestre II",
+      "active": false,
+      "modules": [],
+      "notebooks": [],
+      "datasets": [],
+      "guias": [
+        {
+          "id": "guia_1",
+          "filename": "Creacion_VENV.pdf",
+          "title": "Guía de Creación de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "179 KB",
+          "path": "Guias/Creacion_VENV.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Machine%20Learning/Guias/Creacion_VENV.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+        },
+        {
+          "id": "guia_2",
+          "filename": "Instalación_Python.pdf",
+          "title": "Guía de Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "878 KB",
+          "path": "Guias/Instalación_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Machine%20Learning/Guias/Instalaci%C3%B3n_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Instalacion Python_compressed.mp4",
+          "title": "Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 54.5,
+          "path": "Contenido/Instalacion Python_compressed.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        }
+      ],
+      "stats": {
+        "total_notebooks": 0,
+        "total_modules": 0,
+        "total_homeworks": 0,
+        "total_datasets": 0,
+        "total_guias": 2,
+        "total_videos": 2
+      }
+    },
+    {
+      "id": "big-data",
+      "name": "Big Data",
+      "title": "Procesamiento Distribuido y Masivo",
+      "folder": "Big Data",
+      "icon": "⚡",
+      "badge": "En Construcción",
+      "badge_color": "amber",
+      "color": "#f59e0b",
+      "gradient": "from-amber-500/20 via-orange-600/10 to-transparent",
+      "border_glow": "border-amber-500/40",
+      "description": "Computación distribuida con Apache Spark, PySpark, DuckDB, streaming en tiempo real con Kafka, arquitectura Lakehouse y almacenamiento optimizado en la nube.",
+      "level": "Especialización",
+      "semester": "Semestre II",
+      "active": false,
+      "modules": [],
+      "notebooks": [],
+      "datasets": [],
+      "guias": [
+        {
+          "id": "guia_1",
+          "filename": "Creacion_VENV.pdf",
+          "title": "Guía de Creación de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "179 KB",
+          "path": "Guias/Creacion_VENV.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Big%20Data/Guias/Creacion_VENV.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+        },
+        {
+          "id": "guia_2",
+          "filename": "Instalación_Python.pdf",
+          "title": "Guía de Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "878 KB",
+          "path": "Guias/Instalación_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Big%20Data/Guias/Instalaci%C3%B3n_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Instalacion Python_compressed.mp4",
+          "title": "Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 54.5,
+          "path": "Contenido/Instalacion Python_compressed.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        }
+      ],
+      "stats": {
+        "total_notebooks": 0,
+        "total_modules": 0,
+        "total_homeworks": 0,
+        "total_datasets": 0,
+        "total_guias": 2,
+        "total_videos": 2
+      }
+    },
+    {
+      "id": "introduccion-ia",
+      "name": "Introducción a la Inteligencia Artificial",
+      "title": "Redes Neuronales, Visión y Modelos Generativos",
+      "folder": "Introduccion a la Inteligencia Artificial",
+      "icon": "🤖",
+      "badge": "En Construcción",
+      "badge_color": "pink",
+      "color": "#ec4899",
+      "gradient": "from-pink-500/20 via-rose-600/10 to-transparent",
+      "border_glow": "border-pink-500/40",
+      "description": "Fundamentos de redes neuronales profundas (Deep Learning) con PyTorch, visión computacional, procesamiento del lenguaje natural (NLP) y fundamentos de LLMs.",
+      "level": "Especialización",
+      "semester": "Semestre II",
+      "active": false,
+      "modules": [],
+      "notebooks": [],
+      "datasets": [],
+      "guias": [
+        {
+          "id": "guia_1",
+          "filename": "Creacion_VENV.pdf",
+          "title": "Guía de Creación de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "179 KB",
+          "path": "Guias/Creacion_VENV.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Introduccion%20a%20la%20Inteligencia%20Artificial/Guias/Creacion_VENV.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+        },
+        {
+          "id": "guia_2",
+          "filename": "Instalación_Python.pdf",
+          "title": "Guía de Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "878 KB",
+          "path": "Guias/Instalación_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Introduccion%20a%20la%20Inteligencia%20Artificial/Guias/Instalaci%C3%B3n_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Instalacion Python_compressed.mp4",
+          "title": "Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 54.5,
+          "path": "Contenido/Instalacion Python_compressed.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        }
+      ],
+      "stats": {
+        "total_notebooks": 0,
+        "total_modules": 0,
+        "total_homeworks": 0,
+        "total_datasets": 0,
+        "total_guias": 2,
+        "total_videos": 2
+      }
+    },
+    {
+      "id": "visual-analytics",
+      "name": "Visual Analytics and Critical Thinking",
+      "title": "Analítica Visual y Pensamiento Crítico",
+      "folder": "Visual Analytics and Critical Thinking",
+      "icon": "👁️",
+      "badge": "En Construcción",
+      "badge_color": "emerald",
+      "color": "#10b981",
+      "gradient": "from-emerald-500/20 via-teal-600/10 to-transparent",
+      "border_glow": "border-emerald-500/40",
+      "description": "Tableros analíticos interactivos con Plotly, Dash y Streamlit, principios de percepción visual y cognitiva, y comunicación de hallazgos para la toma de decisiones.",
+      "level": "Especialización",
+      "semester": "Semestre II",
+      "active": false,
+      "modules": [],
+      "notebooks": [],
+      "datasets": [],
+      "guias": [
+        {
+          "id": "guia_1",
+          "filename": "Creacion_VENV.pdf",
+          "title": "Guía de Creación de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "179 KB",
+          "path": "Guias/Creacion_VENV.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Visual%20Analytics%20and%20Critical%20Thinking/Guias/Creacion_VENV.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+        },
+        {
+          "id": "guia_2",
+          "filename": "Instalación_Python.pdf",
+          "title": "Guía de Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_str": "878 KB",
+          "path": "Guias/Instalación_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Visual%20Analytics%20and%20Critical%20Thinking/Guias/Instalaci%C3%B3n_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+        }
+      ],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Instalacion Python_compressed.mp4",
+          "title": "Instalación y Configuración de Python",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 54.5,
+          "path": "Contenido/Instalacion Python_compressed.mp4",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        }
+      ],
+      "stats": {
+        "total_notebooks": 0,
+        "total_modules": 0,
+        "total_homeworks": 0,
+        "total_datasets": 0,
+        "total_guias": 2,
+        "total_videos": 2
+      }
+    }
+  ],
   "modules": [
     {
       "id": "01",
@@ -73,11 +1624,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "00_Introduccion_y_Conceptos_Basicos.ipynb",
       "title": "Introduccion y conceptos basicos 🐍",
-      "path": "01 - Python/00_Introduccion_y_Conceptos_Basicos.ipynb",
+      "path": "Data Science programming/01 - Python/00_Introduccion_y_Conceptos_Basicos.ipynb",
       "difficulty": "Básico",
       "type": "Introducción",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/00_Introduccion_y_Conceptos_Basicos.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/00_Introduccion_y_Conceptos_Basicos.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/00_Introduccion_y_Conceptos_Basicos.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/00_Introduccion_y_Conceptos_Basicos.ipynb"
     },
     {
       "id": "01_01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
@@ -85,11 +1636,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
       "title": "Sintaxis variables y tipos de datos 🐍",
-      "path": "01 - Python/01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
+      "path": "Data Science programming/01 - Python/01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
       "difficulty": "Básico",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb"
     },
     {
       "id": "01_02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
@@ -97,11 +1648,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
       "title": "Estructuras listas tuplas conjuntos 🐍",
-      "path": "01 - Python/02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
+      "path": "Data Science programming/01 - Python/02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb"
     },
     {
       "id": "01_02b_Estructuras_Diccionarios.ipynb",
@@ -109,11 +1660,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "02b_Estructuras_Diccionarios.ipynb",
       "title": "Estructuras diccionarios 🐍",
-      "path": "01 - Python/02b_Estructuras_Diccionarios.ipynb",
+      "path": "Data Science programming/01 - Python/02b_Estructuras_Diccionarios.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/02b_Estructuras_Diccionarios.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/02b_Estructuras_Diccionarios.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/02b_Estructuras_Diccionarios.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/02b_Estructuras_Diccionarios.ipynb"
     },
     {
       "id": "01_03_Flujo_de_Control.ipynb",
@@ -121,11 +1672,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "03_Flujo_de_Control.ipynb",
       "title": "Flujo de control 🐍",
-      "path": "01 - Python/03_Flujo_de_Control.ipynb",
+      "path": "Data Science programming/01 - Python/03_Flujo_de_Control.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/03_Flujo_de_Control.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/03_Flujo_de_Control.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/03_Flujo_de_Control.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/03_Flujo_de_Control.ipynb"
     },
     {
       "id": "01_04_Funciones.ipynb",
@@ -133,11 +1684,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "04_Funciones.ipynb",
       "title": "Funciones 🐍",
-      "path": "01 - Python/04_Funciones.ipynb",
+      "path": "Data Science programming/01 - Python/04_Funciones.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/04_Funciones.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/04_Funciones.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/04_Funciones.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/04_Funciones.ipynb"
     },
     {
       "id": "01_05_Clases_y_Objetos.ipynb",
@@ -145,11 +1696,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "05_Clases_y_Objetos.ipynb",
       "title": "Clases y objetos 🐍",
-      "path": "01 - Python/05_Clases_y_Objetos.ipynb",
+      "path": "Data Science programming/01 - Python/05_Clases_y_Objetos.ipynb",
       "difficulty": "Avanzado",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/05_Clases_y_Objetos.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/05_Clases_y_Objetos.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/05_Clases_y_Objetos.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/05_Clases_y_Objetos.ipynb"
     },
     {
       "id": "01_06_Manipulacion_de_Cadenas_de_Texto.ipynb",
@@ -157,11 +1708,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "06_Manipulacion_de_Cadenas_de_Texto.ipynb",
       "title": "Manipulacion de cadenas de texto 🐍",
-      "path": "01 - Python/06_Manipulacion_de_Cadenas_de_Texto.ipynb",
+      "path": "Data Science programming/01 - Python/06_Manipulacion_de_Cadenas_de_Texto.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/06_Manipulacion_de_Cadenas_de_Texto.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/06_Manipulacion_de_Cadenas_de_Texto.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/06_Manipulacion_de_Cadenas_de_Texto.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/06_Manipulacion_de_Cadenas_de_Texto.ipynb"
     },
     {
       "id": "01_07_Namespaces_y_Scopes.ipynb",
@@ -169,11 +1720,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "07_Namespaces_y_Scopes.ipynb",
       "title": "Namespaces y scopes 🐍",
-      "path": "01 - Python/07_Namespaces_y_Scopes.ipynb",
+      "path": "Data Science programming/01 - Python/07_Namespaces_y_Scopes.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/07_Namespaces_y_Scopes.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/07_Namespaces_y_Scopes.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/07_Namespaces_y_Scopes.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/07_Namespaces_y_Scopes.ipynb"
     },
     {
       "id": "01_08_Modulos_y_Paquetes.ipynb",
@@ -181,11 +1732,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "01 - Python",
       "filename": "08_Modulos_y_Paquetes.ipynb",
       "title": "Modulos y paquetes 🐍",
-      "path": "01 - Python/08_Modulos_y_Paquetes.ipynb",
+      "path": "Data Science programming/01 - Python/08_Modulos_y_Paquetes.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/08_Modulos_y_Paquetes.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/01%20-%20Python/08_Modulos_y_Paquetes.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/08_Modulos_y_Paquetes.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/01%20-%20Python/08_Modulos_y_Paquetes.ipynb"
     },
     {
       "id": "02_00_Introduccion_Numpy.ipynb",
@@ -193,11 +1744,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "02 - Numpy",
       "filename": "00_Introduccion_Numpy.ipynb",
       "title": "Introduccion numpy 🔢",
-      "path": "02 - Numpy/00_Introduccion_Numpy.ipynb",
+      "path": "Data Science programming/02 - Numpy/00_Introduccion_Numpy.ipynb",
       "difficulty": "Básico",
       "type": "Introducción",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/00_Introduccion_Numpy.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/00_Introduccion_Numpy.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/00_Introduccion_Numpy.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/00_Introduccion_Numpy.ipynb"
     },
     {
       "id": "02_01_Creacion_de_Arrays_Numpy.ipynb",
@@ -205,11 +1756,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "02 - Numpy",
       "filename": "01_Creacion_de_Arrays_Numpy.ipynb",
       "title": "Creacion de arrays numpy 🔢",
-      "path": "02 - Numpy/01_Creacion_de_Arrays_Numpy.ipynb",
+      "path": "Data Science programming/02 - Numpy/01_Creacion_de_Arrays_Numpy.ipynb",
       "difficulty": "Básico",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/01_Creacion_de_Arrays_Numpy.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/01_Creacion_de_Arrays_Numpy.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/01_Creacion_de_Arrays_Numpy.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/01_Creacion_de_Arrays_Numpy.ipynb"
     },
     {
       "id": "02_02_Operaciones_con_Arrays_Numpy.ipynb",
@@ -217,11 +1768,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "02 - Numpy",
       "filename": "02_Operaciones_con_Arrays_Numpy.ipynb",
       "title": "Operaciones con arrays numpy 🔢",
-      "path": "02 - Numpy/02_Operaciones_con_Arrays_Numpy.ipynb",
+      "path": "Data Science programming/02 - Numpy/02_Operaciones_con_Arrays_Numpy.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/02_Operaciones_con_Arrays_Numpy.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/02_Operaciones_con_Arrays_Numpy.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/02_Operaciones_con_Arrays_Numpy.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/02_Operaciones_con_Arrays_Numpy.ipynb"
     },
     {
       "id": "02_03_Indexacion_y_Slicing_Numpy.ipynb",
@@ -229,11 +1780,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "02 - Numpy",
       "filename": "03_Indexacion_y_Slicing_Numpy.ipynb",
       "title": "Indexacion y slicing numpy 🔢",
-      "path": "02 - Numpy/03_Indexacion_y_Slicing_Numpy.ipynb",
+      "path": "Data Science programming/02 - Numpy/03_Indexacion_y_Slicing_Numpy.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/03_Indexacion_y_Slicing_Numpy.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/03_Indexacion_y_Slicing_Numpy.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/03_Indexacion_y_Slicing_Numpy.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/03_Indexacion_y_Slicing_Numpy.ipynb"
     },
     {
       "id": "02_04_Reshaping_Numpy.ipynb",
@@ -241,11 +1792,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "02 - Numpy",
       "filename": "04_Reshaping_Numpy.ipynb",
       "title": "Reshaping numpy 🔢",
-      "path": "02 - Numpy/04_Reshaping_Numpy.ipynb",
+      "path": "Data Science programming/02 - Numpy/04_Reshaping_Numpy.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/04_Reshaping_Numpy.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/04_Reshaping_Numpy.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/04_Reshaping_Numpy.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/04_Reshaping_Numpy.ipynb"
     },
     {
       "id": "02_05_Concatenacion_Numpy.ipynb",
@@ -253,11 +1804,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "02 - Numpy",
       "filename": "05_Concatenacion_Numpy.ipynb",
       "title": "Concatenacion numpy 🔢",
-      "path": "02 - Numpy/05_Concatenacion_Numpy.ipynb",
+      "path": "Data Science programming/02 - Numpy/05_Concatenacion_Numpy.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/05_Concatenacion_Numpy.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/05_Concatenacion_Numpy.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/05_Concatenacion_Numpy.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/05_Concatenacion_Numpy.ipynb"
     },
     {
       "id": "02_06_Temas_Avanzados_Numpy.ipynb",
@@ -265,11 +1816,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "02 - Numpy",
       "filename": "06_Temas_Avanzados_Numpy.ipynb",
       "title": "Temas avanzados numpy 🔢",
-      "path": "02 - Numpy/06_Temas_Avanzados_Numpy.ipynb",
+      "path": "Data Science programming/02 - Numpy/06_Temas_Avanzados_Numpy.ipynb",
       "difficulty": "Avanzado",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/06_Temas_Avanzados_Numpy.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/02%20-%20Numpy/06_Temas_Avanzados_Numpy.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/06_Temas_Avanzados_Numpy.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/02%20-%20Numpy/06_Temas_Avanzados_Numpy.ipynb"
     },
     {
       "id": "03_00_Introduccion_Pandas.ipynb",
@@ -277,11 +1828,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "03 - Pandas",
       "filename": "00_Introduccion_Pandas.ipynb",
       "title": "Introduccion pandas 🐼",
-      "path": "03 - Pandas/00_Introduccion_Pandas.ipynb",
+      "path": "Data Science programming/03 - Pandas/00_Introduccion_Pandas.ipynb",
       "difficulty": "Básico",
       "type": "Introducción",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/00_Introduccion_Pandas.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/00_Introduccion_Pandas.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/00_Introduccion_Pandas.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/00_Introduccion_Pandas.ipynb"
     },
     {
       "id": "03_01_Estructuras_de_Datos_Pandas.ipynb",
@@ -289,11 +1840,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "03 - Pandas",
       "filename": "01_Estructuras_de_Datos_Pandas.ipynb",
       "title": "Estructuras de datos pandas 🐼",
-      "path": "03 - Pandas/01_Estructuras_de_Datos_Pandas.ipynb",
+      "path": "Data Science programming/03 - Pandas/01_Estructuras_de_Datos_Pandas.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/01_Estructuras_de_Datos_Pandas.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/01_Estructuras_de_Datos_Pandas.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/01_Estructuras_de_Datos_Pandas.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/01_Estructuras_de_Datos_Pandas.ipynb"
     },
     {
       "id": "03_02_Importacion_y_Exportacion_Pandas.ipynb",
@@ -301,11 +1852,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "03 - Pandas",
       "filename": "02_Importacion_y_Exportacion_Pandas.ipynb",
       "title": "Importacion y exportacion pandas 🐼",
-      "path": "03 - Pandas/02_Importacion_y_Exportacion_Pandas.ipynb",
+      "path": "Data Science programming/03 - Pandas/02_Importacion_y_Exportacion_Pandas.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/02_Importacion_y_Exportacion_Pandas.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/02_Importacion_y_Exportacion_Pandas.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/02_Importacion_y_Exportacion_Pandas.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/02_Importacion_y_Exportacion_Pandas.ipynb"
     },
     {
       "id": "03_03_Exploracion_de_Datos_Pandas.ipynb",
@@ -313,11 +1864,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "03 - Pandas",
       "filename": "03_Exploracion_de_Datos_Pandas.ipynb",
       "title": "Exploracion de datos pandas 🐼",
-      "path": "03 - Pandas/03_Exploracion_de_Datos_Pandas.ipynb",
+      "path": "Data Science programming/03 - Pandas/03_Exploracion_de_Datos_Pandas.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/03_Exploracion_de_Datos_Pandas.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/03_Exploracion_de_Datos_Pandas.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/03_Exploracion_de_Datos_Pandas.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/03_Exploracion_de_Datos_Pandas.ipynb"
     },
     {
       "id": "03_04_Indexacion_y_Seleccion_Pandas.ipynb",
@@ -325,11 +1876,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "03 - Pandas",
       "filename": "04_Indexacion_y_Seleccion_Pandas.ipynb",
       "title": "Indexacion y seleccion pandas 🐼",
-      "path": "03 - Pandas/04_Indexacion_y_Seleccion_Pandas.ipynb",
+      "path": "Data Science programming/03 - Pandas/04_Indexacion_y_Seleccion_Pandas.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/04_Indexacion_y_Seleccion_Pandas.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/04_Indexacion_y_Seleccion_Pandas.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/04_Indexacion_y_Seleccion_Pandas.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/04_Indexacion_y_Seleccion_Pandas.ipynb"
     },
     {
       "id": "03_05_Asignacion_de_Datos_Pandas.ipynb",
@@ -337,11 +1888,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "03 - Pandas",
       "filename": "05_Asignacion_de_Datos_Pandas.ipynb",
       "title": "Asignacion de datos pandas 🐼",
-      "path": "03 - Pandas/05_Asignacion_de_Datos_Pandas.ipynb",
+      "path": "Data Science programming/03 - Pandas/05_Asignacion_de_Datos_Pandas.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/05_Asignacion_de_Datos_Pandas.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/05_Asignacion_de_Datos_Pandas.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/05_Asignacion_de_Datos_Pandas.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/05_Asignacion_de_Datos_Pandas.ipynb"
     },
     {
       "id": "03_06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
@@ -349,11 +1900,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "03 - Pandas",
       "filename": "06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
       "title": "Anadir y eliminar columnas pandas 🐼",
-      "path": "03 - Pandas/06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
+      "path": "Data Science programming/03 - Pandas/06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/06_Anadir_y_Eliminar_Columnas_Pandas.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/06_Anadir_y_Eliminar_Columnas_Pandas.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/06_Anadir_y_Eliminar_Columnas_Pandas.ipynb"
     },
     {
       "id": "03_07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
@@ -361,11 +1912,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "03 - Pandas",
       "filename": "07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
       "title": "Agrupacion y ordenamiento pandas 🐼",
-      "path": "03 - Pandas/07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
+      "path": "Data Science programming/03 - Pandas/07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/07_Agrupacion_y_Ordenamiento_Pandas.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/07_Agrupacion_y_Ordenamiento_Pandas.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/07_Agrupacion_y_Ordenamiento_Pandas.ipynb"
     },
     {
       "id": "03_08_Fusion_de_Datos_Pandas.ipynb",
@@ -373,11 +1924,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "03 - Pandas",
       "filename": "08_Fusion_de_Datos_Pandas.ipynb",
       "title": "Fusion de datos pandas 🐼",
-      "path": "03 - Pandas/08_Fusion_de_Datos_Pandas.ipynb",
+      "path": "Data Science programming/03 - Pandas/08_Fusion_de_Datos_Pandas.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/08_Fusion_de_Datos_Pandas.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/03%20-%20Pandas/08_Fusion_de_Datos_Pandas.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/08_Fusion_de_Datos_Pandas.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/03%20-%20Pandas/08_Fusion_de_Datos_Pandas.ipynb"
     },
     {
       "id": "04_00_Introduccion_EDA.ipynb",
@@ -385,11 +1936,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "04 - EDA",
       "filename": "00_Introduccion_EDA.ipynb",
       "title": "Introduccion eda 📊",
-      "path": "04 - EDA/00_Introduccion_EDA.ipynb",
+      "path": "Data Science programming/04 - EDA/00_Introduccion_EDA.ipynb",
       "difficulty": "Básico",
       "type": "Introducción",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/00_Introduccion_EDA.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/00_Introduccion_EDA.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/00_Introduccion_EDA.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/00_Introduccion_EDA.ipynb"
     },
     {
       "id": "04_01_Exploracion_Preliminar_EDA.ipynb",
@@ -397,11 +1948,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "04 - EDA",
       "filename": "01_Exploracion_Preliminar_EDA.ipynb",
       "title": "Exploracion preliminar eda 📊",
-      "path": "04 - EDA/01_Exploracion_Preliminar_EDA.ipynb",
+      "path": "Data Science programming/04 - EDA/01_Exploracion_Preliminar_EDA.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/01_Exploracion_Preliminar_EDA.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/01_Exploracion_Preliminar_EDA.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/01_Exploracion_Preliminar_EDA.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/01_Exploracion_Preliminar_EDA.ipynb"
     },
     {
       "id": "04_02_Estadistica_Descriptiva_EDA.ipynb",
@@ -409,11 +1960,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "04 - EDA",
       "filename": "02_Estadistica_Descriptiva_EDA.ipynb",
       "title": "Estadistica descriptiva eda 📊",
-      "path": "04 - EDA/02_Estadistica_Descriptiva_EDA.ipynb",
+      "path": "Data Science programming/04 - EDA/02_Estadistica_Descriptiva_EDA.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/02_Estadistica_Descriptiva_EDA.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/02_Estadistica_Descriptiva_EDA.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/02_Estadistica_Descriptiva_EDA.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/02_Estadistica_Descriptiva_EDA.ipynb"
     },
     {
       "id": "04_03_Visualizacion_de_Datos_EDA.ipynb",
@@ -421,11 +1972,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "04 - EDA",
       "filename": "03_Visualizacion_de_Datos_EDA.ipynb",
       "title": "Visualizacion de datos eda 📊",
-      "path": "04 - EDA/03_Visualizacion_de_Datos_EDA.ipynb",
+      "path": "Data Science programming/04 - EDA/03_Visualizacion_de_Datos_EDA.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/03_Visualizacion_de_Datos_EDA.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/03_Visualizacion_de_Datos_EDA.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/03_Visualizacion_de_Datos_EDA.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/03_Visualizacion_de_Datos_EDA.ipynb"
     },
     {
       "id": "04_04_Librerias_de_Visualizacion_EDA.ipynb",
@@ -433,11 +1984,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "04 - EDA",
       "filename": "04_Librerias_de_Visualizacion_EDA.ipynb",
       "title": "Librerias de visualizacion eda 📊",
-      "path": "04 - EDA/04_Librerias_de_Visualizacion_EDA.ipynb",
+      "path": "Data Science programming/04 - EDA/04_Librerias_de_Visualizacion_EDA.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/04_Librerias_de_Visualizacion_EDA.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/04_Librerias_de_Visualizacion_EDA.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/04_Librerias_de_Visualizacion_EDA.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/04_Librerias_de_Visualizacion_EDA.ipynb"
     },
     {
       "id": "04_05_Comparacion_Librerias_Visualizacion.ipynb",
@@ -445,11 +1996,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "04 - EDA",
       "filename": "05_Comparacion_Librerias_Visualizacion.ipynb",
       "title": "Comparacion librerias visualizacion 📊",
-      "path": "04 - EDA/05_Comparacion_Librerias_Visualizacion.ipynb",
+      "path": "Data Science programming/04 - EDA/05_Comparacion_Librerias_Visualizacion.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/05_Comparacion_Librerias_Visualizacion.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/05_Comparacion_Librerias_Visualizacion.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/05_Comparacion_Librerias_Visualizacion.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/05_Comparacion_Librerias_Visualizacion.ipynb"
     },
     {
       "id": "04_06_Resumen_de_Funciones_EDA.ipynb",
@@ -457,11 +2008,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "04 - EDA",
       "filename": "06_Resumen_de_Funciones_EDA.ipynb",
       "title": "Resumen de funciones eda 📊",
-      "path": "04 - EDA/06_Resumen_de_Funciones_EDA.ipynb",
+      "path": "Data Science programming/04 - EDA/06_Resumen_de_Funciones_EDA.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/06_Resumen_de_Funciones_EDA.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/04%20-%20EDA/06_Resumen_de_Funciones_EDA.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/06_Resumen_de_Funciones_EDA.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/04%20-%20EDA/06_Resumen_de_Funciones_EDA.ipynb"
     },
     {
       "id": "05_00_Introduccion_Data_Preparation.ipynb",
@@ -469,11 +2020,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "05 - Data Preparation",
       "filename": "00_Introduccion_Data_Preparation.ipynb",
       "title": "Introduccion data preparation 🧹",
-      "path": "05 - Data Preparation/00_Introduccion_Data_Preparation.ipynb",
+      "path": "Data Science programming/05 - Data Preparation/00_Introduccion_Data_Preparation.ipynb",
       "difficulty": "Básico",
       "type": "Introducción",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/05%20-%20Data%20Preparation/00_Introduccion_Data_Preparation.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/05%20-%20Data%20Preparation/00_Introduccion_Data_Preparation.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/00_Introduccion_Data_Preparation.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/00_Introduccion_Data_Preparation.ipynb"
     },
     {
       "id": "05_01_Valores_Faltantes_Data_Preparation.ipynb",
@@ -481,11 +2032,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "05 - Data Preparation",
       "filename": "01_Valores_Faltantes_Data_Preparation.ipynb",
       "title": "Valores faltantes data preparation 🧹",
-      "path": "05 - Data Preparation/01_Valores_Faltantes_Data_Preparation.ipynb",
+      "path": "Data Science programming/05 - Data Preparation/01_Valores_Faltantes_Data_Preparation.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/05%20-%20Data%20Preparation/01_Valores_Faltantes_Data_Preparation.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/05%20-%20Data%20Preparation/01_Valores_Faltantes_Data_Preparation.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/01_Valores_Faltantes_Data_Preparation.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/01_Valores_Faltantes_Data_Preparation.ipynb"
     },
     {
       "id": "05_02_Escalado_Caracteristicas_Data_Preparation.ipynb",
@@ -493,11 +2044,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "05 - Data Preparation",
       "filename": "02_Escalado_Caracteristicas_Data_Preparation.ipynb",
       "title": "Escalado caracteristicas data preparation 🧹",
-      "path": "05 - Data Preparation/02_Escalado_Caracteristicas_Data_Preparation.ipynb",
+      "path": "Data Science programming/05 - Data Preparation/02_Escalado_Caracteristicas_Data_Preparation.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/05%20-%20Data%20Preparation/02_Escalado_Caracteristicas_Data_Preparation.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/05%20-%20Data%20Preparation/02_Escalado_Caracteristicas_Data_Preparation.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/02_Escalado_Caracteristicas_Data_Preparation.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/02_Escalado_Caracteristicas_Data_Preparation.ipynb"
     },
     {
       "id": "05_03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
@@ -505,11 +2056,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "05 - Data Preparation",
       "filename": "03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
       "title": "Fechas y datos inconsistentes data preparation 🧹",
-      "path": "05 - Data Preparation/03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
+      "path": "Data Science programming/05 - Data Preparation/03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/05%20-%20Data%20Preparation/03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/05%20-%20Data%20Preparation/03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/05%20-%20Data%20Preparation/03_Fechas_y_Datos_Inconsistentes_Data_Preparation.ipynb"
     },
     {
       "id": "06_00_Introduccion_Feature_Engineering.ipynb",
@@ -517,11 +2068,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "06 - Feature Engineering",
       "filename": "00_Introduccion_Feature_Engineering.ipynb",
       "title": "Introduccion feature engineering ⚙️",
-      "path": "06 - Feature Engineering/00_Introduccion_Feature_Engineering.ipynb",
+      "path": "Data Science programming/06 - Feature Engineering/00_Introduccion_Feature_Engineering.ipynb",
       "difficulty": "Básico",
       "type": "Introducción",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/00_Introduccion_Feature_Engineering.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/00_Introduccion_Feature_Engineering.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/00_Introduccion_Feature_Engineering.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/00_Introduccion_Feature_Engineering.ipynb"
     },
     {
       "id": "06_01_Variables_Categoricas_Feature_Engineering.ipynb",
@@ -529,11 +2080,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "06 - Feature Engineering",
       "filename": "01_Variables_Categoricas_Feature_Engineering.ipynb",
       "title": "Variables categoricas feature engineering ⚙️",
-      "path": "06 - Feature Engineering/01_Variables_Categoricas_Feature_Engineering.ipynb",
+      "path": "Data Science programming/06 - Feature Engineering/01_Variables_Categoricas_Feature_Engineering.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/01_Variables_Categoricas_Feature_Engineering.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/01_Variables_Categoricas_Feature_Engineering.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/01_Variables_Categoricas_Feature_Engineering.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/01_Variables_Categoricas_Feature_Engineering.ipynb"
     },
     {
       "id": "06_02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
@@ -541,11 +2092,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "06 - Feature Engineering",
       "filename": "02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
       "title": "Target encoding y suavizado feature engineering ⚙️",
-      "path": "06 - Feature Engineering/02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
+      "path": "Data Science programming/06 - Feature Engineering/02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/02_Target_Encoding_y_Suavizado_Feature_Engineering.ipynb"
     },
     {
       "id": "06_03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
@@ -553,11 +2104,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "06 - Feature Engineering",
       "filename": "03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
       "title": "Creacion de caracteristicas feature engineering ⚙️",
-      "path": "06 - Feature Engineering/03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
+      "path": "Data Science programming/06 - Feature Engineering/03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
       "difficulty": "Básico",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/03_Creacion_de_Caracteristicas_Feature_Engineering.ipynb"
     },
     {
       "id": "06_04_PCA_Feature_Engineering.ipynb",
@@ -565,11 +2116,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "06 - Feature Engineering",
       "filename": "04_PCA_Feature_Engineering.ipynb",
       "title": "Pca feature engineering ⚙️",
-      "path": "06 - Feature Engineering/04_PCA_Feature_Engineering.ipynb",
+      "path": "Data Science programming/06 - Feature Engineering/04_PCA_Feature_Engineering.ipynb",
       "difficulty": "Avanzado",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/04_PCA_Feature_Engineering.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/04_PCA_Feature_Engineering.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/04_PCA_Feature_Engineering.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/04_PCA_Feature_Engineering.ipynb"
     },
     {
       "id": "06_05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
@@ -577,11 +2128,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "06 - Feature Engineering",
       "filename": "05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
       "title": "Seleccion caracteristicas y mutual information ⚙️",
-      "path": "06 - Feature Engineering/05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
+      "path": "Data Science programming/06 - Feature Engineering/05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/06%20-%20Feature%20Engineering/05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/05_Seleccion_Caracteristicas_y_Mutual_Information.ipynb"
     },
     {
       "id": "07_00_Introduccion_Regression.ipynb",
@@ -589,11 +2140,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "07 - Regression",
       "filename": "00_Introduccion_Regression.ipynb",
       "title": "Introduccion regression 📈",
-      "path": "07 - Regression/00_Introduccion_Regression.ipynb",
+      "path": "Data Science programming/07 - Regression/00_Introduccion_Regression.ipynb",
       "difficulty": "Básico",
       "type": "Introducción",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/00_Introduccion_Regression.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/00_Introduccion_Regression.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/00_Introduccion_Regression.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/00_Introduccion_Regression.ipynb"
     },
     {
       "id": "07_01_Regresion_Lineal.ipynb",
@@ -601,11 +2152,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "07 - Regression",
       "filename": "01_Regresion_Lineal.ipynb",
       "title": "Regresion lineal 📈",
-      "path": "07 - Regression/01_Regresion_Lineal.ipynb",
+      "path": "Data Science programming/07 - Regression/01_Regresion_Lineal.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/01_Regresion_Lineal.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/01_Regresion_Lineal.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/01_Regresion_Lineal.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/01_Regresion_Lineal.ipynb"
     },
     {
       "id": "07_02_Consideraciones_Regresion_Multiple.ipynb",
@@ -613,11 +2164,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "07 - Regression",
       "filename": "02_Consideraciones_Regresion_Multiple.ipynb",
       "title": "Consideraciones regresion multiple 📈",
-      "path": "07 - Regression/02_Consideraciones_Regresion_Multiple.ipynb",
+      "path": "Data Science programming/07 - Regression/02_Consideraciones_Regresion_Multiple.ipynb",
       "difficulty": "Intermedio",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/02_Consideraciones_Regresion_Multiple.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/02_Consideraciones_Regresion_Multiple.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/02_Consideraciones_Regresion_Multiple.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/02_Consideraciones_Regresion_Multiple.ipynb"
     },
     {
       "id": "07_03_Regresion_Polinomial_y_Regularizacion.ipynb",
@@ -625,11 +2176,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "07 - Regression",
       "filename": "03_Regresion_Polinomial_y_Regularizacion.ipynb",
       "title": "Regresion polinomial y regularizacion 📈",
-      "path": "07 - Regression/03_Regresion_Polinomial_y_Regularizacion.ipynb",
+      "path": "Data Science programming/07 - Regression/03_Regresion_Polinomial_y_Regularizacion.ipynb",
       "difficulty": "Avanzado",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/03_Regresion_Polinomial_y_Regularizacion.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/03_Regresion_Polinomial_y_Regularizacion.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/03_Regresion_Polinomial_y_Regularizacion.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/03_Regresion_Polinomial_y_Regularizacion.ipynb"
     },
     {
       "id": "07_04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
@@ -637,11 +2188,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "07 - Regression",
       "filename": "04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
       "title": "Seleccion modelos validacion cruzada y knn 📈",
-      "path": "07 - Regression/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
+      "path": "Data Science programming/07 - Regression/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
       "difficulty": "Avanzado",
       "type": "Teoría y Práctica",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/07%20-%20Regression/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/07%20-%20Regression/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb"
     },
     {
       "id": "hw_01_Python_Hands_On.ipynb",
@@ -649,11 +2200,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "homeworks",
       "filename": "01_Python_Hands_On.ipynb",
       "title": "Python hands on 📝",
-      "path": "homeworks/01_Python_Hands_On.ipynb",
+      "path": "Data Science programming/homeworks/01_Python_Hands_On.ipynb",
       "difficulty": "Intermedio",
       "type": "Taller Evaluativo",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/01_Python_Hands_On.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/01_Python_Hands_On.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/01_Python_Hands_On.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/01_Python_Hands_On.ipynb"
     },
     {
       "id": "hw_02_NumPy_Hands_On.ipynb",
@@ -661,11 +2212,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "homeworks",
       "filename": "02_NumPy_Hands_On.ipynb",
       "title": "Numpy hands on 📝",
-      "path": "homeworks/02_NumPy_Hands_On.ipynb",
+      "path": "Data Science programming/homeworks/02_NumPy_Hands_On.ipynb",
       "difficulty": "Intermedio",
       "type": "Taller Evaluativo",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/02_NumPy_Hands_On.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/02_NumPy_Hands_On.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/02_NumPy_Hands_On.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/02_NumPy_Hands_On.ipynb"
     },
     {
       "id": "hw_03a_Pandas_Hands_On_Local.ipynb",
@@ -673,11 +2224,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "homeworks",
       "filename": "03a_Pandas_Hands_On_Local.ipynb",
       "title": "Pandas hands on local 📝",
-      "path": "homeworks/03a_Pandas_Hands_On_Local.ipynb",
+      "path": "Data Science programming/homeworks/03a_Pandas_Hands_On_Local.ipynb",
       "difficulty": "Intermedio",
       "type": "Taller Evaluativo",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/03a_Pandas_Hands_On_Local.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/03a_Pandas_Hands_On_Local.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/03a_Pandas_Hands_On_Local.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/03a_Pandas_Hands_On_Local.ipynb"
     },
     {
       "id": "hw_03b_Pandas_Hands_On_Kaggle.ipynb",
@@ -685,11 +2236,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "homeworks",
       "filename": "03b_Pandas_Hands_On_Kaggle.ipynb",
       "title": "Pandas hands on kaggle 📝",
-      "path": "homeworks/03b_Pandas_Hands_On_Kaggle.ipynb",
+      "path": "Data Science programming/homeworks/03b_Pandas_Hands_On_Kaggle.ipynb",
       "difficulty": "Intermedio",
       "type": "Taller Evaluativo",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/03b_Pandas_Hands_On_Kaggle.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/03b_Pandas_Hands_On_Kaggle.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/03b_Pandas_Hands_On_Kaggle.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/03b_Pandas_Hands_On_Kaggle.ipynb"
     },
     {
       "id": "hw_04_EDA_Hands_On.ipynb",
@@ -697,11 +2248,11 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "homeworks",
       "filename": "04_EDA_Hands_On.ipynb",
       "title": "Eda hands on 📝",
-      "path": "homeworks/04_EDA_Hands_On.ipynb",
+      "path": "Data Science programming/homeworks/04_EDA_Hands_On.ipynb",
       "difficulty": "Intermedio",
       "type": "Taller Evaluativo",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/04_EDA_Hands_On.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/04_EDA_Hands_On.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/04_EDA_Hands_On.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/04_EDA_Hands_On.ipynb"
     },
     {
       "id": "hw_05_Data_Preparation_Hands_On.ipynb",
@@ -709,189 +2260,189 @@ window.VIRTUAL_LAB_CATALOG = {
       "module_name": "homeworks",
       "filename": "05_Data_Preparation_Hands_On.ipynb",
       "title": "Data preparation hands on 📝",
-      "path": "homeworks/05_Data_Preparation_Hands_On.ipynb",
+      "path": "Data Science programming/homeworks/05_Data_Preparation_Hands_On.ipynb",
       "difficulty": "Intermedio",
       "type": "Taller Evaluativo",
-      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/05_Data_Preparation_Hands_On.ipynb",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/homeworks/05_Data_Preparation_Hands_On.ipynb"
+      "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/05_Data_Preparation_Hands_On.ipynb",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Data%20Science%20programming/homeworks/05_Data_Preparation_Hands_On.ipynb"
     }
   ],
   "datasets": [
     {
       "name": "climate_precip.csv",
       "module": "03 - Pandas",
-      "path": "03 - Pandas/data/climate_precip.csv",
+      "path": "Data Science programming/03 - Pandas/data/climate_precip.csv",
       "rows": 151111,
       "cols": 29,
       "target": "DLY-SNOW-PCTALL-GE050TI",
       "features": "STATION, STATION_NAME, DATE, DLY-PRCP-25PCTL, DLY-SNWD-25PCTL",
       "description": "Dataset de práctica para 03 - Pandas.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/03%20-%20Pandas/data/climate_precip.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/03%20-%20Pandas/data/climate_precip.csv')"
     },
     {
       "name": "climate_temp.csv",
       "module": "03 - Pandas",
-      "path": "03 - Pandas/data/climate_temp.csv",
+      "path": "Data Science programming/03 - Pandas/data/climate_temp.csv",
       "rows": 127021,
       "cols": 21,
       "target": "DLY-HTDD-NORMAL",
       "features": "STATION, STATION_NAME, ELEVATION, LATITUDE, LONGITUDE",
       "description": "Dataset de práctica para 03 - Pandas.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/03%20-%20Pandas/data/climate_temp.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/03%20-%20Pandas/data/climate_temp.csv')"
     },
     {
       "name": "winemag-data-130k-v2.csv",
       "module": "03 - Pandas",
-      "path": "03 - Pandas/data/winemag-data-130k-v2.csv",
+      "path": "Data Science programming/03 - Pandas/data/winemag-data-130k-v2.csv",
       "rows": 129972,
       "cols": 14,
       "target": "winery",
       "features": ", country, description, designation, points",
       "description": "Dataset de práctica para 03 - Pandas.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/03%20-%20Pandas/data/winemag-data-130k-v2.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/03%20-%20Pandas/data/winemag-data-130k-v2.csv')"
     },
     {
       "name": "quartets.csv",
       "module": "04 - EDA",
-      "path": "04 - EDA/data/quartets.csv",
+      "path": "Data Science programming/04 - EDA/data/quartets.csv",
       "rows": 45,
       "cols": 4,
       "target": "quartet",
       "features": ", x, y, quartet",
       "description": "Dataset de práctica para 04 - EDA.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/04%20-%20EDA/data/quartets.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/04%20-%20EDA/data/quartets.csv')"
     },
     {
       "name": "StudentsPerformance.csv",
       "module": "04 - EDA",
-      "path": "04 - EDA/data/StudentsPerformance.csv",
+      "path": "Data Science programming/04 - EDA/data/StudentsPerformance.csv",
       "rows": 1001,
       "cols": 8,
       "target": "writing score",
       "features": "gender, race/ethnicity, parental level of education, lunch, test preparation course",
       "description": "Dataset de práctica para 04 - EDA.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/04%20-%20EDA/data/StudentsPerformance.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/04%20-%20EDA/data/StudentsPerformance.csv')"
     },
     {
       "name": "hepatitis.csv",
       "module": "05 - Data Preparation",
-      "path": "05 - Data Preparation/data/hepatitis.csv",
+      "path": "Data Science programming/05 - Data Preparation/data/hepatitis.csv",
       "rows": 156,
       "cols": 20,
       "target": "class",
       "features": "age, sex, steroid, antivirals, fatigue",
       "description": "Dataset de práctica para 05 - Data Preparation.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/05%20-%20Data%20Preparation/data/hepatitis.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/05%20-%20Data%20Preparation/data/hepatitis.csv')"
     },
     {
       "name": "landslide-events.csv",
       "module": "05 - Data Preparation",
-      "path": "05 - Data Preparation/data/landslide-events.csv",
+      "path": "Data Science programming/05 - Data Preparation/data/landslide-events.csv",
       "rows": 1694,
       "cols": 23,
       "target": "source_link",
       "features": "id, date, time, continent_code, country_name",
       "description": "Dataset de práctica para 05 - Data Preparation.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/05%20-%20Data%20Preparation/data/landslide-events.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/05%20-%20Data%20Preparation/data/landslide-events.csv')"
     },
     {
       "name": "pakistan_intellectual_capital.csv",
       "module": "05 - Data Preparation",
-      "path": "05 - Data Preparation/data/pakistan_intellectual_capital.csv",
+      "path": "Data Science programming/05 - Data Preparation/data/pakistan_intellectual_capital.csv",
       "rows": 1143,
       "cols": 13,
       "target": "Other Information",
       "features": ", S#, Teacher Name, University Currently Teaching, Department",
       "description": "Dataset de práctica para 05 - Data Preparation.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/05%20-%20Data%20Preparation/data/pakistan_intellectual_capital.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/05%20-%20Data%20Preparation/data/pakistan_intellectual_capital.csv')"
     },
     {
       "name": "accidents.csv",
       "module": "06 - Feature Engineering",
-      "path": "06 - Feature Engineering/data/accidents.csv",
+      "path": "Data Science programming/06 - Feature Engineering/data/accidents.csv",
       "rows": 100001,
       "cols": 29,
       "target": "TrafficSignal",
       "features": "Severity, StartTime, EndTime, StartLat, StartLng",
       "description": "Dataset de práctica para 06 - Feature Engineering.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/06%20-%20Feature%20Engineering/data/accidents.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/accidents.csv')"
     },
     {
       "name": "autos.csv",
       "module": "06 - Feature Engineering",
-      "path": "06 - Feature Engineering/data/autos.csv",
+      "path": "Data Science programming/06 - Feature Engineering/data/autos.csv",
       "rows": 194,
       "cols": 25,
       "target": "price",
       "features": "symboling, make, fuel_type, aspiration, num_of_doors",
       "description": "Dataset de práctica para 06 - Feature Engineering.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/06%20-%20Feature%20Engineering/data/autos.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/autos.csv')"
     },
     {
       "name": "concrete.csv",
       "module": "06 - Feature Engineering",
-      "path": "06 - Feature Engineering/data/concrete.csv",
+      "path": "Data Science programming/06 - Feature Engineering/data/concrete.csv",
       "rows": 1031,
       "cols": 9,
       "target": "CompressiveStrength",
       "features": "Cement, BlastFurnaceSlag, FlyAsh, Water, Superplasticizer",
       "description": "Dataset de práctica para 06 - Feature Engineering.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/06%20-%20Feature%20Engineering/data/concrete.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/concrete.csv')"
     },
     {
       "name": "customer.csv",
       "module": "06 - Feature Engineering",
-      "path": "06 - Feature Engineering/data/customer.csv",
+      "path": "Data Science programming/06 - Feature Engineering/data/customer.csv",
       "rows": 9135,
       "cols": 25,
       "target": "VehicleSize",
       "features": ", Customer, State, CustomerLifetimeValue, Response",
       "description": "Dataset de práctica para 06 - Feature Engineering.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/06%20-%20Feature%20Engineering/data/customer.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/customer.csv')"
     },
     {
       "name": "melb_data.csv",
       "module": "06 - Feature Engineering",
-      "path": "06 - Feature Engineering/data/melb_data.csv",
+      "path": "Data Science programming/06 - Feature Engineering/data/melb_data.csv",
       "rows": 13581,
       "cols": 21,
       "target": "Propertycount",
       "features": "Suburb, Address, Rooms, Type, Price",
       "description": "Dataset de práctica para 06 - Feature Engineering.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/06%20-%20Feature%20Engineering/data/melb_data.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/melb_data.csv')"
     },
     {
       "name": "movielens1m.csv",
       "module": "06 - Feature Engineering",
-      "path": "06 - Feature Engineering/data/movielens1m.csv",
+      "path": "Data Science programming/06 - Feature Engineering/data/movielens1m.csv",
       "rows": 1000210,
       "cols": 28,
       "target": "Rating",
       "features": "Movie ID, Action, Adventure, Animation, Children",
       "description": "Dataset de práctica para 06 - Feature Engineering.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/06%20-%20Feature%20Engineering/data/movielens1m.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/06%20-%20Feature%20Engineering/data/movielens1m.csv')"
     },
     {
       "name": "Advertising.csv",
       "module": "07 - Regression",
-      "path": "07 - Regression/data/Advertising.csv",
+      "path": "Data Science programming/07 - Regression/data/Advertising.csv",
       "rows": 201,
       "cols": 5,
       "target": "Sales",
       "features": ", TV, Radio, Newspaper, Sales",
       "description": "Dataset de práctica para 07 - Regression.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/07%20-%20Regression/data/Advertising.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/07%20-%20Regression/data/Advertising.csv')"
     },
     {
       "name": "bikeshare.csv",
       "module": "07 - Regression",
-      "path": "07 - Regression/data/bikeshare.csv",
+      "path": "Data Science programming/07 - Regression/data/bikeshare.csv",
       "rows": 732,
       "cols": 11,
       "target": "count",
       "features": "season, month, holiday, day_of_week, workingday",
       "description": "Dataset de práctica para 07 - Regression.",
-      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/07%20-%20Regression/data/bikeshare.csv')"
+      "snippet": "df = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/07%20-%20Regression/data/bikeshare.csv')"
     }
   ],
   "stats": {
@@ -934,7 +2485,7 @@ window.VIRTUAL_LAB_CATALOG = {
       "module": "🐍 Módulo 01: Python",
       "size_str": "179 KB",
       "path": "Guias/Creacion_VENV.pdf",
-      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Guias/Creacion_VENV.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Creacion_VENV.pdf",
       "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
     },
     {
@@ -944,7 +2495,7 @@ window.VIRTUAL_LAB_CATALOG = {
       "module": "🐍 Módulo 01: Python",
       "size_str": "878 KB",
       "path": "Guias/Instalación_Python.pdf",
-      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Guias/Instalaci%C3%B3n_Python.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Instalaci%C3%B3n_Python.pdf",
       "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
     }
   ]

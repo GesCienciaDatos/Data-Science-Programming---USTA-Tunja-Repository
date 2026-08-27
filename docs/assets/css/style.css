@@ -33,7 +33,7 @@ html:not(.dark) ::-webkit-scrollbar-thumb {
 
 /* Stitch Glass Panels & Typography */
 .glass-panel {
-  background-color: rgba(27, 32, 36, 0.75);
+  background-color: rgba(27, 32, 36, 0.78);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(142, 213, 255, 0.15);
@@ -66,13 +66,19 @@ html:not(.dark) .glass-panel {
 
 /* Text Gradients */
 .text-gradient {
-  background: linear-gradient(135deg, #8ed5ff 0%, #c4e7ff 50%, #ffdf9f 100%);
+  background: linear-gradient(135deg, #8ed5ff 0%, #c4e7ff 45%, #ffdf9f 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 html:not(.dark) .text-gradient {
   background: linear-gradient(135deg, #0284c7 0%, #0369a1 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #ffc42f 0%, #ffdf9f 50%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -119,3 +125,66 @@ html:not(.dark) .text-gradient {
 .animate-neon-pulse {
   animation: neonPulse 2.5s infinite ease-in-out;
 }
+
+/* Entrance & Floating Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 30s linear infinite;
+}
+
+/* Stagger Delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Force Visibility Utilities */
+.force-hidden {
+  display: none !important;
+}
+
+.force-flex {
+  display: flex !important;
+}
+
+.force-block {
+  display: block !important;
+}
+

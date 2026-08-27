@@ -1,14 +1,14 @@
 /**
- * Real-Time GitHub Repository Auto-Discovery Engine
- * Automatically scans and registers new Modules, Notebooks, Datasets, Guías, and Videos.
- * Next-Gen Python Virtual Lab - USTA Tunja
+ * Real-Time GitHub Repository Multi-Course Auto-Discovery Engine
+ * Automatically scans and registers Courses, Modules, Notebooks, Datasets, Guías, and Videos.
+ * Next-Gen Multi-Course Virtual Lab - USTA Tunja
  */
 
 (function initAutoDiscoveryEngine() {
   const REPO_OWNER = "sazuniga06";
   const REPO_NAME = "Data-Science-Programming---USTA-Tunja-Repository";
   const BRANCH = "main";
-  const CACHE_KEY = "usta_catalog_discovery_cache";
+  const CACHE_KEY = "usta_multicourse_catalog_cache";
   const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutos de caché
 
   const MODULE_PALETTE = [
@@ -69,6 +69,19 @@
       .replace(/[\s_\-\.]+/g, '');
   }
 
+  function findCourseForPath(courses, path) {
+    if (!courses || !Array.isArray(courses)) return null;
+    const pathLower = path.toLowerCase();
+    for (const c of courses) {
+      if (c.folder && pathLower.startsWith(c.folder.toLowerCase() + '/')) {
+        return c;
+      }
+    }
+    // Fallback: Default to Data Science Programming if path matches modules or first course
+    const dsp = courses.find(c => c.id === 'data-science-programming') || courses[0];
+    return dsp || null;
+  }
+
   async function fetchRepoTree() {
     // 1. Verificar si hay caché en sesión
     const cached = sessionStorage.getItem(CACHE_KEY);
@@ -83,7 +96,7 @@
       }
     }
 
-    // 2. Consultar API de árbol recursivo de GitHub (o master si falla main)
+    // 2. Consultar API de árbol recursivo de GitHub
     const branches = [BRANCH, "master"];
     for (const b of branches) {
       try {
@@ -121,6 +134,7 @@
 
     if (!window.VIRTUAL_LAB_CATALOG) return;
     const cat = window.VIRTUAL_LAB_CATALOG;
+    if (!cat.courses) cat.courses = [];
 
     let newNotebooks = 0;
     let newDatasets = 0;
@@ -128,24 +142,32 @@
     let newVideos = 0;
     let newModules = 0;
 
-    // A. Detectar Módulos y Carpetas de la forma "XX - Nombre" o "homeworks"
+    // A. Detectar Módulos y Carpetas "XX - Nombre" dentro de los cursos
     tree.forEach(item => {
       if (item.type === 'tree') {
-        const match = item.path.match(/^(\d{2})\s*-\s*(.+)$/);
-        if (match) {
-          const modId = match[1];
-          const modName = item.path;
-          if (!cat.modules.some(m => m.id === modId)) {
-            const paletteItem = MODULE_PALETTE[cat.modules.length % MODULE_PALETTE.length];
-            cat.modules.push({
-              id: modId,
-              name: modName,
-              title: formatTitle(match[2]),
-              icon: paletteItem.icon,
-              color: paletteItem.color,
-              description: `Módulo formativo sobre ${formatTitle(match[2])}.`
-            });
-            newModules++;
+        const parts = item.path.split('/');
+        if (parts.length >= 2) {
+          const courseFolder = parts[0];
+          const moduleFolder = parts[1];
+          const match = moduleFolder.match(/^(\d{2})\s*-\s*(.+)$/);
+          if (match) {
+            const targetCourse = cat.courses.find(c => (c.folder || '').toLowerCase() === courseFolder.toLowerCase());
+            if (targetCourse) {
+              if (!targetCourse.modules) targetCourse.modules = [];
+              const modId = match[1];
+              if (!targetCourse.modules.some(m => m.id === modId)) {
+                const paletteItem = MODULE_PALETTE[targetCourse.modules.length % MODULE_PALETTE.length];
+                targetCourse.modules.push({
+                  id: modId,
+                  name: moduleFolder,
+                  title: formatTitle(match[2]),
+                  icon: paletteItem.icon,
+                  color: paletteItem.color,
+                  description: `Módulo formativo sobre ${formatTitle(match[2])}.`
+                });
+                newModules++;
+              }
+            }
           }
         }
       }
@@ -160,22 +182,27 @@
         // Excluir notebooks en carpetas temporales o internas
         if (item.path.startsWith('tmp/') || item.path.startsWith('.gemini/') || item.path.startsWith('.agents/')) return;
 
-        const exists = cat.notebooks.some(n => 
+        const targetCourse = findCourseForPath(cat.courses, item.path);
+        if (!targetCourse) return;
+        if (!targetCourse.notebooks) targetCourse.notebooks = [];
+
+        const exists = targetCourse.notebooks.some(n => 
           normalizeKey(n.path) === normalizeKey(item.path) || 
           normalizeKey(n.filename) === normalizeKey(filename)
         );
+
         if (!exists) {
           let moduleId = "01";
           let moduleName = "01 - Python";
 
-          if (item.path.startsWith('homeworks/')) {
+          if (item.path.toLowerCase().includes('/homeworks/')) {
             moduleId = "hw";
             moduleName = "homeworks";
           } else {
-            const modMatch = item.path.match(/^(\d{2})/);
+            const modMatch = item.path.match(/(\d{2})\s*-\s*[^/]+/);
             if (modMatch) {
               moduleId = modMatch[1];
-              const foundMod = cat.modules.find(m => m.id === moduleId);
+              const foundMod = (targetCourse.modules || []).find(m => m.id === moduleId);
               if (foundMod) moduleName = foundMod.name;
             }
           }
@@ -184,8 +211,8 @@
           const diff = inferDifficulty(cleanTitle, item.path);
           const encodedPath = encodeURIComponent(item.path).replace(/%2F/g, '/');
 
-          cat.notebooks.push({
-            id: filename,
+          targetCourse.notebooks.push({
+            id: `${moduleId}_${filename}`,
             module_id: moduleId,
             module_name: moduleName,
             filename: filename,
@@ -201,23 +228,28 @@
       }
     });
 
-    // C. Detectar Datasets (.csv, .parquet) en data/
+    // C. Detectar Datasets (.csv, .parquet)
     tree.forEach(item => {
       if (item.type === 'blob' && (item.path.endsWith('.csv') || item.path.endsWith('.parquet'))) {
         if (item.path.startsWith('.agents/') || item.path.startsWith('.git/') || item.path.startsWith('docs/')) return;
         const pathParts = item.path.split('/');
         const filename = pathParts[pathParts.length - 1];
         
-        const exists = cat.datasets.some(d => 
+        const targetCourse = findCourseForPath(cat.courses, item.path);
+        if (!targetCourse) return;
+        if (!targetCourse.datasets) targetCourse.datasets = [];
+
+        const exists = targetCourse.datasets.some(d => 
           normalizeKey(d.path) === normalizeKey(item.path) || 
           normalizeKey(d.name) === normalizeKey(filename)
         );
+
         if (!exists) {
           let moduleName = "General";
-          const modMatch = item.path.match(/^(\d{2}\s*-\s*[^/]+)/);
+          const modMatch = item.path.match(/(\d{2}\s*-\s*[^/]+)/);
           if (modMatch) moduleName = modMatch[1];
 
-          cat.datasets.push({
+          targetCourse.datasets.push({
             name: filename,
             module: moduleName,
             path: item.path,
@@ -225,7 +257,7 @@
             cols: 5,
             target: "Target Variable",
             features: "Feature_1, Feature_2, Feature_3...",
-            description: `Dataset para análisis y entrenamiento en ${moduleName}.`,
+            description: `Dataset para análisis y modelado en ${moduleName}.`,
             snippet: `df = pd.read_csv('https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/${encodeURIComponent(item.path).replace(/%2F/g, '/')}')`
           });
           newDatasets++;
@@ -233,31 +265,36 @@
       }
     });
 
-    // D. Detectar Guías PDF (.pdf) en Guias/ o docs/Guias/
+    // D. Detectar Guías PDF (.pdf)
     tree.forEach(item => {
       if (item.type === 'blob' && item.path.toLowerCase().endsWith('.pdf')) {
         const pathParts = item.path.split('/');
         const filename = pathParts[pathParts.length - 1];
 
-        const exists = cat.guias.some(g => 
+        const targetCourse = findCourseForPath(cat.courses, item.path);
+        if (!targetCourse) return;
+        if (!targetCourse.guias) targetCourse.guias = [];
+
+        const exists = targetCourse.guias.some(g => 
           normalizeKey(g.filename) === normalizeKey(filename) || 
           normalizeKey(g.path) === normalizeKey(item.path) ||
           normalizeKey(g.title) === normalizeKey(formatTitle(filename))
         );
+
         if (!exists) {
           const sizeKb = Math.round((item.size || 200000) / 1024);
           const sizeStr = sizeKb < 1024 ? `${sizeKb} KB` : `${(sizeKb/1024).toFixed(1)} MB`;
           const cleanTitle = formatTitle(filename);
           const encodedName = encodeURIComponent(filename);
 
-          cat.guias.push({
-            id: `guia_discovered_${cat.guias.length + 1}`,
+          targetCourse.guias.push({
+            id: `guia_discovered_${targetCourse.guias.length + 1}`,
             filename: filename,
             title: cleanTitle,
             module: "🐍 Módulo 01: Python",
             size_str: sizeStr,
             path: `Guias/${filename}`,
-            raw_url: `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/Guias/${encodedName}`,
+            raw_url: `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/${encodeURIComponent(targetCourse.folder || '')}/Guias/${encodedName}`,
             lfs_url: `https://media.githubusercontent.com/media/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/docs/Guias/${encodedName}`
           });
           newGuias++;
@@ -265,7 +302,7 @@
       }
     });
 
-    // E. Detectar Videos (.mp4, .webm, .mkv, .avi, .mov)
+    // E. Detectar Videos
     const videoExts = ['.mp4', '.mkv', '.webm', '.avi', '.mov'];
     tree.forEach(item => {
       const isVid = videoExts.some(ext => item.path.toLowerCase().endsWith(ext));
@@ -273,18 +310,23 @@
         const pathParts = item.path.split('/');
         const filename = pathParts[pathParts.length - 1];
 
-        const exists = cat.videos.some(v => 
+        const targetCourse = findCourseForPath(cat.courses, item.path);
+        if (!targetCourse) return;
+        if (!targetCourse.videos) targetCourse.videos = [];
+
+        const exists = targetCourse.videos.some(v => 
           normalizeKey(v.filename) === normalizeKey(filename) || 
           normalizeKey(v.path) === normalizeKey(item.path) ||
           normalizeKey(v.title) === normalizeKey(formatTitle(filename))
         );
+
         if (!exists) {
           const sizeMb = ((item.size || 35000000) / (1024 * 1024)).toFixed(1);
           const cleanTitle = formatTitle(filename);
           const encodedName = encodeURIComponent(filename);
 
-          cat.videos.push({
-            id: `vid_discovered_${cat.videos.length + 1}`,
+          targetCourse.videos.push({
+            id: `vid_discovered_${targetCourse.videos.length + 1}`,
             filename: filename,
             title: cleanTitle,
             module: "🐍 Módulo 01: Python",
@@ -299,16 +341,31 @@
       }
     });
 
-    // Actualizar Estadísticas
-    if (cat.stats) {
-      cat.stats.total_notebooks = cat.notebooks.length;
-      cat.stats.total_modules = cat.modules.filter(m => m.id !== 'hw').length;
-      cat.stats.total_datasets = cat.datasets.length;
-      cat.stats.total_guias = cat.guias.length;
-      cat.stats.total_videos = cat.videos.length;
+    // Actualizar Estadísticas por Curso
+    cat.courses.forEach(c => {
+      c.stats = {
+        total_notebooks: (c.notebooks || []).length,
+        total_modules: (c.modules || []).filter(m => m.id !== 'hw').length,
+        total_homeworks: (c.notebooks || []).filter(n => n.module_id === 'hw').length,
+        total_datasets: (c.datasets || []).length,
+        total_guias: (c.guias || []).length,
+        total_videos: (c.videos || []).length
+      };
+    });
+
+    // Sincronizar compatibilidad con curso activo
+    const activeCourse = cat.courses.find(c => c.id === cat.active_course_id) || cat.courses[0];
+    if (activeCourse) {
+      cat.modules = activeCourse.modules || [];
+      cat.notebooks = activeCourse.notebooks || [];
+      cat.datasets = activeCourse.datasets || [];
+      cat.guias = activeCourse.guias || [];
+      cat.videos = activeCourse.videos || [];
+      cat.stats = activeCourse.stats || {};
     }
 
     // Re-renderizar Componentes de UI
+    if (typeof window.renderCourseHub === 'function') window.renderCourseHub();
     if (typeof window.updateUiCounts === 'function') window.updateUiCounts();
     if (typeof window.renderPills === 'function') window.renderPills();
     if (typeof window.renderNotebooks === 'function') window.renderNotebooks();
@@ -321,7 +378,7 @@
       if (totalNew > 0) {
         window.showToast(`✨ Sincronizado: ${newNotebooks} notebooks, ${newGuias} guías, ${newVideos} videos nuevos`);
       } else {
-        window.showToast(`✅ Catálogo actualizado: ${cat.notebooks.length} notebooks, ${cat.guias.length} guías, ${cat.videos.length} videos`);
+        window.showToast(`✅ Catálogo actualizado: ${cat.notebooks.length} notebooks disponibles`);
       }
     }
   }
@@ -334,5 +391,5 @@
   // Exportar al scope global
   window.autoDiscoverRepo = autoDiscoverRepo;
   window.triggerFullSync = triggerFullSync;
-  window.autoDiscoverFiles = autoDiscoverRepo; // Compatibilidad
+  window.autoDiscoverFiles = autoDiscoverRepo;
 })();

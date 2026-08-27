@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
 update_catalog.py
-Script de automatización para escanear y sincronizar Guias, Contenido, Cuadernos y Datasets
-con el catálogo JavaScript del Laboratorio Virtual (docs/assets/js/catalog.js).
+Script de automatización multi-materia para escanear y sincronizar Guias, Contenido, 
+Cuadernos y Datasets por asignatura con el catálogo JavaScript del Laboratorio Virtual 
+(docs/assets/js/catalog.js).
 """
 
 import os
@@ -26,7 +27,154 @@ REPO_OWNER = "sazuniga06"
 REPO_NAME = "Data-Science-Programming---USTA-Tunja-Repository"
 BRANCH = "main"
 
-DEFAULT_MODULES = [
+COURSE_DEFINITIONS = [
+    {
+        "id": "data-science-programming",
+        "name": "Data Science Programming",
+        "title": "Programación para Ciencia de Datos",
+        "folder": "Data Science programming",
+        "icon": "🐍",
+        "badge": "Activo / Disponible",
+        "badge_color": "emerald",
+        "color": "#38bdf8",
+        "gradient": "from-sky-500/20 via-blue-600/10 to-transparent",
+        "border_glow": "border-sky-500/40",
+        "description": "Pensamiento computacional avanzado, NumPy, Pandas, Análisis Exploratorio de Datos (EDA), Limpieza e Imputación, Feature Engineering regularizado y Modelos de Regresión supervisados.",
+        "level": "Especialización",
+        "semester": "Semestre I",
+        "active": True
+    },
+    {
+        "id": "estadistica-analisis",
+        "name": "Estadística, Análisis y Representación de Datos",
+        "title": "Modelamiento Estadístico e Inferencia",
+        "folder": "Estadistica analisis y representacion de datos",
+        "icon": "📊",
+        "badge": "En Construcción",
+        "badge_color": "amber",
+        "color": "#f59e0b",
+        "gradient": "from-amber-500/20 via-yellow-600/10 to-transparent",
+        "border_glow": "border-amber-500/40",
+        "description": "Modelamiento probabilístico, inferencia estadística rigurosa, pruebas de hipótesis paramétricas y no paramétricas, análisis multivariado y técnicas avanzadas de representación.",
+        "level": "Especialización",
+        "semester": "Semestre I",
+        "active": False
+    },
+    {
+        "id": "adquisicion-gobernanza",
+        "name": "Adquisición, Gestión y Gobernanza de Datos",
+        "title": "Arquitectura, Calidad y Gestión de Datos",
+        "folder": "Adquision gestion y gobernanza de datos",
+        "icon": "🗄️",
+        "badge": "En Construcción",
+        "badge_color": "purple",
+        "color": "#a855f7",
+        "gradient": "from-purple-500/20 via-indigo-600/10 to-transparent",
+        "border_glow": "border-purple-500/40",
+        "description": "Ingeniería de pipelines ETL/ELT, arquitectura de bases de datos relacionales y NoSQL, calidad del dato, catálogos de metadatos y marcos de gobernanza DAMA-DMBOK.",
+        "level": "Especialización",
+        "semester": "Semestre I",
+        "active": False
+    },
+    {
+        "id": "privacidad-seguridad",
+        "name": "Privacidad, Seguridad e Integridad de los Datos",
+        "title": "Ciberseguridad y Ética en Datos",
+        "folder": "Privacidad, Seguridad e Integridad de los datos",
+        "icon": "🛡️",
+        "badge": "En Construcción",
+        "badge_color": "cyan",
+        "color": "#06b6d4",
+        "gradient": "from-cyan-500/20 via-teal-600/10 to-transparent",
+        "border_glow": "border-cyan-500/40",
+        "description": "Ciberseguridad analítica, anonimización y privacidad diferencial, criptografía aplicada a datos en reposo y tránsito, y cumplimiento normativo (Habeas Data / GDPR).",
+        "level": "Especialización",
+        "semester": "Semestre I",
+        "active": False
+    },
+    {
+        "id": "data-mining",
+        "name": "Data Mining",
+        "title": "Minería de Datos y Descubrimiento de Patrones",
+        "folder": "Data Mining",
+        "icon": "⛏️",
+        "badge": "En Construcción",
+        "badge_color": "rose",
+        "color": "#f43f5e",
+        "gradient": "from-rose-500/20 via-pink-600/10 to-transparent",
+        "border_glow": "border-rose-500/40",
+        "description": "Metodología KDD, reglas de asociación (Apriori, FP-Growth), detección de valores atípicos y patrones secuenciales en bases de datos complejas.",
+        "level": "Especialización",
+        "semester": "Semestre II",
+        "active": False
+    },
+    {
+        "id": "machine-learning",
+        "name": "Machine Learning",
+        "title": "Aprendizaje Automático Supervisado y No Supervisado",
+        "folder": "Machine Learning",
+        "icon": "🧠",
+        "badge": "En Construcción",
+        "badge_color": "violet",
+        "color": "#8b5cf6",
+        "gradient": "from-violet-500/20 via-purple-600/10 to-transparent",
+        "border_glow": "border-violet-500/40",
+        "description": "Algoritmos de clasificación supervisada, ensambles avanzados (Random Forest, XGBoost, LightGBM, CatBoost), clustering no supervisado y optimización de hiperparámetros.",
+        "level": "Especialización",
+        "semester": "Semestre II",
+        "active": False
+    },
+    {
+        "id": "big-data",
+        "name": "Big Data",
+        "title": "Procesamiento Distribuido y Masivo",
+        "folder": "Big Data",
+        "icon": "⚡",
+        "badge": "En Construcción",
+        "badge_color": "amber",
+        "color": "#f59e0b",
+        "gradient": "from-amber-500/20 via-orange-600/10 to-transparent",
+        "border_glow": "border-amber-500/40",
+        "description": "Computación distribuida con Apache Spark, PySpark, DuckDB, streaming en tiempo real con Kafka, arquitectura Lakehouse y almacenamiento optimizado en la nube.",
+        "level": "Especialización",
+        "semester": "Semestre II",
+        "active": False
+    },
+    {
+        "id": "introduccion-ia",
+        "name": "Introducción a la Inteligencia Artificial",
+        "title": "Redes Neuronales, Visión y Modelos Generativos",
+        "folder": "Introduccion a la Inteligencia Artificial",
+        "icon": "🤖",
+        "badge": "En Construcción",
+        "badge_color": "pink",
+        "color": "#ec4899",
+        "gradient": "from-pink-500/20 via-rose-600/10 to-transparent",
+        "border_glow": "border-pink-500/40",
+        "description": "Fundamentos de redes neuronales profundas (Deep Learning) con PyTorch, visión computacional, procesamiento del lenguaje natural (NLP) y fundamentos de LLMs.",
+        "level": "Especialización",
+        "semester": "Semestre II",
+        "active": False
+    },
+    {
+        "id": "visual-analytics",
+        "name": "Visual Analytics and Critical Thinking",
+        "title": "Analítica Visual y Pensamiento Crítico",
+        "folder": "Visual Analytics and Critical Thinking",
+        "icon": "👁️",
+        "badge": "En Construcción",
+        "badge_color": "emerald",
+        "color": "#10b981",
+        "gradient": "from-emerald-500/20 via-teal-600/10 to-transparent",
+        "border_glow": "border-emerald-500/40",
+        "description": "Tableros analíticos interactivos con Plotly, Dash y Streamlit, principios de percepción visual y cognitiva, y comunicación de hallazgos para la toma de decisiones.",
+        "level": "Especialización",
+        "semester": "Semestre II",
+        "active": False
+    }
+]
+
+DEFAULT_MODULES_DSP = [
     {
         "id": "01",
         "name": "01 - Python",
@@ -133,13 +281,13 @@ def infer_difficulty(title, path):
         return "Avanzado"
     return "Intermedio"
 
-def sync_folders():
-    """Sincroniza Guias/ y Contenido/ hacia docs/Guias/ y docs/Contenido/"""
+def sync_course_assets(course_dir):
+    """Sincroniza Guias/ y Contenido/ del curso hacia docs/Guias/ y docs/Contenido/"""
     for folder_name in ["Guias", "Contenido"]:
-        src = BASE_DIR / folder_name
+        src = course_dir / folder_name
         dest = DOCS_DIR / folder_name
         dest.mkdir(parents=True, exist_ok=True)
-        if src.exists():
+        if src.exists() and src.is_dir():
             for item in src.iterdir():
                 if item.is_file():
                     target_file = dest / item.name
@@ -147,39 +295,50 @@ def sync_folders():
                         shutil.copy2(item, target_file)
                         print(f"  [SYNC] Copiado: {item.name} -> docs/{folder_name}/")
 
-def scan_modules():
-    modules = list(DEFAULT_MODULES)
+def scan_course_modules(course_dir, default_modules=None):
+    modules = list(default_modules) if default_modules else []
     existing_ids = {m["id"] for m in modules}
 
-    for item in sorted(BASE_DIR.iterdir()):
-        if item.is_dir() and not item.name.startswith("."):
-            match = re.match(r'^(\d{2})\s*-\s*(.+)$', item.name)
-            if match:
-                mod_id = match.group(1)
-                if mod_id not in existing_ids:
-                    pal = PALETTE[len(modules) % len(PALETTE)]
+    if course_dir.exists() and course_dir.is_dir():
+        for item in sorted(course_dir.iterdir()):
+            if item.is_dir() and not item.name.startswith("."):
+                match = re.match(r'^(\d{2})\s*-\s*(.+)$', item.name)
+                if match:
+                    mod_id = match.group(1)
+                    if mod_id not in existing_ids:
+                        pal = PALETTE[len(modules) % len(PALETTE)]
+                        modules.append({
+                            "id": mod_id,
+                            "name": item.name,
+                            "title": format_title(match.group(2)),
+                            "icon": pal["icon"],
+                            "color": pal["color"],
+                            "description": f"Módulo de especialización sobre {format_title(match.group(2))}."
+                        })
+                        existing_ids.add(mod_id)
+                elif item.name.lower() == "homeworks" and "hw" not in existing_ids:
                     modules.append({
-                        "id": mod_id,
-                        "name": item.name,
-                        "title": format_title(match.group(2)),
-                        "icon": pal["icon"],
-                        "color": pal["color"],
-                        "description": f"Módulo de especialización sobre {format_title(match.group(2))}."
+                        "id": "hw",
+                        "name": "homeworks",
+                        "title": "Talleres Prácticos Evaluativos (Hands-On)",
+                        "icon": "📝",
+                        "color": "#DC2626",
+                        "description": "Talleres integradores de resolución autónoma con datos reales y desafíos de negocio."
                     })
-                    existing_ids.add(mod_id)
+                    existing_ids.add("hw")
     return modules
 
-def scan_notebooks(modules):
+def scan_course_notebooks(course_folder_name, course_dir, modules):
     notebooks = []
     
     for mod in modules:
-        mod_dir = BASE_DIR / mod["name"]
+        mod_dir = course_dir / mod["name"]
         if mod_dir.exists() and mod_dir.is_dir():
             for nb_file in sorted(mod_dir.glob("*.ipynb")):
                 if ".ipynb_checkpoints" in str(nb_file):
                     continue
                 
-                rel_path = f"{mod['name']}/{nb_file.name}"
+                rel_path = f"{course_folder_name}/{mod['name']}/{nb_file.name}"
                 title = format_title(nb_file.name)
                 diff = infer_difficulty(title, rel_path)
                 encoded_path = urllib.parse.quote(rel_path)
@@ -199,13 +358,14 @@ def scan_notebooks(modules):
 
     return notebooks
 
-def scan_datasets():
+def scan_course_datasets(course_folder_name, course_dir):
     datasets = []
     seen = set()
 
-    for data_dir in BASE_DIR.rglob("data"):
-        # Ignorar carpetas ocultas, .agents, docs, .git
-        rel_to_base = str(data_dir.relative_to(BASE_DIR))
+    if not course_dir.exists():
+        return datasets
+
+    for data_dir in course_dir.rglob("data"):
         if any(part.startswith(".") or part in ["docs", "tmp", "node_modules"] for part in data_dir.parts):
             continue
 
@@ -230,7 +390,7 @@ def scan_datasets():
 
                 features_str = ", ".join(headers[:5]) if headers else "Feature_1, Feature_2..."
                 target_str = headers[-1] if headers else "Target"
-                rel_path = f"{parent_name}/data/{csv_file.name}"
+                rel_path = f"{course_folder_name}/{parent_name}/data/{csv_file.name}"
                 encoded_path = urllib.parse.quote(rel_path)
 
                 datasets.append({
@@ -247,8 +407,8 @@ def scan_datasets():
 
     return datasets
 
-def scan_guias():
-    guias_dir = BASE_DIR / "Guias"
+def scan_course_guias(course_folder_name, course_dir):
+    guias_dir = course_dir / "Guias"
     if not guias_dir.exists():
         guias_dir = DOCS_DIR / "Guias"
     
@@ -268,14 +428,14 @@ def scan_guias():
                 "module": "🐍 Módulo 01: Python",
                 "size_str": size_str,
                 "path": f"Guias/{f.name}",
-                "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/Guias/{encoded_name}",
+                "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/{urllib.parse.quote(course_folder_name)}/Guias/{encoded_name}",
                 "lfs_url": f"https://media.githubusercontent.com/media/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Guias/{encoded_name}"
             })
             idx += 1
     return guias
 
-def scan_videos():
-    video_dir = BASE_DIR / "Contenido"
+def scan_course_videos(course_folder_name, course_dir):
+    video_dir = course_dir / "Contenido"
     if not video_dir.exists():
         video_dir = DOCS_DIR / "Contenido"
 
@@ -304,39 +464,73 @@ def scan_videos():
     return videos
 
 def rebuild_catalog_js():
-    print("🚀 Iniciando escaneo completo del repositorio...")
-    sync_folders()
-    modules = scan_modules()
-    notebooks = scan_notebooks(modules)
-    datasets = scan_datasets()
-    guias = scan_guias()
-    videos = scan_videos()
+    print("🚀 Iniciando escaneo multi-materia de la Especialización...")
 
-    catalog_data = {
-        "modules": modules,
-        "notebooks": notebooks,
-        "datasets": datasets,
-        "stats": {
+    courses_output = []
+    active_course_data = None
+
+    for course_def in COURSE_DEFINITIONS:
+        c_id = course_def["id"]
+        c_folder = course_def["folder"]
+        c_dir = BASE_DIR / c_folder
+
+        if c_id == "data-science-programming":
+            sync_course_assets(c_dir)
+            modules = scan_course_modules(c_dir, DEFAULT_MODULES_DSP)
+            notebooks = scan_course_notebooks(c_folder, c_dir, modules)
+            datasets = scan_course_datasets(c_folder, c_dir)
+            guias = scan_course_guias(c_folder, c_dir)
+            videos = scan_course_videos(c_folder, c_dir)
+        else:
+            modules = scan_course_modules(c_dir) if c_dir.exists() else []
+            notebooks = scan_course_notebooks(c_folder, c_dir, modules) if c_dir.exists() else []
+            datasets = scan_course_datasets(c_folder, c_dir) if c_dir.exists() else []
+            guias = scan_course_guias(c_folder, c_dir) if c_dir.exists() else []
+            videos = scan_course_videos(c_folder, c_dir) if c_dir.exists() else []
+
+        stats = {
             "total_notebooks": len(notebooks),
             "total_modules": len([m for m in modules if m["id"] != "hw"]),
             "total_homeworks": len([n for n in notebooks if n["module_id"] == "hw"]),
             "total_datasets": len(datasets),
             "total_guias": len(guias),
             "total_videos": len(videos)
-        },
-        "videos": videos,
-        "guias": guias
+        }
+
+        course_obj = {
+            **course_def,
+            "modules": modules,
+            "notebooks": notebooks,
+            "datasets": datasets,
+            "guias": guias,
+            "videos": videos,
+            "stats": stats
+        }
+        courses_output.append(course_obj)
+
+        if course_def.get("active", False):
+            active_course_data = course_obj
+
+    if not active_course_data and courses_output:
+        active_course_data = courses_output[0]
+
+    catalog_data = {
+        "active_course_id": active_course_data["id"] if active_course_data else "data-science-programming",
+        "courses": courses_output,
+        "modules": active_course_data["modules"] if active_course_data else [],
+        "notebooks": active_course_data["notebooks"] if active_course_data else [],
+        "datasets": active_course_data["datasets"] if active_course_data else [],
+        "stats": active_course_data["stats"] if active_course_data else {},
+        "videos": active_course_data["videos"] if active_course_data else [],
+        "guias": active_course_data["guias"] if active_course_data else []
     }
 
-    js_content = f"// Virtual Laboratory Catalog Database - Auto-generated\nwindow.VIRTUAL_LAB_CATALOG = {json.dumps(catalog_data, indent=2, ensure_ascii=False)};\nvar VIRTUAL_LAB_CATALOG = window.VIRTUAL_LAB_CATALOG;\n"
+    js_content = f"// Virtual Laboratory Catalog Database - Auto-generated Multi-Course Architecture\nwindow.VIRTUAL_LAB_CATALOG = {json.dumps(catalog_data, indent=2, ensure_ascii=False)};\nvar VIRTUAL_LAB_CATALOG = window.VIRTUAL_LAB_CATALOG;\n"
     CATALOG_JS_PATH.write_text(js_content, encoding="utf-8")
     
-    print(f"✅ Catálogo reconstruido exitosamente en docs/assets/js/catalog.js:")
-    print(f"   - Módulos: {len(modules)}")
-    print(f"   - Cuadernos: {len(notebooks)}")
-    print(f"   - Datasets: {len(datasets)}")
-    print(f"   - Guías PDF: {len(guias)}")
-    print(f"   - Videos: {len(videos)}")
+    print(f"✅ Catálogo multi-materia reconstruido exitosamente:")
+    print(f"   - Total Materias/Asignaturas: {len(courses_output)}")
+    print(f"   - Materia Activa: {active_course_data['name']} ({active_course_data['stats']['total_notebooks']} notebooks)")
 
 if __name__ == "__main__":
     rebuild_catalog_js()
