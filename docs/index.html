@@ -166,6 +166,10 @@
           <span>🎬 Video Clases</span>
           <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-surface-container-high text-on-surface-variant border border-outline-variant" id="nav-count-videos">2</span>
         </button>
+        <button onclick="switchTab('libros')" id="nav-btn-libros" class="font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2.5 py-1 rounded flex items-center gap-1.5 shrink-0">
+          <span>📚 Libros</span>
+          <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-surface-container-high text-on-surface-variant border border-outline-variant" id="nav-count-libros">12</span>
+        </button>
         <button onclick="switchTab('datasets')" id="nav-btn-datasets" class="font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2.5 py-1 rounded flex items-center gap-1.5 shrink-0">
           <span>🗄️ Datasets</span>
           <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-surface-container-high text-on-surface-variant border border-outline-variant" id="nav-count-datasets">16</span>
@@ -186,10 +190,16 @@
           <span>Materias</span>
         </button>
 
+        <!-- Modo Dummies Switcher Top Navbar -->
+        <button id="navDummiesToggleBtn" onclick="toggleDummiesMode()" class="px-3 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 transition-all duration-300 border border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/25 active:scale-95 shadow-sm" title="Activar / Desactivar Modo Dummies (Explicaciones para no ingenieros)">
+          <span class="material-symbols-outlined text-sm text-amber-400">lightbulb</span>
+          <span id="navDummiesToggleText" class="font-semibold">Modo Dummies: OFF</span>
+        </button>
+
         <!-- Search Input -->
         <div class="hidden md:flex relative group">
           <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors text-sm">search</span>
-          <input id="navSearchInput" class="bg-surface-container pl-9 pr-4 py-1.5 rounded-DEFAULT border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:shadow-neon-cyan transition-all w-44 sm:w-52 text-on-surface placeholder:text-on-surface-variant font-code-md text-xs" placeholder="Buscar... (Atajo /)" type="text"/>
+          <input id="navSearchInput" class="bg-surface-container pl-9 pr-4 py-1.5 rounded-DEFAULT border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:shadow-neon-cyan transition-all w-40 sm:w-48 text-on-surface placeholder:text-on-surface-variant font-code-md text-xs" placeholder="Buscar... (Atajo /)" type="text"/>
         </div>
 
         <!-- Sync Button -->
@@ -431,7 +441,7 @@
           <div class="flex flex-wrap gap-2" id="workspaceTabsGroup">
             <button onclick="switchTab('notebooks')" id="tab-pill-notebooks" class="bg-primary/20 text-primary px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap border border-primary/30 cursor-pointer hover:bg-primary/30 transition-all flex items-center gap-1.5 shadow-neon-cyan shrink-0">
               <span>⚡ Cuadernos</span>
-              <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-primary/30 text-primary font-bold" id="tab-count-notebooks">54</span>
+              <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-primary/30 text-primary font-bold" id="tab-count-notebooks">108</span>
             </button>
             <button onclick="switchTab('guias')" id="tab-pill-guias" class="bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5 shrink-0">
               <span>📖 Guías PDF</span>
@@ -440,6 +450,10 @@
             <button onclick="switchTab('videos')" id="tab-pill-videos" class="bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5 shrink-0">
               <span>🎬 Video Clases</span>
               <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-surface-container-high text-on-surface-variant" id="tab-count-videos">2</span>
+            </button>
+            <button onclick="switchTab('libros')" id="tab-pill-libros" class="bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5 shrink-0">
+              <span>📚 Libros & Referencias</span>
+              <span class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-surface-container-high text-on-surface-variant" id="tab-count-libros">12</span>
             </button>
             <button onclick="switchTab('datasets')" id="tab-pill-datasets" class="bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5 shrink-0">
               <span>🗄️ Data Warehouse</span>
@@ -453,7 +467,13 @@
             </button>
           </div>
 
-          <div class="flex items-center gap-3 w-full md:w-auto">
+          <div class="flex items-center gap-3 w-full md:w-auto flex-wrap sm:flex-nowrap">
+            <!-- Modo Dummies Switcher en Workspace -->
+            <button id="workspaceDummiesToggleBtn" onclick="toggleDummiesMode()" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 border border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/25 transition-all shadow-sm shrink-0 cursor-pointer" title="Filtrar específicamente cuadernos y explicaciones para Dummies / No Ingenieros">
+              <span class="material-symbols-outlined text-sm text-amber-400">lightbulb</span>
+              <span id="workspaceDummiesToggleText" class="font-semibold">Modo Dummies: OFF</span>
+            </button>
+
             <div class="relative flex-1 md:w-48">
               <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm pointer-events-none">filter_list</span>
               <select id="diffFilter" class="w-full bg-surface-container pl-8 pr-4 py-1.5 rounded-DEFAULT border border-outline-variant text-on-surface font-body-md text-xs appearance-none focus:border-primary focus:ring-1 focus:ring-primary outline-none">
@@ -463,6 +483,31 @@
                 <option value="Avanzado">🧗 Avanzado</option>
               </select>
             </div>
+          </div>
+        </div>
+
+        <!-- DUMMIES MODE BANNER ALERT -->
+        <div id="dummiesModeBanner" class="hidden p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/15 via-yellow-500/10 to-amber-600/15 border border-amber-500/40 shadow-neon-amber backdrop-blur-xl animate-fade-in-up">
+          <div class="flex items-start sm:items-center justify-between gap-4 flex-col sm:flex-row">
+            <div class="flex items-center gap-3.5">
+              <div class="w-11 h-11 rounded-2xl bg-amber-500/25 border border-amber-500/50 flex items-center justify-center text-2xl shrink-0 shadow-sm animate-float">
+                💡
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h4 class="font-headline-md text-sm sm:text-base font-bold text-amber-300">
+                    Modo Dummies Activado — Programación para No Ingenieros
+                  </h4>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-amber-400 text-slate-950 font-bold uppercase">54 Cuadernos Adaptados</span>
+                </div>
+                <p class="text-xs text-on-surface/90 mt-1 leading-relaxed max-w-3xl">
+                  Mostrando los cuadernos explicados con <strong>analogías del mundo real</strong> (cajas con etiquetas, bandejas de huevos, sombras 3D y peritos valuadores), explicaciones paso a paso sin tecnicismos y retos prácticos.
+                </p>
+              </div>
+            </div>
+            <button onclick="toggleDummiesMode()" class="self-end sm:self-center text-xs font-label-caps px-3.5 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 transition-all whitespace-nowrap active:scale-95">
+              Volver a Modo Estándar
+            </button>
           </div>
         </div>
 
@@ -576,7 +621,48 @@
           </div>
         </div>
 
-        <!-- VIEW 4: DATA WAREHOUSE -->
+        <!-- VIEW 4: DIGITAL LIBRARY & BOOKS -->
+        <div id="view-libros" class="hidden space-y-6">
+          <!-- Hero de la Biblioteca -->
+          <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-primary/30 relative overflow-hidden bg-gradient-to-r from-surface-container via-surface to-surface-container-high">
+            <div class="max-w-3xl space-y-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/25 text-primary text-xs font-label-caps">
+                <span class="material-symbols-outlined text-sm">menu_book</span>
+                <span>Biblioteca de Referencia y Libros Abiertos (Open Access)</span>
+              </div>
+              <h3 class="font-display-sm text-2xl sm:text-3xl text-gradient font-bold">
+                Textos Fundacionales de Ciencia de Datos & IA
+              </h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                Selección de los mejores libros internacionales para dominar Python, Estadística, Machine Learning y Visualización, con explicaciones claras, repositorios de código y accesos gratuitos en línea.
+              </p>
+            </div>
+          </div>
+
+          <!-- Filtros de Categoría y Buscador de Libros -->
+          <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 border-b border-outline-variant/60 pb-4">
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1" id="bookCategoryPillsContainer">
+              <button onclick="filterBooksByCategory('all')" id="book-pill-all" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-primary text-on-primary font-bold shadow-neon-cyan transition-all">Todos (12)</button>
+              <button onclick="filterBooksByCategory('Python & Pandas')" id="book-pill-python" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">🐍 Python & Pandas</button>
+              <button onclick="filterBooksByCategory('Estadística & EDA')" id="book-pill-stats" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">📊 Estadística & EDA</button>
+              <button onclick="filterBooksByCategory('Machine Learning')" id="book-pill-ml" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">🤖 Machine Learning</button>
+              <button onclick="filterBooksByCategory('Visualización & Storytelling')" id="book-pill-vis" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">🎨 Visualización</button>
+              <button onclick="filterBooksByCategory('Para Dummies / Principiantes')" id="book-pill-dummies" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25 transition-all">💡 Para Dummies</button>
+            </div>
+
+            <div class="relative w-full md:w-64">
+              <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xs pointer-events-none">search</span>
+              <input id="searchBooksInput" type="text" placeholder="Buscar libro, autor o tema..." class="w-full bg-surface-container pl-9 pr-3 py-1.5 rounded-xl border border-outline-variant text-on-surface font-mono text-xs focus:border-primary outline-none">
+            </div>
+          </div>
+
+          <!-- Grid de Libros -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="booksGridContainer">
+            <!-- Renderizado dinámicamente vía app.js -->
+          </div>
+        </div>
+
+        <!-- VIEW 5: DATA WAREHOUSE -->
         <div id="view-datasets" class="hidden">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="datasetsContainer"></div>
         </div>

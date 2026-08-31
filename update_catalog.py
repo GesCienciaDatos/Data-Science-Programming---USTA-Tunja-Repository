@@ -356,29 +356,274 @@ def scan_course_modules(course_dir, default_modules=None):
                     existing_ids.add("hw")
     return modules
 
+BOOKS_CATALOG = [
+    {
+        "id": "book_1",
+        "title": "Python for Data Analysis",
+        "subtitle": "Data Wrangling with Pandas, NumPy, and Jupyter",
+        "author": "Wes McKinney",
+        "year": "2022",
+        "edition": "3rd Edition",
+        "publisher": "O'Reilly Media",
+        "category": "Python & Pandas",
+        "level": "Básico a Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Escrito por el creador original de Pandas. Es el manual definitivo para manipular tablas, limpiar datos y operar arrays numéricos sin enredarse.",
+        "topics": ["Python", "NumPy", "Pandas", "Jupyter", "Data Cleaning"],
+        "cover_gradient": "from-sky-600 to-blue-900",
+        "icon": "🐼",
+        "open_access_url": "https://wesmckinney.com/book/",
+        "github_url": "https://github.com/wesm/pydata-book",
+        "official_url": "https://www.oreilly.com/library/view/python-for-data/9781098104023/"
+    },
+    {
+        "id": "book_2",
+        "title": "Hands-On Machine Learning",
+        "subtitle": "with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques",
+        "author": "Aurélien Géron",
+        "year": "2022",
+        "edition": "3rd Edition",
+        "publisher": "O'Reilly Media",
+        "category": "Machine Learning",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": True,
+        "summary_dummies": "La biblia práctica de Machine Learning mundial. Explica desde una regresión lineal simple hasta redes neuronales profundas con ejemplos claros paso a paso.",
+        "topics": ["Scikit-Learn", "Regresión", "Clasificación", "Keras", "TensorFlow"],
+        "cover_gradient": "from-emerald-600 to-teal-900",
+        "icon": "🤖",
+        "open_access_url": "https://github.com/ageron/handson-ml3",
+        "github_url": "https://github.com/ageron/handson-ml3",
+        "official_url": "https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/"
+    },
+    {
+        "id": "book_3",
+        "title": "An Introduction to Statistical Learning",
+        "subtitle": "with Applications in Python (ISLP)",
+        "author": "G. James, D. Witten, T. Hastie, R. Tibshirani, J. Taylor",
+        "year": "2023",
+        "edition": "Python Edition",
+        "publisher": "Springer",
+        "category": "Estadística & ML",
+        "level": "Intermedio",
+        "dummies_friendly": False,
+        "summary_dummies": "El estándar de oro académico para entender la matemática y fundamento estadístico detrás de cada modelo de predicción, clasificación y remuestreo.",
+        "topics": ["Regresión Lineal", "Regularización Ridge/Lasso", "Árboles", "Inferencia", "PCA"],
+        "cover_gradient": "from-indigo-600 to-slate-900",
+        "icon": "📈",
+        "open_access_url": "https://www.statlearning.com/",
+        "github_url": "https://github.com/intro-stat-learning/ISLP",
+        "official_url": "https://www.statlearning.com/"
+    },
+    {
+        "id": "book_4",
+        "title": "Practical Statistics for Data Scientists",
+        "subtitle": "50+ Essential Concepts Using R and Python",
+        "author": "Peter Bruce, Andrew Bruce, Peter Gedeck",
+        "year": "2020",
+        "edition": "2nd Edition",
+        "publisher": "O'Reilly Media",
+        "category": "Estadística & EDA",
+        "level": "Básico a Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "¿Odiabas las fórmulas abstractas de la universidad? Este libro rescata los 50 conceptos que realmente necesitas en Ciencia de Datos explicados con total sentido práctico.",
+        "topics": ["EDA", "Distribuciones", "Pruebas de Hipótesis", "Muestreo", "Significancia"],
+        "cover_gradient": "from-amber-600 to-yellow-900",
+        "icon": "📊",
+        "open_access_url": "https://github.com/gedeck/practical-statistics-for-data-scientists",
+        "github_url": "https://github.com/gedeck/practical-statistics-for-data-scientists",
+        "official_url": "https://www.oreilly.com/library/view/practical-statistics-for/9781492072935/"
+    },
+    {
+        "id": "book_5",
+        "title": "Automate the Boring Stuff with Python",
+        "subtitle": "Practical Programming for Total Beginners",
+        "author": "Al Sweigart",
+        "year": "2019",
+        "edition": "2nd Edition",
+        "publisher": "No Starch Press",
+        "category": "Para Dummies / Principiantes",
+        "level": "Básico (100% Dummies)",
+        "dummies_friendly": True,
+        "summary_dummies": "¡El mejor libro para quienes nunca han programado en su vida! Aprende a automatizar archivos de Excel, tareas repetitivas y scripts útiles en minutos.",
+        "topics": ["Sintaxis Básica", "Archivos", "Excel", "Automatización", "Scraping"],
+        "cover_gradient": "from-rose-600 to-pink-900",
+        "icon": "💡",
+        "open_access_url": "https://automatetheboringstuff.com/",
+        "github_url": "https://github.com/asweigart",
+        "official_url": "https://automatetheboringstuff.com/"
+    },
+    {
+        "id": "book_6",
+        "title": "Storytelling with Data",
+        "subtitle": "A Data Visualization Guide for Business Professionals",
+        "author": "Cole Nussbaumer Knaflic",
+        "year": "2015",
+        "edition": "1st Edition",
+        "publisher": "Wiley",
+        "category": "Visualización & Storytelling",
+        "level": "Básico a Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Tus gráficos no deben ser adornos confusos. Aprende a eliminar el ruido visual, captar la atención de tu audiencia y comunicar decisiones claras con datos.",
+        "topics": ["Visualización", "Storytelling", "Diseño de Gráficos", "Comunicación Ejecutiva"],
+        "cover_gradient": "from-purple-600 to-violet-900",
+        "icon": "🎨",
+        "open_access_url": "https://www.storytellingwithdata.com/books",
+        "github_url": "https://www.storytellingwithdata.com/",
+        "official_url": "https://www.storytellingwithdata.com/books"
+    },
+    {
+        "id": "book_7",
+        "title": "Python Data Science Handbook",
+        "subtitle": "Essential Tools for Working with Data",
+        "author": "Jake VanderPlas",
+        "year": "2023",
+        "edition": "2nd Edition",
+        "publisher": "O'Reilly Media",
+        "category": "Python & Fundamentos",
+        "level": "Básico a Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Texto libre completo disponible en Jupyter Notebooks. Cubre a fondo IPython, NumPy, Pandas, Matplotlib y Scikit-Learn de forma estructurada y pedagógica.",
+        "topics": ["IPython", "NumPy", "Pandas", "Matplotlib", "Scikit-Learn"],
+        "cover_gradient": "from-cyan-600 to-teal-900",
+        "icon": "🐍",
+        "open_access_url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
+        "github_url": "https://github.com/jakevdp/PythonDataScienceHandbook",
+        "official_url": "https://jakevdp.github.io/PythonDataScienceHandbook/"
+    },
+    {
+        "id": "book_8",
+        "title": "Feature Engineering for Machine Learning",
+        "subtitle": "Principles and Techniques for Data Scientists",
+        "author": "Alice Zheng, Amanda Casari",
+        "year": "2018",
+        "edition": "1st Edition",
+        "publisher": "O'Reilly Media",
+        "category": "Feature Engineering",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Los mejores modelos no provienen del algoritmo más complejo, sino de cómo preparas tus variables: One-Hot, escalado, transformaciones logarítmicas y PCA.",
+        "topics": ["Encoding", "Escalamiento", "Texto/NLP", "Reducción Dimensional", "PCA"],
+        "cover_gradient": "from-fuchsia-600 to-purple-900",
+        "icon": "⚙️",
+        "open_access_url": "https://github.com/alicezheng/feature-engineering-book",
+        "github_url": "https://github.com/alicezheng/feature-engineering-book",
+        "official_url": "https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/"
+    },
+    {
+        "id": "book_9",
+        "title": "Naked Statistics",
+        "subtitle": "Stripping the Dread from the Data",
+        "author": "Charles Wheelan",
+        "year": "2013",
+        "edition": "1st Edition",
+        "publisher": "W. W. Norton & Company",
+        "category": "Para Dummies / Principiantes",
+        "level": "Básico (100% Dummies)",
+        "dummies_friendly": True,
+        "summary_dummies": "¡El libro más divertido sobre estadística! Cero fórmulas intimidantes, lleno de humor, analogías de concursos de TV y ejemplos de la vida real.",
+        "topics": ["Intuición Estadística", "Correlación vs Causalidad", "Probabilidad", "Inferencia"],
+        "cover_gradient": "from-orange-600 to-amber-900",
+        "icon": "🎯",
+        "open_access_url": "https://wwnorton.com/books/9780393347777/about-the-book/product-details",
+        "github_url": "https://wwnorton.com/books/9780393347777",
+        "official_url": "https://wwnorton.com/books/9780393347777/about-the-book/product-details"
+    },
+    {
+        "id": "book_10",
+        "title": "Fluent Python",
+        "subtitle": "Clear, Concise, and Effective Programming",
+        "author": "Luciano Ramalho",
+        "year": "2022",
+        "edition": "2nd Edition",
+        "publisher": "O'Reilly Media",
+        "category": "Python Avanzado",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Para cuando quieras dar el salto a escribir código Python verdaderamente idiomático, elegante, de alto rendimiento y con POO profesional.",
+        "topics": ["Data Model", "Generadores", "Decoradores", "Concurrencia", "Tipado"],
+        "cover_gradient": "from-emerald-700 to-slate-900",
+        "icon": "⚡",
+        "open_access_url": "https://github.com/fluentpython/example-code-2e",
+        "github_url": "https://github.com/fluentpython/example-code-2e",
+        "official_url": "https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/"
+    },
+    {
+        "id": "book_11",
+        "title": "Data Science from Scratch",
+        "subtitle": "First Principles with Python",
+        "author": "Joel Grus",
+        "year": "2019",
+        "edition": "2nd Edition",
+        "publisher": "O'Reilly Media",
+        "category": "Python & Algoritmos",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Construye cada algoritmo de Ciencia de Datos desde cero (álgebra lineal, gradiente descendente, KNN, regresión) para entender cómo funcionan por dentro.",
+        "topics": ["Álgebra Lineal", "Gradiente", "KNN", "Regresión", "Naive Bayes"],
+        "cover_gradient": "from-teal-600 to-cyan-950",
+        "icon": "🧪",
+        "open_access_url": "https://github.com/joelgrus/data-science-from-scratch",
+        "github_url": "https://github.com/joelgrus/data-science-from-scratch",
+        "official_url": "https://www.oreilly.com/library/view/data-science-from/9781492041122/"
+    },
+    {
+        "id": "book_12",
+        "title": "Deep Learning with Python",
+        "subtitle": "Second Edition",
+        "author": "François Chollet",
+        "year": "2021",
+        "edition": "2nd Edition",
+        "publisher": "Manning Publications",
+        "category": "Machine Learning",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": True,
+        "summary_dummies": "Escrito por el creador de Keras. Desmitifica las redes neuronales con explicaciones visuales, metáforas geométricas y código claro sin matemáticas abrumadoras.",
+        "topics": ["Redes Neuronales", "Keras", "Computer Vision", "NLP", "Generative AI"],
+        "cover_gradient": "from-red-600 to-rose-950",
+        "icon": "🧠",
+        "open_access_url": "https://github.com/fchollet/deep-learning-with-python-notebooks",
+        "github_url": "https://github.com/fchollet/deep-learning-with-python-notebooks",
+        "official_url": "https://www.manning.com/books/deep-learning-with-python-second-edition"
+    }
+]
+
 def scan_course_notebooks(course_folder_name, course_dir, modules):
     notebooks = []
     
     for mod in modules:
         mod_dir = course_dir / mod["name"]
         if mod_dir.exists() and mod_dir.is_dir():
-            for nb_file in sorted(mod_dir.glob("*.ipynb")):
+            for nb_file in sorted(mod_dir.rglob("*.ipynb")):
                 if ".ipynb_checkpoints" in str(nb_file):
                     continue
                 
-                rel_path = f"{course_folder_name}/{mod['name']}/{nb_file.name}"
-                title = format_title(nb_file.name)
-                diff = infer_difficulty(title, rel_path)
+                rel_to_mod = nb_file.relative_to(mod_dir).as_posix()
+                rel_path = f"{course_folder_name}/{mod['name']}/{rel_to_mod}"
+                raw_title = format_title(nb_file.name)
+                
+                is_dummies = ("Para Dummies" in nb_file.parts) or ("_dummies" in nb_file.name.lower())
+                if is_dummies:
+                    clean_title = raw_title.replace(" Dummies", "").replace(" dummies", "")
+                    title = f"💡 {clean_title} [Dummies] {mod['icon']}"
+                    diff = "Básico (Dummies)"
+                    edition = "Para Dummies"
+                else:
+                    title = f"{raw_title} {mod['icon']}"
+                    diff = infer_difficulty(raw_title, rel_path)
+                    edition = "Estándar"
+
                 encoded_path = urllib.parse.quote(rel_path)
 
                 notebooks.append({
-                    "id": f"{mod['id']}_{nb_file.name}",
+                    "id": f"{mod['id']}_{nb_file.stem}",
                     "module_id": mod["id"],
                     "module_name": mod["name"],
                     "filename": nb_file.name,
-                    "title": f"{title} {mod['icon']}",
+                    "title": title,
                     "path": rel_path,
                     "difficulty": diff,
+                    "is_dummies": is_dummies,
+                    "edition": edition,
                     "type": "Taller Evaluativo" if mod["id"] == "hw" else ("Introducción" if "00" in nb_file.name else "Teoría y Práctica"),
                     "colab_url": f"https://colab.research.google.com/github/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/{encoded_path}",
                     "github_url": f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/{encoded_path}"
@@ -511,6 +756,54 @@ def scan_course_videos(course_folder_name, course_dir):
                 idx += 1
     return videos
 
+def scan_course_books(c_folder, c_dir):
+    books = [dict(b) for b in BOOKS_CATALOG]
+    libros_dir = c_dir / "Libros"
+    if libros_dir.exists():
+        for f in libros_dir.rglob("*.pdf"):
+            fname = f.name
+            rel_path = f.relative_to(BASE_DIR).as_posix()
+            encoded_path = urllib.parse.quote(rel_path)
+            raw_url = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/{encoded_path}"
+            github_url = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/{encoded_path}"
+            
+            clean_title = format_title(fname)
+            
+            # Comprobar si ya coincide con alguno del catálogo curado
+            matched = False
+            for b in books:
+                if b["title"].lower() in clean_title.lower() or clean_title.lower() in b["title"].lower():
+                    b["local_pdf_path"] = rel_path
+                    b["local_pdf_url"] = raw_url
+                    b["github_pdf_url"] = github_url
+                    matched = True
+                    break
+            
+            if not matched:
+                is_dummies = any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice"])
+                books.append({
+                    "id": f"local_book_{len(books) + 1}",
+                    "title": clean_title,
+                    "subtitle": f"Biblioteca Digital USTA — {f.parent.name if f.parent != libros_dir else 'Python'}",
+                    "author": "Referencia Académica Especializada",
+                    "year": "2024",
+                    "edition": "PDF Completo",
+                    "publisher": "Biblioteca Digital USTA",
+                    "category": "Python & Pandas",
+                    "level": "Básico a Intermedio" if is_dummies else "Intermedio",
+                    "dummies_friendly": is_dummies,
+                    "summary_dummies": f"Texto de referencia '{clean_title}' disponible en PDF completo para consulta y descarga directa.",
+                    "topics": ["Python", "Programación", "Data Science", "Algoritmos"],
+                    "cover_gradient": "from-teal-600 to-slate-900",
+                    "icon": "📘",
+                    "open_access_url": raw_url,
+                    "github_url": github_url,
+                    "official_url": github_url,
+                    "local_pdf_path": rel_path,
+                    "local_pdf_url": raw_url
+                })
+    return books
+
 def rebuild_catalog_js():
     print("🚀 Iniciando escaneo multi-materia de la Especialización...")
 
@@ -529,20 +822,28 @@ def rebuild_catalog_js():
             datasets = scan_course_datasets(c_folder, c_dir)
             guias = scan_course_guias(c_folder, c_dir)
             videos = scan_course_videos(c_folder, c_dir)
+            books = scan_course_books(c_folder, c_dir)
         else:
             modules = scan_course_modules(c_dir) if c_dir.exists() else []
             notebooks = scan_course_notebooks(c_folder, c_dir, modules) if c_dir.exists() else []
             datasets = scan_course_datasets(c_folder, c_dir) if c_dir.exists() else []
             guias = scan_course_guias(c_folder, c_dir) if c_dir.exists() else []
             videos = scan_course_videos(c_folder, c_dir) if c_dir.exists() else []
+            books = scan_course_books(c_folder, c_dir) if c_dir.exists() else BOOKS_CATALOG
+
+        dummies_count = len([n for n in notebooks if n.get("is_dummies", False)])
+        standard_count = len(notebooks) - dummies_count
 
         stats = {
             "total_notebooks": len(notebooks),
+            "total_standard_notebooks": standard_count,
+            "total_dummies_notebooks": dummies_count,
             "total_modules": len([m for m in modules if m["id"] != "hw"]),
             "total_homeworks": len([n for n in notebooks if n["module_id"] == "hw"]),
             "total_datasets": len(datasets),
             "total_guias": len(guias),
-            "total_videos": len(videos)
+            "total_videos": len(videos),
+            "total_books": len(books)
         }
 
         course_obj = {
@@ -552,6 +853,7 @@ def rebuild_catalog_js():
             "datasets": datasets,
             "guias": guias,
             "videos": videos,
+            "books": books,
             "stats": stats
         }
         courses_output.append(course_obj)
@@ -570,7 +872,8 @@ def rebuild_catalog_js():
         "datasets": active_course_data["datasets"] if active_course_data else [],
         "stats": active_course_data["stats"] if active_course_data else {},
         "videos": active_course_data["videos"] if active_course_data else [],
-        "guias": active_course_data["guias"] if active_course_data else []
+        "guias": active_course_data["guias"] if active_course_data else [],
+        "books": active_course_data["books"] if active_course_data else books
     }
 
     js_content = f"// Virtual Laboratory Catalog Database - Auto-generated Multi-Course Architecture\nwindow.VIRTUAL_LAB_CATALOG = {json.dumps(catalog_data, indent=2, ensure_ascii=False)};\nvar VIRTUAL_LAB_CATALOG = window.VIRTUAL_LAB_CATALOG;\n"

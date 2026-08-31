@@ -211,6 +211,8 @@
           const diff = inferDifficulty(cleanTitle, item.path);
           const encodedPath = encodeURIComponent(item.path).replace(/%2F/g, '/');
 
+          const isDummies = filename.toLowerCase().includes('_dummies');
+
           targetCourse.notebooks.push({
             id: `${moduleId}_${filename}`,
             module_id: moduleId,
@@ -218,7 +220,9 @@
             filename: filename,
             title: cleanTitle,
             path: item.path,
-            difficulty: diff,
+            difficulty: isDummies ? "Básico" : diff,
+            is_dummies: isDummies,
+            edition: isDummies ? "Para Dummies / Para No Ingenieros" : "Estándar / Ingeniería",
             type: moduleId === 'hw' ? 'Taller Evaluativo' : 'Teoría y Práctica',
             colab_url: `https://colab.research.google.com/github/${REPO_OWNER}/${REPO_NAME}/blob/${BRANCH}/${encodedPath}`,
             github_url: `https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/${BRANCH}/${encodedPath}`

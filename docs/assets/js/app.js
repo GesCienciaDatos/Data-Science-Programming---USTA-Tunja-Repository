@@ -32,8 +32,11 @@
   let currentSnippetKey = 'cv';
   let searchGuiasQuery = '';
   let searchVideosQuery = '';
+  let searchBooksQuery = '';
+  let currentBookCategory = 'all';
   let courseSearchQuery = '';
   let courseSemesterFilter = 'all';
+  let isDummiesMode = localStorage.getItem('usta_dummies_mode') === 'true';
 
   // Terminal Sandbox Snippets
   const SANDBOX_SNIPPETS = {
@@ -353,21 +356,26 @@
 
   function updateUiCounts() {
     const course = getActiveCourse();
-    const notebooksCount = (course && course.notebooks ? course.notebooks.length : 0);
+    const allNotebooks = (course && course.notebooks ? course.notebooks : []);
+    const dummiesNotebooks = allNotebooks.filter(n => n.is_dummies);
+    const standardNotebooks = allNotebooks.filter(n => !n.is_dummies);
+
+    const activeNotebooksCount = isDummiesMode ? (dummiesNotebooks.length || 54) : (allNotebooks.length || 108);
     const guiasCount = (course && course.guias ? course.guias.length : 0);
     const videosCount = (course && course.videos ? course.videos.length : 0);
+    const booksCount = (course && course.books ? course.books.length : ((CATALOG.books || []).length || 12));
     const datasetsCount = (course && course.datasets ? course.datasets.length : 0);
 
     // Hero Cards
     const totalNbEl = document.getElementById('heroTotalNotebooks');
-    if (totalNbEl) totalNbEl.textContent = notebooksCount;
+    if (totalNbEl) totalNbEl.textContent = activeNotebooksCount;
 
     const totalDsEl = document.getElementById('heroTotalDatasets');
     if (totalDsEl) totalDsEl.textContent = datasetsCount;
 
     // Navbar Badges
     const navN = document.getElementById('nav-count-notebooks');
-    if (navN) navN.textContent = notebooksCount;
+    if (navN) navN.textContent = activeNotebooksCount;
 
     const navG = document.getElementById('nav-count-guias');
     if (navG) navG.textContent = guiasCount;
@@ -375,18 +383,24 @@
     const navV = document.getElementById('nav-count-videos');
     if (navV) navV.textContent = videosCount;
 
+    const navB = document.getElementById('nav-count-libros');
+    if (navB) navB.textContent = booksCount;
+
     const navD = document.getElementById('nav-count-datasets');
     if (navD) navD.textContent = datasetsCount;
 
     // Workspace Tab Pills
     const tabN = document.getElementById('tab-count-notebooks');
-    if (tabN) tabN.textContent = notebooksCount;
+    if (tabN) tabN.textContent = activeNotebooksCount;
 
     const tabG = document.getElementById('tab-count-guias');
     if (tabG) tabG.textContent = guiasCount;
 
     const tabV = document.getElementById('tab-count-videos');
     if (tabV) tabV.textContent = videosCount;
+
+    const tabB = document.getElementById('tab-count-libros');
+    if (tabB) tabB.textContent = booksCount;
 
     const tabD = document.getElementById('tab-count-datasets');
     if (tabD) tabD.textContent = datasetsCount;
@@ -399,9 +413,66 @@
     if (sideV) sideV.textContent = videosCount;
   }
 
+  function toggleDummiesMode() {
+    isDummiesMode = !isDummiesMode;
+    localStorage.setItem('usta_dummies_mode', isDummiesMode ? 'true' : 'false');
+    applyDummiesMode(true);
+  }
+
+  function applyDummiesMode(showNotification = false) {
+    const html = document.documentElement;
+    const navToggleText = document.getElementById('navDummiesToggleText');
+    const navToggleBtn = document.getElementById('navDummiesToggleBtn');
+    const wsToggleText = document.getElementById('workspaceDummiesToggleText');
+    const wsToggleBtn = document.getElementById('workspaceDummiesToggleBtn');
+    const banner = document.getElementById('dummiesModeBanner');
+
+    if (isDummiesMode) {
+      html.classList.add('theme-dummies');
+
+      if (navToggleText) navToggleText.textContent = 'Modo Dummies: ON 💡';
+      if (navToggleBtn) {
+        navToggleBtn.className = "px-3 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 transition-all duration-300 border border-amber-400 bg-amber-500/25 text-amber-200 font-bold shadow-neon-amber animate-pulse active:scale-95";
+      }
+
+      if (wsToggleText) wsToggleText.textContent = '💡 Modo Dummies: ON';
+      if (wsToggleBtn) {
+        wsToggleBtn.className = "px-3.5 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 border border-amber-400 bg-amber-500/30 text-amber-200 font-bold shadow-neon-amber transition-all shrink-0 cursor-pointer";
+      }
+
+      if (banner) banner.classList.remove('hidden');
+
+      if (showNotification) {
+        showToast("💡 ¡Modo Dummies Activado! Conceptos explicados con analogías para no ingenieros 🍎");
+      }
+    } else {
+      html.classList.remove('theme-dummies');
+
+      if (navToggleText) navToggleText.textContent = 'Modo Dummies: OFF';
+      if (navToggleBtn) {
+        navToggleBtn.className = "px-3 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 transition-all duration-300 border border-amber-500/30 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 active:scale-95 shadow-sm";
+      }
+
+      if (wsToggleText) wsToggleText.textContent = '💡 Modo Dummies: OFF';
+      if (wsToggleBtn) {
+        wsToggleBtn.className = "px-3.5 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 border border-outline-variant bg-surface-container text-on-surface-variant hover:text-amber-300 hover:border-amber-500/30 transition-all shrink-0 cursor-pointer";
+      }
+
+      if (banner) banner.classList.add('hidden');
+
+      if (showNotification) {
+        showToast("⚡ Modo Estándar Activado: Currículo completo de ingeniería 🚀");
+      }
+    }
+
+    renderPills();
+    renderNotebooks();
+    updateUiCounts();
+  }
+
   function switchTab(tabId) {
     currentTab = tabId;
-    const allTabs = ['notebooks', 'guias', 'videos', 'datasets', 'quickstart', 'cheatsheet'];
+    const allTabs = ['notebooks', 'guias', 'videos', 'libros', 'datasets', 'quickstart', 'cheatsheet'];
 
     allTabs.forEach(t => {
       const viewEl = document.getElementById(`view-${t}`);
@@ -415,7 +486,9 @@
 
       if (pillBtn) {
         if (t === tabId) {
-          pillBtn.className = 'bg-primary/20 text-primary px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap border border-primary/30 cursor-pointer hover:bg-primary/30 transition-all flex items-center gap-1.5 shadow-neon-cyan shrink-0';
+          pillBtn.className = isDummiesMode && (t === 'notebooks' || t === 'libros')
+            ? 'bg-amber-500/25 text-amber-300 px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap border border-amber-400 font-bold cursor-pointer transition-all flex items-center gap-1.5 shadow-neon-amber shrink-0'
+            : 'bg-primary/20 text-primary px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap border border-primary/30 cursor-pointer hover:bg-primary/30 transition-all flex items-center gap-1.5 shadow-neon-cyan shrink-0';
         } else {
           pillBtn.className = 'bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5 shrink-0';
         }
@@ -423,7 +496,9 @@
 
       if (navBtn) {
         if (t === tabId) {
-          navBtn.className = 'font-label-caps text-xs whitespace-nowrap text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200 flex items-center gap-1.5 shrink-0';
+          navBtn.className = isDummiesMode
+            ? 'font-label-caps text-xs whitespace-nowrap text-amber-400 border-b-2 border-amber-400 pb-1 active:scale-95 duration-200 flex items-center gap-1.5 shrink-0'
+            : 'font-label-caps text-xs whitespace-nowrap text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200 flex items-center gap-1.5 shrink-0';
         } else {
           navBtn.className = 'font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2.5 py-1 rounded flex items-center gap-1.5 shrink-0';
         }
@@ -434,6 +509,7 @@
     if (tabId === 'notebooks') renderNotebooks();
     if (tabId === 'guias') renderGuias();
     if (tabId === 'videos') renderVideos();
+    if (tabId === 'libros') renderBooks();
     if (tabId === 'datasets' && typeof window.renderDatasets === 'function') window.renderDatasets();
   }
 
@@ -446,9 +522,14 @@
     const course = getActiveCourse();
     if (!container || !course || !course.modules) return;
 
-    const totalNotebooks = (course.notebooks || []).length;
+    let allNotebooks = course.notebooks || [];
+    if (isDummiesMode) {
+      allNotebooks = allNotebooks.filter(n => n.is_dummies);
+    }
+    const totalNotebooks = allNotebooks.length;
+
     let html = `
-      <button onclick="filterByModule('all')" class="px-3 py-1 rounded-full text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-1.5 ${currentModule === 'all' ? 'bg-primary text-on-primary font-bold shadow-neon-cyan' : 'bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant'}">
+      <button onclick="filterByModule('all')" class="px-3 py-1 rounded-full text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-1.5 ${currentModule === 'all' ? (isDummiesMode ? 'bg-amber-400 text-slate-950 font-bold shadow-neon-amber' : 'bg-primary text-on-primary font-bold shadow-neon-cyan') : 'bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant'}">
         <span>🌟 Todos</span>
         <span class="px-1.5 py-0.2 rounded-full text-[10px] ${currentModule === 'all' ? 'bg-black/20 text-black' : 'bg-surface-container-high text-on-surface-variant'}">${totalNotebooks}</span>
       </button>
@@ -456,9 +537,9 @@
 
     course.modules.forEach(m => {
       const isCurrent = currentModule === m.id;
-      const count = (course.notebooks || []).filter(n => n.module_id === m.id).length;
+      const count = allNotebooks.filter(n => n.module_id === m.id).length;
       html += `
-        <button onclick="filterByModule('${m.id}')" class="px-3 py-1 rounded-full text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-1.5 ${isCurrent ? 'bg-primary text-on-primary font-bold shadow-neon-cyan' : 'bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant'}">
+        <button onclick="filterByModule('${m.id}')" class="px-3 py-1 rounded-full text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-1.5 ${isCurrent ? (isDummiesMode ? 'bg-amber-400 text-slate-950 font-bold shadow-neon-amber' : 'bg-primary text-on-primary font-bold shadow-neon-cyan') : 'bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant'}">
           <span>${m.icon || '📁'} ${m.name}</span>
           <span class="px-1.5 py-0.2 rounded-full text-[10px] ${isCurrent ? 'bg-black/20 text-black' : 'bg-surface-container-high text-on-surface-variant'}">${count}</span>
         </button>
@@ -479,7 +560,14 @@
     const course = getActiveCourse();
     if (!container || !course || !course.notebooks) return;
 
-    const filtered = (course.notebooks || []).filter(nb => {
+    let list = course.notebooks || [];
+
+    // Si el Modo Dummies está activo, filtrar exclusivamente los cuadernos para Dummies
+    if (isDummiesMode) {
+      list = list.filter(nb => nb.is_dummies === true);
+    }
+
+    const filtered = list.filter(nb => {
       if (currentModule !== 'all' && nb.module_id !== currentModule) return false;
       if (currentDiff !== 'all' && !nb.difficulty.toLowerCase().includes(currentDiff.toLowerCase())) return false;
       if (currentSearch.trim() !== '') {
@@ -508,14 +596,18 @@
       if (nb.difficulty.includes('Básico')) diffBadge = 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
       if (nb.difficulty.includes('Avanzado')) diffBadge = 'bg-error/20 text-error border-error/30';
       if (nb.difficulty.includes('Intermedio')) diffBadge = 'bg-tertiary/20 text-tertiary border-tertiary/30';
+      if (nb.is_dummies) diffBadge = 'bg-amber-500/25 text-amber-300 border-amber-500/40';
+
+      const isDummiesCard = Boolean(nb.is_dummies);
 
       return `
-        <div class="glass-panel rounded-xl p-5 flex flex-col justify-between gap-4 group hover:-translate-y-1 transition-transform duration-300">
+        <div class="glass-panel ${isDummiesCard ? 'dummies-card-highlight border-amber-500/40' : ''} rounded-xl p-5 flex flex-col justify-between gap-4 group hover:-translate-y-1 transition-transform duration-300">
           <div>
-            <div class="flex justify-between items-start mb-2">
-              <div class="flex gap-2">
+            <div class="flex justify-between items-start mb-2 flex-wrap gap-1.5">
+              <div class="flex gap-1.5 flex-wrap">
                 <span class="bg-[#4d77cf]/20 text-[#4d77cf] border border-[#4d77cf]/30 px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">${nb.module_name}</span>
                 <span class="${diffBadge} border px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">${nb.difficulty.toUpperCase()}</span>
+                ${isDummiesCard ? '<span class="bg-amber-400 text-slate-950 px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider">💡 DUMMIES</span>' : ''}
               </div>
             </div>
             <h3 class="font-headline-md text-base text-on-surface group-hover:text-primary transition-colors leading-snug">
@@ -524,9 +616,10 @@
             <p class="font-code-md text-on-surface-variant text-xs truncate mt-1">
               ${nb.path}
             </p>
+            ${isDummiesCard ? '<p class="text-[11px] text-amber-300/90 mt-2 font-body-md flex items-center gap-1"><span class="material-symbols-outlined text-xs">emoji_objects</span> Explicación con analogías sencillas y código comentado</p>' : ''}
           </div>
           <div class="mt-auto pt-3 flex items-center justify-between border-t border-outline-variant/50">
-            <a href="${nb.colab_url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-label-caps text-primary hover:text-primary-fixed transition-colors">
+            <a href="${nb.colab_url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-label-caps ${isDummiesCard ? 'text-amber-400 hover:text-amber-300 font-bold' : 'text-primary hover:text-primary-fixed'} transition-colors">
               <span class="material-symbols-outlined text-[16px]">rocket_launch</span> COLAB 1-CLICK
             </a>
             <div class="flex gap-2">
@@ -538,6 +631,150 @@
               </button>
             </div>
           </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // =========================================================================
+  // 4.1 BIBLIOTECA DIGITAL DE LIBROS & REFERENCIAS
+  // =========================================================================
+
+  function filterBooksByCategory(category) {
+    currentBookCategory = category;
+
+    const categories = [
+      { id: 'all', name: 'all' },
+      { id: 'python', name: 'Python & Pandas' },
+      { id: 'stats', name: 'Estadística & EDA' },
+      { id: 'ml', name: 'Machine Learning' },
+      { id: 'vis', name: 'Visualización & Storytelling' },
+      { id: 'dummies', name: 'Para Dummies / Principiantes' }
+    ];
+
+    categories.forEach(c => {
+      const btn = document.getElementById(`book-pill-${c.id}`);
+      if (btn) {
+        if (c.name === category) {
+          btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-primary text-on-primary font-bold shadow-neon-cyan transition-all';
+        } else {
+          btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all';
+        }
+      }
+    });
+
+    renderBooks();
+  }
+
+  function renderBooks() {
+    const container = document.getElementById('booksGridContainer');
+    const course = getActiveCourse();
+    if (!container) return;
+
+    let books = (course && course.books && course.books.length > 0) ? course.books : (CATALOG.books || []);
+
+    if (currentBookCategory !== 'all') {
+      books = books.filter(b => b.category === currentBookCategory);
+    }
+
+    if (searchBooksQuery.trim() !== '') {
+      const q = searchBooksQuery.toLowerCase();
+      books = books.filter(b => 
+        (b.title || '').toLowerCase().includes(q) ||
+        (b.author || '').toLowerCase().includes(q) ||
+        (b.subtitle || '').toLowerCase().includes(q) ||
+        (b.summary_dummies || '').toLowerCase().includes(q) ||
+        (b.category || '').toLowerCase().includes(q) ||
+        (b.topics || []).some(t => t.toLowerCase().includes(q))
+      );
+    }
+
+    if (books.length === 0) {
+      container.innerHTML = `
+        <div class="col-span-full py-12 text-center glass-panel rounded-2xl border border-outline-variant">
+          <span class="material-symbols-outlined text-primary text-4xl mb-2">menu_book</span>
+          <h3 class="font-headline-md text-on-surface text-base">No se encontraron libros</h3>
+          <p class="text-xs text-on-surface-variant max-w-sm mx-auto mt-1">Prueba con otro término de búsqueda o selecciona otra categoría.</p>
+        </div>
+      `;
+      return;
+    }
+
+    container.innerHTML = books.map(book => {
+      const isDummiesFriendly = Boolean(book.dummies_friendly);
+      const levelColor = book.level.includes('Básico') ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' : (book.level.includes('Avanzado') ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' : 'bg-primary/20 text-primary border-primary/30');
+
+      const topicsHtml = (book.topics || []).map(t => 
+        `<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/60">${t}</span>`
+      ).join('');
+
+      return `
+        <div class="glass-panel book-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between gap-4 border border-outline-variant/80 ${isDummiesFriendly ? 'hover:border-amber-400/60' : 'hover:border-primary/60'} relative overflow-hidden group">
+          
+          <!-- Top Tag & Category -->
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3 flex-wrap">
+              <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-surface-container-highest text-primary border border-primary/30 font-semibold flex items-center gap-1">
+                <span>${book.icon || '📖'}</span> ${book.category}
+              </span>
+              <div class="flex items-center gap-1.5">
+                ${isDummiesFriendly ? '<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">💡 DUMMIES FRIENDLY</span>' : ''}
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded-full ${levelColor} border">${book.level}</span>
+              </div>
+            </div>
+
+            <!-- Book Cover Badge & Title -->
+            <div class="flex items-start gap-3.5 mb-3">
+              <div class="w-12 h-16 rounded-lg bg-gradient-to-br ${book.cover_gradient || 'from-sky-700 to-indigo-950'} border border-white/10 flex flex-col items-center justify-center text-white shadow-md shrink-0 group-hover:scale-105 transition-transform">
+                <span class="text-xl">${book.icon || '📘'}</span>
+                <span class="text-[8px] font-mono uppercase tracking-wider opacity-80 mt-1">${book.year}</span>
+              </div>
+              <div class="min-w-0 flex-1">
+                <h4 class="font-headline-md text-sm sm:text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                  ${book.title}
+                </h4>
+                <p class="text-xs text-on-surface-variant line-clamp-2 mt-0.5 font-normal">
+                  ${book.subtitle || ''}
+                </p>
+                <div class="text-[11px] text-on-surface-variant font-mono mt-1 flex items-center gap-2">
+                  <span class="text-on-surface font-semibold">✍️ ${book.author}</span>
+                  <span>•</span>
+                  <span>${book.edition || book.publisher}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dummies Friendly Takeaway Quote -->
+            <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/60 text-xs text-on-surface/90 leading-relaxed mb-3">
+              <p class="font-semibold text-[11px] text-amber-300 flex items-center gap-1 mb-1">
+                <span class="material-symbols-outlined text-xs">lightbulb</span> ¿Por qué leerlo?
+              </p>
+              <p class="text-[11px] text-on-surface-variant">${book.summary_dummies}</p>
+            </div>
+
+            <!-- Topics Chips -->
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              ${topicsHtml}
+            </div>
+          </div>
+
+          <!-- Bottom Action Buttons -->
+          <div class="mt-auto pt-3 border-t border-outline-variant/50 flex items-center justify-between gap-2 flex-wrap">
+            <a href="${book.open_access_url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-primary/15 hover:bg-primary/25 text-primary border border-primary/30 text-xs font-label-caps flex items-center gap-1.5 transition-all shadow-sm active:scale-95">
+              <span class="material-symbols-outlined text-sm">menu_book</span> Leer Online / Open Access
+            </a>
+            <div class="flex items-center gap-1.5">
+              ${book.github_url ? `
+                <a href="${book.github_url}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-colors" title="Ver Código y Notebooks en GitHub">
+                  <span class="material-symbols-outlined text-base">code</span>
+                </a>
+              ` : ''}
+              <a href="${book.official_url}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-colors" title="Sitio Oficial">
+                <span class="material-symbols-outlined text-base">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
         </div>
       `;
     }).join('');
@@ -817,6 +1054,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    applyDummiesMode(false);
     setSandboxSnippet('cv');
     renderCourseHub();
 
@@ -849,6 +1087,12 @@
       renderNotebooks();
     });
 
+    // Buscador de libros
+    document.getElementById('searchBooksInput')?.addEventListener('input', (e) => {
+      searchBooksQuery = e.target.value;
+      renderBooks();
+    });
+
     // Filtros de guías y videos
     document.getElementById('searchGuiasInput')?.addEventListener('input', (e) => {
       searchGuiasQuery = e.target.value;
@@ -868,7 +1112,7 @@
 
     // Atajos de teclado globales
     document.addEventListener('keydown', (e) => {
-      if (e.key === '/' && document.activeElement !== document.getElementById('navSearchInput') && document.activeElement !== document.getElementById('courseSearchInput')) {
+      if (e.key === '/' && document.activeElement !== document.getElementById('navSearchInput') && document.activeElement !== document.getElementById('courseSearchInput') && document.activeElement !== document.getElementById('searchBooksInput')) {
         e.preventDefault();
         const searchInput = currentView === 'hub' ? document.getElementById('courseSearchInput') : document.getElementById('navSearchInput');
         if (searchInput) {
@@ -889,6 +1133,10 @@
   window.setSandboxSnippet = setSandboxSnippet;
   window.runSandboxSimulation = runSandboxSimulation;
   window.switchTab = switchTab;
+  window.toggleDummiesMode = toggleDummiesMode;
+  window.applyDummiesMode = applyDummiesMode;
+  window.filterBooksByCategory = filterBooksByCategory;
+  window.renderBooks = renderBooks;
   window.filterByModule = filterByModule;
   window.renderPills = renderPills;
   window.renderNotebooks = renderNotebooks;
