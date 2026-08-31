@@ -734,19 +734,41 @@
 
             <!-- Book Showcase: 3D Cover + Info -->
             <div class="flex items-start gap-4 mb-4">
-              <!-- 3D Book Cover -->
-              <div class="book-cover-3d bg-gradient-to-br ${book.cover_gradient || 'from-slate-800 to-zinc-950'} border border-white/15 text-white">
-                <div class="flex items-center justify-between pl-2">
-                  <span class="text-[8px] font-mono uppercase tracking-wider opacity-80">${book.publisher || 'USTA'}</span>
-                  <span class="text-[9px] font-mono bg-white/20 px-1 py-0.2 rounded font-bold">${book.year || '2024'}</span>
-                </div>
-                <div class="my-auto text-center px-1">
-                  <div class="text-2xl mb-1">${book.icon || '📘'}</div>
-                  <div class="text-[10px] font-bold font-display-sm leading-tight line-clamp-3 text-white drop-shadow">${book.title}</div>
-                </div>
-                <div class="text-[7.5px] font-mono text-center opacity-90 truncate px-1 border-t border-white/10 pt-1">
-                  ${book.author}
-                </div>
+              <!-- 3D Book Cover Presentation -->
+              <div class="book-cover-3d group-hover:scale-105 transition-transform">
+                <div class="book-spine-crease"></div>
+                <div class="book-page-edge"></div>
+                <div class="book-sheen-overlay"></div>
+                ${book.cover_image ? `
+                  <img src="${book.cover_image}" alt="${book.title}" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
+                  <div class="hidden w-full h-full bg-gradient-to-br ${book.cover_gradient || 'from-slate-800 to-zinc-950'} flex flex-col justify-between p-2 text-white">
+                    <div class="flex items-center justify-between pl-2">
+                      <span class="text-[8px] font-mono uppercase tracking-wider opacity-80">${book.publisher || 'USTA'}</span>
+                      <span class="text-[9px] font-mono bg-white/20 px-1 py-0.2 rounded font-bold">${book.year || '2024'}</span>
+                    </div>
+                    <div class="my-auto text-center px-1">
+                      <div class="text-2xl mb-1">${book.icon || '📘'}</div>
+                      <div class="text-[10px] font-bold font-display-sm leading-tight line-clamp-3 text-white drop-shadow">${book.title}</div>
+                    </div>
+                    <div class="text-[7.5px] font-mono text-center opacity-90 truncate px-1 border-t border-white/10 pt-1">
+                      ${book.author}
+                    </div>
+                  </div>
+                ` : `
+                  <div class="w-full h-full bg-gradient-to-br ${book.cover_gradient || 'from-slate-800 to-zinc-950'} flex flex-col justify-between p-2 text-white">
+                    <div class="flex items-center justify-between pl-2">
+                      <span class="text-[8px] font-mono uppercase tracking-wider opacity-80">${book.publisher || 'USTA'}</span>
+                      <span class="text-[9px] font-mono bg-white/20 px-1 py-0.2 rounded font-bold">${book.year || '2024'}</span>
+                    </div>
+                    <div class="my-auto text-center px-1">
+                      <div class="text-2xl mb-1">${book.icon || '📘'}</div>
+                      <div class="text-[10px] font-bold font-display-sm leading-tight line-clamp-3 text-white drop-shadow">${book.title}</div>
+                    </div>
+                    <div class="text-[7.5px] font-mono text-center opacity-90 truncate px-1 border-t border-white/10 pt-1">
+                      ${book.author}
+                    </div>
+                  </div>
+                `}
               </div>
 
               <!-- Book Meta & Text -->

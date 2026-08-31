@@ -722,6 +722,37 @@ def scan_course_videos(course_folder_name, course_dir):
                 idx += 1
     return videos
 
+def find_book_cover_image(pdf_stem, libros_dir):
+    portadas_dirs = [libros_dir / "Python" / "Portadas", libros_dir / "Portadas"]
+    clean_stem = re.sub(r',\s*\d+.*$', '', pdf_stem).strip().lower()
+    
+    best_img = None
+    for p_dir in portadas_dirs:
+        if p_dir.exists():
+            # 1. Exact match
+            for img_file in p_dir.iterdir():
+                if img_file.is_file() and img_file.suffix.lower() in ['.jpg', '.jpeg', '.png', '.webp']:
+                    img_stem = img_file.stem.strip().lower()
+                    if clean_stem == img_stem:
+                        best_img = img_file
+                        break
+            if best_img:
+                break
+            # 2. Prefix / containment match
+            for img_file in p_dir.iterdir():
+                if img_file.is_file() and img_file.suffix.lower() in ['.jpg', '.jpeg', '.png', '.webp']:
+                    img_stem = img_file.stem.strip().lower()
+                    if img_stem == clean_stem or clean_stem.startswith(img_stem) or img_stem.startswith(clean_stem):
+                        best_img = img_file
+                        break
+            if best_img:
+                break
+
+    if best_img:
+        rel_img = best_img.relative_to(libros_dir).as_posix()
+        return '/'.join(urllib.parse.quote(part) for part in f"Libros/{rel_img}".split("/"))
+    return ""
+
 def scan_course_books(c_folder, c_dir):
     books = []
     libros_dir = c_dir / "Libros"
@@ -736,6 +767,7 @@ def scan_course_books(c_folder, c_dir):
             encoded_web_path = "/".join(urllib.parse.quote(part) for part in web_path.split("/"))
             
             size_mb = f"{round(f.stat().st_size / (1024 * 1024), 1)} MB"
+            cover_img_url = find_book_cover_image(f.stem, libros_dir)
             
             title = meta.get("title", format_title(fname))
             subtitle = meta.get("subtitle", f"Biblioteca Digital USTA — {f.parent.name if f.parent != libros_dir else 'Python'}")
@@ -763,6 +795,8 @@ def scan_course_books(c_folder, c_dir):
                 "year": year,
                 "edition": edition,
                 "size_mb": size_mb,
+                "cover_image": cover_img_url,
+                "has_cover_image": bool(cover_img_url),
                 "category": category,
                 "level": level,
                 "dummies_friendly": dummies_friendly,
