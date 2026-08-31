@@ -760,18 +760,32 @@
 
           <!-- Bottom Action Buttons -->
           <div class="mt-auto pt-3 border-t border-outline-variant/50 flex items-center justify-between gap-2 flex-wrap">
-            <a href="${book.open_access_url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-primary/15 hover:bg-primary/25 text-primary border border-primary/30 text-xs font-label-caps flex items-center gap-1.5 transition-all shadow-sm active:scale-95">
-              <span class="material-symbols-outlined text-sm">menu_book</span> Leer Online / Open Access
-            </a>
+            <div class="flex items-center gap-2">
+              ${book.pdf_url ? `
+                <a href="${book.pdf_url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 text-xs font-label-caps flex items-center gap-1.5 transition-all shadow-sm active:scale-95 font-bold">
+                  <span class="material-symbols-outlined text-sm">menu_book</span> Abrir PDF
+                </a>
+                <a href="${book.pdf_url}" download="${book.filename || (book.title + '.pdf')}" class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-colors flex items-center gap-1 text-xs font-label-caps" title="Descargar archivo PDF completo">
+                  <span class="material-symbols-outlined text-sm">download</span> Descargar
+                </a>
+              ` : (book.open_access_url && book.open_access_url.startsWith('http') ? `
+                <a href="${book.open_access_url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-primary/15 hover:bg-primary/25 text-primary border border-primary/30 text-xs font-label-caps flex items-center gap-1.5 transition-all shadow-sm active:scale-95 font-bold">
+                  <span class="material-symbols-outlined text-sm">language</span> Leer Online
+                </a>
+              ` : '')}
+            </div>
+
             <div class="flex items-center gap-1.5">
-              ${book.github_url ? `
+              ${book.github_url && book.github_url.startsWith('http') ? `
                 <a href="${book.github_url}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-colors" title="Ver Código y Notebooks en GitHub">
                   <span class="material-symbols-outlined text-base">code</span>
                 </a>
               ` : ''}
-              <a href="${book.official_url}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-colors" title="Sitio Oficial">
-                <span class="material-symbols-outlined text-base">open_in_new</span>
-              </a>
+              ${book.official_url && book.official_url.startsWith('http') ? `
+                <a href="${book.official_url}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-colors" title="Sitio Oficial">
+                  <span class="material-symbols-outlined text-base">open_in_new</span>
+                </a>
+              ` : ''}
             </div>
           </div>
 

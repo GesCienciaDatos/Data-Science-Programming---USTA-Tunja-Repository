@@ -311,18 +311,20 @@ def infer_difficulty(title, path):
     return "Intermedio"
 
 def sync_course_assets(course_dir):
-    """Sincroniza Guias/ y Contenido/ del curso hacia docs/Guias/ y docs/Contenido/"""
-    for folder_name in ["Guias", "Contenido"]:
+    """Sincroniza Guias/, Contenido/ y Libros/ del curso hacia docs/"""
+    for folder_name in ["Guias", "Contenido", "Libros"]:
         src = course_dir / folder_name
         dest = DOCS_DIR / folder_name
         dest.mkdir(parents=True, exist_ok=True)
         if src.exists() and src.is_dir():
-            for item in src.iterdir():
+            for item in src.rglob("*"):
                 if item.is_file():
-                    target_file = dest / item.name
+                    rel = item.relative_to(src)
+                    target_file = dest / rel
+                    target_file.parent.mkdir(parents=True, exist_ok=True)
                     if not target_file.exists() or target_file.stat().st_mtime < item.stat().st_mtime:
                         shutil.copy2(item, target_file)
-                        print(f"  [SYNC] Copiado: {item.name} -> docs/{folder_name}/")
+                        print(f"  [SYNC] Copiado: {item.name} -> docs/{folder_name}/{rel}")
 
 def scan_course_modules(course_dir, default_modules=None):
     modules = list(default_modules) if default_modules else []
@@ -761,12 +763,11 @@ def scan_course_books(c_folder, c_dir):
     books = [dict(b) for b in BOOKS_CATALOG]
     libros_dir = c_dir / "Libros"
     if libros_dir.exists():
-        for f in libros_dir.rglob("*.pdf"):
+        for f in sorted(libros_dir.rglob("*.pdf")):
             fname = f.name
-            rel_path = f.relative_to(BASE_DIR).as_posix()
-            encoded_path = urllib.parse.quote(rel_path)
-            raw_url = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/{encoded_path}"
-            github_url = f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/{encoded_path}"
+            rel_sub = f.relative_to(libros_dir).as_posix()
+            web_path = f"Libros/{rel_sub}"
+            encoded_web_path = "/".join(urllib.parse.quote(part) for part in web_path.split("/"))
             
             clean_title = format_title(fname)
             
@@ -774,34 +775,37 @@ def scan_course_books(c_folder, c_dir):
             matched = False
             for b in books:
                 if b["title"].lower() in clean_title.lower() or clean_title.lower() in b["title"].lower():
-                    b["local_pdf_path"] = rel_path
-                    b["local_pdf_url"] = raw_url
-                    b["github_pdf_url"] = github_url
+                    b["local_pdf_path"] = web_path
+                    b["pdf_url"] = encoded_web_path
+                    b["has_local_pdf"] = True
+                    b["filename"] = fname
                     matched = True
                     break
             
             if not matched:
-                is_dummies = any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice"])
+                is_dummies = any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice", "cookbook"])
                 books.append({
                     "id": f"local_book_{len(books) + 1}",
                     "title": clean_title,
+                    "filename": fname,
                     "subtitle": f"Biblioteca Digital USTA — {f.parent.name if f.parent != libros_dir else 'Python'}",
                     "author": "Referencia Académica Especializada",
                     "year": "2024",
                     "edition": "PDF Completo",
                     "publisher": "Biblioteca Digital USTA",
-                    "category": "Python & Pandas",
+                    "category": "Para Dummies / Principiantes" if is_dummies else "Python & Pandas",
                     "level": "Básico a Intermedio" if is_dummies else "Intermedio",
                     "dummies_friendly": is_dummies,
-                    "summary_dummies": f"Texto de referencia '{clean_title}' disponible en PDF completo para consulta y descarga directa.",
+                    "summary_dummies": f"Texto de referencia '{clean_title}' disponible en PDF completo para lectura y descarga directa.",
                     "topics": ["Python", "Programación", "Data Science", "Algoritmos"],
                     "cover_gradient": "from-teal-600 to-slate-900",
                     "icon": "📘",
-                    "open_access_url": raw_url,
-                    "github_url": github_url,
-                    "official_url": github_url,
-                    "local_pdf_path": rel_path,
-                    "local_pdf_url": raw_url
+                    "open_access_url": encoded_web_path,
+                    "pdf_url": encoded_web_path,
+                    "has_local_pdf": True,
+                    "github_url": "",
+                    "official_url": "",
+                    "local_pdf_path": web_path
                 })
     return books
 
