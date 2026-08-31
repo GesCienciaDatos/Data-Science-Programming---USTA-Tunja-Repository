@@ -936,21 +936,6 @@ window.VIRTUAL_LAB_CATALOG = {
       "videos": [
         {
           "id": "vid_1",
-          "filename": "Creacion_Venv.mp4",
-          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 34.4,
-          "path": "Contenido/Creacion_Venv.mp4",
-          "youtube_id": "GX0rf6HjdcU",
-          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-        },
-        {
-          "id": "vid_2",
           "filename": "Instalacion Python_compressed.mp4",
           "title": "Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -963,6 +948,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "youtube_id": "GX0rf6HjdcU",
+          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
         }
       ],
       "stats": {
@@ -1017,21 +1017,6 @@ window.VIRTUAL_LAB_CATALOG = {
       "videos": [
         {
           "id": "vid_1",
-          "filename": "Creacion_Venv.mp4",
-          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 34.4,
-          "path": "Contenido/Creacion_Venv.mp4",
-          "youtube_id": "GX0rf6HjdcU",
-          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-        },
-        {
-          "id": "vid_2",
           "filename": "Instalacion Python_compressed.mp4",
           "title": "Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -1044,6 +1029,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "youtube_id": "GX0rf6HjdcU",
+          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
         }
       ],
       "stats": {
@@ -1098,21 +1098,6 @@ window.VIRTUAL_LAB_CATALOG = {
       "videos": [
         {
           "id": "vid_1",
-          "filename": "Creacion_Venv.mp4",
-          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 34.4,
-          "path": "Contenido/Creacion_Venv.mp4",
-          "youtube_id": "GX0rf6HjdcU",
-          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-        },
-        {
-          "id": "vid_2",
           "filename": "Instalacion Python_compressed.mp4",
           "title": "Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -1125,6 +1110,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "youtube_id": "GX0rf6HjdcU",
+          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
         }
       ],
       "stats": {
@@ -1179,21 +1179,6 @@ window.VIRTUAL_LAB_CATALOG = {
       "videos": [
         {
           "id": "vid_1",
-          "filename": "Creacion_Venv.mp4",
-          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 34.4,
-          "path": "Contenido/Creacion_Venv.mp4",
-          "youtube_id": "GX0rf6HjdcU",
-          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-        },
-        {
-          "id": "vid_2",
           "filename": "Instalacion Python_compressed.mp4",
           "title": "Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -1206,6 +1191,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "youtube_id": "GX0rf6HjdcU",
+          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
         }
       ],
       "stats": {
@@ -1260,21 +1260,6 @@ window.VIRTUAL_LAB_CATALOG = {
       "videos": [
         {
           "id": "vid_1",
-          "filename": "Creacion_Venv.mp4",
-          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 34.4,
-          "path": "Contenido/Creacion_Venv.mp4",
-          "youtube_id": "GX0rf6HjdcU",
-          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-        },
-        {
-          "id": "vid_2",
           "filename": "Instalacion Python_compressed.mp4",
           "title": "Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -1287,6 +1272,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "youtube_id": "GX0rf6HjdcU",
+          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
         }
       ],
       "stats": {
@@ -1341,21 +1341,6 @@ window.VIRTUAL_LAB_CATALOG = {
       "videos": [
         {
           "id": "vid_1",
-          "filename": "Creacion_Venv.mp4",
-          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 34.4,
-          "path": "Contenido/Creacion_Venv.mp4",
-          "youtube_id": "GX0rf6HjdcU",
-          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-        },
-        {
-          "id": "vid_2",
           "filename": "Instalacion Python_compressed.mp4",
           "title": "Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -1368,6 +1353,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "youtube_id": "GX0rf6HjdcU",
+          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
         }
       ],
       "stats": {
@@ -1422,21 +1422,6 @@ window.VIRTUAL_LAB_CATALOG = {
       "videos": [
         {
           "id": "vid_1",
-          "filename": "Creacion_Venv.mp4",
-          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 34.4,
-          "path": "Contenido/Creacion_Venv.mp4",
-          "youtube_id": "GX0rf6HjdcU",
-          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-        },
-        {
-          "id": "vid_2",
           "filename": "Instalacion Python_compressed.mp4",
           "title": "Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -1449,6 +1434,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "youtube_id": "GX0rf6HjdcU",
+          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
         }
       ],
       "stats": {
@@ -1503,21 +1503,6 @@ window.VIRTUAL_LAB_CATALOG = {
       "videos": [
         {
           "id": "vid_1",
-          "filename": "Creacion_Venv.mp4",
-          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 34.4,
-          "path": "Contenido/Creacion_Venv.mp4",
-          "youtube_id": "GX0rf6HjdcU",
-          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-        },
-        {
-          "id": "vid_2",
           "filename": "Instalacion Python_compressed.mp4",
           "title": "Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -1530,6 +1515,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "youtube_id": "GX0rf6HjdcU",
+          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
         }
       ],
       "stats": {
@@ -1584,21 +1584,6 @@ window.VIRTUAL_LAB_CATALOG = {
       "videos": [
         {
           "id": "vid_1",
-          "filename": "Creacion_Venv.mp4",
-          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 34.4,
-          "path": "Contenido/Creacion_Venv.mp4",
-          "youtube_id": "GX0rf6HjdcU",
-          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-        },
-        {
-          "id": "vid_2",
           "filename": "Instalacion Python_compressed.mp4",
           "title": "Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -1611,6 +1596,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+        },
+        {
+          "id": "vid_2",
+          "filename": "Creacion_Venv.mp4",
+          "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 34.4,
+          "path": "Contenido/Creacion_Venv.mp4",
+          "youtube_id": "GX0rf6HjdcU",
+          "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+          "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+          "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
         }
       ],
       "stats": {
@@ -2528,21 +2528,6 @@ window.VIRTUAL_LAB_CATALOG = {
   "videos": [
     {
       "id": "vid_1",
-      "filename": "Creacion_Venv.mp4",
-      "title": "Creación y Gestión de Entornos Virtuales (VENV)",
-      "module": "🐍 Módulo 01: Python",
-      "size_mb": 34.4,
-      "path": "Contenido/Creacion_Venv.mp4",
-      "youtube_id": "GX0rf6HjdcU",
-      "youtube_url": "https://youtu.be/GX0rf6HjdcU",
-      "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
-      "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
-      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
-    },
-    {
-      "id": "vid_2",
       "filename": "Instalacion Python_compressed.mp4",
       "title": "Instalación y Configuración de Python",
       "module": "🐍 Módulo 01: Python",
@@ -2555,6 +2540,21 @@ window.VIRTUAL_LAB_CATALOG = {
       "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
       "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Instalacion%20Python_compressed.mp4",
       "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Instalacion%20Python_compressed.mp4"
+    },
+    {
+      "id": "vid_2",
+      "filename": "Creacion_Venv.mp4",
+      "title": "Creación y Gestión de Entornos Virtuales (VENV)",
+      "module": "🐍 Módulo 01: Python",
+      "size_mb": 34.4,
+      "path": "Contenido/Creacion_Venv.mp4",
+      "youtube_id": "GX0rf6HjdcU",
+      "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+      "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+      "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Creacion_Venv.mp4",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Creacion_Venv.mp4"
     }
   ],
   "guias": [

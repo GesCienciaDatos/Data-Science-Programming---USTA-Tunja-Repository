@@ -649,7 +649,10 @@
 
     container.innerHTML = videoList.map(vid => {
       const isCurrent = currentPlayingVideoId === vid.id;
-      const hasYoutube = Boolean(vid.youtube_id || vid.youtube_url);
+      const ytId = vid.youtube_id || (vid.youtube_url ? extractYouTubeId(vid.youtube_url) : '');
+      const ytUrl = vid.youtube_url || (ytId ? `https://youtu.be/${ytId}` : null);
+      const hasYoutube = Boolean(ytId || ytUrl);
+
       return `
         <div onclick="selectVideo('${vid.id}')" class="p-3 rounded-xl border border-outline-variant cursor-pointer transition-all hover:bg-surface-container ${isCurrent ? 'bg-primary/15 border-primary/50 shadow-[0_0_12px_rgba(56,189,248,0.15)]' : 'bg-surface-container-low'} flex items-start gap-3 group">
           <div class="relative w-9 h-9 rounded-lg ${hasYoutube ? 'bg-red-600/15 border border-red-500/30' : 'bg-primary/10 border border-primary/20'} flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
@@ -665,6 +668,11 @@
             </div>
             <div class="text-xs font-headline-md text-on-surface truncate group-hover:text-primary transition-colors">${vid.title}</div>
           </div>
+          ${hasYoutube ? `
+            <a href="${ytUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" title="Abrir directamente en YouTube" class="p-1 text-on-surface-variant hover:text-red-400 hover:bg-red-500/10 rounded transition-all mt-0.5 shrink-0">
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          ` : ''}
         </div>
       `;
     }).join('');

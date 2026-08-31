@@ -462,6 +462,14 @@ def scan_course_guias(course_folder_name, course_dir):
             idx += 1
     return guias
 
+def video_sort_key(file_path):
+    name = file_path.name.lower()
+    if "instalacion" in name or "python" in name:
+        return (0, name)
+    if "venv" in name or "entorno" in name:
+        return (1, name)
+    return (2, name)
+
 def scan_course_videos(course_folder_name, course_dir):
     video_dir = course_dir / "Contenido"
     if not video_dir.exists():
@@ -470,8 +478,9 @@ def scan_course_videos(course_folder_name, course_dir):
     videos = []
     video_exts = {".mp4", ".mkv", ".webm", ".avi", ".mov"}
     if video_dir.exists():
+        sorted_files = sorted(video_dir.iterdir(), key=video_sort_key)
         idx = 1
-        for f in sorted(video_dir.iterdir()):
+        for f in sorted_files:
             if f.is_file() and f.suffix.lower() in video_exts:
                 size_mb = round(f.stat().st_size / (1024 * 1024), 1)
                 title = format_title(f.name)
