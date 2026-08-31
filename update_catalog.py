@@ -359,236 +359,199 @@ def scan_course_modules(course_dir, default_modules=None):
                     existing_ids.add("hw")
     return modules
 
-BOOKS_CATALOG = [
-    {
-        "id": "book_1",
-        "title": "Python for Data Analysis",
-        "subtitle": "Data Wrangling with Pandas, NumPy, and Jupyter",
-        "author": "Wes McKinney",
-        "year": "2022",
-        "edition": "3rd Edition",
+# =========================================================================
+# CATÁLOGO OFICIAL DE LIBROS EN PDF (EXCLUSIVAMENTE LOS PRESENTES EN Libros/)
+# =========================================================================
+
+PYTHON_BOOKS_METADATA = {
+    "head first python, 2nd edition.pdf": {
+        "title": "Head First Python",
+        "subtitle": "A Brain-Friendly Guide to Learning Python",
+        "author": "Paul Barry",
         "publisher": "O'Reilly Media",
-        "category": "Python & Pandas",
-        "level": "Básico a Intermedio",
-        "dummies_friendly": True,
-        "summary_dummies": "Escrito por el creador original de Pandas. Es el manual definitivo para manipular tablas, limpiar datos y operar arrays numéricos sin enredarse.",
-        "topics": ["Python", "NumPy", "Pandas", "Jupyter", "Data Cleaning"],
-        "cover_gradient": "from-sky-600 to-blue-900",
-        "icon": "🐼",
-        "open_access_url": "https://wesmckinney.com/book/",
-        "github_url": "https://github.com/wesm/pydata-book",
-        "official_url": "https://www.oreilly.com/library/view/python-for-data/9781098104023/"
-    },
-    {
-        "id": "book_2",
-        "title": "Hands-On Machine Learning",
-        "subtitle": "with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques",
-        "author": "Aurélien Géron",
-        "year": "2022",
-        "edition": "3rd Edition",
-        "publisher": "O'Reilly Media",
-        "category": "Machine Learning",
-        "level": "Intermedio a Avanzado",
-        "dummies_friendly": True,
-        "summary_dummies": "La biblia práctica de Machine Learning mundial. Explica desde una regresión lineal simple hasta redes neuronales profundas con ejemplos claros paso a paso.",
-        "topics": ["Scikit-Learn", "Regresión", "Clasificación", "Keras", "TensorFlow"],
-        "cover_gradient": "from-emerald-600 to-teal-900",
-        "icon": "🤖",
-        "open_access_url": "https://github.com/ageron/handson-ml3",
-        "github_url": "https://github.com/ageron/handson-ml3",
-        "official_url": "https://www.oreilly.com/library/view/hands-on-machine-learning/9781098125967/"
-    },
-    {
-        "id": "book_3",
-        "title": "An Introduction to Statistical Learning",
-        "subtitle": "with Applications in Python (ISLP)",
-        "author": "G. James, D. Witten, T. Hastie, R. Tibshirani, J. Taylor",
-        "year": "2023",
-        "edition": "Python Edition",
-        "publisher": "Springer",
-        "category": "Estadística & ML",
-        "level": "Intermedio",
-        "dummies_friendly": False,
-        "summary_dummies": "El estándar de oro académico para entender la matemática y fundamento estadístico detrás de cada modelo de predicción, clasificación y remuestreo.",
-        "topics": ["Regresión Lineal", "Regularización Ridge/Lasso", "Árboles", "Inferencia", "PCA"],
-        "cover_gradient": "from-indigo-600 to-slate-900",
-        "icon": "📈",
-        "open_access_url": "https://www.statlearning.com/",
-        "github_url": "https://github.com/intro-stat-learning/ISLP",
-        "official_url": "https://www.statlearning.com/"
-    },
-    {
-        "id": "book_4",
-        "title": "Practical Statistics for Data Scientists",
-        "subtitle": "50+ Essential Concepts Using R and Python",
-        "author": "Peter Bruce, Andrew Bruce, Peter Gedeck",
-        "year": "2020",
+        "year": "2016",
         "edition": "2nd Edition",
-        "publisher": "O'Reilly Media",
-        "category": "Estadística & EDA",
-        "level": "Básico a Intermedio",
+        "category": "Para Dummies / Principiantes",
+        "level": "Básico (100% Visual / Dummies)",
         "dummies_friendly": True,
-        "summary_dummies": "¿Odiabas las fórmulas abstractas de la universidad? Este libro rescata los 50 conceptos que realmente necesitas en Ciencia de Datos explicados con total sentido práctico.",
-        "topics": ["EDA", "Distribuciones", "Pruebas de Hipótesis", "Muestreo", "Significancia"],
-        "cover_gradient": "from-amber-600 to-yellow-900",
-        "icon": "📊",
-        "open_access_url": "https://github.com/gedeck/practical-statistics-for-data-scientists",
-        "github_url": "https://github.com/gedeck/practical-statistics-for-data-scientists",
-        "official_url": "https://www.oreilly.com/library/view/practical-statistics-for/9781492072935/"
+        "summary_dummies": "Enfoque 100% visual y entretenido con diagramas, ilustraciones y analogías intuitivas. Ideal para aprender a programar sin aburrirse ni perderse en tecnicismos densos.",
+        "topics": ["Sintaxis Básica", "Estructuras de Datos", "Funciones", "Bases de Datos", "Aplicaciones Web"],
+        "cover_gradient": "from-amber-600 via-yellow-700 to-amber-950",
+        "cover_bg": "#f59e0b",
+        "accent_color": "#fbbf24",
+        "icon": "🧠"
     },
-    {
-        "id": "book_5",
+    "python crash course, 2nd edition.pdf": {
+        "title": "Python Crash Course",
+        "subtitle": "A Hands-On, Project-Based Introduction to Programming",
+        "author": "Eric Matthes",
+        "publisher": "No Starch Press",
+        "year": "2019",
+        "edition": "2nd Edition",
+        "category": "Para Dummies / Principiantes",
+        "level": "Básico (Paso a Paso)",
+        "dummies_friendly": True,
+        "summary_dummies": "El bestseller mundial #1 para iniciarse en Python. Enseña conceptos paso a paso y te guía en la creación de proyectos prácticos, visualizaciones interactivas y aplicaciones reales.",
+        "topics": ["Variables & Listas", "Bucles & Diccionarios", "Clases POO", "Visualización con Matplotlib", "Proyectos Reales"],
+        "cover_gradient": "from-red-600 via-rose-700 to-neutral-900",
+        "cover_bg": "#e11d48",
+        "accent_color": "#f43f5e",
+        "icon": "🚀"
+    },
+    "automate the boring stuff with python.pdf": {
         "title": "Automate the Boring Stuff with Python",
         "subtitle": "Practical Programming for Total Beginners",
         "author": "Al Sweigart",
+        "publisher": "No Starch Press",
         "year": "2019",
         "edition": "2nd Edition",
-        "publisher": "No Starch Press",
         "category": "Para Dummies / Principiantes",
-        "level": "Básico (100% Dummies)",
+        "level": "Básico (Para No Ingenieros)",
         "dummies_friendly": True,
-        "summary_dummies": "¡El mejor libro para quienes nunca han programado en su vida! Aprende a automatizar archivos de Excel, tareas repetitivas y scripts útiles en minutos.",
-        "topics": ["Sintaxis Básica", "Archivos", "Excel", "Automatización", "Scraping"],
-        "cover_gradient": "from-rose-600 to-pink-900",
-        "icon": "💡",
-        "open_access_url": "https://automatetheboringstuff.com/",
-        "github_url": "https://github.com/asweigart",
-        "official_url": "https://automatetheboringstuff.com/"
+        "summary_dummies": "Diseñado para profesionales sin conocimientos previos de programación. Aprende a manipular hojas de cálculo de Excel, archivos PDF, correos electrónicos y tareas repetitivas en minutos.",
+        "topics": ["Automatización", "Archivos Excel & CSV", "Manipulación de PDFs", "Web Scraping", "Expresiones Regulares"],
+        "cover_gradient": "from-emerald-600 via-teal-700 to-slate-950",
+        "cover_bg": "#059669",
+        "accent_color": "#10b981",
+        "icon": "⚙️"
     },
-    {
-        "id": "book_6",
-        "title": "Storytelling with Data",
-        "subtitle": "A Data Visualization Guide for Business Professionals",
-        "author": "Cole Nussbaumer Knaflic",
-        "year": "2015",
-        "edition": "1st Edition",
-        "publisher": "Wiley",
-        "category": "Visualización & Storytelling",
-        "level": "Básico a Intermedio",
-        "dummies_friendly": True,
-        "summary_dummies": "Tus gráficos no deben ser adornos confusos. Aprende a eliminar el ruido visual, captar la atención de tu audiencia y comunicar decisiones claras con datos.",
-        "topics": ["Visualización", "Storytelling", "Diseño de Gráficos", "Comunicación Ejecutiva"],
-        "cover_gradient": "from-purple-600 to-violet-900",
-        "icon": "🎨",
-        "open_access_url": "https://www.storytellingwithdata.com/books",
-        "github_url": "https://www.storytellingwithdata.com/",
-        "official_url": "https://www.storytellingwithdata.com/books"
-    },
-    {
-        "id": "book_7",
+    "python data science handbook.pdf": {
         "title": "Python Data Science Handbook",
         "subtitle": "Essential Tools for Working with Data",
         "author": "Jake VanderPlas",
+        "publisher": "O'Reilly Media",
         "year": "2023",
         "edition": "2nd Edition",
-        "publisher": "O'Reilly Media",
-        "category": "Python & Fundamentos",
-        "level": "Básico a Intermedio",
-        "dummies_friendly": True,
-        "summary_dummies": "Texto libre completo disponible en Jupyter Notebooks. Cubre a fondo IPython, NumPy, Pandas, Matplotlib y Scikit-Learn de forma estructurada y pedagógica.",
-        "topics": ["IPython", "NumPy", "Pandas", "Matplotlib", "Scikit-Learn"],
-        "cover_gradient": "from-cyan-600 to-teal-900",
-        "icon": "🐍",
-        "open_access_url": "https://jakevdp.github.io/PythonDataScienceHandbook/",
-        "github_url": "https://github.com/jakevdp/PythonDataScienceHandbook",
-        "official_url": "https://jakevdp.github.io/PythonDataScienceHandbook/"
-    },
-    {
-        "id": "book_8",
-        "title": "Feature Engineering for Machine Learning",
-        "subtitle": "Principles and Techniques for Data Scientists",
-        "author": "Alice Zheng, Amanda Casari",
-        "year": "2018",
-        "edition": "1st Edition",
-        "publisher": "O'Reilly Media",
-        "category": "Feature Engineering",
+        "category": "Ciencia de Datos & Análisis",
         "level": "Intermedio",
         "dummies_friendly": True,
-        "summary_dummies": "Los mejores modelos no provienen del algoritmo más complejo, sino de cómo preparas tus variables: One-Hot, escalado, transformaciones logarítmicas y PCA.",
-        "topics": ["Encoding", "Escalamiento", "Texto/NLP", "Reducción Dimensional", "PCA"],
-        "cover_gradient": "from-fuchsia-600 to-purple-900",
-        "icon": "⚙️",
-        "open_access_url": "https://github.com/alicezheng/feature-engineering-book",
-        "github_url": "https://github.com/alicezheng/feature-engineering-book",
-        "official_url": "https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/"
+        "summary_dummies": "El manual de referencia esencial para Ciencia de Datos. Guía exhaustiva y práctica sobre IPython, NumPy, Pandas, visualización con Matplotlib y Machine Learning con Scikit-Learn.",
+        "topics": ["IPython & Jupyter", "NumPy Vectorizado", "Pandas DataFrames", "Matplotlib", "Scikit-Learn ML"],
+        "cover_gradient": "from-sky-600 via-blue-700 to-indigo-950",
+        "cover_bg": "#0284c7",
+        "accent_color": "#38bdf8",
+        "icon": "📊"
     },
-    {
-        "id": "book_9",
-        "title": "Naked Statistics",
-        "subtitle": "Stripping the Dread from the Data",
-        "author": "Charles Wheelan",
-        "year": "2013",
-        "edition": "1st Edition",
-        "publisher": "W. W. Norton & Company",
-        "category": "Para Dummies / Principiantes",
-        "level": "Básico (100% Dummies)",
-        "dummies_friendly": True,
-        "summary_dummies": "¡El libro más divertido sobre estadística! Cero fórmulas intimidantes, lleno de humor, analogías de concursos de TV y ejemplos de la vida real.",
-        "topics": ["Intuición Estadística", "Correlación vs Causalidad", "Probabilidad", "Inferencia"],
-        "cover_gradient": "from-orange-600 to-amber-900",
-        "icon": "🎯",
-        "open_access_url": "https://wwnorton.com/books/9780393347777/about-the-book/product-details",
-        "github_url": "https://wwnorton.com/books/9780393347777",
-        "official_url": "https://wwnorton.com/books/9780393347777/about-the-book/product-details"
-    },
-    {
-        "id": "book_10",
+    "fluent python, 2nd edition.pdf": {
         "title": "Fluent Python",
         "subtitle": "Clear, Concise, and Effective Programming",
         "author": "Luciano Ramalho",
+        "publisher": "O'Reilly Media",
         "year": "2022",
         "edition": "2nd Edition",
+        "category": "Fundamentos & Estructuras",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "El libro cumbre para escribir código Python idiomático, limpio y elegante. Profundiza en el modelo de objetos de Python, decoradores, generadores, corrutinas y tipado moderno.",
+        "topics": ["Modelo de Datos", "Estructuras Especiales", "POO Idiomática", "Decoradores & Generadores", "Concurrencia Async"],
+        "cover_gradient": "from-purple-600 via-indigo-700 to-slate-950",
+        "cover_bg": "#7c3aed",
+        "accent_color": "#a855f7",
+        "icon": "🐍"
+    },
+    "data structures and algorithms with python.pdf": {
+        "title": "Data Structures and Algorithms with Python",
+        "subtitle": "Undergraduate Topics in Computer Science",
+        "author": "Kent D. Lee, Steve Hubbard",
+        "publisher": "Springer",
+        "year": "2015",
+        "edition": "1st Edition",
+        "category": "Fundamentos & Estructuras",
+        "level": "Intermedio",
+        "dummies_friendly": False,
+        "summary_dummies": "Explicación rigurosa de las estructuras de datos fundamentales (listas enlazadas, pilas, colas, árboles, grafos y tablas hash) y análisis de complejidad de algoritmos con Python.",
+        "topics": ["Complejidad Big-O", "Pilas & Colas", "Árboles Binarios", "Grafos & Búsqueda", "Algoritmos de Ordenación"],
+        "cover_gradient": "from-cyan-600 via-teal-800 to-slate-950",
+        "cover_bg": "#0891b2",
+        "accent_color": "#06b6d4",
+        "icon": "🌳"
+    },
+    "high performance python.pdf": {
+        "title": "High Performance Python",
+        "subtitle": "Practical Performant Programming for Humans",
+        "author": "Micha Gorelick, Ian Ozsvald",
         "publisher": "O'Reilly Media",
-        "category": "Python Avanzado",
+        "year": "2020",
+        "edition": "2nd Edition",
+        "category": "Rendimiento & Optimización",
         "level": "Avanzado",
         "dummies_friendly": False,
-        "summary_dummies": "Para cuando quieras dar el salto a escribir código Python verdaderamente idiomático, elegante, de alto rendimiento y con POO profesional.",
-        "topics": ["Data Model", "Generadores", "Decoradores", "Concurrencia", "Tipado"],
-        "cover_gradient": "from-emerald-700 to-slate-900",
-        "icon": "⚡",
-        "open_access_url": "https://github.com/fluentpython/example-code-2e",
-        "github_url": "https://github.com/fluentpython/example-code-2e",
-        "official_url": "https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/"
+        "summary_dummies": "Aprende a acelerar código de Ciencia de Datos y Machine Learning. Perfilado de CPU y memoria, operaciones vectoriales con NumPy, compilación Cython/Numba y computación distribuida.",
+        "topics": ["Perfilado CPU & RAM", "NumPy & Numba", "Cython", "Multiprocessing", "Big Data"],
+        "cover_gradient": "from-amber-700 via-orange-800 to-stone-950",
+        "cover_bg": "#c2410c",
+        "accent_color": "#f97316",
+        "icon": "⚡"
     },
-    {
-        "id": "book_11",
-        "title": "Data Science from Scratch",
-        "subtitle": "First Principles with Python",
-        "author": "Joel Grus",
-        "year": "2019",
-        "edition": "2nd Edition",
+    "python cookbook, 3rd edition.pdf": {
+        "title": "Python Cookbook",
+        "subtitle": "Recipes for Mastering Python 3",
+        "author": "David Beazley, Brian K. Jones",
         "publisher": "O'Reilly Media",
-        "category": "Python & Algoritmos",
+        "year": "2013",
+        "edition": "3rd Edition",
+        "category": "Recetas & Buenas Prácticas",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Colección de soluciones prácticas y concisas a problemas cotidianos de programación: manipulación de estructuras de datos, iteradores, algoritmos, metaprogramación y manejo de archivos.",
+        "topics": ["Estructuras & Algoritmos", "Iteradores & Generadores", "I/O de Archivos", "Metaprogramación", "Concurrencia"],
+        "cover_gradient": "from-emerald-700 via-green-800 to-slate-950",
+        "cover_bg": "#047857",
+        "accent_color": "#10b981",
+        "icon": "📖"
+    },
+    "modern python cookbook.pdf": {
+        "title": "Modern Python Cookbook",
+        "subtitle": "Over 130 Recipes to Build Smart, Scalable Applications",
+        "author": "Steven F. Lott",
+        "publisher": "Packt Publishing",
+        "year": "2020",
+        "edition": "2nd Edition",
+        "category": "Recetas & Buenas Prácticas",
+        "level": "Intermedio",
+        "dummies_friendly": False,
+        "summary_dummies": "Más de 130 recetas modernas con las últimas características del lenguaje, programación funcional, tipado estático (`typing`), persistencia de datos y desarrollo de APIs limpias.",
+        "topics": ["Programación Funcional", "Tipado Estático", "Bases de Datos & SQL", "JSON/CSV", "Estructuras Modernas"],
+        "cover_gradient": "from-blue-700 via-indigo-800 to-slate-950",
+        "cover_bg": "#1d4ed8",
+        "accent_color": "#3b82f6",
+        "icon": "🍳"
+    },
+    "pro python best practices.pdf": {
+        "title": "Pro Python Best Practices",
+        "subtitle": "Debugging, Testing and Maintaining Code in Real-World Projects",
+        "author": "Cristian Medina",
+        "publisher": "Apress",
+        "year": "2020",
+        "edition": "1st Edition",
+        "category": "Recetas & Buenas Prácticas",
         "level": "Intermedio",
         "dummies_friendly": True,
-        "summary_dummies": "Construye cada algoritmo de Ciencia de Datos desde cero (álgebra lineal, gradiente descendente, KNN, regresión) para entender cómo funcionan por dentro.",
-        "topics": ["Álgebra Lineal", "Gradiente", "KNN", "Regresión", "Naive Bayes"],
-        "cover_gradient": "from-teal-600 to-cyan-950",
-        "icon": "🧪",
-        "open_access_url": "https://github.com/joelgrus/data-science-from-scratch",
-        "github_url": "https://github.com/joelgrus/data-science-from-scratch",
-        "official_url": "https://www.oreilly.com/library/view/data-science-from/9781492041122/"
+        "summary_dummies": "Aprende los estándares de la industria profesional: depuración de errores, pruebas unitarias automatizadas con pytest, linters, documentación clara y código mantenible para proyectos reales.",
+        "topics": ["Clean Code", "Testing con PyTest", "Debugging", "Linters & Flake8", "Documentación Profesional"],
+        "cover_gradient": "from-teal-700 via-emerald-800 to-slate-950",
+        "cover_bg": "#0f766e",
+        "accent_color": "#14b8a6",
+        "icon": "🛡️"
     },
-    {
-        "id": "book_12",
-        "title": "Deep Learning with Python",
-        "subtitle": "Second Edition",
-        "author": "François Chollet",
-        "year": "2021",
+    "programming in python 3, 2nd edition.pdf": {
+        "title": "Programming in Python 3",
+        "subtitle": "A Complete Introduction to the Python Language",
+        "author": "Mark Summerfield",
+        "publisher": "Addison-Wesley Professional",
+        "year": "2010",
         "edition": "2nd Edition",
-        "publisher": "Manning Publications",
-        "category": "Machine Learning",
-        "level": "Intermedio a Avanzado",
-        "dummies_friendly": True,
-        "summary_dummies": "Escrito por el creador de Keras. Desmitifica las redes neuronales con explicaciones visuales, metáforas geométricas y código claro sin matemáticas abrumadoras.",
-        "topics": ["Redes Neuronales", "Keras", "Computer Vision", "NLP", "Generative AI"],
-        "cover_gradient": "from-red-600 to-rose-950",
-        "icon": "🧠",
-        "open_access_url": "https://github.com/fchollet/deep-learning-with-python-notebooks",
-        "github_url": "https://github.com/fchollet/deep-learning-with-python-notebooks",
-        "official_url": "https://www.manning.com/books/deep-learning-with-python-second-edition"
+        "category": "Fundamentos & Estructuras",
+        "level": "Básico a Intermedio",
+        "dummies_friendly": False,
+        "summary_dummies": "Tratado exhaustivo y metódico sobre el lenguaje Python 3. Estructurado paso a paso desde tipos de datos básicos y control de flujo hasta programación funcional, bases de datos y red.",
+        "topics": ["Sintaxis & Semántica", "Tipos de Datos", "E/S de Archivos", "Módulos & Paquetes", "Programación de Redes"],
+        "cover_gradient": "from-slate-700 via-gray-800 to-zinc-950",
+        "cover_bg": "#334155",
+        "accent_color": "#94a3b8",
+        "icon": "📘"
     }
-]
+}
 
 def scan_course_notebooks(course_folder_name, course_dir, modules):
     notebooks = []
@@ -760,53 +723,60 @@ def scan_course_videos(course_folder_name, course_dir):
     return videos
 
 def scan_course_books(c_folder, c_dir):
-    books = [dict(b) for b in BOOKS_CATALOG]
+    books = []
     libros_dir = c_dir / "Libros"
     if libros_dir.exists():
         for f in sorted(libros_dir.rglob("*.pdf")):
             fname = f.name
+            key = fname.lower()
+            meta = PYTHON_BOOKS_METADATA.get(key, {})
+            
             rel_sub = f.relative_to(libros_dir).as_posix()
             web_path = f"Libros/{rel_sub}"
             encoded_web_path = "/".join(urllib.parse.quote(part) for part in web_path.split("/"))
             
-            clean_title = format_title(fname)
+            size_mb = f"{round(f.stat().st_size / (1024 * 1024), 1)} MB"
             
-            # Comprobar si ya coincide con alguno del catálogo curado
-            matched = False
-            for b in books:
-                if b["title"].lower() in clean_title.lower() or clean_title.lower() in b["title"].lower():
-                    b["local_pdf_path"] = web_path
-                    b["pdf_url"] = encoded_web_path
-                    b["has_local_pdf"] = True
-                    b["filename"] = fname
-                    matched = True
-                    break
+            title = meta.get("title", format_title(fname))
+            subtitle = meta.get("subtitle", f"Biblioteca Digital USTA — {f.parent.name if f.parent != libros_dir else 'Python'}")
+            author = meta.get("author", "Referencia Académica")
+            publisher = meta.get("publisher", "Editorial Especializada")
+            year = meta.get("year", "2024")
+            edition = meta.get("edition", "PDF Completo")
+            category = meta.get("category", "Python & Programación")
+            level = meta.get("level", "Intermedio")
+            dummies_friendly = meta.get("dummies_friendly", any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice"]))
+            summary_dummies = meta.get("summary_dummies", f"Texto de referencia '{title}' disponible en PDF completo ({size_mb}) para consulta y descarga directa.")
+            topics = meta.get("topics", ["Python", "Programación", "Data Science", "Algoritmos"])
+            cover_gradient = meta.get("cover_gradient", "from-teal-600 via-slate-700 to-slate-950")
+            cover_bg = meta.get("cover_bg", "#0f766e")
+            accent_color = meta.get("accent_color", "#14b8a6")
+            icon = meta.get("icon", "📘")
             
-            if not matched:
-                is_dummies = any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice", "cookbook"])
-                books.append({
-                    "id": f"local_book_{len(books) + 1}",
-                    "title": clean_title,
-                    "filename": fname,
-                    "subtitle": f"Biblioteca Digital USTA — {f.parent.name if f.parent != libros_dir else 'Python'}",
-                    "author": "Referencia Académica Especializada",
-                    "year": "2024",
-                    "edition": "PDF Completo",
-                    "publisher": "Biblioteca Digital USTA",
-                    "category": "Para Dummies / Principiantes" if is_dummies else "Python & Pandas",
-                    "level": "Básico a Intermedio" if is_dummies else "Intermedio",
-                    "dummies_friendly": is_dummies,
-                    "summary_dummies": f"Texto de referencia '{clean_title}' disponible en PDF completo para lectura y descarga directa.",
-                    "topics": ["Python", "Programación", "Data Science", "Algoritmos"],
-                    "cover_gradient": "from-teal-600 to-slate-900",
-                    "icon": "📘",
-                    "open_access_url": encoded_web_path,
-                    "pdf_url": encoded_web_path,
-                    "has_local_pdf": True,
-                    "github_url": "",
-                    "official_url": "",
-                    "local_pdf_path": web_path
-                })
+            books.append({
+                "id": f"book_{len(books) + 1}",
+                "title": title,
+                "filename": fname,
+                "subtitle": subtitle,
+                "author": author,
+                "publisher": publisher,
+                "year": year,
+                "edition": edition,
+                "size_mb": size_mb,
+                "category": category,
+                "level": level,
+                "dummies_friendly": dummies_friendly,
+                "summary_dummies": summary_dummies,
+                "topics": topics,
+                "cover_gradient": cover_gradient,
+                "cover_bg": cover_bg,
+                "accent_color": accent_color,
+                "icon": icon,
+                "download_url": encoded_web_path,
+                "pdf_url": encoded_web_path,
+                "has_local_pdf": True,
+                "local_pdf_path": web_path
+            })
     return books
 
 def rebuild_catalog_js():

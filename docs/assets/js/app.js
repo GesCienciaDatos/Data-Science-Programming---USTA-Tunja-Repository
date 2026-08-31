@@ -645,11 +645,11 @@
 
     const categories = [
       { id: 'all', name: 'all' },
-      { id: 'python', name: 'Python & Pandas' },
-      { id: 'stats', name: 'Estadística & EDA' },
-      { id: 'ml', name: 'Machine Learning' },
-      { id: 'vis', name: 'Visualización & Storytelling' },
-      { id: 'dummies', name: 'Para Dummies / Principiantes' }
+      { id: 'dummies', name: 'Para Dummies / Principiantes' },
+      { id: 'fund', name: 'Fundamentos & Estructuras' },
+      { id: 'recetas', name: 'Recetas & Buenas Prácticas' },
+      { id: 'ds', name: 'Ciencia de Datos & Análisis' },
+      { id: 'perf', name: 'Rendimiento & Optimización' }
     ];
 
     categories.forEach(c => {
@@ -657,6 +657,8 @@
       if (btn) {
         if (c.name === category) {
           btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-primary text-on-primary font-bold shadow-neon-cyan transition-all';
+        } else if (c.id === 'dummies') {
+          btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25 transition-all';
         } else {
           btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all';
         }
@@ -674,7 +676,11 @@
     let books = (course && course.books && course.books.length > 0) ? course.books : (CATALOG.books || []);
 
     if (currentBookCategory !== 'all') {
-      books = books.filter(b => b.category === currentBookCategory);
+      if (currentBookCategory === 'Para Dummies / Principiantes') {
+        books = books.filter(b => b.category === 'Para Dummies / Principiantes' || Boolean(b.dummies_friendly));
+      } else {
+        books = books.filter(b => b.category === currentBookCategory);
+      }
     }
 
     if (searchBooksQuery.trim() !== '') {
@@ -711,82 +717,78 @@
       return `
         <div class="glass-panel book-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between gap-4 border border-outline-variant/80 ${isDummiesFriendly ? 'hover:border-amber-400/60' : 'hover:border-primary/60'} relative overflow-hidden group">
           
-          <!-- Top Tag & Category -->
+          <!-- Top Tag & Category & Size -->
           <div>
-            <div class="flex items-center justify-between gap-2 mb-3 flex-wrap">
+            <div class="flex items-center justify-between gap-2 mb-4 flex-wrap">
               <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-surface-container-highest text-primary border border-primary/30 font-semibold flex items-center gap-1">
                 <span>${book.icon || '📖'}</span> ${book.category}
               </span>
-              <div class="flex items-center gap-1.5">
-                ${isDummiesFriendly ? '<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">💡 DUMMIES FRIENDLY</span>' : ''}
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant font-bold flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs text-primary">attach_file</span> ${book.size_mb || 'PDF'}
+                </span>
+                ${isDummiesFriendly ? '<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">💡 DUMMIES</span>' : ''}
                 <span class="text-[9px] font-mono px-2 py-0.5 rounded-full ${levelColor} border">${book.level}</span>
               </div>
             </div>
 
-            <!-- Book Cover Badge & Title -->
-            <div class="flex items-start gap-3.5 mb-3">
-              <div class="w-12 h-16 rounded-lg bg-gradient-to-br ${book.cover_gradient || 'from-sky-700 to-indigo-950'} border border-white/10 flex flex-col items-center justify-center text-white shadow-md shrink-0 group-hover:scale-105 transition-transform">
-                <span class="text-xl">${book.icon || '📘'}</span>
-                <span class="text-[8px] font-mono uppercase tracking-wider opacity-80 mt-1">${book.year}</span>
+            <!-- Book Showcase: 3D Cover + Info -->
+            <div class="flex items-start gap-4 mb-4">
+              <!-- 3D Book Cover -->
+              <div class="book-cover-3d bg-gradient-to-br ${book.cover_gradient || 'from-slate-800 to-zinc-950'} border border-white/15 text-white">
+                <div class="flex items-center justify-between pl-2">
+                  <span class="text-[8px] font-mono uppercase tracking-wider opacity-80">${book.publisher || 'USTA'}</span>
+                  <span class="text-[9px] font-mono bg-white/20 px-1 py-0.2 rounded font-bold">${book.year || '2024'}</span>
+                </div>
+                <div class="my-auto text-center px-1">
+                  <div class="text-2xl mb-1">${book.icon || '📘'}</div>
+                  <div class="text-[10px] font-bold font-display-sm leading-tight line-clamp-3 text-white drop-shadow">${book.title}</div>
+                </div>
+                <div class="text-[7.5px] font-mono text-center opacity-90 truncate px-1 border-t border-white/10 pt-1">
+                  ${book.author}
+                </div>
               </div>
+
+              <!-- Book Meta & Text -->
               <div class="min-w-0 flex-1">
-                <h4 class="font-headline-md text-sm sm:text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
+                <h4 class="font-headline-md text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
                   ${book.title}
                 </h4>
                 <p class="text-xs text-on-surface-variant line-clamp-2 mt-0.5 font-normal">
                   ${book.subtitle || ''}
                 </p>
-                <div class="text-[11px] text-on-surface-variant font-mono mt-1 flex items-center gap-2">
+                <div class="text-[11px] text-on-surface-variant font-mono mt-1.5 flex items-center gap-1.5 flex-wrap">
                   <span class="text-on-surface font-semibold">✍️ ${book.author}</span>
                   <span>•</span>
-                  <span>${book.edition || book.publisher}</span>
+                  <span class="text-primary/90">${book.edition || book.publisher}</span>
+                </div>
+                <!-- Topics Chips -->
+                <div class="flex flex-wrap gap-1 pt-2">
+                  ${topicsHtml}
                 </div>
               </div>
             </div>
 
             <!-- Dummies Friendly Takeaway Quote -->
-            <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/60 text-xs text-on-surface/90 leading-relaxed mb-3">
+            <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/60 text-xs text-on-surface/90 leading-relaxed mb-1">
               <p class="font-semibold text-[11px] text-amber-300 flex items-center gap-1 mb-1">
-                <span class="material-symbols-outlined text-xs">lightbulb</span> ¿Por qué leerlo?
+                <span class="material-symbols-outlined text-xs">lightbulb</span> ¿Qué aprenderás con este libro?
               </p>
-              <p class="text-[11px] text-on-surface-variant">${book.summary_dummies}</p>
-            </div>
-
-            <!-- Topics Chips -->
-            <div class="flex flex-wrap gap-1.5 pt-1">
-              ${topicsHtml}
+              <p class="text-[11px] text-on-surface-variant leading-relaxed">${book.summary_dummies}</p>
             </div>
           </div>
 
-          <!-- Bottom Action Buttons -->
+          <!-- Bottom Action Buttons: Direct Download PDF -->
           <div class="mt-auto pt-3 border-t border-outline-variant/50 flex items-center justify-between gap-2 flex-wrap">
-            <div class="flex items-center gap-2">
-              ${book.pdf_url ? `
-                <a href="${book.pdf_url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-primary/20 hover:bg-primary/30 text-primary border border-primary/30 text-xs font-label-caps flex items-center gap-1.5 transition-all shadow-sm active:scale-95 font-bold">
-                  <span class="material-symbols-outlined text-sm">menu_book</span> Abrir PDF
-                </a>
-                <a href="${book.pdf_url}" download="${book.filename || (book.title + '.pdf')}" class="px-2.5 py-1.5 rounded-lg bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-colors flex items-center gap-1 text-xs font-label-caps" title="Descargar archivo PDF completo">
-                  <span class="material-symbols-outlined text-sm">download</span> Descargar
-                </a>
-              ` : (book.open_access_url && book.open_access_url.startsWith('http') ? `
-                <a href="${book.open_access_url}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-primary/15 hover:bg-primary/25 text-primary border border-primary/30 text-xs font-label-caps flex items-center gap-1.5 transition-all shadow-sm active:scale-95 font-bold">
-                  <span class="material-symbols-outlined text-sm">language</span> Leer Online
-                </a>
-              ` : '')}
-            </div>
-
-            <div class="flex items-center gap-1.5">
-              ${book.github_url && book.github_url.startsWith('http') ? `
-                <a href="${book.github_url}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-colors" title="Ver Código y Notebooks en GitHub">
-                  <span class="material-symbols-outlined text-base">code</span>
-                </a>
-              ` : ''}
-              ${book.official_url && book.official_url.startsWith('http') ? `
-                <a href="${book.official_url}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-colors" title="Sitio Oficial">
-                  <span class="material-symbols-outlined text-base">open_in_new</span>
-                </a>
-              ` : ''}
-            </div>
+            <a href="${book.download_url || book.pdf_url}" download="${book.filename || (book.title + '.pdf')}" class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-bold text-xs font-label-caps flex items-center justify-center gap-2 shadow-neon-cyan active:scale-95 transition-all">
+              <span class="material-symbols-outlined text-base">download</span>
+              <span>Descargar PDF (${book.size_mb || 'Completo'})</span>
+            </a>
+            
+            <a href="${book.download_url || book.pdf_url}" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-all flex items-center gap-1 text-xs font-label-caps" title="Abrir archivo PDF en nueva ventana">
+              <span class="material-symbols-outlined text-base">open_in_new</span>
+              <span class="hidden sm:inline text-[11px]">Abrir</span>
+            </a>
           </div>
 
         </div>

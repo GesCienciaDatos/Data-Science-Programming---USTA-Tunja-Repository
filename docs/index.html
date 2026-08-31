@@ -627,14 +627,14 @@
           <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-primary/30 relative overflow-hidden bg-gradient-to-r from-surface-container via-surface to-surface-container-high">
             <div class="max-w-3xl space-y-3">
               <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/25 text-primary text-xs font-label-caps">
-                <span class="material-symbols-outlined text-sm">menu_book</span>
-                <span>Biblioteca de Referencia y Libros Abiertos (Open Access)</span>
+                <span class="material-symbols-outlined text-sm">local_library</span>
+                <span>Biblioteca Digital Oficial USTA — Libros en PDF</span>
               </div>
               <h3 class="font-display-sm text-2xl sm:text-3xl text-gradient font-bold">
-                Textos Fundacionales de Ciencia de Datos & IA
+                Colección Especializada de Libros en Python
               </h3>
               <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
-                Selección de los mejores libros internacionales para dominar Python, Estadística, Machine Learning y Visualización, con explicaciones claras, repositorios de código y accesos gratuitos en línea.
+                Catálogo exclusivo de 11 libros técnicos completos en formato PDF disponibles en la carpeta de recursos. Diseñado para descarga directa y consulta local sin sobrecargar la visualización en el navegador.
               </p>
             </div>
           </div>
@@ -642,12 +642,12 @@
           <!-- Filtros de Categoría y Buscador de Libros -->
           <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 border-b border-outline-variant/60 pb-4">
             <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1" id="bookCategoryPillsContainer">
-              <button onclick="filterBooksByCategory('all')" id="book-pill-all" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-primary text-on-primary font-bold shadow-neon-cyan transition-all">Todos (12)</button>
-              <button onclick="filterBooksByCategory('Python & Pandas')" id="book-pill-python" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">🐍 Python & Pandas</button>
-              <button onclick="filterBooksByCategory('Estadística & EDA')" id="book-pill-stats" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">📊 Estadística & EDA</button>
-              <button onclick="filterBooksByCategory('Machine Learning')" id="book-pill-ml" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">🤖 Machine Learning</button>
-              <button onclick="filterBooksByCategory('Visualización & Storytelling')" id="book-pill-vis" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">🎨 Visualización</button>
-              <button onclick="filterBooksByCategory('Para Dummies / Principiantes')" id="book-pill-dummies" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25 transition-all">💡 Para Dummies</button>
+              <button onclick="filterBooksByCategory('all')" id="book-pill-all" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-primary text-on-primary font-bold shadow-neon-cyan transition-all">Todos (11)</button>
+              <button onclick="filterBooksByCategory('Para Dummies / Principiantes')" id="book-pill-dummies" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25 transition-all">💡 Para Dummies (4)</button>
+              <button onclick="filterBooksByCategory('Fundamentos & Estructuras')" id="book-pill-fund" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">🐍 Fundamentos & Estructuras (3)</button>
+              <button onclick="filterBooksByCategory('Recetas & Buenas Prácticas')" id="book-pill-recetas" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">📖 Recetas & Buenas Prácticas (3)</button>
+              <button onclick="filterBooksByCategory('Ciencia de Datos & Análisis')" id="book-pill-ds" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">📊 Ciencia de Datos (1)</button>
+              <button onclick="filterBooksByCategory('Rendimiento & Optimización')" id="book-pill-perf" class="px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all">⚡ Rendimiento (1)</button>
             </div>
 
             <div class="relative w-full md:w-64">

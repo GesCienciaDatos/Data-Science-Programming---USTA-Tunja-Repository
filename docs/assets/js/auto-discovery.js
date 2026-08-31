@@ -270,9 +270,12 @@
       }
     });
 
-    // D. Detectar Guías PDF (.pdf)
+    // D. Detectar Guías PDF (.pdf) - ÚNICAMENTE archivos de la carpeta Guias/
     tree.forEach(item => {
-      if (item.type === 'blob' && item.path.toLowerCase().endsWith('.pdf')) {
+      const isPdf = item.type === 'blob' && item.path.toLowerCase().endsWith('.pdf');
+      const isGuiaFolder = item.path.toLowerCase().includes('/guias/') || item.path.toLowerCase().startsWith('guias/') || item.path.toLowerCase().startsWith('docs/guias/');
+      
+      if (isPdf && isGuiaFolder) {
         const pathParts = item.path.split('/');
         const filename = pathParts[pathParts.length - 1];
 
@@ -378,6 +381,7 @@
       cat.datasets = activeCourse.datasets || [];
       cat.guias = activeCourse.guias || [];
       cat.videos = activeCourse.videos || [];
+      cat.books = activeCourse.books || [];
       cat.stats = activeCourse.stats || {};
     }
 
@@ -389,6 +393,7 @@
     if (typeof window.renderGuias === 'function') window.renderGuias();
     if (typeof window.renderVideos === 'function') window.renderVideos();
     if (typeof window.renderDatasets === 'function') window.renderDatasets();
+    if (typeof window.renderBooks === 'function') window.renderBooks();
 
     if (showNotification && typeof window.showToast === 'function') {
       const totalNew = newNotebooks + newDatasets + newGuias + newVideos + newModules;
