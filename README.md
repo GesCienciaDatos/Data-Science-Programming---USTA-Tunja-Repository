@@ -57,6 +57,9 @@
 
 ## 🗺️ Mapa de Contenidos: Programación para Ciencia de Datos
 
+> 💡 **¡Novedad! Edición «Para Dummies / Para No Ingenieros» disponible:**  
+> Cada módulo y taller práctico cuenta ahora con una versión paralela en su subcarpeta `Para Dummies/`, diseñada con analogías cotidianas, modelos mentales intuitivos, visualizaciones simplificadas y código guiado paso a paso para estudiantes sin formación previa en ingeniería.
+
 ### 📋 Tabla Resumen de Navegación
 
 | # | Módulo Temático | Descripción Principal | Enlaces Rápidos |

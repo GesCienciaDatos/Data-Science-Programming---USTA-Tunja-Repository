@@ -649,13 +649,19 @@
 
     container.innerHTML = videoList.map(vid => {
       const isCurrent = currentPlayingVideoId === vid.id;
+      const hasYoutube = Boolean(vid.youtube_id || vid.youtube_url);
       return `
-        <div onclick="selectVideo('${vid.id}')" class="p-3.5 rounded-xl border border-outline-variant cursor-pointer transition-all hover:bg-surface-container ${isCurrent ? 'bg-primary/15 border-primary/50 shadow-[0_0_12px_rgba(56,189,248,0.15)]' : 'bg-surface-container-low'} flex items-start gap-3 group">
-          <span class="material-symbols-outlined ${isCurrent ? 'text-primary' : 'text-purple-400 group-hover:text-primary'} text-lg mt-0.5 transition-colors">${isCurrent ? 'play_circle' : 'movie'}</span>
+        <div onclick="selectVideo('${vid.id}')" class="p-3 rounded-xl border border-outline-variant cursor-pointer transition-all hover:bg-surface-container ${isCurrent ? 'bg-primary/15 border-primary/50 shadow-[0_0_12px_rgba(56,189,248,0.15)]' : 'bg-surface-container-low'} flex items-start gap-3 group">
+          <div class="relative w-9 h-9 rounded-lg ${hasYoutube ? 'bg-red-600/15 border border-red-500/30' : 'bg-primary/10 border border-primary/20'} flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
+            ${hasYoutube 
+              ? `<svg class="w-4 h-4 fill-current text-red-500" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`
+              : `<span class="material-symbols-outlined ${isCurrent ? 'text-primary' : 'text-purple-400 group-hover:text-primary'} text-base">${isCurrent ? 'play_circle' : 'movie'}</span>`
+            }
+          </div>
           <div class="min-w-0 flex-1">
             <div class="flex items-center justify-between gap-1 mb-0.5">
               <span class="text-[10px] font-mono text-purple-300 font-semibold">${vid.module || '🐍 Módulo 01'}</span>
-              <span class="text-[10px] font-mono text-on-surface-variant">${vid.size_mb ? vid.size_mb + ' MB' : ''}</span>
+              <span class="text-[9px] font-mono font-bold ${hasYoutube ? 'text-red-400 bg-red-500/10 px-1.5 py-0.2 rounded border border-red-500/20' : 'text-on-surface-variant'}">${hasYoutube ? 'YouTube HD' : (vid.size_mb ? vid.size_mb + ' MB' : '')}</span>
             </div>
             <div class="text-xs font-headline-md text-on-surface truncate group-hover:text-primary transition-colors">${vid.title}</div>
           </div>
@@ -664,19 +670,53 @@
     }).join('');
   }
 
+  function extractYouTubeId(url) {
+    if (!url) return '';
+    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+    return match ? match[1] : '';
+  }
+
   function setupVideoPlayer(vid) {
-    const player = document.getElementById('mainVideoPlayer');
+    const ytPlayer = document.getElementById('mainYoutubePlayer');
+    const nativePlayer = document.getElementById('mainVideoPlayer');
     const titleEl = document.getElementById('playerVideoTitle');
     const moduleEl = document.getElementById('playerVideoModule');
+    const ytBtn = document.getElementById('playerYoutubeBtn');
     const dlBtn = document.getElementById('playerDownloadBtn');
 
-    const url = 'Contenido/' + encodeURIComponent(vid.filename);
     if (titleEl) titleEl.textContent = vid.title;
     if (moduleEl) moduleEl.textContent = vid.module || '🐍 Módulo 01';
-    if (dlBtn) dlBtn.href = url;
-    if (player) {
-      player.src = url;
-      player.load();
+
+    const localUrl = 'Contenido/' + encodeURIComponent(vid.filename);
+    if (dlBtn) dlBtn.href = localUrl;
+
+    const ytId = vid.youtube_id || (vid.youtube_url ? extractYouTubeId(vid.youtube_url) : '');
+    const ytUrl = vid.youtube_url || (ytId ? `https://youtu.be/${ytId}` : null);
+
+    if (ytBtn) {
+      if (ytUrl) {
+        ytBtn.href = ytUrl;
+        ytBtn.classList.remove('hidden');
+      } else {
+        ytBtn.classList.add('hidden');
+      }
+    }
+
+    if (ytId && ytPlayer) {
+      ytPlayer.classList.remove('hidden');
+      ytPlayer.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`;
+      if (nativePlayer) {
+        nativePlayer.classList.add('hidden');
+        nativePlayer.pause();
+      }
+    } else if (nativePlayer) {
+      if (ytPlayer) {
+        ytPlayer.classList.add('hidden');
+        ytPlayer.src = '';
+      }
+      nativePlayer.classList.remove('hidden');
+      nativePlayer.src = localUrl;
+      nativePlayer.load();
     }
   }
 

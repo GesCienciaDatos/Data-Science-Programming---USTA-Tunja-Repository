@@ -526,20 +526,31 @@
           <div id="cinemaAmbientContainer" class="p-2 sm:p-4 rounded-3xl transition-all duration-500">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               <div class="lg:col-span-8 space-y-4">
-                <div id="videoStageBox" class="relative rounded-2xl overflow-hidden cinema-ambient-shadow border border-outline-variant bg-black">
-                  <video id="mainVideoPlayer" controls playsinline preload="auto" class="w-full aspect-video object-contain bg-black"></video>
+                <div id="videoStageBox" class="relative rounded-2xl overflow-hidden cinema-ambient-shadow border border-outline-variant bg-black aspect-video">
+                  <!-- YouTube Embed Player -->
+                  <iframe id="mainYoutubePlayer" class="w-full h-full aspect-video border-0" src="https://www.youtube.com/embed/4GN9WlumZ7o?enablejsapi=1&rel=0" title="Reproductor de Video YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <!-- Fallback HTML5 Player if needed -->
+                  <video id="mainVideoPlayer" controls playsinline preload="auto" class="w-full h-full aspect-video object-contain bg-black hidden"></video>
                 </div>
                 <div class="glass-panel p-4 rounded-2xl flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
-                    <span id="playerVideoModule" class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">🐍 Módulo 01</span>
+                    <div class="flex items-center gap-2">
+                      <span id="playerVideoModule" class="text-[10px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">🐍 Módulo 01</span>
+                      <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-red-500/20 text-red-400 font-semibold flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> YouTube HD
+                      </span>
+                    </div>
                     <h3 id="playerVideoTitle" class="font-headline-md text-base text-on-surface mt-1">Instalación y Configuración de Python</h3>
                   </div>
-                  <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <a id="playerYoutubeBtn" href="https://youtu.be/4GN9WlumZ7o" target="_blank" rel="noopener noreferrer" class="bg-red-600/20 text-red-400 hover:bg-red-600/30 border border-red-500/30 px-3 py-1.5 rounded text-xs font-label-caps flex items-center gap-1.5 transition-all">
+                      <svg class="w-4 h-4 fill-current text-red-500" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg> Ver en YouTube
+                    </a>
                     <button onclick="setCinemaMode('ambient')" class="bg-primary/20 text-primary px-3 py-1.5 rounded text-xs font-label-caps flex items-center gap-1 hover:bg-primary/30 transition-all">
                       <span class="material-symbols-outlined text-sm">ambient_screen</span> Ambient Glow
                     </button>
                     <a id="playerDownloadBtn" href="#" download class="bg-surface-container text-on-surface-variant hover:text-on-surface px-3 py-1.5 rounded text-xs font-label-caps border border-outline-variant flex items-center gap-1 transition-all">
-                      <span class="material-symbols-outlined text-sm">download</span> Descargar Video
+                      <span class="material-symbols-outlined text-sm">download</span> Descargar
                     </a>
                   </div>
                 </div>

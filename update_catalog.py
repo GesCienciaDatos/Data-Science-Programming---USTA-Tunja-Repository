@@ -256,10 +256,38 @@ PALETTE = [
 
 KNOWN_TITLES = {
     "Instalacion Python_compressed.mp4": "Instalación y Configuración de Python",
+    "Instalacion Python.mp4": "Instalación y Configuración de Python",
     "Creacion de Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
     "Creacion_Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
     "Instalación_Python.pdf": "Guía de Instalación y Configuración de Python",
     "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)"
+}
+
+KNOWN_YOUTUBE_VIDEOS = {
+    "instalacion python_compressed.mp4": {
+        "youtube_id": "4GN9WlumZ7o",
+        "youtube_url": "https://youtu.be/4GN9WlumZ7o",
+        "embed_url": "https://www.youtube.com/embed/4GN9WlumZ7o",
+        "thumbnail": "https://img.youtube.com/vi/4GN9WlumZ7o/hqdefault.jpg"
+    },
+    "instalacion python.mp4": {
+        "youtube_id": "4GN9WlumZ7o",
+        "youtube_url": "https://youtu.be/4GN9WlumZ7o",
+        "embed_url": "https://www.youtube.com/embed/4GN9WlumZ7o",
+        "thumbnail": "https://img.youtube.com/vi/4GN9WlumZ7o/hqdefault.jpg"
+    },
+    "creacion_venv.mp4": {
+        "youtube_id": "GX0rf6HjdcU",
+        "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+        "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+        "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg"
+    },
+    "creacion de venv.mp4": {
+        "youtube_id": "GX0rf6HjdcU",
+        "youtube_url": "https://youtu.be/GX0rf6HjdcU",
+        "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
+        "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg"
+    }
 }
 
 def format_title(filename):
@@ -448,6 +476,13 @@ def scan_course_videos(course_folder_name, course_dir):
                 size_mb = round(f.stat().st_size / (1024 * 1024), 1)
                 title = format_title(f.name)
                 encoded_name = urllib.parse.quote(f.name)
+                
+                yt_info = KNOWN_YOUTUBE_VIDEOS.get(f.name.lower(), {
+                    "youtube_id": "",
+                    "youtube_url": "",
+                    "embed_url": "",
+                    "thumbnail": ""
+                })
 
                 videos.append({
                     "id": f"vid_{idx}",
@@ -456,6 +491,10 @@ def scan_course_videos(course_folder_name, course_dir):
                     "module": "🐍 Módulo 01: Python",
                     "size_mb": size_mb,
                     "path": f"Contenido/{f.name}",
+                    "youtube_id": yt_info["youtube_id"],
+                    "youtube_url": yt_info["youtube_url"],
+                    "embed_url": yt_info["embed_url"],
+                    "thumbnail": yt_info["thumbnail"],
                     "lfs_url": f"https://media.githubusercontent.com/media/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
                     "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
                     "github_url": f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/docs/Contenido/{encoded_name}"

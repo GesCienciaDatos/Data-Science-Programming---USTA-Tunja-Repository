@@ -325,6 +325,14 @@
           const cleanTitle = formatTitle(filename);
           const encodedName = encodeURIComponent(filename);
 
+          const ytMapping = {
+            "instalacion python_compressed.mp4": { id: "4GN9WlumZ7o", url: "https://youtu.be/4GN9WlumZ7o" },
+            "instalacion python.mp4": { id: "4GN9WlumZ7o", url: "https://youtu.be/4GN9WlumZ7o" },
+            "creacion_venv.mp4": { id: "GX0rf6HjdcU", url: "https://youtu.be/GX0rf6HjdcU" },
+            "creacion de venv.mp4": { id: "GX0rf6HjdcU", url: "https://youtu.be/GX0rf6HjdcU" }
+          };
+          const yt = ytMapping[filename.toLowerCase()] || { id: "", url: "" };
+
           targetCourse.videos.push({
             id: `vid_discovered_${targetCourse.videos.length + 1}`,
             filename: filename,
@@ -332,6 +340,10 @@
             module: "🐍 Módulo 01: Python",
             size_mb: parseFloat(sizeMb) || 25.0,
             path: `Contenido/${filename}`,
+            youtube_id: yt.id,
+            youtube_url: yt.url,
+            embed_url: yt.id ? `https://www.youtube.com/embed/${yt.id}` : "",
+            thumbnail: yt.id ? `https://img.youtube.com/vi/${yt.id}/hqdefault.jpg` : "",
             lfs_url: `https://media.githubusercontent.com/media/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/docs/Contenido/${encodedName}`,
             raw_url: `https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${BRANCH}/docs/Contenido/${encodedName}`,
             github_url: `https://github.com/${REPO_OWNER}/${REPO_NAME}/blob/${BRANCH}/docs/Contenido/${encodedName}`
