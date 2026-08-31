@@ -1788,13 +1788,13 @@ window.VIRTUAL_LAB_CATALOG = {
         },
         {
           "id": "guia_2",
-          "filename": "Instalación_Python.pdf",
+          "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
           "size_str": "878 KB",
-          "path": "Guias/Instalación_Python.pdf",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Instalaci%C3%B3n_Python.pdf",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+          "path": "Guias/Instalacion_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Instalacion_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
         }
       ],
       "videos": [
@@ -2389,13 +2389,13 @@ window.VIRTUAL_LAB_CATALOG = {
         },
         {
           "id": "guia_2",
-          "filename": "Instalación_Python.pdf",
+          "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
           "size_str": "878 KB",
-          "path": "Guias/Instalación_Python.pdf",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Estadistica%20analisis%20y%20representacion%20de%20datos/Guias/Instalaci%C3%B3n_Python.pdf",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+          "path": "Guias/Instalacion_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Estadistica%20analisis%20y%20representacion%20de%20datos/Guias/Instalacion_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
         }
       ],
       "videos": [
@@ -2773,13 +2773,13 @@ window.VIRTUAL_LAB_CATALOG = {
         },
         {
           "id": "guia_2",
-          "filename": "Instalación_Python.pdf",
+          "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
           "size_str": "878 KB",
-          "path": "Guias/Instalación_Python.pdf",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Adquision%20gestion%20y%20gobernanza%20de%20datos/Guias/Instalaci%C3%B3n_Python.pdf",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+          "path": "Guias/Instalacion_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Adquision%20gestion%20y%20gobernanza%20de%20datos/Guias/Instalacion_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
         }
       ],
       "videos": [
@@ -3157,13 +3157,13 @@ window.VIRTUAL_LAB_CATALOG = {
         },
         {
           "id": "guia_2",
-          "filename": "Instalación_Python.pdf",
+          "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
           "size_str": "878 KB",
-          "path": "Guias/Instalación_Python.pdf",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Privacidad%2C%20Seguridad%20e%20Integridad%20de%20los%20datos/Guias/Instalaci%C3%B3n_Python.pdf",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+          "path": "Guias/Instalacion_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Privacidad%2C%20Seguridad%20e%20Integridad%20de%20los%20datos/Guias/Instalacion_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
         }
       ],
       "videos": [
@@ -3541,13 +3541,13 @@ window.VIRTUAL_LAB_CATALOG = {
         },
         {
           "id": "guia_2",
-          "filename": "Instalación_Python.pdf",
+          "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
           "size_str": "878 KB",
-          "path": "Guias/Instalación_Python.pdf",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Mining/Guias/Instalaci%C3%B3n_Python.pdf",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+          "path": "Guias/Instalacion_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Mining/Guias/Instalacion_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
         }
       ],
       "videos": [
@@ -3925,13 +3925,13 @@ window.VIRTUAL_LAB_CATALOG = {
         },
         {
           "id": "guia_2",
-          "filename": "Instalación_Python.pdf",
+          "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
           "size_str": "878 KB",
-          "path": "Guias/Instalación_Python.pdf",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Machine%20Learning/Guias/Instalaci%C3%B3n_Python.pdf",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+          "path": "Guias/Instalacion_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Machine%20Learning/Guias/Instalacion_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
         }
       ],
       "videos": [
@@ -4309,13 +4309,13 @@ window.VIRTUAL_LAB_CATALOG = {
         },
         {
           "id": "guia_2",
-          "filename": "Instalación_Python.pdf",
+          "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
           "size_str": "878 KB",
-          "path": "Guias/Instalación_Python.pdf",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Big%20Data/Guias/Instalaci%C3%B3n_Python.pdf",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+          "path": "Guias/Instalacion_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Big%20Data/Guias/Instalacion_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
         }
       ],
       "videos": [
@@ -4693,13 +4693,13 @@ window.VIRTUAL_LAB_CATALOG = {
         },
         {
           "id": "guia_2",
-          "filename": "Instalación_Python.pdf",
+          "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
           "size_str": "878 KB",
-          "path": "Guias/Instalación_Python.pdf",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Introduccion%20a%20la%20Inteligencia%20Artificial/Guias/Instalaci%C3%B3n_Python.pdf",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+          "path": "Guias/Instalacion_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Introduccion%20a%20la%20Inteligencia%20Artificial/Guias/Instalacion_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
         }
       ],
       "videos": [
@@ -5077,13 +5077,13 @@ window.VIRTUAL_LAB_CATALOG = {
         },
         {
           "id": "guia_2",
-          "filename": "Instalación_Python.pdf",
+          "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
           "size_str": "878 KB",
-          "path": "Guias/Instalación_Python.pdf",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Visual%20Analytics%20and%20Critical%20Thinking/Guias/Instalaci%C3%B3n_Python.pdf",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+          "path": "Guias/Instalacion_Python.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Visual%20Analytics%20and%20Critical%20Thinking/Guias/Instalacion_Python.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
         }
       ],
       "videos": [
@@ -7245,13 +7245,13 @@ window.VIRTUAL_LAB_CATALOG = {
     },
     {
       "id": "guia_2",
-      "filename": "Instalación_Python.pdf",
+      "filename": "Instalacion_Python.pdf",
       "title": "Guía de Instalación y Configuración de Python",
       "module": "🐍 Módulo 01: Python",
       "size_str": "878 KB",
-      "path": "Guias/Instalación_Python.pdf",
-      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Instalaci%C3%B3n_Python.pdf",
-      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalaci%C3%B3n_Python.pdf"
+      "path": "Guias/Instalacion_Python.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Instalacion_Python.pdf",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
     }
   ],
   "books": [

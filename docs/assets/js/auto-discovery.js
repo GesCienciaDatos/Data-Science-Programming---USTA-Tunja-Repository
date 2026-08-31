@@ -29,6 +29,7 @@
     "Instalacion Python_compressed.mp4": "Instalación y Configuración de Python",
     "Creacion de Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
     "Creacion_Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
+    "Instalacion_Python.pdf": "Guía de Instalación y Configuración de Python",
     "Instalación_Python.pdf": "Guía de Instalación y Configuración de Python",
     "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)"
   };

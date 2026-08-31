@@ -846,12 +846,21 @@
     const dlBtn = document.getElementById('playerPdfDownloadBtn');
     const openBtn = document.getElementById('playerPdfOpenNewTabBtn');
 
-    const localPath = 'Guias/' + encodeURIComponent(g.filename);
-    if (iframe) iframe.src = localPath;
+    const cleanFilename = (g.filename || '').replace('Instalación_Python.pdf', 'Instalacion_Python.pdf');
+    const localPath = 'Guias/' + encodeURIComponent(cleanFilename);
+    
+    if (iframe) {
+      iframe.src = localPath;
+    }
     if (titleEl) titleEl.textContent = g.title;
     if (moduleEl) moduleEl.textContent = g.module || '🐍 Módulo 01: Python';
-    if (dlBtn) dlBtn.href = localPath;
-    if (openBtn) openBtn.href = localPath;
+    if (dlBtn) {
+      dlBtn.href = localPath;
+      dlBtn.setAttribute('download', cleanFilename);
+    }
+    if (openBtn) {
+      openBtn.href = localPath;
+    }
 
     renderGuias();
   }
