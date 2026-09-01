@@ -5,15 +5,15 @@
   <h3 style="margin-top: 5px; color: #1e3a8a; font-weight: 600;">Especialización en Ciencia de Datos | Universidad Santo Tomás — Seccional Tunja</h3>
   
   <p style="font-size: 1.05em; color: #475569; max-width: 750px;">
-    Repositorio académico multi-materia de la <b>Especialización en Ciencia de Datos</b>. Contiene el material pedagógico estructurado por asignaturas, 132 cuadernos interactivos (Edición Estándar y Edición Para Dummies), conjuntos de datos reales, biblioteca digital de libros y video clases en HD.
+    Repositorio académico multi-materia de la <b>Especialización en Ciencia de Datos</b>. Contiene el material pedagógico estructurado por asignaturas, 144 cuadernos interactivos (Edición Estándar y Edición Para Dummies), conjuntos de datos reales, biblioteca digital de libros y video clases en HD.
   </p>
 
   <p>
     <a href="https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/">
       <img src="https://img.shields.io/badge/🌐%20Portal%20de%20Materias-GitHub%20Pages-0284C7?style=for-the-badge&logo=githubpages&logoColor=white" alt="Virtual Lab Pages" />
     </a>
-    <img src="https://img.shields.io/badge/⚡%20Cuadernos-132%20Notebooks-0ea5e9?style=for-the-badge&logo=jupyter&logoColor=white" alt="132 Notebooks" />
-    <img src="https://img.shields.io/badge/💡%20Modo%20Dummies-66%20Adaptados-f59e0b?style=for-the-badge&logo=lightbulb&logoColor=white" alt="Modo Dummies" />
+    <img src="https://img.shields.io/badge/⚡%20Cuadernos-144%20Notebooks-0ea5e9?style=for-the-badge&logo=jupyter&logoColor=white" alt="144 Notebooks" />
+    <img src="https://img.shields.io/badge/💡%20Modo%20Dummies-72%20Adaptados-f59e0b?style=for-the-badge&logo=lightbulb&logoColor=white" alt="Modo Dummies" />
     <img src="https://img.shields.io/badge/📚%20Biblioteca-12%20Libros%20Open%20Access-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="12 Libros" />
     <img src="https://img.shields.io/badge/🎬%20YouTube-Video%20Clases-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
     <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
@@ -31,7 +31,7 @@
 ## 🌟 Novedades y Características Principales
 
 ### 💡 Modo Dummies Interactivo ("Programación para No Ingenieros")
-El laboratorio incluye un selector interactivo **Modo Dummies** en el portal web que filtra y prioriza **66 cuadernos adaptados** con analogías cotidianas, explicaciones paso a paso sin jerga técnica y modelos mentales intuitivos (cajas de cartón con etiquetas, bandejas de huevos, recetas de cocina, sombras 3D y peritos de avalúo).
+El laboratorio incluye un selector interactivo **Modo Dummies** en el portal web que filtra y prioriza **72 cuadernos adaptados** con analogías cotidianas, explicaciones paso a paso sin jerga técnica y modelos mentales intuitivos (cajas de cartón con etiquetas, bandejas de huevos, recetas de cocina, sombras 3D y peritos de avalúo).
 
 ### 📚 Biblioteca Digital & Libros de Referencia (Open Access)
 Sección integrada con **12 textos fundacionales** de referencia mundial con resúmenes orientados a "dummies", etiquetas temáticas y enlaces directos a sus versiones oficiales y de acceso abierto:
@@ -59,7 +59,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 
 | # | Asignatura / Materia | Semestre | Estado | Directorio en el Repositorio |
 |---|---|---|---|---|
-| **1** | **Programación para Ciencia de Datos** | Semestre I | 🟢 **Activo (132 Cuadernos)** | [`Data Science programming/`](Data%20Science%20programming/) |
+| **1** | **Programación para Ciencia de Datos** | Semestre I | 🟢 **Activo (144 Cuadernos)** | [`Data Science programming/`](Data%20Science%20programming/) |
 | **2** | **Estadística, Análisis y Representación de Datos** | Semestre I | 🚧 *En Construcción* | [`Estadistica analisis y representacion de datos/`](Estadistica%20analisis%20y%20representacion%20de%20datos/) |
 | **3** | **Adquisición, Gestión y Gobernanza de Datos** | Semestre I | 🚧 *En Construcción* | [`Adquision gestion y gobernanza de datos/`](Adquision%20gestion%20y%20gobernanza%20de%20datos/) |
 | **4** | **Privacidad, Seguridad e Integridad de los Datos** | Semestre I | 🚧 *En Construcción* | [`Privacidad, Seguridad e Integridad de los datos/`](Privacidad,%20Seguridad%20e%20Integridad%20de%20los%20datos/) |
@@ -93,6 +93,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 | **07** | [**07 - Regression**](Data%20Science%20programming/07%20-%20Regression/README.md) | Modelos de Regresión OLS, supuestos Gauss-Markov, Polinomial, Ridge, Lasso, ElasticNet, CV y k-NN. | [📖 Guía](Data%20Science%20programming/07%20-%20Regression/README.md) |
 | **08** | [**08 - Classification**](Data%20Science%20programming/08%20-%20Classification/README.md) | Modelado cualitativo supervisado, Regresión Logística (Odds Ratio), fronteras de decisión, ROC-AUC, PR-AUC y k-NN con GridSearchCV. | [📖 Guía](Data%20Science%20programming/08%20-%20Classification/README.md) • [📝 Taller](Data%20Science%20programming/homeworks/08_Classification_Hands_On.ipynb) |
 | **09** | [**09 - Decision Trees**](Data%20Science%20programming/09%20-%20Decision%20Trees/README.md) | Modelos de árboles CART, Gini vs Entropía, poda Cost-Complexity, Ensambles: Bagging, Random Forests y Gradient Boosting. | [📖 Guía](Data%20Science%20programming/09%20-%20Decision%20Trees/README.md) • [📝 Taller](Data%20Science%20programming/homeworks/09_Decision_Trees_Hands_On.ipynb) |
+| **10** | [**10 - Clustering**](Data%20Science%20programming/10%20-%20Clustering/README.md) | Agrupamiento no supervisado, métricas de distancia, K-Means, K-Means++, HAC, Dendrogramas, DBSCAN y Silueta. | [📖 Guía](Data%20Science%20programming/10%20-%20Clustering/README.md) • [📝 Taller](Data%20Science%20programming/homeworks/10_Clustering_Hands_On.ipynb) |
 
 ---
 

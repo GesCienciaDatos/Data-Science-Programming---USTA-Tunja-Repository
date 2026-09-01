@@ -27,6 +27,7 @@ A diferencia de los cuadernos de clase (que incluyen soluciones interactivas des
 | **05** | [**05_Data_Preparation_Hands_On.ipynb**](05_Data_Preparation_Hands_On.ipynb) | **Módulo 05: Data Preparation** | Diagnóstico y tratamiento de valores nulos, normalización/estandarización comparativa y limpieza de texto y fechas inconsistentes. |
 | **08** | [**08_Classification_Hands_On.ipynb**](08_Classification_Hands_On.ipynb) | **Módulo 08: Classification** | Pipeline completo de clasificación: Regresión Logística con Odds Ratios, matriz de confusión, curvas ROC-AUC y PR-AUC, y k-NN con GridSearchCV. |
 | **09** | [**09_Decision_Trees_Hands_On.ipynb**](09_Decision_Trees_Hands_On.ipynb) | **Módulo 09: Decision Trees** | Árboles CART, búsqueda de profundidad óptima con CV, poda por complejidad de costo (ccp_alpha), Random Forest con error OOB e importancia de variables, y Gradient Boosting con GridSearchCV. |
+| **10** | [**10_Clustering_Hands_On.ipynb**](10_Clustering_Hands_On.ipynb) | **Módulo 10: Clustering** | Segmentación con K-Means y método del codo, Dendrogramas jerárquicos con corte de umbral, DBSCAN con detección de anomalías y validación con Coeficiente de Silueta y Davies-Bouldin. |
 
 ---
 

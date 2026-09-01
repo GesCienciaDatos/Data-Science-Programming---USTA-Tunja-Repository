@@ -22,6 +22,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 BASE_DIR = Path(__file__).resolve().parent
 DOCS_DIR = BASE_DIR / "docs"
 CATALOG_JS_PATH = DOCS_DIR / "assets" / "js" / "catalog.js"
+FRONTEND_CATALOG_PATH = BASE_DIR / "frontend" / "src" / "data" / "catalog.js"
 
 REPO_OWNER = "sazuniga06"
 REPO_NAME = "Data-Science-Programming---USTA-Tunja-Repository"
@@ -98,15 +99,15 @@ COURSE_DEFINITIONS = [
         "title": "Minería de Datos y Descubrimiento de Patrones",
         "folder": "Data Mining",
         "icon": "⛏️",
-        "badge": "En Construcción",
-        "badge_color": "rose",
+        "badge": "1 Módulo (9 Cuadernos)",
+        "badge_color": "emerald",
         "color": "#f43f5e",
         "gradient": "from-rose-500/20 via-pink-600/10 to-transparent",
         "border_glow": "border-rose-500/40",
-        "description": "Metodología KDD, reglas de asociación (Apriori, FP-Growth), detección de valores atípicos y patrones secuenciales en bases de datos complejas.",
+        "description": "Fundamentos de Scikit-Learn, preprocesamiento avanzado, pipelines, validación cruzada, optimización y descubrimiento de patrones en bases de datos.",
         "level": "Especialización",
         "semester": "Semestre II",
-        "active": False
+        "active": True
     },
     {
         "id": "machine-learning",
@@ -248,6 +249,14 @@ DEFAULT_MODULES_DSP = [
         "description": "Modelos CART, Criterios de Gini y Entropía, Poda Cost-Complexity, Bagging, Random Forests y Gradient Boosting."
     },
     {
+        "id": "10",
+        "name": "10 - Clustering",
+        "title": "Clustering y Aprendizaje No Supervisado",
+        "icon": "🔮",
+        "color": "#8B5CF6",
+        "description": "Agrupamiento no supervisado, métricas de distancia, K-Means, K-Means++, Clustering Jerárquico Aglomerativo, Dendrogramas, DBSCAN y Métricas de Silueta."
+    },
+    {
         "id": "hw",
         "name": "homeworks",
         "title": "Talleres Prácticos Evaluativos (Hands-On)",
@@ -348,7 +357,7 @@ def scan_course_modules(course_dir, default_modules=None):
 
     if course_dir.exists() and course_dir.is_dir():
         for item in sorted(course_dir.iterdir()):
-            if item.is_dir() and not item.name.startswith("."):
+            if item.is_dir() and not item.name.startswith(".") and item.name not in ["Libros", "Guias", "Contenido", "node_modules", "data"]:
                 match = re.match(r'^(\d{2})\s*-\s*(.+)$', item.name)
                 if match:
                     mod_id = match.group(1)
@@ -373,6 +382,19 @@ def scan_course_modules(course_dir, default_modules=None):
                         "description": "Talleres integradores de resolución autónoma con datos reales y desafíos de negocio."
                     })
                     existing_ids.add("hw")
+                elif any(item.rglob("*.ipynb")):
+                    mod_id = f"{len(modules)+1:02d}"
+                    if mod_id not in existing_ids and item.name not in [m["name"] for m in modules]:
+                        pal = PALETTE[len(modules) % len(PALETTE)]
+                        modules.append({
+                            "id": mod_id,
+                            "name": item.name,
+                            "title": f"Módulo: {format_title(item.name)} (Fundamentos y Utilidades)",
+                            "icon": "⚙️",
+                            "color": "#f43f5e",
+                            "description": f"Módulo de especialización sobre {format_title(item.name)} aplicado a Minería de Datos."
+                        })
+                        existing_ids.add(mod_id)
     return modules
 
 # =========================================================================
@@ -901,12 +923,21 @@ def rebuild_catalog_js():
         "books": active_course_data["books"] if active_course_data else books
     }
 
+    # 1. Guardar para plataforma legacy (docs/assets/js/catalog.js)
     js_content = f"// Virtual Laboratory Catalog Database - Auto-generated Multi-Course Architecture\nwindow.VIRTUAL_LAB_CATALOG = {json.dumps(catalog_data, indent=2, ensure_ascii=False)};\nvar VIRTUAL_LAB_CATALOG = window.VIRTUAL_LAB_CATALOG;\n"
+    CATALOG_JS_PATH.parent.mkdir(parents=True, exist_ok=True)
     CATALOG_JS_PATH.write_text(js_content, encoding="utf-8")
+    
+    # 2. Guardar para plataforma Vue 3 (frontend/src/data/catalog.js)
+    es6_content = f"// Virtual Laboratory Catalog Database - Auto-generated Multi-Course Architecture\nexport const CATALOG_DATA = {json.dumps(catalog_data, indent=2, ensure_ascii=False)};\n"
+    FRONTEND_CATALOG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    FRONTEND_CATALOG_PATH.write_text(es6_content, encoding="utf-8")
     
     print(f"✅ Catálogo multi-materia reconstruido exitosamente:")
     print(f"   - Total Materias/Asignaturas: {len(courses_output)}")
     print(f"   - Materia Activa: {active_course_data['name']} ({active_course_data['stats']['total_notebooks']} notebooks)")
+    print(f"   - Guardado en: {CATALOG_JS_PATH}")
+    print(f"   - Guardado en: {FRONTEND_CATALOG_PATH}")
 
 if __name__ == "__main__":
     rebuild_catalog_js()

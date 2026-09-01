@@ -1,9 +1,10 @@
 /**
- * Core Application Controller - Multi-Course Architecture
- * Next-Gen Virtual Lab Platform - Universidad Santo Tomás Seccional Tunja
+ * Next-Gen Virtual Lab Platform - Core Application Controller
+ * Stitch Minimalist Modern Design Architecture
+ * Universidad Santo Tomás Seccional Tunja — Especialización en Ciencia de Datos
  */
 
-(function initApp() {
+(function initVirtualLabApp() {
   // Asegurar objeto de catálogo base
   if (typeof window.VIRTUAL_LAB_CATALOG === 'undefined') {
     window.VIRTUAL_LAB_CATALOG = {
@@ -22,21 +23,14 @@
 
   // Estado reactivo de la aplicación
   let currentView = 'hub'; // 'hub' o 'course'
-  let currentCourseId = null;
-  let currentTab = 'notebooks';
+  let currentCourseId = 'data-science-programming';
+  let currentModality = 'standard'; // 'standard', 'dummies', 'homeworks'
   let currentModule = 'all';
   let currentSearch = '';
   let currentDiff = 'all';
-  let currentPlayingVideoId = null;
-  let currentActiveGuiaId = null;
-  let currentSnippetKey = 'cv';
-  let searchGuiasQuery = '';
-  let searchVideosQuery = '';
-  let searchBooksQuery = '';
-  let currentBookCategory = 'all';
   let courseSearchQuery = '';
   let courseSemesterFilter = 'all';
-  let isDummiesMode = localStorage.getItem('usta_dummies_mode') === 'true';
+  let currentSnippetKey = 'cv';
 
   // Terminal Sandbox Snippets
   const SANDBOX_SNIPPETS = {
@@ -76,9 +70,6 @@
 
   function getActiveCourse() {
     if (!CATALOG.courses || CATALOG.courses.length === 0) return null;
-    if (!currentCourseId) {
-      return CATALOG.courses.find(c => c.id === CATALOG.active_course_id) || CATALOG.courses[0];
-    }
     return CATALOG.courses.find(c => c.id === currentCourseId) || CATALOG.courses[0];
   }
 
@@ -96,7 +87,7 @@
   }
 
   // =========================================================================
-  // 1. GESTIÓN DE CURSOS Y PORTAL HUB DE MATERIAS
+  // 1. GESTIÓN DEL PORTAL DE MATERIAS (COURSE HUB)
   // =========================================================================
 
   function renderCourseHub() {
@@ -130,43 +121,42 @@
       const isActive = c.active !== false;
       const nbCount = c.stats ? (c.stats.total_notebooks || 0) : ((c.notebooks || []).length);
       const dsCount = c.stats ? (c.stats.total_datasets || 0) : ((c.datasets || []).length);
-      const guiasCount = c.stats ? (c.stats.total_guias || 0) : ((c.guias || []).length);
-      const vidCount = c.stats ? (c.stats.total_videos || 0) : ((c.videos || []).length);
+      const modCount = (c.modules || []).length;
 
       const badgeStyle = isActive 
         ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30' 
         : 'bg-amber-500/20 text-amber-300 border-amber-500/30';
 
       const borderGlow = isActive
-        ? 'border-primary/40 hover:border-primary shadow-[0_0_20px_rgba(56,189,248,0.15)] hover:shadow-[0_0_30px_rgba(56,189,248,0.3)]'
-        : 'border-outline-variant/60 hover:border-outline-variant hover:shadow-[0_0_15px_rgba(245,158,11,0.15)]';
+        ? 'border-primary/30 hover:border-primary shadow-[0_0_20px_rgba(56,189,248,0.12)] hover:shadow-[0_0_30px_rgba(56,189,248,0.25)]'
+        : 'border-outline-variant/50 hover:border-outline-variant hover:shadow-[0_0_15px_rgba(245,158,11,0.1)]';
 
       const animDelayClass = `delay-${Math.min((idx + 1) * 100, 500)}`;
 
       return `
-        <div class="glass-panel rounded-3xl p-6 sm:p-7 border ${borderGlow} flex flex-col justify-between transition-all duration-300 group hover:-translate-y-1.5 relative overflow-hidden bg-gradient-to-b ${c.gradient || 'from-surface-container/80 to-surface/90'} animate-fade-in-up ${animDelayClass}">
+        <div class="glass-card-interactive rounded-2xl p-6 border ${borderGlow} flex flex-col justify-between transition-all duration-300 group relative overflow-hidden bg-surface-container/60 animate-fade-in-up ${animDelayClass}">
           
-          <!-- Ambient card background glow -->
-          <div class="absolute -right-12 -top-12 w-36 h-36 rounded-full ${isActive ? 'bg-primary/10 group-hover:bg-primary/20' : 'bg-amber-500/10 group-hover:bg-amber-500/20'} blur-3xl pointer-events-none transition-all"></div>
+          <!-- Ambient subtle glow -->
+          <div class="absolute -right-10 -top-10 w-32 h-32 rounded-full ${isActive ? 'bg-primary/10 group-hover:bg-primary/20' : 'bg-amber-500/10 group-hover:bg-amber-500/20'} blur-3xl pointer-events-none transition-all"></div>
 
           <div>
-            <!-- Header: Icon, Tags & Badge -->
+            <!-- Header: Icon & Badges -->
             <div class="flex items-start justify-between gap-3 mb-4">
-              <div class="w-14 h-14 rounded-2xl bg-surface-container-highest border border-outline-variant flex items-center justify-center text-3xl shadow-inner group-hover:scale-110 transition-transform duration-300">
+              <div class="w-12 h-12 rounded-xl bg-surface-container-highest/80 border border-outline-variant/60 flex items-center justify-center text-2xl shadow-inner group-hover:scale-105 transition-transform duration-300">
                 ${c.icon || '📚'}
               </div>
-              <div class="flex flex-col items-end gap-1.5">
-                <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold border ${badgeStyle}">
-                  ${isActive ? '🟢 Activo / Disponible' : '🚧 En Construcción'}
+              <div class="flex flex-col items-end gap-1">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-code-md font-bold border ${badgeStyle}">
+                  ${isActive ? '🟢 100% Desarrollado' : '🚧 En Construcción'}
                 </span>
-                <span class="text-[10px] font-mono text-on-surface-variant font-semibold tracking-wide">
-                  ${c.semester || 'Semestre I'} • ${c.level || 'Especialización'}
+                <span class="text-[10px] font-code-md text-on-surface-variant font-semibold">
+                  ${c.semester || 'Semestre I'}
                 </span>
               </div>
             </div>
 
             <!-- Title & Subtitle -->
-            <h3 class="font-display-sm text-xl sm:text-2xl font-bold text-on-surface group-hover:text-primary transition-colors leading-tight mb-2">
+            <h3 class="font-display-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors leading-snug mb-1">
               ${c.name}
             </h3>
             <p class="text-xs font-headline-md ${isActive ? 'text-primary/90' : 'text-amber-300/90'} font-medium mb-3">
@@ -179,35 +169,31 @@
             </p>
 
             <!-- Metrics Pills Matrix -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-6 font-mono text-[11px]">
-              <div class="p-2 rounded-xl bg-surface-container/70 border border-outline-variant/60 text-center">
+            <div class="grid grid-cols-3 gap-2 mb-6 font-code-md text-[11px]">
+              <div class="p-2 rounded-lg bg-surface-dim/80 border border-outline-variant/40 text-center">
                 <span class="block text-[9px] text-on-surface-variant">CUADERNOS</span>
                 <span class="font-bold text-on-surface text-xs">${isActive ? nbCount : 'En Prep.'}</span>
               </div>
-              <div class="p-2 rounded-xl bg-surface-container/70 border border-outline-variant/60 text-center">
+              <div class="p-2 rounded-lg bg-surface-dim/80 border border-outline-variant/40 text-center">
+                <span class="block text-[9px] text-on-surface-variant">MÓDULOS</span>
+                <span class="font-bold text-tertiary text-xs">${isActive ? modCount : 'En Prep.'}</span>
+              </div>
+              <div class="p-2 rounded-lg bg-surface-dim/80 border border-outline-variant/40 text-center">
                 <span class="block text-[9px] text-on-surface-variant">DATASETS</span>
                 <span class="font-bold text-primary text-xs">${isActive ? dsCount : 'En Prep.'}</span>
-              </div>
-              <div class="p-2 rounded-xl bg-surface-container/70 border border-outline-variant/60 text-center">
-                <span class="block text-[9px] text-on-surface-variant">GUÍAS PDF</span>
-                <span class="font-bold text-tertiary text-xs">${isActive ? guiasCount : 'En Prep.'}</span>
-              </div>
-              <div class="p-2 rounded-xl bg-surface-container/70 border border-outline-variant/60 text-center">
-                <span class="block text-[9px] text-on-surface-variant">VIDEOS</span>
-                <span class="font-bold text-purple-300 text-xs">${isActive ? vidCount : 'En Prep.'}</span>
               </div>
             </div>
           </div>
 
           <!-- Bottom Action Button -->
-          <div class="pt-4 border-t border-outline-variant/40 flex items-center justify-between gap-3">
+          <div class="pt-4 border-t border-outline-variant/30 flex items-center justify-between gap-3">
             ${isActive ? `
-              <button onclick="selectCourse('${c.id}')" class="w-full py-3 px-4 rounded-xl bg-primary-container text-on-primary-container font-label-caps text-xs font-bold hover:shadow-neon-cyan active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 group/btn">
-                <span>INGRESAR AL LABORATORIO VIRTUAL</span>
+              <button onclick="selectCourse('${c.id}')" class="w-full py-2.5 px-4 rounded-xl bg-primary text-on-primary font-label-caps text-xs font-bold hover:bg-primary-fixed active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-[0_0_15px_rgba(56,189,248,0.25)]">
+                <span>INGRESAR AL LABORATORIO</span>
                 <span class="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
               </button>
             ` : `
-              <button onclick="showToast('🚧 Materia en construcción. El material pedagógico se incorporará próximamente.')" class="w-full py-3 px-4 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 font-label-caps text-xs font-semibold border border-amber-500/30 transition-all flex items-center justify-center gap-2">
+              <button onclick="showToast('🚧 Materia en construcción. El contenido pedagógico se incorporará próximamente.')" class="w-full py-2.5 px-4 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 font-label-caps text-xs font-semibold border border-amber-500/30 transition-all flex items-center justify-center gap-2">
                 <span class="material-symbols-outlined text-sm text-amber-400">construction</span>
                 <span>EN CONSTRUCCIÓN</span>
               </button>
@@ -219,7 +205,7 @@
     }).join('');
   }
 
-  function selectCourse(courseId, pushHash = true) {
+  function selectCourse(courseId) {
     const course = (CATALOG.courses || []).find(c => c.id === courseId);
     if (!course || course.active === false) {
       showToast("🚧 Materia en construcción. El contenido se publicará próximamente.");
@@ -234,62 +220,49 @@
 
     syncActiveCourseData();
 
-    // Actualizar URL Hash para compartir o refrescar
-    if (pushHash) {
-      window.location.hash = `course=${courseId}`;
-    }
-
-    // Alternar visibilidad de vistas principales y barra de navegación
-    const hubView = document.getElementById('view-course-hub');
-    const courseView = document.getElementById('courseWorkspaceWrapper');
-    const navCenter = document.getElementById('navbarCenterLinks');
+    // Alternar vistas
+    const hubView = document.getElementById('coursesHubView');
+    const courseView = document.getElementById('courseWorkspaceView');
     const navCourseSelector = document.getElementById('navCourseSelectorContainer');
-    const navReturnHubBtn = document.getElementById('navReturnHubBtn');
     const navActiveCourseName = document.getElementById('navActiveCourseName');
     const navActiveCourseIcon = document.getElementById('navActiveCourseIcon');
-    const bannerCourseName = document.getElementById('bannerCourseName');
-    const bannerCourseIcon = document.getElementById('bannerCourseIcon');
-    const bannerCourseDesc = document.getElementById('bannerCourseDesc');
+    const heroTitle = document.getElementById('activeCourseHeroTitle');
+    const heroDesc = document.getElementById('activeCourseHeroDesc');
+    const heroIcon = document.getElementById('activeCourseHeroIcon');
+    const heroSemester = document.getElementById('activeCourseHeroSemester');
+    const heroNotebooks = document.getElementById('activeCourseHeroNotebooks');
+    const heroModules = document.getElementById('activeCourseHeroModules');
 
-    if (hubView) { hubView.classList.add('force-hidden'); hubView.classList.remove('force-block'); }
-    if (courseView) { courseView.classList.remove('force-hidden'); courseView.classList.add('force-block'); }
-    if (navCenter) { navCenter.classList.remove('force-hidden'); navCenter.classList.add('force-flex'); }
+    if (hubView) { hubView.classList.add('force-hidden'); }
+    if (courseView) { courseView.classList.remove('force-hidden'); }
     if (navCourseSelector) { navCourseSelector.classList.remove('force-hidden'); navCourseSelector.classList.add('force-flex'); }
-    if (navReturnHubBtn) { navReturnHubBtn.classList.remove('force-hidden'); navReturnHubBtn.classList.add('force-flex'); }
 
     if (navActiveCourseName) navActiveCourseName.textContent = course.name;
     if (navActiveCourseIcon) navActiveCourseIcon.textContent = course.icon || '🐍';
-    if (bannerCourseName) bannerCourseName.textContent = course.name;
-    if (bannerCourseIcon) bannerCourseIcon.textContent = course.icon || '🐍';
-    if (bannerCourseDesc) bannerCourseDesc.textContent = course.description;
+    if (heroTitle) heroTitle.textContent = course.name;
+    if (heroDesc) heroDesc.textContent = course.description;
+    if (heroIcon) heroIcon.textContent = course.icon || '🐍';
+    if (heroSemester) heroSemester.textContent = course.semester || 'Semestre I';
+    if (heroNotebooks) heroNotebooks.textContent = course.stats ? course.stats.total_notebooks : (course.notebooks || []).length;
+    if (heroModules) heroModules.textContent = (course.modules || []).length;
 
-    // Resetear a la pestaña de notebooks
-    switchTab('notebooks');
-    renderPills();
-    renderNotebooks();
-    updateUiCounts();
+    renderModulePills();
+    renderCourseModules();
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
     showToast(`Laboratorio Virtual: ${course.name} ⚡`);
   }
 
-  function returnToCourseHub(pushHash = true) {
+  function returnToCourseHub() {
     currentView = 'hub';
-    if (pushHash) {
-      window.location.hash = 'hub';
-    }
 
-    const hubView = document.getElementById('view-course-hub');
-    const courseView = document.getElementById('courseWorkspaceWrapper');
-    const navCenter = document.getElementById('navbarCenterLinks');
+    const hubView = document.getElementById('coursesHubView');
+    const courseView = document.getElementById('courseWorkspaceView');
     const navCourseSelector = document.getElementById('navCourseSelectorContainer');
-    const navReturnHubBtn = document.getElementById('navReturnHubBtn');
 
-    if (hubView) { hubView.classList.remove('force-hidden'); hubView.classList.add('force-block'); }
-    if (courseView) { courseView.classList.add('force-hidden'); courseView.classList.remove('force-block'); }
-    if (navCenter) { navCenter.classList.add('force-hidden'); navCenter.classList.remove('force-flex'); }
+    if (hubView) { hubView.classList.remove('force-hidden'); }
+    if (courseView) { courseView.classList.add('force-hidden'); }
     if (navCourseSelector) { navCourseSelector.classList.add('force-hidden'); navCourseSelector.classList.remove('force-flex'); }
-    if (navReturnHubBtn) { navReturnHubBtn.classList.add('force-hidden'); navReturnHubBtn.classList.remove('force-flex'); }
 
     renderCourseHub();
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -297,251 +270,91 @@
 
   function filterCoursesBySemester(sem) {
     courseSemesterFilter = sem;
-    const allBtns = ['all', 'Semestre I', 'Semestre II'];
-    allBtns.forEach(s => {
-      const btn = document.getElementById(`btn-sem-${s === 'all' ? 'all' : (s === 'Semestre I' ? '1' : '2')}`);
+    const allBtns = [
+      { id: 'courseFilterSemesterAll', value: 'all' },
+      { id: 'courseFilterSemester1', value: 'Semestre I' },
+      { id: 'courseFilterSemester2', value: 'Semestre II' }
+    ];
+
+    allBtns.forEach(item => {
+      const btn = document.getElementById(item.id);
       if (!btn) return;
-      if (s === sem) {
-        btn.className = 'px-3 py-1 rounded-full text-xs font-mono font-bold bg-primary text-on-primary shadow-neon-cyan transition-all';
+      if (item.value === sem) {
+        btn.className = 'px-3 py-1 rounded-lg bg-primary/20 text-primary border border-primary/30 transition-all font-bold shadow-sm';
       } else {
-        btn.className = 'px-3 py-1 rounded-full text-xs font-mono bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all';
+        btn.className = 'px-3 py-1 rounded-lg text-on-surface-variant hover:text-on-surface transition-all';
       }
     });
+
     renderCourseHub();
   }
 
   // =========================================================================
-  // 2. TERMINAL SANDBOX & SIMULACIÓN
+  // 2. GESTIÓN DE MODALIDADES (ESTÁNDAR vs DUMMIES vs HOMEWORKS)
   // =========================================================================
 
-  function setSandboxSnippet(key) {
-    currentSnippetKey = key;
-    const snippet = SANDBOX_SNIPPETS[key];
-    const display = document.getElementById('sandboxCodeDisplay');
-    const output = document.getElementById('sandboxOutputText');
-    if (display) display.innerHTML = snippet.code;
-    if (output) output.textContent = `Output: ${snippet.output}`;
+  function switchModality(mode) {
+    currentModality = mode;
+    const btnStd = document.getElementById('modalityStandardBtn');
+    const btnDum = document.getElementById('modalityDummiesBtn');
+    const btnHw = document.getElementById('modalityHomeworksBtn');
 
-    ['cv', 'eda', 'fe'].forEach(k => {
-      const btn = document.getElementById(`tab-snippet-${k}`);
-      if (!btn) return;
-      if (k === key) {
-        btn.className = 'px-2 py-0.5 rounded text-[10px] font-mono bg-primary/20 text-primary border border-primary/30';
-      } else {
-        btn.className = 'px-2 py-0.5 rounded text-[10px] font-mono text-on-surface-variant hover:text-on-surface';
-      }
-    });
-  }
+    // Reset styles
+    if (btnStd) btnStd.className = 'px-4 py-2 rounded-lg text-xs font-label-caps flex items-center gap-2 text-on-surface-variant hover:text-primary transition-all shrink-0';
+    if (btnDum) btnDum.className = 'px-4 py-2 rounded-lg text-xs font-label-caps flex items-center gap-2 text-on-surface-variant hover:text-tertiary transition-all shrink-0';
+    if (btnHw) btnHw.className = 'px-4 py-2 rounded-lg text-xs font-label-caps flex items-center gap-2 text-on-surface-variant hover:text-emerald-400 transition-all shrink-0';
 
-  function runSandboxSimulation() {
-    const btn = document.getElementById('runSimulationBtn');
-    const label = document.getElementById('runBtnLabel');
-    const output = document.getElementById('sandboxOutputText');
-    if (!btn) return;
-
-    label.textContent = "EJECUTANDO...";
-    btn.classList.add('opacity-75', 'animate-pulse');
-
-    setTimeout(() => {
-      btn.classList.remove('opacity-75', 'animate-pulse');
-      label.textContent = "EJECUTAR SIMULACIÓN";
-      if (output) output.textContent = `Output: ${SANDBOX_SNIPPETS[currentSnippetKey].output}`;
-      showToast("Kernel ejecutó el script con éxito en 42ms ⚡");
-    }, 400);
-  }
-
-  // =========================================================================
-  // 3. CONTADORES Y NAVEGACIÓN EN PESTAÑAS
-  // =========================================================================
-
-  function updateUiCounts() {
-    const course = getActiveCourse();
-    const allNotebooks = (course && course.notebooks ? course.notebooks : []);
-    const dummiesNotebooks = allNotebooks.filter(n => n.is_dummies);
-    const standardNotebooks = allNotebooks.filter(n => !n.is_dummies);
-
-    const activeNotebooksCount = isDummiesMode ? (dummiesNotebooks.length || 54) : (allNotebooks.length || 108);
-    const guiasCount = (course && course.guias ? course.guias.length : 0);
-    const videosCount = (course && course.videos ? course.videos.length : 0);
-    const booksCount = (course && course.books ? course.books.length : ((CATALOG.books || []).length || 12));
-    const datasetsCount = (course && course.datasets ? course.datasets.length : 0);
-
-    // Hero Cards
-    const totalNbEl = document.getElementById('heroTotalNotebooks');
-    if (totalNbEl) totalNbEl.textContent = activeNotebooksCount;
-
-    const totalDsEl = document.getElementById('heroTotalDatasets');
-    if (totalDsEl) totalDsEl.textContent = datasetsCount;
-
-    // Navbar Badges
-    const navN = document.getElementById('nav-count-notebooks');
-    if (navN) navN.textContent = activeNotebooksCount;
-
-    const navG = document.getElementById('nav-count-guias');
-    if (navG) navG.textContent = guiasCount;
-
-    const navV = document.getElementById('nav-count-videos');
-    if (navV) navV.textContent = videosCount;
-
-    const navB = document.getElementById('nav-count-libros');
-    if (navB) navB.textContent = booksCount;
-
-    const navD = document.getElementById('nav-count-datasets');
-    if (navD) navD.textContent = datasetsCount;
-
-    // Workspace Tab Pills
-    const tabN = document.getElementById('tab-count-notebooks');
-    if (tabN) tabN.textContent = activeNotebooksCount;
-
-    const tabG = document.getElementById('tab-count-guias');
-    if (tabG) tabG.textContent = guiasCount;
-
-    const tabV = document.getElementById('tab-count-videos');
-    if (tabV) tabV.textContent = videosCount;
-
-    const tabB = document.getElementById('tab-count-libros');
-    if (tabB) tabB.textContent = booksCount;
-
-    const tabD = document.getElementById('tab-count-datasets');
-    if (tabD) tabD.textContent = datasetsCount;
-
-    // Playlist Sidebars
-    const sideG = document.getElementById('guiasSidebarCount');
-    if (sideG) sideG.textContent = guiasCount;
-
-    const sideV = document.getElementById('videosSidebarCount');
-    if (sideV) sideV.textContent = videosCount;
-  }
-
-  function toggleDummiesMode() {
-    isDummiesMode = !isDummiesMode;
-    localStorage.setItem('usta_dummies_mode', isDummiesMode ? 'true' : 'false');
-    applyDummiesMode(true);
-  }
-
-  function applyDummiesMode(showNotification = false) {
-    const html = document.documentElement;
-    const navToggleText = document.getElementById('navDummiesToggleText');
-    const navToggleBtn = document.getElementById('navDummiesToggleBtn');
-    const wsToggleText = document.getElementById('workspaceDummiesToggleText');
-    const wsToggleBtn = document.getElementById('workspaceDummiesToggleBtn');
-    const banner = document.getElementById('dummiesModeBanner');
-
-    if (isDummiesMode) {
-      html.classList.add('theme-dummies');
-
-      if (navToggleText) navToggleText.textContent = 'Modo Dummies: ON 💡';
-      if (navToggleBtn) {
-        navToggleBtn.className = "px-3 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 transition-all duration-300 border border-amber-400 bg-amber-500/25 text-amber-200 font-bold shadow-neon-amber animate-pulse active:scale-95";
-      }
-
-      if (wsToggleText) wsToggleText.textContent = '💡 Modo Dummies: ON';
-      if (wsToggleBtn) {
-        wsToggleBtn.className = "px-3.5 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 border border-amber-400 bg-amber-500/30 text-amber-200 font-bold shadow-neon-amber transition-all shrink-0 cursor-pointer";
-      }
-
-      if (banner) banner.classList.remove('hidden');
-
-      if (showNotification) {
-        showToast("💡 ¡Modo Dummies Activado! Conceptos explicados con analogías para no ingenieros 🍎");
-      }
-    } else {
-      html.classList.remove('theme-dummies');
-
-      if (navToggleText) navToggleText.textContent = 'Modo Dummies: OFF';
-      if (navToggleBtn) {
-        navToggleBtn.className = "px-3 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 transition-all duration-300 border border-amber-500/30 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 active:scale-95 shadow-sm";
-      }
-
-      if (wsToggleText) wsToggleText.textContent = '💡 Modo Dummies: OFF';
-      if (wsToggleBtn) {
-        wsToggleBtn.className = "px-3.5 py-1.5 rounded-full text-xs font-label-caps flex items-center gap-1.5 border border-outline-variant bg-surface-container text-on-surface-variant hover:text-amber-300 hover:border-amber-500/30 transition-all shrink-0 cursor-pointer";
-      }
-
-      if (banner) banner.classList.add('hidden');
-
-      if (showNotification) {
-        showToast("⚡ Modo Estándar Activado: Currículo completo de ingeniería 🚀");
-      }
+    if (mode === 'standard' && btnStd) {
+      btnStd.className = 'px-4 py-2 rounded-lg text-xs font-label-caps flex items-center gap-2 transition-all active-tab-glow shrink-0 font-bold';
+      showToast("📘 Edición Estándar: Rigor matemático y derivaciones completas");
+    } else if (mode === 'dummies' && btnDum) {
+      btnDum.className = 'px-4 py-2 rounded-lg text-xs font-label-caps flex items-center gap-2 transition-all active-tab-amber shrink-0 font-bold';
+      showToast("💡 Edición Para Dummies: Analogías y modelos intuitivos");
+    } else if (mode === 'homeworks' && btnHw) {
+      btnHw.className = 'px-4 py-2 rounded-lg text-xs font-label-caps flex items-center gap-2 transition-all active-tab-emerald shrink-0 font-bold';
+      showToast("🧪 Hands-On Homeworks: Laboratorios evaluativos guiados");
     }
 
-    renderPills();
-    renderNotebooks();
-    updateUiCounts();
-  }
-
-  function switchTab(tabId) {
-    currentTab = tabId;
-    const allTabs = ['notebooks', 'guias', 'videos', 'libros', 'datasets', 'quickstart', 'cheatsheet'];
-
-    allTabs.forEach(t => {
-      const viewEl = document.getElementById(`view-${t}`);
-      const pillBtn = document.getElementById(`tab-pill-${t}`);
-      const navBtn = document.getElementById(`nav-btn-${t}`);
-
-      if (viewEl) {
-        if (t === tabId) viewEl.classList.remove('hidden');
-        else viewEl.classList.add('hidden');
-      }
-
-      if (pillBtn) {
-        if (t === tabId) {
-          pillBtn.className = isDummiesMode && (t === 'notebooks' || t === 'libros')
-            ? 'bg-amber-500/25 text-amber-300 px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap border border-amber-400 font-bold cursor-pointer transition-all flex items-center gap-1.5 shadow-neon-amber shrink-0'
-            : 'bg-primary/20 text-primary px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap border border-primary/30 cursor-pointer hover:bg-primary/30 transition-all flex items-center gap-1.5 shadow-neon-cyan shrink-0';
-        } else {
-          pillBtn.className = 'bg-surface-container px-3.5 py-1.5 rounded-full font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-on-surface border border-outline-variant cursor-pointer transition-all flex items-center gap-1.5 shrink-0';
-        }
-      }
-
-      if (navBtn) {
-        if (t === tabId) {
-          navBtn.className = isDummiesMode
-            ? 'font-label-caps text-xs whitespace-nowrap text-amber-400 border-b-2 border-amber-400 pb-1 active:scale-95 duration-200 flex items-center gap-1.5 shrink-0'
-            : 'font-label-caps text-xs whitespace-nowrap text-primary border-b-2 border-primary pb-1 active:scale-95 duration-200 flex items-center gap-1.5 shrink-0';
-        } else {
-          navBtn.className = 'font-label-caps text-xs whitespace-nowrap text-on-surface-variant hover:text-primary transition-colors hover:bg-primary/10 duration-300 px-2.5 py-1 rounded flex items-center gap-1.5 shrink-0';
-        }
-      }
-    });
-
-    updateUiCounts();
-    if (tabId === 'notebooks') renderNotebooks();
-    if (tabId === 'guias') renderGuias();
-    if (tabId === 'videos') renderVideos();
-    if (tabId === 'libros') renderBooks();
-    if (tabId === 'datasets' && typeof window.renderDatasets === 'function') window.renderDatasets();
+    renderModulePills();
+    renderCourseModules();
   }
 
   // =========================================================================
-  // 4. RENDERIZADO DE CUADERNOS Y MÓDULOS
+  // 3. RENDERIZADO DE MÓDULOS Y CUADERNOS EN WORKSPACE
   // =========================================================================
 
-  function renderPills() {
-    const container = document.getElementById('modulePillsContainer');
+  function renderModulePills() {
+    const container = document.getElementById('moduleFilterButtonsContainer');
     const course = getActiveCourse();
     if (!container || !course || !course.modules) return;
 
-    let allNotebooks = course.notebooks || [];
-    if (isDummiesMode) {
-      allNotebooks = allNotebooks.filter(n => n.is_dummies);
+    let totalNotebooks = (course.notebooks || []).length;
+    if (currentModality === 'dummies') {
+      totalNotebooks = (course.notebooks || []).filter(n => n.is_dummies).length;
+    } else if (currentModality === 'homeworks') {
+      totalNotebooks = (course.notebooks || []).filter(n => n.is_homework || n.path.includes('homeworks')).length;
     }
-    const totalNotebooks = allNotebooks.length;
 
     let html = `
-      <button onclick="filterByModule('all')" class="px-3 py-1 rounded-full text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-1.5 ${currentModule === 'all' ? (isDummiesMode ? 'bg-amber-400 text-slate-950 font-bold shadow-neon-amber' : 'bg-primary text-on-primary font-bold shadow-neon-cyan') : 'bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant'}">
-        <span>🌟 Todos</span>
-        <span class="px-1.5 py-0.2 rounded-full text-[10px] ${currentModule === 'all' ? 'bg-black/20 text-black' : 'bg-surface-container-high text-on-surface-variant'}">${totalNotebooks}</span>
+      <button onclick="filterByModule('all')" class="px-3 py-1.5 rounded-lg text-xs font-code-md transition-all flex items-center gap-1.5 shrink-0 ${currentModule === 'all' ? 'bg-primary/20 text-primary border border-primary/40 font-bold shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:text-on-surface border border-outline-variant/40'}">
+        <span>🌟 Todos los Módulos</span>
+        <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-surface-container-highest text-on-surface-variant">${totalNotebooks}</span>
       </button>
     `;
 
     course.modules.forEach(m => {
       const isCurrent = currentModule === m.id;
-      const count = allNotebooks.filter(n => n.module_id === m.id).length;
+      let count = (course.notebooks || []).filter(n => n.module_id === m.id).length;
+      if (currentModality === 'dummies') {
+        count = (course.notebooks || []).filter(n => n.module_id === m.id && n.is_dummies).length;
+      } else if (currentModality === 'homeworks') {
+        count = (course.notebooks || []).filter(n => n.module_id === m.id && (n.is_homework || n.path.includes('homeworks'))).length;
+      }
+
       html += `
-        <button onclick="filterByModule('${m.id}')" class="px-3 py-1 rounded-full text-xs font-mono font-medium whitespace-nowrap transition-all flex items-center gap-1.5 ${isCurrent ? (isDummiesMode ? 'bg-amber-400 text-slate-950 font-bold shadow-neon-amber' : 'bg-primary text-on-primary font-bold shadow-neon-cyan') : 'bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant'}">
+        <button onclick="filterByModule('${m.id}')" class="px-3 py-1.5 rounded-lg text-xs font-code-md transition-all flex items-center gap-1.5 shrink-0 ${isCurrent ? 'bg-primary/20 text-primary border border-primary/40 font-bold shadow-sm' : 'bg-surface-container-low text-on-surface-variant hover:text-on-surface border border-outline-variant/40'}">
           <span>${m.icon || '📁'} ${m.name}</span>
-          <span class="px-1.5 py-0.2 rounded-full text-[10px] ${isCurrent ? 'bg-black/20 text-black' : 'bg-surface-container-high text-on-surface-variant'}">${count}</span>
+          <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-surface-container-highest text-on-surface-variant">${count}</span>
         </button>
       `;
     });
@@ -551,27 +364,49 @@
 
   function filterByModule(modId) {
     currentModule = modId;
-    renderPills();
-    renderNotebooks();
+    renderModulePills();
+    renderCourseModules();
   }
 
-  function renderNotebooks() {
-    const container = document.getElementById('notebooksContainer');
+  function filterNotebooks() {
+    const searchInput = document.getElementById('notebookSearchInput');
+    const diffSelect = document.getElementById('notebookDifficultyFilter');
+
+    if (searchInput) currentSearch = searchInput.value;
+    if (diffSelect) currentDiff = diffSelect.value;
+
+    renderCourseModules();
+  }
+
+  function renderCourseModules() {
+    const container = document.getElementById('courseModulesContainer');
     const course = getActiveCourse();
-    if (!container || !course || !course.notebooks) return;
+    if (!container || !course || !course.modules) return;
 
-    let list = course.notebooks || [];
+    let notebooks = course.notebooks || [];
 
-    // Si el Modo Dummies está activo, filtrar exclusivamente los cuadernos para Dummies
-    if (isDummiesMode) {
-      list = list.filter(nb => nb.is_dummies === true);
+    // Filtrar según modalidad activa
+    if (currentModality === 'standard') {
+      notebooks = notebooks.filter(n => !n.is_dummies && !n.is_homework && !n.path.includes('homeworks'));
+    } else if (currentModality === 'dummies') {
+      notebooks = notebooks.filter(n => n.is_dummies === true && !n.is_homework && !n.path.includes('homeworks'));
+    } else if (currentModality === 'homeworks') {
+      notebooks = notebooks.filter(n => n.is_homework === true || n.path.includes('homeworks'));
     }
 
-    const filtered = list.filter(nb => {
-      if (currentModule !== 'all' && nb.module_id !== currentModule) return false;
-      if (currentDiff !== 'all' && !nb.difficulty.toLowerCase().includes(currentDiff.toLowerCase())) return false;
-      if (currentSearch.trim() !== '') {
-        const q = currentSearch.toLowerCase();
+    // Filtrar según módulo seleccionado
+    let visibleModules = course.modules;
+    if (currentModule !== 'all') {
+      visibleModules = course.modules.filter(m => m.id === currentModule);
+    }
+
+    // Filtrar cuadernos según búsqueda y dificultad
+    const q = currentSearch.toLowerCase().trim();
+    const d = currentDiff.toLowerCase();
+
+    const filteredNotebooks = notebooks.filter(nb => {
+      if (d !== 'all' && !nb.difficulty.toLowerCase().includes(d)) return false;
+      if (q !== '') {
         const inTitle = (nb.title || '').toLowerCase().includes(q);
         const inPath = (nb.path || '').toLowerCase().includes(q);
         const inModule = (nb.module_name || '').toLowerCase().includes(q);
@@ -580,620 +415,416 @@
       return true;
     });
 
-    if (filtered.length === 0) {
+    if (filteredNotebooks.length === 0) {
       container.innerHTML = `
-        <div class="col-span-full py-12 text-center glass-panel rounded-2xl border border-outline-variant">
-          <span class="material-symbols-outlined text-primary text-4xl mb-2">search_off</span>
-          <h3 class="font-headline-md text-on-surface text-base">No se encontraron cuadernos</h3>
-          <p class="text-xs text-on-surface-variant max-w-sm mx-auto mt-1">Prueba con otro término de búsqueda o restablece los filtros.</p>
+        <div class="py-16 text-center glass-panel rounded-2xl border border-outline-variant/40 space-y-3">
+          <span class="material-symbols-outlined text-primary text-4xl">search_off</span>
+          <h3 class="font-headline-md text-on-surface text-base font-bold">No se encontraron cuadernos</h3>
+          <p class="text-xs text-on-surface-variant max-w-md mx-auto">Prueba ajustando el término de búsqueda o cambiando la modalidad / dificultad.</p>
         </div>
       `;
       return;
     }
 
-    container.innerHTML = filtered.map(nb => {
-      let diffBadge = 'bg-primary/20 text-primary border-primary/30';
-      if (nb.difficulty.includes('Básico')) diffBadge = 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30';
-      if (nb.difficulty.includes('Avanzado')) diffBadge = 'bg-error/20 text-error border-error/30';
-      if (nb.difficulty.includes('Intermedio')) diffBadge = 'bg-tertiary/20 text-tertiary border-tertiary/30';
-      if (nb.is_dummies) diffBadge = 'bg-amber-500/25 text-amber-300 border-amber-500/40';
-
-      const isDummiesCard = Boolean(nb.is_dummies);
+    // Agrupar por módulo
+    container.innerHTML = visibleModules.map(mod => {
+      const modNotebooks = filteredNotebooks.filter(nb => nb.module_id === mod.id);
+      if (modNotebooks.length === 0) return '';
 
       return `
-        <div class="glass-panel ${isDummiesCard ? 'dummies-card-highlight border-amber-500/40' : ''} rounded-xl p-5 flex flex-col justify-between gap-4 group hover:-translate-y-1 transition-transform duration-300">
-          <div>
-            <div class="flex justify-between items-start mb-2 flex-wrap gap-1.5">
-              <div class="flex gap-1.5 flex-wrap">
-                <span class="bg-[#4d77cf]/20 text-[#4d77cf] border border-[#4d77cf]/30 px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">${nb.module_name}</span>
-                <span class="${diffBadge} border px-2 py-0.5 rounded text-[10px] font-bold tracking-wider">${nb.difficulty.toUpperCase()}</span>
-                ${isDummiesCard ? '<span class="bg-amber-400 text-slate-950 px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider">💡 DUMMIES</span>' : ''}
+        <section class="space-y-4">
+          
+          <!-- Module Header Bar -->
+          <div class="glass-panel rounded-xl px-5 py-3.5 border border-outline-variant/40 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-surface-container/80">
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-lg border border-outline-variant/40">
+                ${mod.icon || '📁'}
+              </span>
+              <div>
+                <h3 class="font-display-sm text-base font-bold text-on-surface flex items-center gap-2">
+                  ${mod.name}
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-code-md bg-primary/10 text-primary border border-primary/20">
+                    ${modNotebooks.length} ${modNotebooks.length === 1 ? 'Cuaderno' : 'Cuadernos'}
+                  </span>
+                </h3>
+                <p class="text-xs text-on-surface-variant">${mod.description || 'Laboratorios computacionales interactivos'}</p>
               </div>
             </div>
-            <h3 class="font-headline-md text-base text-on-surface group-hover:text-primary transition-colors leading-snug">
-              ${nb.title}
-            </h3>
-            <p class="font-code-md text-on-surface-variant text-xs truncate mt-1">
-              ${nb.path}
-            </p>
-            ${isDummiesCard ? '<p class="text-[11px] text-amber-300/90 mt-2 font-body-md flex items-center gap-1"><span class="material-symbols-outlined text-xs">emoji_objects</span> Explicación con analogías sencillas y código comentado</p>' : ''}
           </div>
-          <div class="mt-auto pt-3 flex items-center justify-between border-t border-outline-variant/50">
-            <a href="${nb.colab_url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-xs font-label-caps ${isDummiesCard ? 'text-amber-400 hover:text-amber-300 font-bold' : 'text-primary hover:text-primary-fixed'} transition-colors">
-              <span class="material-symbols-outlined text-[16px]">rocket_launch</span> COLAB 1-CLICK
-            </a>
-            <div class="flex gap-2">
-              <a href="${nb.github_url}" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary transition-colors" title="Ver Código">
-                <span class="material-symbols-outlined text-[18px]">visibility</span>
-              </a>
-              <button onclick="copyNotebookLink('${nb.colab_url}')" class="text-on-surface-variant hover:text-primary transition-colors" title="Copiar Enlace Colab">
-                <span class="material-symbols-outlined text-[18px]">content_copy</span>
-              </button>
-            </div>
+
+          <!-- Notebook Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            ${modNotebooks.map((nb, nIdx) => {
+              let diffBadge = 'bg-primary/10 text-primary border-primary/20';
+              if (nb.difficulty.includes('Principiante') || nb.difficulty.includes('Básico')) {
+                diffBadge = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20';
+              } else if (nb.difficulty.includes('Avanzado')) {
+                diffBadge = 'bg-rose-500/10 text-rose-400 border-rose-500/20';
+              } else if (nb.difficulty.includes('Intermedio')) {
+                diffBadge = 'bg-amber-500/10 text-amber-300 border-amber-500/20';
+              }
+
+              const isDummies = Boolean(nb.is_dummies);
+              const isHomework = Boolean(nb.is_homework || nb.path.includes('homeworks'));
+
+              return `
+                <div class="glass-card-interactive rounded-xl p-5 border border-outline-variant/40 flex flex-col justify-between gap-4 group">
+                  
+                  <div>
+                    <!-- Top Tag & Difficulty -->
+                    <div class="flex items-center justify-between gap-2 mb-2.5">
+                      <span class="font-code-md text-[11px] text-primary font-bold">
+                        #${String(nIdx + 1).padStart(2, '0')}
+                      </span>
+                      <div class="flex items-center gap-1.5">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-code-md font-bold border ${diffBadge}">
+                          ${nb.difficulty}
+                        </span>
+                        ${isDummies ? '<span class="px-2 py-0.5 rounded text-[10px] font-code-md font-bold bg-amber-400/15 text-amber-300 border border-amber-400/30">💡 DUMMIES</span>' : ''}
+                        ${isHomework ? '<span class="px-2 py-0.5 rounded text-[10px] font-code-md font-bold bg-emerald-400/15 text-emerald-300 border border-emerald-400/30">🧪 LAB</span>' : ''}
+                      </div>
+                    </div>
+
+                    <!-- Notebook Title -->
+                    <h4 class="font-headline-md text-sm font-bold text-on-surface group-hover:text-primary transition-colors leading-snug mb-2">
+                      ${nb.title}
+                    </h4>
+
+                    <!-- File Path -->
+                    <p class="font-code-md text-[11px] text-on-surface-variant/70 truncate">
+                      ${nb.path}
+                    </p>
+                  </div>
+
+                  <!-- Actions: Colab & GitHub & Copy -->
+                  <div class="pt-3 border-t border-outline-variant/30 flex items-center justify-between gap-2">
+                    <a 
+                      href="${nb.colab_url}" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      class="px-3 py-1.5 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-on-primary text-xs font-label-caps font-bold transition-all flex items-center gap-1.5 shadow-sm"
+                    >
+                      <span class="material-symbols-outlined text-sm">rocket_launch</span>
+                      <span>COLAB</span>
+                    </a>
+
+                    <div class="flex items-center gap-1">
+                      <a 
+                        href="${nb.github_url}" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="p-1.5 rounded-lg hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors" 
+                        title="Ver Código en GitHub"
+                      >
+                        <span class="material-symbols-outlined text-base">code</span>
+                      </a>
+                      <button 
+                        onclick="copyNotebookLink('${nb.colab_url}')" 
+                        class="p-1.5 rounded-lg hover:bg-surface-container-highest text-on-surface-variant hover:text-primary transition-colors" 
+                        title="Copiar enlace a Colab"
+                      >
+                        <span class="material-symbols-outlined text-base">content_copy</span>
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              `;
+            }).join('')}
           </div>
-        </div>
+
+        </section>
       `;
     }).join('');
   }
 
   // =========================================================================
-  // 4.1 BIBLIOTECA DIGITAL DE LIBROS & REFERENCIAS
+  // 4. TERMINAL SANDBOX LOGIC
   // =========================================================================
 
-  function filterBooksByCategory(category) {
-    currentBookCategory = category;
+  function switchSandboxSnippet(key) {
+    currentSnippetKey = key;
+    const snippet = SANDBOX_SNIPPETS[key];
+    const codeContainer = document.getElementById('sandboxCodeContainer');
+    const outputContainer = document.getElementById('sandboxOutputContainer');
 
-    const categories = [
-      { id: 'all', name: 'all' },
-      { id: 'dummies', name: 'Para Dummies / Principiantes' },
-      { id: 'fund', name: 'Fundamentos & Estructuras' },
-      { id: 'recetas', name: 'Recetas & Buenas Prácticas' },
-      { id: 'ds', name: 'Ciencia de Datos & Análisis' },
-      { id: 'perf', name: 'Rendimiento & Optimización' }
-    ];
+    if (codeContainer) codeContainer.innerHTML = snippet.code;
+    if (outputContainer) outputContainer.textContent = snippet.output;
 
-    categories.forEach(c => {
-      const btn = document.getElementById(`book-pill-${c.id}`);
-      if (btn) {
-        if (c.name === category) {
-          btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-primary text-on-primary font-bold shadow-neon-cyan transition-all';
-        } else if (c.id === 'dummies') {
-          btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-amber-500/15 text-amber-300 border border-amber-500/30 hover:bg-amber-500/25 transition-all';
-        } else {
-          btn.className = 'px-3.5 py-1.5 rounded-full text-xs font-label-caps whitespace-nowrap bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant transition-all';
-        }
+    ['cv', 'eda', 'fe'].forEach(k => {
+      const btn = document.getElementById(`sandboxTab${k.toUpperCase()}`);
+      if (!btn) return;
+      if (k === key) {
+        btn.className = 'px-2 py-0.5 rounded bg-primary/20 text-primary border border-primary/30';
+      } else {
+        btn.className = 'px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface';
       }
     });
-
-    renderBooks();
   }
 
-  function renderBooks() {
-    const container = document.getElementById('booksGridContainer');
+  function runSandboxSnippet() {
+    const btn = document.getElementById('sandboxRunBtn');
+    const output = document.getElementById('sandboxOutputContainer');
+    if (!btn) return;
+
+    btn.classList.add('opacity-50', 'pointer-events-none');
+    output.textContent = "⏳ Ejecutando kernel en entorno aislado...";
+
+    setTimeout(() => {
+      btn.classList.remove('opacity-50', 'pointer-events-none');
+      if (output) output.textContent = SANDBOX_SNIPPETS[currentSnippetKey].output;
+      showToast("Kernel completó la simulación en 38ms ⚡");
+    }, 350);
+  }
+
+  // =========================================================================
+  // 5. EXPLORADOR DE DATASETS MODAL
+  // =========================================================================
+
+  function openDatasetExplorer() {
+    const modal = document.getElementById('datasetExplorerModal');
+    const listContainer = document.getElementById('datasetListContainer');
     const course = getActiveCourse();
-    if (!container) return;
 
-    let books = (course && course.books && course.books.length > 0) ? course.books : (CATALOG.books || []);
+    if (!modal || !listContainer) return;
+    modal.classList.remove('force-hidden');
+    modal.classList.add('force-flex');
 
-    if (currentBookCategory !== 'all') {
-      if (currentBookCategory === 'Para Dummies / Principiantes') {
-        books = books.filter(b => b.category === 'Para Dummies / Principiantes' || Boolean(b.dummies_friendly));
-      } else {
-        books = books.filter(b => b.category === currentBookCategory);
-      }
-    }
+    const datasets = (course && course.datasets) ? course.datasets : (CATALOG.datasets || []);
 
-    if (searchBooksQuery.trim() !== '') {
-      const q = searchBooksQuery.toLowerCase();
-      books = books.filter(b => 
-        (b.title || '').toLowerCase().includes(q) ||
-        (b.author || '').toLowerCase().includes(q) ||
-        (b.subtitle || '').toLowerCase().includes(q) ||
-        (b.summary_dummies || '').toLowerCase().includes(q) ||
-        (b.category || '').toLowerCase().includes(q) ||
-        (b.topics || []).some(t => t.toLowerCase().includes(q))
-      );
-    }
-
-    if (books.length === 0) {
-      container.innerHTML = `
-        <div class="col-span-full py-12 text-center glass-panel rounded-2xl border border-outline-variant">
-          <span class="material-symbols-outlined text-primary text-4xl mb-2">menu_book</span>
-          <h3 class="font-headline-md text-on-surface text-base">No se encontraron libros</h3>
-          <p class="text-xs text-on-surface-variant max-w-sm mx-auto mt-1">Prueba con otro término de búsqueda o selecciona otra categoría.</p>
-        </div>
-      `;
+    if (datasets.length === 0) {
+      listContainer.innerHTML = `<p class="text-xs text-on-surface-variant p-4">No hay datasets cargados.</p>`;
       return;
     }
 
-    container.innerHTML = books.map(book => {
-      const isDummiesFriendly = Boolean(book.dummies_friendly);
-      const levelColor = book.level.includes('Básico') ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30' : (book.level.includes('Avanzado') ? 'bg-purple-500/20 text-purple-300 border-purple-500/30' : 'bg-primary/20 text-primary border-primary/30');
+    listContainer.innerHTML = datasets.map((ds, idx) => `
+      <button 
+        onclick="previewDatasetItem(${idx})" 
+        class="w-full text-left p-3 rounded-xl border border-outline-variant/30 hover:border-primary/40 bg-surface-container-low hover:bg-surface-container-high transition-all group"
+      >
+        <div class="flex items-center justify-between mb-1">
+          <span class="font-code-md text-xs font-bold text-on-surface group-hover:text-primary transition-colors">${ds.name}</span>
+          <span class="font-code-md text-[10px] text-on-surface-variant">${ds.size || 'CSV'}</span>
+        </div>
+        <p class="text-[11px] text-on-surface-variant line-clamp-2">${ds.description || 'Dataset para modelado y evaluación'}</p>
+      </button>
+    `).join('');
 
-      const topicsHtml = (book.topics || []).map(t => 
-        `<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/60">${t}</span>`
-      ).join('');
+    previewDatasetItem(0);
+  }
 
-      return `
-        <div class="glass-panel book-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between gap-4 border border-outline-variant/80 ${isDummiesFriendly ? 'hover:border-amber-400/60' : 'hover:border-primary/60'} relative overflow-hidden group">
-          
-          <!-- Top Tag & Category & Size -->
+  function previewDatasetItem(idx) {
+    const course = getActiveCourse();
+    const datasets = (course && course.datasets) ? course.datasets : (CATALOG.datasets || []);
+    const ds = datasets[idx];
+    if (!ds) return;
+
+    const metaContainer = document.getElementById('datasetMetadataContainer');
+    const previewContainer = document.getElementById('datasetPreviewContainer');
+
+    if (metaContainer) {
+      metaContainer.innerHTML = `
+        <div class="flex items-center justify-between flex-wrap gap-2 pb-3 border-b border-outline-variant/30">
           <div>
-            <div class="flex items-center justify-between gap-2 mb-4 flex-wrap">
-              <span class="text-[10px] font-mono px-2.5 py-0.5 rounded-full bg-surface-container-highest text-primary border border-primary/30 font-semibold flex items-center gap-1">
-                <span>${book.icon || '📖'}</span> ${book.category}
-              </span>
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant border border-outline-variant font-bold flex items-center gap-1">
-                  <span class="material-symbols-outlined text-xs text-primary">attach_file</span> ${book.size_mb || 'PDF'}
-                </span>
-                ${isDummiesFriendly ? '<span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold">💡 DUMMIES</span>' : ''}
-                <span class="text-[9px] font-mono px-2 py-0.5 rounded-full ${levelColor} border">${book.level}</span>
-              </div>
-            </div>
-
-            <!-- Book Showcase: 3D Cover + Info -->
-            <div class="flex items-start gap-4 mb-4">
-              <!-- 3D Book Cover Presentation -->
-              <div class="book-cover-3d group-hover:scale-105 transition-transform">
-                <div class="book-spine-crease"></div>
-                <div class="book-page-edge"></div>
-                <div class="book-sheen-overlay"></div>
-                ${book.cover_image ? `
-                  <img src="${book.cover_image}" alt="${book.title}" loading="lazy" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
-                  <div class="hidden w-full h-full bg-gradient-to-br ${book.cover_gradient || 'from-slate-800 to-zinc-950'} flex flex-col justify-between p-2 text-white">
-                    <div class="flex items-center justify-between pl-2">
-                      <span class="text-[8px] font-mono uppercase tracking-wider opacity-80">${book.publisher || 'USTA'}</span>
-                      <span class="text-[9px] font-mono bg-white/20 px-1 py-0.2 rounded font-bold">${book.year || '2024'}</span>
-                    </div>
-                    <div class="my-auto text-center px-1">
-                      <div class="text-2xl mb-1">${book.icon || '📘'}</div>
-                      <div class="text-[10px] font-bold font-display-sm leading-tight line-clamp-3 text-white drop-shadow">${book.title}</div>
-                    </div>
-                    <div class="text-[7.5px] font-mono text-center opacity-90 truncate px-1 border-t border-white/10 pt-1">
-                      ${book.author}
-                    </div>
-                  </div>
-                ` : `
-                  <div class="w-full h-full bg-gradient-to-br ${book.cover_gradient || 'from-slate-800 to-zinc-950'} flex flex-col justify-between p-2 text-white">
-                    <div class="flex items-center justify-between pl-2">
-                      <span class="text-[8px] font-mono uppercase tracking-wider opacity-80">${book.publisher || 'USTA'}</span>
-                      <span class="text-[9px] font-mono bg-white/20 px-1 py-0.2 rounded font-bold">${book.year || '2024'}</span>
-                    </div>
-                    <div class="my-auto text-center px-1">
-                      <div class="text-2xl mb-1">${book.icon || '📘'}</div>
-                      <div class="text-[10px] font-bold font-display-sm leading-tight line-clamp-3 text-white drop-shadow">${book.title}</div>
-                    </div>
-                    <div class="text-[7.5px] font-mono text-center opacity-90 truncate px-1 border-t border-white/10 pt-1">
-                      ${book.author}
-                    </div>
-                  </div>
-                `}
-              </div>
-
-              <!-- Book Meta & Text -->
-              <div class="min-w-0 flex-1">
-                <h4 class="font-headline-md text-base font-bold text-on-surface group-hover:text-primary transition-colors leading-snug">
-                  ${book.title}
-                </h4>
-                <p class="text-xs text-on-surface-variant line-clamp-2 mt-0.5 font-normal">
-                  ${book.subtitle || ''}
-                </p>
-                <div class="text-[11px] text-on-surface-variant font-mono mt-1.5 flex items-center gap-1.5 flex-wrap">
-                  <span class="text-on-surface font-semibold">✍️ ${book.author}</span>
-                  <span>•</span>
-                  <span class="text-primary/90">${book.edition || book.publisher}</span>
-                </div>
-                <!-- Topics Chips -->
-                <div class="flex flex-wrap gap-1 pt-2">
-                  ${topicsHtml}
-                </div>
-              </div>
-            </div>
-
-            <!-- Dummies Friendly Takeaway Quote -->
-            <div class="p-3 rounded-xl bg-surface-container-low border border-outline-variant/60 text-xs text-on-surface/90 leading-relaxed mb-1">
-              <p class="font-semibold text-[11px] text-amber-300 flex items-center gap-1 mb-1">
-                <span class="material-symbols-outlined text-xs">lightbulb</span> ¿Qué aprenderás con este libro?
-              </p>
-              <p class="text-[11px] text-on-surface-variant leading-relaxed">${book.summary_dummies}</p>
-            </div>
+            <h4 class="font-display-sm text-base font-bold text-primary">${ds.name}</h4>
+            <p class="text-xs text-on-surface-variant">${ds.description || ''}</p>
           </div>
-
-          <!-- Bottom Action Buttons: Direct Download PDF -->
-          <div class="mt-auto pt-3 border-t border-outline-variant/50 flex items-center justify-between gap-2 flex-wrap">
-            <a href="${book.download_url || book.pdf_url}" download="${book.filename || (book.title + '.pdf')}" class="flex-1 sm:flex-none px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-bold text-xs font-label-caps flex items-center justify-center gap-2 shadow-neon-cyan active:scale-95 transition-all">
-              <span class="material-symbols-outlined text-base">download</span>
-              <span>Descargar PDF (${book.size_mb || 'Completo'})</span>
-            </a>
-            
-            <a href="${book.download_url || book.pdf_url}" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-surface-container hover:bg-primary/20 text-on-surface-variant hover:text-primary border border-outline-variant transition-all flex items-center gap-1 text-xs font-label-caps" title="Abrir archivo PDF en nueva ventana">
-              <span class="material-symbols-outlined text-base">open_in_new</span>
-              <span class="hidden sm:inline text-[11px]">Abrir</span>
-            </a>
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded bg-surface-container-highest font-code-md text-xs text-on-surface border border-outline-variant/40">
+              📊 ${ds.rows ? ds.rows.toLocaleString() : 'N/A'} Filas × ${ds.columns || 'N/A'} Columnas
+            </span>
           </div>
-
         </div>
       `;
-    }).join('');
+    }
+
+    if (previewContainer) {
+      if (ds.sample_data && ds.sample_data.length > 0) {
+        const headers = Object.keys(ds.sample_data[0]);
+        previewContainer.innerHTML = `
+          <table class="w-full text-left border-collapse font-code-md text-xs">
+            <thead>
+              <tr class="bg-surface-container-highest/80 text-on-surface border-b border-outline-variant/40">
+                ${headers.map(h => `<th class="p-2.5 font-bold">${h}</th>`).join('')}
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant/20 text-on-surface-variant">
+              ${ds.sample_data.map(row => `
+                <tr class="hover:bg-surface-container-high/50">
+                  ${headers.map(h => `<td class="p-2.5">${row[h] !== undefined ? row[h] : ''}</td>`).join('')}
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        `;
+      } else {
+        previewContainer.innerHTML = `
+          <div class="p-6 text-center text-xs text-on-surface-variant font-code-md">
+            📁 Dataset disponible para descarga o ejecución directa en cuadernos.
+          </div>
+        `;
+      }
+    }
   }
+
+  function closeDatasetExplorer() {
+    const modal = document.getElementById('datasetExplorerModal');
+    if (modal) {
+      modal.classList.add('force-hidden');
+      modal.classList.remove('force-flex');
+    }
+  }
+
+  // =========================================================================
+  // 6. UTILIDADES, TOASTS & BÚSQUEDA GLOBAL
+  // =========================================================================
 
   function copyNotebookLink(url) {
-    navigator.clipboard.writeText(url).then(() => {
-      showToast("Enlace de Google Colab copiado 📋");
-    });
-  }
-
-  // =========================================================================
-  // 5. RENDERIZADO DE GUÍAS PDF Y VIDEOS
-  // =========================================================================
-
-  function renderGuias() {
-    const container = document.getElementById('guiasPlaylistContainer');
-    const course = getActiveCourse();
-    if (!container || !course) return;
-
-    let guiasList = course.guias || [];
-    if (searchGuiasQuery.trim() !== '') {
-      const q = searchGuiasQuery.toLowerCase();
-      guiasList = guiasList.filter(g => 
-        (g.title || '').toLowerCase().includes(q) || 
-        (g.filename || '').toLowerCase().includes(q) ||
-        (g.module || '').toLowerCase().includes(q)
-      );
-    }
-
-    if (guiasList.length === 0) {
-      container.innerHTML = `<div class="p-6 text-center text-on-surface-variant text-xs glass-panel rounded-xl border border-outline-variant">
-        <span class="material-symbols-outlined text-2xl text-primary mb-1">search_off</span>
-        <p>No se encontraron guías que coincidan con la búsqueda.</p>
-      </div>`;
-      return;
-    }
-
-    if (!currentActiveGuiaId || !guiasList.some(x => x.id === currentActiveGuiaId)) {
-      loadGuia(guiasList[0].id);
-    }
-
-    container.innerHTML = guiasList.map(g => {
-      const isCurrent = currentActiveGuiaId === g.id;
-      return `
-        <div onclick="loadGuia('${g.id}')" class="p-3.5 rounded-xl border border-outline-variant cursor-pointer transition-all hover:bg-surface-container ${isCurrent ? 'bg-primary/15 border-primary/50 shadow-[0_0_12px_rgba(56,189,248,0.15)]' : 'bg-surface-container-low'} flex items-start gap-3 group">
-          <span class="material-symbols-outlined ${isCurrent ? 'text-primary' : 'text-on-surface-variant group-hover:text-primary'} text-lg mt-0.5 transition-colors">picture_as_pdf</span>
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
-              <span class="text-[10px] font-mono text-primary font-semibold">${g.module || '🐍 Módulo 01'}</span>
-              <span class="text-[10px] font-mono text-on-surface-variant">${g.size_str || ''}</span>
-            </div>
-            <div class="text-xs font-headline-md text-on-surface truncate group-hover:text-primary transition-colors">${g.title}</div>
-          </div>
-        </div>
-      `;
-    }).join('');
-  }
-
-  function loadGuia(guiaId) {
-    const course = getActiveCourse();
-    const g = (course && course.guias ? course.guias : []).find(x => x.id === guiaId);
-    if (!g) return;
-
-    currentActiveGuiaId = g.id;
-    const iframe = document.getElementById('mainPdfViewer');
-    const titleEl = document.getElementById('playerPdfTitle');
-    const moduleEl = document.getElementById('playerPdfModule');
-    const dlBtn = document.getElementById('playerPdfDownloadBtn');
-    const openBtn = document.getElementById('playerPdfOpenNewTabBtn');
-
-    const cleanFilename = (g.filename || '').replace('Instalación_Python.pdf', 'Instalacion_Python.pdf');
-    const localPath = 'Guias/' + encodeURIComponent(cleanFilename);
-    
-    if (iframe) {
-      iframe.src = localPath;
-    }
-    if (titleEl) titleEl.textContent = g.title;
-    if (moduleEl) moduleEl.textContent = g.module || '🐍 Módulo 01: Python';
-    if (dlBtn) {
-      dlBtn.href = localPath;
-      dlBtn.setAttribute('download', cleanFilename);
-    }
-    if (openBtn) {
-      openBtn.href = localPath;
-    }
-
-    renderGuias();
-  }
-
-  function renderVideos() {
-    const container = document.getElementById('videoPlaylistContainer');
-    const course = getActiveCourse();
-    if (!container || !course) return;
-
-    let videoList = course.videos || [];
-    if (searchVideosQuery.trim() !== '') {
-      const q = searchVideosQuery.toLowerCase();
-      videoList = videoList.filter(v => 
-        (v.title || '').toLowerCase().includes(q) || 
-        (v.filename || '').toLowerCase().includes(q) ||
-        (v.module || '').toLowerCase().includes(q)
-      );
-    }
-
-    if (videoList.length === 0) {
-      container.innerHTML = `<div class="p-6 text-center text-on-surface-variant text-xs glass-panel rounded-xl border border-outline-variant">
-        <span class="material-symbols-outlined text-2xl text-purple-400 mb-1">movie_off</span>
-        <p>No se encontraron videos que coincidan con la búsqueda.</p>
-      </div>`;
-      return;
-    }
-
-    if (!currentPlayingVideoId || !videoList.some(x => x.id === currentPlayingVideoId)) {
-      currentPlayingVideoId = videoList[0].id;
-      setupVideoPlayer(videoList[0]);
-    }
-
-    container.innerHTML = videoList.map(vid => {
-      const isCurrent = currentPlayingVideoId === vid.id;
-      const ytId = vid.youtube_id || (vid.youtube_url ? extractYouTubeId(vid.youtube_url) : '');
-      const ytUrl = vid.youtube_url || (ytId ? `https://youtu.be/${ytId}` : null);
-      const hasYoutube = Boolean(ytId || ytUrl);
-
-      return `
-        <div onclick="selectVideo('${vid.id}')" class="p-3 rounded-xl border border-outline-variant cursor-pointer transition-all hover:bg-surface-container ${isCurrent ? 'bg-primary/15 border-primary/50 shadow-[0_0_12px_rgba(56,189,248,0.15)]' : 'bg-surface-container-low'} flex items-start gap-3 group">
-          <div class="relative w-9 h-9 rounded-lg ${hasYoutube ? 'bg-red-600/15 border border-red-500/30' : 'bg-primary/10 border border-primary/20'} flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
-            ${hasYoutube 
-              ? `<svg class="w-4 h-4 fill-current text-red-500" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>`
-              : `<span class="material-symbols-outlined ${isCurrent ? 'text-primary' : 'text-purple-400 group-hover:text-primary'} text-base">${isCurrent ? 'play_circle' : 'movie'}</span>`
-            }
-          </div>
-          <div class="min-w-0 flex-1">
-            <div class="flex items-center justify-between gap-1 mb-0.5">
-              <span class="text-[10px] font-mono text-purple-300 font-semibold">${vid.module || '🐍 Módulo 01'}</span>
-              <span class="text-[9px] font-mono font-bold ${hasYoutube ? 'text-red-400 bg-red-500/10 px-1.5 py-0.2 rounded border border-red-500/20' : 'text-on-surface-variant'}">${hasYoutube ? 'YouTube HD' : (vid.size_mb ? vid.size_mb + ' MB' : '')}</span>
-            </div>
-            <div class="text-xs font-headline-md text-on-surface truncate group-hover:text-primary transition-colors">${vid.title}</div>
-          </div>
-          ${hasYoutube ? `
-            <a href="${ytUrl}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" title="Abrir directamente en YouTube" class="p-1 text-on-surface-variant hover:text-red-400 hover:bg-red-500/10 rounded transition-all mt-0.5 shrink-0">
-              <span class="material-symbols-outlined text-sm">open_in_new</span>
-            </a>
-          ` : ''}
-        </div>
-      `;
-    }).join('');
-  }
-
-  function extractYouTubeId(url) {
-    if (!url) return '';
-    const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
-    return match ? match[1] : '';
-  }
-
-  function setupVideoPlayer(vid) {
-    const ytPlayer = document.getElementById('mainYoutubePlayer');
-    const nativePlayer = document.getElementById('mainVideoPlayer');
-    const titleEl = document.getElementById('playerVideoTitle');
-    const moduleEl = document.getElementById('playerVideoModule');
-    const ytBtn = document.getElementById('playerYoutubeBtn');
-    const dlBtn = document.getElementById('playerDownloadBtn');
-
-    if (titleEl) titleEl.textContent = vid.title;
-    if (moduleEl) moduleEl.textContent = vid.module || '🐍 Módulo 01';
-
-    const localUrl = 'Contenido/' + encodeURIComponent(vid.filename);
-    if (dlBtn) dlBtn.href = localUrl;
-
-    const ytId = vid.youtube_id || (vid.youtube_url ? extractYouTubeId(vid.youtube_url) : '');
-    const ytUrl = vid.youtube_url || (ytId ? `https://youtu.be/${ytId}` : null);
-
-    if (ytBtn) {
-      if (ytUrl) {
-        ytBtn.href = ytUrl;
-        ytBtn.classList.remove('hidden');
-      } else {
-        ytBtn.classList.add('hidden');
-      }
-    }
-
-    if (ytId && ytPlayer) {
-      ytPlayer.classList.remove('hidden');
-      ytPlayer.src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`;
-      if (nativePlayer) {
-        nativePlayer.classList.add('hidden');
-        nativePlayer.pause();
-      }
-    } else if (nativePlayer) {
-      if (ytPlayer) {
-        ytPlayer.classList.add('hidden');
-        ytPlayer.src = '';
-      }
-      nativePlayer.classList.remove('hidden');
-      nativePlayer.src = localUrl;
-      nativePlayer.load();
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(() => {
+        showToast("¡Enlace a Google Colab copiado al portapapeles! 📋");
+      });
+    } else {
+      showToast("Enlace: " + url);
     }
   }
-
-  function selectVideo(vidId) {
-    const course = getActiveCourse();
-    const vid = (course && course.videos ? course.videos : []).find(v => v.id === vidId);
-    if (!vid) return;
-    currentPlayingVideoId = vid.id;
-    setupVideoPlayer(vid);
-    renderVideos();
-  }
-
-  function setCinemaMode(mode) {
-    const container = document.getElementById('cinemaAmbientContainer');
-    if (container) {
-      container.className = 'p-2 sm:p-4 rounded-3xl cinema-ambient-shadow transition-all duration-500';
-      showToast("Modo Cinema Ambient Glow Activado 🌌");
-    }
-  }
-
-  // =========================================================================
-  // 6. UTILIDADES, TOAST Y TEMA
-  // =========================================================================
 
   function showToast(msg) {
-    const existing = document.getElementById('app-toast');
-    if (existing) existing.remove();
+    let toast = document.getElementById('appGlobalToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'appGlobalToast';
+      toast.className = 'fixed bottom-6 right-6 z-50 glass-panel-elevated text-xs font-body-md font-semibold text-on-surface px-4 py-3 rounded-xl border border-primary/40 shadow-neon-cyan transition-all duration-300 opacity-0 translate-y-4 pointer-events-none max-w-sm';
+      document.body.appendChild(toast);
+    }
 
-    let toast = document.createElement('div');
-    toast.id = 'app-toast';
-    toast.className = 'fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-surface-container-highest text-on-surface font-mono text-xs border border-primary/40 shadow-neon-cyan flex items-center gap-2 backdrop-blur-xl animate-fade-in-up';
-    toast.innerHTML = `<span class="material-symbols-outlined text-primary text-sm">bolt</span> <span>${msg}</span>`;
-    document.body.appendChild(toast);
-    setTimeout(() => { if (toast) toast.remove(); }, 3200);
+    toast.textContent = msg;
+    toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    clearTimeout(toast._timeout);
+    toast._timeout = setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+    }, 3200);
   }
 
-  function toggleTheme() {
-    const html = document.documentElement;
-    const isDark = html.classList.contains('dark');
-    const themeIcon = document.getElementById('themeIcon');
-    const shaderWrapper = document.getElementById('ambientShaderWrapper');
-    
-    if (isDark) {
-      html.classList.remove('dark');
-      localStorage.setItem('usta_theme', 'light');
-      if (themeIcon) themeIcon.textContent = 'light_mode';
-      if (shaderWrapper) shaderWrapper.style.opacity = '0.08';
-      showToast('Modo Claro activado ☀️');
+  function toggleAmbientShader() {
+    const wrapper = document.getElementById('ambientShaderWrapper');
+    const icon = document.getElementById('shaderToggleIcon');
+    if (!wrapper) return;
+
+    if (wrapper.style.opacity === '0' || wrapper.classList.contains('opacity-0')) {
+      wrapper.style.opacity = '0.35';
+      wrapper.classList.remove('opacity-0');
+      if (icon) icon.textContent = 'blur_on';
+      showToast("WebGL Ambient Canvas: Activado ✨");
     } else {
-      html.classList.add('dark');
-      localStorage.setItem('usta_theme', 'dark');
-      if (themeIcon) themeIcon.textContent = 'dark_mode';
-      if (shaderWrapper) shaderWrapper.style.opacity = '0.40';
-      showToast('Modo Oscuro activado 🌙');
+      wrapper.style.opacity = '0';
+      wrapper.classList.add('opacity-0');
+      if (icon) icon.textContent = 'blur_off';
+      showToast("WebGL Ambient Canvas: Pausado");
     }
   }
 
-  function initTheme() {
-    const saved = localStorage.getItem('usta_theme');
-    const themeIcon = document.getElementById('themeIcon');
-    const shaderWrapper = document.getElementById('ambientShaderWrapper');
-    if (saved === 'light') {
-      document.documentElement.classList.remove('dark');
-      if (themeIcon) themeIcon.textContent = 'light_mode';
-      if (shaderWrapper) shaderWrapper.style.opacity = '0.08';
-    } else {
-      document.documentElement.classList.add('dark');
-      if (themeIcon) themeIcon.textContent = 'dark_mode';
-      if (shaderWrapper) shaderWrapper.style.opacity = '0.40';
+  // Atajos de teclado & Listeners
+  window.addEventListener('keydown', (e) => {
+    if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+      const s = document.getElementById('globalSearchInput');
+      if (s) s.focus();
     }
-  }
-
-  // =========================================================================
-  // 7. INICIALIZACIÓN Y ENRUTAMIENTO
-  // =========================================================================
-
-  function handleRoute() {
-    const hash = window.location.hash || '';
-    if (hash.startsWith('#course=')) {
-      const cId = hash.replace('#course=', '').trim();
-      const course = (CATALOG.courses || []).find(c => c.id === cId);
-      if (course && course.active !== false) {
-        selectCourse(cId, false);
-        return;
-      }
+    if (e.key === 'Escape') {
+      closeDatasetExplorer();
+      closeGlobalSearchModal();
     }
-    // Por defecto, mostrar el Hub Inicial de bienvenida y selección de materias
-    returnToCourseHub(false);
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    initTheme();
-    applyDummiesMode(false);
-    setSandboxSnippet('cv');
-    renderCourseHub();
-
-    // Comprobar ruta inicial en hash
-    handleRoute();
-
-    // Escuchar cambios de hash (navegación atrás/adelante del navegador)
-    window.addEventListener('hashchange', () => {
-      handleRoute();
-    });
-
-    // Iniciar auto-descubrimiento en segundo plano
-    if (typeof window.autoDiscoverRepo === 'function') {
-      window.autoDiscoverRepo(false);
-    }
-
-    // Buscador en Hub de Materias
-    document.getElementById('courseSearchInput')?.addEventListener('input', (e) => {
-      courseSearchQuery = e.target.value;
-      renderCourseHub();
-    });
-
-    // Buscador global de notebooks dentro del curso
-    document.getElementById('navSearchInput')?.addEventListener('input', (e) => {
-      currentSearch = e.target.value;
-      if (currentView !== 'course') {
-        selectCourse(CATALOG.active_course_id || 'data-science-programming');
-      }
-      switchTab('notebooks');
-      renderNotebooks();
-    });
-
-    // Buscador de libros
-    document.getElementById('searchBooksInput')?.addEventListener('input', (e) => {
-      searchBooksQuery = e.target.value;
-      renderBooks();
-    });
-
-    // Filtros de guías y videos
-    document.getElementById('searchGuiasInput')?.addEventListener('input', (e) => {
-      searchGuiasQuery = e.target.value;
-      renderGuias();
-    });
-
-    document.getElementById('searchVideosInput')?.addEventListener('input', (e) => {
-      searchVideosQuery = e.target.value;
-      renderVideos();
-    });
-
-    // Filtro de dificultad de notebooks
-    document.getElementById('diffFilter')?.addEventListener('change', (e) => {
-      currentDiff = e.target.value;
-      renderNotebooks();
-    });
-
-    // Atajos de teclado globales
-    document.addEventListener('keydown', (e) => {
-      if (e.key === '/' && document.activeElement !== document.getElementById('navSearchInput') && document.activeElement !== document.getElementById('courseSearchInput') && document.activeElement !== document.getElementById('searchBooksInput')) {
-        e.preventDefault();
-        const searchInput = currentView === 'hub' ? document.getElementById('courseSearchInput') : document.getElementById('navSearchInput');
-        if (searchInput) {
-          searchInput.focus();
-        }
-      }
-      if (e.key === 'Escape' && typeof window.closeDataExplorer === 'function') {
-        window.closeDataExplorer();
-      }
-    });
   });
 
-  // Exportar al scope global
-  window.renderCourseHub = renderCourseHub;
+  // Listener para búsqueda en curso y global
+  const nbSearch = document.getElementById('notebookSearchInput');
+  if (nbSearch) {
+    nbSearch.addEventListener('input', () => {
+      currentSearch = nbSearch.value;
+      renderCourseModules();
+    });
+  }
+
+  const gSearch = document.getElementById('globalSearchInput');
+  if (gSearch) {
+    gSearch.addEventListener('input', () => {
+      handleGlobalSearch(gSearch.value);
+    });
+  }
+
+  function handleGlobalSearch(query) {
+    const modal = document.getElementById('globalSearchResultsModal');
+    const list = document.getElementById('globalSearchResultsList');
+    if (!modal || !list) return;
+
+    if (query.trim().length < 2) {
+      modal.classList.add('force-hidden');
+      modal.classList.remove('force-flex');
+      return;
+    }
+
+    modal.classList.remove('force-hidden');
+    modal.classList.add('force-flex');
+
+    const q = query.toLowerCase();
+    const course = getActiveCourse();
+    const allNbs = (course && course.notebooks) ? course.notebooks : [];
+
+    const matches = allNbs.filter(nb => 
+      (nb.title || '').toLowerCase().includes(q) ||
+      (nb.path || '').toLowerCase().includes(q) ||
+      (nb.module_name || '').toLowerCase().includes(q)
+    );
+
+    if (matches.length === 0) {
+      list.innerHTML = `<p class="text-xs text-on-surface-variant p-4 text-center">No se encontraron resultados para "${query}".</p>`;
+      return;
+    }
+
+    list.innerHTML = matches.slice(0, 10).map(nb => `
+      <div class="p-3 rounded-lg bg-surface-container-low hover:bg-surface-container-high border border-outline-variant/30 flex justify-between items-center gap-3 transition-colors">
+        <div>
+          <span class="text-[10px] font-code-md text-primary font-bold">${nb.module_name}</span>
+          <h5 class="text-xs font-bold text-on-surface">${nb.title}</h5>
+          <p class="text-[10px] font-code-md text-on-surface-variant">${nb.path}</p>
+        </div>
+        <a href="${nb.colab_url}" target="_blank" class="px-2.5 py-1 rounded bg-primary text-on-primary text-[11px] font-label-caps font-bold shrink-0">
+          ABRIR
+        </a>
+      </div>
+    `).join('');
+  }
+
+  function closeGlobalSearchModal() {
+    const modal = document.getElementById('globalSearchResultsModal');
+    if (modal) {
+      modal.classList.add('force-hidden');
+      modal.classList.remove('force-flex');
+    }
+  }
+
+  // Exponer funciones globales
   window.selectCourse = selectCourse;
   window.returnToCourseHub = returnToCourseHub;
   window.filterCoursesBySemester = filterCoursesBySemester;
-  window.setSandboxSnippet = setSandboxSnippet;
-  window.runSandboxSimulation = runSandboxSimulation;
-  window.switchTab = switchTab;
-  window.toggleDummiesMode = toggleDummiesMode;
-  window.applyDummiesMode = applyDummiesMode;
-  window.filterBooksByCategory = filterBooksByCategory;
-  window.renderBooks = renderBooks;
+  window.switchModality = switchModality;
   window.filterByModule = filterByModule;
-  window.renderPills = renderPills;
-  window.renderNotebooks = renderNotebooks;
+  window.filterNotebooks = filterNotebooks;
+  window.switchSandboxSnippet = switchSandboxSnippet;
+  window.runSandboxSnippet = runSandboxSnippet;
+  window.openDatasetExplorer = openDatasetExplorer;
+  window.closeDatasetExplorer = closeDatasetExplorer;
+  window.previewDatasetItem = previewDatasetItem;
   window.copyNotebookLink = copyNotebookLink;
-  window.renderGuias = renderGuias;
-  window.loadGuia = loadGuia;
-  window.renderVideos = renderVideos;
-  window.selectVideo = selectVideo;
-  window.setCinemaMode = setCinemaMode;
-  window.toggleTheme = toggleTheme;
   window.showToast = showToast;
-  window.updateUiCounts = updateUiCounts;
+  window.toggleAmbientShader = toggleAmbientShader;
+  window.closeGlobalSearchModal = closeGlobalSearchModal;
+
+  // Inicialización de la vista
+  renderCourseHub();
+  syncActiveCourseData();
 })();
