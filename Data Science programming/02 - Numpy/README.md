@@ -17,8 +17,8 @@ En este módulo aprenderás a dominar la estructura de datos `ndarray` (arreglos
 
 ## 🗺️ Estructura del Módulo
 
-| # | Cuaderno | Temas Principales | Dificultad |
-|---|---|---|:---:|
+| # | Cuaderno Interactivo | Temas Principales | Dificultad |
+|:---:|---|---|:---:|
 | **00** | [**Introducción a NumPy**](00_Introduccion_Numpy.ipynb) | Arquitectura de memoria contigua en C, comparación de rendimiento NumPy vs Listas nativas de Python y concepto de `ndarray`. | 🟢 Básico |
 | **01** | [**Creación de Arrays en NumPy**](01_Creacion_de_Arrays_Numpy.ipynb) | Métodos de inicialización (`zeros`, `ones`, `full`, `arange`, `linspace`), atributos (`ndim`, `shape`, `size`, `dtype`) y tipos de datos numéricos. | 🟢 Básico |
 | **02** | [**Operaciones con Arrays y Broadcasting**](02_Operaciones_con_Arrays_Numpy.ipynb) | Operaciones aritméticas vectorizadas, funciones universales (`ufuncs`), agregaciones (`sum`, `mean`, `std`, `min`, `max`) y reglas de *Broadcasting*. | 🟡 Intermedio |
@@ -29,24 +29,28 @@ En este módulo aprenderás a dominar la estructura de datos `ndarray` (arreglos
 
 ---
 
-## 💡 Conceptos Clave del Módulo
+## 💡 Guías "Para Dummies" (Explicaciones Intuitivas Sin Jerga Compleja)
 
-```
-    ┌────────────────────────┐      Vectorización
-    │   Memoria Contigua     │ ────────────────────────► 10x - 100x más rápido
-    │    en C (Homogénea)    │     (Sin bucles en Python)     que bucles estándar
-    └────────────────────────┘
-                 │
-                 ▼
-    ┌────────────────────────┐      Broadcasting
-    │       ndarray          │ ────────────────────────► Operaciones entre matrices
-    │    N-Dimensional       │     (Alineación de ejes)      de distinta dimensión
-    └────────────────────────┘
-```
+* [**00. Introducción a NumPy (Dummies)**](Para%20Dummies/00_Introduccion_Numpy_Dummies.ipynb): La autopista de alta velocidad frente al camino de tierra.
+* [**01. Creación de Arrays (Dummies)**](Para%20Dummies/01_Creacion_de_Arrays_Numpy_Dummies.ipynb): La bandeja de huevos y las cuadrículas ordenadas.
+* [**02. Operaciones y Broadcasting (Dummies)**](Para%20Dummies/02_Operaciones_con_Arrays_Numpy_Dummies.ipynb): Sumar a todos al mismo tiempo con la varita mágica.
+* [**03. Indexación y Slicing (Dummies)**](Para%20Dummies/03_Indexacion_y_Slicing_Numpy_Dummies.ipynb): La batalla naval y cortar porciones de pastel.
+* [**04. Reshaping (Dummies)**](Para%20Dummies/04_Reshaping_Numpy_Dummies.ipynb): Reacomodar las fichas de Lego sin perder ninguna.
+* [**05. Concatenación (Dummies)**](Para%20Dummies/05_Concatenacion_Numpy_Dummies.ipynb): Pegar baldosas una al lado de la otra o una sobre otra.
+* [**06. Temas Avanzados (Dummies)**](Para%20Dummies/06_Temas_Avanzados_Numpy_Dummies.ipynb): Tirar los dados y contar elementos únicos en el baúl.
 
 ---
 
-## 📂 Taller Práctico Evaluativo (*Homework*)
+## 📝 Talleres Prácticos Evaluativos (*Hands-On Homeworks*)
 
-Al finalizar los 7 cuadernos teóricos, el estudiante debe resolver el taller práctico correspondiente:
-- 📝 **[02_NumPy_Hands_On.ipynb](../homeworks/02_NumPy_Hands_On.ipynb)**: Taller integral de cálculo numérico, álgebra lineal y manipulación vectorial de datos con NumPy.
+* 📝 [**02_NumPy_Hands_On.ipynb](../homeworks/02_NumPy_Hands_On.ipynb)**: Taller integral de cálculo numérico, álgebra lineal y manipulación vectorial con NumPy.
+* 💡 [**02_NumPy_Hands_On_Dummies.ipynb](../homeworks/Para%20Dummies/02_NumPy_Hands_On_Dummies.ipynb)**: Taller guiado paso a paso para no ingenieros.
+
+---
+
+<div align="center">
+  <p style="font-size: 0.9em; color: #64748b;">
+    © 2026 <b>Universidad Santo Tomás — Seccional Tunja</b><br>
+    <i>Especialización en Ciencia de Datos | Programación para Ciencia de Datos</i>
+  </p>
+</div>

@@ -1,4 +1,4 @@
-# Módulo 07: Regresión (Regression) 📈
+# Módulo 07: Modelado de Regresión (Regression) 📈
 
 > **Especialización en Ciencia de Datos**  
 > **Universidad Santo Tomás — Seccional Tunja**  
@@ -9,50 +9,43 @@
 
 ## 📌 Descripción General
 
-La **Regresión (*Regression*)** es la disciplina fundamental del Aprendizaje Automático Supervisado dedicada a predecir variables cuantitativas continuas ($y \in \mathbb{R}$). Comprender la formulación matemática de la regresión, su optimización mediante Mínimos Cuadrados Ordinarios (OLS), el diagnóstico riguroso de supuestos y las técnicas de regularización es indispensable para todo Científico de Datos.
+El **Modelado de Regresión (*Regression Modeling*)** constituye el pilar fundamental del Aprendizaje Automático Supervisado para la predicción de variables cuantitativas continuas ($y \in \mathbb{R}$).
 
-En este módulo aprenderás las metodologías esenciales y avanzadas del modelado predictivo continuo:
-* Fundamentos teóricos del Aprendizaje Supervisado y formulación matricial de la Regresión Lineal Simple y Múltiple.
-* Solución analítica exacta mediante la **Ecuación Normal de Mínimos Cuadrados (OLS)** $\boldsymbol{\theta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}$.
-* Métricas estadísticas de evaluación continua: **MAE**, **MSE**, **RMSE**, **$R^2$** y **$R^2$ Ajustado**.
-* Verificación y diagnóstico de los **Cinco Supuestos Clásicos de Gauss-Markov** (Linealidad, Homocedasticidad, Normalidad, Independencia y Multicolinealidad con VIF).
-* Captura de curvaturas no lineales mediante **Regresión Polinomial** y balance del dilema **Sesgo-Varianza (*Bias-Variance Tradeoff*)**.
-* Control del sobreajuste mediante regularización **Ridge ($L_2$)**, **Lasso ($L_1$)** y **ElasticNet**.
-* Modelado no paramétrico con **Regresión por $k$-Vecinos Más Cercanos ($k$-NN Regressor)**.
-* Validación cruzada (*$k$-Fold Cross-Validation*) con `cross_val_score` y `Pipeline` para evitar fuga de información (*Data Leakage*).
-* Inferencia estadística rigurosa mediante pruebas de hipótesis ($t$-test y $F$-test) con `statsmodels`.
+En este módulo estudiarás desde la deducción matemática de la **Ecuación Normal de Mínimos Cuadrados Ordinarios (OLS)** hasta modelos avanzados con regularización:
+* Diagnóstico riguroso de los **supuestos del Teorema de Gauss-Markov** (Linealidad, Homocedasticidad, Normalidad de residuos e Independencia).
+* Modelos multivariados, **términos de interacción sinérgicos** y detección de multicolinealidad con el factor **VIF (*Variance Inflation Factor*)**.
+* Regresión Polinomial y técnicas de contracción de coeficientes: **Ridge ($L_2$)**, **Lasso ($L_1$)** y **ElasticNet**.
+* Estrategias de **Validación Cruzada (*K-Fold Cross Validation*)**, ajuste sistemático de hiperparámetros con **`GridSearchCV`** y regresores no paramétricos basados en instancias (**$k$-NN Regressor**).
 
 ---
 
-## 🗺️ Estructura y Cuadernos del Módulo
+## 🗺️ Estructura del Módulo
 
 | # | Cuaderno Interactivo | Temas Principales | Dificultad |
 |:---:|---|---|:---:|
-| **00** | [**Introducción a la Regresión**](00_Introduccion_Regression.ipynb) | Paradigma supervisado, objetivos de aprendizaje, inferencia vs predicción, mapa de ruta del módulo y preparación del entorno. | 🟢 Básico |
-| **01** | [**Regresión Lineal Simple y Múltiple**](01_Regresion_Lineal.ipynb) | Ecuaciones matemáticas, formulación matricial, derivación analítica de la Ecuación Normal OLS, Scikit-Learn API, caso práctico `Advertising.csv`, métricas (MSE, R², RMSE, MAE) y diagnóstico de supuestos (Gauss-Markov, Durbin-Watson). | 🟢 Básico-Intermedio |
-| **02** | [**Consideraciones de la Regresión Múltiple**](02_Consideraciones_Regresion_Multiple.ipynb) | Sobreajuste (*Overfitting*), subajuste (*Underfitting*), compromiso Sesgo-Varianza (*Bias-Variance Tradeoff*), multicolinealidad y diagnóstico con el Factor de Inflación de la Varianza (**VIF**). | 🟡 Intermedio |
-| **03** | [**Regresión Polinomial y Técnicas de Regularización**](03_Regresion_Polinomial_y_Regularizacion.ipynb) | Transformaciones polinomiales con `PolynomialFeatures`, regularización **Ridge ($L_2$)**, **Lasso ($L_1$)**, **ElasticNet**, estandarización de variables y optimización de hiperparámetros con Validación Cruzada (`RidgeCV` y `LassoCV`). | 🧗 Intermedio-Avanzado |
-| **04** | [**Selección de Modelos, Validación Cruzada y k-NN**](04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb) | Métodos Hold-out vs **$k$-Fold Cross-Validation** (`cross_val_score`, `Pipeline`), pruebas de hipótesis ($t$-test y $F$-test), regresión no paramétrica con **$k$-NN Regressor** y caso práctico con Capital Bikeshare. | 🧗 Intermedio-Avanzado |
+| **00** | [**Introducción a la Regresión**](00_Introduccion_Regression.ipynb) | Paradigma del aprendizaje supervisado cuantitativo, formulación de la función de costo MSE y mapa de ruta del módulo. | 🟢 Básico |
+| **01** | [**Regresión Lineal Simple**](01_Regresion_Lineal.ipynb) | Deducción matricial de la Ecuación Normal OLS $\boldsymbol{\theta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}$, métricas $R^2$ / MSE y diagnóstico de supuestos de Gauss-Markov en `Advertising.csv`. | 🟢 Básico-Intermedio |
+| **02** | [**Consideraciones en Regresión Múltiple**](02_Consideraciones_Regresion_Multiple.ipynb) | Regresión multivariada, interpretación de coeficientes parciales, términos de interacción cruzada, multicolinealidad y cálculo de VIF en `USA_Housing.csv`. | 🟡 Intermedio |
+| **03** | [**Regresión Polinomial y Regularización**](03_Regresion_Polinomial_y_Regularizacion.ipynb) | Expansión polinomial, compromiso Sesgo-Varianza (*Bias-Variance Tradeoff*), sobreajuste y regularización analítica: Ridge ($L_2$), Lasso ($L_1$) y ElasticNet. | 🧗 Intermedio-Avanzado |
+| **04** | [**Selección de Modelos, Validación Cruzada y k-NN**](04_Seleccion_Modelos_Validacion_Cruzada_y_KNN.ipynb) | Validación cruzada $K$-Fold, búsqueda exhaustiva con `GridSearchCV`, regresión no paramétrica $k$-NN y comparativa de modelos. | 🧗 Intermedio-Avanzado |
+
+---
+
+## 💡 Guías "Para Dummies" (Explicaciones Intuitivas Sin Jerga Compleja)
+
+* [**00. Introducción a la Regresión (Dummies)**](Para%20Dummies/00_Introduccion_Regression_Dummies.ipynb): ¿Qué es predecir un número? La regla para estimar precios y demandas.
+* [**01. Regresión Lineal (Dummies)**](Para%20Dummies/01_Regresion_Lineal_Dummies.ipynb): Trazar la mejor línea recta a través de una nube de puntos.
+* [**02. Regresión Múltiple (Dummies)**](Para%20Dummies/02_Consideraciones_Regresion_Multiple_Dummies.ipynb): El perito avaluador que suma el efecto de las habitaciones, el barrio y los metros cuadrados.
+* [**03. Polinomios y Regularización (Dummies)**](Para%20Dummies/03_Regresion_Polinomial_y_Regularizacion_Dummies.ipynb): La cuerda flexible (Lasso y Ridge) que frena al modelo para no memorizar el ruido.
+* [**04. Validación Cruzada y k-NN (Dummies)**](Para%20Dummies/04_Seleccion_Modelos_Validacion_Cruzada_y_KNN_Dummies.ipynb): Probar el modelo con diferentes exámenes sorpresa y consultar a los vecinos más parecidos.
 
 ---
 
 ## 📂 Conjuntos de Datos (*Datasets*)
 
-Los cuadernos interactivos de este módulo emplean conjuntos de datos reales y sintéticos de referencia:
-
-* **`Advertising.csv`**: Inversión publicitaria en TV, Radio y Periódicos vs Ventas (ideal para Regresión Lineal Múltiple, Ecuación Normal, regularización y diagnóstico OLS).
-* **`bikeshare.csv`**: Demanda diaria de alquiler de bicicletas en Washington D.C. según temperatura y condiciones meteorológicas (731 observaciones, ideal para comparar modelos paramétricos vs no paramétricos $k$-NN y optimización de hiperparámetros).
-
----
-
-## 📚 Recursos y Lecturas Recomendadas
-
-### 📖 Libros y Cursos de Referencia
-1. **[An Introduction to Statistical Learning with Applications in Python (ISLP)](https://www.statlearning.com/)** — *Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani (Capítulos 2 y 3)*.
-2. **[STAT 501: Regression Methods](https://online.stat.psu.edu/stat501/)** — *Penn State Department of Statistics*.
-3. **[Scikit-Learn Supervised Learning Guide: Linear Models](https://scikit-learn.org/stable/modules/linear_model.html)**.
-4. **[Scikit-Learn User Guide: Regression Metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics)**.
-5. **[Harvard CS109-A: Introduction to Data Science](https://harvard-iacs.github.io/2021-CS109A/)**.
+En este módulo se emplean los siguientes datasets ubicados en la carpeta `data/`:
+- `Advertising.csv`: Inversiones publicitarias en TV, Radio y Periódicos frente a ventas generadas.
+- `USA_Housing.csv`: Características demográficas y precios de venta de viviendas en Estados Unidos.
 
 ---
 

@@ -17,8 +17,8 @@ A lo largo de este módulo desarrollarás el pensamiento algorítmico necesario 
 
 ## 🗺️ Estructura del Módulo
 
-| # | Cuaderno | Temas Principales | Dificultad |
-|---|---|---|:---:|
+| # | Cuaderno Interactivo | Temas Principales | Dificultad |
+|:---:|---|---|:---:|
 | **00** | [**Introducción y Conceptos Básicos**](00_Introduccion_y_Conceptos_Basicos.ipynb) | Pensamiento computacional, algoritmos, arquitectura de ejecución y el ecosistema de Python en Data Science. | 🟢 Básico |
 | **01** | [**Sintaxis, Variables y Tipos de Datos**](01_Sintaxis_Variables_y_Tipos_de_Datos.ipynb) | Asignación de variables, operadores aritméticos/lógicos y tipos primitivos (`int`, `float`, `bool`, `str`). | 🟢 Básico |
 | **02a** | [**Estructuras Nativas I: Listas, Tuplas y Conjuntos**](02a_Estructuras_Listas_Tuplas_Conjuntos.ipynb) | Colecciones indexadas, mutabilidad vs inmutabilidad, *slicing*, métodos de listas y operaciones de conjuntos. | 🟢 Básico |
@@ -32,27 +32,33 @@ A lo largo de este módulo desarrollarás el pensamiento algorítmico necesario 
 
 ---
 
-## 🛠️ Metodología de Práctica Interactiva
+## 💡 Guías "Para Dummies" (Explicaciones Intuitivas Sin Jerga Compleja)
 
-Cada cuaderno teórico incorpora bloques interactivos de práctica:
-```markdown
-##### 🛠️ Práctica X: [Nombre del ejercicio]
-[Instrucciones del reto]
-```
-```python
-# Espacio de código para que el estudiante escriba su solución
-```
-```markdown
-<details>
-<summary><b>💡 Haz clic aquí para ver la solución</b></summary>
+Para estudiantes que deseen afianzar los conceptos con analogías cotidianas e intuitivas:
 
-[Código fuente y explicación detallada de la solución]
-</details>
-```
+* [**00. Introducción a Python (Dummies)**](Para%20Dummies/00_Introduccion_y_Conceptos_Basicos_Dummies.ipynb): ¿Qué es programar? La analogía de la receta de cocina.
+* [**01. Variables y Tipos de Datos (Dummies)**](Para%20Dummies/01_Sintaxis_Variables_y_Tipos_de_Datos_Dummies.ipynb): Las cajas de cartón con etiquetas para guardar información.
+* [**02a. Listas, Tuplas y Conjuntos (Dummies)**](Para%20Dummies/02a_Estructuras_Listas_Tuplas_Conjuntos_Dummies.ipynb): El carrito de compras y la bolsa sellada inmutable.
+* [**02b. Diccionarios (Dummies)**](Para%20Dummies/02b_Estructuras_Diccionarios_Dummies.ipynb): La libreta de contactos y el archivador de gavetas.
+* [**03. Flujo de Control (Dummies)**](Para%20Dummies/03_Flujo_de_Control_Dummies.ipynb): El semáforo y las decisiones en una bifurcación de caminos.
+* [**04. Funciones (Dummies)**](Para%20Dummies/04_Funciones_Dummies.ipynb): La licuadora automática (ingredientes $	o$ jugo procesado).
+* [**05. Clases y Objetos (Dummies)**](Para%20Dummies/05_Clases_y_Objetos_Dummies.ipynb): El molde de galletas y las galletas horneadas individuales.
+* [**06. Cadenas de Texto (Dummies)**](Para%20Dummies/06_Manipulacion_de_Cadenas_de_Texto_Dummies.ipynb): Cortar, pegar y limpiar oraciones con f-strings.
+* [**07. Scopes y Ámbitos (Dummies)**](Para%20Dummies/07_Namespaces_y_Scopes_Dummies.ipynb): Secretos de familia vs anuncios en la plaza pública.
+* [**08. Módulos y Paquetes (Dummies)**](Para%20Dummies/08_Modulos_y_Paquetes_Dummies.ipynb): La caja de herramientas organizada por compartimientos.
 
 ---
 
-## 📂 Taller Práctico Evaluativo (*Homework*)
+## 📝 Talleres Prácticos Evaluativos (*Hands-On Homeworks*)
 
-Al finalizar los 10 cuadernos teóricos, el estudiante debe resolver el taller práctico correspondiente:
-- 📝 **[01_Python_Hands_On.ipynb](../homeworks/01_Python_Hands_On.ipynb)**: Taller integral de programación en Python con ejercicios de lógica, estructuras de datos, funciones y POO.
+* 📝 [**01_Python_Hands_On.ipynb**](../homeworks/01_Python_Hands_On.ipynb): Taller integral de programación en Python con ejercicios de lógica, estructuras de datos, funciones y POO.
+* 💡 [**01_Python_Hands_On_Dummies.ipynb**](../homeworks/Para%20Dummies/01_Python_Hands_On_Dummies.ipynb): Taller guiado paso a paso para no ingenieros.
+
+---
+
+<div align="center">
+  <p style="font-size: 0.9em; color: #64748b;">
+    © 2026 <b>Universidad Santo Tomás — Seccional Tunja</b><br>
+    <i>Especialización en Ciencia de Datos | Programación para Ciencia de Datos</i>
+  </p>
+</div>

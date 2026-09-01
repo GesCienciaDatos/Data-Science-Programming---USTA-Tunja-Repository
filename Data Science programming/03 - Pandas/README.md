@@ -17,8 +17,8 @@ A lo largo de este módulo dominarás las estructuras de datos fundamentales (`S
 
 ## 🗺️ Estructura del Módulo
 
-| # | Cuaderno | Temas Principales | Dificultad |
-|---|---|---|:---:|
+| # | Cuaderno Interactivo | Temas Principales | Dificultad |
+|:---:|---|---|:---:|
 | **00** | [**Introducción a Pandas**](00_Introduccion_Pandas.ipynb) | Filosofía de diseño, ventajas sobre NumPy en datos heterogéneos y conceptos de estructuras tabulares. | 🟢 Básico |
 | **01** | [**Estructuras de Datos: Series y DataFrames**](01_Estructuras_de_Datos_Pandas.ipynb) | Anatomía de una `Series` (índice y valores) y de un `DataFrame` (columnas, filas e índices explícitos). | 🟢 Básico |
 | **02** | [**Importación y Exportación de Datos**](02_Importacion_y_Exportacion_Pandas.ipynb) | Lectura y almacenamiento en formatos CSV (`read_csv`), Excel (`read_excel`), JSON y Parquet, con gestión de codificación y delimitadores. | 🟢 Básico |
@@ -31,6 +31,20 @@ A lo largo de este módulo dominarás las estructuras de datos fundamentales (`S
 
 ---
 
+## 💡 Guías "Para Dummies" (Explicaciones Intuitivas Sin Jerga Compleja)
+
+* [**00. Introducción a Pandas (Dummies)**](Para%20Dummies/00_Introduccion_Pandas_Dummies.ipynb): La hoja de cálculo supercargada con esteroides.
+* [**01. Series y DataFrames (Dummies)**](Para%20Dummies/01_Estructuras_de_Datos_Pandas_Dummies.ipynb): Columnas de recibos y tablas completas de datos.
+* [**02. Importar y Exportar (Dummies)**](Para%20Dummies/02_Importacion_y_Exportacion_Pandas_Dummies.ipynb): Abrir y guardar archivos CSV y Excel en un parpadeo.
+* [**03. Diagnóstico de Datos (Dummies)**](Para%20Dummies/03_Exploracion_de_Datos_Pandas_Dummies.ipynb): La radiografía médica de la tabla con .info() y .describe().
+* [**04. Indexación y Filtros (Dummies)**](Para%20Dummies/04_Indexacion_y_Seleccion_Pandas_Dummies.ipynb): Buscar clientes por su nombre (loc) o por su número de fila (iloc).
+* [**05. Modificar Datos (Dummies)**](Para%20Dummies/05_Asignacion_de_Datos_Pandas_Dummies.ipynb): Corregir errores y aplicar descuentos automáticos con apply().
+* [**06. Añadir y Borrar Columnas (Dummies)**](Para%20Dummies/06_Anadir_y_Eliminar_Columnas_Pandas_Dummies.ipynb): Agregar nuevas columnas y desechar las que no sirven.
+* [**07. Agrupaciones GroupBy (Dummies)**](Para%20Dummies/07_Agrupacion_y_Ordenamiento_Pandas_Dummies.ipynb): Separar por ciudades, calcular totales y juntar el reporte.
+* [**08. Fusión de Tablas Merge (Dummies)**](Para%20Dummies/08_Fusion_de_Datos_Pandas_Dummies.ipynb): Cruzar la lista de clientes con la lista de facturas.
+
+---
+
 ## 📂 Conjuntos de Datos (*Datasets*)
 
 En este módulo se emplean los siguientes datasets ubicados en la carpeta `data/`:
@@ -40,8 +54,17 @@ En este módulo se emplean los siguientes datasets ubicados en la carpeta `data/
 
 ---
 
-## 📂 Talleres Prácticos Evaluativos (*Homeworks*)
+## 📝 Talleres Prácticos Evaluativos (*Hands-On Homeworks*)
 
-Al finalizar el módulo de Pandas, el estudiante cuenta con dos opciones de práctica integral:
-- 📝 **[03a_Pandas_Hands_On_Local.ipynb](../homeworks/03a_Pandas_Hands_On_Local.ipynb)**: Taller práctico diseñado para ejecutarse localmente con datasets del repositorio.
-- 📝 **[03b_Pandas_Hands_On_Kaggle.ipynb](../homeworks/03b_Pandas_Hands_On_Kaggle.ipynb)**: Taller práctico estructurado para el entorno de Kaggle Datasets.
+* 📝 [**03a_Pandas_Hands_On_Local.ipynb**](../homeworks/03a_Pandas_Hands_On_Local.ipynb): Taller práctico diseñado para ejecutarse localmente.
+* 📝 [**03b_Pandas_Hands_On_Kaggle.ipynb**](../homeworks/03b_Pandas_Hands_On_Kaggle.ipynb): Taller práctico estructurado para Kaggle Datasets.
+* 💡 [**03a_Pandas_Hands_On_Local_Dummies.ipynb**](../homeworks/Para%20Dummies/03a_Pandas_Hands_On_Local_Dummies.ipynb): Taller guiado paso a paso para no ingenieros.
+
+---
+
+<div align="center">
+  <p style="font-size: 0.9em; color: #64748b;">
+    © 2026 <b>Universidad Santo Tomás — Seccional Tunja</b><br>
+    <i>Especialización en Ciencia de Datos | Programación para Ciencia de Datos</i>
+  </p>
+</div>

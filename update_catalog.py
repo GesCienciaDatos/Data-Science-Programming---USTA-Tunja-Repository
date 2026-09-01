@@ -232,6 +232,22 @@ DEFAULT_MODULES_DSP = [
         "description": "Regresión OLS, supuestos de Gauss-Markov, Regresión Polinomial, Ridge, Lasso, ElasticNet, CV y k-NN Regressor."
     },
     {
+        "id": "08",
+        "name": "08 - Classification",
+        "title": "Modelos de Clasificación y Evaluación Supervisada",
+        "icon": "🎯",
+        "color": "#EC4899",
+        "description": "Regresión Logística binaria y multiclase, Fronteras de Decisión, Métricas (ROC, AUC, F1), Regularización y k-NN Classifier."
+    },
+    {
+        "id": "09",
+        "name": "09 - Decision Trees",
+        "title": "Árboles de Decisión y Métodos de Ensamble",
+        "icon": "🌲",
+        "color": "#10B981",
+        "description": "Modelos CART, Criterios de Gini y Entropía, Poda Cost-Complexity, Bagging, Random Forests y Gradient Boosting."
+    },
+    {
         "id": "hw",
         "name": "homeworks",
         "title": "Talleres Prácticos Evaluativos (Hands-On)",
