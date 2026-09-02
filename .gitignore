@@ -164,3 +164,14 @@ UX_UI_SUPREME_ARCHITECT.md
 *UX_UI*.md
 design-system/
 
+# ------------------------------------------------------------------------------
+# 10. Graphify — Knowledge Graph Artefacts (auto-generado, sin costo de API)
+# ------------------------------------------------------------------------------
+# El directorio graphify-out/ contiene grafos de conocimiento del código fuente.
+# Estos archivos se regeneran automáticamente con `graphify update .` y no deben
+# versionarse en el repositorio.
+graphify-out/
+.graphify_analysis.json
+.graphify_labels.json
+.graphify_manifest.json
+.graphifyignore
