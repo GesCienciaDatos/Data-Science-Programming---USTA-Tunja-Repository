@@ -1,0 +1,1501 @@
+id_cliente,nombre,segmento,edad,ciudad_residencia,ingreso_anual
+CLI-00001,Cliente_1,Pequeña Empresa,67,Medellín,42818263.9
+CLI-00002,Cliente_2,Gobierno,21,Bucaramanga,21347771.95
+CLI-00003,Cliente_3,Consumidor Final,25,Tunja,32582101.59
+CLI-00004,Cliente_4,Pequeña Empresa,47,Medellín,34921744.22
+CLI-00005,Cliente_5,Corporativo,48,Cali,42185532.67
+CLI-00006,Cliente_6,Corporativo,45,Bogotá,43020085.86
+CLI-00007,Cliente_7,Corporativo,44,Duitama,26189914.41
+CLI-00008,Cliente_8,Consumidor Final,31,Tunja,35983946.68
+CLI-00009,Cliente_9,Consumidor Final,24,Bogotá,40487364.86
+CLI-00010,Cliente_10,Consumidor Final,53,Medellín,52469867.87
+CLI-00011,Cliente_11,Corporativo,67,Bucaramanga,43454078.48
+CLI-00012,Cliente_12,Gobierno,56,Sogamoso,44468680.25
+CLI-00013,Cliente_13,Consumidor Final,34,Bucaramanga,36005919.54
+CLI-00014,Cliente_14,Corporativo,63,Cali,51925509.74
+CLI-00015,Cliente_15,Corporativo,55,Bucaramanga,39917153.55
+CLI-00016,Cliente_16,Corporativo,34,Tunja,24666945.08
+CLI-00017,Cliente_17,Pequeña Empresa,62,Bucaramanga,51840439.64
+CLI-00018,Cliente_18,Pequeña Empresa,67,Cali,43374839.27
+CLI-00019,Cliente_19,Pequeña Empresa,42,Duitama,29683471.75
+CLI-00020,Cliente_20,Pequeña Empresa,25,Medellín,29246084.39
+CLI-00021,Cliente_21,Consumidor Final,65,Sogamoso,38558906.54
+CLI-00022,Cliente_22,Corporativo,69,Medellín,40558217.54
+CLI-00023,Cliente_23,Pequeña Empresa,63,Bucaramanga,37367507.19
+CLI-00024,Cliente_24,Pequeña Empresa,62,Bogotá,38735704.08
+CLI-00025,Cliente_25,Pequeña Empresa,64,Medellín,55399488.49
+CLI-00026,Cliente_26,Consumidor Final,40,Duitama,47858517.83
+CLI-00027,Cliente_27,Corporativo,42,Bucaramanga,37287627.1
+CLI-00028,Cliente_28,Pequeña Empresa,62,Sogamoso,46295726.97
+CLI-00029,Cliente_29,Pequeña Empresa,35,Cali,22609713.16
+CLI-00030,Cliente_30,Corporativo,66,Duitama,39775124.6
+CLI-00031,Cliente_31,Consumidor Final,34,Bucaramanga,56711676.2
+CLI-00032,Cliente_32,Corporativo,44,Duitama,32383449.26
+CLI-00033,Cliente_33,Corporativo,55,Medellín,24828392.86
+CLI-00034,Cliente_34,Gobierno,30,Sogamoso,27174933.34
+CLI-00035,Cliente_35,Gobierno,34,Cali,21924403.55
+CLI-00036,Cliente_36,Consumidor Final,23,Bucaramanga,25582857.1
+CLI-00037,Cliente_37,Pequeña Empresa,40,Tunja,30553902.82
+CLI-00038,Cliente_38,Corporativo,32,Cali,18133195.77
+CLI-00039,Cliente_39,Consumidor Final,41,Tunja,35187420.01
+CLI-00040,Cliente_40,Pequeña Empresa,38,Duitama,45827326.09
+CLI-00041,Cliente_41,Corporativo,53,Bogotá,24106925.84
+CLI-00042,Cliente_42,Pequeña Empresa,33,Cali,53231407.08
+CLI-00043,Cliente_43,Corporativo,23,Duitama,41129505.06
+CLI-00044,Cliente_44,Gobierno,67,Tunja,47366967.03
+CLI-00045,Cliente_45,Pequeña Empresa,65,Medellín,27105985.35
+CLI-00046,Cliente_46,Consumidor Final,46,Medellín,45254302.72
+CLI-00047,Cliente_47,Pequeña Empresa,48,Bogotá,21896793.2
+CLI-00048,Cliente_48,Pequeña Empresa,66,Cali,45682970.01
+CLI-00049,Cliente_49,Pequeña Empresa,47,Cali,37062072.08
+CLI-00050,Cliente_50,Corporativo,54,Cali,41639014.64
+CLI-00051,Cliente_51,Gobierno,27,Duitama,20892864.73
+CLI-00052,Cliente_52,Consumidor Final,35,Sogamoso,24259161.89
+CLI-00053,Cliente_53,Gobierno,61,Sogamoso,42166738.62
+CLI-00054,Cliente_54,Consumidor Final,55,Bogotá,23619823.95
+CLI-00055,Cliente_55,Pequeña Empresa,49,Cali,40558475.51
+CLI-00056,Cliente_56,Gobierno,37,Duitama,18594346.32
+CLI-00057,Cliente_57,Corporativo,21,Medellín,45178090.55
+CLI-00058,Cliente_58,Corporativo,68,Tunja,20209720.22
+CLI-00059,Cliente_59,Corporativo,32,Duitama,41627599.25
+CLI-00060,Cliente_60,Pequeña Empresa,23,Sogamoso,42507571.2
+CLI-00061,Cliente_61,Pequeña Empresa,45,Sogamoso,26638738.18
+CLI-00062,Cliente_62,Pequeña Empresa,44,Medellín,41984318.81
+CLI-00063,Cliente_63,Consumidor Final,49,Medellín,38125307.16
+CLI-00064,Cliente_64,Pequeña Empresa,30,Tunja,28533897.73
+CLI-00065,Cliente_65,Pequeña Empresa,26,Medellín,22897343.79
+CLI-00066,Cliente_66,Pequeña Empresa,50,Bogotá,12000000.0
+CLI-00067,Cliente_67,Corporativo,63,Tunja,39195800.57
+CLI-00068,Cliente_68,Consumidor Final,29,Medellín,16222366.74
+CLI-00069,Cliente_69,Corporativo,58,Bucaramanga,36144130.39
+CLI-00070,Cliente_70,Gobierno,32,Duitama,31838621.41
+CLI-00071,Cliente_71,Consumidor Final,50,Medellín,43149713.31
+CLI-00072,Cliente_72,Corporativo,26,Bogotá,31375454.01
+CLI-00073,Cliente_73,Corporativo,68,Cali,31046626.56
+CLI-00074,Cliente_74,Consumidor Final,61,Medellín,43782448.45
+CLI-00075,Cliente_75,Consumidor Final,61,Sogamoso,39020696.35
+CLI-00076,Cliente_76,Consumidor Final,55,Sogamoso,38793871.49
+CLI-00077,Cliente_77,Consumidor Final,39,Sogamoso,40631211.08
+CLI-00078,Cliente_78,Corporativo,23,Cali,16573134.52
+CLI-00079,Cliente_79,Pequeña Empresa,26,Sogamoso,44081464.16
+CLI-00080,Cliente_80,Corporativo,20,Bucaramanga,42349625.53
+CLI-00081,Cliente_81,Consumidor Final,63,Medellín,22799802.46
+CLI-00082,Cliente_82,Consumidor Final,64,Sogamoso,32071034.32
+CLI-00083,Cliente_83,Pequeña Empresa,61,Tunja,34528312.55
+CLI-00084,Cliente_84,Corporativo,66,Cali,33386038.59
+CLI-00085,Cliente_85,Pequeña Empresa,32,Bucaramanga,39006319.6
+CLI-00086,Cliente_86,Pequeña Empresa,41,Tunja,52176401.38
+CLI-00087,Cliente_87,Consumidor Final,40,Tunja,47981200.73
+CLI-00088,Cliente_88,Consumidor Final,41,Tunja,19253369.68
+CLI-00089,Cliente_89,Consumidor Final,47,Tunja,42464839.88
+CLI-00090,Cliente_90,Pequeña Empresa,28,Medellín,50947199.83
+CLI-00091,Cliente_91,Corporativo,45,Sogamoso,39641702.25
+CLI-00092,Cliente_92,Consumidor Final,28,Duitama,48091765.1
+CLI-00093,Cliente_93,Consumidor Final,34,Medellín,59147245.35
+CLI-00094,Cliente_94,Pequeña Empresa,29,Medellín,47284514.55
+CLI-00095,Cliente_95,Consumidor Final,43,Bucaramanga,37991703.15
+CLI-00096,Cliente_96,Pequeña Empresa,61,Bucaramanga,47541061.69
+CLI-00097,Cliente_97,Pequeña Empresa,27,Sogamoso,36738654.0
+CLI-00098,Cliente_98,Pequeña Empresa,43,Duitama,35286836.52
+CLI-00099,Cliente_99,Corporativo,35,Bucaramanga,30783029.17
+CLI-00100,Cliente_100,Corporativo,68,Sogamoso,53760960.31
+CLI-00101,Cliente_101,Corporativo,45,Sogamoso,25178856.01
+CLI-00102,Cliente_102,Consumidor Final,46,Bogotá,53388412.7
+CLI-00103,Cliente_103,Pequeña Empresa,56,Duitama,40998369.48
+CLI-00104,Cliente_104,Pequeña Empresa,23,Bucaramanga,18208325.9
+CLI-00105,Cliente_105,Gobierno,69,Duitama,39411791.52
+CLI-00106,Cliente_106,Corporativo,43,Medellín,12000000.0
+CLI-00107,Cliente_107,Pequeña Empresa,38,Medellín,42506096.2
+CLI-00108,Cliente_108,Consumidor Final,55,Duitama,45622777.8
+CLI-00109,Cliente_109,Corporativo,58,Bogotá,27891728.53
+CLI-00110,Cliente_110,Corporativo,29,Bogotá,36482572.35
+CLI-00111,Cliente_111,Pequeña Empresa,44,Duitama,58449889.21
+CLI-00112,Cliente_112,Corporativo,37,Bucaramanga,28931039.55
+CLI-00113,Cliente_113,Gobierno,38,Cali,22293108.96
+CLI-00114,Cliente_114,Consumidor Final,55,Bogotá,52779960.83
+CLI-00115,Cliente_115,Consumidor Final,29,Tunja,58551046.29
+CLI-00116,Cliente_116,Consumidor Final,52,Medellín,35044348.06
+CLI-00117,Cliente_117,Consumidor Final,69,Duitama,47137556.42
+CLI-00118,Cliente_118,Corporativo,24,Tunja,51097710.99
+CLI-00119,Cliente_119,Consumidor Final,66,Duitama,26090189.21
+CLI-00120,Cliente_120,Pequeña Empresa,68,Sogamoso,29176329.98
+CLI-00121,Cliente_121,Consumidor Final,54,Medellín,49770494.16
+CLI-00122,Cliente_122,Consumidor Final,63,Medellín,55220171.34
+CLI-00123,Cliente_123,Pequeña Empresa,53,Bogotá,41754570.32
+CLI-00124,Cliente_124,Corporativo,52,Bogotá,24442227.76
+CLI-00125,Cliente_125,Corporativo,40,Tunja,58844733.34
+CLI-00126,Cliente_126,Pequeña Empresa,36,Sogamoso,28628349.23
+CLI-00127,Cliente_127,Consumidor Final,41,Duitama,30978346.63
+CLI-00128,Cliente_128,Consumidor Final,67,Sogamoso,39108054.01
+CLI-00129,Cliente_129,Corporativo,56,Medellín,53649925.05
+CLI-00130,Cliente_130,Pequeña Empresa,34,Tunja,45247711.72
+CLI-00131,Cliente_131,Pequeña Empresa,54,Cali,39978386.0
+CLI-00132,Cliente_132,Corporativo,47,Tunja,40559462.36
+CLI-00133,Cliente_133,Corporativo,26,Bucaramanga,35522176.02
+CLI-00134,Cliente_134,Pequeña Empresa,51,Tunja,41697674.17
+CLI-00135,Cliente_135,Gobierno,30,Sogamoso,12000000.0
+CLI-00136,Cliente_136,Pequeña Empresa,29,Bucaramanga,31440710.49
+CLI-00137,Cliente_137,Pequeña Empresa,28,Bucaramanga,37895863.22
+CLI-00138,Cliente_138,Consumidor Final,33,Bucaramanga,21187831.0
+CLI-00139,Cliente_139,Pequeña Empresa,32,Cali,39635879.81
+CLI-00140,Cliente_140,Gobierno,44,Tunja,32546345.35
+CLI-00141,Cliente_141,Gobierno,21,Sogamoso,56065708.38
+CLI-00142,Cliente_142,Pequeña Empresa,54,Tunja,53876236.7
+CLI-00143,Cliente_143,Pequeña Empresa,26,Cali,29410333.17
+CLI-00144,Cliente_144,Pequeña Empresa,40,Medellín,33189947.46
+CLI-00145,Cliente_145,Pequeña Empresa,37,Bogotá,34112629.21
+CLI-00146,Cliente_146,Corporativo,22,Sogamoso,29580086.29
+CLI-00147,Cliente_147,Consumidor Final,61,Sogamoso,37340299.81
+CLI-00148,Cliente_148,Pequeña Empresa,58,Tunja,25900615.17
+CLI-00149,Cliente_149,Corporativo,60,Bogotá,21432615.98
+CLI-00150,Cliente_150,Pequeña Empresa,68,Duitama,42472534.69
+CLI-00151,Cliente_151,Gobierno,30,Duitama,42554355.01
+CLI-00152,Cliente_152,Corporativo,58,Cali,25348210.88
+CLI-00153,Cliente_153,Corporativo,43,Duitama,45744265.17
+CLI-00154,Cliente_154,Pequeña Empresa,65,Sogamoso,27421067.25
+CLI-00155,Cliente_155,Gobierno,38,Duitama,38037982.86
+CLI-00156,Cliente_156,Corporativo,23,Medellín,44844128.15
+CLI-00157,Cliente_157,Consumidor Final,45,Medellín,34596649.22
+CLI-00158,Cliente_158,Consumidor Final,57,Medellín,40456890.95
+CLI-00159,Cliente_159,Corporativo,61,Duitama,28802844.27
+CLI-00160,Cliente_160,Consumidor Final,51,Cali,32642401.0
+CLI-00161,Cliente_161,Pequeña Empresa,58,Bucaramanga,32529686.83
+CLI-00162,Cliente_162,Consumidor Final,64,Bucaramanga,26041059.84
+CLI-00163,Cliente_163,Consumidor Final,65,Bogotá,32878710.04
+CLI-00164,Cliente_164,Pequeña Empresa,55,Bucaramanga,16416580.41
+CLI-00165,Cliente_165,Corporativo,59,Bucaramanga,29106155.03
+CLI-00166,Cliente_166,Consumidor Final,56,Medellín,31581494.08
+CLI-00167,Cliente_167,Pequeña Empresa,52,Medellín,31925842.97
+CLI-00168,Cliente_168,Corporativo,55,Duitama,32102030.65
+CLI-00169,Cliente_169,Corporativo,22,Bogotá,34258829.6
+CLI-00170,Cliente_170,Pequeña Empresa,28,Tunja,40753298.22
+CLI-00171,Cliente_171,Consumidor Final,27,Sogamoso,45494204.89
+CLI-00172,Cliente_172,Corporativo,52,Bogotá,27202817.28
+CLI-00173,Cliente_173,Pequeña Empresa,25,Bogotá,20561589.74
+CLI-00174,Cliente_174,Corporativo,60,Cali,22495467.05
+CLI-00175,Cliente_175,Consumidor Final,58,Duitama,29153564.95
+CLI-00176,Cliente_176,Corporativo,23,Cali,30776944.19
+CLI-00177,Cliente_177,Consumidor Final,32,Bogotá,25760047.21
+CLI-00178,Cliente_178,Pequeña Empresa,68,Bogotá,19446600.03
+CLI-00179,Cliente_179,Gobierno,21,Bogotá,29526550.07
+CLI-00180,Cliente_180,Corporativo,24,Bucaramanga,37177119.44
+CLI-00181,Cliente_181,Pequeña Empresa,63,Sogamoso,42140353.59
+CLI-00182,Cliente_182,Corporativo,46,Sogamoso,28310923.36
+CLI-00183,Cliente_183,Gobierno,51,Cali,30044026.13
+CLI-00184,Cliente_184,Consumidor Final,40,Bogotá,23879620.29
+CLI-00185,Cliente_185,Pequeña Empresa,27,Sogamoso,34622729.96
+CLI-00186,Cliente_186,Consumidor Final,57,Medellín,24818856.39
+CLI-00187,Cliente_187,Consumidor Final,27,Sogamoso,41877533.76
+CLI-00188,Cliente_188,Pequeña Empresa,69,Duitama,13569602.1
+CLI-00189,Cliente_189,Pequeña Empresa,22,Duitama,30684443.93
+CLI-00190,Cliente_190,Corporativo,63,Sogamoso,38613288.07
+CLI-00191,Cliente_191,Corporativo,22,Medellín,37206014.2
+CLI-00192,Cliente_192,Consumidor Final,41,Duitama,67316403.97
+CLI-00193,Cliente_193,Gobierno,25,Bucaramanga,39197600.29
+CLI-00194,Cliente_194,Consumidor Final,21,Sogamoso,22951344.84
+CLI-00195,Cliente_195,Pequeña Empresa,42,Bucaramanga,33854429.03
+CLI-00196,Cliente_196,Pequeña Empresa,63,Sogamoso,13685044.0
+CLI-00197,Cliente_197,Consumidor Final,21,Tunja,34032803.01
+CLI-00198,Cliente_198,Consumidor Final,57,Tunja,25003327.32
+CLI-00199,Cliente_199,Consumidor Final,36,Tunja,45984683.31
+CLI-00200,Cliente_200,Consumidor Final,54,Duitama,28405516.7
+CLI-00201,Cliente_201,Consumidor Final,53,Bucaramanga,33598809.01
+CLI-00202,Cliente_202,Corporativo,42,Bucaramanga,27373305.9
+CLI-00203,Cliente_203,Corporativo,49,Bucaramanga,55866216.22
+CLI-00204,Cliente_204,Consumidor Final,27,Medellín,31145086.81
+CLI-00205,Cliente_205,Consumidor Final,41,Bucaramanga,56990684.52
+CLI-00206,Cliente_206,Corporativo,63,Medellín,44769821.15
+CLI-00207,Cliente_207,Corporativo,55,Tunja,40784800.73
+CLI-00208,Cliente_208,Consumidor Final,24,Tunja,39424797.77
+CLI-00209,Cliente_209,Corporativo,32,Duitama,39725567.58
+CLI-00210,Cliente_210,Corporativo,48,Sogamoso,12000000.0
+CLI-00211,Cliente_211,Pequeña Empresa,50,Tunja,31653399.27
+CLI-00212,Cliente_212,Consumidor Final,66,Sogamoso,45141895.65
+CLI-00213,Cliente_213,Consumidor Final,35,Sogamoso,34413233.8
+CLI-00214,Cliente_214,Corporativo,61,Duitama,18137721.84
+CLI-00215,Cliente_215,Consumidor Final,49,Bogotá,34371146.59
+CLI-00216,Cliente_216,Corporativo,35,Bogotá,55449266.2
+CLI-00217,Cliente_217,Pequeña Empresa,31,Cali,49962700.59
+CLI-00218,Cliente_218,Consumidor Final,36,Duitama,34255951.89
+CLI-00219,Cliente_219,Consumidor Final,35,Cali,46417391.32
+CLI-00220,Cliente_220,Consumidor Final,31,Cali,30601915.76
+CLI-00221,Cliente_221,Consumidor Final,27,Bogotá,14553540.96
+CLI-00222,Cliente_222,Pequeña Empresa,39,Duitama,23906408.14
+CLI-00223,Cliente_223,Corporativo,22,Bogotá,53754665.22
+CLI-00224,Cliente_224,Pequeña Empresa,35,Cali,31712083.02
+CLI-00225,Cliente_225,Pequeña Empresa,49,Duitama,32079392.25
+CLI-00226,Cliente_226,Corporativo,64,Cali,31401941.64
+CLI-00227,Cliente_227,Gobierno,42,Bucaramanga,57849639.07
+CLI-00228,Cliente_228,Pequeña Empresa,47,Sogamoso,54511506.98
+CLI-00229,Cliente_229,Consumidor Final,59,Duitama,61625362.8
+CLI-00230,Cliente_230,Consumidor Final,24,Duitama,33091457.48
+CLI-00231,Cliente_231,Consumidor Final,39,Sogamoso,38547493.86
+CLI-00232,Cliente_232,Pequeña Empresa,59,Cali,16800289.41
+CLI-00233,Cliente_233,Pequeña Empresa,63,Bucaramanga,52723213.11
+CLI-00234,Cliente_234,Pequeña Empresa,20,Medellín,20986645.38
+CLI-00235,Cliente_235,Corporativo,49,Sogamoso,37601306.77
+CLI-00236,Cliente_236,Consumidor Final,40,Bogotá,21832369.67
+CLI-00237,Cliente_237,Pequeña Empresa,39,Cali,27933598.08
+CLI-00238,Cliente_238,Corporativo,25,Sogamoso,24952850.83
+CLI-00239,Cliente_239,Consumidor Final,41,Sogamoso,27705496.87
+CLI-00240,Cliente_240,Corporativo,37,Duitama,28530527.56
+CLI-00241,Cliente_241,Gobierno,27,Bogotá,28420774.46
+CLI-00242,Cliente_242,Gobierno,58,Bogotá,45000006.94
+CLI-00243,Cliente_243,Gobierno,51,Bogotá,21741646.48
+CLI-00244,Cliente_244,Pequeña Empresa,52,Sogamoso,37646497.12
+CLI-00245,Cliente_245,Corporativo,35,Medellín,49615509.83
+CLI-00246,Cliente_246,Gobierno,31,Tunja,28841643.63
+CLI-00247,Cliente_247,Pequeña Empresa,57,Cali,26384973.31
+CLI-00248,Cliente_248,Gobierno,53,Tunja,32233704.5
+CLI-00249,Cliente_249,Gobierno,33,Sogamoso,49156702.5
+CLI-00250,Cliente_250,Consumidor Final,55,Tunja,37329291.57
+CLI-00251,Cliente_251,Pequeña Empresa,52,Sogamoso,28625428.46
+CLI-00252,Cliente_252,Pequeña Empresa,42,Tunja,40806519.81
+CLI-00253,Cliente_253,Consumidor Final,69,Bogotá,21772494.2
+CLI-00254,Cliente_254,Pequeña Empresa,64,Bucaramanga,43176314.13
+CLI-00255,Cliente_255,Corporativo,21,Bogotá,39903287.69
+CLI-00256,Cliente_256,Pequeña Empresa,60,Bogotá,31306298.35
+CLI-00257,Cliente_257,Gobierno,40,Duitama,24936970.42
+CLI-00258,Cliente_258,Consumidor Final,21,Duitama,24359828.93
+CLI-00259,Cliente_259,Pequeña Empresa,46,Tunja,41417808.04
+CLI-00260,Cliente_260,Corporativo,28,Sogamoso,49747766.03
+CLI-00261,Cliente_261,Consumidor Final,20,Bogotá,27352307.04
+CLI-00262,Cliente_262,Gobierno,30,Tunja,40500640.44
+CLI-00263,Cliente_263,Corporativo,22,Duitama,12000000.0
+CLI-00264,Cliente_264,Pequeña Empresa,42,Bucaramanga,27984587.23
+CLI-00265,Cliente_265,Consumidor Final,45,Cali,34627292.81
+CLI-00266,Cliente_266,Consumidor Final,23,Tunja,24083799.0
+CLI-00267,Cliente_267,Consumidor Final,37,Bucaramanga,23761923.5
+CLI-00268,Cliente_268,Consumidor Final,25,Cali,26986645.32
+CLI-00269,Cliente_269,Pequeña Empresa,54,Medellín,38506312.74
+CLI-00270,Cliente_270,Pequeña Empresa,41,Tunja,32752051.78
+CLI-00271,Cliente_271,Consumidor Final,62,Tunja,12000000.0
+CLI-00272,Cliente_272,Consumidor Final,34,Medellín,12000000.0
+CLI-00273,Cliente_273,Consumidor Final,41,Medellín,27717617.87
+CLI-00274,Cliente_274,Gobierno,56,Tunja,40492239.03
+CLI-00275,Cliente_275,Pequeña Empresa,61,Medellín,12000000.0
+CLI-00276,Cliente_276,Pequeña Empresa,31,Bogotá,29003237.89
+CLI-00277,Cliente_277,Consumidor Final,66,Cali,28685025.72
+CLI-00278,Cliente_278,Consumidor Final,68,Cali,51660053.34
+CLI-00279,Cliente_279,Consumidor Final,61,Cali,30379738.26
+CLI-00280,Cliente_280,Consumidor Final,57,Bogotá,39595867.82
+CLI-00281,Cliente_281,Consumidor Final,37,Sogamoso,36695085.68
+CLI-00282,Cliente_282,Pequeña Empresa,64,Medellín,12000000.0
+CLI-00283,Cliente_283,Pequeña Empresa,54,Bucaramanga,44218486.6
+CLI-00284,Cliente_284,Corporativo,49,Medellín,37584758.07
+CLI-00285,Cliente_285,Pequeña Empresa,43,Tunja,41099223.68
+CLI-00286,Cliente_286,Corporativo,61,Duitama,82114852.48
+CLI-00287,Cliente_287,Pequeña Empresa,49,Cali,12000000.0
+CLI-00288,Cliente_288,Pequeña Empresa,33,Medellín,55696359.8
+CLI-00289,Cliente_289,Pequeña Empresa,25,Bucaramanga,31550629.77
+CLI-00290,Cliente_290,Pequeña Empresa,22,Tunja,38447946.85
+CLI-00291,Cliente_291,Corporativo,35,Bogotá,34453853.06
+CLI-00292,Cliente_292,Corporativo,26,Sogamoso,29909164.0
+CLI-00293,Cliente_293,Consumidor Final,33,Bogotá,28162004.86
+CLI-00294,Cliente_294,Pequeña Empresa,28,Bucaramanga,38954104.83
+CLI-00295,Cliente_295,Corporativo,34,Tunja,16793915.64
+CLI-00296,Cliente_296,Pequeña Empresa,40,Cali,44006950.01
+CLI-00297,Cliente_297,Consumidor Final,54,Medellín,30005667.14
+CLI-00298,Cliente_298,Corporativo,21,Tunja,21439167.93
+CLI-00299,Cliente_299,Consumidor Final,46,Sogamoso,29599845.7
+CLI-00300,Cliente_300,Corporativo,21,Bogotá,50085790.6
+CLI-00301,Cliente_301,Corporativo,54,Sogamoso,28575978.96
+CLI-00302,Cliente_302,Pequeña Empresa,37,Sogamoso,39301443.42
+CLI-00303,Cliente_303,Pequeña Empresa,33,Bucaramanga,26228524.69
+CLI-00304,Cliente_304,Consumidor Final,39,Bucaramanga,44095062.2
+CLI-00305,Cliente_305,Consumidor Final,37,Medellín,43226092.87
+CLI-00306,Cliente_306,Gobierno,29,Bucaramanga,57183306.0
+CLI-00307,Cliente_307,Pequeña Empresa,44,Bucaramanga,32893232.65
+CLI-00308,Cliente_308,Pequeña Empresa,21,Tunja,43023857.66
+CLI-00309,Cliente_309,Consumidor Final,44,Cali,36176810.47
+CLI-00310,Cliente_310,Pequeña Empresa,52,Medellín,50550461.38
+CLI-00311,Cliente_311,Pequeña Empresa,55,Tunja,26374011.35
+CLI-00312,Cliente_312,Corporativo,50,Cali,43940063.75
+CLI-00313,Cliente_313,Corporativo,33,Sogamoso,32663632.45
+CLI-00314,Cliente_314,Gobierno,20,Tunja,34229741.87
+CLI-00315,Cliente_315,Consumidor Final,65,Duitama,36101029.81
+CLI-00316,Cliente_316,Consumidor Final,35,Tunja,38026884.76
+CLI-00317,Cliente_317,Pequeña Empresa,65,Bucaramanga,33605251.48
+CLI-00318,Cliente_318,Corporativo,22,Cali,37576558.2
+CLI-00319,Cliente_319,Corporativo,54,Medellín,53937416.69
+CLI-00320,Cliente_320,Pequeña Empresa,60,Medellín,46825396.23
+CLI-00321,Cliente_321,Pequeña Empresa,25,Cali,45429855.11
+CLI-00322,Cliente_322,Consumidor Final,44,Bucaramanga,29533525.69
+CLI-00323,Cliente_323,Consumidor Final,32,Bogotá,24329110.06
+CLI-00324,Cliente_324,Pequeña Empresa,53,Tunja,46463606.7
+CLI-00325,Cliente_325,Gobierno,27,Bucaramanga,45512561.51
+CLI-00326,Cliente_326,Consumidor Final,40,Duitama,52672048.11
+CLI-00327,Cliente_327,Pequeña Empresa,53,Sogamoso,27752232.49
+CLI-00328,Cliente_328,Consumidor Final,23,Cali,32245416.14
+CLI-00329,Cliente_329,Pequeña Empresa,44,Tunja,15326190.05
+CLI-00330,Cliente_330,Corporativo,34,Medellín,30290346.73
+CLI-00331,Cliente_331,Pequeña Empresa,23,Sogamoso,46958846.13
+CLI-00332,Cliente_332,Consumidor Final,64,Bogotá,29402055.45
+CLI-00333,Cliente_333,Corporativo,31,Duitama,42685757.54
+CLI-00334,Cliente_334,Corporativo,51,Medellín,32713962.73
+CLI-00335,Cliente_335,Corporativo,51,Cali,38888684.34
+CLI-00336,Cliente_336,Corporativo,47,Tunja,21227703.32
+CLI-00337,Cliente_337,Consumidor Final,32,Cali,36022513.4
+CLI-00338,Cliente_338,Consumidor Final,50,Sogamoso,12000000.0
+CLI-00339,Cliente_339,Pequeña Empresa,33,Tunja,32757246.1
+CLI-00340,Cliente_340,Corporativo,39,Bucaramanga,15434321.08
+CLI-00341,Cliente_341,Pequeña Empresa,37,Bogotá,49471934.2
+CLI-00342,Cliente_342,Pequeña Empresa,48,Bucaramanga,44328888.23
+CLI-00343,Cliente_343,Corporativo,25,Bucaramanga,40600051.78
+CLI-00344,Cliente_344,Pequeña Empresa,51,Cali,53252074.73
+CLI-00345,Cliente_345,Pequeña Empresa,48,Sogamoso,23613001.75
+CLI-00346,Cliente_346,Consumidor Final,62,Bogotá,55968358.37
+CLI-00347,Cliente_347,Consumidor Final,21,Tunja,46186298.77
+CLI-00348,Cliente_348,Corporativo,42,Tunja,32161336.55
+CLI-00349,Cliente_349,Pequeña Empresa,38,Duitama,48627441.77
+CLI-00350,Cliente_350,Consumidor Final,50,Medellín,21724477.85
+CLI-00351,Cliente_351,Pequeña Empresa,24,Duitama,25105830.06
+CLI-00352,Cliente_352,Consumidor Final,38,Duitama,27696923.32
+CLI-00353,Cliente_353,Consumidor Final,53,Tunja,28652267.5
+CLI-00354,Cliente_354,Corporativo,29,Cali,22321308.29
+CLI-00355,Cliente_355,Corporativo,44,Bucaramanga,49676996.81
+CLI-00356,Cliente_356,Consumidor Final,21,Sogamoso,31893747.2
+CLI-00357,Cliente_357,Corporativo,30,Bucaramanga,39230059.62
+CLI-00358,Cliente_358,Pequeña Empresa,69,Bucaramanga,28155783.6
+CLI-00359,Cliente_359,Gobierno,50,Bogotá,13152760.39
+CLI-00360,Cliente_360,Pequeña Empresa,34,Tunja,38240688.3
+CLI-00361,Cliente_361,Pequeña Empresa,28,Sogamoso,12052940.29
+CLI-00362,Cliente_362,Consumidor Final,42,Cali,34176391.45
+CLI-00363,Cliente_363,Pequeña Empresa,38,Bogotá,18580219.53
+CLI-00364,Cliente_364,Pequeña Empresa,28,Medellín,58847311.99
+CLI-00365,Cliente_365,Gobierno,54,Cali,45936352.67
+CLI-00366,Cliente_366,Pequeña Empresa,40,Duitama,36269045.5
+CLI-00367,Cliente_367,Gobierno,28,Cali,50164480.13
+CLI-00368,Cliente_368,Gobierno,47,Cali,24844208.27
+CLI-00369,Cliente_369,Corporativo,65,Bucaramanga,41521752.54
+CLI-00370,Cliente_370,Corporativo,26,Cali,37397725.2
+CLI-00371,Cliente_371,Corporativo,35,Duitama,38168240.98
+CLI-00372,Cliente_372,Corporativo,35,Duitama,50268242.0
+CLI-00373,Cliente_373,Corporativo,52,Tunja,43789905.23
+CLI-00374,Cliente_374,Consumidor Final,23,Cali,38464683.95
+CLI-00375,Cliente_375,Corporativo,23,Bucaramanga,15141350.77
+CLI-00376,Cliente_376,Pequeña Empresa,58,Cali,23479444.46
+CLI-00377,Cliente_377,Consumidor Final,59,Medellín,33527492.8
+CLI-00378,Cliente_378,Corporativo,36,Medellín,36120468.49
+CLI-00379,Cliente_379,Consumidor Final,56,Bucaramanga,21437555.3
+CLI-00380,Cliente_380,Pequeña Empresa,58,Tunja,63940120.11
+CLI-00381,Cliente_381,Corporativo,48,Tunja,53196728.66
+CLI-00382,Cliente_382,Consumidor Final,55,Duitama,42225419.84
+CLI-00383,Cliente_383,Consumidor Final,57,Duitama,35864442.34
+CLI-00384,Cliente_384,Consumidor Final,58,Bogotá,32453492.36
+CLI-00385,Cliente_385,Consumidor Final,69,Bucaramanga,23576978.48
+CLI-00386,Cliente_386,Consumidor Final,56,Cali,35929766.22
+CLI-00387,Cliente_387,Pequeña Empresa,54,Sogamoso,38093030.48
+CLI-00388,Cliente_388,Corporativo,26,Bucaramanga,20098873.09
+CLI-00389,Cliente_389,Consumidor Final,46,Bogotá,39010117.01
+CLI-00390,Cliente_390,Consumidor Final,47,Duitama,33136891.41
+CLI-00391,Cliente_391,Gobierno,41,Bucaramanga,12106309.31
+CLI-00392,Cliente_392,Pequeña Empresa,33,Bucaramanga,24675379.87
+CLI-00393,Cliente_393,Pequeña Empresa,26,Duitama,30036733.6
+CLI-00394,Cliente_394,Consumidor Final,56,Bogotá,57652251.89
+CLI-00395,Cliente_395,Pequeña Empresa,41,Duitama,41678637.49
+CLI-00396,Cliente_396,Gobierno,24,Tunja,18974221.17
+CLI-00397,Cliente_397,Consumidor Final,21,Cali,40832435.47
+CLI-00398,Cliente_398,Pequeña Empresa,46,Duitama,16432352.13
+CLI-00399,Cliente_399,Consumidor Final,40,Bogotá,47992292.65
+CLI-00400,Cliente_400,Consumidor Final,57,Medellín,29346504.18
+CLI-00401,Cliente_401,Corporativo,34,Tunja,33876365.74
+CLI-00402,Cliente_402,Gobierno,40,Medellín,50909559.77
+CLI-00403,Cliente_403,Pequeña Empresa,29,Sogamoso,19554037.18
+CLI-00404,Cliente_404,Consumidor Final,42,Duitama,18234581.78
+CLI-00405,Cliente_405,Pequeña Empresa,58,Tunja,27996808.08
+CLI-00406,Cliente_406,Consumidor Final,24,Cali,47460546.21
+CLI-00407,Cliente_407,Pequeña Empresa,20,Duitama,16767847.09
+CLI-00408,Cliente_408,Corporativo,32,Cali,12000000.0
+CLI-00409,Cliente_409,Gobierno,40,Bucaramanga,29586093.7
+CLI-00410,Cliente_410,Corporativo,45,Medellín,41620889.6
+CLI-00411,Cliente_411,Pequeña Empresa,69,Tunja,49403141.0
+CLI-00412,Cliente_412,Gobierno,64,Cali,29442063.65
+CLI-00413,Cliente_413,Gobierno,40,Bogotá,30062880.71
+CLI-00414,Cliente_414,Pequeña Empresa,37,Cali,48846808.81
+CLI-00415,Cliente_415,Consumidor Final,56,Bogotá,12563099.6
+CLI-00416,Cliente_416,Pequeña Empresa,64,Duitama,30337750.7
+CLI-00417,Cliente_417,Pequeña Empresa,51,Tunja,37285086.68
+CLI-00418,Cliente_418,Pequeña Empresa,55,Cali,40390624.66
+CLI-00419,Cliente_419,Consumidor Final,36,Sogamoso,28882319.68
+CLI-00420,Cliente_420,Consumidor Final,54,Cali,35413292.14
+CLI-00421,Cliente_421,Consumidor Final,68,Sogamoso,12000000.0
+CLI-00422,Cliente_422,Consumidor Final,30,Tunja,27101019.05
+CLI-00423,Cliente_423,Corporativo,40,Cali,40442104.55
+CLI-00424,Cliente_424,Pequeña Empresa,45,Bogotá,23212471.59
+CLI-00425,Cliente_425,Corporativo,23,Cali,35707810.66
+CLI-00426,Cliente_426,Pequeña Empresa,53,Medellín,40362470.01
+CLI-00427,Cliente_427,Pequeña Empresa,67,Duitama,30889409.59
+CLI-00428,Cliente_428,Consumidor Final,37,Bucaramanga,37045565.25
+CLI-00429,Cliente_429,Pequeña Empresa,59,Bogotá,23447209.22
+CLI-00430,Cliente_430,Corporativo,54,Medellín,32520664.64
+CLI-00431,Cliente_431,Corporativo,60,Sogamoso,42322594.04
+CLI-00432,Cliente_432,Consumidor Final,48,Duitama,36883675.53
+CLI-00433,Cliente_433,Consumidor Final,48,Tunja,27961624.77
+CLI-00434,Cliente_434,Corporativo,57,Bogotá,37690596.85
+CLI-00435,Cliente_435,Corporativo,61,Bucaramanga,43575317.49
+CLI-00436,Cliente_436,Consumidor Final,40,Duitama,12000000.0
+CLI-00437,Cliente_437,Corporativo,61,Sogamoso,48908888.78
+CLI-00438,Cliente_438,Consumidor Final,32,Bucaramanga,30964943.14
+CLI-00439,Cliente_439,Consumidor Final,68,Tunja,40105879.2
+CLI-00440,Cliente_440,Corporativo,60,Tunja,49366963.08
+CLI-00441,Cliente_441,Corporativo,36,Sogamoso,18539915.63
+CLI-00442,Cliente_442,Gobierno,28,Bogotá,26486707.97
+CLI-00443,Cliente_443,Pequeña Empresa,60,Sogamoso,31537415.65
+CLI-00444,Cliente_444,Pequeña Empresa,20,Cali,25594957.75
+CLI-00445,Cliente_445,Consumidor Final,21,Tunja,55819238.91
+CLI-00446,Cliente_446,Gobierno,67,Duitama,24718734.87
+CLI-00447,Cliente_447,Gobierno,48,Cali,28333438.65
+CLI-00448,Cliente_448,Consumidor Final,52,Medellín,37452668.38
+CLI-00449,Cliente_449,Pequeña Empresa,29,Bucaramanga,20574205.69
+CLI-00450,Cliente_450,Corporativo,69,Cali,30251831.46
+CLI-00451,Cliente_451,Consumidor Final,59,Bucaramanga,38809439.14
+CLI-00452,Cliente_452,Pequeña Empresa,40,Sogamoso,31005675.15
+CLI-00453,Cliente_453,Pequeña Empresa,47,Cali,33879357.69
+CLI-00454,Cliente_454,Gobierno,30,Sogamoso,28648014.65
+CLI-00455,Cliente_455,Corporativo,53,Medellín,16826356.29
+CLI-00456,Cliente_456,Pequeña Empresa,27,Tunja,38859118.54
+CLI-00457,Cliente_457,Corporativo,41,Medellín,56059196.86
+CLI-00458,Cliente_458,Pequeña Empresa,27,Tunja,35220819.57
+CLI-00459,Cliente_459,Corporativo,68,Sogamoso,37703169.41
+CLI-00460,Cliente_460,Corporativo,34,Tunja,43312673.06
+CLI-00461,Cliente_461,Corporativo,36,Bucaramanga,19768034.04
+CLI-00462,Cliente_462,Consumidor Final,42,Duitama,55430175.9
+CLI-00463,Cliente_463,Consumidor Final,43,Medellín,37427945.56
+CLI-00464,Cliente_464,Pequeña Empresa,64,Cali,54582282.79
+CLI-00465,Cliente_465,Gobierno,38,Medellín,26203604.05
+CLI-00466,Cliente_466,Pequeña Empresa,24,Bucaramanga,56816743.07
+CLI-00467,Cliente_467,Pequeña Empresa,51,Tunja,44301865.93
+CLI-00468,Cliente_468,Consumidor Final,63,Bucaramanga,41636481.03
+CLI-00469,Cliente_469,Corporativo,20,Bogotá,37808293.45
+CLI-00470,Cliente_470,Gobierno,42,Bogotá,32017656.58
+CLI-00471,Cliente_471,Corporativo,56,Cali,49406379.9
+CLI-00472,Cliente_472,Gobierno,27,Bucaramanga,36684318.44
+CLI-00473,Cliente_473,Corporativo,32,Sogamoso,12000000.0
+CLI-00474,Cliente_474,Consumidor Final,27,Cali,21593762.46
+CLI-00475,Cliente_475,Pequeña Empresa,42,Sogamoso,32769850.97
+CLI-00476,Cliente_476,Gobierno,62,Cali,38719987.8
+CLI-00477,Cliente_477,Corporativo,20,Bogotá,34320938.13
+CLI-00478,Cliente_478,Pequeña Empresa,64,Cali,49627649.48
+CLI-00479,Cliente_479,Gobierno,43,Bogotá,12000000.0
+CLI-00480,Cliente_480,Pequeña Empresa,54,Tunja,36723055.24
+CLI-00481,Cliente_481,Consumidor Final,43,Sogamoso,13184249.3
+CLI-00482,Cliente_482,Consumidor Final,36,Bucaramanga,44116547.55
+CLI-00483,Cliente_483,Pequeña Empresa,24,Cali,33866495.43
+CLI-00484,Cliente_484,Consumidor Final,39,Bogotá,40035319.66
+CLI-00485,Cliente_485,Pequeña Empresa,40,Medellín,24633404.47
+CLI-00486,Cliente_486,Gobierno,59,Sogamoso,50353579.18
+CLI-00487,Cliente_487,Corporativo,50,Cali,47500695.97
+CLI-00488,Cliente_488,Pequeña Empresa,65,Duitama,42002531.64
+CLI-00489,Cliente_489,Gobierno,55,Tunja,33445793.04
+CLI-00490,Cliente_490,Consumidor Final,30,Tunja,41958287.42
+CLI-00491,Cliente_491,Pequeña Empresa,34,Medellín,26517289.18
+CLI-00492,Cliente_492,Consumidor Final,38,Bogotá,45266667.91
+CLI-00493,Cliente_493,Pequeña Empresa,26,Cali,54793770.73
+CLI-00494,Cliente_494,Corporativo,47,Sogamoso,47847326.72
+CLI-00495,Cliente_495,Pequeña Empresa,62,Bogotá,26244770.36
+CLI-00496,Cliente_496,Pequeña Empresa,24,Tunja,39337007.81
+CLI-00497,Cliente_497,Pequeña Empresa,24,Bogotá,19482301.47
+CLI-00498,Cliente_498,Corporativo,49,Tunja,41868683.73
+CLI-00499,Cliente_499,Gobierno,51,Bogotá,40407240.95
+CLI-00500,Cliente_500,Gobierno,27,Medellín,12562203.93
+CLI-00501,Cliente_501,Consumidor Final,29,Bucaramanga,21058593.87
+CLI-00502,Cliente_502,Pequeña Empresa,57,Medellín,31602333.24
+CLI-00503,Cliente_503,Pequeña Empresa,66,Medellín,31389683.03
+CLI-00504,Cliente_504,Consumidor Final,51,Bucaramanga,20486276.77
+CLI-00505,Cliente_505,Consumidor Final,67,Bucaramanga,39667744.75
+CLI-00506,Cliente_506,Corporativo,47,Cali,38017683.31
+CLI-00507,Cliente_507,Gobierno,36,Sogamoso,32668770.42
+CLI-00508,Cliente_508,Consumidor Final,50,Sogamoso,25930502.0
+CLI-00509,Cliente_509,Gobierno,27,Cali,47584485.52
+CLI-00510,Cliente_510,Consumidor Final,59,Medellín,54864885.36
+CLI-00511,Cliente_511,Consumidor Final,44,Medellín,29197262.19
+CLI-00512,Cliente_512,Pequeña Empresa,28,Tunja,27653996.99
+CLI-00513,Cliente_513,Gobierno,21,Tunja,40894491.98
+CLI-00514,Cliente_514,Consumidor Final,34,Sogamoso,30703647.44
+CLI-00515,Cliente_515,Corporativo,69,Cali,33327233.59
+CLI-00516,Cliente_516,Corporativo,22,Duitama,43875837.82
+CLI-00517,Cliente_517,Pequeña Empresa,68,Duitama,12087726.95
+CLI-00518,Cliente_518,Consumidor Final,55,Cali,50819627.9
+CLI-00519,Cliente_519,Gobierno,23,Tunja,35872166.29
+CLI-00520,Cliente_520,Corporativo,33,Sogamoso,30062082.27
+CLI-00521,Cliente_521,Pequeña Empresa,60,Sogamoso,33929190.15
+CLI-00522,Cliente_522,Pequeña Empresa,60,Tunja,34549152.26
+CLI-00523,Cliente_523,Gobierno,44,Duitama,14225584.36
+CLI-00524,Cliente_524,Consumidor Final,69,Bogotá,52939258.73
+CLI-00525,Cliente_525,Consumidor Final,29,Bogotá,35495907.59
+CLI-00526,Cliente_526,Pequeña Empresa,40,Tunja,40316025.57
+CLI-00527,Cliente_527,Pequeña Empresa,55,Bogotá,46418597.25
+CLI-00528,Cliente_528,Pequeña Empresa,31,Bucaramanga,22746050.51
+CLI-00529,Cliente_529,Corporativo,46,Cali,40681662.79
+CLI-00530,Cliente_530,Consumidor Final,59,Cali,31788306.91
+CLI-00531,Cliente_531,Consumidor Final,21,Tunja,45161249.3
+CLI-00532,Cliente_532,Gobierno,32,Medellín,12000000.0
+CLI-00533,Cliente_533,Gobierno,51,Duitama,33810868.4
+CLI-00534,Cliente_534,Pequeña Empresa,50,Tunja,27766152.13
+CLI-00535,Cliente_535,Consumidor Final,35,Bogotá,40187155.41
+CLI-00536,Cliente_536,Gobierno,51,Duitama,40640530.25
+CLI-00537,Cliente_537,Consumidor Final,51,Medellín,26508489.26
+CLI-00538,Cliente_538,Corporativo,53,Bogotá,26453913.63
+CLI-00539,Cliente_539,Pequeña Empresa,30,Sogamoso,33672015.58
+CLI-00540,Cliente_540,Corporativo,29,Bucaramanga,24240293.27
+CLI-00541,Cliente_541,Gobierno,34,Bogotá,45103804.35
+CLI-00542,Cliente_542,Consumidor Final,36,Bucaramanga,30569513.59
+CLI-00543,Cliente_543,Corporativo,59,Duitama,12000000.0
+CLI-00544,Cliente_544,Consumidor Final,37,Bucaramanga,30502135.32
+CLI-00545,Cliente_545,Consumidor Final,28,Duitama,22537474.15
+CLI-00546,Cliente_546,Pequeña Empresa,44,Duitama,15424690.21
+CLI-00547,Cliente_547,Corporativo,59,Duitama,20150880.34
+CLI-00548,Cliente_548,Consumidor Final,33,Duitama,36312901.66
+CLI-00549,Cliente_549,Pequeña Empresa,44,Duitama,50943689.94
+CLI-00550,Cliente_550,Consumidor Final,69,Bogotá,38758213.69
+CLI-00551,Cliente_551,Pequeña Empresa,41,Duitama,27721959.34
+CLI-00552,Cliente_552,Consumidor Final,49,Bogotá,40470850.34
+CLI-00553,Cliente_553,Pequeña Empresa,39,Duitama,29490916.28
+CLI-00554,Cliente_554,Pequeña Empresa,40,Bucaramanga,26664795.57
+CLI-00555,Cliente_555,Consumidor Final,63,Sogamoso,21147647.98
+CLI-00556,Cliente_556,Pequeña Empresa,51,Duitama,13978054.32
+CLI-00557,Cliente_557,Corporativo,65,Medellín,30320915.52
+CLI-00558,Cliente_558,Corporativo,68,Duitama,36896641.88
+CLI-00559,Cliente_559,Consumidor Final,40,Duitama,33840515.96
+CLI-00560,Cliente_560,Consumidor Final,54,Bucaramanga,30008396.86
+CLI-00561,Cliente_561,Consumidor Final,51,Cali,23651047.27
+CLI-00562,Cliente_562,Corporativo,49,Bucaramanga,42298954.3
+CLI-00563,Cliente_563,Corporativo,58,Medellín,19194416.96
+CLI-00564,Cliente_564,Corporativo,68,Cali,44312334.97
+CLI-00565,Cliente_565,Pequeña Empresa,31,Tunja,22973395.77
+CLI-00566,Cliente_566,Pequeña Empresa,60,Tunja,25970777.15
+CLI-00567,Cliente_567,Pequeña Empresa,66,Medellín,17398577.71
+CLI-00568,Cliente_568,Pequeña Empresa,37,Bucaramanga,28983174.24
+CLI-00569,Cliente_569,Gobierno,40,Bogotá,46703749.5
+CLI-00570,Cliente_570,Pequeña Empresa,32,Medellín,41187537.06
+CLI-00571,Cliente_571,Pequeña Empresa,40,Sogamoso,46741065.34
+CLI-00572,Cliente_572,Consumidor Final,27,Cali,41265710.55
+CLI-00573,Cliente_573,Pequeña Empresa,65,Cali,21755962.06
+CLI-00574,Cliente_574,Consumidor Final,59,Duitama,31030529.31
+CLI-00575,Cliente_575,Consumidor Final,65,Tunja,25637610.45
+CLI-00576,Cliente_576,Gobierno,26,Cali,50966898.85
+CLI-00577,Cliente_577,Corporativo,42,Medellín,20638536.24
+CLI-00578,Cliente_578,Gobierno,63,Cali,45724372.27
+CLI-00579,Cliente_579,Pequeña Empresa,51,Medellín,45715446.44
+CLI-00580,Cliente_580,Pequeña Empresa,30,Bogotá,56955442.42
+CLI-00581,Cliente_581,Pequeña Empresa,41,Duitama,30083760.89
+CLI-00582,Cliente_582,Gobierno,41,Tunja,43547865.91
+CLI-00583,Cliente_583,Pequeña Empresa,62,Cali,62379822.04
+CLI-00584,Cliente_584,Pequeña Empresa,44,Medellín,27588299.88
+CLI-00585,Cliente_585,Consumidor Final,41,Bucaramanga,16579517.03
+CLI-00586,Cliente_586,Corporativo,47,Tunja,12439879.59
+CLI-00587,Cliente_587,Corporativo,48,Bogotá,43552544.35
+CLI-00588,Cliente_588,Corporativo,32,Medellín,12402197.5
+CLI-00589,Cliente_589,Corporativo,37,Sogamoso,30532171.36
+CLI-00590,Cliente_590,Corporativo,21,Sogamoso,40247758.24
+CLI-00591,Cliente_591,Corporativo,48,Duitama,37222106.44
+CLI-00592,Cliente_592,Consumidor Final,40,Duitama,40105338.37
+CLI-00593,Cliente_593,Corporativo,34,Bogotá,37667478.27
+CLI-00594,Cliente_594,Pequeña Empresa,46,Bogotá,50346389.76
+CLI-00595,Cliente_595,Consumidor Final,69,Duitama,23572203.43
+CLI-00596,Cliente_596,Pequeña Empresa,50,Cali,26876058.34
+CLI-00597,Cliente_597,Consumidor Final,34,Cali,25728086.66
+CLI-00598,Cliente_598,Corporativo,42,Medellín,44962301.74
+CLI-00599,Cliente_599,Corporativo,43,Bucaramanga,45804783.06
+CLI-00600,Cliente_600,Corporativo,63,Medellín,40414703.83
+CLI-00601,Cliente_601,Corporativo,32,Bucaramanga,49201924.0
+CLI-00602,Cliente_602,Pequeña Empresa,41,Bogotá,20863509.59
+CLI-00603,Cliente_603,Corporativo,62,Tunja,55006689.34
+CLI-00604,Cliente_604,Corporativo,56,Medellín,53278863.46
+CLI-00605,Cliente_605,Corporativo,52,Medellín,43827463.97
+CLI-00606,Cliente_606,Pequeña Empresa,22,Bucaramanga,56381586.91
+CLI-00607,Cliente_607,Corporativo,38,Bogotá,15120521.51
+CLI-00608,Cliente_608,Pequeña Empresa,42,Bogotá,28706622.36
+CLI-00609,Cliente_609,Pequeña Empresa,48,Sogamoso,26176358.47
+CLI-00610,Cliente_610,Consumidor Final,49,Bucaramanga,43657751.89
+CLI-00611,Cliente_611,Corporativo,58,Bogotá,22398311.12
+CLI-00612,Cliente_612,Consumidor Final,63,Duitama,44089941.79
+CLI-00613,Cliente_613,Consumidor Final,66,Cali,51446433.73
+CLI-00614,Cliente_614,Corporativo,44,Sogamoso,43342434.8
+CLI-00615,Cliente_615,Consumidor Final,56,Duitama,38405012.28
+CLI-00616,Cliente_616,Gobierno,66,Tunja,23145519.91
+CLI-00617,Cliente_617,Corporativo,27,Medellín,24837788.41
+CLI-00618,Cliente_618,Pequeña Empresa,61,Sogamoso,49995426.86
+CLI-00619,Cliente_619,Consumidor Final,35,Tunja,44352188.05
+CLI-00620,Cliente_620,Consumidor Final,27,Medellín,34531765.77
+CLI-00621,Cliente_621,Corporativo,20,Cali,29985085.45
+CLI-00622,Cliente_622,Corporativo,63,Bogotá,12000000.0
+CLI-00623,Cliente_623,Pequeña Empresa,24,Duitama,22149770.98
+CLI-00624,Cliente_624,Pequeña Empresa,22,Bucaramanga,57937029.05
+CLI-00625,Cliente_625,Consumidor Final,20,Duitama,19634533.15
+CLI-00626,Cliente_626,Pequeña Empresa,23,Cali,37273757.85
+CLI-00627,Cliente_627,Pequeña Empresa,59,Tunja,47089327.68
+CLI-00628,Cliente_628,Consumidor Final,54,Bucaramanga,19940927.98
+CLI-00629,Cliente_629,Corporativo,51,Bogotá,37216525.7
+CLI-00630,Cliente_630,Pequeña Empresa,61,Cali,46254986.45
+CLI-00631,Cliente_631,Consumidor Final,53,Bucaramanga,35149991.86
+CLI-00632,Cliente_632,Consumidor Final,62,Cali,69420836.67
+CLI-00633,Cliente_633,Pequeña Empresa,44,Cali,14976808.89
+CLI-00634,Cliente_634,Pequeña Empresa,29,Bogotá,47704742.36
+CLI-00635,Cliente_635,Corporativo,40,Sogamoso,32926379.15
+CLI-00636,Cliente_636,Pequeña Empresa,65,Medellín,44263041.86
+CLI-00637,Cliente_637,Pequeña Empresa,58,Bucaramanga,40295685.82
+CLI-00638,Cliente_638,Corporativo,46,Bogotá,26202125.63
+CLI-00639,Cliente_639,Pequeña Empresa,46,Cali,37747956.71
+CLI-00640,Cliente_640,Pequeña Empresa,21,Bogotá,12705182.58
+CLI-00641,Cliente_641,Corporativo,60,Sogamoso,42238970.01
+CLI-00642,Cliente_642,Pequeña Empresa,67,Medellín,38577901.59
+CLI-00643,Cliente_643,Corporativo,32,Duitama,42663922.02
+CLI-00644,Cliente_644,Pequeña Empresa,28,Bucaramanga,47697419.9
+CLI-00645,Cliente_645,Corporativo,55,Medellín,39411438.08
+CLI-00646,Cliente_646,Consumidor Final,41,Tunja,36777073.04
+CLI-00647,Cliente_647,Pequeña Empresa,61,Bucaramanga,24427179.96
+CLI-00648,Cliente_648,Consumidor Final,45,Medellín,26453350.84
+CLI-00649,Cliente_649,Consumidor Final,31,Cali,49240815.44
+CLI-00650,Cliente_650,Pequeña Empresa,36,Bucaramanga,52236024.87
+CLI-00651,Cliente_651,Corporativo,33,Bucaramanga,32142674.76
+CLI-00652,Cliente_652,Pequeña Empresa,33,Bogotá,35552032.97
+CLI-00653,Cliente_653,Pequeña Empresa,53,Cali,24144627.5
+CLI-00654,Cliente_654,Consumidor Final,39,Tunja,49073082.14
+CLI-00655,Cliente_655,Pequeña Empresa,30,Duitama,42985001.88
+CLI-00656,Cliente_656,Corporativo,35,Sogamoso,58294609.24
+CLI-00657,Cliente_657,Pequeña Empresa,50,Medellín,24460123.07
+CLI-00658,Cliente_658,Pequeña Empresa,25,Bogotá,30463905.21
+CLI-00659,Cliente_659,Consumidor Final,38,Medellín,37777351.07
+CLI-00660,Cliente_660,Pequeña Empresa,56,Tunja,42757874.45
+CLI-00661,Cliente_661,Pequeña Empresa,23,Tunja,32411988.35
+CLI-00662,Cliente_662,Gobierno,66,Bucaramanga,24524466.91
+CLI-00663,Cliente_663,Consumidor Final,23,Sogamoso,45576890.35
+CLI-00664,Cliente_664,Corporativo,39,Tunja,43653624.35
+CLI-00665,Cliente_665,Corporativo,29,Medellín,24004710.79
+CLI-00666,Cliente_666,Corporativo,43,Cali,51265313.61
+CLI-00667,Cliente_667,Corporativo,54,Cali,49042384.51
+CLI-00668,Cliente_668,Corporativo,45,Bucaramanga,36611557.97
+CLI-00669,Cliente_669,Corporativo,56,Duitama,35955174.35
+CLI-00670,Cliente_670,Pequeña Empresa,57,Medellín,41648693.25
+CLI-00671,Cliente_671,Corporativo,40,Medellín,24659563.16
+CLI-00672,Cliente_672,Consumidor Final,59,Tunja,35360377.75
+CLI-00673,Cliente_673,Corporativo,58,Sogamoso,12000000.0
+CLI-00674,Cliente_674,Pequeña Empresa,40,Medellín,45517467.75
+CLI-00675,Cliente_675,Pequeña Empresa,29,Bogotá,16262081.33
+CLI-00676,Cliente_676,Gobierno,57,Duitama,53041037.94
+CLI-00677,Cliente_677,Corporativo,65,Tunja,31038558.87
+CLI-00678,Cliente_678,Pequeña Empresa,23,Bogotá,32459996.22
+CLI-00679,Cliente_679,Gobierno,64,Bucaramanga,27467193.13
+CLI-00680,Cliente_680,Consumidor Final,39,Cali,31543533.51
+CLI-00681,Cliente_681,Consumidor Final,36,Bucaramanga,52022376.14
+CLI-00682,Cliente_682,Pequeña Empresa,26,Cali,12000000.0
+CLI-00683,Cliente_683,Corporativo,23,Bucaramanga,50323584.63
+CLI-00684,Cliente_684,Consumidor Final,48,Medellín,39056281.77
+CLI-00685,Cliente_685,Gobierno,33,Bogotá,20515740.23
+CLI-00686,Cliente_686,Pequeña Empresa,22,Cali,22096251.28
+CLI-00687,Cliente_687,Pequeña Empresa,43,Tunja,55116716.33
+CLI-00688,Cliente_688,Pequeña Empresa,56,Bogotá,23653917.44
+CLI-00689,Cliente_689,Consumidor Final,35,Tunja,21159793.87
+CLI-00690,Cliente_690,Corporativo,23,Bogotá,48647774.51
+CLI-00691,Cliente_691,Pequeña Empresa,43,Bogotá,39062634.52
+CLI-00692,Cliente_692,Pequeña Empresa,53,Bucaramanga,23744893.08
+CLI-00693,Cliente_693,Pequeña Empresa,49,Cali,37599499.7
+CLI-00694,Cliente_694,Corporativo,37,Cali,22690967.8
+CLI-00695,Cliente_695,Corporativo,38,Sogamoso,48209856.78
+CLI-00696,Cliente_696,Consumidor Final,50,Bogotá,47736451.58
+CLI-00697,Cliente_697,Pequeña Empresa,38,Medellín,41384074.39
+CLI-00698,Cliente_698,Pequeña Empresa,68,Medellín,39339932.73
+CLI-00699,Cliente_699,Corporativo,65,Tunja,56134257.5
+CLI-00700,Cliente_700,Pequeña Empresa,38,Tunja,34996235.93
+CLI-00701,Cliente_701,Pequeña Empresa,41,Bucaramanga,20817510.49
+CLI-00702,Cliente_702,Corporativo,43,Bogotá,40393686.95
+CLI-00703,Cliente_703,Pequeña Empresa,64,Tunja,60032564.59
+CLI-00704,Cliente_704,Corporativo,31,Tunja,22822886.08
+CLI-00705,Cliente_705,Corporativo,49,Duitama,30662446.8
+CLI-00706,Cliente_706,Gobierno,57,Bogotá,39997352.46
+CLI-00707,Cliente_707,Pequeña Empresa,50,Bucaramanga,34353141.81
+CLI-00708,Cliente_708,Consumidor Final,55,Tunja,23212357.04
+CLI-00709,Cliente_709,Pequeña Empresa,38,Bucaramanga,48462294.27
+CLI-00710,Cliente_710,Consumidor Final,67,Cali,62840488.66
+CLI-00711,Cliente_711,Consumidor Final,64,Bucaramanga,37353577.51
+CLI-00712,Cliente_712,Pequeña Empresa,55,Medellín,24151180.52
+CLI-00713,Cliente_713,Pequeña Empresa,49,Medellín,16412473.7
+CLI-00714,Cliente_714,Pequeña Empresa,68,Bucaramanga,38095711.77
+CLI-00715,Cliente_715,Pequeña Empresa,52,Medellín,48246528.12
+CLI-00716,Cliente_716,Gobierno,37,Cali,40702012.96
+CLI-00717,Cliente_717,Consumidor Final,68,Bogotá,34971153.91
+CLI-00718,Cliente_718,Gobierno,47,Medellín,27928740.18
+CLI-00719,Cliente_719,Corporativo,66,Medellín,21894036.41
+CLI-00720,Cliente_720,Consumidor Final,30,Bucaramanga,45017015.92
+CLI-00721,Cliente_721,Gobierno,64,Cali,45965259.46
+CLI-00722,Cliente_722,Corporativo,52,Sogamoso,16451242.56
+CLI-00723,Cliente_723,Corporativo,36,Sogamoso,54078067.74
+CLI-00724,Cliente_724,Consumidor Final,25,Sogamoso,41888854.65
+CLI-00725,Cliente_725,Pequeña Empresa,23,Sogamoso,51795135.74
+CLI-00726,Cliente_726,Consumidor Final,39,Bogotá,18894467.02
+CLI-00727,Cliente_727,Corporativo,67,Bucaramanga,18610110.14
+CLI-00728,Cliente_728,Consumidor Final,66,Bucaramanga,33212368.28
+CLI-00729,Cliente_729,Corporativo,46,Duitama,41033413.12
+CLI-00730,Cliente_730,Corporativo,34,Cali,56556329.88
+CLI-00731,Cliente_731,Corporativo,25,Sogamoso,43472946.97
+CLI-00732,Cliente_732,Consumidor Final,66,Bogotá,32087824.68
+CLI-00733,Cliente_733,Consumidor Final,33,Cali,22683569.51
+CLI-00734,Cliente_734,Pequeña Empresa,30,Sogamoso,49760006.87
+CLI-00735,Cliente_735,Pequeña Empresa,58,Bogotá,23423534.89
+CLI-00736,Cliente_736,Consumidor Final,28,Cali,54541622.66
+CLI-00737,Cliente_737,Pequeña Empresa,45,Bucaramanga,31587384.2
+CLI-00738,Cliente_738,Consumidor Final,35,Bucaramanga,54086984.87
+CLI-00739,Cliente_739,Pequeña Empresa,24,Tunja,43147175.48
+CLI-00740,Cliente_740,Pequeña Empresa,29,Medellín,33356054.13
+CLI-00741,Cliente_741,Pequeña Empresa,69,Sogamoso,28767243.54
+CLI-00742,Cliente_742,Pequeña Empresa,22,Duitama,30909105.47
+CLI-00743,Cliente_743,Consumidor Final,32,Cali,40139800.31
+CLI-00744,Cliente_744,Pequeña Empresa,62,Duitama,35925877.95
+CLI-00745,Cliente_745,Corporativo,68,Tunja,27874263.1
+CLI-00746,Cliente_746,Consumidor Final,49,Medellín,33012423.08
+CLI-00747,Cliente_747,Pequeña Empresa,64,Cali,35942924.36
+CLI-00748,Cliente_748,Pequeña Empresa,25,Bogotá,12000000.0
+CLI-00749,Cliente_749,Gobierno,36,Sogamoso,40498017.38
+CLI-00750,Cliente_750,Consumidor Final,64,Medellín,23243345.3
+CLI-00751,Cliente_751,Corporativo,38,Bucaramanga,21160011.16
+CLI-00752,Cliente_752,Gobierno,61,Tunja,14751867.83
+CLI-00753,Cliente_753,Consumidor Final,54,Medellín,13473290.03
+CLI-00754,Cliente_754,Pequeña Empresa,65,Sogamoso,18734629.96
+CLI-00755,Cliente_755,Corporativo,45,Medellín,26491748.51
+CLI-00756,Cliente_756,Consumidor Final,24,Sogamoso,58439109.65
+CLI-00757,Cliente_757,Consumidor Final,48,Bucaramanga,28689443.89
+CLI-00758,Cliente_758,Pequeña Empresa,56,Cali,37133001.28
+CLI-00759,Cliente_759,Consumidor Final,39,Bogotá,39805776.64
+CLI-00760,Cliente_760,Consumidor Final,68,Bucaramanga,36572782.23
+CLI-00761,Cliente_761,Corporativo,40,Bogotá,34070678.47
+CLI-00762,Cliente_762,Pequeña Empresa,29,Cali,20656474.84
+CLI-00763,Cliente_763,Corporativo,24,Medellín,52411130.58
+CLI-00764,Cliente_764,Consumidor Final,55,Bogotá,56686359.72
+CLI-00765,Cliente_765,Corporativo,25,Tunja,14808095.67
+CLI-00766,Cliente_766,Pequeña Empresa,45,Tunja,22711656.91
+CLI-00767,Cliente_767,Consumidor Final,23,Sogamoso,31642275.89
+CLI-00768,Cliente_768,Consumidor Final,58,Bucaramanga,23425546.46
+CLI-00769,Cliente_769,Pequeña Empresa,58,Cali,41071586.64
+CLI-00770,Cliente_770,Consumidor Final,69,Sogamoso,26260733.57
+CLI-00771,Cliente_771,Corporativo,54,Bucaramanga,60980672.81
+CLI-00772,Cliente_772,Consumidor Final,20,Bucaramanga,49286583.13
+CLI-00773,Cliente_773,Corporativo,43,Sogamoso,37550888.37
+CLI-00774,Cliente_774,Pequeña Empresa,55,Duitama,47323835.16
+CLI-00775,Cliente_775,Consumidor Final,25,Bucaramanga,48270805.09
+CLI-00776,Cliente_776,Corporativo,60,Duitama,28232630.14
+CLI-00777,Cliente_777,Corporativo,65,Tunja,25205393.07
+CLI-00778,Cliente_778,Consumidor Final,63,Tunja,35937716.76
+CLI-00779,Cliente_779,Consumidor Final,50,Bucaramanga,45339633.49
+CLI-00780,Cliente_780,Consumidor Final,39,Tunja,36668724.78
+CLI-00781,Cliente_781,Consumidor Final,43,Cali,16076042.21
+CLI-00782,Cliente_782,Pequeña Empresa,44,Duitama,25366106.67
+CLI-00783,Cliente_783,Pequeña Empresa,55,Duitama,34112325.64
+CLI-00784,Cliente_784,Pequeña Empresa,40,Bucaramanga,34092012.75
+CLI-00785,Cliente_785,Corporativo,49,Tunja,58670506.12
+CLI-00786,Cliente_786,Gobierno,43,Bogotá,18368144.69
+CLI-00787,Cliente_787,Pequeña Empresa,63,Sogamoso,41067070.9
+CLI-00788,Cliente_788,Pequeña Empresa,61,Sogamoso,52869357.3
+CLI-00789,Cliente_789,Pequeña Empresa,49,Duitama,62257396.95
+CLI-00790,Cliente_790,Gobierno,41,Bucaramanga,30147230.92
+CLI-00791,Cliente_791,Corporativo,47,Bucaramanga,40897153.43
+CLI-00792,Cliente_792,Pequeña Empresa,26,Cali,41837124.29
+CLI-00793,Cliente_793,Pequeña Empresa,54,Medellín,37345780.78
+CLI-00794,Cliente_794,Consumidor Final,47,Medellín,33813857.59
+CLI-00795,Cliente_795,Corporativo,33,Duitama,40231704.67
+CLI-00796,Cliente_796,Consumidor Final,29,Sogamoso,12000000.0
+CLI-00797,Cliente_797,Gobierno,35,Cali,43184833.88
+CLI-00798,Cliente_798,Pequeña Empresa,35,Cali,36514134.84
+CLI-00799,Cliente_799,Consumidor Final,50,Cali,32330301.24
+CLI-00800,Cliente_800,Gobierno,61,Duitama,59562346.35
+CLI-00801,Cliente_801,Consumidor Final,44,Medellín,26900791.77
+CLI-00802,Cliente_802,Corporativo,32,Sogamoso,30163088.13
+CLI-00803,Cliente_803,Pequeña Empresa,25,Cali,58898639.63
+CLI-00804,Cliente_804,Consumidor Final,63,Sogamoso,25015264.34
+CLI-00805,Cliente_805,Pequeña Empresa,28,Tunja,28398616.6
+CLI-00806,Cliente_806,Consumidor Final,64,Bucaramanga,33235694.92
+CLI-00807,Cliente_807,Gobierno,55,Bucaramanga,45088813.79
+CLI-00808,Cliente_808,Gobierno,62,Sogamoso,37493630.09
+CLI-00809,Cliente_809,Pequeña Empresa,39,Bogotá,19488495.83
+CLI-00810,Cliente_810,Corporativo,37,Bogotá,28613977.24
+CLI-00811,Cliente_811,Gobierno,62,Duitama,27711746.8
+CLI-00812,Cliente_812,Consumidor Final,40,Duitama,34073347.46
+CLI-00813,Cliente_813,Corporativo,23,Bucaramanga,40110123.9
+CLI-00814,Cliente_814,Gobierno,69,Tunja,40018469.07
+CLI-00815,Cliente_815,Consumidor Final,52,Medellín,13687858.95
+CLI-00816,Cliente_816,Pequeña Empresa,46,Medellín,47767291.85
+CLI-00817,Cliente_817,Pequeña Empresa,26,Duitama,38030826.15
+CLI-00818,Cliente_818,Pequeña Empresa,25,Tunja,51614384.57
+CLI-00819,Cliente_819,Corporativo,34,Duitama,40330379.93
+CLI-00820,Cliente_820,Pequeña Empresa,37,Medellín,48215875.49
+CLI-00821,Cliente_821,Consumidor Final,51,Sogamoso,40598543.74
+CLI-00822,Cliente_822,Corporativo,30,Duitama,51154709.07
+CLI-00823,Cliente_823,Pequeña Empresa,39,Cali,41267007.63
+CLI-00824,Cliente_824,Pequeña Empresa,43,Sogamoso,33825017.04
+CLI-00825,Cliente_825,Pequeña Empresa,34,Duitama,62269216.65
+CLI-00826,Cliente_826,Gobierno,67,Bucaramanga,45668445.47
+CLI-00827,Cliente_827,Pequeña Empresa,26,Duitama,41884933.05
+CLI-00828,Cliente_828,Pequeña Empresa,40,Bucaramanga,19684347.0
+CLI-00829,Cliente_829,Consumidor Final,61,Tunja,19540308.59
+CLI-00830,Cliente_830,Pequeña Empresa,45,Medellín,38512585.79
+CLI-00831,Cliente_831,Corporativo,63,Sogamoso,36746254.37
+CLI-00832,Cliente_832,Pequeña Empresa,33,Sogamoso,27630529.22
+CLI-00833,Cliente_833,Corporativo,56,Bogotá,36691792.4
+CLI-00834,Cliente_834,Corporativo,40,Bogotá,54063523.14
+CLI-00835,Cliente_835,Pequeña Empresa,37,Medellín,43344829.69
+CLI-00836,Cliente_836,Pequeña Empresa,24,Bogotá,21307897.88
+CLI-00837,Cliente_837,Gobierno,22,Sogamoso,33661894.07
+CLI-00838,Cliente_838,Pequeña Empresa,42,Duitama,25340402.23
+CLI-00839,Cliente_839,Pequeña Empresa,45,Tunja,30347601.0
+CLI-00840,Cliente_840,Consumidor Final,56,Tunja,30036612.01
+CLI-00841,Cliente_841,Corporativo,43,Medellín,29268253.01
+CLI-00842,Cliente_842,Consumidor Final,68,Bogotá,19938375.54
+CLI-00843,Cliente_843,Corporativo,38,Duitama,33468143.82
+CLI-00844,Cliente_844,Gobierno,44,Tunja,28272708.36
+CLI-00845,Cliente_845,Corporativo,40,Tunja,12000000.0
+CLI-00846,Cliente_846,Pequeña Empresa,31,Cali,59635664.29
+CLI-00847,Cliente_847,Corporativo,60,Cali,48065235.85
+CLI-00848,Cliente_848,Gobierno,52,Sogamoso,30484391.3
+CLI-00849,Cliente_849,Pequeña Empresa,69,Tunja,35225828.6
+CLI-00850,Cliente_850,Pequeña Empresa,23,Medellín,20940147.83
+CLI-00851,Cliente_851,Corporativo,61,Bucaramanga,55348674.53
+CLI-00852,Cliente_852,Consumidor Final,26,Bucaramanga,57767464.34
+CLI-00853,Cliente_853,Corporativo,41,Duitama,36880324.74
+CLI-00854,Cliente_854,Consumidor Final,52,Tunja,47282367.73
+CLI-00855,Cliente_855,Corporativo,36,Tunja,37103441.35
+CLI-00856,Cliente_856,Corporativo,43,Sogamoso,18959294.73
+CLI-00857,Cliente_857,Corporativo,53,Tunja,30058119.57
+CLI-00858,Cliente_858,Pequeña Empresa,47,Medellín,36583135.6
+CLI-00859,Cliente_859,Pequeña Empresa,62,Cali,29545427.38
+CLI-00860,Cliente_860,Corporativo,60,Tunja,32376160.67
+CLI-00861,Cliente_861,Consumidor Final,58,Tunja,33903205.31
+CLI-00862,Cliente_862,Pequeña Empresa,41,Sogamoso,34029458.03
+CLI-00863,Cliente_863,Pequeña Empresa,68,Bogotá,35627101.89
+CLI-00864,Cliente_864,Pequeña Empresa,36,Sogamoso,22272739.2
+CLI-00865,Cliente_865,Pequeña Empresa,53,Sogamoso,26395806.21
+CLI-00866,Cliente_866,Pequeña Empresa,25,Medellín,19584988.81
+CLI-00867,Cliente_867,Corporativo,65,Duitama,46733786.6
+CLI-00868,Cliente_868,Corporativo,25,Tunja,12000000.0
+CLI-00869,Cliente_869,Consumidor Final,53,Sogamoso,48843084.12
+CLI-00870,Cliente_870,Gobierno,20,Sogamoso,51636192.77
+CLI-00871,Cliente_871,Pequeña Empresa,29,Bogotá,31373832.96
+CLI-00872,Cliente_872,Pequeña Empresa,40,Sogamoso,12000000.0
+CLI-00873,Cliente_873,Consumidor Final,24,Bucaramanga,30664273.26
+CLI-00874,Cliente_874,Pequeña Empresa,21,Duitama,34229790.06
+CLI-00875,Cliente_875,Corporativo,41,Tunja,22872821.36
+CLI-00876,Cliente_876,Corporativo,67,Tunja,28817379.27
+CLI-00877,Cliente_877,Consumidor Final,21,Bogotá,53362342.39
+CLI-00878,Cliente_878,Consumidor Final,29,Medellín,42979125.95
+CLI-00879,Cliente_879,Corporativo,53,Tunja,23905230.63
+CLI-00880,Cliente_880,Corporativo,35,Bucaramanga,15828809.96
+CLI-00881,Cliente_881,Corporativo,67,Tunja,31075792.19
+CLI-00882,Cliente_882,Consumidor Final,58,Bucaramanga,32438518.65
+CLI-00883,Cliente_883,Corporativo,41,Duitama,40954390.25
+CLI-00884,Cliente_884,Corporativo,31,Duitama,28576199.45
+CLI-00885,Cliente_885,Consumidor Final,43,Cali,41137994.9
+CLI-00886,Cliente_886,Corporativo,66,Cali,58221848.48
+CLI-00887,Cliente_887,Consumidor Final,59,Bucaramanga,44786012.27
+CLI-00888,Cliente_888,Corporativo,57,Medellín,34422937.91
+CLI-00889,Cliente_889,Corporativo,29,Tunja,32802194.35
+CLI-00890,Cliente_890,Corporativo,54,Sogamoso,30719922.39
+CLI-00891,Cliente_891,Consumidor Final,68,Tunja,49167690.95
+CLI-00892,Cliente_892,Consumidor Final,51,Cali,27472238.65
+CLI-00893,Cliente_893,Consumidor Final,26,Sogamoso,35542672.51
+CLI-00894,Cliente_894,Pequeña Empresa,40,Bucaramanga,35614374.82
+CLI-00895,Cliente_895,Consumidor Final,39,Sogamoso,28978589.69
+CLI-00896,Cliente_896,Corporativo,45,Tunja,18530413.43
+CLI-00897,Cliente_897,Pequeña Empresa,23,Tunja,38875694.04
+CLI-00898,Cliente_898,Consumidor Final,65,Medellín,34267952.34
+CLI-00899,Cliente_899,Corporativo,41,Bogotá,41002885.63
+CLI-00900,Cliente_900,Corporativo,34,Sogamoso,28596796.32
+CLI-00901,Cliente_901,Corporativo,59,Cali,49649855.59
+CLI-00902,Cliente_902,Corporativo,40,Cali,24478714.63
+CLI-00903,Cliente_903,Corporativo,34,Bogotá,55544483.41
+CLI-00904,Cliente_904,Pequeña Empresa,41,Tunja,14028361.88
+CLI-00905,Cliente_905,Pequeña Empresa,47,Medellín,40217240.77
+CLI-00906,Cliente_906,Consumidor Final,33,Medellín,40705168.19
+CLI-00907,Cliente_907,Consumidor Final,46,Cali,25453315.18
+CLI-00908,Cliente_908,Pequeña Empresa,60,Medellín,40092727.25
+CLI-00909,Cliente_909,Pequeña Empresa,59,Duitama,50354224.04
+CLI-00910,Cliente_910,Pequeña Empresa,47,Bogotá,12000000.0
+CLI-00911,Cliente_911,Pequeña Empresa,45,Tunja,41032937.69
+CLI-00912,Cliente_912,Pequeña Empresa,68,Duitama,12000000.0
+CLI-00913,Cliente_913,Consumidor Final,21,Bogotá,23412022.36
+CLI-00914,Cliente_914,Pequeña Empresa,44,Bucaramanga,54549996.38
+CLI-00915,Cliente_915,Pequeña Empresa,22,Sogamoso,28018615.6
+CLI-00916,Cliente_916,Pequeña Empresa,27,Cali,20913440.43
+CLI-00917,Cliente_917,Pequeña Empresa,63,Medellín,32624747.25
+CLI-00918,Cliente_918,Gobierno,52,Bucaramanga,59814876.06
+CLI-00919,Cliente_919,Consumidor Final,61,Medellín,13019813.03
+CLI-00920,Cliente_920,Corporativo,54,Duitama,22384281.06
+CLI-00921,Cliente_921,Consumidor Final,25,Tunja,52969180.2
+CLI-00922,Cliente_922,Pequeña Empresa,58,Tunja,57292428.12
+CLI-00923,Cliente_923,Consumidor Final,42,Tunja,33758825.31
+CLI-00924,Cliente_924,Consumidor Final,44,Medellín,20131367.57
+CLI-00925,Cliente_925,Pequeña Empresa,69,Bucaramanga,60150122.02
+CLI-00926,Cliente_926,Corporativo,62,Tunja,54133308.7
+CLI-00927,Cliente_927,Pequeña Empresa,38,Bucaramanga,43147363.85
+CLI-00928,Cliente_928,Pequeña Empresa,24,Medellín,25251171.81
+CLI-00929,Cliente_929,Consumidor Final,30,Duitama,34411647.91
+CLI-00930,Cliente_930,Pequeña Empresa,31,Bucaramanga,33075679.03
+CLI-00931,Cliente_931,Corporativo,29,Duitama,38970215.66
+CLI-00932,Cliente_932,Consumidor Final,27,Medellín,52412017.26
+CLI-00933,Cliente_933,Gobierno,43,Medellín,45553004.49
+CLI-00934,Cliente_934,Pequeña Empresa,47,Cali,22071487.08
+CLI-00935,Cliente_935,Corporativo,60,Medellín,51517957.4
+CLI-00936,Cliente_936,Pequeña Empresa,55,Medellín,38757585.68
+CLI-00937,Cliente_937,Corporativo,56,Bogotá,43244789.55
+CLI-00938,Cliente_938,Gobierno,40,Tunja,52598490.31
+CLI-00939,Cliente_939,Corporativo,27,Cali,21661037.01
+CLI-00940,Cliente_940,Pequeña Empresa,28,Sogamoso,34570093.06
+CLI-00941,Cliente_941,Pequeña Empresa,66,Cali,28622545.38
+CLI-00942,Cliente_942,Pequeña Empresa,34,Cali,16185686.9
+CLI-00943,Cliente_943,Consumidor Final,67,Sogamoso,39160519.73
+CLI-00944,Cliente_944,Consumidor Final,65,Bogotá,65138678.62
+CLI-00945,Cliente_945,Corporativo,59,Duitama,12919067.07
+CLI-00946,Cliente_946,Corporativo,37,Medellín,34612632.67
+CLI-00947,Cliente_947,Corporativo,61,Tunja,42686515.22
+CLI-00948,Cliente_948,Gobierno,39,Bucaramanga,36476938.42
+CLI-00949,Cliente_949,Consumidor Final,25,Sogamoso,33642463.37
+CLI-00950,Cliente_950,Pequeña Empresa,31,Duitama,19409403.64
+CLI-00951,Cliente_951,Consumidor Final,21,Sogamoso,37793440.92
+CLI-00952,Cliente_952,Consumidor Final,26,Medellín,25918832.28
+CLI-00953,Cliente_953,Corporativo,35,Bogotá,12000000.0
+CLI-00954,Cliente_954,Gobierno,22,Sogamoso,49335106.65
+CLI-00955,Cliente_955,Pequeña Empresa,64,Medellín,46500629.84
+CLI-00956,Cliente_956,Pequeña Empresa,22,Medellín,35619931.72
+CLI-00957,Cliente_957,Pequeña Empresa,46,Bogotá,37748896.26
+CLI-00958,Cliente_958,Corporativo,69,Cali,47891816.15
+CLI-00959,Cliente_959,Corporativo,62,Cali,37692075.88
+CLI-00960,Cliente_960,Consumidor Final,59,Tunja,45848210.66
+CLI-00961,Cliente_961,Corporativo,57,Tunja,31430213.59
+CLI-00962,Cliente_962,Consumidor Final,52,Cali,50743804.86
+CLI-00963,Cliente_963,Corporativo,47,Duitama,38849428.71
+CLI-00964,Cliente_964,Pequeña Empresa,20,Bucaramanga,37328623.32
+CLI-00965,Cliente_965,Pequeña Empresa,27,Medellín,19759266.94
+CLI-00966,Cliente_966,Pequeña Empresa,56,Bucaramanga,38443470.25
+CLI-00967,Cliente_967,Consumidor Final,51,Medellín,25016540.99
+CLI-00968,Cliente_968,Pequeña Empresa,67,Cali,27340607.28
+CLI-00969,Cliente_969,Pequeña Empresa,62,Tunja,25215492.46
+CLI-00970,Cliente_970,Pequeña Empresa,56,Duitama,22205180.82
+CLI-00971,Cliente_971,Consumidor Final,23,Tunja,60497256.84
+CLI-00972,Cliente_972,Gobierno,49,Bucaramanga,50976068.74
+CLI-00973,Cliente_973,Consumidor Final,25,Tunja,58044410.03
+CLI-00974,Cliente_974,Corporativo,65,Cali,20325259.77
+CLI-00975,Cliente_975,Corporativo,38,Duitama,35855045.0
+CLI-00976,Cliente_976,Pequeña Empresa,51,Bucaramanga,19477908.5
+CLI-00977,Cliente_977,Pequeña Empresa,28,Duitama,26651661.47
+CLI-00978,Cliente_978,Corporativo,31,Medellín,23982476.2
+CLI-00979,Cliente_979,Pequeña Empresa,30,Tunja,49875008.08
+CLI-00980,Cliente_980,Pequeña Empresa,65,Duitama,30245243.86
+CLI-00981,Cliente_981,Pequeña Empresa,35,Bogotá,47820552.0
+CLI-00982,Cliente_982,Consumidor Final,20,Tunja,42249450.68
+CLI-00983,Cliente_983,Corporativo,64,Medellín,62643665.03
+CLI-00984,Cliente_984,Corporativo,40,Duitama,17246669.32
+CLI-00985,Cliente_985,Consumidor Final,49,Bucaramanga,50110798.88
+CLI-00986,Cliente_986,Pequeña Empresa,32,Medellín,48757290.44
+CLI-00987,Cliente_987,Consumidor Final,53,Bogotá,23319453.94
+CLI-00988,Cliente_988,Pequeña Empresa,23,Duitama,47085600.04
+CLI-00989,Cliente_989,Corporativo,47,Sogamoso,39033739.56
+CLI-00990,Cliente_990,Consumidor Final,57,Sogamoso,32270284.88
+CLI-00991,Cliente_991,Consumidor Final,50,Cali,25112774.16
+CLI-00992,Cliente_992,Consumidor Final,46,Tunja,26370686.58
+CLI-00993,Cliente_993,Pequeña Empresa,24,Bucaramanga,59597745.15
+CLI-00994,Cliente_994,Pequeña Empresa,44,Cali,35008193.83
+CLI-00995,Cliente_995,Pequeña Empresa,22,Duitama,44385560.02
+CLI-00996,Cliente_996,Corporativo,52,Sogamoso,25509207.42
+CLI-00997,Cliente_997,Gobierno,23,Sogamoso,25641764.65
+CLI-00998,Cliente_998,Corporativo,44,Sogamoso,47983817.71
+CLI-00999,Cliente_999,Gobierno,39,Duitama,18805085.46
+CLI-01000,Cliente_1000,Pequeña Empresa,53,Sogamoso,30017434.79
+CLI-01001,Cliente_1001,Corporativo,45,Medellín,35408328.93
+CLI-01002,Cliente_1002,Pequeña Empresa,24,Duitama,36336471.22
+CLI-01003,Cliente_1003,Consumidor Final,54,Bucaramanga,32850880.58
+CLI-01004,Cliente_1004,Consumidor Final,47,Cali,39749837.37
+CLI-01005,Cliente_1005,Consumidor Final,48,Bucaramanga,43314269.07
+CLI-01006,Cliente_1006,Consumidor Final,28,Bogotá,43815650.55
+CLI-01007,Cliente_1007,Consumidor Final,57,Sogamoso,23170354.3
+CLI-01008,Cliente_1008,Consumidor Final,69,Bogotá,31590138.82
+CLI-01009,Cliente_1009,Corporativo,25,Tunja,49337154.34
+CLI-01010,Cliente_1010,Pequeña Empresa,38,Tunja,45735766.25
+CLI-01011,Cliente_1011,Corporativo,63,Bogotá,18525686.58
+CLI-01012,Cliente_1012,Gobierno,30,Duitama,39217758.8
+CLI-01013,Cliente_1013,Gobierno,21,Bucaramanga,12000000.0
+CLI-01014,Cliente_1014,Corporativo,66,Bogotá,35563218.82
+CLI-01015,Cliente_1015,Consumidor Final,63,Tunja,57773204.2
+CLI-01016,Cliente_1016,Gobierno,63,Bogotá,23625287.39
+CLI-01017,Cliente_1017,Corporativo,28,Duitama,24988123.45
+CLI-01018,Cliente_1018,Pequeña Empresa,40,Bogotá,44168357.38
+CLI-01019,Cliente_1019,Gobierno,43,Bucaramanga,16486381.82
+CLI-01020,Cliente_1020,Corporativo,53,Cali,27406939.64
+CLI-01021,Cliente_1021,Consumidor Final,41,Duitama,42157293.65
+CLI-01022,Cliente_1022,Pequeña Empresa,22,Tunja,27388569.83
+CLI-01023,Cliente_1023,Gobierno,31,Bucaramanga,32168360.15
+CLI-01024,Cliente_1024,Gobierno,47,Bogotá,43930228.52
+CLI-01025,Cliente_1025,Gobierno,49,Bogotá,40058553.0
+CLI-01026,Cliente_1026,Pequeña Empresa,45,Cali,38201820.76
+CLI-01027,Cliente_1027,Consumidor Final,67,Tunja,30930532.65
+CLI-01028,Cliente_1028,Consumidor Final,40,Tunja,39440733.38
+CLI-01029,Cliente_1029,Pequeña Empresa,47,Medellín,33515207.84
+CLI-01030,Cliente_1030,Consumidor Final,45,Tunja,40493667.32
+CLI-01031,Cliente_1031,Corporativo,52,Cali,29036815.7
+CLI-01032,Cliente_1032,Pequeña Empresa,40,Sogamoso,32809172.31
+CLI-01033,Cliente_1033,Corporativo,54,Medellín,23120506.49
+CLI-01034,Cliente_1034,Corporativo,53,Medellín,34579908.68
+CLI-01035,Cliente_1035,Corporativo,60,Bogotá,25267989.64
+CLI-01036,Cliente_1036,Consumidor Final,66,Bogotá,21631442.6
+CLI-01037,Cliente_1037,Pequeña Empresa,37,Tunja,38103933.77
+CLI-01038,Cliente_1038,Consumidor Final,30,Medellín,37552877.31
+CLI-01039,Cliente_1039,Corporativo,42,Bogotá,44394484.82
+CLI-01040,Cliente_1040,Pequeña Empresa,67,Cali,29826493.17
+CLI-01041,Cliente_1041,Pequeña Empresa,41,Bogotá,39896634.16
+CLI-01042,Cliente_1042,Consumidor Final,36,Duitama,41609570.87
+CLI-01043,Cliente_1043,Pequeña Empresa,24,Duitama,40337285.69
+CLI-01044,Cliente_1044,Consumidor Final,63,Bogotá,25092155.81
+CLI-01045,Cliente_1045,Consumidor Final,30,Medellín,36792361.79
+CLI-01046,Cliente_1046,Consumidor Final,49,Sogamoso,39369683.55
+CLI-01047,Cliente_1047,Corporativo,34,Sogamoso,35086141.6
+CLI-01048,Cliente_1048,Corporativo,46,Medellín,12000000.0
+CLI-01049,Cliente_1049,Consumidor Final,54,Bucaramanga,36925875.49
+CLI-01050,Cliente_1050,Corporativo,52,Sogamoso,61550372.47
+CLI-01051,Cliente_1051,Consumidor Final,39,Duitama,30679528.77
+CLI-01052,Cliente_1052,Pequeña Empresa,35,Cali,26263074.83
+CLI-01053,Cliente_1053,Gobierno,53,Medellín,39480182.72
+CLI-01054,Cliente_1054,Consumidor Final,21,Tunja,38748538.53
+CLI-01055,Cliente_1055,Gobierno,54,Duitama,49312821.98
+CLI-01056,Cliente_1056,Pequeña Empresa,59,Cali,19905582.13
+CLI-01057,Cliente_1057,Consumidor Final,47,Cali,43776563.03
+CLI-01058,Cliente_1058,Pequeña Empresa,66,Medellín,42085064.74
+CLI-01059,Cliente_1059,Pequeña Empresa,58,Cali,33294241.56
+CLI-01060,Cliente_1060,Consumidor Final,25,Medellín,39064247.82
+CLI-01061,Cliente_1061,Consumidor Final,28,Sogamoso,47353489.78
+CLI-01062,Cliente_1062,Gobierno,39,Bogotá,45467784.56
+CLI-01063,Cliente_1063,Consumidor Final,20,Duitama,21283768.26
+CLI-01064,Cliente_1064,Pequeña Empresa,27,Bucaramanga,44841898.24
+CLI-01065,Cliente_1065,Pequeña Empresa,42,Bogotá,34223736.74
+CLI-01066,Cliente_1066,Consumidor Final,22,Duitama,35874489.18
+CLI-01067,Cliente_1067,Corporativo,23,Medellín,35878363.89
+CLI-01068,Cliente_1068,Corporativo,44,Duitama,33197084.13
+CLI-01069,Cliente_1069,Pequeña Empresa,66,Sogamoso,49300489.97
+CLI-01070,Cliente_1070,Pequeña Empresa,57,Medellín,33995384.48
+CLI-01071,Cliente_1071,Pequeña Empresa,34,Bogotá,21565446.46
+CLI-01072,Cliente_1072,Corporativo,40,Tunja,30277641.73
+CLI-01073,Cliente_1073,Corporativo,54,Tunja,37144336.6
+CLI-01074,Cliente_1074,Corporativo,65,Duitama,49750577.41
+CLI-01075,Cliente_1075,Gobierno,33,Tunja,42237136.22
+CLI-01076,Cliente_1076,Pequeña Empresa,55,Medellín,24793576.66
+CLI-01077,Cliente_1077,Pequeña Empresa,31,Cali,64822279.0
+CLI-01078,Cliente_1078,Consumidor Final,36,Medellín,38177303.73
+CLI-01079,Cliente_1079,Corporativo,58,Cali,50304688.86
+CLI-01080,Cliente_1080,Gobierno,28,Bogotá,33179426.8
+CLI-01081,Cliente_1081,Consumidor Final,54,Bucaramanga,41400310.94
+CLI-01082,Cliente_1082,Corporativo,32,Cali,45073622.05
+CLI-01083,Cliente_1083,Pequeña Empresa,34,Tunja,49618336.54
+CLI-01084,Cliente_1084,Consumidor Final,37,Medellín,47688419.66
+CLI-01085,Cliente_1085,Gobierno,52,Bogotá,45466364.0
+CLI-01086,Cliente_1086,Pequeña Empresa,25,Tunja,31218959.23
+CLI-01087,Cliente_1087,Consumidor Final,46,Bogotá,28139047.5
+CLI-01088,Cliente_1088,Corporativo,42,Bucaramanga,38991290.12
+CLI-01089,Cliente_1089,Gobierno,46,Sogamoso,46197536.87
+CLI-01090,Cliente_1090,Corporativo,53,Medellín,32327351.59
+CLI-01091,Cliente_1091,Gobierno,65,Duitama,47782063.59
+CLI-01092,Cliente_1092,Consumidor Final,57,Medellín,52431400.95
+CLI-01093,Cliente_1093,Consumidor Final,33,Bucaramanga,24004148.97
+CLI-01094,Cliente_1094,Pequeña Empresa,55,Medellín,24956951.55
+CLI-01095,Cliente_1095,Corporativo,27,Duitama,33315499.29
+CLI-01096,Cliente_1096,Corporativo,54,Cali,38691352.02
+CLI-01097,Cliente_1097,Corporativo,38,Bogotá,28705195.83
+CLI-01098,Cliente_1098,Corporativo,49,Duitama,51226432.15
+CLI-01099,Cliente_1099,Consumidor Final,33,Tunja,40088802.34
+CLI-01100,Cliente_1100,Pequeña Empresa,39,Bucaramanga,35473364.58
+CLI-01101,Cliente_1101,Corporativo,68,Cali,17769085.71
+CLI-01102,Cliente_1102,Gobierno,44,Tunja,19210210.2
+CLI-01103,Cliente_1103,Consumidor Final,59,Tunja,38372111.0
+CLI-01104,Cliente_1104,Gobierno,43,Bucaramanga,12000000.0
+CLI-01105,Cliente_1105,Gobierno,33,Cali,47151648.92
+CLI-01106,Cliente_1106,Corporativo,45,Sogamoso,33102153.87
+CLI-01107,Cliente_1107,Pequeña Empresa,57,Tunja,73917115.64
+CLI-01108,Cliente_1108,Consumidor Final,42,Tunja,62694995.01
+CLI-01109,Cliente_1109,Consumidor Final,41,Cali,32822611.17
+CLI-01110,Cliente_1110,Corporativo,67,Medellín,33723955.97
+CLI-01111,Cliente_1111,Consumidor Final,38,Tunja,46946978.17
+CLI-01112,Cliente_1112,Corporativo,65,Bogotá,55438071.32
+CLI-01113,Cliente_1113,Corporativo,22,Cali,15343651.31
+CLI-01114,Cliente_1114,Pequeña Empresa,61,Tunja,13563494.42
+CLI-01115,Cliente_1115,Pequeña Empresa,38,Bucaramanga,27535582.33
+CLI-01116,Cliente_1116,Pequeña Empresa,28,Duitama,41992851.0
+CLI-01117,Cliente_1117,Corporativo,47,Bogotá,40962483.09
+CLI-01118,Cliente_1118,Consumidor Final,39,Duitama,47837257.46
+CLI-01119,Cliente_1119,Pequeña Empresa,64,Duitama,20603629.66
+CLI-01120,Cliente_1120,Corporativo,26,Tunja,12000000.0
+CLI-01121,Cliente_1121,Consumidor Final,33,Bogotá,45296170.34
+CLI-01122,Cliente_1122,Gobierno,28,Bogotá,25061644.72
+CLI-01123,Cliente_1123,Consumidor Final,38,Medellín,12000000.0
+CLI-01124,Cliente_1124,Consumidor Final,66,Duitama,36740764.95
+CLI-01125,Cliente_1125,Consumidor Final,33,Bogotá,44518108.26
+CLI-01126,Cliente_1126,Pequeña Empresa,57,Medellín,33535314.41
+CLI-01127,Cliente_1127,Corporativo,55,Cali,29505819.37
+CLI-01128,Cliente_1128,Pequeña Empresa,59,Medellín,33087653.21
+CLI-01129,Cliente_1129,Pequeña Empresa,36,Bucaramanga,30553006.85
+CLI-01130,Cliente_1130,Pequeña Empresa,49,Sogamoso,18823434.66
+CLI-01131,Cliente_1131,Consumidor Final,28,Tunja,26423831.88
+CLI-01132,Cliente_1132,Pequeña Empresa,52,Cali,41255358.86
+CLI-01133,Cliente_1133,Corporativo,44,Sogamoso,38860142.5
+CLI-01134,Cliente_1134,Corporativo,33,Sogamoso,37016717.67
+CLI-01135,Cliente_1135,Consumidor Final,30,Cali,23058218.22
+CLI-01136,Cliente_1136,Corporativo,54,Bucaramanga,32821962.05
+CLI-01137,Cliente_1137,Consumidor Final,60,Medellín,12000000.0
+CLI-01138,Cliente_1138,Pequeña Empresa,33,Tunja,37141719.97
+CLI-01139,Cliente_1139,Pequeña Empresa,49,Medellín,52146292.49
+CLI-01140,Cliente_1140,Pequeña Empresa,60,Bogotá,17310414.42
+CLI-01141,Cliente_1141,Consumidor Final,23,Medellín,27968867.92
+CLI-01142,Cliente_1142,Pequeña Empresa,23,Cali,38949281.34
+CLI-01143,Cliente_1143,Consumidor Final,47,Tunja,50034111.61
+CLI-01144,Cliente_1144,Pequeña Empresa,27,Medellín,29621304.6
+CLI-01145,Cliente_1145,Pequeña Empresa,21,Tunja,26692996.05
+CLI-01146,Cliente_1146,Consumidor Final,60,Tunja,12000000.0
+CLI-01147,Cliente_1147,Consumidor Final,65,Bogotá,36241257.55
+CLI-01148,Cliente_1148,Consumidor Final,41,Bogotá,59504912.48
+CLI-01149,Cliente_1149,Consumidor Final,60,Cali,38328301.54
+CLI-01150,Cliente_1150,Consumidor Final,35,Bucaramanga,34732652.25
+CLI-01151,Cliente_1151,Consumidor Final,48,Sogamoso,38864987.73
+CLI-01152,Cliente_1152,Consumidor Final,68,Tunja,34866895.95
+CLI-01153,Cliente_1153,Consumidor Final,67,Bucaramanga,25243827.53
+CLI-01154,Cliente_1154,Consumidor Final,49,Sogamoso,44879358.99
+CLI-01155,Cliente_1155,Consumidor Final,31,Sogamoso,37709138.28
+CLI-01156,Cliente_1156,Consumidor Final,54,Cali,35211359.02
+CLI-01157,Cliente_1157,Corporativo,30,Sogamoso,23295607.67
+CLI-01158,Cliente_1158,Consumidor Final,65,Sogamoso,50642095.18
+CLI-01159,Cliente_1159,Consumidor Final,69,Tunja,42976432.94
+CLI-01160,Cliente_1160,Corporativo,40,Tunja,28364949.95
+CLI-01161,Cliente_1161,Consumidor Final,40,Duitama,47021898.24
+CLI-01162,Cliente_1162,Corporativo,24,Bucaramanga,29029149.94
+CLI-01163,Cliente_1163,Pequeña Empresa,67,Medellín,25615958.09
+CLI-01164,Cliente_1164,Consumidor Final,39,Bogotá,25883562.59
+CLI-01165,Cliente_1165,Corporativo,56,Medellín,13747177.36
+CLI-01166,Cliente_1166,Consumidor Final,22,Bucaramanga,40658508.57
+CLI-01167,Cliente_1167,Consumidor Final,63,Bogotá,13026261.46
+CLI-01168,Cliente_1168,Pequeña Empresa,52,Medellín,20258674.02
+CLI-01169,Cliente_1169,Corporativo,28,Duitama,12000000.0
+CLI-01170,Cliente_1170,Pequeña Empresa,28,Bogotá,33967163.69
+CLI-01171,Cliente_1171,Consumidor Final,23,Tunja,33196154.48
+CLI-01172,Cliente_1172,Gobierno,54,Medellín,31079645.44
+CLI-01173,Cliente_1173,Consumidor Final,36,Bogotá,22489067.66
+CLI-01174,Cliente_1174,Pequeña Empresa,53,Duitama,20933194.96
+CLI-01175,Cliente_1175,Consumidor Final,43,Sogamoso,40572438.36
+CLI-01176,Cliente_1176,Pequeña Empresa,51,Bogotá,28393376.82
+CLI-01177,Cliente_1177,Consumidor Final,20,Bogotá,38796299.86
+CLI-01178,Cliente_1178,Corporativo,27,Duitama,24377015.77
+CLI-01179,Cliente_1179,Consumidor Final,64,Sogamoso,37172752.91
+CLI-01180,Cliente_1180,Pequeña Empresa,42,Medellín,50639336.45
+CLI-01181,Cliente_1181,Gobierno,66,Cali,42033989.6
+CLI-01182,Cliente_1182,Pequeña Empresa,59,Medellín,30051034.18
+CLI-01183,Cliente_1183,Consumidor Final,31,Sogamoso,38086387.64
+CLI-01184,Cliente_1184,Gobierno,31,Bucaramanga,32112017.91
+CLI-01185,Cliente_1185,Corporativo,65,Duitama,35094562.22
+CLI-01186,Cliente_1186,Gobierno,66,Medellín,31092667.37
+CLI-01187,Cliente_1187,Consumidor Final,34,Bogotá,33027977.53
+CLI-01188,Cliente_1188,Corporativo,60,Duitama,37545120.24
+CLI-01189,Cliente_1189,Pequeña Empresa,38,Tunja,23079695.61
+CLI-01190,Cliente_1190,Consumidor Final,45,Sogamoso,22809454.08
+CLI-01191,Cliente_1191,Corporativo,48,Medellín,18337489.35
+CLI-01192,Cliente_1192,Pequeña Empresa,41,Duitama,15796746.75
+CLI-01193,Cliente_1193,Pequeña Empresa,59,Medellín,20392607.69
+CLI-01194,Cliente_1194,Consumidor Final,40,Duitama,36913550.08
+CLI-01195,Cliente_1195,Corporativo,57,Bogotá,24286549.81
+CLI-01196,Cliente_1196,Consumidor Final,39,Tunja,41163373.57
+CLI-01197,Cliente_1197,Gobierno,48,Tunja,35416564.99
+CLI-01198,Cliente_1198,Gobierno,23,Bucaramanga,12000000.0
+CLI-01199,Cliente_1199,Consumidor Final,26,Duitama,42859707.01
+CLI-01200,Cliente_1200,Corporativo,47,Medellín,44729583.75
+CLI-01201,Cliente_1201,Consumidor Final,47,Tunja,23073647.9
+CLI-01202,Cliente_1202,Corporativo,23,Sogamoso,40042298.51
+CLI-01203,Cliente_1203,Corporativo,41,Tunja,24722021.15
+CLI-01204,Cliente_1204,Pequeña Empresa,31,Cali,36172044.52
+CLI-01205,Cliente_1205,Pequeña Empresa,64,Cali,19826019.12
+CLI-01206,Cliente_1206,Consumidor Final,22,Tunja,13482722.57
+CLI-01207,Cliente_1207,Consumidor Final,41,Duitama,30406193.72
+CLI-01208,Cliente_1208,Pequeña Empresa,63,Bucaramanga,33515252.64
+CLI-01209,Cliente_1209,Pequeña Empresa,21,Tunja,30227843.68
+CLI-01210,Cliente_1210,Gobierno,43,Bogotá,20791633.3
+CLI-01211,Cliente_1211,Pequeña Empresa,53,Medellín,30201211.25
+CLI-01212,Cliente_1212,Pequeña Empresa,46,Bucaramanga,38231537.03
+CLI-01213,Cliente_1213,Corporativo,60,Bogotá,34461283.64
+CLI-01214,Cliente_1214,Consumidor Final,20,Bucaramanga,37190012.37
+CLI-01215,Cliente_1215,Consumidor Final,27,Bogotá,26958617.59
+CLI-01216,Cliente_1216,Corporativo,42,Medellín,49060614.98
+CLI-01217,Cliente_1217,Corporativo,57,Medellín,20885919.96
+CLI-01218,Cliente_1218,Consumidor Final,25,Cali,40850723.57
+CLI-01219,Cliente_1219,Consumidor Final,41,Duitama,49182693.12
+CLI-01220,Cliente_1220,Pequeña Empresa,44,Bogotá,40770897.11
+CLI-01221,Cliente_1221,Gobierno,37,Cali,32569709.28
+CLI-01222,Cliente_1222,Corporativo,36,Bogotá,28660435.44
+CLI-01223,Cliente_1223,Pequeña Empresa,31,Cali,47433051.81
+CLI-01224,Cliente_1224,Gobierno,25,Medellín,17924300.9
+CLI-01225,Cliente_1225,Pequeña Empresa,45,Bucaramanga,23358508.88
+CLI-01226,Cliente_1226,Consumidor Final,46,Sogamoso,30229306.81
+CLI-01227,Cliente_1227,Pequeña Empresa,27,Cali,49851845.09
+CLI-01228,Cliente_1228,Pequeña Empresa,38,Bogotá,39557211.63
+CLI-01229,Cliente_1229,Gobierno,61,Bogotá,23383450.9
+CLI-01230,Cliente_1230,Pequeña Empresa,20,Sogamoso,31276307.54
+CLI-01231,Cliente_1231,Consumidor Final,48,Duitama,27628122.27
+CLI-01232,Cliente_1232,Corporativo,64,Medellín,26482532.09
+CLI-01233,Cliente_1233,Corporativo,68,Bogotá,46746674.7
+CLI-01234,Cliente_1234,Corporativo,54,Tunja,18539082.45
+CLI-01235,Cliente_1235,Consumidor Final,59,Bucaramanga,54305370.27
+CLI-01236,Cliente_1236,Pequeña Empresa,33,Cali,44938756.28
+CLI-01237,Cliente_1237,Consumidor Final,54,Duitama,48090340.05
+CLI-01238,Cliente_1238,Pequeña Empresa,67,Sogamoso,29444725.86
+CLI-01239,Cliente_1239,Gobierno,64,Bucaramanga,33200711.37
+CLI-01240,Cliente_1240,Corporativo,39,Medellín,17802178.23
+CLI-01241,Cliente_1241,Consumidor Final,68,Duitama,28704051.12
+CLI-01242,Cliente_1242,Consumidor Final,32,Cali,40923858.17
+CLI-01243,Cliente_1243,Consumidor Final,57,Cali,50552756.74
+CLI-01244,Cliente_1244,Consumidor Final,68,Sogamoso,21714118.2
+CLI-01245,Cliente_1245,Consumidor Final,65,Tunja,30613928.76
+CLI-01246,Cliente_1246,Consumidor Final,68,Sogamoso,33184409.36
+CLI-01247,Cliente_1247,Corporativo,27,Medellín,18250529.57
+CLI-01248,Cliente_1248,Corporativo,62,Duitama,42096190.9
+CLI-01249,Cliente_1249,Gobierno,39,Duitama,26312116.02
+CLI-01250,Cliente_1250,Consumidor Final,52,Bogotá,32655315.79
+CLI-01251,Cliente_1251,Consumidor Final,45,Tunja,29576607.54
+CLI-01252,Cliente_1252,Pequeña Empresa,58,Tunja,25527937.93
+CLI-01253,Cliente_1253,Corporativo,40,Duitama,34915460.17
+CLI-01254,Cliente_1254,Corporativo,68,Duitama,32412685.06
+CLI-01255,Cliente_1255,Consumidor Final,61,Bucaramanga,30537705.41
+CLI-01256,Cliente_1256,Pequeña Empresa,62,Bucaramanga,26258460.54
+CLI-01257,Cliente_1257,Corporativo,60,Bucaramanga,38834296.05
+CLI-01258,Cliente_1258,Pequeña Empresa,28,Tunja,54843407.22
+CLI-01259,Cliente_1259,Corporativo,43,Bogotá,36678646.79
+CLI-01260,Cliente_1260,Pequeña Empresa,56,Cali,46953418.58
+CLI-01261,Cliente_1261,Pequeña Empresa,68,Bucaramanga,18317336.9
+CLI-01262,Cliente_1262,Consumidor Final,60,Bogotá,36893137.27
+CLI-01263,Cliente_1263,Pequeña Empresa,36,Sogamoso,21831580.17
+CLI-01264,Cliente_1264,Pequeña Empresa,43,Medellín,17276900.87
+CLI-01265,Cliente_1265,Corporativo,40,Bucaramanga,26127543.11
+CLI-01266,Cliente_1266,Corporativo,58,Sogamoso,49302792.01
+CLI-01267,Cliente_1267,Pequeña Empresa,60,Cali,46400189.94
+CLI-01268,Cliente_1268,Pequeña Empresa,58,Medellín,37916056.66
+CLI-01269,Cliente_1269,Consumidor Final,32,Medellín,16607593.28
+CLI-01270,Cliente_1270,Pequeña Empresa,30,Cali,32644632.18
+CLI-01271,Cliente_1271,Consumidor Final,65,Bucaramanga,38620400.11
+CLI-01272,Cliente_1272,Consumidor Final,38,Tunja,37106434.75
+CLI-01273,Cliente_1273,Consumidor Final,30,Cali,12874477.0
+CLI-01274,Cliente_1274,Corporativo,32,Cali,24316185.82
+CLI-01275,Cliente_1275,Pequeña Empresa,65,Cali,34231066.83
+CLI-01276,Cliente_1276,Corporativo,64,Medellín,41435490.91
+CLI-01277,Cliente_1277,Corporativo,20,Bogotá,12000000.0
+CLI-01278,Cliente_1278,Gobierno,59,Sogamoso,33054512.29
+CLI-01279,Cliente_1279,Corporativo,63,Tunja,36716585.24
+CLI-01280,Cliente_1280,Pequeña Empresa,38,Bucaramanga,45195343.86
+CLI-01281,Cliente_1281,Consumidor Final,31,Bucaramanga,43314291.01
+CLI-01282,Cliente_1282,Consumidor Final,27,Sogamoso,41990855.83
+CLI-01283,Cliente_1283,Pequeña Empresa,27,Bogotá,25400713.92
+CLI-01284,Cliente_1284,Corporativo,64,Cali,12103974.35
+CLI-01285,Cliente_1285,Pequeña Empresa,31,Tunja,30283366.92
+CLI-01286,Cliente_1286,Pequeña Empresa,67,Bucaramanga,47019581.9
+CLI-01287,Cliente_1287,Corporativo,52,Sogamoso,51721454.33
+CLI-01288,Cliente_1288,Pequeña Empresa,64,Duitama,43526589.23
+CLI-01289,Cliente_1289,Corporativo,45,Sogamoso,40152089.87
+CLI-01290,Cliente_1290,Corporativo,58,Bucaramanga,39555675.78
+CLI-01291,Cliente_1291,Pequeña Empresa,47,Cali,28326575.04
+CLI-01292,Cliente_1292,Corporativo,24,Duitama,33439276.48
+CLI-01293,Cliente_1293,Pequeña Empresa,27,Bogotá,55028834.31
+CLI-01294,Cliente_1294,Consumidor Final,44,Tunja,23689303.93
+CLI-01295,Cliente_1295,Consumidor Final,46,Bogotá,54377345.49
+CLI-01296,Cliente_1296,Corporativo,65,Bogotá,31135662.15
+CLI-01297,Cliente_1297,Corporativo,42,Sogamoso,50905185.31
+CLI-01298,Cliente_1298,Corporativo,49,Tunja,18118219.89
+CLI-01299,Cliente_1299,Consumidor Final,64,Tunja,42030850.41
+CLI-01300,Cliente_1300,Consumidor Final,66,Bucaramanga,26158758.37
+CLI-01301,Cliente_1301,Corporativo,42,Bucaramanga,18016793.7
+CLI-01302,Cliente_1302,Gobierno,68,Tunja,37622408.51
+CLI-01303,Cliente_1303,Corporativo,66,Duitama,47113661.46
+CLI-01304,Cliente_1304,Pequeña Empresa,39,Medellín,24860702.74
+CLI-01305,Cliente_1305,Consumidor Final,37,Bucaramanga,17011808.47
+CLI-01306,Cliente_1306,Consumidor Final,37,Medellín,33897862.83
+CLI-01307,Cliente_1307,Consumidor Final,21,Sogamoso,33950776.05
+CLI-01308,Cliente_1308,Consumidor Final,23,Duitama,41579835.53
+CLI-01309,Cliente_1309,Pequeña Empresa,49,Tunja,46395134.86
+CLI-01310,Cliente_1310,Consumidor Final,52,Duitama,34287017.82
+CLI-01311,Cliente_1311,Corporativo,55,Bucaramanga,57266039.78
+CLI-01312,Cliente_1312,Consumidor Final,37,Bogotá,37690816.93
+CLI-01313,Cliente_1313,Pequeña Empresa,56,Sogamoso,30842881.93
+CLI-01314,Cliente_1314,Consumidor Final,38,Tunja,15661191.69
+CLI-01315,Cliente_1315,Pequeña Empresa,66,Cali,31848085.76
+CLI-01316,Cliente_1316,Consumidor Final,47,Sogamoso,30963356.66
+CLI-01317,Cliente_1317,Pequeña Empresa,59,Medellín,46523657.56
+CLI-01318,Cliente_1318,Consumidor Final,39,Duitama,40549803.49
+CLI-01319,Cliente_1319,Corporativo,68,Tunja,20847570.54
+CLI-01320,Cliente_1320,Corporativo,52,Sogamoso,37067052.64
+CLI-01321,Cliente_1321,Corporativo,31,Duitama,43058374.06
+CLI-01322,Cliente_1322,Corporativo,34,Tunja,53336376.31
+CLI-01323,Cliente_1323,Consumidor Final,60,Bucaramanga,45650047.61
+CLI-01324,Cliente_1324,Corporativo,58,Sogamoso,44130159.85
+CLI-01325,Cliente_1325,Gobierno,21,Bucaramanga,35721031.94
+CLI-01326,Cliente_1326,Pequeña Empresa,48,Sogamoso,39659744.07
+CLI-01327,Cliente_1327,Corporativo,60,Bucaramanga,49994058.81
+CLI-01328,Cliente_1328,Consumidor Final,29,Duitama,19006671.23
+CLI-01329,Cliente_1329,Consumidor Final,21,Cali,30806728.07
+CLI-01330,Cliente_1330,Pequeña Empresa,30,Sogamoso,25729175.01
+CLI-01331,Cliente_1331,Pequeña Empresa,32,Sogamoso,39549837.42
+CLI-01332,Cliente_1332,Consumidor Final,29,Bucaramanga,49762666.11
+CLI-01333,Cliente_1333,Corporativo,33,Tunja,27836308.56
+CLI-01334,Cliente_1334,Gobierno,37,Sogamoso,12000000.0
+CLI-01335,Cliente_1335,Gobierno,28,Bucaramanga,30053351.06
+CLI-01336,Cliente_1336,Consumidor Final,58,Bogotá,45961684.78
+CLI-01337,Cliente_1337,Corporativo,47,Bucaramanga,41451558.84
+CLI-01338,Cliente_1338,Consumidor Final,22,Duitama,40138234.97
+CLI-01339,Cliente_1339,Corporativo,39,Cali,31640080.38
+CLI-01340,Cliente_1340,Corporativo,25,Bogotá,19651631.17
+CLI-01341,Cliente_1341,Pequeña Empresa,46,Duitama,41183531.86
+CLI-01342,Cliente_1342,Pequeña Empresa,21,Duitama,24988618.28
+CLI-01343,Cliente_1343,Consumidor Final,48,Duitama,61209160.8
+CLI-01344,Cliente_1344,Consumidor Final,57,Tunja,41846086.5
+CLI-01345,Cliente_1345,Consumidor Final,22,Duitama,28032220.37
+CLI-01346,Cliente_1346,Pequeña Empresa,35,Tunja,27663377.03
+CLI-01347,Cliente_1347,Pequeña Empresa,49,Duitama,33884669.52
+CLI-01348,Cliente_1348,Pequeña Empresa,59,Medellín,32125976.94
+CLI-01349,Cliente_1349,Gobierno,21,Bogotá,48402005.31
+CLI-01350,Cliente_1350,Corporativo,36,Medellín,37236994.04
+CLI-01351,Cliente_1351,Consumidor Final,60,Duitama,26220419.13
+CLI-01352,Cliente_1352,Pequeña Empresa,31,Bogotá,57685288.22
+CLI-01353,Cliente_1353,Pequeña Empresa,54,Bogotá,35591699.98
+CLI-01354,Cliente_1354,Consumidor Final,62,Sogamoso,44226076.11
+CLI-01355,Cliente_1355,Pequeña Empresa,20,Cali,27701281.91
+CLI-01356,Cliente_1356,Consumidor Final,64,Medellín,39357387.53
+CLI-01357,Cliente_1357,Gobierno,34,Cali,38733319.89
+CLI-01358,Cliente_1358,Pequeña Empresa,45,Bogotá,12324208.49
+CLI-01359,Cliente_1359,Pequeña Empresa,56,Tunja,59183301.33
+CLI-01360,Cliente_1360,Pequeña Empresa,40,Bogotá,50487733.53
+CLI-01361,Cliente_1361,Gobierno,68,Cali,30233656.21
+CLI-01362,Cliente_1362,Corporativo,50,Medellín,21772763.11
+CLI-01363,Cliente_1363,Consumidor Final,44,Duitama,39170739.37
+CLI-01364,Cliente_1364,Consumidor Final,42,Sogamoso,36040372.39
+CLI-01365,Cliente_1365,Consumidor Final,43,Sogamoso,39268027.38
+CLI-01366,Cliente_1366,Corporativo,57,Sogamoso,37298928.75
+CLI-01367,Cliente_1367,Consumidor Final,47,Duitama,41074891.87
+CLI-01368,Cliente_1368,Gobierno,40,Sogamoso,52367668.39
+CLI-01369,Cliente_1369,Corporativo,62,Medellín,41817238.46
+CLI-01370,Cliente_1370,Corporativo,37,Duitama,22404134.01
+CLI-01371,Cliente_1371,Gobierno,55,Sogamoso,51350754.23
+CLI-01372,Cliente_1372,Corporativo,54,Duitama,54687374.76
+CLI-01373,Cliente_1373,Consumidor Final,64,Cali,72824680.81
+CLI-01374,Cliente_1374,Pequeña Empresa,28,Medellín,21518071.6
+CLI-01375,Cliente_1375,Corporativo,57,Bucaramanga,37914584.16
+CLI-01376,Cliente_1376,Consumidor Final,49,Tunja,12000000.0
+CLI-01377,Cliente_1377,Pequeña Empresa,63,Sogamoso,41637789.88
+CLI-01378,Cliente_1378,Pequeña Empresa,53,Tunja,28421596.42
+CLI-01379,Cliente_1379,Pequeña Empresa,51,Duitama,58081349.54
+CLI-01380,Cliente_1380,Pequeña Empresa,22,Tunja,25704620.36
+CLI-01381,Cliente_1381,Corporativo,22,Medellín,14729803.54
+CLI-01382,Cliente_1382,Pequeña Empresa,47,Medellín,29344835.11
+CLI-01383,Cliente_1383,Gobierno,63,Bogotá,12000000.0
+CLI-01384,Cliente_1384,Pequeña Empresa,34,Sogamoso,44013193.45
+CLI-01385,Cliente_1385,Consumidor Final,60,Bogotá,12000000.0
+CLI-01386,Cliente_1386,Pequeña Empresa,42,Tunja,35341490.97
+CLI-01387,Cliente_1387,Consumidor Final,59,Bucaramanga,12000000.0
+CLI-01388,Cliente_1388,Corporativo,30,Bogotá,31156426.35
+CLI-01389,Cliente_1389,Gobierno,67,Bogotá,54720537.87
+CLI-01390,Cliente_1390,Pequeña Empresa,51,Medellín,39327774.7
+CLI-01391,Cliente_1391,Corporativo,55,Bucaramanga,24638076.74
+CLI-01392,Cliente_1392,Corporativo,52,Duitama,34625558.13
+CLI-01393,Cliente_1393,Corporativo,43,Tunja,35216202.46
+CLI-01394,Cliente_1394,Pequeña Empresa,58,Bogotá,40671564.15
+CLI-01395,Cliente_1395,Pequeña Empresa,53,Bucaramanga,18597699.64
+CLI-01396,Cliente_1396,Consumidor Final,47,Sogamoso,42110807.29
+CLI-01397,Cliente_1397,Pequeña Empresa,56,Bucaramanga,12000000.0
+CLI-01398,Cliente_1398,Corporativo,26,Tunja,27441385.37
+CLI-01399,Cliente_1399,Consumidor Final,23,Bucaramanga,29140713.89
+CLI-01400,Cliente_1400,Consumidor Final,56,Bucaramanga,42599921.91
+CLI-01401,Cliente_1401,Corporativo,20,Bucaramanga,35271570.23
+CLI-01402,Cliente_1402,Corporativo,20,Sogamoso,18133243.35
+CLI-01403,Cliente_1403,Corporativo,66,Bogotá,23180082.49
+CLI-01404,Cliente_1404,Consumidor Final,39,Tunja,37384160.11
+CLI-01405,Cliente_1405,Consumidor Final,38,Sogamoso,34051191.9
+CLI-01406,Cliente_1406,Pequeña Empresa,48,Bucaramanga,28050510.68
+CLI-01407,Cliente_1407,Consumidor Final,29,Bucaramanga,29229994.53
+CLI-01408,Cliente_1408,Consumidor Final,37,Bogotá,43354015.97
+CLI-01409,Cliente_1409,Pequeña Empresa,47,Tunja,28787689.13
+CLI-01410,Cliente_1410,Consumidor Final,54,Medellín,33942905.07
+CLI-01411,Cliente_1411,Corporativo,62,Sogamoso,61039239.06
+CLI-01412,Cliente_1412,Corporativo,66,Bogotá,17915808.36
+CLI-01413,Cliente_1413,Pequeña Empresa,50,Tunja,12777887.22
+CLI-01414,Cliente_1414,Corporativo,46,Sogamoso,44403075.98
+CLI-01415,Cliente_1415,Pequeña Empresa,30,Bucaramanga,26856283.26
+CLI-01416,Cliente_1416,Gobierno,68,Tunja,31181149.67
+CLI-01417,Cliente_1417,Corporativo,68,Tunja,25626123.46
+CLI-01418,Cliente_1418,Corporativo,57,Duitama,31882398.31
+CLI-01419,Cliente_1419,Pequeña Empresa,24,Tunja,54182457.35
+CLI-01420,Cliente_1420,Gobierno,27,Medellín,44625541.5
+CLI-01421,Cliente_1421,Pequeña Empresa,53,Tunja,45346682.14
+CLI-01422,Cliente_1422,Pequeña Empresa,67,Medellín,18005275.33
+CLI-01423,Cliente_1423,Corporativo,31,Bucaramanga,21186155.16
+CLI-01424,Cliente_1424,Corporativo,57,Medellín,12000000.0
+CLI-01425,Cliente_1425,Gobierno,20,Sogamoso,25287430.15
+CLI-01426,Cliente_1426,Gobierno,50,Bucaramanga,46480438.24
+CLI-01427,Cliente_1427,Corporativo,23,Bucaramanga,41203358.19
+CLI-01428,Cliente_1428,Gobierno,68,Medellín,32341840.84
+CLI-01429,Cliente_1429,Consumidor Final,64,Bogotá,34732396.6
+CLI-01430,Cliente_1430,Consumidor Final,69,Cali,26733373.49
+CLI-01431,Cliente_1431,Pequeña Empresa,24,Tunja,37457106.59
+CLI-01432,Cliente_1432,Pequeña Empresa,49,Duitama,44190539.35
+CLI-01433,Cliente_1433,Pequeña Empresa,43,Cali,15609358.55
+CLI-01434,Cliente_1434,Consumidor Final,22,Tunja,38595772.25
+CLI-01435,Cliente_1435,Corporativo,30,Tunja,46189218.45
+CLI-01436,Cliente_1436,Corporativo,64,Bucaramanga,30018796.53
+CLI-01437,Cliente_1437,Pequeña Empresa,23,Tunja,43408407.35
+CLI-01438,Cliente_1438,Consumidor Final,45,Duitama,68775853.33
+CLI-01439,Cliente_1439,Corporativo,46,Tunja,33747886.48
+CLI-01440,Cliente_1440,Consumidor Final,65,Medellín,39719684.6
+CLI-01441,Cliente_1441,Gobierno,62,Cali,26143315.0
+CLI-01442,Cliente_1442,Corporativo,46,Medellín,37175013.95
+CLI-01443,Cliente_1443,Consumidor Final,61,Duitama,40523259.5
+CLI-01444,Cliente_1444,Pequeña Empresa,69,Tunja,37338108.08
+CLI-01445,Cliente_1445,Consumidor Final,25,Sogamoso,22763656.16
+CLI-01446,Cliente_1446,Corporativo,34,Duitama,37476341.26
+CLI-01447,Cliente_1447,Consumidor Final,49,Bucaramanga,52546351.26
+CLI-01448,Cliente_1448,Consumidor Final,61,Medellín,40383629.17
+CLI-01449,Cliente_1449,Gobierno,56,Medellín,46543846.27
+CLI-01450,Cliente_1450,Consumidor Final,56,Bogotá,32155856.36
+CLI-01451,Cliente_1451,Pequeña Empresa,61,Tunja,43998802.87
+CLI-01452,Cliente_1452,Consumidor Final,56,Bucaramanga,38351214.06
+CLI-01453,Cliente_1453,Consumidor Final,54,Sogamoso,23589071.24
+CLI-01454,Cliente_1454,Pequeña Empresa,42,Medellín,38822252.06
+CLI-01455,Cliente_1455,Corporativo,25,Medellín,23099640.04
+CLI-01456,Cliente_1456,Gobierno,23,Bucaramanga,27405436.7
+CLI-01457,Cliente_1457,Consumidor Final,37,Duitama,37271939.69
+CLI-01458,Cliente_1458,Consumidor Final,28,Duitama,38566931.28
+CLI-01459,Cliente_1459,Corporativo,68,Tunja,20729210.42
+CLI-01460,Cliente_1460,Consumidor Final,48,Bogotá,47647829.25
+CLI-01461,Cliente_1461,Pequeña Empresa,32,Medellín,41864075.34
+CLI-01462,Cliente_1462,Consumidor Final,66,Bogotá,26543258.77
+CLI-01463,Cliente_1463,Corporativo,36,Duitama,16548982.44
+CLI-01464,Cliente_1464,Consumidor Final,64,Duitama,33261145.05
+CLI-01465,Cliente_1465,Gobierno,51,Cali,29648675.43
+CLI-01466,Cliente_1466,Corporativo,67,Sogamoso,36357685.48
+CLI-01467,Cliente_1467,Gobierno,41,Tunja,30642600.07
+CLI-01468,Cliente_1468,Pequeña Empresa,23,Cali,12000000.0
+CLI-01469,Cliente_1469,Consumidor Final,24,Sogamoso,30339836.74
+CLI-01470,Cliente_1470,Consumidor Final,56,Cali,31332570.67
+CLI-01471,Cliente_1471,Pequeña Empresa,60,Cali,42603932.3
+CLI-01472,Cliente_1472,Consumidor Final,68,Tunja,26621603.9
+CLI-01473,Cliente_1473,Consumidor Final,32,Tunja,55144096.08
+CLI-01474,Cliente_1474,Pequeña Empresa,53,Bucaramanga,12060313.39
+CLI-01475,Cliente_1475,Pequeña Empresa,64,Bogotá,50734009.97
+CLI-01476,Cliente_1476,Consumidor Final,41,Bogotá,32308172.35
+CLI-01477,Cliente_1477,Consumidor Final,42,Bucaramanga,45315018.47
+CLI-01478,Cliente_1478,Consumidor Final,22,Bucaramanga,35957617.81
+CLI-01479,Cliente_1479,Consumidor Final,61,Duitama,48674666.43
+CLI-01480,Cliente_1480,Pequeña Empresa,53,Sogamoso,30351656.43
+CLI-01481,Cliente_1481,Consumidor Final,51,Cali,21816554.9
+CLI-01482,Cliente_1482,Corporativo,64,Bucaramanga,52046051.45
+CLI-01483,Cliente_1483,Pequeña Empresa,68,Medellín,33638232.25
+CLI-01484,Cliente_1484,Corporativo,40,Bogotá,37658701.68
+CLI-01485,Cliente_1485,Pequeña Empresa,65,Bucaramanga,49817022.97
+CLI-01486,Cliente_1486,Pequeña Empresa,63,Medellín,22616537.09
+CLI-01487,Cliente_1487,Pequeña Empresa,40,Medellín,42145890.77
+CLI-01488,Cliente_1488,Consumidor Final,63,Medellín,27921262.92
+CLI-01489,Cliente_1489,Pequeña Empresa,30,Duitama,33413967.73
+CLI-01490,Cliente_1490,Pequeña Empresa,58,Duitama,35867347.58
+CLI-01491,Cliente_1491,Corporativo,23,Medellín,16997337.66
+CLI-01492,Cliente_1492,Pequeña Empresa,20,Sogamoso,25653955.49
+CLI-01493,Cliente_1493,Corporativo,47,Duitama,51212874.71
+CLI-01494,Cliente_1494,Corporativo,43,Cali,45634294.26
+CLI-01495,Cliente_1495,Consumidor Final,54,Medellín,34248325.07
+CLI-01496,Cliente_1496,Consumidor Final,32,Cali,37917481.5
+CLI-01497,Cliente_1497,Consumidor Final,66,Cali,31469089.93
+CLI-01498,Cliente_1498,Pequeña Empresa,53,Medellín,51279000.63
+CLI-01499,Cliente_1499,Pequeña Empresa,30,Bogotá,32595769.07
+CLI-01500,Cliente_1500,Consumidor Final,55,Sogamoso,37782105.11

@@ -1,0 +1,9 @@
+id_caso,empresa,objetivo,tipo_tarea_esperada
+1,Banco Andino,Identificar qué clientes tienen alta probabilidad de no pagar su crédito hipotecario el próximo mes,Clasificación Supervisada
+2,Supermercados Éxito,Descubrir qué productos suelen comprarse juntos los fines de semana en la misma canasta,Reglas de Asociación (Apriori)
+3,Ecopetrol,Predecir la presión en bar de un oleoducto para las próximas 6 horas basado en flujo y temperatura,Regresión Continua
+4,Claro Telecomunicaciones,Agrupar la base de usuarios móviles en 4 arquetipos de comportamiento sin etiquetas previas,Clustering (No Supervisado)
+5,Bancolombia,Monitorear transacciones con tarjeta en tiempo real y alertar aquellas que se desvíen del comportamiento habitual del usuario,Detección de Anomalías
+6,Hospital San Rafael,Clasificar si una mamografía digital presenta un nódulo benigno o maligno,Clasificación Supervisada
+7,Rappi,Estimar el tiempo exacto en minutos que tardará en llegar un pedido según el tráfico y el clima,Regresión Continua
+8,Farmatodo,Segmentar las farmacias del país según volumen de ventas y perfil demográfico para logística,Clustering (No Supervisado)

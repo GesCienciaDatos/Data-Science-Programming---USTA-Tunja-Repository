@@ -1,0 +1,28 @@
+(1225, 6)
+id_cliente             str
+edad               float64
+ingreso_mensual    float64
+ciudad                 str
+gasto_anual        float64
+cliente_activo         str
+dtype: object
+  id_cliente  edad  ingreso_mensual    ciudad  gasto_anual cliente_activo
+0  CLI-00001  56.0       7142533.40  Medellín     57055.53             Si
+1  CLI-00002  69.0       4075730.18     Tunja     16594.03             No
+2  CLI-00003  46.0       6434095.30  Medellín   3052355.52             Si
+3  CLI-00004  32.0       5952009.71      Cali    165218.13             Si
+4  CLI-00005  60.0       4186568.77    Bogotá    708229.56             Si
+(8, 4)
+id_caso                int64
+empresa                  str
+objetivo                 str
+tipo_tarea_esperada      str
+dtype: object
+   id_caso  ...             tipo_tarea_esperada
+0        1  ...       Clasificación Supervisada
+1        2  ...  Reglas de Asociación (Apriori)
+2        3  ...              Regresión Continua
+3        4  ...     Clustering (No Supervisado)
+4        5  ...          Detección de Anomalías
+
+[5 rows x 4 columns]
