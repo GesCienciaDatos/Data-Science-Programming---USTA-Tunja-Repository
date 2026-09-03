@@ -145,6 +145,7 @@ onMounted(() => {
       <!-- 1. Directory View (Landing + Course Bento Grid) -->
       <div v-if="currentView === 'directory'" class="space-y-4">
         <HeroSection 
+          :courses="courses"
           @explore-course="selectCourse"
           @open-datasets="isDatasetModalOpen = true"
         />

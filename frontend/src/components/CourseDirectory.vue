@@ -31,7 +31,7 @@ const filteredCourses = computed(() => {
 </script>
 
 <template>
-  <section class="py-8 px-4 sm:px-8 max-w-container mx-auto space-y-6">
+  <section id="plan-de-estudios" class="py-8 px-4 sm:px-8 max-w-container mx-auto space-y-6 scroll-mt-20">
     
     <!-- Directory Header & Filters Bar -->
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-3 border-b border-slate-200 dark:border-slate-800">
@@ -97,7 +97,7 @@ const filteredCourses = computed(() => {
           <div class="flex items-start justify-between gap-3 mb-3">
             <div class="space-y-0.5">
               <span class="font-mono text-[11px] text-brand-cyan font-semibold block">
-                {{ course.code || 'DSP-2026' }}
+                {{ course.code || 'ECD-2026' }}
               </span>
               <h3 class="text-base font-semibold text-slate-900 dark:text-slate-100 leading-snug">
                 {{ course.name }}
@@ -126,11 +126,15 @@ const filteredCourses = computed(() => {
           <div class="grid grid-cols-3 gap-2 mb-5 font-mono text-[11px]">
             <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">
               <span class="block text-[9px] text-slate-400 uppercase">Cuadernos</span>
-              <span class="font-semibold text-slate-800 dark:text-slate-200">{{ course.active !== false ? (course.stats?.total_notebooks || 144) : '—' }}</span>
+              <span class="font-semibold text-slate-800 dark:text-slate-200">
+                {{ course.active !== false ? (course.notebooks?.length || course.stats?.total_notebooks || 0) : '—' }}
+              </span>
             </div>
             <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">
               <span class="block text-[9px] text-slate-400 uppercase">Módulos</span>
-              <span class="font-semibold text-slate-800 dark:text-slate-200">{{ (course.modules || []).length || '—' }}</span>
+              <span class="font-semibold text-slate-800 dark:text-slate-200">
+                {{ (course.modules || []).length || '—' }}
+              </span>
             </div>
             <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">
               <span class="block text-[9px] text-slate-400 uppercase">Semestre</span>
