@@ -20,6 +20,6 @@
 *.jpeg binary
 *.gif binary
 *.webp binary
-*.mp4 binary
+*.mp4 filter=lfs diff=lfs merge=lfs -text
 *.pdf binary
 *.parquet binary
