@@ -175,3 +175,10 @@ graphify-out/
 .graphify_labels.json
 .graphify_manifest.json
 .graphifyignore
+
+# ------------------------------------------------------------------------------
+# 11. Node & Frontend
+# ------------------------------------------------------------------------------
+node_modules/
+.npm/
+

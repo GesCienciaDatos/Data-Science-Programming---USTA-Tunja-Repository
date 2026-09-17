@@ -177,6 +177,7 @@ onMounted(() => {
       v-if="isDatasetModalOpen"
       :datasets="datasets"
       @close="isDatasetModalOpen = false"
+      @show-toast="showToast"
     />
 
     <GlobalSearchModal 

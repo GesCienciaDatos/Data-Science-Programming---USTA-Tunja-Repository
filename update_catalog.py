@@ -656,12 +656,25 @@ def scan_course_datasets(course_folder_name, course_dir):
                 rows_count = 100
                 cols_count = 5
                 headers = []
+                sample_data = []
                 try:
                     with open(csv_file, 'r', encoding='utf-8', errors='ignore') as f:
                         reader = csv.reader(f)
                         headers = next(reader, [])
                         cols_count = len(headers)
-                        rows_count = sum(1 for _ in reader) + 1
+                        # Extract up to 5 sample rows for live preview
+                        for _ in range(5):
+                            row = next(reader, None)
+                            if row is not None:
+                                sample_row = {}
+                                for i, (h, val) in enumerate(zip(headers, row)):
+                                    key = h.strip() if h and h.strip() else f"col_{i+1}"
+                                    # Truncate very long cells to keep catalog lightweight
+                                    sample_row[key] = (val[:80] + "...") if len(val) > 80 else val
+                                sample_data.append(sample_row)
+                            else:
+                                break
+                        rows_count = len(sample_data) + sum(1 for _ in reader) + 1
                 except Exception:
                     pass
 
@@ -669,6 +682,7 @@ def scan_course_datasets(course_folder_name, course_dir):
                 target_str = headers[-1] if headers else "Target"
                 rel_path = f"{course_folder_name}/{parent_name}/data/{csv_file.name}"
                 encoded_path = urllib.parse.quote(rel_path)
+                raw_url = f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/{encoded_path}"
 
                 datasets.append({
                     "name": csv_file.name,
@@ -679,7 +693,10 @@ def scan_course_datasets(course_folder_name, course_dir):
                     "target": target_str,
                     "features": features_str,
                     "description": f"Dataset de práctica para {parent_name}.",
-                    "snippet": f"df = pd.read_csv('https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/{encoded_path}')"
+                    "sample_data": sample_data,
+                    "download_url": raw_url,
+                    "raw_url": raw_url,
+                    "snippet": f"df = pd.read_csv('{raw_url}')"
                 })
 
     return datasets

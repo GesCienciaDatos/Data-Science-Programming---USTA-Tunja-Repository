@@ -122,6 +122,71 @@ const selectedDataset = computed(() => {
   return dsList[selectedDatasetIndex.value] || dsList[0] || null;
 });
 
+const isDownloadingDataset = ref(false);
+
+function getDatasetDownloadUrl(ds) {
+  if (!ds) return '#';
+  if (ds.download_url) return ds.download_url;
+  if (ds.raw_url) return ds.raw_url;
+  if (ds.snippet) {
+    const match = ds.snippet.match(/https:\/\/[^')]+/);
+    if (match) return match[0];
+  }
+  if (ds.path) {
+    const encoded = ds.path.split('/').map(encodeURIComponent).join('/');
+    return `https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/${encoded}`;
+  }
+  return '#';
+}
+
+async function downloadDataset(ds) {
+  if (!ds) return;
+  const url = getDatasetDownloadUrl(ds);
+  const filename = ds.name || 'dataset.csv';
+  isDownloadingDataset.value = true;
+  emit('show-toast', `Iniciando descarga: ${filename}...`);
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+    const blob = await response.blob();
+    const blobUrl = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = blobUrl;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(blobUrl);
+    emit('show-toast', `Dataset descargado con éxito: ${filename}`);
+  } catch (err) {
+    console.warn('Descarga por blob falló, aplicando fallback directo:', err);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', filename);
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    emit('show-toast', `Descarga iniciada: ${filename}`);
+  } finally {
+    isDownloadingDataset.value = false;
+  }
+}
+
+function copyDatasetSnippet(ds) {
+  if (!ds) return;
+  const code = ds.snippet || `df = pd.read_csv('${getDatasetDownloadUrl(ds)}')`;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(code).then(() => {
+      emit('show-toast', 'Código de carga en Python copiado al portapapeles.');
+    });
+  } else {
+    emit('show-toast', 'Snippet: ' + code);
+  }
+}
+
 function copyColabLink(url) {
   if (navigator.clipboard) {
     navigator.clipboard.writeText(url).then(() => {
@@ -675,75 +740,217 @@ function copyColabLink(url) {
     <!-- TAB 5: DATASETS                                                           -->
     <!-- ========================================================================= -->
     <div v-else-if="activeWorkspaceTab === 'datasets'" class="space-y-6">
-      <div class="pb-3 border-b border-slate-200 dark:border-slate-800">
-        <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">
-          Datasets Oficiales de la Asignatura
-        </h3>
-        <p class="text-xs text-slate-500">Conjuntos de datos para experimentación estadística y Machine Learning.</p>
+      <div class="pb-3 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+            <span>Datasets Oficiales de la Asignatura</span>
+            <span class="text-xs px-2 py-0.5 rounded font-mono bg-slate-100 dark:bg-space-800 text-slate-700 dark:text-slate-300 font-medium">
+              {{ (course.datasets || []).length }} disponibles
+            </span>
+          </h3>
+          <p class="text-xs text-slate-500 mt-0.5">
+            Conjuntos de datos estructurados para experimentación estadística, feature engineering y Machine Learning.
+          </p>
+        </div>
+
+        <div v-if="selectedDataset" class="flex items-center gap-2">
+          <button 
+            @click="downloadDataset(selectedDataset)"
+            :disabled="isDownloadingDataset"
+            class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-mono text-xs font-semibold flex items-center gap-2 shadow-xs hover:shadow transition-all disabled:opacity-50 cursor-pointer"
+            :title="'Descargar ' + selectedDataset.name"
+          >
+            <span class="material-symbols-outlined text-base">
+              {{ isDownloadingDataset ? 'sync' : 'download' }}
+            </span>
+            <span>{{ isDownloadingDataset ? 'Descargando...' : 'Descargar Dataset' }}</span>
+          </button>
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Datasets Selector -->
+      <!-- If course has no datasets -->
+      <div v-if="!course.datasets || course.datasets.length === 0" class="p-12 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl space-y-2 font-mono text-xs text-slate-500">
+        <span class="material-symbols-outlined text-3xl text-slate-400">database</span>
+        <p>No hay datasets registrados actualmente para esta asignatura.</p>
+      </div>
+
+      <div v-else class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left: Datasets Selector -->
         <div class="lg:col-span-4 space-y-2">
           <button 
             v-for="(ds, idx) in course.datasets"
             :key="ds.name"
             @click="selectedDatasetIndex = idx"
-            class="w-full text-left p-3 rounded-lg border transition-all text-xs font-mono"
+            class="w-full text-left p-3 rounded-lg border transition-all text-xs font-mono group relative"
             :class="selectedDatasetIndex === idx ? 'bg-white dark:bg-space-850 border-brand-cyan text-slate-900 dark:text-slate-100 font-semibold shadow-xs' : 'bg-slate-50 dark:bg-space-950 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-space-900'"
           >
-            <div class="flex items-center justify-between mb-0.5">
-              <span class="truncate">{{ ds.name }}</span>
-              <span class="text-[10px] opacity-75">{{ ds.size || 'CSV' }}</span>
+            <div class="flex items-center justify-between mb-1">
+              <span class="truncate pr-2 font-medium">{{ ds.name }}</span>
+              <span class="text-[10px] px-1.5 py-0.2 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shrink-0 font-medium">
+                CSV
+              </span>
             </div>
-            <p class="text-[10px] text-slate-500 line-clamp-1 font-normal">
+            <p class="text-[10px] text-slate-500 line-clamp-1 font-normal mb-1.5">
               {{ ds.description }}
             </p>
+            <div class="flex items-center justify-between text-[10px] text-slate-400 font-normal">
+              <span>{{ ds.rows ? ds.rows.toLocaleString() : 'N/A' }} filas • {{ ds.cols || ds.columns || 'N/A' }} cols</span>
+              <span 
+                @click.stop="downloadDataset(ds)"
+                class="hover:text-emerald-500 transition-colors p-0.5 rounded"
+                title="Descargar este archivo CSV"
+              >
+                <span class="material-symbols-outlined text-sm">download</span>
+              </span>
+            </div>
           </button>
         </div>
 
-        <!-- Dataset Preview -->
-        <div class="lg:col-span-8 glass-card rounded-xl p-5 border space-y-4">
-          <div v-if="selectedDataset" class="space-y-4">
-            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 pb-3 border-b border-slate-200 dark:border-slate-800">
-              <div>
-                <h4 class="text-base font-semibold text-slate-900 dark:text-slate-100 font-mono">
-                  {{ selectedDataset.name }}
-                </h4>
-                <p class="text-xs text-slate-500">{{ selectedDataset.description }}</p>
+        <!-- Right: Dataset Preview & Action Details -->
+        <div class="lg:col-span-8 glass-card rounded-xl p-5 border space-y-5">
+          <div v-if="selectedDataset" class="space-y-5">
+            
+            <!-- Dataset Header & Action Bar -->
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+              <div class="space-y-1">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-brand-cyan text-lg">database</span>
+                  <h4 class="text-base font-semibold text-slate-900 dark:text-slate-100 font-mono">
+                    {{ selectedDataset.name }}
+                  </h4>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full font-mono font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                    CSV
+                  </span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400">{{ selectedDataset.description }}</p>
               </div>
-              <div class="flex items-center gap-2 font-mono text-[11px]">
-                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-space-800 border border-slate-200 dark:border-slate-700">
-                  {{ selectedDataset.rows ? selectedDataset.rows.toLocaleString() : 'N/A' }} Filas
-                </span>
-                <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-space-800 border border-slate-200 dark:border-slate-700">
-                  {{ selectedDataset.columns || 'N/A' }} Columnas
-                </span>
+
+              <!-- Action Buttons & Badges -->
+              <div class="flex flex-wrap items-center gap-2">
+                <div class="flex items-center gap-1.5 font-mono text-[11px]">
+                  <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-space-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+                    {{ selectedDataset.rows ? selectedDataset.rows.toLocaleString() : 'N/A' }} Filas
+                  </span>
+                  <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-space-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+                    {{ selectedDataset.cols || selectedDataset.columns || 'N/A' }} Columnas
+                  </span>
+                </div>
+
+                <!-- Botón Principal Descargar Dataset -->
+                <button 
+                  @click="downloadDataset(selectedDataset)"
+                  :disabled="isDownloadingDataset"
+                  class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-mono text-xs font-semibold flex items-center gap-2 shadow-sm hover:shadow transition-all disabled:opacity-50 cursor-pointer"
+                  :title="'Descargar ' + selectedDataset.name + ' en formato CSV'"
+                >
+                  <span class="material-symbols-outlined text-base">
+                    {{ isDownloadingDataset ? 'sync' : 'download' }}
+                  </span>
+                  <span>{{ isDownloadingDataset ? 'Descargando...' : 'Descargar Dataset' }}</span>
+                </button>
               </div>
             </div>
 
-            <!-- Table -->
-            <div v-if="selectedDataset.sample_data && selectedDataset.sample_data.length > 0" class="border border-slate-200 dark:border-slate-800 rounded-lg overflow-x-auto">
-              <table class="w-full text-left border-collapse font-mono text-xs">
-                <thead>
-                  <tr class="bg-slate-100 dark:bg-space-950 border-b border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
-                    <th v-for="key in Object.keys(selectedDataset.sample_data[0])" :key="key" class="p-2 font-semibold">
-                      {{ key }}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-600 dark:text-slate-400">
-                  <tr v-for="(row, rIdx) in selectedDataset.sample_data" :key="rIdx" class="hover:bg-slate-50 dark:hover:bg-space-850">
-                    <td v-for="key in Object.keys(selectedDataset.sample_data[0])" :key="key" class="p-2 whitespace-nowrap">
-                      {{ row[key] }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+            <!-- Python Code Snippet Box -->
+            <div class="bg-slate-900 rounded-lg p-3 text-slate-100 font-mono text-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 border border-slate-800 shadow-inner">
+              <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto">
+                <span class="text-brand-cyan select-none">$</span>
+                <span class="text-slate-400 select-none">Python:</span>
+                <code class="text-emerald-400 text-[11px] whitespace-nowrap">
+                  {{ selectedDataset.snippet || `df = pd.read_csv('${getDatasetDownloadUrl(selectedDataset)}')` }}
+                </code>
+              </div>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <button 
+                  @click="copyDatasetSnippet(selectedDataset)"
+                  class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-[11px] flex items-center gap-1 transition-colors"
+                  title="Copiar código de carga en Python"
+                >
+                  <span class="material-symbols-outlined text-xs">content_copy</span>
+                  <span>Copiar Snippet</span>
+                </button>
+                <a 
+                  :href="getDatasetDownloadUrl(selectedDataset)" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="p-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
+                  title="Ver archivo Raw en GitHub"
+                >
+                  <span class="material-symbols-outlined text-xs">open_in_new</span>
+                </a>
+              </div>
             </div>
-            <div v-else class="p-8 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-lg text-xs font-mono text-slate-500">
-              Dataset disponible para carga directa mediante <code>pd.read_csv()</code> en los cuadernos del curso.
+
+            <!-- Variables & Features Metadata -->
+            <div v-if="selectedDataset.target || selectedDataset.features" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+              <div v-if="selectedDataset.target" class="p-2.5 rounded-lg bg-slate-50 dark:bg-space-850 border border-slate-200 dark:border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">Variable Objetivo (Target):</span>
+                <span class="text-brand-cyan font-semibold">{{ selectedDataset.target }}</span>
+              </div>
+              <div v-if="selectedDataset.features" class="p-2.5 rounded-lg bg-slate-50 dark:bg-space-850 border border-slate-200 dark:border-slate-800">
+                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">Variables Predictoras / Features:</span>
+                <span class="text-slate-700 dark:text-slate-300 truncate block" :title="selectedDataset.features">{{ selectedDataset.features }}</span>
+              </div>
             </div>
+
+            <!-- Table Preview -->
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-xs text-slate-500 uppercase tracking-wider block">
+                  Previsualización de Muestra (Primeros Registros)
+                </span>
+                <span class="font-mono text-[10px] text-slate-400">
+                  Formato tabular delimitado
+                </span>
+              </div>
+
+              <div v-if="selectedDataset.sample_data && selectedDataset.sample_data.length > 0" class="border border-slate-200 dark:border-slate-800 rounded-lg overflow-x-auto shadow-xs">
+                <table class="w-full text-left border-collapse font-mono text-xs">
+                  <thead>
+                    <tr class="bg-slate-100 dark:bg-space-950 border-b border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+                      <th v-for="key in Object.keys(selectedDataset.sample_data[0])" :key="key" class="p-2.5 font-semibold whitespace-nowrap bg-slate-100 dark:bg-space-950">
+                        {{ key }}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-600 dark:text-slate-400">
+                    <tr v-for="(row, rIdx) in selectedDataset.sample_data" :key="rIdx" class="hover:bg-slate-50 dark:hover:bg-space-850/60 transition-colors">
+                      <td v-for="key in Object.keys(selectedDataset.sample_data[0])" :key="key" class="p-2.5 whitespace-nowrap">
+                        {{ row[key] }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div v-else class="p-8 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-lg text-xs font-mono text-slate-500">
+                Dataset disponible para descarga inmediata y carga directa mediante <code>pd.read_csv()</code> en los cuadernos del curso.
+              </div>
+            </div>
+
+            <!-- Bottom Action Footer Strip -->
+            <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-xs">
+              <span class="text-slate-500 text-[11px]">
+                Archivo: <span class="text-slate-900 dark:text-slate-200 font-semibold">{{ selectedDataset.name }}</span> ({{ selectedDataset.rows ? selectedDataset.rows.toLocaleString() : 'N/A' }} filas)
+              </span>
+              <div class="flex items-center gap-2 w-full sm:w-auto">
+                <button 
+                  @click="copyDatasetSnippet(selectedDataset)"
+                  class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-space-800 text-slate-700 dark:text-slate-300 transition-colors flex items-center gap-1.5"
+                >
+                  <span class="material-symbols-outlined text-sm">content_copy</span>
+                  <span>Copiar Snippet</span>
+                </button>
+                <button 
+                  @click="downloadDataset(selectedDataset)"
+                  :disabled="isDownloadingDataset"
+                  class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+                >
+                  <span class="material-symbols-outlined text-sm">download</span>
+                  <span>Descargar Dataset</span>
+                </button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
