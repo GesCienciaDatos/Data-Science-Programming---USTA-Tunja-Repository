@@ -99,7 +99,7 @@ COURSE_DEFINITIONS = [
         "title": "Minería de Datos y Descubrimiento de Patrones",
         "folder": "Data Mining",
         "icon": "⛏️",
-        "badge": "1 Módulo (9 Cuadernos)",
+        "badge": "Activo / Disponible",
         "badge_color": "emerald",
         "color": "#f43f5e",
         "gradient": "from-rose-500/20 via-pink-600/10 to-transparent",
@@ -144,34 +144,34 @@ COURSE_DEFINITIONS = [
     {
         "id": "introduccion-ia",
         "name": "Introducción a la Inteligencia Artificial",
-        "title": "Redes Neuronales, Visión y Modelos Generativos",
+        "title": "Fundamentos de IA, Búsqueda y Agentes de Conocimiento",
         "folder": "Introduccion a la Inteligencia Artificial",
         "icon": "🤖",
-        "badge": "En Construcción",
-        "badge_color": "pink",
+        "badge": "Activo / Disponible",
+        "badge_color": "emerald",
         "color": "#ec4899",
         "gradient": "from-pink-500/20 via-rose-600/10 to-transparent",
         "border_glow": "border-pink-500/40",
-        "description": "Fundamentos de redes neuronales profundas (Deep Learning) con PyTorch, visión computacional, procesamiento del lenguaje natural (NLP) y fundamentos de LLMs.",
+        "description": "Fundamentos y evolución histórica de la IA, problemas aptos y disciplinas convergentes, taxonomía de ramas, consideraciones éticas, convergencia IA/ML/DL y GenAI, algoritmos de búsqueda (DFS, BFS, GBFS, A*) y agentes basados en conocimiento con lógica proposicional.",
         "level": "Especialización",
         "semester": "Semestre II",
-        "active": False
+        "active": True
     },
     {
         "id": "visual-analytics",
         "name": "Visual Analytics and Critical Thinking",
-        "title": "Analítica Visual y Pensamiento Crítico",
+        "title": "Analítica Visual, Storytelling y Power Query",
         "folder": "Visual Analytics and Critical Thinking",
-        "icon": "👁️",
-        "badge": "En Construcción",
+        "icon": "📊",
+        "badge": "Activo / Disponible",
         "badge_color": "emerald",
         "color": "#10b981",
         "gradient": "from-emerald-500/20 via-teal-600/10 to-transparent",
         "border_glow": "border-emerald-500/40",
-        "description": "Tableros analíticos interactivos con Plotly, Dash y Streamlit, principios de percepción visual y cognitiva, y comunicación de hallazgos para la toma de decisiones.",
+        "description": "Analítica visual interactiva (Python ↔ Power BI ↔ Tableau), narrativa con datos (Data Storytelling), diseño perceptual, sesgos cognitivos y transformaciones ETL con Power Query.",
         "level": "Especialización",
         "semester": "Semestre II",
-        "active": False
+        "active": True
     }
 ]
 
@@ -257,6 +257,14 @@ DEFAULT_MODULES_DSP = [
         "description": "Agrupamiento no supervisado, métricas de distancia, K-Means, K-Means++, Clustering Jerárquico Aglomerativo, Dendrogramas, DBSCAN y Métricas de Silueta."
     },
     {
+        "id": "11",
+        "name": "11 - Polars",
+        "title": "Procesamiento de Datos de Alto Rendimiento con Polars",
+        "icon": "⚡",
+        "color": "#06b6d4",
+        "description": "Procesamiento analítico columnar de alto rendimiento en Rust/Python, evaluación perezosa (lazy evaluation) y optimización de memoria."
+    },
+    {
         "id": "hw",
         "name": "homeworks",
         "title": "Talleres Prácticos Evaluativos (Hands-On)",
@@ -265,6 +273,214 @@ DEFAULT_MODULES_DSP = [
         "description": "Talleres integradores de resolución autónoma con datos reales y desafíos de negocio."
     }
 ]
+
+MODULES_DATA_MINING = [
+    {
+        "id": "00",
+        "name": "00 - Introduccion al Data Mining",
+        "title": "Introducción a la Minería de Datos y CRISP-DM",
+        "icon": "⛏️",
+        "color": "#f43f5e",
+        "description": "Ciclo de vida metodológico (CRISP-DM, KDD), taxonomía de tareas analíticas y auditoría de calidad de datos en entornos empresariales."
+    },
+    {
+        "id": "01",
+        "name": "01 - Preprocesamiento de los Datos",
+        "title": "Preprocesamiento y Calidad del Dato",
+        "icon": "🧹",
+        "color": "#d97706",
+        "description": "Tratamiento de valores faltantes, detección y manejo de anomalías/outliers, transformaciones de potencia y escalamiento."
+    },
+    {
+        "id": "02",
+        "name": "02 - Clasificacion y Regresion",
+        "title": "Modelos Predictivos: Clasificación y Regresión",
+        "icon": "🎯",
+        "color": "#0284c7",
+        "description": "Regresión logística binaria y multiclase, Naive Bayes, k-NN, regresión lineal regularizada y matrices de confusión."
+    },
+    {
+        "id": "03",
+        "name": "03 - Clustering y Mineria Reglas de Asociacion",
+        "title": "Clustering y Reglas de Asociación (Apriori)",
+        "icon": "🔮",
+        "color": "#8b5cf6",
+        "description": "Agrupamiento con K-Means y DBSCAN, segmentación de clientes, minería de patrones frecuentes y reglas de asociación con métricas Support/Confidence/Lift."
+    },
+    {
+        "id": "04",
+        "name": "04 - Arboles de Decision y Bosques Aleatorios",
+        "title": "Árboles de Decisión y Bosques Aleatorios",
+        "icon": "🌲",
+        "color": "#10b981",
+        "description": "Algoritmos CART, criterios de impureza Gini y Entropía, ensambles homogéneos por Bagging y bosques aleatorios."
+    },
+    {
+        "id": "05",
+        "name": "05 - Comparacion de Arboles de Decision y Bosques Aleatorios",
+        "title": "Benchmark y Comparativa de Modelos de Ensamble",
+        "icon": "⚖️",
+        "color": "#ec4899",
+        "description": "Análisis comparativo de sesgo vs varianza, sobreajuste, curvas de aprendizaje, calibración de probabilidades e interpretabilidad."
+    },
+    {
+        "id": "06",
+        "name": "06 - Maquinas de Soporte Vectorial y Redes Neuronales",
+        "title": "Máquinas de Soporte Vectorial (SVM) y Redes Neuronales",
+        "icon": "🧠",
+        "color": "#6366f1",
+        "description": "Hiperplanos de margen máximo, kernel trick (RBF, polinomial), arquitectura del perceptrón multicapa (MLP) y backpropagation."
+    },
+    {
+        "id": "07",
+        "name": "07 - Mineria de Datos con Big Data",
+        "title": "Minería de Datos Distribuida con Big Data",
+        "icon": "⚡",
+        "color": "#f59e0b",
+        "description": "Computación paralela a gran escala con Apache Spark y PySpark MLlib, pipelines distribuidos y análisis de flujos masivos."
+    },
+    {
+        "id": "hw",
+        "name": "homeworks",
+        "title": "Talleres Prácticos Evaluativos (Hands-On)",
+        "icon": "📝",
+        "color": "#dc2626",
+        "description": "Desafíos autónomos con datasets reales de riesgo crediticio, fraude financiero y retención de clientes."
+    }
+]
+
+MODULES_IA = [
+    {
+        "id": "00",
+        "name": "00 - Fundamentos y Origenes de la IA",
+        "title": "Fundamentos y Orígenes de la Inteligencia Artificial",
+        "icon": "🧠",
+        "color": "#6366f1",
+        "description": "Definición formal de IA (Russell & Norvig), hitos históricos desde Dartmouth hasta la era del Deep Learning, inviernos de la IA y el Test de Turing."
+    },
+    {
+        "id": "01",
+        "name": "01 - Problemas Disciplinas y Aplicaciones de la IA",
+        "title": "Problemas, Disciplinas y Aplicaciones de la IA",
+        "icon": "🎯",
+        "color": "#0ea5e9",
+        "description": "Caracterización de problemas aptos para IA, disciplinas convergentes, la IA como tecnología de propósito general (GPT) y casos sectoriales."
+    },
+    {
+        "id": "02",
+        "name": "02 - Taxonomia de la Inteligencia Artificial",
+        "title": "Taxonomía de la Inteligencia Artificial",
+        "icon": "🌳",
+        "color": "#8b5cf6",
+        "description": "Ramas de la IA, tipos por capacidad (ANI, AGI, ASI), clasificación funcional de Hintze y el General Problem Solver (GPS) de Newell & Simon."
+    },
+    {
+        "id": "03",
+        "name": "03 - Etica y el Nuevo Paradigma de la IA",
+        "title": "Ética, Paradigmas Contemporáneos y GenAI",
+        "icon": "⚖️",
+        "color": "#ec4899",
+        "description": "Consideraciones éticas, sesgos y explicabilidad, el marco IA ⊃ Machine Learning ⊃ Deep Learning y fundamentos de la IA Generativa."
+    },
+    {
+        "id": "04",
+        "name": "04 - Algoritmos de Busqueda",
+        "title": "Algoritmos de Búsqueda y Espacios de Estados",
+        "icon": "🔍",
+        "color": "#10b981",
+        "description": "Búsqueda no informada (DFS, BFS), búsqueda informada con heurísticas (Greedy Best-First Search) y el algoritmo A* óptimo aplicado a sistemas de archivos."
+    },
+    {
+        "id": "05",
+        "name": "05 - Agentes Basados en Conocimiento",
+        "title": "Agentes Basados en Conocimiento y Lógica",
+        "icon": "💡",
+        "color": "#f59e0b",
+        "description": "Lógica proposicional, sintaxis y semántica, model-checking, bases de conocimiento en Python, Forma Normal Conjuntiva (CNF) y resolución."
+    },
+    {
+        "id": "hw",
+        "name": "homeworks",
+        "title": "Talleres Prácticos Evaluativos (Hands-On)",
+        "icon": "📝",
+        "color": "#dc2626",
+        "description": "Retos prácticos integradores con edición estándar y Para Dummies cubriendo búsqueda heurística, deducción lógica y taxonomía de IA."
+    }
+]
+
+MODULES_VISUAL_ANALYTICS = [
+    {
+        "id": "01",
+        "name": "01 - Introduccion al Analisis Visual",
+        "title": "Introducción a la Analítica Visual",
+        "icon": "👁️",
+        "color": "#06b6d4",
+        "description": "Definición, pipeline de analítica visual, evolución histórica y el triángulo tecnológico interactivo Python ↔ Power BI ↔ Tableau."
+    },
+    {
+        "id": "02",
+        "name": "02 - Fundamentos de Visualizacion",
+        "title": "Fundamentos y Percepción Visual",
+        "icon": "📐",
+        "color": "#10b981",
+        "description": "Gramática de los gráficos de Leland Wilkinson, codificación visual por canales de Bertin y principios de diseño y data-ink ratio de Edward Tufte."
+    },
+    {
+        "id": "03",
+        "name": "03 - Pensamiento Critico en Datos",
+        "title": "Pensamiento Crítico y Sesgos Cognitivos",
+        "icon": "🤔",
+        "color": "#f59e0b",
+        "description": "Falacias gráficas, detección de visualizaciones engañosas, paradoja de Simpson, falacia ecológica y correlación versus causalidad."
+    },
+    {
+        "id": "04",
+        "name": "04 - Visualizacion de Datos Categoricos",
+        "title": "Visualización de Variables Categóricas",
+        "icon": "📊",
+        "color": "#8b5cf6",
+        "description": "Gráficos de barras ordenadas, diagramas de Pareto, treemaps, waffle charts y representación jerárquica de composiciones discretas."
+    },
+    {
+        "id": "05",
+        "name": "05 - Visualizacion de Datos Numericos",
+        "title": "Visualización de Variables Numéricas y Continuas",
+        "icon": "📈",
+        "color": "#3b82f6",
+        "description": "Distribuciones univariadas y bivariadas: histogramas, KDE, boxplots, diagramas de violín, scatter plots y matrices de correlación."
+    },
+    {
+        "id": "06",
+        "name": "06 - Visualizacion Avanzada",
+        "title": "Visualización Avanzada y Tableros Analíticos",
+        "icon": "🚀",
+        "color": "#ec4899",
+        "description": "Creación de dashboards interactivos con Plotly, Dash y Streamlit, mapas geoespaciales coropléticos y Data Storytelling estratégico."
+    },
+    {
+        "id": "07",
+        "name": "07 - Casos de Estudio",
+        "title": "Casos de Estudio Aplicados",
+        "icon": "💼",
+        "color": "#14b8a6",
+        "description": "Proyectos analíticos integrales de negocio: métricas de ventas comerciales, analítica en salud pública y flujos urbanos."
+    },
+    {
+        "id": "08",
+        "name": "Power Query",
+        "title": "Transformación ETL con Power Query & Lenguaje M",
+        "icon": "⚡",
+        "color": "#eab308",
+        "description": "Automatización de transformaciones de datos, fórmulas en lenguaje M, preparación de tablas y comparativa metodológica con Pandas."
+    }
+]
+
+COURSE_MODULE_DEFAULTS = {
+    "data-science-programming": DEFAULT_MODULES_DSP,
+    "data-mining": MODULES_DATA_MINING,
+    "introduccion-ia": MODULES_IA,
+    "visual-analytics": MODULES_VISUAL_ANALYTICS,
+}
 
 PALETTE = [
     {"icon": "🐍", "color": "#3776AB"},
@@ -316,6 +532,9 @@ KNOWN_YOUTUBE_VIDEOS = {
     }
 }
 
+ACRONYMS = {"ia", "ai", "eda", "knn", "pca", "cnf", "dfs", "bfs", "gbfs", "gps", "etl", "csv", "json", "pdf", "sql", "svm", "mlp", "mcar", "mar", "mnar", "ols", "auc", "roc", "cart", "kdd", "crisp-dm", "nlp", "llm", "llms", "genai", "cv"}
+LOWERCASE_WORDS = {"de", "la", "el", "los", "las", "en", "y", "del", "al", "para", "por", "con", "un", "una", "unos", "unas", "o", "a", "vs"}
+
 def format_title(filename):
     for k, v in KNOWN_TITLES.items():
         if k.lower() == filename.lower():
@@ -324,8 +543,16 @@ def format_title(filename):
     clean = re.sub(r'^\d+[a-z]?_', '', clean)
     clean = clean.replace("_compressed", "").replace("_", " ").replace("-", " ")
     words = clean.strip().split()
-    capitalized = " ".join(w.capitalize() if len(w) > 2 else w.lower() for w in words)
-    return capitalized.capitalize()
+    formatted = []
+    for i, w in enumerate(words):
+        w_lower = w.lower()
+        if w_lower in ACRONYMS:
+            formatted.append(w.upper())
+        elif i > 0 and w_lower in LOWERCASE_WORDS:
+            formatted.append(w_lower)
+        else:
+            formatted.append(w.capitalize())
+    return " ".join(formatted)
 
 def infer_difficulty(title, path):
     text = f"{title} {path}".lower()
@@ -352,8 +579,9 @@ def sync_course_assets(course_dir):
                         print(f"  [SYNC] Copiado: {item.name} -> docs/{folder_name}/{rel}")
 
 def scan_course_modules(course_dir, default_modules=None):
-    modules = list(default_modules) if default_modules else []
+    modules = [dict(m) for m in default_modules] if default_modules else []
     existing_ids = {m["id"] for m in modules}
+    existing_names = {m["name"] for m in modules}
 
     if course_dir.exists() and course_dir.is_dir():
         for item in sorted(course_dir.iterdir()):
@@ -361,7 +589,7 @@ def scan_course_modules(course_dir, default_modules=None):
                 match = re.match(r'^(\d{2})\s*-\s*(.+)$', item.name)
                 if match:
                     mod_id = match.group(1)
-                    if mod_id not in existing_ids:
+                    if mod_id not in existing_ids and item.name not in existing_names:
                         pal = PALETTE[len(modules) % len(PALETTE)]
                         modules.append({
                             "id": mod_id,
@@ -372,7 +600,8 @@ def scan_course_modules(course_dir, default_modules=None):
                             "description": f"Módulo de especialización sobre {format_title(match.group(2))}."
                         })
                         existing_ids.add(mod_id)
-                elif item.name.lower() == "homeworks" and "hw" not in existing_ids:
+                        existing_names.add(item.name)
+                elif item.name.lower() == "homeworks" and "hw" not in existing_ids and item.name not in existing_names:
                     modules.append({
                         "id": "hw",
                         "name": "homeworks",
@@ -382,19 +611,21 @@ def scan_course_modules(course_dir, default_modules=None):
                         "description": "Talleres integradores de resolución autónoma con datos reales y desafíos de negocio."
                     })
                     existing_ids.add("hw")
+                    existing_names.add(item.name)
                 elif any(item.rglob("*.ipynb")):
                     mod_id = f"{len(modules)+1:02d}"
-                    if mod_id not in existing_ids and item.name not in [m["name"] for m in modules]:
+                    if mod_id not in existing_ids and item.name not in existing_names:
                         pal = PALETTE[len(modules) % len(PALETTE)]
                         modules.append({
                             "id": mod_id,
                             "name": item.name,
-                            "title": f"Módulo: {format_title(item.name)} (Fundamentos y Utilidades)",
-                            "icon": "⚙️",
-                            "color": "#f43f5e",
-                            "description": f"Módulo de especialización sobre {format_title(item.name)} aplicado a Minería de Datos."
+                            "title": f"Módulo: {format_title(item.name)}",
+                            "icon": "⚡",
+                            "color": "#10b981",
+                            "description": f"Módulo complementario sobre {format_title(item.name)}."
                         })
                         existing_ids.add(mod_id)
+                        existing_names.add(item.name)
     return modules
 
 # =========================================================================
@@ -591,7 +822,7 @@ PYTHON_BOOKS_METADATA = {
     }
 }
 
-def scan_course_notebooks(course_folder_name, course_dir, modules):
+def scan_course_notebooks(course_folder_name, course_dir, modules, course_name=""):
     notebooks = []
     
     for mod in modules:
@@ -606,11 +837,17 @@ def scan_course_notebooks(course_folder_name, course_dir, modules):
                 raw_title = format_title(nb_file.name)
                 
                 is_dummies = ("Para Dummies" in nb_file.parts) or ("_dummies" in nb_file.name.lower())
+                is_homework = (mod["id"] == "hw") or ("homeworks" in nb_file.parts) or ("hands_on" in nb_file.name.lower())
+                
                 if is_dummies:
-                    clean_title = raw_title.replace(" Dummies", "").replace(" dummies", "")
+                    clean_title = re.sub(r'\b(Para\s+)?Dummies\b', '', raw_title, flags=re.IGNORECASE).strip()
                     title = f"💡 {clean_title} [Dummies] {mod['icon']}"
                     diff = "Básico (Dummies)"
                     edition = "Para Dummies"
+                elif is_homework:
+                    title = f"📝 {raw_title} {mod['icon']}"
+                    diff = "Intermedio (Hands-On)"
+                    edition = "Taller Evaluativo"
                 else:
                     title = f"{raw_title} {mod['icon']}"
                     diff = infer_difficulty(raw_title, rel_path)
@@ -620,6 +857,8 @@ def scan_course_notebooks(course_folder_name, course_dir, modules):
 
                 notebooks.append({
                     "id": f"{mod['id']}_{nb_file.stem}",
+                    "course_name": course_name,
+                    "course_folder": course_folder_name,
                     "module_id": mod["id"],
                     "module_name": mod["name"],
                     "filename": nb_file.name,
@@ -627,15 +866,16 @@ def scan_course_notebooks(course_folder_name, course_dir, modules):
                     "path": rel_path,
                     "difficulty": diff,
                     "is_dummies": is_dummies,
+                    "is_homework": is_homework,
                     "edition": edition,
-                    "type": "Taller Evaluativo" if mod["id"] == "hw" else ("Introducción" if "00" in nb_file.name else "Teoría y Práctica"),
+                    "type": "Taller Evaluativo" if is_homework else ("Introducción" if "00" in nb_file.name else "Teoría y Práctica"),
                     "colab_url": f"https://colab.research.google.com/github/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/{encoded_path}",
                     "github_url": f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/{encoded_path}"
                 })
 
     return notebooks
 
-def scan_course_datasets(course_folder_name, course_dir):
+def scan_course_datasets(course_folder_name, course_dir, course_name=""):
     datasets = []
     seen = set()
 
@@ -686,13 +926,14 @@ def scan_course_datasets(course_folder_name, course_dir):
 
                 datasets.append({
                     "name": csv_file.name,
+                    "course_name": course_name,
                     "module": parent_name,
                     "path": rel_path,
                     "rows": rows_count,
                     "cols": cols_count,
                     "target": target_str,
                     "features": features_str,
-                    "description": f"Dataset de práctica para {parent_name}.",
+                    "description": f"Dataset oficial de práctica para {parent_name} ({course_name})." if course_name else f"Dataset de práctica para {parent_name}.",
                     "sample_data": sample_data,
                     "download_url": raw_url,
                     "raw_url": raw_url,
@@ -704,28 +945,27 @@ def scan_course_datasets(course_folder_name, course_dir):
 def scan_course_guias(course_folder_name, course_dir):
     guias_dir = course_dir / "Guias"
     if not guias_dir.exists():
-        guias_dir = DOCS_DIR / "Guias"
+        return []
     
     guias = []
-    if guias_dir.exists():
-        idx = 1
-        for f in sorted(guias_dir.glob("*.pdf")):
-            size_kb = round(f.stat().st_size / 1024)
-            size_str = f"{size_kb} KB" if size_kb < 1024 else f"{size_kb/1024:.1f} MB"
-            title = format_title(f.name)
-            encoded_name = urllib.parse.quote(f.name)
+    idx = 1
+    for f in sorted(guias_dir.glob("*.pdf")):
+        size_kb = round(f.stat().st_size / 1024)
+        size_str = f"{size_kb} KB" if size_kb < 1024 else f"{size_kb/1024:.1f} MB"
+        title = format_title(f.name)
+        encoded_name = urllib.parse.quote(f.name)
 
-            guias.append({
-                "id": f"guia_{idx}",
-                "filename": f.name,
-                "title": title,
-                "module": "🐍 Módulo 01: Python",
-                "size_str": size_str,
-                "path": f"Guias/{f.name}",
-                "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/{urllib.parse.quote(course_folder_name)}/Guias/{encoded_name}",
-                "lfs_url": f"https://media.githubusercontent.com/media/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Guias/{encoded_name}"
-            })
-            idx += 1
+        guias.append({
+            "id": f"guia_{idx}",
+            "filename": f.name,
+            "title": title,
+            "module": "🐍 Módulo 01: Python",
+            "size_str": size_str,
+            "path": f"Guias/{f.name}",
+            "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/{urllib.parse.quote(course_folder_name)}/Guias/{encoded_name}",
+            "lfs_url": f"https://media.githubusercontent.com/media/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Guias/{encoded_name}"
+        })
+        idx += 1
     return guias
 
 def video_sort_key(file_path):
@@ -739,42 +979,41 @@ def video_sort_key(file_path):
 def scan_course_videos(course_folder_name, course_dir):
     video_dir = course_dir / "Contenido"
     if not video_dir.exists():
-        video_dir = DOCS_DIR / "Contenido"
+        return []
 
     videos = []
     video_exts = {".mp4", ".mkv", ".webm", ".avi", ".mov"}
-    if video_dir.exists():
-        sorted_files = sorted(video_dir.iterdir(), key=video_sort_key)
-        idx = 1
-        for f in sorted_files:
-            if f.is_file() and f.suffix.lower() in video_exts:
-                size_mb = round(f.stat().st_size / (1024 * 1024), 1)
-                title = format_title(f.name)
-                encoded_name = urllib.parse.quote(f.name)
-                
-                yt_info = KNOWN_YOUTUBE_VIDEOS.get(f.name.lower(), {
-                    "youtube_id": "",
-                    "youtube_url": "",
-                    "embed_url": "",
-                    "thumbnail": ""
-                })
+    sorted_files = sorted(video_dir.iterdir(), key=video_sort_key)
+    idx = 1
+    for f in sorted_files:
+        if f.is_file() and f.suffix.lower() in video_exts:
+            size_mb = round(f.stat().st_size / (1024 * 1024), 1)
+            title = format_title(f.name)
+            encoded_name = urllib.parse.quote(f.name)
+            
+            yt_info = KNOWN_YOUTUBE_VIDEOS.get(f.name.lower(), {
+                "youtube_id": "",
+                "youtube_url": "",
+                "embed_url": "",
+                "thumbnail": ""
+            })
 
-                videos.append({
-                    "id": f"vid_{idx}",
-                    "filename": f.name,
-                    "title": title,
-                    "module": "🐍 Módulo 01: Python",
-                    "size_mb": size_mb,
-                    "path": f"Contenido/{f.name}",
-                    "youtube_id": yt_info["youtube_id"],
-                    "youtube_url": yt_info["youtube_url"],
-                    "embed_url": yt_info["embed_url"],
-                    "thumbnail": yt_info["thumbnail"],
-                    "lfs_url": f"https://media.githubusercontent.com/media/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
-                    "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
-                    "github_url": f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/docs/Contenido/{encoded_name}"
-                })
-                idx += 1
+            videos.append({
+                "id": f"vid_{idx}",
+                "filename": f.name,
+                "title": title,
+                "module": "🐍 Módulo 01: Python",
+                "size_mb": size_mb,
+                "path": f"Contenido/{f.name}",
+                "youtube_id": yt_info["youtube_id"],
+                "youtube_url": yt_info["youtube_url"],
+                "embed_url": yt_info["embed_url"],
+                "thumbnail": yt_info["thumbnail"],
+                "lfs_url": f"https://media.githubusercontent.com/media/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
+                "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
+                "github_url": f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/docs/Contenido/{encoded_name}"
+            })
+            idx += 1
     return videos
 
 def find_book_cover_image(pdf_stem, libros_dir):
@@ -811,89 +1050,97 @@ def find_book_cover_image(pdf_stem, libros_dir):
 def scan_course_books(c_folder, c_dir):
     books = []
     libros_dir = c_dir / "Libros"
-    if libros_dir.exists():
-        for f in sorted(libros_dir.rglob("*.pdf")):
-            fname = f.name
-            key = fname.lower()
-            meta = PYTHON_BOOKS_METADATA.get(key, {})
-            
-            rel_sub = f.relative_to(libros_dir).as_posix()
-            web_path = f"Libros/{rel_sub}"
-            encoded_web_path = "/".join(urllib.parse.quote(part) for part in web_path.split("/"))
-            
-            size_mb = f"{round(f.stat().st_size / (1024 * 1024), 1)} MB"
-            cover_img_url = find_book_cover_image(f.stem, libros_dir)
-            
-            title = meta.get("title", format_title(fname))
-            subtitle = meta.get("subtitle", f"Biblioteca Digital USTA — {f.parent.name if f.parent != libros_dir else 'Python'}")
-            author = meta.get("author", "Referencia Académica")
-            publisher = meta.get("publisher", "Editorial Especializada")
-            year = meta.get("year", "2024")
-            edition = meta.get("edition", "PDF Completo")
-            category = meta.get("category", "Python & Programación")
-            level = meta.get("level", "Intermedio")
-            dummies_friendly = meta.get("dummies_friendly", any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice"]))
-            summary_dummies = meta.get("summary_dummies", f"Texto de referencia '{title}' disponible en PDF completo ({size_mb}) para consulta y descarga directa.")
-            topics = meta.get("topics", ["Python", "Programación", "Data Science", "Algoritmos"])
-            cover_gradient = meta.get("cover_gradient", "from-teal-600 via-slate-700 to-slate-950")
-            cover_bg = meta.get("cover_bg", "#0f766e")
-            accent_color = meta.get("accent_color", "#14b8a6")
-            icon = meta.get("icon", "📘")
-            
-            books.append({
-                "id": f"book_{len(books) + 1}",
-                "title": title,
-                "filename": fname,
-                "subtitle": subtitle,
-                "author": author,
-                "publisher": publisher,
-                "year": year,
-                "edition": edition,
-                "size_mb": size_mb,
-                "cover_image": cover_img_url,
-                "has_cover_image": bool(cover_img_url),
-                "category": category,
-                "level": level,
-                "dummies_friendly": dummies_friendly,
-                "summary_dummies": summary_dummies,
-                "topics": topics,
-                "cover_gradient": cover_gradient,
-                "cover_bg": cover_bg,
-                "accent_color": accent_color,
-                "icon": icon,
-                "download_url": encoded_web_path,
-                "pdf_url": encoded_web_path,
-                "has_local_pdf": True,
-                "local_pdf_path": web_path
-            })
+    if not libros_dir.exists():
+        return []
+
+    for f in sorted(libros_dir.rglob("*.pdf")):
+        fname = f.name
+        key = fname.lower()
+        meta = PYTHON_BOOKS_METADATA.get(key, {})
+        
+        rel_sub = f.relative_to(libros_dir).as_posix()
+        web_path = f"Libros/{rel_sub}"
+        encoded_web_path = "/".join(urllib.parse.quote(part) for part in web_path.split("/"))
+        
+        size_mb = f"{round(f.stat().st_size / (1024 * 1024), 1)} MB"
+        cover_img_url = find_book_cover_image(f.stem, libros_dir)
+        
+        title = meta.get("title", format_title(fname))
+        subtitle = meta.get("subtitle", f"Biblioteca Digital USTA — {f.parent.name if f.parent != libros_dir else 'Python'}")
+        author = meta.get("author", "Referencia Académica")
+        publisher = meta.get("publisher", "Editorial Especializada")
+        year = meta.get("year", "2024")
+        edition = meta.get("edition", "PDF Completo")
+        category = meta.get("category", "Python & Programación")
+        level = meta.get("level", "Intermedio")
+        dummies_friendly = meta.get("dummies_friendly", any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice"]))
+        summary_dummies = meta.get("summary_dummies", f"Texto de referencia '{title}' disponible en PDF completo ({size_mb}) para consulta y descarga directa.")
+        topics = meta.get("topics", ["Python", "Programación", "Data Science", "Algoritmos"])
+        cover_gradient = meta.get("cover_gradient", "from-teal-600 via-slate-700 to-slate-950")
+        cover_bg = meta.get("cover_bg", "#0f766e")
+        accent_color = meta.get("accent_color", "#14b8a6")
+        icon = meta.get("icon", "📘")
+        
+        books.append({
+            "id": f"book_{len(books) + 1}",
+            "title": title,
+            "filename": fname,
+            "subtitle": subtitle,
+            "author": author,
+            "publisher": publisher,
+            "year": year,
+            "edition": edition,
+            "size_mb": size_mb,
+            "cover_image": cover_img_url,
+            "has_cover_image": bool(cover_img_url),
+            "category": category,
+            "level": level,
+            "dummies_friendly": dummies_friendly,
+            "summary_dummies": summary_dummies,
+            "topics": topics,
+            "cover_gradient": cover_gradient,
+            "cover_bg": cover_bg,
+            "accent_color": accent_color,
+            "icon": icon,
+            "download_url": encoded_web_path,
+            "pdf_url": encoded_web_path,
+            "has_local_pdf": True,
+            "local_pdf_path": web_path
+        })
     return books
 
 def rebuild_catalog_js():
     print("🚀 Iniciando escaneo multi-materia de la Especialización...")
 
     courses_output = []
+    all_specialization_datasets = []
     active_course_data = None
 
     for course_def in COURSE_DEFINITIONS:
         c_id = course_def["id"]
         c_folder = course_def["folder"]
+        c_name = course_def["name"]
         c_dir = BASE_DIR / c_folder
+
+        default_mods = COURSE_MODULE_DEFAULTS.get(c_id)
 
         if c_id == "data-science-programming":
             sync_course_assets(c_dir)
-            modules = scan_course_modules(c_dir, DEFAULT_MODULES_DSP)
-            notebooks = scan_course_notebooks(c_folder, c_dir, modules)
-            datasets = scan_course_datasets(c_folder, c_dir)
+            modules = scan_course_modules(c_dir, default_mods)
+            notebooks = scan_course_notebooks(c_folder, c_dir, modules, course_name=c_name)
+            datasets = scan_course_datasets(c_folder, c_dir, course_name=c_name)
             guias = scan_course_guias(c_folder, c_dir)
             videos = scan_course_videos(c_folder, c_dir)
             books = scan_course_books(c_folder, c_dir)
         else:
-            modules = scan_course_modules(c_dir) if c_dir.exists() else []
-            notebooks = scan_course_notebooks(c_folder, c_dir, modules) if c_dir.exists() else []
-            datasets = scan_course_datasets(c_folder, c_dir) if c_dir.exists() else []
+            modules = scan_course_modules(c_dir, default_mods) if c_dir.exists() else []
+            notebooks = scan_course_notebooks(c_folder, c_dir, modules, course_name=c_name) if c_dir.exists() else []
+            datasets = scan_course_datasets(c_folder, c_dir, course_name=c_name) if c_dir.exists() else []
             guias = scan_course_guias(c_folder, c_dir) if c_dir.exists() else []
             videos = scan_course_videos(c_folder, c_dir) if c_dir.exists() else []
-            books = scan_course_books(c_folder, c_dir) if c_dir.exists() else BOOKS_CATALOG
+            books = scan_course_books(c_folder, c_dir) if c_dir.exists() else []
+
+        all_specialization_datasets.extend(datasets)
 
         dummies_count = len([n for n in notebooks if n.get("is_dummies", False)])
         standard_count = len(notebooks) - dummies_count
@@ -903,7 +1150,7 @@ def rebuild_catalog_js():
             "total_standard_notebooks": standard_count,
             "total_dummies_notebooks": dummies_count,
             "total_modules": len([m for m in modules if m["id"] != "hw"]),
-            "total_homeworks": len([n for n in notebooks if n["module_id"] == "hw"]),
+            "total_homeworks": len([n for n in notebooks if n.get("is_homework", False) or n.get("module_id") == "hw"]),
             "total_datasets": len(datasets),
             "total_guias": len(guias),
             "total_videos": len(videos),
@@ -922,7 +1169,7 @@ def rebuild_catalog_js():
         }
         courses_output.append(course_obj)
 
-        if course_def.get("active", False):
+        if c_id == "data-science-programming":
             active_course_data = course_obj
 
     if not active_course_data and courses_output:
@@ -933,11 +1180,11 @@ def rebuild_catalog_js():
         "courses": courses_output,
         "modules": active_course_data["modules"] if active_course_data else [],
         "notebooks": active_course_data["notebooks"] if active_course_data else [],
-        "datasets": active_course_data["datasets"] if active_course_data else [],
+        "datasets": all_specialization_datasets,
         "stats": active_course_data["stats"] if active_course_data else {},
         "videos": active_course_data["videos"] if active_course_data else [],
         "guias": active_course_data["guias"] if active_course_data else [],
-        "books": active_course_data["books"] if active_course_data else books
+        "books": active_course_data["books"] if active_course_data else []
     }
 
     # 1. Guardar para plataforma legacy (docs/assets/js/catalog.js)
@@ -952,7 +1199,9 @@ def rebuild_catalog_js():
     
     print(f"✅ Catálogo multi-materia reconstruido exitosamente:")
     print(f"   - Total Materias/Asignaturas: {len(courses_output)}")
-    print(f"   - Materia Activa: {active_course_data['name']} ({active_course_data['stats']['total_notebooks']} notebooks)")
+    print(f"   - Materias Activas: {[c['name'] for c in courses_output if c.get('active')]}")
+    print(f"   - Materia Principal: {active_course_data['name']} ({active_course_data['stats']['total_notebooks']} notebooks)")
+    print(f"   - Total Datasets Especialización: {len(all_specialization_datasets)}")
     print(f"   - Guardado en: {CATALOG_JS_PATH}")
     print(f"   - Guardado en: {FRONTEND_CATALOG_PATH}")
 

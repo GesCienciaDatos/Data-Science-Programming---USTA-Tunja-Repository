@@ -56,7 +56,7 @@ const searchResults = computed(() => {
       <!-- Search Results List -->
       <div class="p-3 max-h-[60vh] overflow-y-auto space-y-2 bg-slate-50 dark:bg-space-950">
         <div v-if="query.trim().length < 2" class="py-8 text-center text-xs font-mono text-slate-400">
-          Escribe al menos 2 caracteres para buscar en los 144 cuadernos computacionales.
+          Escribe al menos 2 caracteres para buscar en los {{ allNotebooks.length }} cuadernos computacionales.
         </div>
 
         <div v-else-if="searchResults.length === 0" class="py-8 text-center text-xs font-mono text-slate-400">
@@ -70,9 +70,10 @@ const searchResults = computed(() => {
           class="p-3 rounded-lg bg-white dark:bg-space-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3 hover:border-brand-cyan transition-all"
         >
           <div class="space-y-0.5 overflow-hidden">
-            <span class="font-mono text-[10px] text-brand-cyan font-semibold block">
-              {{ nb.module_name }}
-            </span>
+            <div class="flex items-center gap-1.5 font-mono text-[10px] text-brand-cyan font-semibold">
+              <span v-if="nb.course_name" class="text-slate-500 dark:text-slate-400 font-normal">{{ nb.course_name }} •</span>
+              <span>{{ nb.module_name }}</span>
+            </div>
             <h5 class="text-xs font-semibold text-slate-900 dark:text-slate-100 truncate">
               {{ nb.title }}
             </h5>

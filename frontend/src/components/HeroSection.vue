@@ -57,6 +57,18 @@ const snippets = {
 <div class="code-line"><span class="text-brand-amber">print</span>(<span class="text-emerald-400">f"K-Means: k=3 | Silhouette Score: {sil:.4f}"</span>)</div>`,
     output: 'K-Means: k=3 | Silhouette Score: 0.6842 | Clusters Óptimos Identificados'
   },
+  ia: {
+    title: 'Inteligencia Artificial & Búsqueda A*',
+    code: `<div class="code-line"><span class="text-brand-amber">from</span> logic <span class="text-brand-amber">import</span> Symbol, And, Or, Not, model_check</div>
+<div class="code-line"><span class="text-brand-amber">from</span> search <span class="text-brand-amber">import</span> astar_search, PriorityQueue</div>
+<div class="code-line"></div>
+<div class="code-line"><span class="text-slate-500"># Inferencia Lógica Proposicional & Búsqueda Heurística A*</span></div>
+<div class="code-line">kb = And(Or(Symbol(<span class="text-emerald-400">"lluvia"</span>), Symbol(<span class="text-emerald-400">"trafico"</span>)), Not(Symbol(<span class="text-emerald-400">"accidente"</span>)))</div>
+<div class="code-line">camino = astar_search(origen, destino, heuristica=dist_manhattan)</div>
+<div class="code-line"></div>
+<div class="code-line"><span class="text-brand-amber">print</span>(<span class="text-emerald-400">f"Inferencia Válida: {model_check(kb, Symbol('lluvia'))} | A* Costo: 14.2"</span>)</div>`,
+    output: 'Inferencia Válida: True | A* Costo Óptimo: 14.2 (6 estados expandidos)'
+  },
   bigdata: {
     title: 'Big Data & Computación Distribuida',
     code: `<div class="code-line"><span class="text-brand-amber">from</span> pyspark.sql <span class="text-brand-amber">import</span> SparkSession</div>
@@ -186,6 +198,14 @@ function scrollToDirectory() {
                 title="Data Mining & Clustering"
               >
                 MINING
+              </button>
+              <button 
+                @click="selectSnippet('ia')"
+                class="px-2 py-0.5 rounded transition-colors"
+                :class="activeSnippetKey === 'ia' ? 'bg-brand-cyan/15 text-brand-cyan font-semibold' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'"
+                title="Inteligencia Artificial & Lógica / Búsqueda"
+              >
+                IA
               </button>
               <button 
                 @click="selectSnippet('bigdata')"

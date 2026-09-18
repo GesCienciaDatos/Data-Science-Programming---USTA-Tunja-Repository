@@ -37,7 +37,7 @@ const activeCourse = computed(() => {
 });
 
 const allNotebooks = computed(() => {
-  return activeCourse.value?.notebooks || [];
+  return courses.value.flatMap(c => c.notebooks || []);
 });
 
 const allVideos = computed(() => {

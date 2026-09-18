@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 const props = defineProps({
   course: {
@@ -23,6 +23,10 @@ const selectedModality = ref('standard'); // 'standard' | 'dummies' | 'homeworks
 const selectedModuleId = ref('all');
 const notebookSearchQuery = ref('');
 const selectedDifficulty = ref('all');
+
+watch(selectedModality, () => {
+  selectedModuleId.value = 'all';
+});
 
 // Books reactive state
 const bookSearchQuery = ref('');
@@ -368,7 +372,7 @@ function copyColabLink(url) {
           </button>
 
           <button 
-            v-for="mod in course.modules" 
+            v-for="mod in (course.modules || []).filter(m => getModuleTotalCount(m.id) > 0)" 
             :key="mod.id"
             @click="selectedModuleId = mod.id"
             class="px-2.5 py-1 rounded-md transition-colors whitespace-nowrap flex items-center gap-1 shrink-0"
@@ -544,7 +548,7 @@ function copyColabLink(url) {
                 <img 
                   v-if="book.cover_image"
                   :src="book.cover_image" 
-                  :alt="book.title"
+                  :alt="book.title" 
                   class="w-full h-full object-cover"
                   onerror="this.style.display='none'"
                 />
@@ -593,6 +597,11 @@ function copyColabLink(url) {
           </div>
         </div>
       </div>
+
+      <div v-else class="p-12 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl space-y-2 font-mono text-xs text-slate-500">
+        <span class="material-symbols-outlined text-3xl text-slate-400">menu_book</span>
+        <p>No se encontraron libros de referencia registrados actualmente para esta asignatura.</p>
+      </div>
     </div>
 
     <!-- ========================================================================= -->
@@ -606,7 +615,7 @@ function copyColabLink(url) {
         <p class="text-xs text-slate-500">Documentos oficiales de configuración y metodología.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div v-if="course.guias && course.guias.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div 
           v-for="guia in course.guias" 
           :key="guia.id"
@@ -659,6 +668,11 @@ function copyColabLink(url) {
           </div>
         </div>
       </div>
+
+      <div v-else class="p-12 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl space-y-2 font-mono text-xs text-slate-500">
+        <span class="material-symbols-outlined text-3xl text-slate-400">description</span>
+        <p>Las guías técnicas y manuales de laboratorio para esta asignatura serán publicadas conforme al avance del semestre.</p>
+      </div>
     </div>
 
     <!-- ========================================================================= -->
@@ -672,7 +686,7 @@ function copyColabLink(url) {
         <p class="text-xs text-slate-500">Sesiones grabadas y explicaciones en YouTube.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div v-if="course.videos && course.videos.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         <div 
           v-for="v in course.videos" 
           :key="v.id"
@@ -733,6 +747,11 @@ function copyColabLink(url) {
             </a>
           </div>
         </div>
+      </div>
+
+      <div v-else class="p-12 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl space-y-2 font-mono text-xs text-slate-500">
+        <span class="material-symbols-outlined text-3xl text-slate-400">smart_display</span>
+        <p>Las masterclasses y videos explicativos se habilitarán en las sesiones programadas del semestre.</p>
       </div>
     </div>
 

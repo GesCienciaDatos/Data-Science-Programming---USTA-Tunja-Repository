@@ -171,7 +171,9 @@ function copySnippet(ds) {
               <p class="text-[10px] text-slate-500 font-normal line-clamp-1">
                 {{ ds.description }}
               </p>
-              <div class="flex items-center gap-2 mt-1 text-[10px] text-slate-400 font-normal">
+              <div class="flex items-center gap-1.5 mt-1 text-[10px] text-slate-400 font-normal">
+                <span v-if="ds.course_name" class="text-brand-cyan truncate max-w-[130px] font-medium">{{ ds.course_name }}</span>
+                <span v-if="ds.course_name">•</span>
                 <span>{{ ds.rows ? ds.rows.toLocaleString() : 'N/A' }} filas</span>
                 <span>•</span>
                 <span>{{ ds.cols || ds.columns || 'N/A' }} cols</span>
@@ -192,6 +194,9 @@ function copySnippet(ds) {
                   <h4 class="text-base font-semibold text-slate-900 dark:text-slate-100 font-mono">
                     {{ selectedDataset.name }}
                   </h4>
+                  <span v-if="selectedDataset.course_name" class="text-[10px] px-2 py-0.5 rounded-full font-mono font-medium bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">
+                    {{ selectedDataset.course_name }}
+                  </span>
                   <span class="text-[10px] px-2 py-0.5 rounded-full font-mono font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
                     CSV
                   </span>
