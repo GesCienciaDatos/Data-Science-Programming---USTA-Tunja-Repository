@@ -2,7 +2,7 @@
 
 This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.
 
-**Grafo actual:** 3,825 nodos · 6,350 aristas · 257 comunidades
+**Grafo actual:** 2,840 nodos · 4,061 aristas · 232 comunidades
 (Regenerar con: `graphify update .` — solo AST local, sin costo de API)
 
 ### Reglas de Uso
