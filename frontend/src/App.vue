@@ -6,6 +6,7 @@ import TopNavbar from './components/TopNavbar.vue';
 import HeroSection from './components/HeroSection.vue';
 import CourseDirectory from './components/CourseDirectory.vue';
 import CourseWorkspace from './components/CourseWorkspace.vue';
+import BooksLibraryView from './components/BooksLibraryView.vue';
 import DatasetExplorerModal from './components/DatasetExplorerModal.vue';
 import GlobalSearchModal from './components/GlobalSearchModal.vue';
 import PdfViewerModal from './components/PdfViewerModal.vue';
@@ -14,7 +15,7 @@ import FooterInstitutional from './components/FooterInstitutional.vue';
 
 // Reactive State
 const isDarkMode = ref(true);
-const currentView = ref('directory'); // 'directory' | 'workspace'
+const currentView = ref('directory'); // 'directory' | 'workspace' | 'books'
 const activeCourseId = ref(CATALOG_DATA.active_course_id || 'data-science-programming');
 
 // Modals State
@@ -38,6 +39,13 @@ const activeCourse = computed(() => {
 
 const allNotebooks = computed(() => {
   return courses.value.flatMap(c => c.notebooks || []);
+});
+
+const allBooks = computed(() => {
+  if (CATALOG_DATA.all_books && CATALOG_DATA.all_books.length > 0) {
+    return CATALOG_DATA.all_books;
+  }
+  return courses.value.flatMap(c => c.books || []);
 });
 
 const allVideos = computed(() => {
@@ -133,6 +141,7 @@ onMounted(() => {
     <TopNavbar 
       :current-view="currentView"
       :active-course="activeCourse"
+      :total-books="allBooks.length"
       :is-dark-mode="isDarkMode"
       @navigate-view="navigateView"
       @open-search="isGlobalSearchOpen = true"
@@ -146,8 +155,10 @@ onMounted(() => {
       <div v-if="currentView === 'directory'" class="space-y-4">
         <HeroSection 
           :courses="courses"
+          :total-books="allBooks.length"
           @explore-course="selectCourse"
           @open-datasets="isDatasetModalOpen = true"
+          @open-books="navigateView('books')"
         />
 
         <CourseDirectory 
@@ -164,6 +175,14 @@ onMounted(() => {
           @show-toast="showToast"
           @open-pdf="openPdfViewer"
           @play-video="playVideo"
+        />
+      </div>
+
+      <!-- 3. Global Digital Books Library View -->
+      <div v-else-if="currentView === 'books'">
+        <BooksLibraryView 
+          :books="allBooks"
+          @open-pdf="openPdfViewer"
         />
       </div>
 

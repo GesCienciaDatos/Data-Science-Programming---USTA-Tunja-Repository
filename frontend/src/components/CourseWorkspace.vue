@@ -28,17 +28,36 @@ watch(selectedModality, () => {
   selectedModuleId.value = 'all';
 });
 
+watch(() => props.course?.id, () => {
+  selectedBookCategory.value = 'all';
+  bookSearchQuery.value = '';
+  selectedModality.value = 'standard';
+  selectedModuleId.value = 'all';
+});
+
 // Books reactive state
 const bookSearchQuery = ref('');
 const selectedBookCategory = ref('all');
-const bookCategories = [
-  { id: 'all', name: 'Todos' },
-  { id: 'Para Dummies / Principiantes', name: 'Para Dummies / Principiantes' },
-  { id: 'Fundamentos & Estructuras', name: 'Fundamentos & Estructuras' },
-  { id: 'Recetas & Buenas Prácticas', name: 'Recetas & Buenas Prácticas' },
-  { id: 'Ciencia de Datos & Análisis', name: 'Ciencia de Datos & Análisis' },
-  { id: 'Rendimiento & Optimización', name: 'Rendimiento & Optimización' }
-];
+
+const bookCategories = computed(() => {
+  const books = props.course?.books || [];
+  const categoriesSet = new Set();
+  let hasDummies = false;
+  books.forEach(b => {
+    if (b.category) categoriesSet.add(b.category);
+    if (b.dummies_friendly) hasDummies = true;
+  });
+  const cats = [{ id: 'all', name: `Todos (${books.length})` }];
+  if (hasDummies) {
+    cats.push({ id: 'Para Dummies / Principiantes', name: 'Para Dummies' });
+  }
+  Array.from(categoriesSet).sort().forEach(cat => {
+    if (cat !== 'Para Dummies / Principiantes') {
+      cats.push({ id: cat, name: cat });
+    }
+  });
+  return cats;
+});
 
 // Datasets reactive state
 const selectedDatasetIndex = ref(0);
@@ -238,6 +257,8 @@ function copyColabLink(url) {
           
           <div class="flex items-center gap-3 font-mono text-xs text-slate-500 dark:text-slate-400">
             <span><b class="text-slate-900 dark:text-brand-cyan">{{ (course.notebooks || []).length }}</b> Cuadernos</span>
+            <span>•</span>
+            <span><b class="text-slate-900 dark:text-brand-amber">{{ (course.books || []).length }}</b> Libros</span>
             <span>•</span>
             <span><b class="text-slate-900 dark:text-slate-100">{{ (course.modules || []).length }}</b> Módulos</span>
           </div>

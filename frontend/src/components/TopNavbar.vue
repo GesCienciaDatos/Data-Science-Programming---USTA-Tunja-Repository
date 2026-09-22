@@ -8,6 +8,10 @@ defineProps({
     type: Object,
     default: null
   },
+  totalBooks: {
+    type: Number,
+    default: 51
+  },
   isDarkMode: {
     type: Boolean,
     required: true
@@ -49,20 +53,33 @@ const emit = defineEmits([
         </button>
       </div>
 
-      <!-- Navigation Link: Plan de Estudios -->
-      <div class="flex items-center gap-4 font-mono text-xs text-slate-600 dark:text-slate-400">
+      <!-- Navigation Links: Plan de Estudios & Biblioteca Digital -->
+      <div class="flex items-center gap-2 sm:gap-4 font-mono text-xs text-slate-600 dark:text-slate-400">
         <button 
           @click="emit('navigate-view', 'directory')"
-          class="px-3 py-1 rounded-md transition-colors flex items-center gap-1.5"
-          :class="currentView === 'directory' ? 'text-brand-cyan font-semibold bg-brand-cyan/10' : 'hover:text-brand-cyan hover:bg-slate-100 dark:hover:bg-space-900'"
+          class="px-2.5 sm:px-3 py-1.5 rounded-md transition-colors flex items-center gap-1.5"
+          :class="currentView === 'directory' ? 'text-brand-cyan font-semibold bg-brand-cyan/10 border border-brand-cyan/20' : 'hover:text-brand-cyan hover:bg-slate-100 dark:hover:bg-space-900'"
         >
           <span class="material-symbols-outlined text-sm">school</span>
           <span>Plan de Estudios</span>
         </button>
 
-        <div v-if="currentView === 'workspace' && activeCourse" class="flex items-center gap-2">
+        <button 
+          @click="emit('navigate-view', 'books')"
+          class="px-2.5 sm:px-3 py-1.5 rounded-md transition-colors flex items-center gap-1.5"
+          :class="currentView === 'books' ? 'text-brand-cyan font-semibold bg-brand-cyan/10 border border-brand-cyan/20' : 'hover:text-brand-cyan hover:bg-slate-100 dark:hover:bg-space-900'"
+          title="Ver Biblioteca Digital Global"
+        >
+          <span class="material-symbols-outlined text-sm">menu_book</span>
+          <span>Biblioteca</span>
+          <span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-brand-cyan/15 text-brand-cyan font-semibold">
+            {{ totalBooks }}
+          </span>
+        </button>
+
+        <div v-if="currentView === 'workspace' && activeCourse" class="hidden md:flex items-center gap-2">
           <span class="text-slate-300 dark:text-slate-700">/</span>
-          <span class="text-slate-900 dark:text-slate-200 font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-space-900">
+          <span class="text-slate-900 dark:text-slate-200 font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800">
             {{ activeCourse.name }}
           </span>
         </div>

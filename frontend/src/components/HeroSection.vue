@@ -5,10 +5,14 @@ const props = defineProps({
   courses: {
     type: Array,
     default: () => []
+  },
+  totalBooks: {
+    type: Number,
+    default: 51
   }
 });
 
-const emit = defineEmits(['open-datasets']);
+const emit = defineEmits(['open-datasets', 'open-books']);
 
 const activeSnippetKey = ref('ml');
 const isExecuting = ref(false);
@@ -16,12 +20,12 @@ const executionOutput = ref('R² Promedio 5-Fold CV: 0.8871 (Modelo Validado con
 
 // Dynamic metric aggregations across the entire academic ecosystem
 const totalNotebooks = computed(() => {
-  if (!props.courses || props.courses.length === 0) return 244;
+  if (!props.courses || props.courses.length === 0) return 344;
   return props.courses.reduce((acc, c) => acc + (c.notebooks?.length || c.stats?.total_notebooks || 0), 0);
 });
 
 const totalModules = computed(() => {
-  if (!props.courses || props.courses.length === 0) return 21;
+  if (!props.courses || props.courses.length === 0) return 24;
   return props.courses.reduce((acc, c) => acc + (c.modules?.length || 0), 0);
 });
 
@@ -139,29 +143,41 @@ function scrollToDirectory() {
           </button>
           
           <button 
+            @click="emit('open-books')"
+            class="px-4 py-2.5 rounded-md bg-transparent hover:bg-slate-100 dark:hover:bg-space-900 border border-brand-amber/40 dark:border-brand-amber/30 text-amber-600 dark:text-brand-amber font-mono text-xs transition-all flex items-center gap-2"
+          >
+            <span class="material-symbols-outlined text-sm text-brand-amber">menu_book</span>
+            <span>BIBLIOTECA ({{ totalBooks }})</span>
+          </button>
+
+          <button 
             @click="emit('open-datasets')"
             class="px-4 py-2.5 rounded-md bg-transparent hover:bg-slate-100 dark:hover:bg-space-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 font-mono text-xs transition-all flex items-center gap-2"
           >
             <span class="material-symbols-outlined text-sm text-brand-cyan">database</span>
-            <span>EXPLORAR DATASETS</span>
+            <span>DATASETS</span>
           </button>
         </div>
 
         <!-- Metric Counters (General Specialization Metrics) -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200 dark:border-slate-800/80">
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-6 border-t border-slate-200 dark:border-slate-800/80">
           <div class="glass-card rounded-lg p-3.5 border text-center sm:text-left">
             <span class="block font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">Cuadernos</span>
             <span class="font-mono text-xl font-semibold text-slate-900 dark:text-brand-cyan">{{ totalNotebooks }}</span>
           </div>
           <div class="glass-card rounded-lg p-3.5 border text-center sm:text-left">
-            <span class="block font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">Módulos Temáticos</span>
+            <span class="block font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">Libros Digitales</span>
+            <span class="font-mono text-xl font-semibold text-amber-600 dark:text-brand-amber">{{ totalBooks }}</span>
+          </div>
+          <div class="glass-card rounded-lg p-3.5 border text-center sm:text-left">
+            <span class="block font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">Módulos</span>
             <span class="font-mono text-xl font-semibold text-slate-900 dark:text-brand-amber">{{ totalModules }}</span>
           </div>
           <div class="glass-card rounded-lg p-3.5 border text-center sm:text-left">
             <span class="block font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">Plan de Estudios</span>
             <span class="font-mono text-xl font-semibold text-slate-900 dark:text-slate-100">{{ totalCourses }} Materias</span>
           </div>
-          <div class="glass-card rounded-lg p-3.5 border text-center sm:text-left">
+          <div class="glass-card rounded-lg p-3.5 border text-center sm:text-left col-span-2 sm:col-span-1">
             <span class="block font-mono text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-wider">Plataforma</span>
             <span class="font-mono text-xl font-semibold text-emerald-600 dark:text-brand-emerald">100% Cloud</span>
           </div>

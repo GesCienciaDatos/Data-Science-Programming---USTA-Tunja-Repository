@@ -123,11 +123,17 @@ const filteredCourses = computed(() => {
           </p>
 
           <!-- Metrics Matrix -->
-          <div class="grid grid-cols-3 gap-2 mb-5 font-mono text-[11px]">
+          <div class="grid grid-cols-4 gap-1.5 mb-5 font-mono text-[11px]">
             <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">
               <span class="block text-[9px] text-slate-400 uppercase">Cuadernos</span>
               <span class="font-semibold text-slate-800 dark:text-slate-200">
                 {{ course.active !== false ? (course.notebooks?.length || course.stats?.total_notebooks || 0) : '—' }}
+              </span>
+            </div>
+            <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">
+              <span class="block text-[9px] text-slate-400 uppercase">Libros</span>
+              <span class="font-semibold text-amber-600 dark:text-brand-amber">
+                {{ course.active !== false ? ((course.books || []).length || 0) : '—' }}
               </span>
             </div>
             <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">

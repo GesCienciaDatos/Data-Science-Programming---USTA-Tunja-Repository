@@ -115,7 +115,7 @@ COURSE_DEFINITIONS = [
         "title": "Aprendizaje Automático Supervisado y No Supervisado",
         "folder": "Machine Learning",
         "icon": "🧠",
-        "badge": "En Construcción",
+        "badge": "Biblioteca Activa",
         "badge_color": "violet",
         "color": "#8b5cf6",
         "gradient": "from-violet-500/20 via-purple-600/10 to-transparent",
@@ -123,7 +123,7 @@ COURSE_DEFINITIONS = [
         "description": "Algoritmos de clasificación supervisada, ensambles avanzados (Random Forest, XGBoost, LightGBM, CatBoost), clustering no supervisado y optimización de hiperparámetros.",
         "level": "Especialización",
         "semester": "Semestre II",
-        "active": False
+        "active": True
     },
     {
         "id": "big-data",
@@ -562,9 +562,9 @@ def infer_difficulty(title, path):
         return "Avanzado"
     return "Intermedio"
 
-def sync_course_assets(course_dir):
+def sync_course_assets(course_id, course_folder_name, course_dir):
     """Sincroniza Guias/, Contenido/ y Libros/ del curso hacia docs/"""
-    for folder_name in ["Guias", "Contenido", "Libros"]:
+    for folder_name in ["Guias", "Contenido"]:
         src = course_dir / folder_name
         dest = DOCS_DIR / folder_name
         dest.mkdir(parents=True, exist_ok=True)
@@ -577,6 +577,29 @@ def sync_course_assets(course_dir):
                     if not target_file.exists() or target_file.stat().st_mtime < item.stat().st_mtime:
                         shutil.copy2(item, target_file)
                         print(f"  [SYNC] Copiado: {item.name} -> docs/{folder_name}/{rel}")
+
+    src_libros = course_dir / "Libros"
+    if src_libros.exists() and src_libros.is_dir():
+        if course_id == "data-science-programming":
+            dest_libros = DOCS_DIR / "Libros"
+            for item in src_libros.rglob("*"):
+                if item.is_file():
+                    rel = item.relative_to(src_libros)
+                    target_file = dest_libros / rel
+                    target_file.parent.mkdir(parents=True, exist_ok=True)
+                    if not target_file.exists() or target_file.stat().st_mtime < item.stat().st_mtime:
+                        shutil.copy2(item, target_file)
+                        print(f"  [SYNC] Copiado: {item.name} -> docs/Libros/{rel}")
+        else:
+            subname = SUBFOLDER_MAP.get(course_id, course_folder_name)
+            dest_libros = DOCS_DIR / "Libros" / subname
+            dest_libros.mkdir(parents=True, exist_ok=True)
+            for item in src_libros.glob("*.pdf"):
+                if item.is_file():
+                    target_file = dest_libros / item.name
+                    if not target_file.exists() or target_file.stat().st_mtime < item.stat().st_mtime:
+                        shutil.copy2(item, target_file)
+                        print(f"  [SYNC] Copiado: {item.name} -> docs/Libros/{subname}/{item.name}")
 
 def scan_course_modules(course_dir, default_modules=None):
     modules = [dict(m) for m in default_modules] if default_modules else []
@@ -632,7 +655,18 @@ def scan_course_modules(course_dir, default_modules=None):
 # CATÁLOGO OFICIAL DE LIBROS EN PDF (EXCLUSIVAMENTE LOS PRESENTES EN Libros/)
 # =========================================================================
 
-PYTHON_BOOKS_METADATA = {
+SUBFOLDER_MAP = {
+    "data-science-programming": "Python",
+    "data-mining": "Data Mining",
+    "machine-learning": "Machine Learning",
+    "visual-analytics": "Visual Analytics",
+    "introduccion-ia": "Inteligencia Artificial"
+}
+
+BOOKS_METADATA = {
+    # -------------------------------------------------------------------------
+    # 1. Programación para Ciencia de Datos (Python & Algoritmos)
+    # -------------------------------------------------------------------------
     "head first python, 2nd edition.pdf": {
         "title": "Head First Python",
         "subtitle": "A Brain-Friendly Guide to Learning Python",
@@ -728,7 +762,7 @@ PYTHON_BOOKS_METADATA = {
         "category": "Fundamentos & Estructuras",
         "level": "Intermedio",
         "dummies_friendly": False,
-        "summary_dummies": "Explicación rigurosa de las estructuras de datos fundamentales (listas enlazadas, pilas, colas, árboles, grafos y tablas hash) y análisis de complejidad de algoritmos con Python.",
+        "summary_dummies": "Explicación rigurora de las estructuras de datos fundamentales (listas enlazadas, pilas, colas, árboles, grafos y tablas hash) y análisis de complejidad de algoritmos con Python.",
         "topics": ["Complejidad Big-O", "Pilas & Colas", "Árboles Binarios", "Grafos & Búsqueda", "Algoritmos de Ordenación"],
         "cover_gradient": "from-cyan-600 via-teal-800 to-slate-950",
         "cover_bg": "#0891b2",
@@ -779,7 +813,7 @@ PYTHON_BOOKS_METADATA = {
         "category": "Recetas & Buenas Prácticas",
         "level": "Intermedio",
         "dummies_friendly": False,
-        "summary_dummies": "Más de 130 recetas modernas con las últimas características del lenguaje, programación funcional, tipado estático (`typing`), persistencia de datos y desarrollo de APIs limpias.",
+        "summary_dummies": "Más de 130 recetas modernas con las últimas características del lenguaje, programación funcional, tipado estático, persistencia de datos y desarrollo de APIs limpias.",
         "topics": ["Programación Funcional", "Tipado Estático", "Bases de Datos & SQL", "JSON/CSV", "Estructuras Modernas"],
         "cover_gradient": "from-blue-700 via-indigo-800 to-slate-950",
         "cover_bg": "#1d4ed8",
@@ -819,8 +853,701 @@ PYTHON_BOOKS_METADATA = {
         "cover_bg": "#334155",
         "accent_color": "#94a3b8",
         "icon": "📘"
+    },
+
+    # -------------------------------------------------------------------------
+    # 2. Data Mining (Minería de Datos, KDD & Algoritmos)
+    # -------------------------------------------------------------------------
+    "data mining - the textbook.pdf": {
+        "title": "Data Mining: The Textbook",
+        "subtitle": "Principles, Algorithms, and Systems of Data Mining",
+        "author": "Charu C. Aggarwal",
+        "publisher": "Springer",
+        "year": "2015",
+        "edition": "1st Edition",
+        "category": "Data Mining & KDD",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Texto de referencia académica global. Tratamiento matemático riguroso y sistemático de clustering, clasificación, minería de reglas, detección de anomalías y grafos.",
+        "topics": ["Clustering", "Clasificación", "Outlier Detection", "Association Rules", "Graph Mining"],
+        "cover_gradient": "from-rose-600 via-pink-700 to-slate-950",
+        "cover_bg": "#f43f5e",
+        "accent_color": "#fb7185",
+        "icon": "⛏️"
+    },
+    "introduction to data mining - vipin kumar.pdf": {
+        "title": "Introduction to Data Mining",
+        "subtitle": "Concepts, Techniques, and Algorithmic Foundations",
+        "author": "Pang-Ning Tan, Michael Steinbach, Vipin Kumar",
+        "publisher": "Pearson",
+        "year": "2018",
+        "edition": "2nd Edition",
+        "category": "Data Mining & KDD",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "El estándar pedagógico mundial para aprender minería de datos. Enfoque visual e intuitivo sobre K-Means, DBSCAN, árboles de decisión, soporte/confianza y métricas de evaluación.",
+        "topics": ["CRISP-DM", "K-Means", "DBSCAN", "Apriori & FP-Growth", "Árboles de Decisión"],
+        "cover_gradient": "from-pink-600 via-rose-700 to-neutral-900",
+        "cover_bg": "#e11d48",
+        "accent_color": "#f43f5e",
+        "icon": "🔍"
+    },
+    "principles of data mining - max bramer.pdf": {
+        "title": "Principles of Data Mining",
+        "subtitle": "Undergraduate Topics in Computer Science",
+        "author": "Max Bramer",
+        "publisher": "Springer",
+        "year": "2020",
+        "edition": "4th Edition",
+        "category": "Data Mining & KDD",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Enfoque claro y directo sobre inducción de reglas clasificadoras, entropía, ganancia de información, Naive Bayes y evaluación empírica de algoritmos.",
+        "topics": ["Reglas de Decisión", "Naive Bayes", "Medidas de Impureza", "Ensembles"],
+        "cover_gradient": "from-indigo-600 via-purple-700 to-slate-950",
+        "cover_bg": "#6366f1",
+        "accent_color": "#818cf8",
+        "icon": "📐"
+    },
+    "web data mining 2nd edition - bing liu.pdf": {
+        "title": "Web Data Mining",
+        "subtitle": "Exploring Hyperlinks, Contents, and Usage Data",
+        "author": "Bing Liu",
+        "publisher": "Springer",
+        "year": "2011",
+        "edition": "2nd Edition",
+        "category": "Data Mining & KDD",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Obra cumbre sobre minería en la web: análisis de enlaces (PageRank, HITS), web crawling, opinion mining, sentiment analysis y minería de registros de navegación.",
+        "topics": ["Web Crawling", "PageRank", "Sentiment Analysis", "Text Mining", "Web Logs"],
+        "cover_gradient": "from-teal-600 via-cyan-700 to-slate-950",
+        "cover_bg": "#0d9488",
+        "accent_color": "#14b8a6",
+        "icon": "🌐"
+    },
+    "web data mining with python - ranjana rajnish.pdf": {
+        "title": "Web Data Mining with Python",
+        "subtitle": "Techniques and Tools for Mining Unstructured Web Data",
+        "author": "Ranjana Rajnish",
+        "publisher": "CRC Press",
+        "year": "2023",
+        "edition": "1st Edition",
+        "category": "Data Mining & KDD",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Guía práctica de minería web aplicada en Python: extracción automatizada con BeautifulSoup y Selenium, procesamiento de lenguaje natural y modelado de tópicos.",
+        "topics": ["Web Scraping", "Python", "BeautifulSoup", "NLP", "Text Mining"],
+        "cover_gradient": "from-emerald-600 via-teal-700 to-slate-950",
+        "cover_bg": "#059669",
+        "accent_color": "#10b981",
+        "icon": "🕷️"
+    },
+    "handbook of statistical analysis and data mining applications.pdf": {
+        "title": "Handbook of Statistical Analysis and Data Mining Applications",
+        "subtitle": "Comprehensive Reference for Data Science Practitioners",
+        "author": "Robert Nisbet, John Elder, Gary Miner",
+        "publisher": "Academic Press",
+        "year": "2018",
+        "edition": "2nd Edition",
+        "category": "Data Mining & KDD",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Enciclopedia práctica sobre el ciclo de vida del dato: preparación de tablas analíticas, selección óptima de algoritmos, validación cruzada y casos de estudio industriales.",
+        "topics": ["CRISP-DM", "Metodología KDD", "Estadística Multivariada", "Modelos Predictivos"],
+        "cover_gradient": "from-amber-600 via-orange-700 to-neutral-900",
+        "cover_bg": "#d97706",
+        "accent_color": "#f59e0b",
+        "icon": "📚"
+    },
+    "data mining and predictive analytics for business decisions.pdf": {
+        "title": "Data Mining and Predictive Analytics for Business Decisions",
+        "subtitle": "Turning Enterprise Data into High-Value Strategic Insights",
+        "author": "Daniel T. Larose, Chantal D. Larose",
+        "publisher": "Wiley",
+        "year": "2015",
+        "edition": "2nd Edition",
+        "category": "Ciencia de Datos & Análisis",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Aprende a aplicar modelos predictivos y minería de datos directamente en el mundo de los negocios: scoring de crédito, retención de clientes y predicción de fraude.",
+        "topics": ["Business Analytics", "Scoring Crediticio", "Churn Prediction", "Segmentación"],
+        "cover_gradient": "from-blue-600 via-indigo-700 to-slate-950",
+        "cover_bg": "#2563eb",
+        "accent_color": "#3b82f6",
+        "icon": "💼"
+    },
+    "data mining competition practices - methods and cases.pdf": {
+        "title": "Data Mining Competition Practices",
+        "subtitle": "Winning Methods, Advanced Feature Engineering, and Real Cases",
+        "author": "Xue-Bo Jin, Competition Group",
+        "publisher": "Springer",
+        "year": "2024",
+        "edition": "1st Edition",
+        "category": "Ciencia de Datos & Análisis",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Metodologías de élite en competiciones de ciencia de datos: validación cruzada estratificada adversaria, target encoding regularizado, ensambles por apilamiento (Stacking) y Optuna.",
+        "topics": ["Kaggle Strategies", "Feature Engineering", "Ensembles", "Model Stacking", "Optuna"],
+        "cover_gradient": "from-violet-600 via-purple-700 to-slate-950",
+        "cover_bg": "#7c3aed",
+        "accent_color": "#a855f7",
+        "icon": "🏆"
+    },
+    "data mining and analytics in healthcare management.pdf": {
+        "title": "Data Mining and Analytics in Healthcare Management",
+        "subtitle": "Transforming Clinical Care and Health Systems Optimization",
+        "author": "V. K. Singh et al.",
+        "publisher": "Springer",
+        "year": "2023",
+        "edition": "1st Edition",
+        "category": "Ciencia de Datos & Análisis",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Aplicación de técnicas analíticas al sector biomédico y clínico: diagnóstico temprano asistido por machine learning, minería de historiales electrónicos y optimización hospitalaria.",
+        "topics": ["Health Informatics", "Historias Clínicas", "Modelos Predictivos en Salud", "Clustering Pacientes"],
+        "cover_gradient": "from-cyan-600 via-blue-700 to-slate-950",
+        "cover_bg": "#0891b2",
+        "accent_color": "#06b6d4",
+        "icon": "🏥"
+    },
+    "e-commerce big data mining and analytics.pdf": {
+        "title": "E-Commerce Big Data Mining and Analytics",
+        "subtitle": "Market Baskets, Recommender Systems, and Customer Intelligence",
+        "author": "Zhi-Pei Fan et al.",
+        "publisher": "CRC Press",
+        "year": "2022",
+        "edition": "1st Edition",
+        "category": "Ciencia de Datos & Análisis",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Técnicas esenciales para el comercio digital: minería de carritos de compra (Market Basket), reglas de asociación, filtrado colaborativo en recomendaciones y fijación dinámica de precios.",
+        "topics": ["Market Basket Analysis", "Sistemas de Recomendación", "Pricing Dinámico", "Reglas Apriori"],
+        "cover_gradient": "from-amber-600 via-yellow-700 to-stone-900",
+        "cover_bg": "#d97706",
+        "accent_color": "#f59e0b",
+        "icon": "🛒"
+    },
+    "data science and machine learning for non-programmers - dothang truong.pdf": {
+        "title": "Data Science and Machine Learning for Non-Programmers",
+        "subtitle": "Using Visual Analytics and Intuitive Workflows",
+        "author": "Dothang Truong",
+        "publisher": "Chapman and Hall / CRC",
+        "year": "2024",
+        "edition": "1st Edition",
+        "category": "Para Dummies / Principiantes",
+        "level": "Básico (Visual / Dummies)",
+        "dummies_friendly": True,
+        "summary_dummies": "El libro ideal para entender la ciencia de datos sin programar código complejo. Explica cómo funcionan los árboles de decisión, regresiones y clusters mediante diagramas y flujo de datos visual.",
+        "topics": ["Conceptos Visuales", "Clasificación", "Regresión", "Analítica Sin Código"],
+        "cover_gradient": "from-rose-600 via-orange-700 to-neutral-900",
+        "cover_bg": "#e11d48",
+        "accent_color": "#f43f5e",
+        "icon": "💡"
+    },
+    "feature engineering for modern machine learning with scikit-learn - miguel gonzalez.pdf": {
+        "title": "Feature Engineering for Modern Machine Learning",
+        "subtitle": "Building Production-Grade Pipelines with Scikit-Learn",
+        "author": "Miguel Gonzalez",
+        "publisher": "O'Reilly Media",
+        "year": "2025",
+        "edition": "1st Edition",
+        "category": "Fundamentos & Estructuras",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Manual técnico indispensable: transformación de variables numéricas, codificación de alta cardinalidad, creación de ratios, extracción de componentes PCA y validación cruzada libre de data leakage.",
+        "topics": ["Feature Engineering", "Scikit-Learn Pipelines", "Target Encoding", "PCA", "Preprocesamiento"],
+        "cover_gradient": "from-purple-600 via-indigo-700 to-slate-950",
+        "cover_bg": "#7c3aed",
+        "accent_color": "#a855f7",
+        "icon": "⚙️"
+    },
+    "data mining for scientific and engineering applications.pdf": {
+        "title": "Data Mining for Scientific and Engineering Applications",
+        "subtitle": "Massive Datasets in Physics, Astronomy, and Bioinformatics",
+        "author": "Robert L. Grossman et al.",
+        "publisher": "Kluwer Academic Publishers",
+        "year": "2021",
+        "edition": "1st Edition",
+        "category": "Algoritmos & Métodos",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Tratamiento avanzado de grandes volúmenes de datos experimentales, series de tiempo continuas, análisis espacial y modelado estocástico para ingeniería y física computacional.",
+        "topics": ["Scientific Data", "Time Series", "Spatial Mining", "Signal Processing"],
+        "cover_gradient": "from-slate-700 via-teal-800 to-neutral-950",
+        "cover_bg": "#0f766e",
+        "accent_color": "#14b8a6",
+        "icon": "🔬"
+    },
+    "linear algebra tools for data mining 2nd edition - dan a simovici.pdf": {
+        "title": "Linear Algebra Tools for Data Mining",
+        "subtitle": "Mathematical Foundations for Machine Learning Algorithms",
+        "author": "Dan A. Simovici",
+        "publisher": "World Scientific",
+        "year": "2020",
+        "edition": "2nd Edition",
+        "category": "Algoritmos & Métodos",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Fundamentos matemáticos esenciales: descomposición en valores singulares (SVD), análisis de componentes principales (PCA), factorización de matrices no negativas (NMF) y teoría espectral de grafos.",
+        "topics": ["Álgebra Lineal", "SVD", "PCA", "Factorización Matricial", "Teoría Espectral"],
+        "cover_gradient": "from-cyan-700 via-blue-800 to-slate-950",
+        "cover_bg": "#0369a1",
+        "accent_color": "#0284c7",
+        "icon": "📐"
+    },
+    "machine learning and data mining - andries engelbrecht.pdf": {
+        "title": "Computational Intelligence & Data Mining",
+        "subtitle": "An Introduction to Neural Networks and Evolutionary Computing",
+        "author": "Andries P. Engelbrecht",
+        "publisher": "Wiley",
+        "year": "2019",
+        "edition": "2nd Edition",
+        "category": "Algoritmos & Métodos",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Algoritmos bioinspirados para optimización: redes neuronales artificiales, algoritmos genéticos, optimización por enjambre de partículas (PSO) y sistemas inmunes aplicados a minería de datos.",
+        "topics": ["Redes Neuronales", "Algoritmos Genéticos", "PSO", "Inteligencia Computacional"],
+        "cover_gradient": "from-violet-700 via-indigo-800 to-slate-950",
+        "cover_bg": "#6d28d9",
+        "accent_color": "#8b5cf6",
+        "icon": "🤖"
+    },
+    "metalearning - applications to data mining - pavel brazdil.pdf": {
+        "title": "Metalearning: Applications to Data Mining",
+        "subtitle": "Automated Algorithm Selection and AutoML Foundations",
+        "author": "Pavel Brazdil, Christophe Giraud-Carrier, Carlos Soares",
+        "publisher": "Springer",
+        "year": "2022",
+        "edition": "2nd Edition",
+        "category": "Algoritmos & Métodos",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "El arte de aprender a aprender: selección automatizada de algoritmos de clasificación, extracción de meta-características de datasets y bases teóricas de los modernos sistemas AutoML.",
+        "topics": ["AutoML", "Meta-Learning", "Selección de Modelos", "Hyperparameter Tuning"],
+        "cover_gradient": "from-pink-700 via-rose-800 to-slate-950",
+        "cover_bg": "#be123c",
+        "accent_color": "#f43f5e",
+        "icon": "🧬"
+    },
+    "swarm intelligence in data mining - ajith abraham.pdf": {
+        "title": "Swarm Intelligence in Data Mining",
+        "subtitle": "Collective Intelligence for Clustering and Optimization",
+        "author": "Ajith Abraham, Crina Grosan, Vitorino Ramos",
+        "publisher": "Springer",
+        "year": "2021",
+        "edition": "1st Edition",
+        "category": "Algoritmos & Métodos",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Aplica el comportamiento colectivo de hormigas, abejas y bandadas de aves para resolver problemas complejos de agrupamiento no supervisado y selección óptima de atributos en alta dimensión.",
+        "topics": ["Swarm Intelligence", "Ant Colony Optimization", "Feature Selection", "Clustering Heurístico"],
+        "cover_gradient": "from-amber-700 via-yellow-800 to-stone-950",
+        "cover_bg": "#b45309",
+        "accent_color": "#f59e0b",
+        "icon": "🐝"
+    },
+    "learning tableau 2025 6th edition - joshua n milligan.pdf": {
+        "title": "Learning Tableau 2025",
+        "subtitle": "Tools for Visual Data Exploration and Storytelling",
+        "author": "Joshua N. Milligan",
+        "publisher": "Packt Publishing",
+        "year": "2025",
+        "edition": "6th Edition",
+        "category": "Tableau & Visualización",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "El manual más actualizado sobre Tableau 2025: expresiones de nivel de detalle (LOD), mapas geoespaciales interactivos, acciones de conjuntos y diseño de dashboards ejecutivos dinámicos.",
+        "topics": ["Tableau 2025", "LOD Expressions", "Dashboards", "Visual Analytics"],
+        "cover_gradient": "from-blue-600 via-teal-700 to-slate-950",
+        "cover_bg": "#0284c7",
+        "accent_color": "#38bdf8",
+        "icon": "📊"
+    },
+
+    # -------------------------------------------------------------------------
+    # 3. Machine Learning (Aprendizaje Automático & Deep Learning)
+    # -------------------------------------------------------------------------
+    "hands-on machine learning with scikit-learn and pytorch - aurelien geron.pdf": {
+        "title": "Hands-On Machine Learning with Scikit-Learn and PyTorch",
+        "subtitle": "Concepts, Tools, and Techniques to Build Intelligent Systems",
+        "author": "Aurélien Géron",
+        "publisher": "O'Reilly Media",
+        "year": "2025",
+        "edition": "3rd / 4th Edition (Latest 2025 Release)",
+        "category": "Machine Learning & IA",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": True,
+        "summary_dummies": "La biblia mundial indiscutible del aprendizaje automático práctico. Cubre desde regresión logística y árboles de ensamble con Scikit-Learn hasta redes neuronales profundas con PyTorch.",
+        "topics": ["Scikit-Learn", "PyTorch", "Deep Learning", "Random Forest", "Transformers", "Redes Neuronales"],
+        "cover_gradient": "from-violet-600 via-indigo-700 to-slate-950",
+        "cover_bg": "#7c3aed",
+        "accent_color": "#a855f7",
+        "icon": "🧠"
+    },
+
+    # -------------------------------------------------------------------------
+    # 4. Visual Analytics and Critical Thinking (Power BI, Tableau & Power Query)
+    # -------------------------------------------------------------------------
+    "microsoft power bi for dummies.pdf": {
+        "title": "Microsoft Power BI For Dummies",
+        "subtitle": "Turn Your Data into Dynamic Visual Presentations",
+        "author": "Jack A. Hyman",
+        "publisher": "Wiley (For Dummies)",
+        "year": "2022",
+        "edition": "1st Edition",
+        "category": "Para Dummies / Principiantes",
+        "level": "Básico (100% Visual / Dummies)",
+        "dummies_friendly": True,
+        "summary_dummies": "La mejor introducción amigable para profesionales de cualquier área. Aprende a conectar Excel, limpiar datos visualmente y crear tableros impactantes en minutos.",
+        "topics": ["Power BI Básico", "Importación de Datos", "Visualizaciones", "Dashboards"],
+        "cover_gradient": "from-yellow-600 via-amber-700 to-stone-900",
+        "cover_bg": "#eab308",
+        "accent_color": "#fde047",
+        "icon": "💡"
+    },
+    "tableau for dummies 2nd edition - jack a hyman.pdf": {
+        "title": "Tableau For Dummies",
+        "subtitle": "The Easy Way to Understand and Visualize Your Data",
+        "author": "Jack A. Hyman",
+        "publisher": "Wiley (For Dummies)",
+        "year": "2022",
+        "edition": "2nd Edition",
+        "category": "Para Dummies / Principiantes",
+        "level": "Básico (100% Visual / Dummies)",
+        "dummies_friendly": True,
+        "summary_dummies": "Explicado con analogías y pasos simples sin jerga matemática: conecta tablas de datos, arrastra campos a los ejes y comparte historias interactivas con tus colegas.",
+        "topics": ["Tableau Básico", "Conexión de Datos", "Story Points", "Visualizaciones"],
+        "cover_gradient": "from-amber-600 via-yellow-700 to-stone-900",
+        "cover_bg": "#d97706",
+        "accent_color": "#fbbf24",
+        "icon": "📈"
+    },
+    "96 common challenges in power query.pdf": {
+        "title": "96 Common Challenges in Power Query",
+        "subtitle": "Practical Solutions for Data Transformation in Power BI and Excel",
+        "author": "Gil Raviv",
+        "publisher": "Packt Publishing",
+        "year": "2023",
+        "edition": "1st Edition",
+        "category": "Power Query & ETL",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Recetario directo con 96 soluciones a los problemas más frecuentes de preparación de datos: unificar columnas, corregir fechas corruptas, limpiar caracteres invisibles y despivotar.",
+        "topics": ["Power Query", "Lenguaje M", "Limpieza de Datos", "Transformaciones ETL"],
+        "cover_gradient": "from-amber-600 via-yellow-700 to-slate-950",
+        "cover_bg": "#d97706",
+        "accent_color": "#f59e0b",
+        "icon": "⚡"
+    },
+    "collect, combine, and transform data using power query in power bi and excel 2nd edition.pdf": {
+        "title": "Collect, Combine, and Transform Data Using Power Query",
+        "subtitle": "The Definitive Guide for Power BI and Excel",
+        "author": "Gil Raviv",
+        "publisher": "Microsoft Press",
+        "year": "2024",
+        "edition": "2nd Edition",
+        "category": "Power Query & ETL",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "El manual oficial de Microsoft Press sobre Power Query: arquitectura del motor Mashup, plegado de consultas (Query Folding) para máxima velocidad y automatización de pipelines ETL.",
+        "topics": ["Microsoft Press", "Power Query", "Lenguaje M", "Query Folding", "ETL"],
+        "cover_gradient": "from-orange-600 via-amber-700 to-slate-950",
+        "cover_bg": "#ea580c",
+        "accent_color": "#f97316",
+        "icon": "🛠️"
+    },
+    "the definitive guide to power query m - greg deckler.pdf": {
+        "title": "The Definitive Guide to Power Query (M)",
+        "subtitle": "Mastering the Functional Language of Data Preparation in Power BI",
+        "author": "Greg Deckler",
+        "publisher": "Packt Publishing",
+        "year": "2023",
+        "edition": "1st Edition",
+        "category": "Power Query & ETL",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Aprende a programar en el lenguaje funcional M como un profesional: funciones recursivas, manipulación directa de listas y registros, integración con APIs REST y webhooks.",
+        "topics": ["Lenguaje M", "Funciones Personalizadas", "APIs REST", "Dataflow"],
+        "cover_gradient": "from-amber-700 via-orange-800 to-stone-950",
+        "cover_bg": "#c2410c",
+        "accent_color": "#f97316",
+        "icon": "💻"
+    },
+    "data cleaning with power bi - gus frazer.pdf": {
+        "title": "Data Cleaning with Power BI",
+        "subtitle": "The Definitive Guide to Transforming Dirty Data into Actionable Insights",
+        "author": "Gus Frazer",
+        "publisher": "Packt Publishing",
+        "year": "2024",
+        "edition": "1st Edition",
+        "category": "Power BI & DAX",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Estrategias prácticas de saneamiento: detección de valores atípicos, auditoría de integridad referencial, diseño de esquemas en estrella y normalización de catálogos maestros.",
+        "topics": ["Data Cleaning", "Power BI", "Modelado Dimensional", "Calidad del Dato"],
+        "cover_gradient": "from-teal-600 via-emerald-700 to-slate-950",
+        "cover_bg": "#0d9488",
+        "accent_color": "#14b8a6",
+        "icon": "🧹"
+    },
+    "data visualization with microsoft power bi - alex kolokolov.pdf": {
+        "title": "Data Visualization with Microsoft Power BI",
+        "subtitle": "Design Principles and Best Practices for Business Dashboards",
+        "author": "Alex Kolokolov",
+        "publisher": "Packt Publishing",
+        "year": "2023",
+        "edition": "1st Edition",
+        "category": "Power BI & DAX",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Diseño estético y funcional para reportes corporativos: psicología del color, contraste, microinteracciones, disposición en rejilla (Grid Layout) y data storytelling ejecutivo.",
+        "topics": ["UI/UX en Dashboards", "Visual Storytelling", "Paletas de Color", "Power BI"],
+        "cover_gradient": "from-blue-600 via-indigo-700 to-slate-950",
+        "cover_bg": "#2563eb",
+        "accent_color": "#3b82f6",
+        "icon": "🎨"
+    },
+    "exam ref pl-300 microsoft power bi data analyst - daniil maslyuk.pdf": {
+        "title": "Exam Ref PL-300: Microsoft Power BI Data Analyst",
+        "subtitle": "Official Microsoft Certification Study Guide",
+        "author": "Daniil Maslyuk",
+        "publisher": "Microsoft Press",
+        "year": "2024",
+        "edition": "2nd Edition",
+        "category": "Power BI & DAX",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "La guía oficial de preparación para la certificación PL-300 de Microsoft: modelado dimensional, optimización de expresiones DAX, seguridad a nivel de fila (RLS) y gobernanza de áreas de trabajo.",
+        "topics": ["Certificación PL-300", "DAX Avanzado", "Row-Level Security (RLS)", "Modelado"],
+        "cover_gradient": "from-indigo-600 via-blue-700 to-slate-950",
+        "cover_bg": "#4f46e5",
+        "accent_color": "#6366f1",
+        "icon": "🎓"
+    },
+    "learning microsoft power bi - jeremey arnold.pdf": {
+        "title": "Learning Microsoft Power BI",
+        "subtitle": "Transforming Data and Delivering Actionable Business Insights",
+        "author": "Jeremey Arnold",
+        "publisher": "O'Reilly Media",
+        "year": "2023",
+        "edition": "1st Edition",
+        "category": "Power BI & DAX",
+        "level": "Básico a Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Manual metódico de O'Reilly para dominar la plataforma: importación desde múltiples fuentes, creación de medidas analíticas con DAX, tarjetas KPI y distribución de aplicaciones.",
+        "topics": ["O'Reilly", "Power BI Desktop", "Power BI Service", "Modelado de Datos"],
+        "cover_gradient": "from-yellow-600 via-amber-700 to-neutral-900",
+        "cover_bg": "#ca8a04",
+        "accent_color": "#eab308",
+        "icon": "📊"
+    },
+    "microsoft power bi cookbook 3rd edition - greg deckler.pdf": {
+        "title": "Microsoft Power BI Cookbook",
+        "subtitle": "Gain Actionable Insights with Over 90 Recipes for Power BI",
+        "author": "Greg Deckler",
+        "publisher": "Packt Publishing",
+        "year": "2023",
+        "edition": "3rd Edition",
+        "category": "Power BI & DAX",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Más de 90 recetas avanzadas para resolver retos analíticos: DAX complejo para inteligencia temporal, segmentaciones dinámicas, deshabilitación de contexto y visuales personalizados.",
+        "topics": ["Recetas DAX", "Time Intelligence", "Filtros Cruzados", "Visualizaciones"],
+        "cover_gradient": "from-amber-600 via-yellow-700 to-slate-950",
+        "cover_bg": "#d97706",
+        "accent_color": "#f59e0b",
+        "icon": "🍳"
+    },
+    "microsoft power bi data analyst associate study guide - paul turley.pdf": {
+        "title": "Microsoft Power BI Data Analyst Associate Study Guide",
+        "subtitle": "Prepare for the PL-300 Exam and Apply Best Practice Design",
+        "author": "Paul Turley",
+        "publisher": "O'Reilly Media",
+        "year": "2024",
+        "edition": "1st Edition",
+        "category": "Power BI & DAX",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Guía exhaustiva escrita por el reconocido mentor Paul Turley. Enfoque analítico riguroso sobre diseño de soluciones confiables, DAX corporativo y preparación rigurosa para el examen PL-300.",
+        "topics": ["PL-300", "Arquitectura Power BI", "Mejores Prácticas", "DAX"],
+        "cover_gradient": "from-blue-700 via-indigo-800 to-slate-950",
+        "cover_bg": "#1d4ed8",
+        "accent_color": "#3b82f6",
+        "icon": "📘"
+    },
+    "microsoft power bi visual calculations - jeroen ter heerdt.pdf": {
+        "title": "Microsoft Power BI Visual Calculations",
+        "subtitle": "The New Way to Calculate Metrics Directly on Visuals",
+        "author": "Jeroen ter Heerdt",
+        "publisher": "Packt Publishing",
+        "year": "2024",
+        "edition": "1st Edition",
+        "category": "Power BI & DAX",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Descubre la última revolución de Microsoft: cálculos visuales que simplifican el DAX tradicional para medias móviles, variaciones porcentuales y acumulados sin fórmulas complejas.",
+        "topics": ["Visual Calculations", "DAX Simplificado", "Métricas Móviles", "Power BI"],
+        "cover_gradient": "from-cyan-600 via-teal-700 to-slate-950",
+        "cover_bg": "#0891b2",
+        "accent_color": "#06b6d4",
+        "icon": "⚡"
+    },
+    "artificial intelligence with microsoft power bi - jennifer stirrup.pdf": {
+        "title": "Artificial Intelligence with Microsoft Power BI",
+        "subtitle": "Using AI Insights, Machine Learning and Cognitive Services",
+        "author": "Jennifer Stirrup",
+        "publisher": "Packt Publishing",
+        "year": "2022",
+        "edition": "1st Edition",
+        "category": "Power BI & DAX",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": True,
+        "summary_dummies": "Potencia tus tableros con inteligencia artificial: análisis de sentimientos, visión artificial, explicaciones automáticas con Key Influencers y modelos de AutoML en la nube.",
+        "topics": ["AI Insights", "Key Influencers", "AutoML en Power BI", "Cognitive Services"],
+        "cover_gradient": "from-violet-600 via-purple-700 to-slate-950",
+        "cover_bg": "#7c3aed",
+        "accent_color": "#a855f7",
+        "icon": "🤖"
+    },
+    "architecting power bi solutions in microsoft fabric.pdf": {
+        "title": "Architecting Power BI Solutions in Microsoft Fabric",
+        "subtitle": "Enterprise Analytics, OneLake, and Direct Lake Architecture",
+        "author": "Fabric Architecture Forum",
+        "publisher": "Packt Publishing",
+        "year": "2024",
+        "edition": "1st Edition",
+        "category": "Power BI & DAX",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "La arquitectura analítica del futuro: unificación en OneLake, pipelines Medallion (Bronze/Silver/Gold) y el modo Direct Lake que consulta terabytes en memoria con latencia cero.",
+        "topics": ["Microsoft Fabric", "OneLake", "Direct Lake", "Arquitectura Empresarial"],
+        "cover_gradient": "from-blue-700 via-slate-800 to-neutral-950",
+        "cover_bg": "#1e40af",
+        "accent_color": "#3b82f6",
+        "icon": "🏗️"
+    },
+    "modern data analytics in excel - george mount.pdf": {
+        "title": "Modern Data Analytics in Excel",
+        "subtitle": "Using Power Query, Power Pivot, and Python in Excel",
+        "author": "George Mount",
+        "publisher": "O'Reilly Media",
+        "year": "2024",
+        "edition": "1st Edition",
+        "category": "Ciencia de Datos & Análisis",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Moderniza tu flujo de trabajo en Excel adoptando Power Query para limpieza, Power Pivot para modelado relacional y la nueva integración nativa con Python para estadística avanzada.",
+        "topics": ["Excel Moderno", "Power Query", "Power Pivot", "Python en Excel"],
+        "cover_gradient": "from-emerald-700 via-teal-800 to-slate-950",
+        "cover_bg": "#047857",
+        "accent_color": "#10b981",
+        "icon": "📗"
+    },
+    "mastering tableau 2026 - marleen meier.pdf": {
+        "title": "Mastering Tableau 2026",
+        "subtitle": "Enterprise Data Analytics, Governance, and Advanced Visualization",
+        "author": "Marleen Meier",
+        "publisher": "Packt Publishing",
+        "year": "2025",
+        "edition": "2026 Edition",
+        "category": "Tableau & Visualización",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "La referencia cumbre para arquitectos de datos en Tableau: optimización de fuentes masivas, gobernanza y seguridad, extensiones web y tableros interactivos de alta complejidad.",
+        "topics": ["Tableau Avanzado", "Gobernanza", "Performance Tuning", "Extensiones"],
+        "cover_gradient": "from-teal-600 via-cyan-700 to-slate-950",
+        "cover_bg": "#0d9488",
+        "accent_color": "#14b8a6",
+        "icon": "🚀"
+    },
+    "beginning with tableau cloud - urmisha patel.pdf": {
+        "title": "Beginning with Tableau Cloud",
+        "subtitle": "Accessing, Sharing, and Managing Analytical Content in the Cloud",
+        "author": "Urmisha Patel",
+        "publisher": "BPB Publications",
+        "year": "2025",
+        "edition": "1st Edition",
+        "category": "Tableau & Visualización",
+        "level": "Básico a Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Guía integral para colaborar en la nube: publicación de libros de trabajo, administración de accesos, programación de actualizaciones automáticas y flujos en Tableau Prep.",
+        "topics": ["Tableau Cloud", "Colaboración", "Gobernanza", "Publicación"],
+        "cover_gradient": "from-sky-600 via-blue-700 to-slate-950",
+        "cover_bg": "#0284c7",
+        "accent_color": "#38bdf8",
+        "icon": "☁️"
+    },
+    "learning ai tools in tableau.pdf": {
+        "title": "Learning AI Tools in Tableau",
+        "subtitle": "Leveraging Tableau Pulse, Einstein Discovery and Predictive Analytics",
+        "author": "Analytics Innovation Press",
+        "publisher": "O'Reilly / Packt",
+        "year": "2024",
+        "edition": "1st Edition",
+        "category": "Tableau & Visualización",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Descubre las herramientas de IA generativa y predictiva en Tableau: resúmenes automatizados con Tableau Pulse, explicaciones automáticas y modelos predictivos de Einstein Discovery.",
+        "topics": ["Tableau Pulse", "Einstein Discovery", "IA Predictiva", "Storytelling"],
+        "cover_gradient": "from-purple-600 via-pink-700 to-slate-950",
+        "cover_bg": "#9333ea",
+        "accent_color": "#c084fc",
+        "icon": "🔮"
+    },
+    "visual analytics using tableau - sulabh bhatt.pdf": {
+        "title": "Visual Analytics Using Tableau",
+        "subtitle": "Structured Approach for Turning Raw Data to Powerful Insights",
+        "author": "Neha Rajput, Sulabh Bhatt",
+        "publisher": "BPB Publications",
+        "year": "2025",
+        "edition": "1st Edition",
+        "category": "Tableau & Visualización",
+        "level": "Intermedio",
+        "dummies_friendly": True,
+        "summary_dummies": "Metodología estructurada de diseño visual: leyes de la Gestalt, codificación preatentiva por color y tamaño, minimización del desorden visual y creación de narrativas visuales persuasivas.",
+        "topics": ["Percepción Visual", "Storytelling con Tableau", "Diseño Perceptual", "Leyes de Gestalt"],
+        "cover_gradient": "from-indigo-600 via-teal-700 to-slate-950",
+        "cover_bg": "#4f46e5",
+        "accent_color": "#6366f1",
+        "icon": "📊"
+    },
+    "python data analysis with tableau - francis mccaffery.pdf": {
+        "title": "Python Data Analysis with Tableau",
+        "subtitle": "Integrating TabPy for Advanced Statistical Computing and Machine Learning",
+        "author": "Francis McCaffery",
+        "publisher": "Packt Publishing",
+        "year": "2023",
+        "edition": "1st Edition",
+        "category": "Tableau & Visualización",
+        "level": "Intermedio a Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Combina el poder de cálculo científico de Python con la elegancia visual de Tableau: conecta el servidor TabPy para ejecutar modelos de ML y pasar resultados en vivo a los tableros.",
+        "topics": ["TabPy", "Python + Tableau", "Machine Learning en Tableau", "Simulaciones"],
+        "cover_gradient": "from-blue-700 via-emerald-700 to-slate-950",
+        "cover_bg": "#1d4ed8",
+        "accent_color": "#3b82f6",
+        "icon": "🐍"
+    },
+    "tableau cookbook for experienced professionals - pablo saenz de tejada.pdf": {
+        "title": "Tableau Cookbook for Experienced Professionals",
+        "subtitle": "Proven Recipes for Complex Data Visualization and Optimization",
+        "author": "Pablo Sáenz de Tejada",
+        "publisher": "Packt Publishing",
+        "year": "2025",
+        "edition": "1st Edition",
+        "category": "Tableau & Visualización",
+        "level": "Avanzado",
+        "dummies_friendly": False,
+        "summary_dummies": "Colección experta de técnicas no convencionales: diagramas de Sankey, gráficos radiales, coordenadas paralelas, expresiones LOD anidadas y optimización para grandes volúmenes.",
+        "topics": ["Gráficos Avanzados", "Sankey Charts", "LOD Anidados", "Optimización"],
+        "cover_gradient": "from-teal-700 via-indigo-800 to-slate-950",
+        "cover_bg": "#0f766e",
+        "accent_color": "#14b8a6",
+        "icon": "🍳"
     }
 }
+
 
 def scan_course_notebooks(course_folder_name, course_dir, modules, course_name=""):
     notebooks = []
@@ -1047,42 +1774,51 @@ def find_book_cover_image(pdf_stem, libros_dir):
         return '/'.join(urllib.parse.quote(part) for part in f"Libros/{rel_img}".split("/"))
     return ""
 
-def scan_course_books(c_folder, c_dir):
+def scan_course_books(course_id, c_folder, c_dir):
     books = []
     libros_dir = c_dir / "Libros"
     if not libros_dir.exists():
         return []
 
+    subname = SUBFOLDER_MAP.get(course_id, "Python")
+
     for f in sorted(libros_dir.rglob("*.pdf")):
         fname = f.name
         key = fname.lower()
-        meta = PYTHON_BOOKS_METADATA.get(key, {})
+        meta = BOOKS_METADATA.get(key, {})
         
-        rel_sub = f.relative_to(libros_dir).as_posix()
-        web_path = f"Libros/{rel_sub}"
+        if course_id == "data-science-programming":
+            rel_sub = f.relative_to(libros_dir).as_posix()
+            web_path = f"Libros/{rel_sub}"
+        else:
+            web_path = f"Libros/{subname}/{f.name}"
+
         encoded_web_path = "/".join(urllib.parse.quote(part) for part in web_path.split("/"))
         
         size_mb = f"{round(f.stat().st_size / (1024 * 1024), 1)} MB"
         cover_img_url = find_book_cover_image(f.stem, libros_dir)
         
         title = meta.get("title", format_title(fname))
-        subtitle = meta.get("subtitle", f"Biblioteca Digital USTA — {f.parent.name if f.parent != libros_dir else 'Python'}")
+        subtitle = meta.get("subtitle", f"Biblioteca Digital USTA — {subname}")
         author = meta.get("author", "Referencia Académica")
         publisher = meta.get("publisher", "Editorial Especializada")
         year = meta.get("year", "2024")
         edition = meta.get("edition", "PDF Completo")
-        category = meta.get("category", "Python & Programación")
+        category = meta.get("category", "Ciencia de Datos & Análisis")
         level = meta.get("level", "Intermedio")
-        dummies_friendly = meta.get("dummies_friendly", any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice"]))
+        dummies_friendly = meta.get("dummies_friendly", any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice", "dummies"]))
         summary_dummies = meta.get("summary_dummies", f"Texto de referencia '{title}' disponible en PDF completo ({size_mb}) para consulta y descarga directa.")
-        topics = meta.get("topics", ["Python", "Programación", "Data Science", "Algoritmos"])
+        topics = meta.get("topics", [subname, "Data Science", "Analítica"])
         cover_gradient = meta.get("cover_gradient", "from-teal-600 via-slate-700 to-slate-950")
         cover_bg = meta.get("cover_bg", "#0f766e")
         accent_color = meta.get("accent_color", "#14b8a6")
         icon = meta.get("icon", "📘")
         
         books.append({
-            "id": f"book_{len(books) + 1}",
+            "id": f"book_{course_id}_{len(books) + 1}",
+            "course_id": course_id,
+            "course_name": c_folder,
+            "subject": subname,
             "title": title,
             "filename": fname,
             "subtitle": subtitle,
@@ -1124,21 +1860,21 @@ def rebuild_catalog_js():
 
         default_mods = COURSE_MODULE_DEFAULTS.get(c_id)
 
-        if c_id == "data-science-programming":
-            sync_course_assets(c_dir)
+        if c_dir.exists():
+            sync_course_assets(c_id, c_folder, c_dir)
             modules = scan_course_modules(c_dir, default_mods)
             notebooks = scan_course_notebooks(c_folder, c_dir, modules, course_name=c_name)
             datasets = scan_course_datasets(c_folder, c_dir, course_name=c_name)
             guias = scan_course_guias(c_folder, c_dir)
             videos = scan_course_videos(c_folder, c_dir)
-            books = scan_course_books(c_folder, c_dir)
+            books = scan_course_books(c_id, c_folder, c_dir)
         else:
-            modules = scan_course_modules(c_dir, default_mods) if c_dir.exists() else []
-            notebooks = scan_course_notebooks(c_folder, c_dir, modules, course_name=c_name) if c_dir.exists() else []
-            datasets = scan_course_datasets(c_folder, c_dir, course_name=c_name) if c_dir.exists() else []
-            guias = scan_course_guias(c_folder, c_dir) if c_dir.exists() else []
-            videos = scan_course_videos(c_folder, c_dir) if c_dir.exists() else []
-            books = scan_course_books(c_folder, c_dir) if c_dir.exists() else []
+            modules = []
+            notebooks = []
+            datasets = []
+            guias = []
+            videos = []
+            books = []
 
         all_specialization_datasets.extend(datasets)
 
@@ -1175,6 +1911,23 @@ def rebuild_catalog_js():
     if not active_course_data and courses_output:
         active_course_data = courses_output[0]
 
+    all_specialization_books = []
+    for c in courses_output:
+        all_specialization_books.extend(c.get("books", []))
+
+    # Crear enlaces simbólicos para frontend/public/Libros para soporte de Vite dev
+    pub_libros_dir = BASE_DIR / "frontend" / "public" / "Libros"
+    pub_libros_dir.mkdir(parents=True, exist_ok=True)
+    for sub in ["Data Mining", "Machine Learning", "Visual Analytics"]:
+        target = DOCS_DIR / "Libros" / sub
+        link = pub_libros_dir / sub
+        if target.exists() and not link.exists():
+            try:
+                rel_target = os.path.relpath(target, pub_libros_dir)
+                link.symlink_to(rel_target)
+            except Exception:
+                pass
+
     catalog_data = {
         "active_course_id": active_course_data["id"] if active_course_data else "data-science-programming",
         "courses": courses_output,
@@ -1184,7 +1937,8 @@ def rebuild_catalog_js():
         "stats": active_course_data["stats"] if active_course_data else {},
         "videos": active_course_data["videos"] if active_course_data else [],
         "guias": active_course_data["guias"] if active_course_data else [],
-        "books": active_course_data["books"] if active_course_data else []
+        "books": active_course_data["books"] if active_course_data else [],
+        "all_books": all_specialization_books
     }
 
     # 1. Guardar para plataforma legacy (docs/assets/js/catalog.js)
