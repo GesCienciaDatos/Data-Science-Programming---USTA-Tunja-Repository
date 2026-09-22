@@ -594,12 +594,14 @@ def sync_course_assets(course_id, course_folder_name, course_dir):
             subname = SUBFOLDER_MAP.get(course_id, course_folder_name)
             dest_libros = DOCS_DIR / "Libros" / subname
             dest_libros.mkdir(parents=True, exist_ok=True)
-            for item in src_libros.glob("*.pdf"):
-                if item.is_file():
-                    target_file = dest_libros / item.name
+            for item in src_libros.rglob("*"):
+                if item.is_file() and not item.name.startswith("."):
+                    rel = item.relative_to(src_libros)
+                    target_file = dest_libros / rel
+                    target_file.parent.mkdir(parents=True, exist_ok=True)
                     if not target_file.exists() or target_file.stat().st_mtime < item.stat().st_mtime:
                         shutil.copy2(item, target_file)
-                        print(f"  [SYNC] Copiado: {item.name} -> docs/Libros/{subname}/{item.name}")
+                        print(f"  [SYNC] Copiado: {item.name} -> docs/Libros/{subname}/{rel}")
 
 def scan_course_modules(course_dir, default_modules=None):
     modules = [dict(m) for m in default_modules] if default_modules else []
@@ -1743,8 +1745,9 @@ def scan_course_videos(course_folder_name, course_dir):
             idx += 1
     return videos
 
-def find_book_cover_image(pdf_stem, libros_dir):
-    portadas_dirs = [libros_dir / "Python" / "Portadas", libros_dir / "Portadas"]
+def find_book_cover_image(pdf_stem, libros_dir, course_id):
+    subname = SUBFOLDER_MAP.get(course_id, "Python")
+    portadas_dirs = [libros_dir / "Python" / "Portadas", libros_dir / "Portadas", libros_dir / subname / "Portadas"]
     clean_stem = re.sub(r',\s*\d+.*$', '', pdf_stem).strip().lower()
     
     best_img = None
@@ -1770,8 +1773,12 @@ def find_book_cover_image(pdf_stem, libros_dir):
                 break
 
     if best_img:
-        rel_img = best_img.relative_to(libros_dir).as_posix()
-        return '/'.join(urllib.parse.quote(part) for part in f"Libros/{rel_img}".split("/"))
+        if course_id == "data-science-programming":
+            rel_img = best_img.relative_to(libros_dir).as_posix()
+            web_path = f"Libros/{rel_img}"
+        else:
+            web_path = f"Libros/{subname}/Portadas/{best_img.name}"
+        return '/'.join(urllib.parse.quote(part) for part in web_path.split("/"))
     return ""
 
 def scan_course_books(course_id, c_folder, c_dir):
@@ -1796,7 +1803,7 @@ def scan_course_books(course_id, c_folder, c_dir):
         encoded_web_path = "/".join(urllib.parse.quote(part) for part in web_path.split("/"))
         
         size_mb = f"{round(f.stat().st_size / (1024 * 1024), 1)} MB"
-        cover_img_url = find_book_cover_image(f.stem, libros_dir)
+        cover_img_url = find_book_cover_image(f.stem, libros_dir, course_id)
         
         title = meta.get("title", format_title(fname))
         subtitle = meta.get("subtitle", f"Biblioteca Digital USTA — {subname}")

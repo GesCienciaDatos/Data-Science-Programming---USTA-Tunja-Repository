@@ -565,17 +565,23 @@ function copyColabLink(url) {
             </div>
 
             <div class="flex items-start gap-4">
-              <div class="w-20 h-28 rounded-md bg-slate-800 shrink-0 overflow-hidden border border-slate-700 shadow-sm flex items-center justify-center text-center p-1">
+              <div class="w-20 h-28 rounded-md bg-slate-100 dark:bg-space-950 shrink-0 overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-center text-center relative group">
                 <img 
                   v-if="book.cover_image"
                   :src="book.cover_image" 
                   :alt="book.title" 
-                  class="w-full h-full object-cover"
-                  onerror="this.style.display='none'"
+                  class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
+                  loading="lazy"
+                  onerror="this.parentElement.querySelector('.fallback-cover')?.classList.remove('hidden'); this.style.display='none';"
                 />
-                <span class="material-symbols-outlined text-slate-500 text-2xl" v-else>
-                  menu_book
-                </span>
+                <div 
+                  :class="[book.cover_image ? 'hidden fallback-cover' : 'flex', 'w-full h-full flex-col items-center justify-center p-2 bg-gradient-to-br text-white', book.cover_gradient || 'from-slate-800 to-slate-950']"
+                >
+                  <span class="material-symbols-outlined text-slate-300 text-2xl mb-1">menu_book</span>
+                  <span class="font-mono text-[8px] leading-tight text-slate-200 line-clamp-2 uppercase font-semibold">
+                    {{ book.title }}
+                  </span>
+                </div>
               </div>
 
               <div class="space-y-1 overflow-hidden">
