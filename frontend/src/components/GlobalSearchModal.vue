@@ -9,10 +9,14 @@ const props = defineProps({
   allBooks: {
     type: Array,
     default: () => []
+  },
+  allVideos: {
+    type: Array,
+    default: () => []
   }
 });
 
-const emit = defineEmits(['close', 'open-pdf']);
+const emit = defineEmits(['close', 'open-pdf', 'play-video']);
 
 const searchInputRef = ref(null);
 const query = ref('');
@@ -49,8 +53,24 @@ const searchBookResults = computed(() => {
   ).slice(0, 6);
 });
 
+const searchVideoResults = computed(() => {
+  if (query.value.trim().length < 2 || !props.allVideos) return [];
+  const q = query.value.toLowerCase().trim();
+
+  return props.allVideos.filter(v => 
+    (v.title || '').toLowerCase().includes(q) ||
+    (v.module || '').toLowerCase().includes(q) ||
+    (v.filename || '').toLowerCase().includes(q)
+  ).slice(0, 4);
+});
+
 function handleOpenBook(book) {
   emit('open-pdf', book);
+  emit('close');
+}
+
+function handlePlayVideo(video) {
+  emit('play-video', video);
   emit('close');
 }
 </script>
@@ -80,14 +100,61 @@ function handleOpenBook(book) {
       <!-- Search Results List -->
       <div class="p-3 max-h-[60vh] overflow-y-auto space-y-4 bg-slate-50 dark:bg-space-950">
         <div v-if="query.trim().length < 2" class="py-8 text-center text-xs font-mono text-slate-400">
-          Escribe al menos 2 caracteres para buscar en los {{ allNotebooks.length }} cuadernos y {{ allBooks.length }} libros de texto.
+          Escribe al menos 2 caracteres para buscar en cuadernos, libros y videos masterclasses.
         </div>
 
-        <div v-else-if="searchResults.length === 0 && searchBookResults.length === 0" class="py-8 text-center text-xs font-mono text-slate-400">
+        <div v-else-if="searchResults.length === 0 && searchBookResults.length === 0 && searchVideoResults.length === 0" class="py-8 text-center text-xs font-mono text-slate-400">
           No se encontraron coincidencias para "{{ query }}".
         </div>
 
         <div v-else class="space-y-4">
+          <!-- Videos Matches Section -->
+          <div v-if="searchVideoResults.length > 0" class="space-y-2">
+            <div class="flex items-center gap-2 px-1 font-mono text-[11px] text-rose-500 uppercase tracking-wider font-semibold">
+              <span class="material-symbols-outlined text-sm text-rose-500">smart_display</span>
+              <span>Masterclasses & Videos YouTube ({{ searchVideoResults.length }})</span>
+            </div>
+
+            <div 
+              v-for="v in searchVideoResults"
+              :key="v.id"
+              class="p-3 rounded-lg bg-white dark:bg-space-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3 hover:border-rose-500/50 transition-all"
+            >
+              <div class="flex items-center gap-3 overflow-hidden">
+                <div 
+                  @click="handlePlayVideo(v)"
+                  class="w-16 h-10 rounded bg-slate-900 border border-slate-700/80 overflow-hidden shrink-0 flex items-center justify-center relative cursor-pointer group"
+                >
+                  <img 
+                    v-if="v.thumbnail" 
+                    :src="v.thumbnail" 
+                    :alt="v.title" 
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform" 
+                  />
+                  <span class="material-symbols-outlined absolute inset-0 flex items-center justify-center text-white text-sm bg-black/30 group-hover:bg-black/10">
+                    play_circle
+                  </span>
+                </div>
+                <div class="space-y-0.5 overflow-hidden">
+                  <div class="flex items-center gap-1.5 font-mono text-[10px] text-rose-500 font-semibold">
+                    <span>{{ v.module || 'Masterclass' }}</span>
+                  </div>
+                  <h5 class="text-xs font-semibold text-slate-900 dark:text-slate-100 truncate">
+                    {{ v.title }}
+                  </h5>
+                </div>
+              </div>
+
+              <button 
+                @click="handlePlayVideo(v)"
+                class="px-2.5 py-1 rounded bg-rose-600 hover:bg-rose-500 text-white font-mono text-[10px] font-semibold shrink-0 flex items-center gap-1 cursor-pointer"
+              >
+                <span>VER</span>
+                <span class="material-symbols-outlined text-xs">play_arrow</span>
+              </button>
+            </div>
+          </div>
+
           <!-- Notebooks Matches Section -->
           <div v-if="searchResults.length > 0" class="space-y-2">
             <div class="flex items-center gap-2 px-1 font-mono text-[11px] text-slate-500 uppercase tracking-wider font-semibold">

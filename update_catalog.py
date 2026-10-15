@@ -51,15 +51,15 @@ COURSE_DEFINITIONS = [
         "title": "Modelamiento Estadístico e Inferencia",
         "folder": "Estadistica analisis y representacion de datos",
         "icon": "📊",
-        "badge": "En Construcción",
-        "badge_color": "amber",
+        "badge": "Activo / Disponible",
+        "badge_color": "emerald",
         "color": "#f59e0b",
         "gradient": "from-amber-500/20 via-yellow-600/10 to-transparent",
         "border_glow": "border-amber-500/40",
-        "description": "Modelamiento probabilístico, inferencia estadística rigurosa, pruebas de hipótesis paramétricas y no paramétricas, análisis multivariado y técnicas avanzadas de representación.",
+        "description": "Estadística descriptiva y visualización, probabilidad y distribuciones, inferencia (intervalos de confianza, pruebas de hipótesis, Chi-cuadrado y ANOVA), estadística no paramétrica, regresión, ética en el uso de datos, exploración y limpieza, modelamiento estadístico y temas avanzados (series de tiempo, clustering, árboles y atípicos).",
         "level": "Especialización",
         "semester": "Semestre I",
-        "active": False
+        "active": True
     },
     {
         "id": "adquisicion-gobernanza",
@@ -625,6 +625,81 @@ MODULES_BIG_DATA = [
     }
 ]
 
+MODULES_ESTADISTICA = [
+    {
+        "id": "00",
+        "name": "00 - Fundamentos de Estadistica y Analisis de Datos",
+        "title": "Fundamentos de Estadística y Análisis de Datos",
+        "icon": "📐",
+        "color": "#f59e0b",
+        "description": "Qué es la estadística, población y muestra, tipos de variable, muestreo, sesgo, correlación frente a causalidad y paradoja de Simpson."
+    },
+    {
+        "id": "01",
+        "name": "01 - Estadistica Descriptiva y Visualizacion",
+        "title": "Estadística Descriptiva y Visualización",
+        "icon": "📊",
+        "color": "#0ea5e9",
+        "description": "Tendencia central y posición, dispersión, forma y asociación, y visualización estadística honesta."
+    },
+    {
+        "id": "02",
+        "name": "02 - Probabilidad y Distribuciones",
+        "title": "Probabilidad y Distribuciones",
+        "icon": "🎲",
+        "color": "#8b5cf6",
+        "description": "Probabilidad condicional, Bayes e independencia, variables aleatorias, distribuciones discretas y continuas, ley de los grandes números y teorema del límite central."
+    },
+    {
+        "id": "03",
+        "name": "03 - Inferencia Estadistica",
+        "title": "Inferencia Estadística",
+        "icon": "🧪",
+        "color": "#10b981",
+        "description": "Intervalos de confianza y bootstrap, pruebas de hipótesis (valor P, Z y T), potencia, Chi-cuadrado y ANOVA."
+    },
+    {
+        "id": "04",
+        "name": "04 - No Parametrica Regresion y Etica",
+        "title": "No Paramétrica, Regresión y Ética",
+        "icon": "⚖️",
+        "color": "#ef4444",
+        "description": "Kruskal-Wallis y Mann-Whitney, regresión simple y múltiple con diagnóstico, correlación, privacidad, comparaciones múltiples y equidad."
+    },
+    {
+        "id": "05",
+        "name": "05 - Exploracion y Limpieza de Datos",
+        "title": "Exploración y Limpieza de Datos",
+        "icon": "🧹",
+        "color": "#d97706",
+        "description": "EDA, ingeniería de características, datos faltantes e inconsistentes, selección y reducción de dimensionalidad con PCA y t-SNE."
+    },
+    {
+        "id": "06",
+        "name": "06 - Modelamiento Estadistico",
+        "title": "Modelamiento Estadístico",
+        "icon": "📈",
+        "color": "#0284c7",
+        "description": "One-hot y label encoding, modelos lineales generalizados y no paramétricos, R², MSE y validación cruzada, scikit-learn y statsmodels."
+    },
+    {
+        "id": "07",
+        "name": "07 - Temas Avanzados en Data Analysis",
+        "title": "Temas Avanzados en Data Analysis",
+        "icon": "🚀",
+        "color": "#ec4899",
+        "description": "Series de tiempo, clustering, árboles de decisión, ejercicios con Pandas, NumPy, scikit-learn y statsmodels, EDA del Censo Nacional Agropecuario y detección de atípicos."
+    },
+    {
+        "id": "hw",
+        "name": "homeworks",
+        "title": "Talleres Prácticos Evaluativos (Hands-On)",
+        "icon": "📝",
+        "color": "#dc2626",
+        "description": "Un taller por módulo, con edición estándar y Para Dummies: retos con autoverificación, rúbrica y checklist de entrega."
+    }
+]
+
 COURSE_MODULE_DEFAULTS = {
     "data-science-programming": DEFAULT_MODULES_DSP,
     "data-mining": MODULES_DATA_MINING,
@@ -632,6 +707,7 @@ COURSE_MODULE_DEFAULTS = {
     "visual-analytics": MODULES_VISUAL_ANALYTICS,
     "machine-learning": MODULES_ML,
     "big-data": MODULES_BIG_DATA,
+    "estadistica-analisis": MODULES_ESTADISTICA,
 }
 
 PALETTE = [
@@ -654,7 +730,9 @@ KNOWN_TITLES = {
     "Creacion_Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
     "Instalacion_Python.pdf": "Guía de Instalación y Configuración de Python",
     "Instalación_Python.pdf": "Guía de Instalación y Configuración de Python",
-    "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)"
+    "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)",
+    "Instalacion_WSL2_y_Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
+    "Instalacion WSL2 y Docker.mp4": "Instalación y Configuración de WSL2 y Docker"
 }
 
 KNOWN_YOUTUBE_VIDEOS = {
@@ -681,7 +759,56 @@ KNOWN_YOUTUBE_VIDEOS = {
         "youtube_url": "https://youtu.be/GX0rf6HjdcU",
         "embed_url": "https://www.youtube.com/embed/GX0rf6HjdcU",
         "thumbnail": "https://img.youtube.com/vi/GX0rf6HjdcU/hqdefault.jpg"
+    },
+    "instalacion wsl2 y docker.mp4": {
+        "youtube_id": "nPWZi9Plljo",
+        "youtube_url": "https://youtu.be/nPWZi9Plljo",
+        "embed_url": "https://www.youtube.com/embed/nPWZi9Plljo",
+        "thumbnail": "https://img.youtube.com/vi/nPWZi9Plljo/hqdefault.jpg"
+    },
+    "instalacion_wsl2_y_docker.mp4": {
+        "youtube_id": "nPWZi9Plljo",
+        "youtube_url": "https://youtu.be/nPWZi9Plljo",
+        "embed_url": "https://www.youtube.com/embed/nPWZi9Plljo",
+        "thumbnail": "https://img.youtube.com/vi/nPWZi9Plljo/hqdefault.jpg"
     }
+}
+
+COURSE_EXTRA_VIDEOS = {
+    "big-data": [
+        {
+            "id": "vid_bigdata_1",
+            "filename": "Instalacion_WSL2_y_Docker.mp4",
+            "title": "Instalación y Configuración de WSL2 y Docker",
+            "module": "⚡ Entorno y Herramientas: WSL2 y Docker",
+            "size_mb": None,
+            "path": "https://youtu.be/nPWZi9Plljo",
+            "youtube_id": "nPWZi9Plljo",
+            "youtube_url": "https://youtu.be/nPWZi9Plljo",
+            "embed_url": "https://www.youtube.com/embed/nPWZi9Plljo",
+            "thumbnail": "https://img.youtube.com/vi/nPWZi9Plljo/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://youtu.be/nPWZi9Plljo"
+        }
+    ],
+    "Big Data": [
+        {
+            "id": "vid_bigdata_1",
+            "filename": "Instalacion_WSL2_y_Docker.mp4",
+            "title": "Instalación y Configuración de WSL2 y Docker",
+            "module": "⚡ Entorno y Herramientas: WSL2 y Docker",
+            "size_mb": None,
+            "path": "https://youtu.be/nPWZi9Plljo",
+            "youtube_id": "nPWZi9Plljo",
+            "youtube_url": "https://youtu.be/nPWZi9Plljo",
+            "embed_url": "https://www.youtube.com/embed/nPWZi9Plljo",
+            "thumbnail": "https://img.youtube.com/vi/nPWZi9Plljo/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://youtu.be/nPWZi9Plljo"
+        }
+    ]
 }
 
 ACRONYMS = {"ia", "ai", "eda", "knn", "pca", "cnf", "dfs", "bfs", "gbfs", "gps", "etl", "csv", "json", "pdf", "sql", "svm", "mlp", "mcar", "mar", "mnar", "ols", "auc", "roc", "cart", "kdd", "crisp-dm", "nlp", "llm", "llms", "genai", "cv"}
@@ -3385,44 +3512,59 @@ def video_sort_key(file_path):
         return (1, name)
     return (2, name)
 
-def scan_course_videos(course_folder_name, course_dir):
+def scan_course_videos(course_folder_name, course_dir, course_id=None):
     video_dir = course_dir / "Contenido"
-    if not video_dir.exists():
-        return []
-
     videos = []
     video_exts = {".mp4", ".mkv", ".webm", ".avi", ".mov"}
-    sorted_files = sorted(video_dir.iterdir(), key=video_sort_key)
     idx = 1
-    for f in sorted_files:
-        if f.is_file() and f.suffix.lower() in video_exts:
-            size_mb = round(f.stat().st_size / (1024 * 1024), 1)
-            title = format_title(f.name)
-            encoded_name = urllib.parse.quote(f.name)
-            
-            yt_info = KNOWN_YOUTUBE_VIDEOS.get(f.name.lower(), {
-                "youtube_id": "",
-                "youtube_url": "",
-                "embed_url": "",
-                "thumbnail": ""
-            })
 
-            videos.append({
-                "id": f"vid_{idx}",
-                "filename": f.name,
-                "title": title,
-                "module": "🐍 Módulo 01: Python",
-                "size_mb": size_mb,
-                "path": f"Contenido/{f.name}",
-                "youtube_id": yt_info["youtube_id"],
-                "youtube_url": yt_info["youtube_url"],
-                "embed_url": yt_info["embed_url"],
-                "thumbnail": yt_info["thumbnail"],
-                "lfs_url": f"https://media.githubusercontent.com/media/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
-                "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
-                "github_url": f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/docs/Contenido/{encoded_name}"
-            })
-            idx += 1
+    if video_dir.exists():
+        sorted_files = sorted(video_dir.iterdir(), key=video_sort_key)
+        for f in sorted_files:
+            if f.is_file() and f.suffix.lower() in video_exts:
+                size_mb = round(f.stat().st_size / (1024 * 1024), 1)
+                title = format_title(f.name)
+                encoded_name = urllib.parse.quote(f.name)
+                
+                yt_info = KNOWN_YOUTUBE_VIDEOS.get(f.name.lower(), {
+                    "youtube_id": "",
+                    "youtube_url": "",
+                    "embed_url": "",
+                    "thumbnail": ""
+                })
+
+                mod_label = "🐍 Módulo 01: Python"
+                if "wsl" in f.name.lower() or "docker" in f.name.lower():
+                    mod_label = "⚡ Entorno y Herramientas: WSL2 y Docker"
+
+                videos.append({
+                    "id": f"vid_{idx}",
+                    "filename": f.name,
+                    "title": title,
+                    "module": mod_label,
+                    "size_mb": size_mb,
+                    "path": f"Contenido/{f.name}",
+                    "youtube_id": yt_info["youtube_id"],
+                    "youtube_url": yt_info["youtube_url"],
+                    "embed_url": yt_info["embed_url"],
+                    "thumbnail": yt_info["thumbnail"],
+                    "lfs_url": f"https://media.githubusercontent.com/media/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
+                    "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/docs/Contenido/{encoded_name}",
+                    "github_url": f"https://github.com/{REPO_OWNER}/{REPO_NAME}/blob/{BRANCH}/docs/Contenido/{encoded_name}"
+                })
+                idx += 1
+
+    # Incluir videos extra registrados para la materia
+    extra_candidates = []
+    if course_id and course_id in COURSE_EXTRA_VIDEOS:
+        extra_candidates = COURSE_EXTRA_VIDEOS[course_id]
+    elif course_folder_name in COURSE_EXTRA_VIDEOS:
+        extra_candidates = COURSE_EXTRA_VIDEOS[course_folder_name]
+
+    for extra in extra_candidates:
+        if not any(v.get("youtube_id") == extra.get("youtube_id") for v in videos):
+            videos.append(extra)
+
     return videos
 
 def find_book_cover_image(pdf_stem, libros_dir, course_id):
@@ -3553,7 +3695,7 @@ def rebuild_catalog_js():
             notebooks = scan_course_notebooks(c_folder, c_dir, modules, course_name=c_name)
             datasets = scan_course_datasets(c_folder, c_dir, course_name=c_name)
             guias = scan_course_guias(c_folder, c_dir)
-            videos = scan_course_videos(c_folder, c_dir)
+            videos = scan_course_videos(c_folder, c_dir, course_id=c_id)
             books = scan_course_books(c_id, c_folder, c_dir)
         else:
             modules = []
@@ -3625,7 +3767,8 @@ def rebuild_catalog_js():
         "videos": active_course_data["videos"] if active_course_data else [],
         "guias": active_course_data["guias"] if active_course_data else [],
         "books": active_course_data["books"] if active_course_data else [],
-        "all_books": all_specialization_books
+        "all_books": all_specialization_books,
+        "all_videos": [v for c in courses_output for v in c.get("videos", [])]
     }
 
     # 1. Guardar para plataforma legacy (docs/assets/js/catalog.js)

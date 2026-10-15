@@ -276,6 +276,10 @@ function copyColabLink(url) {
             <span><b class="text-slate-900 dark:text-brand-amber">{{ (course.books || []).length }}</b> Libros</span>
             <span>•</span>
             <span><b class="text-slate-900 dark:text-slate-100">{{ (course.modules || []).length }}</b> Módulos</span>
+            <template v-if="(course.videos || []).length > 0">
+              <span>•</span>
+              <span><b class="text-rose-500 dark:text-rose-400">{{ (course.videos || []).length }}</b> Videos</span>
+            </template>
           </div>
         </div>
       </div>

@@ -337,7 +337,9 @@
             "instalacion python_compressed.mp4": { id: "4GN9WlumZ7o", url: "https://youtu.be/4GN9WlumZ7o" },
             "instalacion python.mp4": { id: "4GN9WlumZ7o", url: "https://youtu.be/4GN9WlumZ7o" },
             "creacion_venv.mp4": { id: "GX0rf6HjdcU", url: "https://youtu.be/GX0rf6HjdcU" },
-            "creacion de venv.mp4": { id: "GX0rf6HjdcU", url: "https://youtu.be/GX0rf6HjdcU" }
+            "creacion de venv.mp4": { id: "GX0rf6HjdcU", url: "https://youtu.be/GX0rf6HjdcU" },
+            "instalacion wsl2 y docker.mp4": { id: "nPWZi9Plljo", url: "https://youtu.be/nPWZi9Plljo" },
+            "instalacion_wsl2_y_docker.mp4": { id: "nPWZi9Plljo", url: "https://youtu.be/nPWZi9Plljo" }
           };
           const yt = ytMapping[filename.toLowerCase()] || { id: "", url: "" };
 

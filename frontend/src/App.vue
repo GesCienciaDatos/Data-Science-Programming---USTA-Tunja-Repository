@@ -52,6 +52,13 @@ const allVideos = computed(() => {
   return activeCourse.value?.videos || CATALOG_DATA.videos || [];
 });
 
+const allGlobalVideos = computed(() => {
+  if (CATALOG_DATA.all_videos && CATALOG_DATA.all_videos.length > 0) {
+    return CATALOG_DATA.all_videos;
+  }
+  return courses.value.flatMap(c => c.videos || []);
+});
+
 // Theme Management
 function initTheme() {
   const savedTheme = localStorage.getItem('usta_theme');
@@ -203,8 +210,10 @@ onMounted(() => {
       v-if="isGlobalSearchOpen"
       :all-notebooks="allNotebooks"
       :all-books="allBooks"
+      :all-videos="allGlobalVideos"
       @close="isGlobalSearchOpen = false"
       @open-pdf="openPdfViewer"
+      @play-video="playVideo"
     />
 
     <PdfViewerModal 

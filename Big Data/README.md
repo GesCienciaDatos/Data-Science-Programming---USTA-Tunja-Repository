@@ -63,6 +63,13 @@ Los talleres de los 6 módulos, con su versión guiada **Para Dummies**, están 
 
 ---
 
+## 🎬 Masterclasses y Videos Tutoriales en YouTube
+
+* ⚡ **Instalación y Configuración de WSL2 y Docker**: [Ver en YouTube](https://youtu.be/nPWZi9Plljo)
+  > Guía técnica paso a paso para la habilitación del subsistema Linux (WSL2), despliegue de contenedores Docker y configuración del entorno de virtualización para herramientas de Big Data y computación distribuida.
+
+---
+
 ## 📖 Bibliografía de Apoyo
 
 Las lecturas complementarias del Capítulo 1 están al final del [README del módulo 02](02%20-%20Data%20Warehousing%20y%20Data%20Lake/README.md). Las del Capítulo 2, el **Glosario** del curso y las **Referencias Bibliográficas** consolidadas están en el [README del módulo 05](05%20-%20Avances%20y%20Tendencias%20en%20Big%20Data/README.md).

@@ -45,6 +45,7 @@ Sección integrada con **122 textos especializados** de referencia mundial organ
 Reproductor optimizado para máxima compatibilidad con enlaces directos:
 - 🐍 **Instalación y Configuración de Python**: [Ver en YouTube](https://youtu.be/4GN9WlumZ7o)
 - ⚙️ **Creación y Gestión de Entornos Virtuales (VENV)**: [Ver en YouTube](https://youtu.be/GX0rf6HjdcU)
+- ⚡ **Instalación y Configuración de WSL2 y Docker (Big Data)**: [Ver en YouTube](https://youtu.be/nPWZi9Plljo)
 
 ---
 
@@ -58,7 +59,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 | **4** | **Privacidad, Seguridad e Integridad de los Datos** | Semestre I | 🚧 *En Construcción* | [`Privacidad, Seguridad e Integridad de los datos/`](Privacidad,%20Seguridad%20e%20Integridad%20de%20los%20datos/) |
 | **5** | **Data Mining** | Semestre II | 🟢 **Activo (88 Cuadernos • 18 Libros)** | [`Data Mining/`](Data%20Mining/) |
 | **6** | **Machine Learning** | Semestre II | 🟢 **Activo (40 Libros de Referencia)** | [`Machine Learning/`](Machine%20Learning/) |
-| **7** | **Big Data** | Semestre II | 🚧 *En Construcción* | [`Big Data/`](Big%20Data/) |
+| **7** | **Big Data** | Semestre II | 🟢 **Activo (50 Cuadernos • Video Tutorial)** | [`Big Data/`](Big%20Data/) |
 | **8** | **Introducción a la Inteligencia Artificial** | Semestre II | 🟢 **Activo (50 Cuadernos • 32 Libros)** | [`Introduccion a la Inteligencia Artificial/`](Introduccion%20a%20la%20Inteligencia%20Artificial/) |
 | **9** | **Visual Analytics and Critical Thinking** | Semestre II | 🟢 **Activo (50 Cuadernos • 21 Libros)** | [`Visual Analytics and Critical Thinking/`](Visual%20Analytics%20and%20Critical%20Thinking/) |
 
