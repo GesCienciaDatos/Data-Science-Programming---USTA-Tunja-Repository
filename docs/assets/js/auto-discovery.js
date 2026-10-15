@@ -31,7 +31,9 @@
     "Creacion_Venv.mp4": "Creación y Gestión de Entornos Virtuales (VENV)",
     "Instalacion_Python.pdf": "Guía de Instalación y Configuración de Python",
     "Instalación_Python.pdf": "Guía de Instalación y Configuración de Python",
-    "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)"
+    "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)",
+    "Instalacion_WSL2_y_Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
+    "Instalacion WSL2 y Docker.mp4": "Instalación y Configuración de WSL2 y Docker"
   };
 
   function formatTitle(str) {
