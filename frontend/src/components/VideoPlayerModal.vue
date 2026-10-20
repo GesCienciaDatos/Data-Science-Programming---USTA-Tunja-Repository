@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { useI18n } from '../i18n/index.js';
 
 const props = defineProps({
   video: {
@@ -13,6 +14,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['close', 'select-video']);
+const { t } = useI18n();
 
 const currentVideo = ref(props.video);
 
@@ -53,16 +55,16 @@ const embedSrc = computed(() => {
             :href="currentVideo.youtube_url" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="px-3 py-1.5 rounded-md bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400 text-xs font-mono font-medium flex items-center gap-1.5 transition-colors border border-rose-500/30"
+            class="px-3 py-1.5 rounded-md bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400 text-xs font-mono font-medium flex items-center gap-1.5 transition-colors border border-rose-500/30 cursor-pointer"
           >
             <span class="material-symbols-outlined text-sm">open_in_new</span>
-            <span class="hidden sm:inline">Ver en YouTube</span>
+            <span class="hidden sm:inline">{{ t('videoPlayer.watchOnYoutube') }}</span>
           </a>
 
           <button 
             @click="emit('close')"
-            class="p-1.5 rounded-md text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-space-800 transition-colors"
-            title="Cerrar (Esc)"
+            class="p-1.5 rounded-md text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-space-800 transition-colors cursor-pointer"
+            :title="t('videoPlayer.closeBtn')"
           >
             <span class="material-symbols-outlined text-lg">close</span>
           </button>
@@ -80,14 +82,14 @@ const embedSrc = computed(() => {
             class="w-full h-full min-h-[300px] lg:min-h-[440px] border-none"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
-            title="Reproductor de Video YouTube"
+            :title="t('videoPlayer.titleDefault')"
           ></iframe>
         </div>
 
         <!-- Playlist Sidebar -->
         <div class="lg:col-span-4 bg-slate-50 dark:bg-space-950 border-t lg:border-t-0 lg:border-l border-slate-200 dark:border-slate-800 p-4 space-y-3 overflow-y-auto max-h-64 lg:max-h-full">
           <span class="font-mono text-xs text-slate-500 uppercase tracking-wider block">
-            Videos de la Asignatura ({{ allVideos.length }})
+            {{ t('videoPlayer.playlistHeading') }} ({{ allVideos.length }})
           </span>
 
           <div class="space-y-2">
@@ -95,7 +97,7 @@ const embedSrc = computed(() => {
               v-for="v in allVideos"
               :key="v.id"
               @click="playVideo(v)"
-              class="w-full p-2.5 rounded-lg border text-left flex items-start gap-3 transition-all"
+              class="w-full p-2.5 rounded-lg border text-left flex items-start gap-3 transition-all cursor-pointer"
               :class="currentVideo.id === v.id ? 'bg-white dark:bg-space-850 border-brand-cyan shadow-xs' : 'bg-transparent border-transparent hover:bg-slate-200/60 dark:hover:bg-space-900 text-slate-600 dark:text-slate-400'"
             >
               <div class="relative w-16 h-11 rounded bg-slate-800 shrink-0 overflow-hidden border border-slate-700">

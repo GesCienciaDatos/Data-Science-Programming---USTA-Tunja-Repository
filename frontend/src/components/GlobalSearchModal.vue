@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
+import { useI18n } from '../i18n/index.js';
 
 const props = defineProps({
   allNotebooks: {
@@ -17,6 +18,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['close', 'open-pdf', 'play-video']);
+const { t } = useI18n();
 
 const searchInputRef = ref(null);
 const query = ref('');
@@ -86,12 +88,12 @@ function handlePlayVideo(video) {
           ref="searchInputRef"
           v-model="query"
           type="text" 
-          placeholder="Buscar por concepto, título, módulo o ruta..."
+          :placeholder="t('globalSearch.placeholder')"
           class="flex-1 bg-transparent border-none text-sm font-mono text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none"
         />
         <button 
           @click="emit('close')"
-          class="font-mono text-xs text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 px-2 py-1 rounded bg-slate-100 dark:bg-space-850"
+          class="font-mono text-xs text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 px-2 py-1 rounded bg-slate-100 dark:bg-space-850 cursor-pointer"
         >
           ESC
         </button>
@@ -100,11 +102,11 @@ function handlePlayVideo(video) {
       <!-- Search Results List -->
       <div class="p-3 max-h-[60vh] overflow-y-auto space-y-4 bg-slate-50 dark:bg-space-950">
         <div v-if="query.trim().length < 2" class="py-8 text-center text-xs font-mono text-slate-400">
-          Escribe al menos 2 caracteres para buscar en cuadernos, libros y videos masterclasses.
+          {{ t('globalSearch.emptyPrompt') }}
         </div>
 
         <div v-else-if="searchResults.length === 0 && searchBookResults.length === 0 && searchVideoResults.length === 0" class="py-8 text-center text-xs font-mono text-slate-400">
-          No se encontraron coincidencias para "{{ query }}".
+          {{ t('globalSearch.noMatches', { query }) }}
         </div>
 
         <div v-else class="space-y-4">
@@ -112,7 +114,7 @@ function handlePlayVideo(video) {
           <div v-if="searchVideoResults.length > 0" class="space-y-2">
             <div class="flex items-center gap-2 px-1 font-mono text-[11px] text-rose-500 uppercase tracking-wider font-semibold">
               <span class="material-symbols-outlined text-sm text-rose-500">smart_display</span>
-              <span>Masterclasses & Videos YouTube ({{ searchVideoResults.length }})</span>
+              <span>{{ t('globalSearch.sectionVideos') }} ({{ searchVideoResults.length }})</span>
             </div>
 
             <div 
@@ -149,7 +151,7 @@ function handlePlayVideo(video) {
                 @click="handlePlayVideo(v)"
                 class="px-2.5 py-1 rounded bg-rose-600 hover:bg-rose-500 text-white font-mono text-[10px] font-semibold shrink-0 flex items-center gap-1 cursor-pointer"
               >
-                <span>VER</span>
+                <span>{{ t('globalSearch.btnWatch') }}</span>
                 <span class="material-symbols-outlined text-xs">play_arrow</span>
               </button>
             </div>
@@ -159,7 +161,7 @@ function handlePlayVideo(video) {
           <div v-if="searchResults.length > 0" class="space-y-2">
             <div class="flex items-center gap-2 px-1 font-mono text-[11px] text-slate-500 uppercase tracking-wider font-semibold">
               <span class="material-symbols-outlined text-sm text-brand-cyan">code</span>
-              <span>Cuadernos Computacionales ({{ searchResults.length }})</span>
+              <span>{{ t('globalSearch.sectionNotebooks') }} ({{ searchResults.length }})</span>
             </div>
 
             <div 
@@ -186,7 +188,7 @@ function handlePlayVideo(video) {
                 rel="noopener noreferrer"
                 class="px-2.5 py-1 rounded bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-[10px] font-semibold shrink-0 flex items-center gap-1"
               >
-                <span>ABRIR</span>
+                <span>{{ t('globalSearch.btnOpen') }}</span>
                 <span class="material-symbols-outlined text-xs">open_in_new</span>
               </a>
             </div>
@@ -196,7 +198,7 @@ function handlePlayVideo(video) {
           <div v-if="searchBookResults.length > 0" class="space-y-2">
             <div class="flex items-center gap-2 px-1 font-mono text-[11px] text-amber-600 dark:text-brand-amber uppercase tracking-wider font-semibold">
               <span class="material-symbols-outlined text-sm">menu_book</span>
-              <span>Libros de Referencia & Bibliografía ({{ searchBookResults.length }})</span>
+              <span>{{ t('globalSearch.sectionBooks') }} ({{ searchBookResults.length }})</span>
             </div>
 
             <div 
@@ -233,7 +235,7 @@ function handlePlayVideo(video) {
                 @click="handleOpenBook(book)"
                 class="px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-600 text-slate-950 font-mono text-[10px] font-semibold shrink-0 flex items-center gap-1 cursor-pointer"
               >
-                <span>LEER</span>
+                <span>{{ t('globalSearch.btnRead') }}</span>
                 <span class="material-symbols-outlined text-xs">visibility</span>
               </button>
             </div>

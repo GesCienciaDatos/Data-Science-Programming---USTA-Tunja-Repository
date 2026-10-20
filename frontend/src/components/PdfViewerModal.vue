@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue';
+import { useI18n } from '../i18n/index.js';
 
 const props = defineProps({
   doc: {
@@ -9,6 +10,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['close']);
+const { t } = useI18n();
 
 const pdfSrc = computed(() => {
   if (!props.doc) return '';
@@ -47,28 +49,28 @@ const downloadUrl = computed(() => {
             target="_blank" 
             rel="noopener noreferrer"
             download
-            class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-850 hover:bg-slate-200 dark:hover:bg-space-800 text-slate-700 dark:text-slate-200 text-xs font-mono font-medium flex items-center gap-1.5 transition-colors"
-            title="Descargar archivo PDF"
+            class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-850 hover:bg-slate-200 dark:hover:bg-space-800 text-slate-700 dark:text-slate-200 text-xs font-mono font-medium flex items-center gap-1.5 transition-colors cursor-pointer"
+            :title="t('common.downloadPdf')"
           >
             <span class="material-symbols-outlined text-sm">download</span>
-            <span class="hidden sm:inline">Descargar</span>
+            <span class="hidden sm:inline">{{ t('pdfViewer.downloadBtn') }}</span>
           </a>
 
           <a 
             :href="pdfSrc" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-850 hover:bg-slate-200 dark:hover:bg-space-800 text-slate-700 dark:text-slate-200 text-xs font-mono font-medium flex items-center gap-1.5 transition-colors"
-            title="Abrir en pestaña nueva"
+            class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-850 hover:bg-slate-200 dark:hover:bg-space-800 text-slate-700 dark:text-slate-200 text-xs font-mono font-medium flex items-center gap-1.5 transition-colors cursor-pointer"
+            :title="t('pdfViewer.tabBtn')"
           >
             <span class="material-symbols-outlined text-sm">open_in_new</span>
-            <span class="hidden sm:inline">Pestaña</span>
+            <span class="hidden sm:inline">{{ t('pdfViewer.tabBtn') }}</span>
           </a>
 
           <button 
             @click="emit('close')"
-            class="p-1.5 rounded-md text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-space-800 transition-colors"
-            title="Cerrar (Esc)"
+            class="p-1.5 rounded-md text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-space-800 transition-colors cursor-pointer"
+            :title="t('pdfViewer.closeBtn')"
           >
             <span class="material-symbols-outlined text-lg">close</span>
           </button>
@@ -80,7 +82,7 @@ const downloadUrl = computed(() => {
         <iframe 
           :src="pdfSrc" 
           class="w-full h-full border-none"
-          title="Visor de Documento PDF"
+          :title="t('pdfViewer.titleDefault')"
         ></iframe>
       </div>
 

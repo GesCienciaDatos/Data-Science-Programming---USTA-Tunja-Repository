@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { useI18n } from '../i18n/index.js';
 
 const props = defineProps({
   datasets: {
@@ -9,6 +10,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['close', 'show-toast']);
+const { t } = useI18n();
 
 const searchQuery = ref('');
 const filterCleaning = ref('all'); // 'all' | 'dirty' | 'clean'
@@ -93,7 +95,7 @@ async function downloadDataset(ds) {
   const url = getDatasetDownloadUrl(ds);
   const filename = ds.name || 'dataset.csv';
   isDownloading.value = true;
-  emit('show-toast', `Iniciando descarga de ${filename}...`);
+  emit('show-toast', t('toasts.downloadStart', { name: filename }));
 
   try {
     const response = await fetch(url);
@@ -107,7 +109,7 @@ async function downloadDataset(ds) {
     link.click();
     document.body.removeChild(link);
     window.URL.revokeObjectURL(blobUrl);
-    emit('show-toast', `Dataset descargado con éxito: ${filename}`);
+    emit('show-toast', t('toasts.downloadSuccess', { name: filename }));
   } catch (err) {
     console.warn('Descarga por blob falló, aplicando fallback directo:', err);
     const link = document.createElement('a');
@@ -118,7 +120,7 @@ async function downloadDataset(ds) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    emit('show-toast', `Descarga iniciada: ${filename}`);
+    emit('show-toast', t('toasts.downloadStart', { name: filename }));
   } finally {
     isDownloading.value = false;
   }
@@ -129,7 +131,7 @@ function copySnippet(ds) {
   const code = ds.snippet || `df = pd.read_csv('${getDatasetDownloadUrl(ds)}')`;
   if (navigator.clipboard) {
     navigator.clipboard.writeText(code).then(() => {
-      emit('show-toast', 'Código de carga en Python copiado al portapapeles.');
+      emit('show-toast', t('toasts.snippetCopied'));
     });
   } else {
     emit('show-toast', 'Código: ' + code);
@@ -140,8 +142,7 @@ function copySnippet(ds) {
 <template>
   <div class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-sm animate-fade-in" @click.self="emit('close')">
     <div class="glass-panel rounded-2xl w-full max-w-5xl border border-slate-200 dark:border-slate-800 flex flex-col max-h-[90vh] overflow-hidden shadow-2xl">
-      
-      <!-- Modal Header -->
+           <!-- Modal Header -->
       <div class="px-5 sm:px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-space-900">
         <div class="flex items-center gap-3">
           <div class="w-9 h-9 rounded-lg bg-brand-cyan/10 border border-brand-cyan/20 flex items-center justify-center text-brand-cyan">
@@ -149,21 +150,21 @@ function copySnippet(ds) {
           </div>
           <div>
             <h3 class="text-sm sm:text-base font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-              <span>Explorador de Datasets Oficiales</span>
+              <span>{{ t('datasetExplorer.title') }}</span>
               <span class="text-[10px] px-2 py-0.5 rounded font-mono bg-slate-200 dark:bg-space-800 text-slate-700 dark:text-slate-300 font-normal">
                 {{ datasets.length }} datasets
               </span>
             </h3>
             <p class="text-[11px] text-slate-500 font-mono">
-              Conjuntos de datos para modelado estadístico, análisis exploratorio y Machine Learning
+              {{ t('datasetExplorer.subtitle') }}
             </p>
           </div>
         </div>
 
         <button 
           @click="emit('close')"
-          class="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-space-800 transition-colors"
-          title="Cerrar modal (Esc)"
+          class="p-1.5 rounded-lg text-slate-400 hover:text-slate-800 dark:hover:text-slate-100 hover:bg-slate-200 dark:hover:bg-space-800 transition-colors cursor-pointer"
+          :title="t('common.close') + ' (Esc)'"
         >
           <span class="material-symbols-outlined text-base">close</span>
         </button>
@@ -181,7 +182,7 @@ function copySnippet(ds) {
               <input 
                 v-model="searchQuery"
                 type="text"
-                placeholder="Filtrar por nombre, módulo o estado..."
+                :placeholder="t('datasetExplorer.searchPlaceholder')"
                 class="w-full pl-8 pr-3 py-1.5 rounded-lg bg-white dark:bg-space-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-brand-cyan transition-colors"
               />
             </div>
@@ -193,7 +194,7 @@ function copySnippet(ds) {
                 class="px-2 py-0.5 rounded transition-all shrink-0 cursor-pointer"
                 :class="selectedCourseFilter === 'all' ? 'bg-brand-cyan/20 text-brand-cyan font-semibold border border-brand-cyan/30' : 'bg-slate-200/70 text-slate-600 dark:bg-space-900 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200'"
               >
-                Todas ({{ datasets.length }})
+                {{ t('datasetExplorer.allCourses') }} ({{ datasets.length }})
               </button>
               <button 
                 v-for="(cnt, cname) in courseCounts" 
@@ -213,7 +214,7 @@ function copySnippet(ds) {
                 class="px-2 py-0.5 rounded transition-all shrink-0 cursor-pointer"
                 :class="filterCleaning === 'all' ? 'bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 font-semibold shadow-xs' : 'bg-slate-200/70 text-slate-600 dark:bg-space-900 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100'"
               >
-                Todos ({{ filteredDatasets.length }})
+                {{ t('datasetExplorer.filterAll') }} ({{ filteredDatasets.length }})
               </button>
               <button 
                 @click="filterCleaning = 'dirty'; selectedIndex = 0"
@@ -221,7 +222,7 @@ function copySnippet(ds) {
                 :class="filterCleaning === 'dirty' ? 'bg-rose-600 text-white font-semibold shadow-xs' : 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 hover:bg-rose-500/20'"
               >
                 <span class="w-1.5 h-1.5 rounded-full" :class="filterCleaning === 'dirty' ? 'bg-white' : 'bg-rose-500'"></span>
-                Requiere Limpieza ({{ dirtyCount }})
+                {{ t('datasetExplorer.filterDirty') }} ({{ dirtyCount }})
               </button>
               <button 
                 @click="filterCleaning = 'clean'; selectedIndex = 0"
@@ -229,7 +230,7 @@ function copySnippet(ds) {
                 :class="filterCleaning === 'clean' ? 'bg-emerald-600 text-white font-semibold shadow-xs' : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20'"
               >
                 <span class="w-1.5 h-1.5 rounded-full" :class="filterCleaning === 'clean' ? 'bg-white' : 'bg-emerald-500'"></span>
-                Limpio ({{ cleanCount }})
+                {{ t('datasetExplorer.filterClean') }} ({{ cleanCount }})
               </button>
             </div>
           </div>
@@ -237,7 +238,7 @@ function copySnippet(ds) {
           <!-- List items -->
           <div class="flex-1 p-2.5 space-y-1.5 overflow-y-auto">
             <div v-if="filteredDatasets.length === 0" class="py-8 text-center text-xs font-mono text-slate-400">
-              No se encontraron datasets con el filtro aplicado.
+              {{ t('datasetExplorer.emptyList') }}
             </div>
 
             <button 
@@ -253,16 +254,16 @@ function copySnippet(ds) {
                   <span 
                     v-if="ds.requires_cleaning" 
                     class="text-[9px] px-1.5 py-0.2 rounded font-mono font-medium bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20"
-                    title="Requiere limpieza de datos"
+                    :title="t('datasetExplorer.filterDirty')"
                   >
-                    Requiere Limpieza
+                    {{ t('datasetExplorer.filterDirty') }}
                   </span>
                   <span 
                     v-else 
                     class="text-[9px] px-1.5 py-0.2 rounded font-mono font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"
-                    title="Dataset limpio listo para usar"
+                    :title="t('datasetExplorer.filterClean')"
                   >
-                    Limpio
+                    {{ t('datasetExplorer.filterClean') }}
                   </span>
                   <span class="text-[9px] px-1 py-0.2 rounded bg-slate-200 dark:bg-space-800 text-slate-700 dark:text-slate-300 font-mono">
                     {{ ds.format || 'CSV' }}
@@ -275,9 +276,9 @@ function copySnippet(ds) {
               <div class="flex items-center gap-1.5 mt-1 text-[10px] text-slate-400 font-normal">
                 <span v-if="ds.course_name" class="text-brand-cyan truncate max-w-[120px] font-medium">{{ ds.course_name }}</span>
                 <span v-if="ds.course_name">•</span>
-                <span>{{ ds.rows ? ds.rows.toLocaleString() : 'N/A' }} filas</span>
+                <span>{{ ds.rows ? ds.rows.toLocaleString() : 'N/A' }} {{ t('common.rows') }}</span>
                 <span>•</span>
-                <span>{{ ds.cols || ds.columns || 'N/A' }} cols</span>
+                <span>{{ ds.cols || ds.columns || 'N/A' }} {{ t('common.cols') }}</span>
               </div>
             </button>
           </div>
@@ -307,14 +308,14 @@ function copySnippet(ds) {
                     class="text-[10px] px-2.5 py-0.5 rounded-full font-mono font-semibold bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 flex items-center gap-1 shadow-xs"
                   >
                     <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
-                    Requiere Limpieza
+                    {{ t('courseWorkspace.cleanBadgeDirty') }}
                   </span>
                   <span 
                     v-else 
                     class="text-[10px] px-2.5 py-0.5 rounded-full font-mono font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center gap-1 shadow-xs"
                   >
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                    No Requiere Limpieza (Limpio)
+                    {{ t('courseWorkspace.cleanBadgeClean') }}
                   </span>
                 </div>
                 <p class="text-xs text-slate-500 dark:text-slate-400">
@@ -325,11 +326,11 @@ function copySnippet(ds) {
               <!-- Header Action Area: Badges & Download Button -->
               <div class="flex flex-wrap items-center gap-2">
                 <div class="flex items-center gap-1.5 font-mono text-[11px]">
-                  <span class="px-2 py-1 rounded bg-slate-100 dark:bg-space-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                    {{ selectedDataset.rows ? selectedDataset.rows.toLocaleString() : 'N/A' }} Filas
+                  <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-space-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                    {{ selectedDataset.rows ? selectedDataset.rows.toLocaleString() : 'N/A' }} {{ t('courseWorkspace.rowsCountSuffix') }}
                   </span>
-                  <span class="px-2 py-1 rounded bg-slate-100 dark:bg-space-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
-                    {{ selectedDataset.cols || selectedDataset.columns || 'N/A' }} Columnas
+                  <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-space-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+                    {{ selectedDataset.cols || selectedDataset.columns || 'N/A' }} {{ t('courseWorkspace.colsCountSuffix') }}
                   </span>
                 </div>
 
@@ -338,12 +339,12 @@ function copySnippet(ds) {
                   @click="downloadDataset(selectedDataset)"
                   :disabled="isDownloading"
                   class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-mono text-xs font-semibold flex items-center gap-1.5 shadow-sm hover:shadow transition-all disabled:opacity-50 cursor-pointer"
-                  :title="'Descargar ' + selectedDataset.name"
+                  :title="t('courseWorkspace.btnDownloadDataset') + ' ' + selectedDataset.name"
                 >
                   <span class="material-symbols-outlined text-base">
                     {{ isDownloading ? 'sync' : 'download' }}
                   </span>
-                  <span>{{ isDownloading ? 'Descargando...' : 'Descargar Dataset' }}</span>
+                  <span>{{ isDownloading ? t('courseWorkspace.btnDownloadingDataset') : t('courseWorkspace.btnDownloadDataset') }}</span>
                 </button>
               </div>
             </div>
@@ -360,18 +361,18 @@ function copySnippet(ds) {
               <div class="flex items-center gap-1.5 shrink-0">
                 <button 
                   @click="copySnippet(selectedDataset)"
-                  class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-[11px] flex items-center gap-1 transition-colors"
-                  title="Copiar código de carga en Python"
+                  class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-[11px] flex items-center gap-1 transition-colors cursor-pointer"
+                  :title="t('courseWorkspace.btnCopySnippet')"
                 >
                   <span class="material-symbols-outlined text-xs">content_copy</span>
-                  <span>Copiar Snippet</span>
+                  <span>{{ t('courseWorkspace.btnCopySnippet') }}</span>
                 </button>
                 <a 
                   :href="getDatasetDownloadUrl(selectedDataset)"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="p-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
-                  title="Ver archivo Raw en GitHub"
+                  :title="t('courseWorkspace.viewRawGithub')"
                 >
                   <span class="material-symbols-outlined text-xs">open_in_new</span>
                 </a>
@@ -381,11 +382,11 @@ function copySnippet(ds) {
             <!-- Variables & Features Metadata -->
             <div v-if="selectedDataset.target || selectedDataset.features" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
               <div v-if="selectedDataset.target" class="p-2.5 rounded-lg bg-slate-50 dark:bg-space-850 border border-slate-200 dark:border-slate-800">
-                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">Variable Objetivo (Target):</span>
+                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">{{ t('courseWorkspace.targetVariable') }}</span>
                 <span class="text-brand-cyan font-semibold">{{ selectedDataset.target }}</span>
               </div>
               <div v-if="selectedDataset.features" class="p-2.5 rounded-lg bg-slate-50 dark:bg-space-850 border border-slate-200 dark:border-slate-800">
-                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">Características Principales:</span>
+                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">{{ t('courseWorkspace.predictorFeatures') }}</span>
                 <span class="text-slate-700 dark:text-slate-300 truncate block" :title="selectedDataset.features">{{ selectedDataset.features }}</span>
               </div>
             </div>
@@ -395,14 +396,14 @@ function copySnippet(ds) {
               <div class="flex items-center justify-between text-rose-600 dark:text-rose-400 font-semibold">
                 <div class="flex items-center gap-2">
                   <span class="material-symbols-outlined text-base">warning</span>
-                  <span>Diagnóstico de Calidad: Requiere Limpieza de Datos</span>
+                  <span>{{ t('courseWorkspace.qualityDirtyTitle') }}</span>
                 </div>
                 <span class="text-[10px] px-2 py-0.5 rounded bg-rose-500/10 border border-rose-500/20 uppercase tracking-wider font-semibold">
-                  Severidad: {{ selectedDataset.cleaning_level || 'Atención' }}
+                  {{ t('courseWorkspace.severityPrefix') }} {{ selectedDataset.cleaning_level || 'Atención' }}
                 </span>
               </div>
               <div class="space-y-1">
-                <div class="text-[11px] text-slate-700 dark:text-slate-300 font-medium">Motivos identificados:</div>
+                <div class="text-[11px] text-slate-700 dark:text-slate-300 font-medium">{{ t('courseWorkspace.reasonsIdentified') }}</div>
                 <ul class="list-disc list-inside text-[11px] text-slate-600 dark:text-slate-400 space-y-0.5 pl-1">
                   <li v-for="(reason, rIdx) in selectedDataset.cleaning_reasons" :key="rIdx">
                     {{ reason }}
@@ -411,16 +412,16 @@ function copySnippet(ds) {
               </div>
               <div v-if="selectedDataset.cleaning_actions && selectedDataset.cleaning_actions.length > 0" class="pt-2 border-t border-rose-500/15 flex items-start gap-1.5 text-[11px] text-emerald-700 dark:text-emerald-400">
                 <span class="material-symbols-outlined text-sm shrink-0">build_circle</span>
-                <span><strong>Acción recomendada:</strong> {{ selectedDataset.cleaning_actions.join('; ') }}</span>
+                <span><strong>{{ t('courseWorkspace.recommendedAction') }}</strong> {{ selectedDataset.cleaning_actions.join('; ') }}</span>
               </div>
             </div>
             <div v-else class="p-3 rounded-xl bg-emerald-500/5 dark:bg-emerald-950/20 border border-emerald-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 font-mono text-xs text-emerald-700 dark:text-emerald-300">
               <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-base text-emerald-500">verified</span>
-                <span>Dataset 100% íntegro: 0 nulos, 0 duplicados y tipos validados. Listo para modelado directo.</span>
+                <span>{{ t('courseWorkspace.qualityOptimalMsg') }}</span>
               </div>
               <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 uppercase tracking-wider font-semibold shrink-0">
-                Calidad: Óptima
+                {{ t('courseWorkspace.qualityOptimalTitle') }}
               </span>
             </div>
 
@@ -428,10 +429,10 @@ function copySnippet(ds) {
             <div class="space-y-2">
               <div class="flex items-center justify-between">
                 <span class="font-mono text-xs text-slate-500 uppercase tracking-wider block">
-                  Previsualización de Muestra (Primeros Registros)
+                  {{ t('courseWorkspace.samplePreviewTitle') }}
                 </span>
                 <span class="font-mono text-[10px] text-slate-400">
-                  Formato tabular delimitado
+                  {{ t('courseWorkspace.tabularDelimited') }}
                 </span>
               </div>
 
@@ -454,13 +455,13 @@ function copySnippet(ds) {
                 </table>
               </div>
               <div v-else class="p-8 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-lg text-xs font-mono text-slate-500">
-                Dataset disponible para descarga inmediata y carga directa mediante <code>pd.read_csv()</code> en los cuadernos.
+                {{ t('courseWorkspace.datasetFallbackDesc') }}
               </div>
             </div>
 
           </div>
           <div v-else class="p-12 text-center text-xs font-mono text-slate-400">
-            Selecciona un dataset de la lista para visualizar sus detalles y descargarlo.
+            {{ t('datasetExplorer.emptyList') }}
           </div>
         </div>
 
@@ -472,26 +473,26 @@ function copySnippet(ds) {
           <button 
             @click="downloadDataset(selectedDataset)"
             :disabled="isDownloading"
-            class="w-full sm:w-auto px-4 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-xs"
+            class="w-full sm:w-auto px-4 py-1.5 rounded-md bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
           >
             <span class="material-symbols-outlined text-sm">download</span>
-            <span>Descargar {{ selectedDataset.name }}</span>
+            <span>{{ t('courseWorkspace.btnDownloadDataset') }}</span>
           </button>
           <button 
             @click="copySnippet(selectedDataset)"
-            class="hidden sm:flex px-3 py-1.5 rounded-md border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-space-800 text-slate-700 dark:text-slate-300 font-mono text-xs items-center gap-1 transition-colors"
+            class="hidden sm:flex px-3 py-1.5 rounded-md border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-space-800 text-slate-700 dark:text-slate-300 font-mono text-xs items-center gap-1 transition-colors cursor-pointer"
           >
             <span class="material-symbols-outlined text-sm">content_copy</span>
-            <span>Copiar Snippet</span>
+            <span>{{ t('courseWorkspace.btnCopySnippet') }}</span>
           </button>
         </div>
         <div v-else></div>
 
         <button 
           @click="emit('close')"
-          class="w-full sm:w-auto px-4 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold transition-colors"
+          class="w-full sm:w-auto px-4 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold transition-colors cursor-pointer"
         >
-          Cerrar
+          {{ t('common.close') }}
         </button>
       </div>
 

@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { useI18n } from '../i18n/index.js';
 
 const props = defineProps({
   books: {
@@ -9,6 +10,8 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['open-pdf']);
+
+const { t } = useI18n();
 
 const searchQuery = ref('');
 const selectedSubject = ref('all');
@@ -23,7 +26,7 @@ const subjects = computed(() => {
     map[s] = (map[s] || 0) + 1;
   });
   return [
-    { id: 'all', name: 'Todas las Áreas', count: list.length },
+    { id: 'all', name: t('booksLibrary.allAreas'), count: list.length },
     ...Object.entries(map).map(([s, count]) => ({ id: s, name: s, count }))
   ];
 });
@@ -41,10 +44,10 @@ const categories = computed(() => {
     if (b.dummies_friendly) hasDummies = true;
   });
 
-  const cats = [{ id: 'all', name: `Todas (${list.length})` }];
+  const cats = [{ id: 'all', name: `${t('booksLibrary.allCategories')} (${list.length})` }];
   if (hasDummies) {
     const dummiesCount = list.filter(b => b.dummies_friendly).length;
-    cats.push({ id: 'Para Dummies / Principiantes', name: `Para Dummies (${dummiesCount})` });
+    cats.push({ id: 'Para Dummies / Principiantes', name: `${t('booksLibrary.forDummies')} (${dummiesCount})` });
   }
   Array.from(set).sort().forEach(cat => {
     if (cat !== 'Para Dummies / Principiantes') {
@@ -96,10 +99,10 @@ const filteredBooks = computed(() => {
       <div>
         <h2 class="text-xl font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
           <span class="material-symbols-outlined text-brand-cyan text-lg">menu_book</span>
-          Biblioteca Digital de Libros & Referencias
+          {{ t('booksLibrary.title') }}
         </h2>
         <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-          Bibliografía especializada y libros de texto completos: Python, Data Mining, Machine Learning, Inteligencia Artificial, Visual Analytics, Power BI y Tableau.
+          {{ t('booksLibrary.subtitle') }}
         </p>
       </div>
 
@@ -109,7 +112,7 @@ const filteredBooks = computed(() => {
         <input 
           v-model="searchQuery"
           type="text" 
-          placeholder="Buscar libro, autor o tema..."
+          :placeholder="t('booksLibrary.searchPlaceholder')"
           class="w-full pl-8 pr-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:border-brand-cyan"
         />
       </div>
@@ -121,7 +124,7 @@ const filteredBooks = computed(() => {
         v-for="sub in subjects"
         :key="sub.id"
         @click="handleSubjectChange(sub.id)"
-        class="px-3 py-1.5 rounded-t-md transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5"
+        class="px-3 py-1.5 rounded-t-md transition-all whitespace-nowrap shrink-0 flex items-center gap-1.5 cursor-pointer"
         :class="selectedSubject === sub.id ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 bg-slate-100/70 dark:bg-space-900/70 hover:bg-slate-200/70'"
       >
         <span>{{ sub.name }}</span>
@@ -137,7 +140,7 @@ const filteredBooks = computed(() => {
         v-for="cat in categories"
         :key="cat.id"
         @click="selectedCategory = cat.id"
-        class="px-3 py-1.5 rounded-md transition-colors whitespace-nowrap shrink-0"
+        class="px-3 py-1.5 rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
         :class="selectedCategory === cat.id ? 'bg-brand-cyan/20 border-brand-cyan/40 text-brand-cyan font-semibold border' : 'bg-slate-100 dark:bg-space-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 border border-slate-200 dark:border-slate-800'"
       >
         {{ cat.name }}
@@ -178,7 +181,7 @@ const filteredBooks = computed(() => {
               <img 
                 v-if="book.cover_image"
                 :src="book.cover_image" 
-                :alt="book.title"
+                :alt="book.title" 
                 class="w-full h-full object-cover transition-transform duration-200 group-hover:scale-105"
                 loading="lazy"
                 onerror="this.parentElement.querySelector('.fallback-cover')?.classList.remove('hidden'); this.style.display='none';"
@@ -204,7 +207,7 @@ const filteredBooks = computed(() => {
                 {{ book.publisher }} • {{ book.year }}
               </p>
               <p v-if="book.level" class="font-mono text-[10px] text-slate-500 dark:text-slate-400">
-                Nivel: {{ book.level }}
+                {{ t('common.difficulty') }}: {{ book.level }}
               </p>
             </div>
           </div>
@@ -230,10 +233,10 @@ const filteredBooks = computed(() => {
         <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
           <button 
             @click="emit('open-pdf', book)"
-            class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+            class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
           >
             <span class="material-symbols-outlined text-sm">visibility</span>
-            <span>LEER EN VISOR</span>
+            <span>{{ t('common.readInViewer') }}</span>
           </button>
 
           <a 
@@ -242,7 +245,7 @@ const filteredBooks = computed(() => {
             rel="noopener noreferrer"
             download
             class="p-1.5 rounded-md bg-slate-100 dark:bg-space-900 hover:bg-slate-200 dark:hover:bg-space-850 text-slate-600 dark:text-slate-300 transition-colors"
-            title="Descargar archivo PDF"
+            :title="t('common.downloadPdf')"
           >
             <span class="material-symbols-outlined text-base">download</span>
           </a>
@@ -254,8 +257,8 @@ const filteredBooks = computed(() => {
     <!-- Empty State -->
     <div v-else class="py-12 text-center glass-panel rounded-xl border border-slate-200 dark:border-slate-800">
       <span class="material-symbols-outlined text-slate-400 text-3xl mb-2">menu_book</span>
-      <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">No se encontraron libros</h3>
-      <p class="text-xs text-slate-500 mt-0.5">Prueba ajustando el término de búsqueda o la categoría seleccionada.</p>
+      <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">{{ t('booksLibrary.emptyTitle') }}</h3>
+      <p class="text-xs text-slate-500 mt-0.5">{{ t('booksLibrary.emptySubtitle') }}</p>
     </div>
 
   </div>

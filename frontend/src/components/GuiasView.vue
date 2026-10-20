@@ -1,4 +1,6 @@
 <script setup>
+import { useI18n } from '../i18n/index.js';
+
 defineProps({
   guias: {
     type: Array,
@@ -7,6 +9,7 @@ defineProps({
 });
 
 const emit = defineEmits(['open-pdf']);
+const { t } = useI18n();
 </script>
 
 <template>
@@ -16,10 +19,10 @@ const emit = defineEmits(['open-pdf']);
     <div class="pb-3 border-b border-slate-200 dark:border-slate-800">
       <h2 class="text-xl font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
         <span class="material-symbols-outlined text-brand-cyan text-lg">description</span>
-        Guías de Laboratorio & Documentación PDF
+        {{ t('guiasView.title') }}
       </h2>
       <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-        Manuales técnicos de configuración de entornos, librerías y guías paso a paso.
+        {{ t('guiasView.subtitle') }}
       </p>
     </div>
 
@@ -58,10 +61,10 @@ const emit = defineEmits(['open-pdf']);
         <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
           <button 
             @click="emit('open-pdf', guia)"
-            class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+            class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
           >
             <span class="material-symbols-outlined text-sm">visibility</span>
-            <span>VER EN VISOR</span>
+            <span>{{ t('common.viewInViewer') }}</span>
           </button>
 
           <a 
@@ -70,7 +73,7 @@ const emit = defineEmits(['open-pdf']);
             rel="noopener noreferrer"
             download
             class="p-1.5 rounded-md bg-slate-100 dark:bg-space-900 hover:bg-slate-200 dark:hover:bg-space-850 text-slate-600 dark:text-slate-300 transition-colors"
-            title="Descargar archivo PDF"
+            :title="t('common.downloadPdf')"
           >
             <span class="material-symbols-outlined text-base">download</span>
           </a>
@@ -81,8 +84,8 @@ const emit = defineEmits(['open-pdf']);
     <!-- Empty State -->
     <div v-else class="py-12 text-center glass-panel rounded-xl border border-slate-200 dark:border-slate-800">
       <span class="material-symbols-outlined text-slate-400 text-3xl mb-2">description</span>
-      <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">No hay guías cargadas</h3>
-      <p class="text-xs text-slate-500 mt-0.5">Los manuales se publicarán con el desarrollo de cada módulo.</p>
+      <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">{{ t('guiasView.emptyTitle') }}</h3>
+      <p class="text-xs text-slate-500 mt-0.5">{{ t('guiasView.emptySubtitle') }}</p>
     </div>
 
   </div>

@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, watch } from 'vue';
+import { useI18n } from '../i18n/index.js';
 
 const props = defineProps({
   course: {
@@ -14,6 +15,8 @@ const emit = defineEmits([
   'open-pdf',
   'play-video'
 ]);
+
+const { currentLang, t } = useI18n();
 
 // Active Workspace Tab: 'notebooks' | 'books' | 'guias' | 'videos' | 'datasets'
 const activeWorkspaceTab = ref('notebooks');
@@ -48,9 +51,9 @@ const bookCategories = computed(() => {
     if (b.category) categoriesSet.add(b.category);
     if (b.dummies_friendly) hasDummies = true;
   });
-  const cats = [{ id: 'all', name: `Todos (${books.length})` }];
+  const cats = [{ id: 'all', name: `${t('common.all')} (${books.length})` }];
   if (hasDummies) {
-    cats.push({ id: 'Para Dummies / Principiantes', name: 'Para Dummies' });
+    cats.push({ id: 'Para Dummies / Principiantes', name: t('booksLibrary.forDummies') });
   }
   Array.from(categoriesSet).sort().forEach(cat => {
     if (cat !== 'Para Dummies / Principiantes') {
@@ -182,7 +185,7 @@ async function downloadDataset(ds) {
   const url = getDatasetDownloadUrl(ds);
   const filename = ds.name || 'dataset.csv';
   isDownloadingDataset.value = true;
-  emit('show-toast', `Iniciando descarga: ${filename}...`);
+  emit('show-toast', t('toasts.downloadStart', { name: filename }));
 
   try {
     const response = await fetch(url);
@@ -196,7 +199,7 @@ async function downloadDataset(ds) {
     link.click();
     document.body.removeChild(link);
     window.URL.revokeObjectURL(blobUrl);
-    emit('show-toast', `Dataset descargado con éxito: ${filename}`);
+    emit('show-toast', t('toasts.downloadSuccess', { name: filename }));
   } catch (err) {
     console.warn('Descarga por blob falló, aplicando fallback directo:', err);
     const link = document.createElement('a');
@@ -207,7 +210,7 @@ async function downloadDataset(ds) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    emit('show-toast', `Descarga iniciada: ${filename}`);
+    emit('show-toast', t('toasts.downloadStart', { name: filename }));
   } finally {
     isDownloadingDataset.value = false;
   }
@@ -218,7 +221,7 @@ function copyDatasetSnippet(ds) {
   const code = ds.snippet || `df = pd.read_csv('${getDatasetDownloadUrl(ds)}')`;
   if (navigator.clipboard) {
     navigator.clipboard.writeText(code).then(() => {
-      emit('show-toast', 'Código de carga en Python copiado al portapapeles.');
+      emit('show-toast', t('toasts.snippetCopied'));
     });
   } else {
     emit('show-toast', 'Snippet: ' + code);
@@ -228,7 +231,7 @@ function copyDatasetSnippet(ds) {
 function copyColabLink(url) {
   if (navigator.clipboard) {
     navigator.clipboard.writeText(url).then(() => {
-      emit('show-toast', 'Enlace Colab copiado al portapapeles.');
+      emit('show-toast', t('toasts.linkCopied'));
     });
   } else {
     emit('show-toast', 'Enlace: ' + url);
@@ -246,7 +249,7 @@ function copyColabLink(url) {
           <!-- Breadcrumb -->
           <div class="flex items-center gap-2 font-mono text-xs text-slate-500 dark:text-slate-400">
             <button @click="emit('return-directory')" class="hover:text-brand-cyan transition-colors">
-              Plan de Estudios
+              {{ t('courseWorkspace.breadcrumbCurriculum') }}
             </button>
             <span>/</span>
             <span class="text-slate-800 dark:text-slate-200 font-semibold">{{ course.name }}</span>
@@ -264,21 +267,21 @@ function copyColabLink(url) {
         <div class="flex flex-row lg:flex-col items-center lg:items-end gap-3 shrink-0">
           <button 
             @click="emit('return-directory')"
-            class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-900 hover:bg-slate-200 dark:hover:bg-space-850 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300 transition-all flex items-center gap-1.5"
+            class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-900 hover:bg-slate-200 dark:hover:bg-space-850 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300 transition-all flex items-center gap-1.5 cursor-pointer"
           >
             <span class="material-symbols-outlined text-sm">arrow_back</span>
-            <span>Volver al Plan de Estudios</span>
+            <span>{{ t('courseWorkspace.btnBackToCurriculum') }}</span>
           </button>
           
           <div class="flex items-center gap-3 font-mono text-xs text-slate-500 dark:text-slate-400">
-            <span><b class="text-slate-900 dark:text-brand-cyan">{{ (course.notebooks || []).length }}</b> Cuadernos</span>
+            <span><b class="text-slate-900 dark:text-brand-cyan">{{ (course.notebooks || []).length }}</b> {{ t('courseWorkspace.statNotebooks') }}</span>
             <span>•</span>
-            <span><b class="text-slate-900 dark:text-brand-amber">{{ (course.books || []).length }}</b> Libros</span>
+            <span><b class="text-slate-900 dark:text-brand-amber">{{ (course.books || []).length }}</b> {{ t('courseWorkspace.statBooks') }}</span>
             <span>•</span>
-            <span><b class="text-slate-900 dark:text-slate-100">{{ (course.modules || []).length }}</b> Módulos</span>
+            <span><b class="text-slate-900 dark:text-slate-100">{{ (course.modules || []).length }}</b> {{ t('courseWorkspace.statModules') }}</span>
             <template v-if="(course.videos || []).length > 0">
               <span>•</span>
-              <span><b class="text-rose-500 dark:text-rose-400">{{ (course.videos || []).length }}</b> Videos</span>
+              <span><b class="text-rose-500 dark:text-rose-400">{{ (course.videos || []).length }}</b> {{ t('courseWorkspace.statVideos') }}</span>
             </template>
           </div>
         </div>
@@ -288,47 +291,47 @@ function copyColabLink(url) {
       <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center gap-2 overflow-x-auto font-mono text-xs">
         <button 
           @click="activeWorkspaceTab = 'notebooks'"
-          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap"
+          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap cursor-pointer"
           :class="activeWorkspaceTab === 'notebooks' ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800'"
         >
           <span class="material-symbols-outlined text-sm">code</span>
-          <span>Cuadernos ({{ (course.notebooks || []).length }})</span>
+          <span>{{ t('courseWorkspace.tabNotebooks') }} ({{ (course.notebooks || []).length }})</span>
         </button>
 
         <button 
           @click="activeWorkspaceTab = 'books'"
-          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap"
+          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap cursor-pointer"
           :class="activeWorkspaceTab === 'books' ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800'"
         >
           <span class="material-symbols-outlined text-sm">menu_book</span>
-          <span>Libros ({{ (course.books || []).length }})</span>
+          <span>{{ t('courseWorkspace.tabBooks') }} ({{ (course.books || []).length }})</span>
         </button>
 
         <button 
           @click="activeWorkspaceTab = 'guias'"
-          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap"
+          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap cursor-pointer"
           :class="activeWorkspaceTab === 'guias' ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800'"
         >
           <span class="material-symbols-outlined text-sm">description</span>
-          <span>Guías PDF ({{ (course.guias || []).length }})</span>
+          <span>{{ t('courseWorkspace.tabGuias') }} ({{ (course.guias || []).length }})</span>
         </button>
 
         <button 
           @click="activeWorkspaceTab = 'videos'"
-          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap"
+          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap cursor-pointer"
           :class="activeWorkspaceTab === 'videos' ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800'"
         >
           <span class="material-symbols-outlined text-sm">smart_display</span>
-          <span>Videos YouTube ({{ (course.videos || []).length }})</span>
+          <span>{{ t('courseWorkspace.tabVideos') }} ({{ (course.videos || []).length }})</span>
         </button>
 
         <button 
           @click="activeWorkspaceTab = 'datasets'"
-          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap"
+          class="px-3.5 py-1.5 rounded-md flex items-center gap-1.5 transition-all whitespace-nowrap cursor-pointer"
           :class="activeWorkspaceTab === 'datasets' ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-semibold shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800'"
         >
           <span class="material-symbols-outlined text-sm">database</span>
-          <span>Datasets ({{ (course.datasets || []).length }})</span>
+          <span>{{ t('courseWorkspace.tabDatasets') }} ({{ (course.datasets || []).length }})</span>
         </button>
       </div>
 
@@ -349,29 +352,29 @@ function copyColabLink(url) {
           <div class="flex items-center p-1 rounded-lg bg-slate-100 dark:bg-space-950 border border-slate-200 dark:border-slate-800 font-mono text-xs overflow-x-auto">
             <button 
               @click="selectedModality = 'standard'"
-              class="px-3 py-1.5 rounded-md transition-all whitespace-nowrap flex items-center gap-1.5"
+              class="px-3 py-1.5 rounded-md transition-all whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
               :class="selectedModality === 'standard' ? 'bg-white dark:bg-space-850 text-slate-900 dark:text-brand-cyan font-semibold shadow-xs border border-slate-200 dark:border-slate-700' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'"
             >
               <span class="material-symbols-outlined text-sm">menu_book</span>
-              <span>Edición Estándar (Académica)</span>
+              <span>{{ t('courseWorkspace.modalityStandard') }}</span>
             </button>
             
             <button 
               @click="selectedModality = 'dummies'"
-              class="px-3 py-1.5 rounded-md transition-all whitespace-nowrap flex items-center gap-1.5"
+              class="px-3 py-1.5 rounded-md transition-all whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
               :class="selectedModality === 'dummies' ? 'bg-white dark:bg-space-850 text-slate-900 dark:text-brand-amber font-semibold shadow-xs border border-slate-200 dark:border-slate-700' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'"
             >
               <span class="material-symbols-outlined text-sm">lightbulb</span>
-              <span>Edición Conceptual (Intuitiva)</span>
+              <span>{{ t('courseWorkspace.modalityDummies') }}</span>
             </button>
 
             <button 
               @click="selectedModality = 'homeworks'"
-              class="px-3 py-1.5 rounded-md transition-all whitespace-nowrap flex items-center gap-1.5"
+              class="px-3 py-1.5 rounded-md transition-all whitespace-nowrap flex items-center gap-1.5 cursor-pointer"
               :class="selectedModality === 'homeworks' ? 'bg-white dark:bg-space-850 text-slate-900 dark:text-brand-emerald font-semibold shadow-xs border border-slate-200 dark:border-slate-700' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'"
             >
               <span class="material-symbols-outlined text-sm">science</span>
-              <span>Laboratorios Prácticos (Hands-On)</span>
+              <span>{{ t('courseWorkspace.modalityHomeworks') }}</span>
             </button>
           </div>
 
@@ -382,19 +385,19 @@ function copyColabLink(url) {
               <input 
                 v-model="notebookSearchQuery"
                 type="text" 
-                placeholder="Buscar cuaderno..."
+                :placeholder="t('courseWorkspace.searchNotebookPlaceholder')"
                 class="w-full pl-8 pr-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-950 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:border-brand-cyan"
               />
             </div>
 
             <select 
               v-model="selectedDifficulty"
-              class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-950 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300 focus:outline-none focus:border-brand-cyan"
+              class="px-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-950 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-700 dark:text-slate-300 focus:outline-none focus:border-brand-cyan cursor-pointer"
             >
-              <option value="all">Todas las Dificultades</option>
-              <option value="Principiante">Principiante</option>
-              <option value="Intermedio">Intermedio</option>
-              <option value="Avanzado">Avanzado</option>
+              <option value="all">{{ t('common.allDifficulties') }}</option>
+              <option value="Principiante">{{ t('common.beginner') }}</option>
+              <option value="Intermedio">{{ t('common.intermediate') }}</option>
+              <option value="Avanzado">{{ t('common.advanced') }}</option>
             </select>
           </div>
 
@@ -404,10 +407,10 @@ function copyColabLink(url) {
         <div class="flex items-center gap-1.5 overflow-x-auto pb-1 font-mono text-xs">
           <button 
             @click="selectedModuleId = 'all'"
-            class="px-2.5 py-1 rounded-md transition-colors whitespace-nowrap flex items-center gap-1 shrink-0"
+            class="px-2.5 py-1 rounded-md transition-colors whitespace-nowrap flex items-center gap-1 shrink-0 cursor-pointer"
             :class="selectedModuleId === 'all' ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-semibold' : 'bg-slate-100 dark:bg-space-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 border border-slate-200 dark:border-slate-800'"
           >
-            <span>Todos los Módulos</span>
+            <span>{{ t('courseWorkspace.allModulesFilter') }}</span>
             <span class="text-[10px] opacity-75">({{ filteredNotebooks.length }})</span>
           </button>
 
@@ -415,7 +418,7 @@ function copyColabLink(url) {
             v-for="mod in (course.modules || []).filter(m => getModuleTotalCount(m.id) > 0)" 
             :key="mod.id"
             @click="selectedModuleId = mod.id"
-            class="px-2.5 py-1 rounded-md transition-colors whitespace-nowrap flex items-center gap-1 shrink-0"
+            class="px-2.5 py-1 rounded-md transition-colors whitespace-nowrap flex items-center gap-1 shrink-0 cursor-pointer"
             :class="selectedModuleId === mod.id ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-semibold' : 'bg-slate-100 dark:bg-space-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 border border-slate-200 dark:border-slate-800'"
           >
             <span>{{ mod.name }}</span>
@@ -444,7 +447,7 @@ function copyColabLink(url) {
               </p>
             </div>
             <span class="font-mono text-xs text-slate-400">
-              {{ getModuleNotebooks(mod.id).length }} {{ getModuleNotebooks(mod.id).length === 1 ? 'cuaderno' : 'cuadernos' }}
+              {{ getModuleNotebooks(mod.id).length }} {{ getModuleNotebooks(mod.id).length === 1 ? t('common.notebookSingular') : t('common.notebookPlural') }}
             </span>
           </div>
 
@@ -466,10 +469,10 @@ function copyColabLink(url) {
                       {{ nb.difficulty }}
                     </span>
                     <span v-if="nb.is_dummies" class="px-1.5 py-0.5 rounded text-[9px] font-mono bg-brand-amber/10 text-brand-amber border border-brand-amber/30 font-semibold">
-                      DUMMIES
+                      {{ t('courseWorkspace.badgeDummies') }}
                     </span>
                     <span v-if="nb.is_homework || nb.path.includes('homeworks')" class="px-1.5 py-0.5 rounded text-[9px] font-mono bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/30 font-semibold">
-                      LAB
+                      {{ t('courseWorkspace.badgeLab') }}
                     </span>
                   </div>
                 </div>
@@ -491,7 +494,7 @@ function copyColabLink(url) {
                   rel="noopener noreferrer"
                   class="px-2.5 py-1 rounded bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-[10px] font-semibold flex items-center gap-1 transition-all"
                 >
-                  <span>COLAB</span>
+                  <span>{{ t('courseWorkspace.btnColab') }}</span>
                   <span class="material-symbols-outlined text-xs">rocket_launch</span>
                 </a>
 
@@ -501,14 +504,14 @@ function copyColabLink(url) {
                     target="_blank" 
                     rel="noopener noreferrer"
                     class="p-1 rounded hover:bg-slate-100 dark:hover:bg-space-850 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
-                    title="Ver Código Fuente"
+                    :title="t('courseWorkspace.titleViewSource')"
                   >
                     <span class="material-symbols-outlined text-sm">code</span>
                   </a>
                   <button 
                     @click="copyColabLink(nb.colab_url)"
-                    class="p-1 rounded hover:bg-slate-100 dark:hover:bg-space-850 hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
-                    title="Copiar Enlace Colab"
+                    class="p-1 rounded hover:bg-slate-100 dark:hover:bg-space-850 hover:text-slate-900 dark:hover:text-slate-100 transition-colors cursor-pointer"
+                    :title="t('courseWorkspace.titleCopyColab')"
                   >
                     <span class="material-symbols-outlined text-sm">content_copy</span>
                   </button>
@@ -524,8 +527,8 @@ function copyColabLink(url) {
       <!-- Empty State -->
       <div v-else class="py-12 text-center glass-panel rounded-xl border border-slate-200 dark:border-slate-800">
         <span class="material-symbols-outlined text-slate-400 text-3xl mb-2">search_off</span>
-        <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">No se encontraron cuadernos</h3>
-        <p class="text-xs text-slate-500 mt-0.5">Prueba ajustando el término de búsqueda o la modalidad seleccionada.</p>
+        <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">{{ t('courseWorkspace.emptyNotebooksTitle') }}</h3>
+        <p class="text-xs text-slate-500 mt-0.5">{{ t('courseWorkspace.emptyNotebooksSubtitle') }}</p>
       </div>
 
     </div>
@@ -537,9 +540,9 @@ function copyColabLink(url) {
       <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
         <div>
           <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">
-            Biblioteca Digital de Referencia
+            {{ t('courseWorkspace.booksHeading') }}
           </h3>
-          <p class="text-xs text-slate-500">Bibliografía técnica oficial y libros de soporte.</p>
+          <p class="text-xs text-slate-500">{{ t('courseWorkspace.booksSubheading') }}</p>
         </div>
 
         <div class="relative w-full sm:w-64">
@@ -547,7 +550,7 @@ function copyColabLink(url) {
           <input 
             v-model="bookSearchQuery"
             type="text" 
-            placeholder="Buscar por libro..."
+            :placeholder="t('courseWorkspace.searchBooksPlaceholder')"
             class="w-full pl-8 pr-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:border-brand-cyan"
           />
         </div>
@@ -559,7 +562,7 @@ function copyColabLink(url) {
           v-for="cat in bookCategories"
           :key="cat.id"
           @click="selectedBookCategory = cat.id"
-          class="px-3 py-1.5 rounded-md transition-colors whitespace-nowrap shrink-0"
+          class="px-3 py-1.5 rounded-md transition-colors whitespace-nowrap shrink-0 cursor-pointer"
           :class="selectedBookCategory === cat.id ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-950 font-semibold' : 'bg-slate-100 dark:bg-space-900 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 border border-slate-200 dark:border-slate-800'"
         >
           {{ cat.name }}
@@ -624,10 +627,10 @@ function copyColabLink(url) {
           <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
             <button 
               @click="emit('open-pdf', book)"
-              class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+              class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
             >
               <span class="material-symbols-outlined text-sm">visibility</span>
-              <span>LEER EN VISOR</span>
+              <span>{{ t('common.readInViewer') }}</span>
             </button>
 
             <a 
@@ -636,7 +639,7 @@ function copyColabLink(url) {
               rel="noopener noreferrer"
               download
               class="p-1.5 rounded-md bg-slate-100 dark:bg-space-900 hover:bg-slate-200 dark:hover:bg-space-850 text-slate-600 dark:text-slate-300 transition-colors"
-              title="Descargar archivo PDF"
+              :title="t('common.downloadPdf')"
             >
               <span class="material-symbols-outlined text-base">download</span>
             </a>
@@ -646,7 +649,7 @@ function copyColabLink(url) {
 
       <div v-else class="p-12 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl space-y-2 font-mono text-xs text-slate-500">
         <span class="material-symbols-outlined text-3xl text-slate-400">menu_book</span>
-        <p>No se encontraron libros de referencia registrados actualmente para esta asignatura.</p>
+        <p>{{ t('courseWorkspace.emptyBooks') }}</p>
       </div>
     </div>
 
@@ -656,9 +659,9 @@ function copyColabLink(url) {
     <div v-else-if="activeWorkspaceTab === 'guias'" class="space-y-6">
       <div class="pb-3 border-b border-slate-200 dark:border-slate-800">
         <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">
-          Guías Técnicas & Manuales de Laboratorio
+          {{ t('courseWorkspace.guiasHeading') }}
         </h3>
-        <p class="text-xs text-slate-500">Documentos oficiales de configuración y metodología.</p>
+        <p class="text-xs text-slate-500">{{ t('courseWorkspace.guiasSubheading') }}</p>
       </div>
 
       <div v-if="course.guias && course.guias.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -695,10 +698,10 @@ function copyColabLink(url) {
           <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
             <button 
               @click="emit('open-pdf', guia)"
-              class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+              class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
             >
               <span class="material-symbols-outlined text-sm">visibility</span>
-              <span>VER EN VISOR</span>
+              <span>{{ t('common.viewInViewer') }}</span>
             </button>
 
             <a 
@@ -707,7 +710,7 @@ function copyColabLink(url) {
               rel="noopener noreferrer"
               download
               class="p-1.5 rounded-md bg-slate-100 dark:bg-space-900 hover:bg-slate-200 dark:hover:bg-space-850 text-slate-600 dark:text-slate-300 transition-colors"
-              title="Descargar archivo PDF"
+              :title="t('common.downloadPdf')"
             >
               <span class="material-symbols-outlined text-base">download</span>
             </a>
@@ -717,7 +720,7 @@ function copyColabLink(url) {
 
       <div v-else class="p-12 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl space-y-2 font-mono text-xs text-slate-500">
         <span class="material-symbols-outlined text-3xl text-slate-400">description</span>
-        <p>Las guías técnicas y manuales de laboratorio para esta asignatura serán publicadas conforme al avance del semestre.</p>
+        <p>{{ t('courseWorkspace.emptyGuias') }}</p>
       </div>
     </div>
 
@@ -727,9 +730,9 @@ function copyColabLink(url) {
     <div v-else-if="activeWorkspaceTab === 'videos'" class="space-y-6">
       <div class="pb-3 border-b border-slate-200 dark:border-slate-800">
         <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">
-          Masterclasses & Talleres en Video
+          {{ t('courseWorkspace.videosHeading') }}
         </h3>
-        <p class="text-xs text-slate-500">Sesiones grabadas y explicaciones en YouTube.</p>
+        <p class="text-xs text-slate-500">{{ t('courseWorkspace.videosSubheading') }}</p>
       </div>
 
       <div v-if="course.videos && course.videos.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -775,10 +778,10 @@ function copyColabLink(url) {
           <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
             <button 
               @click="emit('play-video', v)"
-              class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+              class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
             >
               <span class="material-symbols-outlined text-sm">play_circle</span>
-              <span>REPRODUCIR VIDEO</span>
+              <span>{{ t('courseWorkspace.btnPlayVideo') }}</span>
             </button>
 
             <a 
@@ -787,7 +790,7 @@ function copyColabLink(url) {
               target="_blank" 
               rel="noopener noreferrer"
               class="p-1.5 rounded-md bg-slate-100 dark:bg-space-900 hover:bg-slate-200 dark:hover:bg-space-850 text-slate-600 dark:text-slate-300 transition-colors"
-              title="Abrir en YouTube"
+              :title="t('courseWorkspace.titleOpenYoutube')"
             >
               <span class="material-symbols-outlined text-base">open_in_new</span>
             </a>
@@ -797,7 +800,7 @@ function copyColabLink(url) {
 
       <div v-else class="p-12 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl space-y-2 font-mono text-xs text-slate-500">
         <span class="material-symbols-outlined text-3xl text-slate-400">smart_display</span>
-        <p>Las masterclasses y videos explicativos se habilitarán en las sesiones programadas del semestre.</p>
+        <p>{{ t('courseWorkspace.emptyVideos') }}</p>
       </div>
     </div>
 
@@ -808,13 +811,13 @@ function copyColabLink(url) {
       <div class="pb-3 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
-            <span>Datasets Oficiales de la Asignatura</span>
+            <span>{{ t('courseWorkspace.datasetsHeading') }}</span>
             <span class="text-xs px-2 py-0.5 rounded font-mono bg-slate-100 dark:bg-space-800 text-slate-700 dark:text-slate-300 font-medium">
-              {{ (course.datasets || []).length }} disponibles
+              {{ (course.datasets || []).length }} {{ t('courseWorkspace.datasetsAvailableSuffix') }}
             </span>
           </h3>
           <p class="text-xs text-slate-500 mt-0.5">
-            Conjuntos de datos estructurados para experimentación estadística, feature engineering y Machine Learning.
+            {{ t('courseWorkspace.datasetsSubheading') }}
           </p>
         </div>
 
@@ -823,12 +826,12 @@ function copyColabLink(url) {
             @click="downloadDataset(selectedDataset)"
             :disabled="isDownloadingDataset"
             class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-mono text-xs font-semibold flex items-center gap-2 shadow-xs hover:shadow transition-all disabled:opacity-50 cursor-pointer"
-            :title="'Descargar ' + selectedDataset.name"
+            :title="t('courseWorkspace.btnDownloadDataset') + ' ' + selectedDataset.name"
           >
             <span class="material-symbols-outlined text-base">
               {{ isDownloadingDataset ? 'sync' : 'download' }}
             </span>
-            <span>{{ isDownloadingDataset ? 'Descargando...' : 'Descargar Dataset' }}</span>
+            <span>{{ isDownloadingDataset ? t('courseWorkspace.btnDownloadingDataset') : t('courseWorkspace.btnDownloadDataset') }}</span>
           </button>
         </div>
       </div>
@@ -837,9 +840,9 @@ function copyColabLink(url) {
       <div v-if="!course.datasets || course.datasets.length === 0" class="p-12 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-xl space-y-3 font-mono text-xs text-slate-500">
         <span class="material-symbols-outlined text-4xl text-brand-cyan">database</span>
         <div class="space-y-1">
-          <p class="font-semibold text-slate-800 dark:text-slate-200">Esta asignatura utiliza conjuntos de datos integrados en Python</p>
+          <p class="font-semibold text-slate-800 dark:text-slate-200">{{ t('courseWorkspace.syntheticDatasetsTitle') }}</p>
           <p class="text-slate-500 max-w-lg mx-auto leading-relaxed">
-            Los cuadernos computacionales de esta materia emplean generadores sintéticos reproducibles y datasets canónicos provistos por librerías (Scikit-Learn, PyTorch, Seaborn y Gymnasium) para experimentación directa sin descargas externas.
+            {{ t('courseWorkspace.syntheticDatasetsDesc') }}
           </p>
         </div>
       </div>
@@ -854,7 +857,7 @@ function copyColabLink(url) {
               class="px-2 py-0.5 rounded transition-all shrink-0 cursor-pointer"
               :class="datasetCleaningFilter === 'all' ? 'bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900 font-semibold shadow-xs' : 'bg-slate-200/70 text-slate-600 dark:bg-space-900 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100'"
             >
-              Todos ({{ (course.datasets || []).length }})
+              {{ t('courseWorkspace.cleanFilterAll') }} ({{ (course.datasets || []).length }})
             </button>
             <button 
               @click="datasetCleaningFilter = 'dirty'; selectedDatasetIndex = 0"
@@ -862,7 +865,7 @@ function copyColabLink(url) {
               :class="datasetCleaningFilter === 'dirty' ? 'bg-rose-600 text-white font-semibold shadow-xs' : 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 hover:bg-rose-500/20'"
             >
               <span class="w-1.5 h-1.5 rounded-full" :class="datasetCleaningFilter === 'dirty' ? 'bg-white' : 'bg-rose-500'"></span>
-              Requiere Limpieza ({{ courseDirtyDatasetsCount }})
+              {{ t('courseWorkspace.cleanFilterDirty') }} ({{ courseDirtyDatasetsCount }})
             </button>
             <button 
               @click="datasetCleaningFilter = 'clean'; selectedDatasetIndex = 0"
@@ -870,12 +873,12 @@ function copyColabLink(url) {
               :class="datasetCleaningFilter === 'clean' ? 'bg-emerald-600 text-white font-semibold shadow-xs' : 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20'"
             >
               <span class="w-1.5 h-1.5 rounded-full" :class="datasetCleaningFilter === 'clean' ? 'bg-white' : 'bg-emerald-500'"></span>
-              Limpio ({{ courseCleanDatasetsCount }})
+              {{ t('courseWorkspace.cleanFilterClean') }} ({{ courseCleanDatasetsCount }})
             </button>
           </div>
 
           <div v-if="filteredCourseDatasets.length === 0" class="p-6 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-lg text-xs font-mono text-slate-400">
-            No se encontraron datasets para el filtro seleccionado.
+            {{ t('courseWorkspace.emptyCourseDatasets') }}
           </div>
 
           <button 
@@ -891,16 +894,16 @@ function copyColabLink(url) {
                 <span 
                   v-if="ds.requires_cleaning" 
                   class="text-[9px] px-1.5 py-0.2 rounded font-mono font-medium bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20"
-                  title="Requiere limpieza de datos"
+                  :title="t('courseWorkspace.cleanFilterDirty')"
                 >
-                  Requiere Limpieza
+                  {{ t('courseWorkspace.cleanFilterDirty') }}
                 </span>
                 <span 
                   v-else 
                   class="text-[9px] px-1.5 py-0.2 rounded font-mono font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20"
-                  title="Dataset limpio listo para usar"
+                  :title="t('courseWorkspace.cleanFilterClean')"
                 >
-                  Limpio
+                  {{ t('courseWorkspace.cleanFilterClean') }}
                 </span>
                 <span class="text-[9px] px-1 py-0.2 rounded bg-slate-200 dark:bg-space-800 text-slate-700 dark:text-slate-300 font-mono">
                   {{ ds.format || 'CSV' }}
@@ -911,11 +914,11 @@ function copyColabLink(url) {
               {{ ds.description }}
             </p>
             <div class="flex items-center justify-between text-[10px] text-slate-400 font-normal">
-              <span>{{ ds.rows ? ds.rows.toLocaleString() : 'N/A' }} filas • {{ ds.cols || ds.columns || 'N/A' }} cols</span>
+              <span>{{ ds.rows ? ds.rows.toLocaleString() : 'N/A' }} {{ t('common.rows') }} • {{ ds.cols || ds.columns || 'N/A' }} {{ t('common.cols') }}</span>
               <span 
                 @click.stop="downloadDataset(ds)"
-                class="hover:text-emerald-500 transition-colors p-0.5 rounded"
-                :title="'Descargar ' + ds.name"
+                class="hover:text-emerald-500 transition-colors p-0.5 rounded cursor-pointer"
+                :title="t('courseWorkspace.btnDownloadDataset') + ' ' + ds.name"
               >
                 <span class="material-symbols-outlined text-sm">download</span>
               </span>
@@ -944,14 +947,14 @@ function copyColabLink(url) {
                     class="text-[10px] px-2.5 py-0.5 rounded-full font-mono font-semibold bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 flex items-center gap-1 shadow-xs"
                   >
                     <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
-                    Requiere Limpieza
+                    {{ t('courseWorkspace.cleanBadgeDirty') }}
                   </span>
                   <span 
                     v-else 
                     class="text-[10px] px-2.5 py-0.5 rounded-full font-mono font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 flex items-center gap-1 shadow-xs"
                   >
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                    No Requiere Limpieza (Limpio)
+                    {{ t('courseWorkspace.cleanBadgeClean') }}
                   </span>
                 </div>
                 <p class="text-xs text-slate-500 dark:text-slate-400">{{ selectedDataset.description }}</p>
@@ -961,10 +964,10 @@ function copyColabLink(url) {
               <div class="flex flex-wrap items-center gap-2">
                 <div class="flex items-center gap-1.5 font-mono text-[11px]">
                   <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-space-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
-                    {{ selectedDataset.rows ? selectedDataset.rows.toLocaleString() : 'N/A' }} Filas
+                    {{ selectedDataset.rows ? selectedDataset.rows.toLocaleString() : 'N/A' }} {{ t('courseWorkspace.rowsCountSuffix') }}
                   </span>
                   <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-space-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">
-                    {{ selectedDataset.cols || selectedDataset.columns || 'N/A' }} Columnas
+                    {{ selectedDataset.cols || selectedDataset.columns || 'N/A' }} {{ t('courseWorkspace.colsCountSuffix') }}
                   </span>
                 </div>
 
@@ -973,12 +976,12 @@ function copyColabLink(url) {
                   @click="downloadDataset(selectedDataset)"
                   :disabled="isDownloadingDataset"
                   class="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-mono text-xs font-semibold flex items-center gap-2 shadow-sm hover:shadow transition-all disabled:opacity-50 cursor-pointer"
-                  :title="'Descargar ' + selectedDataset.name"
+                  :title="t('courseWorkspace.btnDownloadDataset') + ' ' + selectedDataset.name"
                 >
                   <span class="material-symbols-outlined text-base">
                     {{ isDownloadingDataset ? 'sync' : 'download' }}
                   </span>
-                  <span>{{ isDownloadingDataset ? 'Descargando...' : 'Descargar Dataset' }}</span>
+                  <span>{{ isDownloadingDataset ? t('courseWorkspace.btnDownloadingDataset') : t('courseWorkspace.btnDownloadDataset') }}</span>
                 </button>
               </div>
             </div>
@@ -995,18 +998,18 @@ function copyColabLink(url) {
               <div class="flex items-center gap-1.5 shrink-0">
                 <button 
                   @click="copyDatasetSnippet(selectedDataset)"
-                  class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-[11px] flex items-center gap-1 transition-colors"
-                  title="Copiar código de carga en Python"
+                  class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-[11px] flex items-center gap-1 transition-colors cursor-pointer"
+                  :title="t('courseWorkspace.btnCopySnippet')"
                 >
                   <span class="material-symbols-outlined text-xs">content_copy</span>
-                  <span>Copiar Snippet</span>
+                  <span>{{ t('courseWorkspace.btnCopySnippet') }}</span>
                 </button>
                 <a 
                   :href="getDatasetDownloadUrl(selectedDataset)" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   class="p-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors"
-                  title="Ver archivo Raw en GitHub"
+                  :title="t('courseWorkspace.viewRawGithub')"
                 >
                   <span class="material-symbols-outlined text-xs">open_in_new</span>
                 </a>
@@ -1016,11 +1019,11 @@ function copyColabLink(url) {
             <!-- Variables & Features Metadata -->
             <div v-if="selectedDataset.target || selectedDataset.features" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
               <div v-if="selectedDataset.target" class="p-2.5 rounded-lg bg-slate-50 dark:bg-space-850 border border-slate-200 dark:border-slate-800">
-                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">Variable Objetivo (Target):</span>
+                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">{{ t('courseWorkspace.targetVariable') }}</span>
                 <span class="text-brand-cyan font-semibold">{{ selectedDataset.target }}</span>
               </div>
               <div v-if="selectedDataset.features" class="p-2.5 rounded-lg bg-slate-50 dark:bg-space-850 border border-slate-200 dark:border-slate-800">
-                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">Variables Predictoras / Features:</span>
+                <span class="text-[10px] text-slate-400 block uppercase tracking-wider mb-0.5">{{ t('courseWorkspace.predictorFeatures') }}</span>
                 <span class="text-slate-700 dark:text-slate-300 truncate block" :title="selectedDataset.features">{{ selectedDataset.features }}</span>
               </div>
             </div>
@@ -1030,14 +1033,14 @@ function copyColabLink(url) {
               <div class="flex items-center justify-between text-rose-600 dark:text-rose-400 font-semibold">
                 <div class="flex items-center gap-2">
                   <span class="material-symbols-outlined text-base">warning</span>
-                  <span>Diagnóstico de Calidad: Requiere Limpieza de Datos</span>
+                  <span>{{ t('courseWorkspace.qualityDirtyTitle') }}</span>
                 </div>
                 <span class="text-[10px] px-2 py-0.5 rounded bg-rose-500/10 border border-rose-500/20 uppercase tracking-wider font-semibold">
-                  Severidad: {{ selectedDataset.cleaning_level || 'Atención' }}
+                  {{ t('courseWorkspace.severityPrefix') }} {{ selectedDataset.cleaning_level || 'Atención' }}
                 </span>
               </div>
               <div class="space-y-1">
-                <div class="text-[11px] text-slate-700 dark:text-slate-300 font-medium">Motivos identificados:</div>
+                <div class="text-[11px] text-slate-700 dark:text-slate-300 font-medium">{{ t('courseWorkspace.reasonsIdentified') }}</div>
                 <ul class="list-disc list-inside text-[11px] text-slate-600 dark:text-slate-400 space-y-0.5 pl-1">
                   <li v-for="(reason, rIdx) in selectedDataset.cleaning_reasons" :key="rIdx">
                     {{ reason }}
@@ -1046,16 +1049,16 @@ function copyColabLink(url) {
               </div>
               <div v-if="selectedDataset.cleaning_actions && selectedDataset.cleaning_actions.length > 0" class="pt-2 border-t border-rose-500/15 flex items-start gap-1.5 text-[11px] text-emerald-700 dark:text-emerald-400">
                 <span class="material-symbols-outlined text-sm shrink-0">build_circle</span>
-                <span><strong>Acción recomendada:</strong> {{ selectedDataset.cleaning_actions.join('; ') }}</span>
+                <span><strong>{{ t('courseWorkspace.recommendedAction') }}</strong> {{ selectedDataset.cleaning_actions.join('; ') }}</span>
               </div>
             </div>
             <div v-else class="p-3 rounded-xl bg-emerald-500/5 dark:bg-emerald-950/20 border border-emerald-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 font-mono text-xs text-emerald-700 dark:text-emerald-300">
               <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-base text-emerald-500">verified</span>
-                <span>Dataset 100% íntegro: 0 nulos, 0 duplicados y tipos validados. Listo para modelado directo.</span>
+                <span>{{ t('courseWorkspace.qualityOptimalMsg') }}</span>
               </div>
               <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 uppercase tracking-wider font-semibold shrink-0">
-                Calidad: Óptima
+                {{ t('courseWorkspace.qualityOptimalTitle') }}
               </span>
             </div>
 
@@ -1063,10 +1066,10 @@ function copyColabLink(url) {
             <div class="space-y-2">
               <div class="flex items-center justify-between">
                 <span class="font-mono text-xs text-slate-500 uppercase tracking-wider block">
-                  Previsualización de Muestra (Primeros Registros)
+                  {{ t('courseWorkspace.samplePreviewTitle') }}
                 </span>
                 <span class="font-mono text-[10px] text-slate-400">
-                  Formato tabular delimitado
+                  {{ t('courseWorkspace.tabularDelimited') }}
                 </span>
               </div>
 
@@ -1089,30 +1092,30 @@ function copyColabLink(url) {
                 </table>
               </div>
               <div v-else class="p-8 text-center border border-dashed border-slate-200 dark:border-slate-800 rounded-lg text-xs font-mono text-slate-500">
-                Dataset disponible para descarga inmediata y carga directa mediante <code>pd.read_csv()</code> en los cuadernos del curso.
+                {{ t('courseWorkspace.datasetFallbackDesc') }}
               </div>
             </div>
 
             <!-- Bottom Action Footer Strip -->
             <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-xs">
               <span class="text-slate-500 text-[11px]">
-                Archivo: <span class="text-slate-900 dark:text-slate-200 font-semibold">{{ selectedDataset.name }}</span> ({{ selectedDataset.rows ? selectedDataset.rows.toLocaleString() : 'N/A' }} filas)
+                {{ t('common.file') }} <span class="text-slate-900 dark:text-slate-200 font-semibold">{{ selectedDataset.name }}</span> ({{ selectedDataset.rows ? selectedDataset.rows.toLocaleString() : 'N/A' }} {{ t('common.rows') }})
               </span>
               <div class="flex items-center gap-2 w-full sm:w-auto">
                 <button 
                   @click="copyDatasetSnippet(selectedDataset)"
-                  class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-space-800 text-slate-700 dark:text-slate-300 transition-colors flex items-center gap-1.5"
+                  class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-space-800 text-slate-700 dark:text-slate-300 transition-colors flex items-center gap-1.5 cursor-pointer"
                 >
                   <span class="material-symbols-outlined text-sm">content_copy</span>
-                  <span>Copiar Snippet</span>
+                  <span>{{ t('courseWorkspace.btnCopySnippet') }}</span>
                 </button>
                 <button 
                   @click="downloadDataset(selectedDataset)"
                   :disabled="isDownloadingDataset"
-                  class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+                  class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-semibold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
                 >
                   <span class="material-symbols-outlined text-sm">download</span>
-                  <span>Descargar Dataset</span>
+                  <span>{{ t('courseWorkspace.btnDownloadDataset') }}</span>
                 </button>
               </div>
             </div>

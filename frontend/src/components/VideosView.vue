@@ -1,4 +1,6 @@
 <script setup>
+import { useI18n } from '../i18n/index.js';
+
 defineProps({
   videos: {
     type: Array,
@@ -7,6 +9,7 @@ defineProps({
 });
 
 const emit = defineEmits(['play-video']);
+const { t } = useI18n();
 </script>
 
 <template>
@@ -16,10 +19,10 @@ const emit = defineEmits(['play-video']);
     <div class="pb-3 border-b border-slate-200 dark:border-slate-800">
       <h2 class="text-xl font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
         <span class="material-symbols-outlined text-rose-500 text-lg">smart_display</span>
-        Masterclasses & Talleres en Video
+        {{ t('videosView.title') }}
       </h2>
       <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-        Sesiones grabadas y explicaciones en video transmitidas en YouTube.
+        {{ t('videosView.subtitle') }}
       </p>
     </div>
 
@@ -69,10 +72,10 @@ const emit = defineEmits(['play-video']);
         <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
           <button 
             @click="emit('play-video', v)"
-            class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs"
+            class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
           >
             <span class="material-symbols-outlined text-sm">play_circle</span>
-            <span>REPRODUCIR VIDEO</span>
+            <span>{{ t('courseWorkspace.btnPlayVideo') }}</span>
           </button>
 
           <a 
@@ -81,7 +84,7 @@ const emit = defineEmits(['play-video']);
             target="_blank" 
             rel="noopener noreferrer"
             class="p-1.5 rounded-md bg-slate-100 dark:bg-space-900 hover:bg-slate-200 dark:hover:bg-space-850 text-slate-600 dark:text-slate-300 transition-colors"
-            title="Abrir en YouTube"
+            :title="t('courseWorkspace.titleOpenYoutube')"
           >
             <span class="material-symbols-outlined text-base">open_in_new</span>
           </a>
@@ -92,8 +95,8 @@ const emit = defineEmits(['play-video']);
     <!-- Empty State -->
     <div v-else class="py-12 text-center glass-panel rounded-xl border border-slate-200 dark:border-slate-800">
       <span class="material-symbols-outlined text-slate-400 text-3xl mb-2">smart_display</span>
-      <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">No hay videos disponibles</h3>
-      <p class="text-xs text-slate-500 mt-0.5">Las grabaciones de clase se irán subiendo gradualmente.</p>
+      <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">{{ t('videosView.emptyTitle') }}</h3>
+      <p class="text-xs text-slate-500 mt-0.5">{{ t('videosView.emptySubtitle') }}</p>
     </div>
 
   </div>

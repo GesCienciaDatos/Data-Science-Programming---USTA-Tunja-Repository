@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
 import { CATALOG_DATA } from './data/catalog.js';
+import { useI18n } from './i18n/index.js';
 
 import TopNavbar from './components/TopNavbar.vue';
 import HeroSection from './components/HeroSection.vue';
@@ -12,6 +13,9 @@ import GlobalSearchModal from './components/GlobalSearchModal.vue';
 import PdfViewerModal from './components/PdfViewerModal.vue';
 import VideoPlayerModal from './components/VideoPlayerModal.vue';
 import FooterInstitutional from './components/FooterInstitutional.vue';
+
+// i18n Composable
+const { currentLang, t, getCourseLocalized } = useI18n();
 
 // Reactive State
 const isDarkMode = ref(true);
@@ -30,22 +34,28 @@ const isToastVisible = ref(false);
 let toastTimeout = null;
 
 // Courses & Datasets Data
-const courses = ref(CATALOG_DATA.courses || []);
+const rawCourses = ref(CATALOG_DATA.courses || []);
 const datasets = ref(CATALOG_DATA.datasets || []);
 
+// Localized course list (notebooks remain authentic, only web presentation localizes)
+const courses = computed(() => {
+  return rawCourses.value.map(c => getCourseLocalized(c));
+});
+
 const activeCourse = computed(() => {
-  return courses.value.find(c => c.id === activeCourseId.value) || courses.value[0];
+  const c = rawCourses.value.find(c => c.id === activeCourseId.value) || rawCourses.value[0];
+  return getCourseLocalized(c);
 });
 
 const allNotebooks = computed(() => {
-  return courses.value.flatMap(c => c.notebooks || []);
+  return rawCourses.value.flatMap(c => c.notebooks || []);
 });
 
 const allBooks = computed(() => {
   if (CATALOG_DATA.all_books && CATALOG_DATA.all_books.length > 0) {
     return CATALOG_DATA.all_books;
   }
-  return courses.value.flatMap(c => c.books || []);
+  return rawCourses.value.flatMap(c => c.books || []);
 });
 
 const allVideos = computed(() => {
@@ -56,7 +66,7 @@ const allGlobalVideos = computed(() => {
   if (CATALOG_DATA.all_videos && CATALOG_DATA.all_videos.length > 0) {
     return CATALOG_DATA.all_videos;
   }
-  return courses.value.flatMap(c => c.videos || []);
+  return rawCourses.value.flatMap(c => c.videos || []);
 });
 
 // Theme Management
@@ -74,7 +84,7 @@ function toggleTheme() {
   isDarkMode.value = !isDarkMode.value;
   localStorage.setItem('usta_theme', isDarkMode.value ? 'dark' : 'light');
   applyTheme();
-  showToast(isDarkMode.value ? 'Tema Oscuro activado' : 'Tema Claro activado');
+  showToast(isDarkMode.value ? t('toasts.themeDark') : t('toasts.themeLight'));
 }
 
 function applyTheme() {
@@ -85,6 +95,10 @@ function applyTheme() {
   }
 }
 
+function handleLanguageChange(newLang) {
+  showToast(newLang === 'es' ? t('toasts.langSwitched') : 'Language switched to English');
+}
+
 // Navigation Handlers
 function navigateView(view) {
   currentView.value = view;
@@ -92,15 +106,16 @@ function navigateView(view) {
 }
 
 function selectCourse(courseId) {
-  const course = courses.value.find(c => c.id === courseId);
+  const course = rawCourses.value.find(c => c.id === courseId);
   if (!course || course.active === false) {
-    showToast('Asignatura en desarrollo curricular.');
+    showToast(t('toasts.courseDev'));
     return;
   }
   activeCourseId.value = courseId;
   currentView.value = 'workspace';
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  showToast(`Laboratorio: ${course.name}`);
+  const localized = getCourseLocalized(course);
+  showToast(t('toasts.labSelected', { name: localized.name }));
 }
 
 // Media & Document Handlers
@@ -153,6 +168,7 @@ onMounted(() => {
       @navigate-view="navigateView"
       @open-search="isGlobalSearchOpen = true"
       @toggle-theme="toggleTheme"
+      @toggle-language="handleLanguageChange"
     />
 
     <!-- Main View Content -->

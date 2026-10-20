@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { useI18n } from '../i18n/index.js';
 
 const props = defineProps({
   courses: {
@@ -10,19 +11,31 @@ const props = defineProps({
 
 const emit = defineEmits(['select-course']);
 
-const searchQuery = ref('');
-const selectedSemester = ref('all');
+const { t } = useI18n();
 
-const semester1Count = computed(() => props.courses.filter(c => c.semester === 'Semestre I').length);
-const semester2Count = computed(() => props.courses.filter(c => c.semester === 'Semestre II').length);
+const searchQuery = ref('');
+const selectedSemester = ref('all'); // 'all' | 'sem1' | 'sem2'
+
+const semester1Count = computed(() => {
+  return props.courses.filter(c => (c.semester || '').includes('I') && !(c.semester || '').includes('II')).length;
+});
+
+const semester2Count = computed(() => {
+  return props.courses.filter(c => (c.semester || '').includes('II')).length;
+});
 
 const filteredCourses = computed(() => {
   return props.courses.filter(course => {
-    if (selectedSemester.value !== 'all' && course.semester !== selectedSemester.value) {
-      return false;
+    if (selectedSemester.value === 'sem1') {
+      const isSem1 = (course.semester || '').includes('I') && !(course.semester || '').includes('II');
+      if (!isSem1) return false;
+    } else if (selectedSemester.value === 'sem2') {
+      const isSem2 = (course.semester || '').includes('II');
+      if (!isSem2) return false;
     }
+
     if (searchQuery.value.trim() !== '') {
-      const q = searchQuery.value.toLowerCase();
+      const q = searchQuery.value.toLowerCase().trim();
       const inName = (course.name || '').toLowerCase().includes(q);
       const inTitle = (course.title || '').toLowerCase().includes(q);
       const inDesc = (course.description || '').toLowerCase().includes(q);
@@ -41,36 +54,37 @@ const filteredCourses = computed(() => {
       <div>
         <h2 class="text-xl font-semibold text-slate-900 dark:text-slate-100 flex items-center gap-2">
           <span class="material-symbols-outlined text-brand-cyan text-lg">school</span>
-          Plan de Estudios & Asignaturas
+          {{ t('courseDirectory.title') }}
         </h2>
         <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-          Estructura curricular de la Especialización en Ciencia de Datos.
+          {{ t('courseDirectory.subtitle') }}
         </p>
       </div>
 
       <!-- Semester & Search Controls -->
       <div class="flex flex-wrap items-center gap-2.5">
         <!-- Semester Filter -->
-        <div class="flex items-center p-1 rounded-md bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800 font-mono text-xs">          <button 
+        <div class="flex items-center p-1 rounded-md bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800 font-mono text-xs">
+          <button 
             @click="selectedSemester = 'all'"
-            class="px-2.5 py-1 rounded transition-colors"
+            class="px-2.5 py-1 rounded transition-colors cursor-pointer"
             :class="selectedSemester === 'all' ? 'bg-white dark:bg-space-850 text-slate-900 dark:text-slate-100 font-semibold shadow-xs' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'"
           >
-            Todos ({{ courses.length }})
+            {{ t('courseDirectory.filterAll') }} ({{ courses.length }})
           </button>
           <button 
-            @click="selectedSemester = 'Semestre I'"
-            class="px-2.5 py-1 rounded transition-colors"
-            :class="selectedSemester === 'Semestre I' ? 'bg-white dark:bg-space-850 text-slate-900 dark:text-slate-100 font-semibold shadow-xs' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'"
+            @click="selectedSemester = 'sem1'"
+            class="px-2.5 py-1 rounded transition-colors cursor-pointer"
+            :class="selectedSemester === 'sem1' ? 'bg-white dark:bg-space-850 text-slate-900 dark:text-slate-100 font-semibold shadow-xs' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'"
           >
-            Semestre I ({{ semester1Count }})
+            {{ t('courseDirectory.filterSem1') }} ({{ semester1Count }})
           </button>
           <button 
-            @click="selectedSemester = 'Semestre II'"
-            class="px-2.5 py-1 rounded transition-colors"
-            :class="selectedSemester === 'Semestre II' ? 'bg-white dark:bg-space-850 text-slate-900 dark:text-slate-100 font-semibold shadow-xs' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'"
+            @click="selectedSemester = 'sem2'"
+            class="px-2.5 py-1 rounded transition-colors cursor-pointer"
+            :class="selectedSemester === 'sem2' ? 'bg-white dark:bg-space-850 text-slate-900 dark:text-slate-100 font-semibold shadow-xs' : 'text-slate-500 hover:text-slate-800 dark:hover:text-slate-300'"
           >
-            Semestre II ({{ semester2Count }})
+            {{ t('courseDirectory.filterSem2') }} ({{ semester2Count }})
           </button>
         </div>
 
@@ -80,7 +94,7 @@ const filteredCourses = computed(() => {
           <input 
             v-model="searchQuery"
             type="text" 
-            placeholder="Filtrar materia..."
+            :placeholder="t('courseDirectory.searchPlaceholder')"
             class="pl-8 pr-3 py-1.5 rounded-md bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-800 dark:text-slate-200 placeholder:text-slate-400 focus:outline-none focus:border-brand-cyan w-40 sm:w-48"
           />
         </div>
@@ -110,7 +124,7 @@ const filteredCourses = computed(() => {
               <span 
                 v-if="(course.videos || []).length > 0"
                 class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold flex items-center gap-1 bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20"
-                :title="`${course.videos.length} Video(s) disponible(s)`"
+                :title="`${course.videos.length} ${t('courseDirectory.videosAvailableTooltip')}`"
               >
                 <span class="material-symbols-outlined text-[12px]">smart_display</span>
                 <span>{{ course.videos.length }}</span>
@@ -120,7 +134,7 @@ const filteredCourses = computed(() => {
                 class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold"
                 :class="course.active !== false ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20' : 'bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300 dark:border-slate-700'"
               >
-                {{ course.badge || (course.active !== false ? 'Disponible' : 'En Desarrollo') }}
+                {{ course.badge || (course.active !== false ? t('common.available') : t('common.underDevelopment')) }}
               </span>
             </div>
           </div>
@@ -138,26 +152,26 @@ const filteredCourses = computed(() => {
           <!-- Metrics Matrix -->
           <div class="grid grid-cols-4 gap-1.5 mb-5 font-mono text-[11px]">
             <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">
-              <span class="block text-[9px] text-slate-400 uppercase">Cuadernos</span>
+              <span class="block text-[9px] text-slate-400 uppercase">{{ t('courseDirectory.metricNotebooks') }}</span>
               <span class="font-semibold text-slate-800 dark:text-slate-200">
                 {{ course.active !== false ? (course.notebooks?.length || course.stats?.total_notebooks || 0) : '—' }}
               </span>
             </div>
             <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">
-              <span class="block text-[9px] text-slate-400 uppercase">Libros</span>
+              <span class="block text-[9px] text-slate-400 uppercase">{{ t('courseDirectory.metricBooks') }}</span>
               <span class="font-semibold text-amber-600 dark:text-brand-amber">
                 {{ course.active !== false ? ((course.books || []).length || 0) : '—' }}
               </span>
             </div>
             <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">
-              <span class="block text-[9px] text-slate-400 uppercase">Módulos</span>
+              <span class="block text-[9px] text-slate-400 uppercase">{{ t('courseDirectory.metricModules') }}</span>
               <span class="font-semibold text-slate-800 dark:text-slate-200">
                 {{ (course.modules || []).length || '—' }}
               </span>
             </div>
             <div class="p-2 rounded bg-slate-50 dark:bg-space-950 border border-slate-200/80 dark:border-slate-800 text-center">
-              <span class="block text-[9px] text-slate-400 uppercase">Semestre</span>
-              <span class="font-semibold text-brand-cyan">{{ course.semester === 'Semestre I' ? 'I' : 'II' }}</span>
+              <span class="block text-[9px] text-slate-400 uppercase">{{ t('courseDirectory.metricSemester') }}</span>
+              <span class="font-semibold text-brand-cyan">{{ (course.semester || '').includes('I') && !(course.semester || '').includes('II') ? 'I' : 'II' }}</span>
             </div>
           </div>
         </div>
@@ -167,16 +181,16 @@ const filteredCourses = computed(() => {
           <button 
             v-if="course.active !== false"
             @click="emit('select-course', course.id)"
-            class="w-full py-2 px-3 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-xs"
+            class="w-full py-2 px-3 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer"
           >
-            <span>INGRESAR AL LABORATORIO</span>
+            <span>{{ t('courseDirectory.btnEnterLab') }}</span>
             <span class="material-symbols-outlined text-sm">arrow_forward</span>
           </button>
           <div 
             v-else
             class="w-full py-2 px-3 rounded-md bg-slate-100 dark:bg-space-900 border border-slate-200 dark:border-slate-800 text-slate-500 font-mono text-xs text-center font-medium"
           >
-            Material en construcción
+            {{ t('courseDirectory.btnUnderConstruction') }}
           </div>
         </div>
 
@@ -186,8 +200,8 @@ const filteredCourses = computed(() => {
     <!-- Empty State -->
     <div v-else class="py-12 text-center glass-panel rounded-xl border border-slate-200 dark:border-slate-800">
       <span class="material-symbols-outlined text-slate-400 text-3xl mb-2">school</span>
-      <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">No se encontraron asignaturas</h3>
-      <p class="text-xs text-slate-500 mt-0.5">Intenta con otro término de búsqueda o selecciona otro semestre.</p>
+      <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">{{ t('courseDirectory.emptyTitle') }}</h3>
+      <p class="text-xs text-slate-500 mt-0.5">{{ t('courseDirectory.emptySubtitle') }}</p>
     </div>
 
   </section>
