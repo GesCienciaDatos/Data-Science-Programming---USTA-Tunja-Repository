@@ -68,6 +68,9 @@ Los talleres de los 6 módulos, con su versión guiada **Para Dummies**, están 
 * ⚡ **Instalación y Configuración de WSL2 y Docker**: [Ver en YouTube](https://youtu.be/nPWZi9Plljo)
   > Guía técnica paso a paso para la habilitación del subsistema Linux (WSL2), despliegue de contenedores Docker y configuración del entorno de virtualización para herramientas de Big Data y computación distribuida.
 
+* 📊 **Instalación y Configuración de Power BI**: [Ver en YouTube](https://youtu.be/8RifWTEWBOI)
+  > Guía técnica paso a paso para la instalación y configuración de Microsoft Power BI Desktop para la analítica visual, creación de cuadros de mando y dashboards en Big Data.
+
 ---
 
 ## 📖 Bibliografía de Apoyo

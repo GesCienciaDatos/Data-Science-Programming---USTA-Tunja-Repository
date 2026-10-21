@@ -732,7 +732,10 @@ KNOWN_TITLES = {
     "Instalación_Python.pdf": "Guía de Instalación y Configuración de Python",
     "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)",
     "Instalacion_WSL2_y_Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
-    "Instalacion WSL2 y Docker.mp4": "Instalación y Configuración de WSL2 y Docker"
+    "Instalacion WSL2 y Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
+    "Instalacion_Power_BI.mp4": "Instalación y Configuración de Power BI",
+    "Instalacion Power BI.mp4": "Instalación y Configuración de Power BI",
+    "Instalación de Power BI.mp4": "Instalación y Configuración de Power BI"
 }
 
 KNOWN_YOUTUBE_VIDEOS = {
@@ -771,6 +774,18 @@ KNOWN_YOUTUBE_VIDEOS = {
         "youtube_url": "https://youtu.be/nPWZi9Plljo",
         "embed_url": "https://www.youtube.com/embed/nPWZi9Plljo",
         "thumbnail": "https://img.youtube.com/vi/nPWZi9Plljo/hqdefault.jpg"
+    },
+    "instalacion_power_bi.mp4": {
+        "youtube_id": "8RifWTEWBOI",
+        "youtube_url": "https://youtu.be/8RifWTEWBOI",
+        "embed_url": "https://www.youtube.com/embed/8RifWTEWBOI",
+        "thumbnail": "https://img.youtube.com/vi/8RifWTEWBOI/hqdefault.jpg"
+    },
+    "instalacion power bi.mp4": {
+        "youtube_id": "8RifWTEWBOI",
+        "youtube_url": "https://youtu.be/8RifWTEWBOI",
+        "embed_url": "https://www.youtube.com/embed/8RifWTEWBOI",
+        "thumbnail": "https://img.youtube.com/vi/8RifWTEWBOI/hqdefault.jpg"
     }
 }
 
@@ -790,6 +805,21 @@ COURSE_EXTRA_VIDEOS = {
             "lfs_url": "",
             "raw_url": "",
             "github_url": "https://youtu.be/nPWZi9Plljo"
+        },
+        {
+            "id": "vid_bigdata_2",
+            "filename": "Instalacion_Power_BI.mp4",
+            "title": "Instalación y Configuración de Power BI",
+            "module": "📊 Entorno y Herramientas: Power BI",
+            "size_mb": None,
+            "path": "https://youtu.be/8RifWTEWBOI",
+            "youtube_id": "8RifWTEWBOI",
+            "youtube_url": "https://youtu.be/8RifWTEWBOI",
+            "embed_url": "https://www.youtube.com/embed/8RifWTEWBOI",
+            "thumbnail": "https://img.youtube.com/vi/8RifWTEWBOI/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://youtu.be/8RifWTEWBOI"
         }
     ],
     "Big Data": [
@@ -807,6 +837,21 @@ COURSE_EXTRA_VIDEOS = {
             "lfs_url": "",
             "raw_url": "",
             "github_url": "https://youtu.be/nPWZi9Plljo"
+        },
+        {
+            "id": "vid_bigdata_2",
+            "filename": "Instalacion_Power_BI.mp4",
+            "title": "Instalación y Configuración de Power BI",
+            "module": "📊 Entorno y Herramientas: Power BI",
+            "size_mb": None,
+            "path": "https://youtu.be/8RifWTEWBOI",
+            "youtube_id": "8RifWTEWBOI",
+            "youtube_url": "https://youtu.be/8RifWTEWBOI",
+            "embed_url": "https://www.youtube.com/embed/8RifWTEWBOI",
+            "thumbnail": "https://img.youtube.com/vi/8RifWTEWBOI/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://youtu.be/8RifWTEWBOI"
         }
     ]
 }

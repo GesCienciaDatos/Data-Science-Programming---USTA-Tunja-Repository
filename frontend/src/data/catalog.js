@@ -14900,6 +14900,21 @@ export const CATALOG_DATA = {
           "lfs_url": "",
           "raw_url": "",
           "github_url": "https://youtu.be/nPWZi9Plljo"
+        },
+        {
+          "id": "vid_bigdata_2",
+          "filename": "Instalacion_Power_BI.mp4",
+          "title": "Instalación y Configuración de Power BI",
+          "module": "📊 Entorno y Herramientas: Power BI",
+          "size_mb": null,
+          "path": "https://youtu.be/8RifWTEWBOI",
+          "youtube_id": "8RifWTEWBOI",
+          "youtube_url": "https://youtu.be/8RifWTEWBOI",
+          "embed_url": "https://www.youtube.com/embed/8RifWTEWBOI",
+          "thumbnail": "https://img.youtube.com/vi/8RifWTEWBOI/hqdefault.jpg",
+          "lfs_url": "",
+          "raw_url": "",
+          "github_url": "https://youtu.be/8RifWTEWBOI"
         }
       ],
       "books": [],
@@ -14911,7 +14926,7 @@ export const CATALOG_DATA = {
         "total_homeworks": 12,
         "total_datasets": 0,
         "total_guias": 0,
-        "total_videos": 1,
+        "total_videos": 2,
         "total_books": 0
       }
     },
@@ -30000,6 +30015,21 @@ export const CATALOG_DATA = {
       "lfs_url": "",
       "raw_url": "",
       "github_url": "https://youtu.be/nPWZi9Plljo"
+    },
+    {
+      "id": "vid_bigdata_2",
+      "filename": "Instalacion_Power_BI.mp4",
+      "title": "Instalación y Configuración de Power BI",
+      "module": "📊 Entorno y Herramientas: Power BI",
+      "size_mb": null,
+      "path": "https://youtu.be/8RifWTEWBOI",
+      "youtube_id": "8RifWTEWBOI",
+      "youtube_url": "https://youtu.be/8RifWTEWBOI",
+      "embed_url": "https://www.youtube.com/embed/8RifWTEWBOI",
+      "thumbnail": "https://img.youtube.com/vi/8RifWTEWBOI/hqdefault.jpg",
+      "lfs_url": "",
+      "raw_url": "",
+      "github_url": "https://youtu.be/8RifWTEWBOI"
     }
   ]
 };

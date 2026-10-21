@@ -69,7 +69,10 @@ Todos los datos son **sintéticos con semilla fija, generados por código dentro
 
 `numpy`, `pandas`, `matplotlib` y `scikit-learn` (preinstalados en Google Colab). Los **cuadernos 00 y 01** usan además **`pyspark`** (en Colab: `!pip install -q pyspark`, línea ya incluida y comentada en la primera celda) y **Java**; si no están disponibles, las celdas de *Spark* **se omiten con un aviso** y el resto del cuaderno sigue (todo se implementa también desde cero en Python). Los cuadernos 02 y 03 y los cuatro **Dummies** usan solo `NumPy`, `pandas`, `matplotlib` (y `scikit-learn` en un *Dummies*) y **no necesitan *Spark*, Java ni red**. **No se usan *PyTorch* ni *TensorFlow***: el aprendizaje profundo se trata con NumPy y `MLPClassifier`.
 
-Se ejecutó de verdad, de arriba abajo y sin errores, con **Python 3.12**, **NumPy 2.5**, **pandas 2.3** (*PySpark* 4.2 avisa que no soporta bien pandas ≥ 3; en Colab, usa la versión que traiga), **scikit-learn 1.9**, **Matplotlib 3.11** y **PySpark 4.2.0** (modo local, `local[2]`, Java 25) en Linux (de verdad: con los *starters* de las prácticas tal cual —solo comentarios— y con una copia donde cada *starter* se reemplazó por su solución). *No se probó en Google Colab ni en Windows/macOS.* Tiempos aproximados **en una máquina compartida con otros trabajos** (varían con la carga): cuaderno 00 ≈ 35-45 s, 01 ≈ 70-75 s (≈ 40 s son arranque y trabajos de *Spark*), 02 ≈ 30 s y 03 ≈ 5-20 s con `RAPIDO = True` (cuadernos 00-02); los *Dummies*, 3-15 s. Cada sesión de *Spark* se detiene al terminar su sección.
+## 🎬 Video Tutorial Recomendado
+
+* 📊 **Instalación y Configuración de Power BI**: [Ver en YouTube](https://youtu.be/8RifWTEWBOI)
+  > Tutorial técnico paso a paso para la descarga, instalación y configuración inicial de Microsoft Power BI Desktop para la analítica visual y dashboards en Big Data.
 
 ---
 
