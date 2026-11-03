@@ -1,0 +1,604 @@
+1
+00:00:16,540 --> 00:00:18,630
+Hola, un saludo para todos.
+
+2
+00:00:18,820 --> 00:00:23,880
+El día de hoy vamos a hablar un poco sobre cómo crear un proyecto de ciencia
+
+3
+00:00:23,880 --> 00:00:26,650
+de datos dentro de Databricks.
+
+4
+00:00:26,800 --> 00:00:33,130
+Entonces lo primero que vamos a hacer es abrir nuestro navegador.
+
+5
+00:00:33,920 --> 00:00:34,270
+Entonces
+
+6
+00:00:35,300 --> 00:00:43,430
+abrimos nuestro navegador y ahora vamos a buscar aquí la página de
+
+7
+00:00:44,080 --> 00:00:51,790
+Databricks. Le vamos a dar al primer enlace y le vamos a dar a la opción de Try Databricks.
+
+8
+00:00:57,200 --> 00:01:02,330
+Aquí tenemos que tener en cuenta que vamos a iniciar con nuestra cuenta institucional.
+
+9
+00:01:02,380 --> 00:01:05,150
+Entonces le damos Continue with Microsoft.
+
+10
+00:01:09,810 --> 00:01:12,620
+Accedemos a nuestra cuenta institucional.
+
+11
+00:01:38,340 --> 00:01:39,250
+Entonces,
+
+12
+00:01:39,860 --> 00:01:43,590
+como yo ya tengo una cuenta creada por motivos prácticos,
+
+13
+00:01:43,700 --> 00:01:50,990
+le voy a dar a y aquí le vamos a dar al crear para uso personal.
+
+14
+00:01:55,630 --> 00:02:03,500
+Aquí establecemos cuál es el nombre de mi cuenta y el país de origen.
+
+15
+00:02:07,510 --> 00:02:11,240
+Esperamos que el sistema cargue.
+
+16
+00:02:11,650 --> 00:02:13,940
+Aquí está configurando nuestra cuenta.
+
+17
+00:02:24,960 --> 00:02:26,580
+Bienvenidos a Databricks.
+
+18
+00:02:26,580 --> 00:02:29,840
+Como sabemos, esta es una plataforma que opera bajo el concepto del Data
+
+19
+00:02:29,840 --> 00:02:33,660
+Lake House, lo que significa que unifica dentro de una sola arquitectura
+
+20
+00:02:33,660 --> 00:02:37,740
+el almacenamiento masivo de datos, la ingeniería, la analítica de negocios
+
+21
+00:02:37,740 --> 00:02:39,470
+y la inteligencia artificial.
+
+22
+00:02:39,900 --> 00:02:45,980
+En la barra superior podemos observar un buscador al cual también vamos
+
+23
+00:02:45,980 --> 00:02:49,200
+a poder acceder utilizando el atajo Ctrl + P.
+
+24
+00:02:49,200 --> 00:02:53,280
+Este básicamente se va a encargar de indexar de forma instantánea los cuadernos,
+
+25
+00:02:53,280 --> 00:02:57,850
+las tablas, los experimentos y las funciones que necesitemos.
+
+26
+00:02:58,400 --> 00:03:04,340
+Ahora, si observamos la barra izquierda, vamos a tener básicamente el corazón
+
+27
+00:03:04,340 --> 00:03:07,330
+de lo que es el entorno en Databricks.
+
+28
+00:03:08,080 --> 00:03:12,210
+Y esto se va a dividir en cuatro entornos de trabajo.
+
+29
+00:03:12,800 --> 00:03:17,920
+El primer entorno, que es el bloque principal, vamos a observar diferentes
+
+30
+00:03:17,920 --> 00:03:22,100
+herramientas, como la sección de aprendizaje, la cual cuenta con recursos
+
+31
+00:03:22,100 --> 00:03:27,780
+educativos y tutoriales que brinda directamente Databricks.
+
+32
+00:03:27,780 --> 00:03:30,510
+Tenemos la sección de Workspace.
+
+33
+00:03:31,100 --> 00:03:36,690
+Este básicamente va a ser el explorador de archivos de nuestro entorno.
+
+34
+00:03:37,240 --> 00:03:40,580
+Tenemos la parte de archivos recientes, como sabemos,
+
+35
+00:03:40,580 --> 00:03:42,920
+para mirar lo último que hemos trabajado.
+
+36
+00:03:42,920 --> 00:03:50,420
+La sección de catálogo, el cual nos va a permitir gestionar las tablas estructuradas,
+
+37
+00:03:50,420 --> 00:03:53,480
+los esquemas, los permisos y demás.
+
+38
+00:03:53,480 --> 00:03:58,230
+Tenemos también algo muy importante, que es la sección de jobs y pipelines,
+
+39
+00:03:58,940 --> 00:04:04,130
+que es básicamente el motor de orquestación y la automatización de flujo de trabajo programado.
+
+40
+00:04:04,740 --> 00:04:06,610
+La sección de compute,
+
+41
+00:04:07,520 --> 00:04:11,440
+aquí es donde nosotros vamos a administrar todos los motores de cálculo
+
+42
+00:04:11,440 --> 00:04:13,570
+que van a procesar nuestros datos.
+
+43
+00:04:14,920 --> 00:04:16,350
+Y en este caso,
+
+44
+00:04:19,280 --> 00:04:28,080
+en estas opciones de serverless, esta opción de serverless nos dice que
+
+45
+00:04:28,080 --> 00:04:32,440
+ya no vamos a tener que configurar máquinas virtuales de forma manual,
+
+46
+00:04:32,440 --> 00:04:39,540
+sino que utilizando esta sección que es del Default Interactive Compute,
+
+47
+00:04:39,540 --> 00:04:44,820
+esto ya va a estar preparado para ejecutar pues nuestro código de forma inmediata.
+
+48
+00:04:44,820 --> 00:04:49,390
+Avanzando a la sección de Discover y Marketplace,
+
+49
+00:04:50,040 --> 00:04:54,860
+listo. Aquí vamos a tener básicamente un repositorio para explorar conjuntos
+
+50
+00:04:54,860 --> 00:04:59,630
+de datos abiertos y aplicaciones ya creadas por terceros.
+
+51
+00:05:02,420 --> 00:05:08,920
+En la sección de SQL vamos a también observar diferentes herramientas,
+
+52
+00:05:08,920 --> 00:05:13,220
+listo. Dentro de las más importantes tenemos el SQL Editor que nos va a
+
+53
+00:05:13,220 --> 00:05:17,270
+servir para consultas masivas sobre un data lake.
+
+54
+00:05:17,640 --> 00:05:22,640
+Tenemos también la opción de los Dashboards que ya son para la creación
+
+55
+00:05:22,640 --> 00:05:27,660
+de los tableros interactivos para facilitarlos en toma de decisiones.
+
+56
+00:05:27,660 --> 00:05:34,130
+Los Genie Agents que son para consultas de datos utilizando modelos de lenguaje natural.
+
+57
+00:05:35,720 --> 00:05:41,190
+Tenemos también algo que es importante, es el SQL Warehouse.
+
+58
+00:05:41,840 --> 00:05:48,680
+En este caso estos van a ser los encargados de almacenar los datos serverless
+
+59
+00:05:48,680 --> 00:05:51,870
+de alto rendimiento, listo.
+
+60
+00:05:52,240 --> 00:05:55,120
+El tercer bloque que tenemos es el Data Engineering.
+
+61
+00:05:55,120 --> 00:05:59,170
+Como su nombre lo indica este es mucho más enfocado a ingenieros de datos.
+
+62
+00:05:59,500 --> 00:06:04,620
+Aquí vamos a poder encontrar herramientas que nos van a servir por ejemplo
+
+63
+00:06:04,620 --> 00:06:09,280
+para el monitoreo de ejecuciones, tenemos Runs.
+
+64
+00:06:09,280 --> 00:06:14,390
+Para mirar todo el tema de los pipelines automáticos de ingesta tenemos el Data Ingestion.
+
+65
+00:06:14,800 --> 00:06:19,530
+Y para preparación visual de los datos tenemos el Visual Data Prep.
+
+66
+00:06:20,000 --> 00:06:23,260
+Esto nos va a servir también para construir los pipelines robustos y limpios
+
+67
+00:06:23,260 --> 00:06:27,170
+sin necesidad de escribir un código complejo para la extracción de estos.
+
+68
+00:06:27,880 --> 00:06:31,970
+Finalmente tenemos el módulo de Inteligencia Artificial y Machine Learning.
+
+69
+00:06:33,890 --> 00:06:39,030
+Aquí básicamente vamos a tener por así decirlo nuestro hogar como científico de
+
+70
+00:06:39,030 --> 00:06:45,050
+datos. Aquí encontramos herramientas como el Playground y los Agents que
+
+71
+00:06:45,050 --> 00:06:49,750
+nos van a servir para prototipar soluciones con modelos fundacionales y
+
+72
+00:06:49,750 --> 00:06:52,790
+de tipo Large Language Models.
+
+73
+00:06:52,790 --> 00:06:57,890
+También tenemos la sección de experimentos, el cual va a ser el motor integrado
+
+74
+00:06:57,890 --> 00:07:01,410
+de MLflow que nos va a servir para rastrear las métricas,
+
+75
+00:07:01,410 --> 00:07:04,060
+los parámetros y las curvas de entrenamiento.
+
+76
+00:07:04,290 --> 00:07:08,510
+Tenemos la sección de Features, el cual va a almacenar las variables para
+
+77
+00:07:08,510 --> 00:07:11,600
+la utilización de los modelos.
+
+78
+00:07:11,610 --> 00:07:18,090
+La sección del Models, que nos va a permitir registrar estos modelos para
+
+79
+00:07:18,090 --> 00:07:22,260
+poder catalogar, gobernar y versionar los modelos que ya están en producción.
+
+80
+00:07:22,870 --> 00:07:27,070
+Y finalmente el Serving, el cual es la infraestructura de microservicios
+
+81
+00:07:27,070 --> 00:07:30,820
+para desplegar los endpoints REST en tiempo real.
+
+82
+00:07:31,990 --> 00:07:41,120
+Ya con el entorno conocido vamos a entrar en materia en el Workspace.
+
+83
+00:07:42,210 --> 00:07:47,460
+Y aquí lo que vamos a hacer es importar nuestro proyecto.
+
+84
+00:07:50,390 --> 00:07:55,880
+Una vez
+
+85
+00:07:59,660 --> 00:08:01,950
+cargado le vamos a poder dar clic.
+
+86
+00:08:04,720 --> 00:08:08,970
+Una vez cargado, pues como sabemos para un buen desarrollo de experimentos,
+
+87
+00:08:09,360 --> 00:08:13,730
+primero tenemos que formalizar nuestro experimento.
+
+88
+00:08:13,960 --> 00:08:18,920
+Para ello lo que vamos a hacer es establecer una pregunta analítica y posterior
+
+89
+00:08:18,920 --> 00:08:23,340
+a esto vamos a plantear una hipótesis nula y alternativa para poder evaluar
+
+90
+00:08:23,340 --> 00:08:26,710
+el impacto de complejidad del modelo en su capacidad de
+
+91
+00:08:27,180 --> 00:08:28,130
+generalización.
+
+92
+00:08:28,600 --> 00:08:34,260
+Ahora lo que tenemos que hacer es empezar con el desarrollo,
+
+93
+00:08:34,260 --> 00:08:38,700
+que en este caso lo que observamos en pantalla es el primer pilar de Databricks,
+
+94
+00:08:38,700 --> 00:08:42,430
+el cual es el almacenamiento dentro de Delta Lake.
+
+95
+00:08:43,600 --> 00:08:48,840
+En este caso en lugar de que los datos queden almacenados en la memoria
+
+96
+00:08:48,840 --> 00:08:54,000
+RAM, como lo haría un notebook convencional, aquí vamos a persistir a los
+
+97
+00:08:54,000 --> 00:08:57,770
+datos dentro del catálogo de Databricks como una tabla Delta.
+
+98
+00:08:58,140 --> 00:09:02,500
+Esto nos va a proporcionar transacciones ACID, control de versiones de datos
+
+99
+00:09:02,500 --> 00:09:05,930
+y gobernanza para todo nuestro equipo de trabajo.
+
+100
+00:09:12,180 --> 00:09:16,430
+Vamos a pasar ahora con el segundo pilar, el cual es el MLflow Tracking.
+
+101
+00:09:16,660 --> 00:09:20,580
+Listo, cada una de las ejecuciones que nosotros hagamos va a registrar los
+
+102
+00:09:20,580 --> 00:09:25,170
+hiperparámetros, las métricas de exactitud y el F1-score,
+
+103
+00:09:25,240 --> 00:09:29,290
+así como sus artefactos binarios y la firma estricta de datos,
+
+104
+00:09:29,500 --> 00:09:35,610
+lo que va a garantizar que en producción no nos envíen columnas erróneas.
+
+105
+00:09:41,020 --> 00:09:43,590
+Y en este caso lo que hicimos fue,
+
+106
+00:09:44,340 --> 00:09:49,660
+basado en un modelo clásico de Random Forest, asignarle diferentes parámetros
+
+107
+00:09:49,660 --> 00:09:58,190
+de profundidad y mirar cómo son los parámetros del accuracy y del F1-score.
+
+108
+00:09:59,160 --> 00:10:02,450
+Listo, aquí vemos esto cargado.
+
+109
+00:10:03,540 --> 00:10:11,950
+Finalmente vamos a pasar al Model Registry, el cual es el tercer pilar de nuestro entorno.
+
+110
+00:10:12,520 --> 00:10:18,560
+En esta sección nuestro modelo va a ser catalogado formalmente con una versión
+
+111
+00:10:18,560 --> 00:10:22,140
+1 y esto nos va a proporcionar trazabilidad de versiones,
+
+112
+00:10:22,140 --> 00:10:29,030
+auditoría y linaje de datos hacia la tabla de delta del origen.
+
+113
+00:10:31,940 --> 00:10:34,450
+Listo, aquí lo vamos a correr.
+
+114
+00:10:39,730 --> 00:10:43,940
+Ahora vamos a pasar al verdadero despliegue de nuestro modelo de Machine Learning.
+
+115
+00:10:43,950 --> 00:10:51,200
+Para ello vamos a ir a la opción de Serving y vamos a darle a Create Serving Endpoint.
+
+116
+00:10:51,910 --> 00:10:58,150
+Primero vamos a asignarle un nombre, en este caso vamos a decir que es Endpoint
+
+117
+00:10:58,150 --> 00:11:05,270
+Clasificador de Vinos y vamos a seleccionar nuestra entidad.
+
+118
+00:11:05,270 --> 00:11:08,500
+En este caso, mis modelos,
+
+119
+00:11:10,030 --> 00:11:11,940
+clasificador de vinos en producción.
+
+120
+00:11:12,510 --> 00:11:18,280
+Confirmar. Y aquí le vamos a dar en Compute scale-out,
+
+121
+00:11:18,450 --> 00:11:21,470
+vamos a darle la opción Small.
+
+122
+00:11:21,470 --> 00:11:26,600
+Listo que es la opción más básica como tal que vamos a tener.
+
+123
+00:11:28,250 --> 00:11:32,980
+Listo. Ya con esto configurado le vamos a dar a Create.
+
+124
+00:11:37,190 --> 00:11:42,190
+Tienen que tener en cuenta que cuando le hacen el scale-out va a depender
+
+125
+00:11:42,190 --> 00:11:46,030
+mucho de lo que usted requiera.
+
+126
+00:11:46,030 --> 00:11:50,440
+Esto en este caso, con la versión Small es más que suficiente.
+
+127
+00:11:52,370 --> 00:11:54,010
+Esto aquí vamos a dejar.
+
+128
+00:11:54,010 --> 00:12:00,480
+Ahora esperamos a que el sistema se configure. Listo.
+
+129
+00:12:10,320 --> 00:12:13,760
+Una vez finalizado este proceso, podemos observar que el recuadro que antes
+
+130
+00:12:13,760 --> 00:12:18,500
+estaba en rojo ahora ya aparece en verde, aquí el estado ya está en Ready
+
+131
+00:12:18,500 --> 00:12:22,490
+y este Query Endpoint ya está estabilizado.
+
+132
+00:12:22,560 --> 00:12:28,510
+Esto para mirar que esto funciona vamos a correr un primer ejemplo.
+
+133
+00:12:28,580 --> 00:12:30,450
+Vamos aquí a Query Endpoint.
+
+134
+00:12:31,480 --> 00:12:37,160
+Voy a borrar este request que nos establece y voy a pegar un request que
+
+135
+00:12:37,160 --> 00:12:40,390
+yo le voy a mandar. Esto lo voy a enviar a Send Request.
+
+136
+00:12:40,660 --> 00:12:43,890
+Y aquí ya me da la respuesta.
+
+137
+00:12:44,020 --> 00:12:48,190
+Listo que en este caso para estas características de vino,
+
+138
+00:12:48,780 --> 00:12:53,250
+su predicción es que es uno, que en este caso quiere decir que es un vino de alta calidad.
+
+139
+00:12:53,940 --> 00:12:55,290
+Voy a cerrar aquí.
+
+140
+00:12:57,220 --> 00:13:01,820
+De esta manera podemos dar como finalizado el ciclo de vida de un proyecto
+
+141
+00:13:01,820 --> 00:13:04,890
+de Machine Learning utilizando Databricks.
+
+142
+00:13:05,860 --> 00:13:09,740
+Como resumen de esta sesión, primero es que persistimos y gobernamos los
+
+143
+00:13:09,740 --> 00:13:14,110
+datos transaccionales en tablas Delta Lake mediante el catálogo.
+
+144
+00:13:14,260 --> 00:13:18,040
+Segundo es que rastreamos formalmente la experimentación de hiperparámetros
+
+145
+00:13:18,040 --> 00:13:21,120
+utilizando MLflow Tracking.
+
+146
+00:13:21,120 --> 00:13:29,310
+Como tercero versionamos el mejor modelo dentro del Model Registry.
+
+147
+00:13:29,940 --> 00:13:34,080
+Y finalmente es que expusimos el artefacto como un servicio REST escalable
+
+148
+00:13:34,080 --> 00:13:38,390
+mediante Model Serving validando su inferencia en tiempo real.
+
+149
+00:13:39,500 --> 00:13:41,320
+Esto sería todo por la sesión de hoy.
+
+150
+00:13:41,320 --> 00:13:44,780
+Espero que este sea un video de mucha utilidad para ustedes y nos vemos
+
+151
+00:13:44,780 --> 00:13:46,390
+en una siguiente sesión.
+

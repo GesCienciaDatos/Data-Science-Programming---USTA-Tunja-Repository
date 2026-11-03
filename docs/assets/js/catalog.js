@@ -18627,6 +18627,218 @@ window.VIRTUAL_LAB_CATALOG = {
         "total_videos": 0,
         "total_books": 21
       }
+    },
+    {
+      "id": "trabajo-de-grado-1",
+      "name": "Trabajo de Grado 1",
+      "title": "Trabajo de Grado I — Metodologías, MLOps y Despliegue Cloud",
+      "folder": "Trabajo de grado 1",
+      "icon": "🎓",
+      "badge": "Activo / Disponible",
+      "badge_color": "emerald",
+      "color": "#6366f1",
+      "gradient": "from-indigo-500/20 via-purple-600/10 to-transparent",
+      "border_glow": "border-indigo-500/40",
+      "description": "Desarrollo de proyectos aplicados de ciencia de datos, arquitectura MLOps, experimentación y gobernanza con MLflow, persistencia en Data Lakehouse (AWS S3, Azure ADLS Gen2) y despliegue serverless en Databricks.",
+      "level": "Especialización",
+      "semester": "Semestre II",
+      "active": true,
+      "modules": [
+        {
+          "id": "01",
+          "name": "01 - Databricks Community Edition",
+          "title": "Databricks Standalone y MLOps",
+          "icon": "🧱",
+          "color": "#FF3621",
+          "description": "Entorno Databricks Community Edition, tablas Delta Lake, tracking de experimentos con MLflow, registro y versionamiento de modelos."
+        },
+        {
+          "id": "02",
+          "name": "02 - AWS Databricks y Lakehouse S3",
+          "title": "Arquitectura Cloud AWS S3 y MLOps Serverless",
+          "icon": "☁️",
+          "color": "#FF9900",
+          "description": "Orquestación de Data Lakehouse en Amazon S3, clústeres serverless de Databricks, pipelines de Random Forest y gobierno de datos."
+        },
+        {
+          "id": "03",
+          "name": "03 - Azure Databricks y MLOps",
+          "title": "Microsoft Azure Databricks y Clasificación SVM",
+          "icon": "🔷",
+          "color": "#0078D4",
+          "description": "Servicios analíticos 1st-party en Azure, almacenamiento ADLS Gen2, optimización de hiperparámetros SVM y despliegue de inferencia."
+        }
+      ],
+      "notebooks": [
+        {
+          "id": "01_02_Databricks_Community_Calidad_Vinos",
+          "course_name": "Trabajo de Grado 1",
+          "course_folder": "Trabajo de grado 1",
+          "module_id": "01",
+          "module_name": "01 - Databricks Community Edition",
+          "filename": "02_Databricks_Community_Calidad_Vinos.ipynb",
+          "title": "Databricks Community Edition: Experimento ML Calidad de Vinos 🧱",
+          "path": "Trabajo de grado 1/01 - Databricks Community Edition/02_Databricks_Community_Calidad_Vinos.ipynb",
+          "difficulty": "Intermedio",
+          "is_dummies": false,
+          "is_homework": false,
+          "edition": "Estándar",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/01%20-%20Databricks%20Community%20Edition/02_Databricks_Community_Calidad_Vinos.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/01%20-%20Databricks%20Community%20Edition/02_Databricks_Community_Calidad_Vinos.ipynb"
+        },
+        {
+          "id": "02_03_DataLakehouse_AWS_S3_MLOps",
+          "course_name": "Trabajo de Grado 1",
+          "course_folder": "Trabajo de grado 1",
+          "module_id": "02",
+          "module_name": "02 - AWS Databricks y Lakehouse S3",
+          "filename": "03_DataLakehouse_AWS_S3_MLOps.ipynb",
+          "title": "Data Lakehouse en AWS S3 & MLOps Serverless ☁️",
+          "path": "Trabajo de grado 1/02 - AWS Databricks y Lakehouse S3/03_DataLakehouse_AWS_S3_MLOps.ipynb",
+          "difficulty": "Intermedio",
+          "is_dummies": false,
+          "is_homework": false,
+          "edition": "Estándar",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/03_DataLakehouse_AWS_S3_MLOps.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/03_DataLakehouse_AWS_S3_MLOps.ipynb"
+        },
+        {
+          "id": "03_04_Experimento_ML_Azure_Databricks",
+          "course_name": "Trabajo de Grado 1",
+          "course_folder": "Trabajo de grado 1",
+          "module_id": "03",
+          "module_name": "03 - Azure Databricks y MLOps",
+          "filename": "04_Experimento_ML_Azure_Databricks.ipynb",
+          "title": "Azure Databricks: Clasificación y Regularización SVM 🔷",
+          "path": "Trabajo de grado 1/03 - Azure Databricks y MLOps/04_Experimento_ML_Azure_Databricks.ipynb",
+          "difficulty": "Intermedio",
+          "is_dummies": false,
+          "is_homework": false,
+          "edition": "Estándar",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/03%20-%20Azure%20Databricks%20y%20MLOps/04_Experimento_ML_Azure_Databricks.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/03%20-%20Azure%20Databricks%20y%20MLOps/04_Experimento_ML_Azure_Databricks.ipynb"
+        }
+      ],
+      "datasets": [
+        {
+          "name": "california_housing_raw.csv",
+          "format": "CSV",
+          "course_name": "Trabajo de Grado 1",
+          "module": "02 - AWS Databricks y Lakehouse S3",
+          "path": "Trabajo de grado 1/02 - AWS Databricks y Lakehouse S3/data/california_housing_raw.csv",
+          "rows": 20641,
+          "cols": 9,
+          "target": "MedHouseVal",
+          "features": "MedInc, HouseAge, AveRooms, AveBedrms, Population",
+          "description": "Dataset oficial de práctica para 02 - AWS Databricks y Lakehouse S3 (Trabajo de Grado 1).",
+          "sample_data": [
+            {
+              "MedInc": "8.3252",
+              "HouseAge": "41.0",
+              "AveRooms": "6.984126984126984",
+              "AveBedrms": "1.0238095238095237",
+              "Population": "322.0",
+              "AveOccup": "2.5555555555555554",
+              "Latitude": "37.88",
+              "Longitude": "-122.23",
+              "MedHouseVal": "4.526"
+            },
+            {
+              "MedInc": "8.3014",
+              "HouseAge": "21.0",
+              "AveRooms": "6.238137082601054",
+              "AveBedrms": "0.9718804920913884",
+              "Population": "2401.0",
+              "AveOccup": "2.109841827768014",
+              "Latitude": "37.86",
+              "Longitude": "-122.22",
+              "MedHouseVal": "3.585"
+            },
+            {
+              "MedInc": "7.2574",
+              "HouseAge": "52.0",
+              "AveRooms": "8.288135593220339",
+              "AveBedrms": "1.073446327683616",
+              "Population": "496.0",
+              "AveOccup": "2.8022598870056497",
+              "Latitude": "37.85",
+              "Longitude": "-122.24",
+              "MedHouseVal": "3.521"
+            },
+            {
+              "MedInc": "5.6431",
+              "HouseAge": "52.0",
+              "AveRooms": "5.8173515981735155",
+              "AveBedrms": "1.0730593607305936",
+              "Population": "558.0",
+              "AveOccup": "2.547945205479452",
+              "Latitude": "37.85",
+              "Longitude": "-122.25",
+              "MedHouseVal": "3.413"
+            },
+            {
+              "MedInc": "3.8462",
+              "HouseAge": "52.0",
+              "AveRooms": "6.281853281853282",
+              "AveBedrms": "1.0810810810810811",
+              "Population": "565.0",
+              "AveOccup": "2.1814671814671813",
+              "Latitude": "37.85",
+              "Longitude": "-122.25",
+              "MedHouseVal": "3.422"
+            }
+          ],
+          "download_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/data/california_housing_raw.csv",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/data/california_housing_raw.csv",
+          "snippet": "import pandas as pd\ndf = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/data/california_housing_raw.csv')",
+          "requires_cleaning": false,
+          "cleaning_status": "No Requiere Limpieza",
+          "cleaning_badge": "Limpio",
+          "cleaning_badge_color": "emerald",
+          "cleaning_level": "Óptima",
+          "cleaning_reasons": [
+            "0 valores nulos",
+            "0 registros duplicados",
+            "Tipos de datos y rangos válidos"
+          ],
+          "cleaning_actions": [
+            "Listo para análisis y modelado predictivo sin preprocesamiento previo"
+          ]
+        }
+      ],
+      "guias": [],
+      "videos": [
+        {
+          "id": "vid_1",
+          "filename": "Databricks_Tutorial.mp4",
+          "title": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
+          "module": "🐍 Módulo 01: Python",
+          "size_mb": 69.8,
+          "path": "Contenido/Databricks_Tutorial.mp4",
+          "youtube_id": "B-8HK8GJfZM",
+          "youtube_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
+          "embed_url": "https://www.youtube.com/embed/B-8HK8GJfZM",
+          "thumbnail": "https://img.youtube.com/vi/B-8HK8GJfZM/hqdefault.jpg",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Databricks_Tutorial.mp4",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Databricks_Tutorial.mp4",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Databricks_Tutorial.mp4"
+        }
+      ],
+      "books": [],
+      "stats": {
+        "total_notebooks": 3,
+        "total_standard_notebooks": 3,
+        "total_dummies_notebooks": 0,
+        "total_modules": 3,
+        "total_homeworks": 0,
+        "total_datasets": 1,
+        "total_guias": 0,
+        "total_videos": 1,
+        "total_books": 0
+      }
     }
   ],
   "modules": [
@@ -25339,6 +25551,91 @@ window.VIRTUAL_LAB_CATALOG = {
       "cleaning_actions": [
         "Listo para análisis y modelado predictivo sin preprocesamiento previo"
       ]
+    },
+    {
+      "name": "california_housing_raw.csv",
+      "format": "CSV",
+      "course_name": "Trabajo de Grado 1",
+      "module": "02 - AWS Databricks y Lakehouse S3",
+      "path": "Trabajo de grado 1/02 - AWS Databricks y Lakehouse S3/data/california_housing_raw.csv",
+      "rows": 20641,
+      "cols": 9,
+      "target": "MedHouseVal",
+      "features": "MedInc, HouseAge, AveRooms, AveBedrms, Population",
+      "description": "Dataset oficial de práctica para 02 - AWS Databricks y Lakehouse S3 (Trabajo de Grado 1).",
+      "sample_data": [
+        {
+          "MedInc": "8.3252",
+          "HouseAge": "41.0",
+          "AveRooms": "6.984126984126984",
+          "AveBedrms": "1.0238095238095237",
+          "Population": "322.0",
+          "AveOccup": "2.5555555555555554",
+          "Latitude": "37.88",
+          "Longitude": "-122.23",
+          "MedHouseVal": "4.526"
+        },
+        {
+          "MedInc": "8.3014",
+          "HouseAge": "21.0",
+          "AveRooms": "6.238137082601054",
+          "AveBedrms": "0.9718804920913884",
+          "Population": "2401.0",
+          "AveOccup": "2.109841827768014",
+          "Latitude": "37.86",
+          "Longitude": "-122.22",
+          "MedHouseVal": "3.585"
+        },
+        {
+          "MedInc": "7.2574",
+          "HouseAge": "52.0",
+          "AveRooms": "8.288135593220339",
+          "AveBedrms": "1.073446327683616",
+          "Population": "496.0",
+          "AveOccup": "2.8022598870056497",
+          "Latitude": "37.85",
+          "Longitude": "-122.24",
+          "MedHouseVal": "3.521"
+        },
+        {
+          "MedInc": "5.6431",
+          "HouseAge": "52.0",
+          "AveRooms": "5.8173515981735155",
+          "AveBedrms": "1.0730593607305936",
+          "Population": "558.0",
+          "AveOccup": "2.547945205479452",
+          "Latitude": "37.85",
+          "Longitude": "-122.25",
+          "MedHouseVal": "3.413"
+        },
+        {
+          "MedInc": "3.8462",
+          "HouseAge": "52.0",
+          "AveRooms": "6.281853281853282",
+          "AveBedrms": "1.0810810810810811",
+          "Population": "565.0",
+          "AveOccup": "2.1814671814671813",
+          "Latitude": "37.85",
+          "Longitude": "-122.25",
+          "MedHouseVal": "3.422"
+        }
+      ],
+      "download_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/data/california_housing_raw.csv",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/data/california_housing_raw.csv",
+      "snippet": "import pandas as pd\ndf = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/data/california_housing_raw.csv')",
+      "requires_cleaning": false,
+      "cleaning_status": "No Requiere Limpieza",
+      "cleaning_badge": "Limpio",
+      "cleaning_badge_color": "emerald",
+      "cleaning_level": "Óptima",
+      "cleaning_reasons": [
+        "0 valores nulos",
+        "0 registros duplicados",
+        "Tipos de datos y rangos válidos"
+      ],
+      "cleaning_actions": [
+        "Listo para análisis y modelado predictivo sin preprocesamiento previo"
+      ]
     }
   ],
   "stats": {
@@ -30030,6 +30327,21 @@ window.VIRTUAL_LAB_CATALOG = {
       "lfs_url": "",
       "raw_url": "",
       "github_url": "https://youtu.be/8RifWTEWBOI"
+    },
+    {
+      "id": "vid_1",
+      "filename": "Databricks_Tutorial.mp4",
+      "title": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
+      "module": "🐍 Módulo 01: Python",
+      "size_mb": 69.8,
+      "path": "Contenido/Databricks_Tutorial.mp4",
+      "youtube_id": "B-8HK8GJfZM",
+      "youtube_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
+      "embed_url": "https://www.youtube.com/embed/B-8HK8GJfZM",
+      "thumbnail": "https://img.youtube.com/vi/B-8HK8GJfZM/hqdefault.jpg",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Databricks_Tutorial.mp4",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Databricks_Tutorial.mp4",
+      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Databricks_Tutorial.mp4"
     }
   ]
 };

@@ -583,5 +583,12 @@ export const courseTranslations = {
     description: 'Interactive visual analytics (Python ↔ Power BI ↔ Tableau), data storytelling, perceptual design, cognitive biases, and advanced ETL transformations with Power Query.',
     badge: 'Active / Available',
     semester: 'Semester II'
+  },
+  'trabajo-de-grado-1': {
+    name: 'Degree Project 1',
+    title: 'Applied Data Science Project and MLOps',
+    description: 'Applied Data Science project development, MLOps architectures, experiment tracking and governance with MLflow, Data Lakehouse persistence (AWS S3, Azure ADLS Gen2), and serverless deployment in Databricks.',
+    badge: 'Active / Available',
+    semester: 'Semester II'
   }
 };

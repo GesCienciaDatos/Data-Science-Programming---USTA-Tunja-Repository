@@ -172,6 +172,22 @@ COURSE_DEFINITIONS = [
         "level": "Especialización",
         "semester": "Semestre II",
         "active": True
+    },
+    {
+        "id": "trabajo-de-grado-1",
+        "name": "Trabajo de Grado 1",
+        "title": "Trabajo de Grado I — Metodologías, MLOps y Despliegue Cloud",
+        "folder": "Trabajo de grado 1",
+        "icon": "🎓",
+        "badge": "Activo / Disponible",
+        "badge_color": "emerald",
+        "color": "#6366f1",
+        "gradient": "from-indigo-500/20 via-purple-600/10 to-transparent",
+        "border_glow": "border-indigo-500/40",
+        "description": "Desarrollo de proyectos aplicados de ciencia de datos, arquitectura MLOps, experimentación y gobernanza con MLflow, persistencia en Data Lakehouse (AWS S3, Azure ADLS Gen2) y despliegue serverless en Databricks.",
+        "level": "Especialización",
+        "semester": "Semestre II",
+        "active": True
     }
 ]
 
@@ -700,6 +716,33 @@ MODULES_ESTADISTICA = [
     }
 ]
 
+MODULES_TRABAJO_GRADO_1 = [
+    {
+        "id": "01",
+        "name": "01 - Databricks Community Edition",
+        "title": "Databricks Standalone y MLOps",
+        "icon": "🧱",
+        "color": "#FF3621",
+        "description": "Entorno Databricks Community Edition, tablas Delta Lake, tracking de experimentos con MLflow, registro y versionamiento de modelos."
+    },
+    {
+        "id": "02",
+        "name": "02 - AWS Databricks y Lakehouse S3",
+        "title": "Arquitectura Cloud AWS S3 y MLOps Serverless",
+        "icon": "☁️",
+        "color": "#FF9900",
+        "description": "Orquestación de Data Lakehouse en Amazon S3, clústeres serverless de Databricks, pipelines de Random Forest y gobierno de datos."
+    },
+    {
+        "id": "03",
+        "name": "03 - Azure Databricks y MLOps",
+        "title": "Microsoft Azure Databricks y Clasificación SVM",
+        "icon": "🔷",
+        "color": "#0078D4",
+        "description": "Servicios analíticos 1st-party en Azure, almacenamiento ADLS Gen2, optimización de hiperparámetros SVM y despliegue de inferencia."
+    }
+]
+
 COURSE_MODULE_DEFAULTS = {
     "data-science-programming": DEFAULT_MODULES_DSP,
     "data-mining": MODULES_DATA_MINING,
@@ -708,6 +751,7 @@ COURSE_MODULE_DEFAULTS = {
     "machine-learning": MODULES_ML,
     "big-data": MODULES_BIG_DATA,
     "estadistica-analisis": MODULES_ESTADISTICA,
+    "trabajo-de-grado-1": MODULES_TRABAJO_GRADO_1,
 }
 
 PALETTE = [
@@ -735,7 +779,12 @@ KNOWN_TITLES = {
     "Instalacion WSL2 y Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
     "Instalacion_Power_BI.mp4": "Instalación y Configuración de Power BI",
     "Instalacion Power BI.mp4": "Instalación y Configuración de Power BI",
-    "Instalación de Power BI.mp4": "Instalación y Configuración de Power BI"
+    "Instalación de Power BI.mp4": "Instalación y Configuración de Power BI",
+    "02_Databricks_Community_Calidad_Vinos.ipynb": "Databricks Community Edition: Experimento ML Calidad de Vinos",
+    "03_DataLakehouse_AWS_S3_MLOps.ipynb": "Data Lakehouse en AWS S3 & MLOps Serverless",
+    "04_Experimento_ML_Azure_Databricks.ipynb": "Azure Databricks: Clasificación y Regularización SVM",
+    "Databricks_Tutorial.mp4": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
+    "Databricks_Free_Edition_final.mp4": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps"
 }
 
 KNOWN_YOUTUBE_VIDEOS = {
@@ -786,6 +835,18 @@ KNOWN_YOUTUBE_VIDEOS = {
         "youtube_url": "https://youtu.be/8RifWTEWBOI",
         "embed_url": "https://www.youtube.com/embed/8RifWTEWBOI",
         "thumbnail": "https://img.youtube.com/vi/8RifWTEWBOI/hqdefault.jpg"
+    },
+    "databricks_tutorial.mp4": {
+        "youtube_id": "B-8HK8GJfZM",
+        "youtube_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
+        "embed_url": "https://www.youtube.com/embed/B-8HK8GJfZM",
+        "thumbnail": "https://img.youtube.com/vi/B-8HK8GJfZM/hqdefault.jpg"
+    },
+    "databricks_free_edition_final.mp4": {
+        "youtube_id": "B-8HK8GJfZM",
+        "youtube_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
+        "embed_url": "https://www.youtube.com/embed/B-8HK8GJfZM",
+        "thumbnail": "https://img.youtube.com/vi/B-8HK8GJfZM/hqdefault.jpg"
     }
 }
 
@@ -852,6 +913,40 @@ COURSE_EXTRA_VIDEOS = {
             "lfs_url": "",
             "raw_url": "",
             "github_url": "https://youtu.be/8RifWTEWBOI"
+        }
+    ],
+    "trabajo-de-grado-1": [
+        {
+            "id": "vid_tg1_databricks",
+            "filename": "Databricks_Tutorial.mp4",
+            "title": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
+            "module": "🧱 Módulo 01: Databricks Standalone y MLOps",
+            "size_mb": 70.0,
+            "path": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
+            "youtube_id": "B-8HK8GJfZM",
+            "youtube_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
+            "embed_url": "https://www.youtube.com/embed/B-8HK8GJfZM",
+            "thumbnail": "https://img.youtube.com/vi/B-8HK8GJfZM/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM"
+        }
+    ],
+    "Trabajo de grado 1": [
+        {
+            "id": "vid_tg1_databricks",
+            "filename": "Databricks_Tutorial.mp4",
+            "title": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
+            "module": "🧱 Módulo 01: Databricks Standalone y MLOps",
+            "size_mb": 70.0,
+            "path": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
+            "youtube_id": "B-8HK8GJfZM",
+            "youtube_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
+            "embed_url": "https://www.youtube.com/embed/B-8HK8GJfZM",
+            "thumbnail": "https://img.youtube.com/vi/B-8HK8GJfZM/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM"
         }
     ]
 }
