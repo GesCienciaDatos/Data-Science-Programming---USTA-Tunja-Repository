@@ -962,6 +962,9 @@ def format_title(filename):
             return v
     clean = filename.replace(".ipynb", "").replace(".pdf", "").replace(".mp4", "").replace(".mkv", "").replace(".webm", "")
     clean = re.sub(r'^\d+[a-z]?_', '', clean)
+    clean = re.sub(r'_?oceanofpdf\.com_?', '', clean, flags=re.IGNORECASE)
+    clean = re.sub(r'\s*\(z-library\)', '', clean, flags=re.IGNORECASE)
+    clean = clean.replace("_-_", " — ")
     clean = clean.replace("_compressed", "").replace("_", " ").replace("-", " ")
     words = clean.strip().split()
     formatted = []
@@ -1097,7 +1100,8 @@ SUBFOLDER_MAP = {
     "data-mining": "Data Mining",
     "machine-learning": "Machine Learning",
     "visual-analytics": "Visual Analytics",
-    "introduccion-ia": "Inteligencia Artificial"
+    "introduccion-ia": "Inteligencia Artificial",
+    "trabajo-de-grado-1": "Trabajo de grado 1"
 }
 
 BOOKS_METADATA = {
@@ -3781,7 +3785,7 @@ def scan_course_books(course_id, c_folder, c_dir):
     if not libros_dir.exists():
         return []
 
-    subname = SUBFOLDER_MAP.get(course_id, "Python")
+    subname = SUBFOLDER_MAP.get(course_id, c_folder)
 
     for f in sorted(libros_dir.rglob("*.pdf")):
         fname = f.name
