@@ -18854,6 +18854,39 @@ export const CATALOG_DATA = {
           "course_id": "trabajo-de-grado-1",
           "course_name": "Trabajo de grado 1",
           "subject": "Python",
+          "title": "Data Engineering With Databricks (verma, Sumit) (z Library)",
+          "filename": "Data Engineering with Databricks (Verma, Sumit) (Z-Library).pdf",
+          "subtitle": "Biblioteca Digital USTA — Python",
+          "author": "Referencia Académica",
+          "publisher": "Editorial Especializada",
+          "year": "2024",
+          "edition": "PDF Completo",
+          "size_mb": "4.9 MB",
+          "cover_image": "",
+          "has_cover_image": false,
+          "category": "Ciencia de Datos & Análisis",
+          "level": "Intermedio",
+          "dummies_friendly": false,
+          "summary_dummies": "Texto de referencia 'Data Engineering With Databricks (verma, Sumit) (z Library)' disponible en PDF completo (4.9 MB) para consulta y descarga directa.",
+          "topics": [
+            "Python",
+            "Data Science",
+            "Analítica"
+          ],
+          "cover_gradient": "from-teal-600 via-slate-700 to-slate-950",
+          "cover_bg": "#0f766e",
+          "accent_color": "#14b8a6",
+          "icon": "📘",
+          "download_url": "Libros/Python/Data%20Engineering%20with%20Databricks%20%28Verma%2C%20Sumit%29%20%28Z-Library%29.pdf",
+          "pdf_url": "Libros/Python/Data%20Engineering%20with%20Databricks%20%28Verma%2C%20Sumit%29%20%28Z-Library%29.pdf",
+          "has_local_pdf": true,
+          "local_pdf_path": "Libros/Python/Data Engineering with Databricks (Verma, Sumit) (Z-Library).pdf"
+        },
+        {
+          "id": "book_trabajo-de-grado-1_2",
+          "course_id": "trabajo-de-grado-1",
+          "course_name": "Trabajo de grado 1",
+          "subject": "Python",
           "title": "Advanced Data Engineering With Databricks",
           "filename": "advanced-data-engineering-with-databricks.pdf",
           "subtitle": "Biblioteca Digital USTA — Python",
@@ -18883,7 +18916,7 @@ export const CATALOG_DATA = {
           "local_pdf_path": "Libros/Python/advanced-data-engineering-with-databricks.pdf"
         },
         {
-          "id": "book_trabajo-de-grado-1_2",
+          "id": "book_trabajo-de-grado-1_3",
           "course_id": "trabajo-de-grado-1",
           "course_name": "Trabajo de grado 1",
           "subject": "Python",
@@ -18916,7 +18949,7 @@ export const CATALOG_DATA = {
           "local_pdf_path": "Libros/Python/big-book-data-engineering.pdf"
         },
         {
-          "id": "book_trabajo-de-grado-1_3",
+          "id": "book_trabajo-de-grado-1_4",
           "course_id": "trabajo-de-grado-1",
           "course_name": "Trabajo de grado 1",
           "subject": "Python",
@@ -18958,7 +18991,7 @@ export const CATALOG_DATA = {
         "total_datasets": 1,
         "total_guias": 2,
         "total_videos": 1,
-        "total_books": 3
+        "total_books": 4
       }
     }
   ],
@@ -30434,6 +30467,39 @@ export const CATALOG_DATA = {
       "course_id": "trabajo-de-grado-1",
       "course_name": "Trabajo de grado 1",
       "subject": "Python",
+      "title": "Data Engineering With Databricks (verma, Sumit) (z Library)",
+      "filename": "Data Engineering with Databricks (Verma, Sumit) (Z-Library).pdf",
+      "subtitle": "Biblioteca Digital USTA — Python",
+      "author": "Referencia Académica",
+      "publisher": "Editorial Especializada",
+      "year": "2024",
+      "edition": "PDF Completo",
+      "size_mb": "4.9 MB",
+      "cover_image": "",
+      "has_cover_image": false,
+      "category": "Ciencia de Datos & Análisis",
+      "level": "Intermedio",
+      "dummies_friendly": false,
+      "summary_dummies": "Texto de referencia 'Data Engineering With Databricks (verma, Sumit) (z Library)' disponible en PDF completo (4.9 MB) para consulta y descarga directa.",
+      "topics": [
+        "Python",
+        "Data Science",
+        "Analítica"
+      ],
+      "cover_gradient": "from-teal-600 via-slate-700 to-slate-950",
+      "cover_bg": "#0f766e",
+      "accent_color": "#14b8a6",
+      "icon": "📘",
+      "download_url": "Libros/Python/Data%20Engineering%20with%20Databricks%20%28Verma%2C%20Sumit%29%20%28Z-Library%29.pdf",
+      "pdf_url": "Libros/Python/Data%20Engineering%20with%20Databricks%20%28Verma%2C%20Sumit%29%20%28Z-Library%29.pdf",
+      "has_local_pdf": true,
+      "local_pdf_path": "Libros/Python/Data Engineering with Databricks (Verma, Sumit) (Z-Library).pdf"
+    },
+    {
+      "id": "book_trabajo-de-grado-1_2",
+      "course_id": "trabajo-de-grado-1",
+      "course_name": "Trabajo de grado 1",
+      "subject": "Python",
       "title": "Advanced Data Engineering With Databricks",
       "filename": "advanced-data-engineering-with-databricks.pdf",
       "subtitle": "Biblioteca Digital USTA — Python",
@@ -30463,7 +30529,7 @@ export const CATALOG_DATA = {
       "local_pdf_path": "Libros/Python/advanced-data-engineering-with-databricks.pdf"
     },
     {
-      "id": "book_trabajo-de-grado-1_2",
+      "id": "book_trabajo-de-grado-1_3",
       "course_id": "trabajo-de-grado-1",
       "course_name": "Trabajo de grado 1",
       "subject": "Python",
@@ -30496,7 +30562,7 @@ export const CATALOG_DATA = {
       "local_pdf_path": "Libros/Python/big-book-data-engineering.pdf"
     },
     {
-      "id": "book_trabajo-de-grado-1_3",
+      "id": "book_trabajo-de-grado-1_4",
       "course_id": "trabajo-de-grado-1",
       "course_name": "Trabajo de grado 1",
       "subject": "Python",
