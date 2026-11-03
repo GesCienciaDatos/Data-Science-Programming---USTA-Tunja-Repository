@@ -10,6 +10,7 @@
   <img src="https://img.shields.io/badge/Discipline-Estad%C3%ADstica-ea580c?style=for-the-badge&logo=scipy&logoColor=white" alt="Estadística"/>
   <img src="https://img.shields.io/badge/Topics-Probabilidad%20%7C%20Inferencia%20%7C%20Modelamiento%20%7C%20EDA-0ea5e9?style=for-the-badge" alt="Temas"/>
   <img src="https://img.shields.io/badge/Course-Estad%C3%ADstica%2C%20An%C3%A1lisis%20y%20Representaci%C3%B3n%20de%20Datos-6366f1?style=for-the-badge" alt="Course"/>
+  <img src="https://img.shields.io/badge/📚%20Biblioteca-22%20Libros%20de%20Referencia-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="22 Libros"/>
   <img src="https://img.shields.io/badge/Institution-USTA%20Tunja-1e3a8a?style=for-the-badge" alt="USTA"/>
 </p>
 
@@ -71,9 +72,38 @@ Los talleres de los 8 módulos, con su versión guiada **Para Dummies**, están 
 
 ---
 
-## 📖 Bibliografía de Apoyo
+## 📖 Bibliografía de Apoyo y Biblioteca Digital
 
 Los **Recursos Complementarios** del Capítulo 1 están al final del [README del módulo 04](04%20-%20No%20Parametrica%20Regresion%20y%20Etica/README.md). Los del Capítulo 2, el **Glosario** del curso y las **Referencias Bibliográficas** consolidadas están en el [README del módulo 07](07%20-%20Temas%20Avanzados%20en%20Data%20Analysis/README.md).
+
+### 📚 Colección Oficial de Libros en PDF (22 Volúmenes con Portada y Metadatos)
+
+La asignatura cuenta con una selecta colección de 22 libros técnicos fundamentales sincronizados en la plataforma web interactiva:
+
+| # | Título | Autor / Editorial | Nivel / Enfoque | Archivo Local |
+|:---:|:---|:---|:---:|:---:|
+| 1 | **All of Statistics** | Larry Wasserman (Springer) | Avanzado / Inferencia & ML | [`_OceanofPDF.com_All_of_Statistics_-_Larry_Wasserman.pdf`](Libros/_OceanofPDF.com_All_of_Statistics_-_Larry_Wasserman.pdf) |
+| 2 | **Applied Linear Statistical Models (5th Ed.)** | M. Kutner, C. Nachtsheim, J. Neter, W. Li (McGraw-Hill) | Avanzado / Modelos Lineales & ANOVA | [`_OceanofPDF.com_Applied_linear_statistical_models_5th_ed_-_Kutner.pdf`](Libros/_OceanofPDF.com_Applied_linear_statistical_models_5th_ed_-_Kutner.pdf) |
+| 3 | **Bayesian Analysis with Python (3rd Ed.)** | Osvaldo Martin (Packt) | Intermedio / Bayesiano & PyMC | [`_OceanofPDF.com_Bayesian_Analysis_with_Python_Third_Edition_-_Osvaldo_Martin.pdf`](Libros/_OceanofPDF.com_Bayesian_Analysis_with_Python_Third_Edition_-_Osvaldo_Martin.pdf) |
+| 4 | **Data Science from Scratch (2nd Ed.)** | Joel Grus (O'Reilly) | Básico-Intermedio / Desde Cero | [`_OceanofPDF.com_Data_Science_from_Scratch_-_Joel_Grus.pdf`](Libros/_OceanofPDF.com_Data_Science_from_Scratch_-_Joel_Grus.pdf) |
+| 5 | **Essential Statistics for Non-STEM Data Analysts** | Rongpeng Li (Packt) | Principiantes / Negocio | [`_OceanofPDF.com_Essential_Statistics_for_Non-STEM_Data_Ana_-_Rongpeng_Li.pdf`](Libros/_OceanofPDF.com_Essential_Statistics_for_Non-STEM_Data_Ana_-_Rongpeng_Li.pdf) |
+| 6 | **Generalized Linear Models (2nd Ed.)** | R. Myers, D. Montgomery et al. (Wiley) | Avanzado / GLM, Logit & Poisson | [`_OceanofPDF.com_Generalized_Linear_Models_-_Raymond_H_Myers.pdf`](Libros/_OceanofPDF.com_Generalized_Linear_Models_-_Raymond_H_Myers.pdf) |
+| 7 | **Introduction to Linear Regression Analysis (6th Ed.)** | D. Montgomery, E. Peck, G. Vining (Wiley) | Intermedio-Avanzado / Regresión | [`_OceanofPDF.com_Introduction_to_Linear_Regression_Analysis_6th_Edition_-_DOUGLAS_C_MONTGOMERY.pdf`](Libros/_OceanofPDF.com_Introduction_to_Linear_Regression_Analysis_6th_Edition_-_DOUGLAS_C_MONTGOMERY.pdf) |
+| 8 | **Introduction to Probability Models (12th Ed.)** | Sheldon M. Ross (Academic Press) | Avanzado / Cadenas de Markov & Colas | [`_OceanofPDF.com_Introduction_to_Probability_Models_-_Sheldon_M_Ross.pdf`](Libros/_OceanofPDF.com_Introduction_to_Probability_Models_-_Sheldon_M_Ross.pdf) |
+| 9 | **Mathematical Statistics with Applications (7th Ed.)** | D. Wackerly, W. Mendenhall, R. Scheaffer (Cengage) | Avanzado / Teoría & Máxima Verosimilitud | [`_OceanofPDF.com_Mathematical_Statistics_with_Applications_7th_edition_-_Wackerly.pdf`](Libros/_OceanofPDF.com_Mathematical_Statistics_with_Applications_7th_edition_-_Wackerly.pdf) |
+| 10 | **Modern Mathematical Statistics with Applications (3rd Ed.)** | Jay L. Devore, Kenneth N. Berk (Springer) | Intermedio-Avanzado / Bootstrap & MCMC | [`_OceanofPDF.com_Modern_Mathematical_Statistics_-_Jay_L_Devore.pdf`](Libros/_OceanofPDF.com_Modern_Mathematical_Statistics_-_Jay_L_Devore.pdf) |
+| 11 | **Naked Statistics** | Charles Wheelan (W. W. Norton) | Divulgación / Intuición & Dummies | [`_OceanofPDF.com_Naked_Statistics_-_Charles_Wheelan.pdf`](Libros/_OceanofPDF.com_Naked_Statistics_-_Charles_Wheelan.pdf) |
+| 12 | **Nonparametric Statistical Methods Using R (2nd Ed.)** | John Kloke, Joseph W. McKean (CRC Press) | Intermedio / Pruebas de Rangos & R | [`_OceanofPDF.com_Nonparametric_Statistical_Methods_Using_R_2E_-_John_Kloke.pdf`](Libros/_OceanofPDF.com_Nonparametric_Statistical_Methods_Using_R_2E_-_John_Kloke.pdf) |
+| 13 | **Nonparametric Statistics for Social and Behavioral Sciences** | Maureen Kraska-Miller (CRC Press) | Básico-Intermedio / No Paramétrica | [`_OceanofPDF.com_Nonparametric_Statistics_for_Social_and_Behavioral_Sciences_-_M_Kraska-MIller.pdf`](Libros/_OceanofPDF.com_Nonparametric_Statistics_for_Social_and_Behavioral_Sciences_-_M_Kraska-MIller.pdf) |
+| 14 | **Outlier Analysis (2nd Ed.)** | Charu C. Aggarwal (Springer) | Avanzado / Detección de Anomalías | [`_OceanofPDF.com_Outlier_Analysis_-_Charu_C_Aggarwal.pdf`](Libros/_OceanofPDF.com_Outlier_Analysis_-_Charu_C_Aggarwal.pdf) |
+| 15 | **Practical Statistics for Data Scientists (2nd Ed.)** | Peter Bruce, Andrew Bruce, Peter Gedeck (O'Reilly) | Intermedio / Pruebas A/B, Python & R | [`_OceanofPDF.com_Practical_Statistics_for_Data_Scientists_-_Peter_Gedeck.pdf`](Libros/_OceanofPDF.com_Practical_Statistics_for_Data_Scientists_-_Peter_Gedeck.pdf) |
+| 16 | **Probability for the Enthusiastic Beginner** | David Morin (Harvard University) | Básico / Paso a Paso | [`_OceanofPDF.com_Probability_for_the_Enthusiastic_Beginner_-_David_Morin.pdf`](Libros/_OceanofPDF.com_Probability_for_the_Enthusiastic_Beginner_-_David_Morin.pdf) |
+| 17 | **Python for Data Analysis (3rd Ed.)** | Wes McKinney (O'Reilly) | Básico-Intermedio / pandas & NumPy | [`_OceanofPDF.com_Python_for_Data_Analysis_3rd_Edition_-_Wes_McKinney.pdf`](Libros/_OceanofPDF.com_Python_for_Data_Analysis_3rd_Edition_-_Wes_McKinney.pdf) |
+| 18 | **Regression Models for Categorical, Count, and Related Variables** | John P. Hoffmann (Univ. California Press) | Avanzado / Modelos Logit & Poisson | [`_OceanofPDF.com_Regression_Models_for_Categorical_Count_and_Related_Variables_-_John_P_Hoffmann.pdf`](Libros/_OceanofPDF.com_Regression_Models_for_Categorical_Count_and_Related_Variables_-_John_P_Hoffmann.pdf) |
+| 19 | **Statistics Essentials For Dummies** | Deborah J. Rumsey (Wiley) | Básico / Para Dummies | [`_OceanofPDF.com_Statistics_Essentials_For_Dummies_-_Deborah_Rumsey.pdf`](Libros/_OceanofPDF.com_Statistics_Essentials_For_Dummies_-_Deborah_Rumsey.pdf) |
+| 20 | **Think Bayes (2nd Ed.)** | Allen B. Downey (O'Reilly) | Básico-Intermedio / Bayes Computacional | [`_OceanofPDF.com_Think_Bayes_-_Allen_B_Downey.pdf`](Libros/_OceanofPDF.com_Think_Bayes_-_Allen_B_Downey.pdf) |
+| 21 | **Time Series Analysis and Its Applications (4th Ed.)** | Robert H. Shumway, David S. Stoffer (Springer) | Avanzado / ARIMA, Kalman & R | [`_OceanofPDF.com_Time_Series_-_Robert_Shumway.pdf`](Libros/_OceanofPDF.com_Time_Series_-_Robert_Shumway.pdf) |
+| 22 | **Forecasting: Principles and Practice (3rd Ed.)** | Rob J. Hyndman, George Athanasopoulos (OTexts) | Intermedio / Modelos ETS & Pronósticos | [`_OceanofPDF.com_forecasting_principles_and_practice_-_George_Athanasopoulos.pdf`](Libros/_OceanofPDF.com_forecasting_principles_and_practice_-_George_Athanasopoulos.pdf) |
 
 ---
 

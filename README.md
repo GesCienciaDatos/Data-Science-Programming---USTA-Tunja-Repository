@@ -13,7 +13,7 @@
       <img src="https://img.shields.io/badge/🌐%20Portal%20de%20Materias-GitHub%20Pages-0284C7?style=for-the-badge&logo=githubpages&logoColor=white" alt="Virtual Lab Pages" />
     </a>
     <img src="https://img.shields.io/badge/⚡%20Cuadernos-344%20Notebooks-0ea5e9?style=for-the-badge&logo=jupyter&logoColor=white" alt="344 Notebooks" />
-    <img src="https://img.shields.io/badge/📚%20Biblioteca-150%20Libros%20Open%20Access-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="150 Libros" />
+    <img src="https://img.shields.io/badge/📚%20Biblioteca-172%20Libros%20Open%20Access-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="172 Libros" />
     <img src="https://img.shields.io/badge/💡%20Modo%20Dummies-72%20Adaptados-f59e0b?style=for-the-badge&logo=lightbulb&logoColor=white" alt="Modo Dummies" />
     <img src="https://img.shields.io/badge/🎬%20YouTube-Video%20Clases-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
     <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
@@ -33,9 +33,10 @@
 ### 💡 Modo Dummies Interactivo ("Programación para No Ingenieros")
 El laboratorio incluye un selector interactivo **Modo Dummies** en el portal web que filtra y prioriza cuadernos adaptados con analogías cotidianas, explicaciones paso a paso sin jerga técnica y modelos mentales intuitivos (cajas de cartón con etiquetas, bandejas de huevos, recetas de cocina, sombras 3D y peritos de avalúo).
 
-### 📚 Biblioteca Digital & Libros de Referencia (150 Textos Open Access)
-Sección integrada con **150 textos especializados** de referencia mundial organizados por áreas (Python, Data Mining, Machine Learning, Inteligencia Artificial, Visual Analytics, Power BI, Cloud Architecture AWS/Azure, Databricks y MLOps) con resúmenes pedagógicos, portadas oficiales en alta resolución, etiquetas temáticas, visor PDF integrado y enlaces de descarga directa sin restricciones:
+### 📚 Biblioteca Digital & Libros de Referencia (172 Textos Open Access)
+Sección integrada con **172 textos especializados** de referencia mundial organizados por áreas (Python, Estadística, Data Mining, Machine Learning, Inteligencia Artificial, Visual Analytics, Power BI, Cloud Architecture AWS/Azure, Databricks y MLOps) con resúmenes pedagógicos, portadas oficiales en alta resolución, etiquetas temáticas, visor PDF integrado y enlaces de descarga directa sin restricciones:
 - **Python & Data Science**: 11 libros (*Python Data Science Handbook*, *Automate the Boring Stuff*, *Fluent Python*, *Data Structures with Python*, etc.).
+- **Estadística & Análisis de Datos**: 22 libros (*All of Statistics*, *Applied Linear Statistical Models*, *Bayesian Analysis with Python*, *Data Science from Scratch*, *Essential Statistics for Non-STEM Data Analysts*, *Practical Statistics for Data Scientists*, *Time Series Analysis*, *Forecasting: Principles and Practice*, etc.).
 - **Data Mining & KDD**: 18 libros (*Data Mining: The Textbook*, *Data Mining Concepts and Techniques (Han & Kamber)*, *Web Data Mining*, *Introduction to Data Mining (Tan, Steinbach, Kumar)*, etc.).
 - **Machine Learning**: 40 libros especializados (*Hands-On Machine Learning with Scikit-Learn and PyTorch*, *Designing Machine Learning Systems*, *Pattern Recognition and Machine Learning*, *Machine Learning Engineering in Action*, etc.).
 - **Inteligencia Artificial & LLMs**: 32 textos de vanguardia (*Artificial Intelligence: A Modern Approach*, *Transformers in Action*, *What is LLMOps*, *Prompt Engineering for LLMs*, *Generative AI and LLMs for Dummies*, etc.).
@@ -48,6 +49,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 - ⚙️ **Creación y Gestión de Entornos Virtuales (VENV)**: [Ver en YouTube](https://youtu.be/GX0rf6HjdcU)
 - ⚡ **Instalación y Configuración de WSL2 y Docker (Big Data)**: [Ver en YouTube](https://youtu.be/nPWZi9Plljo)
 - 🧱 **Tutorial Databricks Community Edition, MLflow y MLOps (Trabajo de Grado 1)**: [Ver en YouTube](https://www.youtube.com/watch?v=B-8HK8GJfZM)
+- ☁️ **Tutorial Databricks en AWS: Data Lakehouse S3, IAM y Despliegue Cloud (Trabajo de Grado 1)**: [Ver en YouTube](https://youtu.be/bnK78l0DeZc)
 
 ---
 
@@ -56,7 +58,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 | # | Asignatura / Materia | Semestre | Estado | Directorio en el Repositorio |
 |---|---|---|---|---|
 | **1** | **Programación para Ciencia de Datos** | Semestre I | 🟢 **Activo (156 Cuadernos • 11 Libros)** | [`Data Science programming/`](Data%20Science%20programming/) |
-| **2** | **Estadística, Análisis y Representación de Datos** | Semestre I | 🚧 *En Construcción* | [`Estadistica analisis y representacion de datos/`](Estadistica%20analisis%20y%20representacion%20de%20datos/) |
+| **2** | **Estadística, Análisis y Representación de Datos** | Semestre I | 🟢 **Activo (Cuadernos • 22 Libros)** | [`Estadistica analisis y representacion de datos/`](Estadistica%20analisis%20y%20representacion%20de%20datos/) |
 | **3** | **Adquisición, Gestión y Gobernanza de Datos** | Semestre I | 🚧 *En Construcción* | [`Adquision gestion y gobernanza de datos/`](Adquision%20gestion%20y%20gobernanza%20de%20datos/) |
 | **4** | **Privacidad, Seguridad e Integridad de los Datos** | Semestre I | 🚧 *En Construcción* | [`Privacidad, Seguridad e Integridad de los datos/`](Privacidad,%20Seguridad%20e%20Integridad%20de%20los%20datos/) |
 | **5** | **Data Mining** | Semestre II | 🟢 **Activo (88 Cuadernos • 18 Libros)** | [`Data Mining/`](Data%20Mining/) |
@@ -64,7 +66,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 | **7** | **Big Data** | Semestre II | 🟢 **Activo (50 Cuadernos • Video Tutorial)** | [`Big Data/`](Big%20Data/) |
 | **8** | **Introducción a la Inteligencia Artificial** | Semestre II | 🟢 **Activo (50 Cuadernos • 32 Libros)** | [`Introduccion a la Inteligencia Artificial/`](Introduccion%20a%20la%20Inteligencia%20Artificial/) |
 | **9** | **Visual Analytics and Critical Thinking** | Semestre II | 🟢 **Activo (50 Cuadernos • 21 Libros)** | [`Visual Analytics and Critical Thinking/`](Visual%20Analytics%20and%20Critical%20Thinking/) |
-| **10** | **Trabajo de Grado 1** | Semestre II | 🟢 **Activo (Cuadernos MLOps • 28 Libros • 2 Guías PDF • Video Tutorial)** | [`Trabajo de grado 1/`](Trabajo%20de%20grado%201/) |
+| **10** | **Trabajo de Grado 1** | Semestre II | 🟢 **Activo (Cuadernos MLOps • 28 Libros • 2 Guías PDF • 2 Video Tutoriales)** | [`Trabajo de grado 1/`](Trabajo%20de%20grado%201/) |
 
 ---
 

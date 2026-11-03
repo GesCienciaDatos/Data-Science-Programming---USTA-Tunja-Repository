@@ -28,21 +28,34 @@ Bienvenido al espacio académico oficial de **Trabajo de Grado 1** de la Especia
 
 ---
 
-## 🎬 Video Tutorial Oficial en YouTube
+## 🎬 Video Tutoriales Oficiales en YouTube
 
 Como parte del material pedagógico del espacio académico, se encuentra disponible la serie de video tutoriales prácticos guiados paso a paso:
 
-* **Enlace directo al tutorial:** [Ver Video Tutorial en YouTube (Databricks, MLflow y MLOps)](https://www.youtube.com/watch?v=B-8HK8GJfZM)
+### 1. Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps
+* **Enlace directo:** [Ver en YouTube — Databricks Community Edition (B-8HK8GJfZM)](https://www.youtube.com/watch?v=B-8HK8GJfZM)
 
 [![Tutorial Databricks Community Edition y MLOps](https://img.youtube.com/vi/B-8HK8GJfZM/maxresdefault.jpg)](https://www.youtube.com/watch?v=B-8HK8GJfZM)
 
-> **Contenido del Video:**
+> **Contenido del Tutorial:**
 > 1. Acceso y aprovisionamiento en Databricks Community Edition sin costo ni tarjeta de crédito.
 > 2. Configuración de clústeres serverless e inicialización del espacio de trabajo.
 > 3. Ingesta y persistencia en tablas Delta Lake con transacciones ACID.
 > 4. Experiment tracking sistemático de métricas, parámetros y artefactos con MLflow.
 > 5. Registro y versionamiento formal de modelos en el Model Registry de Databricks.
 > 6. Despliegue de modelos para inferencia y gobierno del ciclo de vida analítico.
+
+### 2. Tutorial Databricks en AWS: Data Lakehouse S3, IAM y Despliegue Cloud
+* **Enlace directo:** [Ver en YouTube — Databricks en AWS (bnK78l0DeZc)](https://youtu.be/bnK78l0DeZc)
+
+[![Tutorial Databricks en AWS](https://img.youtube.com/vi/bnK78l0DeZc/hqdefault.jpg)](https://youtu.be/bnK78l0DeZc)
+
+> **Contenido del Tutorial:**
+> 1. Configuración de arquitectura Data Lakehouse en Amazon Web Services (AWS).
+> 2. Gestión y particionamiento de buckets Amazon S3 (capas raw, curated y models).
+> 3. Políticas de seguridad y roles IAM para integración Databricks Serverless en AWS.
+> 4. Pipeline de transformación y almacenamiento optimizado en formato Delta Lake / Parquet.
+> 5. Prácticas de gobernanza y experiment tracking en entorno de producción cloud.
 
 ---
 
