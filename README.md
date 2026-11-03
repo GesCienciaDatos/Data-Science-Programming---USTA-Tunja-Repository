@@ -5,16 +5,16 @@
   <h3 style="margin-top: 5px; color: #1e3a8a; font-weight: 600;">Especialización en Ciencia de Datos | Universidad Santo Tomás — Seccional Tunja</h3>
   
   <p style="font-size: 1.05em; color: #475569; max-width: 750px;">
-    Repositorio académico multi-materia de la <b>Especialización en Ciencia de Datos</b>. Contiene el material pedagógico estructurado por asignaturas, 344 cuadernos interactivos (Edición Estándar y Edición Para Dummies), conjuntos de datos reales, biblioteca digital con 150 libros especializados y video clases en HD.
+    Repositorio académico multi-materia de la <b>Especialización en Ciencia de Datos</b>. Contiene el material pedagógico estructurado por asignaturas, 471 cuadernos interactivos (Edición Estándar y Edición Para Dummies), conjuntos de datos reales, biblioteca digital con 172 libros especializados de referencia y video clases en HD.
   </p>
 
   <p>
     <a href="https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/">
       <img src="https://img.shields.io/badge/🌐%20Portal%20de%20Materias-GitHub%20Pages-0284C7?style=for-the-badge&logo=githubpages&logoColor=white" alt="Virtual Lab Pages" />
     </a>
-    <img src="https://img.shields.io/badge/⚡%20Cuadernos-344%20Notebooks-0ea5e9?style=for-the-badge&logo=jupyter&logoColor=white" alt="344 Notebooks" />
+    <img src="https://img.shields.io/badge/⚡%20Cuadernos-471%20Notebooks-0ea5e9?style=for-the-badge&logo=jupyter&logoColor=white" alt="471 Notebooks" />
     <img src="https://img.shields.io/badge/📚%20Biblioteca-172%20Libros%20Open%20Access-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="172 Libros" />
-    <img src="https://img.shields.io/badge/💡%20Modo%20Dummies-72%20Adaptados-f59e0b?style=for-the-badge&logo=lightbulb&logoColor=white" alt="Modo Dummies" />
+    <img src="https://img.shields.io/badge/💡%20Modo%20Dummies-277%20Adaptados-f59e0b?style=for-the-badge&logo=lightbulb&logoColor=white" alt="Modo Dummies" />
     <img src="https://img.shields.io/badge/🎬%20YouTube-Video%20Clases-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
     <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
   </p>
@@ -58,7 +58,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 | # | Asignatura / Materia | Semestre | Estado | Directorio en el Repositorio |
 |---|---|---|---|---|
 | **1** | **Programación para Ciencia de Datos** | Semestre I | 🟢 **Activo (156 Cuadernos • 11 Libros)** | [`Data Science programming/`](Data%20Science%20programming/) |
-| **2** | **Estadística, Análisis y Representación de Datos** | Semestre I | 🟢 **Activo (Cuadernos • 22 Libros)** | [`Estadistica analisis y representacion de datos/`](Estadistica%20analisis%20y%20representacion%20de%20datos/) |
+| **2** | **Estadística, Análisis y Representación de Datos** | Semestre I | 🟢 **Activo (74 Cuadernos • 22 Libros • 8 Talleres)** | [`Estadistica analisis y representacion de datos/`](Estadistica%20analisis%20y%20representacion%20de%20datos/) |
 | **3** | **Adquisición, Gestión y Gobernanza de Datos** | Semestre I | 🚧 *En Construcción* | [`Adquision gestion y gobernanza de datos/`](Adquision%20gestion%20y%20gobernanza%20de%20datos/) |
 | **4** | **Privacidad, Seguridad e Integridad de los Datos** | Semestre I | 🚧 *En Construcción* | [`Privacidad, Seguridad e Integridad de los datos/`](Privacidad,%20Seguridad%20e%20Integridad%20de%20los%20datos/) |
 | **5** | **Data Mining** | Semestre II | 🟢 **Activo (88 Cuadernos • 18 Libros)** | [`Data Mining/`](Data%20Mining/) |

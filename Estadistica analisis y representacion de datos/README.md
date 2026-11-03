@@ -10,13 +10,18 @@
   <img src="https://img.shields.io/badge/Discipline-Estad%C3%ADstica-ea580c?style=for-the-badge&logo=scipy&logoColor=white" alt="Estadística"/>
   <img src="https://img.shields.io/badge/Topics-Probabilidad%20%7C%20Inferencia%20%7C%20Modelamiento%20%7C%20EDA-0ea5e9?style=for-the-badge" alt="Temas"/>
   <img src="https://img.shields.io/badge/Course-Estad%C3%ADstica%2C%20An%C3%A1lisis%20y%20Representaci%C3%B3n%20de%20Datos-6366f1?style=for-the-badge" alt="Course"/>
+  <img src="https://img.shields.io/badge/⚡%20Cuadernos-74%20Notebooks-0ea5e9?style=for-the-badge&logo=jupyter&logoColor=white" alt="74 Notebooks"/>
+  <img src="https://img.shields.io/badge/💡%20Modo%20Dummies-37%20Adaptados-f59e0b?style=for-the-badge&logo=lightbulb&logoColor=white" alt="Modo Dummies"/>
   <img src="https://img.shields.io/badge/📚%20Biblioteca-22%20Libros%20de%20Referencia-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="22 Libros"/>
+  <img src="https://img.shields.io/badge/Status-🟢%20100%25%20Completado-10b981?style=for-the-badge" alt="100% Completado"/>
   <img src="https://img.shields.io/badge/Institution-USTA%20Tunja-1e3a8a?style=for-the-badge" alt="USTA"/>
 </p>
 
 ---
 
 ## 📌 Descripción de la Asignatura
+
+> 🟢 **Estado de la Asignatura:** **100% Completada y Operativa**. Todos los 8 módulos (00 al 07), 74 cuadernos interactivos (37 estándar + 37 Para Dummies), 8 talleres prácticos evaluativos en `homeworks/` y 22 libros de referencia con visor web y portadas oficiales en alta resolución están totalmente integrados y sincronizados en la plataforma.
 
 Fundamentos y práctica de la estadística aplicada a la ciencia de datos: introducción a la estadística y sus conceptos generales; estadística descriptiva y visualización de datos; probabilidad, independencia, variables aleatorias y distribuciones; estadística inferencial (intervalos de confianza, pruebas de hipótesis con valor P, pruebas Z y T, Chi-cuadrado y ANOVA, estadística no paramétrica y análisis de regresión); la ética en el uso de datos (privacidad, interpretación responsable y desafíos contemporáneos); exploración y limpieza de datos (EDA, datos faltantes, PCA y t-SNE); modelamiento estadístico (codificación de variables, modelos lineales generalizados, evaluación y validación cruzada); y temas avanzados en *Data Analysis* (series de tiempo, *clustering*, árboles de decisión, detección de datos atípicos y una aplicación de EDA al Censo Nacional Agropecuario).
 

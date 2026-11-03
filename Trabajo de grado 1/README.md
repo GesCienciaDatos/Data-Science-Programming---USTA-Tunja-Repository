@@ -12,7 +12,8 @@
   <img src="https://img.shields.io/badge/Course-Trabajo%20de%20Grado%201-6366f1?style=for-the-badge" alt="Course"/>
   <img src="https://img.shields.io/badge/📚%20Biblioteca-28%20Libros%20de%20Referencia-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="28 Libros"/>
   <img src="https://img.shields.io/badge/📖%20Guías%20PDF-2%20Documentos%20Oficiales-f59e0b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Guías PDF"/>
-  <img src="https://img.shields.io/badge/🎬%20YouTube-Video%20Clases-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube"/>
+  <img src="https://img.shields.io/badge/🎬%20YouTube-2%20Video%20Tutoriales-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="2 Videos"/>
+  <img src="https://img.shields.io/badge/Status-🟢%20100%25%20Completado-10b981?style=for-the-badge" alt="100% Completado"/>
 </p>
 
 ---
