@@ -5,7 +5,7 @@
   <h3 style="margin-top: 5px; color: #1e3a8a; font-weight: 600;">Especialización en Ciencia de Datos | Universidad Santo Tomás — Seccional Tunja</h3>
   
   <p style="font-size: 1.05em; color: #475569; max-width: 750px;">
-    Repositorio académico multi-materia de la <b>Especialización en Ciencia de Datos</b>. Contiene el material pedagógico estructurado por asignaturas, 344 cuadernos interactivos (Edición Estándar y Edición Para Dummies), conjuntos de datos reales, biblioteca digital con 122 libros especializados y video clases en HD.
+    Repositorio académico multi-materia de la <b>Especialización en Ciencia de Datos</b>. Contiene el material pedagógico estructurado por asignaturas, 344 cuadernos interactivos (Edición Estándar y Edición Para Dummies), conjuntos de datos reales, biblioteca digital con 150 libros especializados y video clases en HD.
   </p>
 
   <p>
@@ -13,7 +13,7 @@
       <img src="https://img.shields.io/badge/🌐%20Portal%20de%20Materias-GitHub%20Pages-0284C7?style=for-the-badge&logo=githubpages&logoColor=white" alt="Virtual Lab Pages" />
     </a>
     <img src="https://img.shields.io/badge/⚡%20Cuadernos-344%20Notebooks-0ea5e9?style=for-the-badge&logo=jupyter&logoColor=white" alt="344 Notebooks" />
-    <img src="https://img.shields.io/badge/📚%20Biblioteca-122%20Libros%20Open%20Access-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="122 Libros" />
+    <img src="https://img.shields.io/badge/📚%20Biblioteca-150%20Libros%20Open%20Access-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="150 Libros" />
     <img src="https://img.shields.io/badge/💡%20Modo%20Dummies-72%20Adaptados-f59e0b?style=for-the-badge&logo=lightbulb&logoColor=white" alt="Modo Dummies" />
     <img src="https://img.shields.io/badge/🎬%20YouTube-Video%20Clases-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
     <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
@@ -33,13 +33,14 @@
 ### 💡 Modo Dummies Interactivo ("Programación para No Ingenieros")
 El laboratorio incluye un selector interactivo **Modo Dummies** en el portal web que filtra y prioriza cuadernos adaptados con analogías cotidianas, explicaciones paso a paso sin jerga técnica y modelos mentales intuitivos (cajas de cartón con etiquetas, bandejas de huevos, recetas de cocina, sombras 3D y peritos de avalúo).
 
-### 📚 Biblioteca Digital & Libros de Referencia (122 Textos Open Access)
-Sección integrada con **122 textos especializados** de referencia mundial organizados por áreas (Python, Data Mining, Machine Learning, Inteligencia Artificial, Visual Analytics, Power BI y Tableau) con resúmenes pedagógicos, portadas oficiales en alta resolución, etiquetas temáticas, visor PDF integrado y enlaces de descarga directa sin restricciones:
+### 📚 Biblioteca Digital & Libros de Referencia (150 Textos Open Access)
+Sección integrada con **150 textos especializados** de referencia mundial organizados por áreas (Python, Data Mining, Machine Learning, Inteligencia Artificial, Visual Analytics, Power BI, Cloud Architecture AWS/Azure, Databricks y MLOps) con resúmenes pedagógicos, portadas oficiales en alta resolución, etiquetas temáticas, visor PDF integrado y enlaces de descarga directa sin restricciones:
 - **Python & Data Science**: 11 libros (*Python Data Science Handbook*, *Automate the Boring Stuff*, *Fluent Python*, *Data Structures with Python*, etc.).
 - **Data Mining & KDD**: 18 libros (*Data Mining: The Textbook*, *Data Mining Concepts and Techniques (Han & Kamber)*, *Web Data Mining*, *Introduction to Data Mining (Tan, Steinbach, Kumar)*, etc.).
 - **Machine Learning**: 40 libros especializados (*Hands-On Machine Learning with Scikit-Learn and PyTorch*, *Designing Machine Learning Systems*, *Pattern Recognition and Machine Learning*, *Machine Learning Engineering in Action*, etc.).
 - **Inteligencia Artificial & LLMs**: 32 textos de vanguardia (*Artificial Intelligence: A Modern Approach*, *Transformers in Action*, *What is LLMOps*, *Prompt Engineering for LLMs*, *Generative AI and LLMs for Dummies*, etc.).
 - **Visual Analytics, BI & Storytelling**: 21 libros (*Mastering Tableau 2026*, *Storytelling with Data*, *The Definitive Guide to DAX (Ferrari & Russo)*, *Power Query Cookbook*, *Microsoft Power BI Visual Calculations*, etc.).
+- **Cloud Architecture, Databricks, MLOps & Trabajo de Grado**: 28 libros de referencia (*Data Engineering with Databricks*, *Databricks Data Intelligence Platform 2E*, *AWS Certified Cloud Practitioner*, *AWS Certified AI Practitioner*, *Data Engineering with Azure Databricks*, *Data Science Solutions on Azure*, *Implementing MLOps in the Enterprise*, *Machine Learning Design Patterns*, *Design and Analysis of Experiments*, etc.).
 
 ### 🎬 Video Clases y Tutoriales en YouTube
 Reproductor optimizado para máxima compatibilidad con enlaces directos:
@@ -63,7 +64,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 | **7** | **Big Data** | Semestre II | 🟢 **Activo (50 Cuadernos • Video Tutorial)** | [`Big Data/`](Big%20Data/) |
 | **8** | **Introducción a la Inteligencia Artificial** | Semestre II | 🟢 **Activo (50 Cuadernos • 32 Libros)** | [`Introduccion a la Inteligencia Artificial/`](Introduccion%20a%20la%20Inteligencia%20Artificial/) |
 | **9** | **Visual Analytics and Critical Thinking** | Semestre II | 🟢 **Activo (50 Cuadernos • 21 Libros)** | [`Visual Analytics and Critical Thinking/`](Visual%20Analytics%20and%20Critical%20Thinking/) |
-| **10** | **Trabajo de Grado 1** | Semestre II | 🟢 **Activo (Cuadernos MLOps • Video Tutorial)** | [`Trabajo de grado 1/`](Trabajo%20de%20grado%201/) |
+| **10** | **Trabajo de Grado 1** | Semestre II | 🟢 **Activo (Cuadernos MLOps • 28 Libros • 2 Guías PDF • Video Tutorial)** | [`Trabajo de grado 1/`](Trabajo%20de%20grado%201/) |
 
 ---
 

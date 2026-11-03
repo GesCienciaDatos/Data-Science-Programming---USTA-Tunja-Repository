@@ -34,7 +34,7 @@ El módulo **no** repite lo que ya existe en el repositorio, lo **enlaza**: *Spa
 ---
 
 ### 📝 2. Taller Práctico Evaluativo (*Hands-On*):
-* [**../homeworks/03_Analitica_Visualizacion_Hands_On.ipynb**](../homeworks/03_Analitica_Visualizacion_Hands_On.ipynb): Taller evaluativo que integra analítica a escala, visualización y *storytelling* en ejercicios prácticos *(el cuaderno se publica aparte)*.
+* [**../homeworks/03_Analitica_Visualizacion_Hands_On.ipynb**](../homeworks/03_Analitica_Visualizacion_Hands_On.ipynb): Taller evaluativo que integra analítica a escala, visualización y *storytelling* en ejercicios prácticos.
 
 ---
 
