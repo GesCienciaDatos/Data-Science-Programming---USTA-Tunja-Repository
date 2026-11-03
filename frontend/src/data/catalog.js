@@ -5569,7 +5569,7 @@ export const CATALOG_DATA = {
       ],
       "guias": [
         {
-          "id": "guia_1",
+          "id": "data-science-programming_guia_1",
           "filename": "Creacion_VENV.pdf",
           "title": "Guía de Creación de Entornos Virtuales (VENV)",
           "module": "🐍 Módulo 01: Python",
@@ -5579,7 +5579,7 @@ export const CATALOG_DATA = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
         },
         {
-          "id": "guia_2",
+          "id": "data-science-programming_guia_2",
           "filename": "Instalacion_Python.pdf",
           "title": "Guía de Instalación y Configuración de Python",
           "module": "🐍 Módulo 01: Python",
@@ -18809,25 +18809,146 @@ export const CATALOG_DATA = {
           ]
         }
       ],
-      "guias": [],
+      "guias": [
+        {
+          "id": "trabajo-de-grado-1_guia_1",
+          "filename": "guia_databricks_aws.pdf",
+          "title": "Guía Práctica: Databricks en AWS y Data Lakehouse S3",
+          "module": "☁️ Módulo 02: AWS Databricks y S3",
+          "size_str": "6.3 MB",
+          "path": "Guias/guia_databricks_aws.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_databricks_aws.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_aws.pdf"
+        },
+        {
+          "id": "trabajo-de-grado-1_guia_2",
+          "filename": "guia_databricks_free_edition.pdf",
+          "title": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
+          "module": "🧱 Módulo 01: Databricks Community",
+          "size_str": "3.6 MB",
+          "path": "Guias/guia_databricks_free_edition.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_databricks_free_edition.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_free_edition.pdf"
+        }
+      ],
       "videos": [
         {
-          "id": "vid_1",
+          "id": "vid_tg1_databricks",
           "filename": "Databricks_Tutorial.mp4",
           "title": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
-          "module": "🐍 Módulo 01: Python",
-          "size_mb": 69.8,
-          "path": "Contenido/Databricks_Tutorial.mp4",
+          "module": "🧱 Módulo 01: Databricks Standalone y MLOps",
+          "size_mb": 70.0,
+          "path": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
           "youtube_id": "B-8HK8GJfZM",
           "youtube_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
           "embed_url": "https://www.youtube.com/embed/B-8HK8GJfZM",
           "thumbnail": "https://img.youtube.com/vi/B-8HK8GJfZM/hqdefault.jpg",
-          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Databricks_Tutorial.mp4",
-          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Databricks_Tutorial.mp4",
-          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Databricks_Tutorial.mp4"
+          "lfs_url": "",
+          "raw_url": "",
+          "github_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM"
         }
       ],
-      "books": [],
+      "books": [
+        {
+          "id": "book_trabajo-de-grado-1_1",
+          "course_id": "trabajo-de-grado-1",
+          "course_name": "Trabajo de grado 1",
+          "subject": "Python",
+          "title": "Advanced Data Engineering With Databricks",
+          "filename": "advanced-data-engineering-with-databricks.pdf",
+          "subtitle": "Biblioteca Digital USTA — Python",
+          "author": "Referencia Académica",
+          "publisher": "Editorial Especializada",
+          "year": "2024",
+          "edition": "PDF Completo",
+          "size_mb": "4.0 MB",
+          "cover_image": "",
+          "has_cover_image": false,
+          "category": "Ciencia de Datos & Análisis",
+          "level": "Intermedio",
+          "dummies_friendly": false,
+          "summary_dummies": "Texto de referencia 'Advanced Data Engineering With Databricks' disponible en PDF completo (4.0 MB) para consulta y descarga directa.",
+          "topics": [
+            "Python",
+            "Data Science",
+            "Analítica"
+          ],
+          "cover_gradient": "from-teal-600 via-slate-700 to-slate-950",
+          "cover_bg": "#0f766e",
+          "accent_color": "#14b8a6",
+          "icon": "📘",
+          "download_url": "Libros/Python/advanced-data-engineering-with-databricks.pdf",
+          "pdf_url": "Libros/Python/advanced-data-engineering-with-databricks.pdf",
+          "has_local_pdf": true,
+          "local_pdf_path": "Libros/Python/advanced-data-engineering-with-databricks.pdf"
+        },
+        {
+          "id": "book_trabajo-de-grado-1_2",
+          "course_id": "trabajo-de-grado-1",
+          "course_name": "Trabajo de grado 1",
+          "subject": "Python",
+          "title": "Big Book Data Engineering",
+          "filename": "big-book-data-engineering.pdf",
+          "subtitle": "Biblioteca Digital USTA — Python",
+          "author": "Referencia Académica",
+          "publisher": "Editorial Especializada",
+          "year": "2024",
+          "edition": "PDF Completo",
+          "size_mb": "20.2 MB",
+          "cover_image": "",
+          "has_cover_image": false,
+          "category": "Ciencia de Datos & Análisis",
+          "level": "Intermedio",
+          "dummies_friendly": false,
+          "summary_dummies": "Texto de referencia 'Big Book Data Engineering' disponible en PDF completo (20.2 MB) para consulta y descarga directa.",
+          "topics": [
+            "Python",
+            "Data Science",
+            "Analítica"
+          ],
+          "cover_gradient": "from-teal-600 via-slate-700 to-slate-950",
+          "cover_bg": "#0f766e",
+          "accent_color": "#14b8a6",
+          "icon": "📘",
+          "download_url": "Libros/Python/big-book-data-engineering.pdf",
+          "pdf_url": "Libros/Python/big-book-data-engineering.pdf",
+          "has_local_pdf": true,
+          "local_pdf_path": "Libros/Python/big-book-data-engineering.pdf"
+        },
+        {
+          "id": "book_trabajo-de-grado-1_3",
+          "course_id": "trabajo-de-grado-1",
+          "course_name": "Trabajo de grado 1",
+          "subject": "Python",
+          "title": "The Data Lakehouse Dummies 2nd Databricksse",
+          "filename": "the-data-lakehouse-dummies-2nd-databricksse.pdf",
+          "subtitle": "Biblioteca Digital USTA — Python",
+          "author": "Referencia Académica",
+          "publisher": "Editorial Especializada",
+          "year": "2024",
+          "edition": "PDF Completo",
+          "size_mb": "3.7 MB",
+          "cover_image": "",
+          "has_cover_image": false,
+          "category": "Ciencia de Datos & Análisis",
+          "level": "Intermedio",
+          "dummies_friendly": true,
+          "summary_dummies": "Texto de referencia 'The Data Lakehouse Dummies 2nd Databricksse' disponible en PDF completo (3.7 MB) para consulta y descarga directa.",
+          "topics": [
+            "Python",
+            "Data Science",
+            "Analítica"
+          ],
+          "cover_gradient": "from-teal-600 via-slate-700 to-slate-950",
+          "cover_bg": "#0f766e",
+          "accent_color": "#14b8a6",
+          "icon": "📘",
+          "download_url": "Libros/Python/the-data-lakehouse-dummies-2nd-databricksse.pdf",
+          "pdf_url": "Libros/Python/the-data-lakehouse-dummies-2nd-databricksse.pdf",
+          "has_local_pdf": true,
+          "local_pdf_path": "Libros/Python/the-data-lakehouse-dummies-2nd-databricksse.pdf"
+        }
+      ],
       "stats": {
         "total_notebooks": 3,
         "total_standard_notebooks": 3,
@@ -18835,9 +18956,9 @@ export const CATALOG_DATA = {
         "total_modules": 3,
         "total_homeworks": 0,
         "total_datasets": 1,
-        "total_guias": 0,
+        "total_guias": 2,
         "total_videos": 1,
-        "total_books": 0
+        "total_books": 3
       }
     }
   ],
@@ -25683,7 +25804,7 @@ export const CATALOG_DATA = {
   ],
   "guias": [
     {
-      "id": "guia_1",
+      "id": "data-science-programming_guia_1",
       "filename": "Creacion_VENV.pdf",
       "title": "Guía de Creación de Entornos Virtuales (VENV)",
       "module": "🐍 Módulo 01: Python",
@@ -25693,7 +25814,7 @@ export const CATALOG_DATA = {
       "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
     },
     {
-      "id": "guia_2",
+      "id": "data-science-programming_guia_2",
       "filename": "Instalacion_Python.pdf",
       "title": "Guía de Instalación y Configuración de Python",
       "module": "🐍 Módulo 01: Python",
@@ -25701,6 +25822,48 @@ export const CATALOG_DATA = {
       "path": "Guias/Instalacion_Python.pdf",
       "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Instalacion_Python.pdf",
       "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
+    }
+  ],
+  "all_guias": [
+    {
+      "id": "data-science-programming_guia_1",
+      "filename": "Creacion_VENV.pdf",
+      "title": "Guía de Creación de Entornos Virtuales (VENV)",
+      "module": "🐍 Módulo 01: Python",
+      "size_str": "179 KB",
+      "path": "Guias/Creacion_VENV.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Creacion_VENV.pdf",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Creacion_VENV.pdf"
+    },
+    {
+      "id": "data-science-programming_guia_2",
+      "filename": "Instalacion_Python.pdf",
+      "title": "Guía de Instalación y Configuración de Python",
+      "module": "🐍 Módulo 01: Python",
+      "size_str": "878 KB",
+      "path": "Guias/Instalacion_Python.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Science%20programming/Guias/Instalacion_Python.pdf",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/Instalacion_Python.pdf"
+    },
+    {
+      "id": "trabajo-de-grado-1_guia_1",
+      "filename": "guia_databricks_aws.pdf",
+      "title": "Guía Práctica: Databricks en AWS y Data Lakehouse S3",
+      "module": "☁️ Módulo 02: AWS Databricks y S3",
+      "size_str": "6.3 MB",
+      "path": "Guias/guia_databricks_aws.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_databricks_aws.pdf",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_aws.pdf"
+    },
+    {
+      "id": "trabajo-de-grado-1_guia_2",
+      "filename": "guia_databricks_free_edition.pdf",
+      "title": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
+      "module": "🧱 Módulo 01: Databricks Community",
+      "size_str": "3.6 MB",
+      "path": "Guias/guia_databricks_free_edition.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_databricks_free_edition.pdf",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_free_edition.pdf"
     }
   ],
   "books": [
@@ -30265,6 +30428,105 @@ export const CATALOG_DATA = {
       "pdf_url": "Libros/Visual%20Analytics/Visual%20Analytics%20Using%20Tableau%20-%20Sulabh%20Bhatt.pdf",
       "has_local_pdf": true,
       "local_pdf_path": "Libros/Visual Analytics/Visual Analytics Using Tableau - Sulabh Bhatt.pdf"
+    },
+    {
+      "id": "book_trabajo-de-grado-1_1",
+      "course_id": "trabajo-de-grado-1",
+      "course_name": "Trabajo de grado 1",
+      "subject": "Python",
+      "title": "Advanced Data Engineering With Databricks",
+      "filename": "advanced-data-engineering-with-databricks.pdf",
+      "subtitle": "Biblioteca Digital USTA — Python",
+      "author": "Referencia Académica",
+      "publisher": "Editorial Especializada",
+      "year": "2024",
+      "edition": "PDF Completo",
+      "size_mb": "4.0 MB",
+      "cover_image": "",
+      "has_cover_image": false,
+      "category": "Ciencia de Datos & Análisis",
+      "level": "Intermedio",
+      "dummies_friendly": false,
+      "summary_dummies": "Texto de referencia 'Advanced Data Engineering With Databricks' disponible en PDF completo (4.0 MB) para consulta y descarga directa.",
+      "topics": [
+        "Python",
+        "Data Science",
+        "Analítica"
+      ],
+      "cover_gradient": "from-teal-600 via-slate-700 to-slate-950",
+      "cover_bg": "#0f766e",
+      "accent_color": "#14b8a6",
+      "icon": "📘",
+      "download_url": "Libros/Python/advanced-data-engineering-with-databricks.pdf",
+      "pdf_url": "Libros/Python/advanced-data-engineering-with-databricks.pdf",
+      "has_local_pdf": true,
+      "local_pdf_path": "Libros/Python/advanced-data-engineering-with-databricks.pdf"
+    },
+    {
+      "id": "book_trabajo-de-grado-1_2",
+      "course_id": "trabajo-de-grado-1",
+      "course_name": "Trabajo de grado 1",
+      "subject": "Python",
+      "title": "Big Book Data Engineering",
+      "filename": "big-book-data-engineering.pdf",
+      "subtitle": "Biblioteca Digital USTA — Python",
+      "author": "Referencia Académica",
+      "publisher": "Editorial Especializada",
+      "year": "2024",
+      "edition": "PDF Completo",
+      "size_mb": "20.2 MB",
+      "cover_image": "",
+      "has_cover_image": false,
+      "category": "Ciencia de Datos & Análisis",
+      "level": "Intermedio",
+      "dummies_friendly": false,
+      "summary_dummies": "Texto de referencia 'Big Book Data Engineering' disponible en PDF completo (20.2 MB) para consulta y descarga directa.",
+      "topics": [
+        "Python",
+        "Data Science",
+        "Analítica"
+      ],
+      "cover_gradient": "from-teal-600 via-slate-700 to-slate-950",
+      "cover_bg": "#0f766e",
+      "accent_color": "#14b8a6",
+      "icon": "📘",
+      "download_url": "Libros/Python/big-book-data-engineering.pdf",
+      "pdf_url": "Libros/Python/big-book-data-engineering.pdf",
+      "has_local_pdf": true,
+      "local_pdf_path": "Libros/Python/big-book-data-engineering.pdf"
+    },
+    {
+      "id": "book_trabajo-de-grado-1_3",
+      "course_id": "trabajo-de-grado-1",
+      "course_name": "Trabajo de grado 1",
+      "subject": "Python",
+      "title": "The Data Lakehouse Dummies 2nd Databricksse",
+      "filename": "the-data-lakehouse-dummies-2nd-databricksse.pdf",
+      "subtitle": "Biblioteca Digital USTA — Python",
+      "author": "Referencia Académica",
+      "publisher": "Editorial Especializada",
+      "year": "2024",
+      "edition": "PDF Completo",
+      "size_mb": "3.7 MB",
+      "cover_image": "",
+      "has_cover_image": false,
+      "category": "Ciencia de Datos & Análisis",
+      "level": "Intermedio",
+      "dummies_friendly": true,
+      "summary_dummies": "Texto de referencia 'The Data Lakehouse Dummies 2nd Databricksse' disponible en PDF completo (3.7 MB) para consulta y descarga directa.",
+      "topics": [
+        "Python",
+        "Data Science",
+        "Analítica"
+      ],
+      "cover_gradient": "from-teal-600 via-slate-700 to-slate-950",
+      "cover_bg": "#0f766e",
+      "accent_color": "#14b8a6",
+      "icon": "📘",
+      "download_url": "Libros/Python/the-data-lakehouse-dummies-2nd-databricksse.pdf",
+      "pdf_url": "Libros/Python/the-data-lakehouse-dummies-2nd-databricksse.pdf",
+      "has_local_pdf": true,
+      "local_pdf_path": "Libros/Python/the-data-lakehouse-dummies-2nd-databricksse.pdf"
     }
   ],
   "all_videos": [
@@ -30329,19 +30591,19 @@ export const CATALOG_DATA = {
       "github_url": "https://youtu.be/8RifWTEWBOI"
     },
     {
-      "id": "vid_1",
+      "id": "vid_tg1_databricks",
       "filename": "Databricks_Tutorial.mp4",
       "title": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
-      "module": "🐍 Módulo 01: Python",
-      "size_mb": 69.8,
-      "path": "Contenido/Databricks_Tutorial.mp4",
+      "module": "🧱 Módulo 01: Databricks Standalone y MLOps",
+      "size_mb": 70.0,
+      "path": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
       "youtube_id": "B-8HK8GJfZM",
       "youtube_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM",
       "embed_url": "https://www.youtube.com/embed/B-8HK8GJfZM",
       "thumbnail": "https://img.youtube.com/vi/B-8HK8GJfZM/hqdefault.jpg",
-      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Databricks_Tutorial.mp4",
-      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Contenido/Databricks_Tutorial.mp4",
-      "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/docs/Contenido/Databricks_Tutorial.mp4"
+      "lfs_url": "",
+      "raw_url": "",
+      "github_url": "https://www.youtube.com/watch?v=B-8HK8GJfZM"
     }
   ]
 };

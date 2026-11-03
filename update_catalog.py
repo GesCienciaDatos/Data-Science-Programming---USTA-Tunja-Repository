@@ -775,6 +775,8 @@ KNOWN_TITLES = {
     "Instalacion_Python.pdf": "Guía de Instalación y Configuración de Python",
     "Instalación_Python.pdf": "Guía de Instalación y Configuración de Python",
     "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)",
+    "guia_databricks_aws.pdf": "Guía Práctica: Databricks en AWS y Data Lakehouse S3",
+    "guia_databricks_free_edition.pdf": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
     "Instalacion_WSL2_y_Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
     "Instalacion WSL2 y Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
     "Instalacion_Power_BI.mp4": "Instalación y Configuración de Power BI",
@@ -951,7 +953,7 @@ COURSE_EXTRA_VIDEOS = {
     ]
 }
 
-ACRONYMS = {"ia", "ai", "eda", "knn", "pca", "cnf", "dfs", "bfs", "gbfs", "gps", "etl", "csv", "json", "pdf", "sql", "svm", "mlp", "mcar", "mar", "mnar", "ols", "auc", "roc", "cart", "kdd", "crisp-dm", "nlp", "llm", "llms", "genai", "cv"}
+ACRONYMS = {"ia", "ai", "eda", "knn", "pca", "cnf", "dfs", "bfs", "gbfs", "gps", "etl", "csv", "json", "pdf", "sql", "svm", "mlp", "mcar", "mar", "mnar", "ols", "auc", "roc", "cart", "kdd", "crisp-dm", "nlp", "llm", "llms", "genai", "cv", "aws", "s3"}
 LOWERCASE_WORDS = {"de", "la", "el", "los", "las", "en", "y", "del", "al", "para", "por", "con", "un", "una", "unos", "unas", "o", "a", "vs"}
 
 def format_title(filename):
@@ -982,7 +984,7 @@ def infer_difficulty(title, path):
     return "Intermedio"
 
 def sync_course_assets(course_id, course_folder_name, course_dir):
-    """Sincroniza Guias/, Contenido/ y Libros/ del curso hacia docs/"""
+    """Sincroniza Guias/, Contenido/ y Libros/ del curso hacia docs/ y frontend/public/"""
     for folder_name in ["Guias", "Contenido"]:
         src = course_dir / folder_name
         dest = DOCS_DIR / folder_name
@@ -996,6 +998,20 @@ def sync_course_assets(course_id, course_folder_name, course_dir):
                     if not target_file.exists() or target_file.stat().st_mtime < item.stat().st_mtime:
                         shutil.copy2(item, target_file)
                         print(f"  [SYNC] Copiado: {item.name} -> docs/{folder_name}/{rel}")
+
+        # Sincronización a frontend/public/Guias para soporte de build Vite
+        if folder_name == "Guias":
+            fe_public_dest = BASE_DIR / "frontend" / "public" / "Guias"
+            fe_public_dest.mkdir(parents=True, exist_ok=True)
+            if src.exists() and src.is_dir():
+                for item in src.rglob("*"):
+                    if item.is_file():
+                        rel = item.relative_to(src)
+                        target_fe = fe_public_dest / rel
+                        target_fe.parent.mkdir(parents=True, exist_ok=True)
+                        if not target_fe.exists() or target_fe.stat().st_mtime < item.stat().st_mtime:
+                            shutil.copy2(item, target_fe)
+                            print(f"  [SYNC] Copiado: {item.name} -> frontend/public/Guias/{rel}")
 
     src_libros = course_dir / "Libros"
     if src_libros.exists() and src_libros.is_dir():
@@ -3618,7 +3634,7 @@ def scan_course_datasets(course_folder_name, course_dir, course_name=""):
 
     return datasets
 
-def scan_course_guias(course_folder_name, course_dir):
+def scan_course_guias(course_id, course_folder_name, course_dir):
     guias_dir = course_dir / "Guias"
     if not guias_dir.exists():
         return []
@@ -3631,11 +3647,27 @@ def scan_course_guias(course_folder_name, course_dir):
         title = format_title(f.name)
         encoded_name = urllib.parse.quote(f.name)
 
+        # Asignación contextual de módulo según el archivo y el curso
+        fname_lower = f.name.lower()
+        if course_id == "data-science-programming":
+            module_name = "🐍 Módulo 01: Python"
+        elif course_id == "trabajo-de-grado-1":
+            if "free_edition" in fname_lower or "community" in fname_lower:
+                module_name = "🧱 Módulo 01: Databricks Community"
+            elif "aws" in fname_lower or "s3" in fname_lower:
+                module_name = "☁️ Módulo 02: AWS Databricks y S3"
+            elif "azure" in fname_lower:
+                module_name = "🔷 Módulo 03: Azure Databricks"
+            else:
+                module_name = "🎓 Trabajo de Grado 1"
+        else:
+            module_name = f"📘 {course_folder_name}"
+
         guias.append({
-            "id": f"guia_{idx}",
+            "id": f"{course_id}_guia_{idx}",
             "filename": f.name,
             "title": title,
-            "module": "🐍 Módulo 01: Python",
+            "module": module_name,
             "size_str": size_str,
             "path": f"Guias/{f.name}",
             "raw_url": f"https://raw.githubusercontent.com/{REPO_OWNER}/{REPO_NAME}/{BRANCH}/{urllib.parse.quote(course_folder_name)}/Guias/{encoded_name}",
@@ -3834,7 +3866,7 @@ def rebuild_catalog_js():
             modules = scan_course_modules(c_dir, default_mods)
             notebooks = scan_course_notebooks(c_folder, c_dir, modules, course_name=c_name)
             datasets = scan_course_datasets(c_folder, c_dir, course_name=c_name)
-            guias = scan_course_guias(c_folder, c_dir)
+            guias = scan_course_guias(c_id, c_folder, c_dir)
             videos = scan_course_videos(c_folder, c_dir, course_id=c_id)
             books = scan_course_books(c_id, c_folder, c_dir)
         else:
@@ -3887,15 +3919,17 @@ def rebuild_catalog_js():
     # Crear enlaces simbólicos para frontend/public/Libros para soporte de Vite dev
     pub_libros_dir = BASE_DIR / "frontend" / "public" / "Libros"
     pub_libros_dir.mkdir(parents=True, exist_ok=True)
-    for sub in ["Data Mining", "Machine Learning", "Visual Analytics", "Inteligencia Artificial"]:
-        target = DOCS_DIR / "Libros" / sub
-        link = pub_libros_dir / sub
-        if target.exists() and not link.exists():
-            try:
-                rel_target = os.path.relpath(target, pub_libros_dir)
-                link.symlink_to(rel_target)
-            except Exception:
-                pass
+    if (DOCS_DIR / "Libros").exists():
+        for item in (DOCS_DIR / "Libros").iterdir():
+            if item.is_dir():
+                target = item
+                link = pub_libros_dir / item.name
+                if target.exists() and not link.exists():
+                    try:
+                        rel_target = os.path.relpath(target, pub_libros_dir)
+                        link.symlink_to(rel_target)
+                    except Exception:
+                        pass
 
     catalog_data = {
         "active_course_id": active_course_data["id"] if active_course_data else "data-science-programming",
@@ -3906,6 +3940,7 @@ def rebuild_catalog_js():
         "stats": active_course_data["stats"] if active_course_data else {},
         "videos": active_course_data["videos"] if active_course_data else [],
         "guias": active_course_data["guias"] if active_course_data else [],
+        "all_guias": [g for c in courses_output for g in c.get("guias", [])],
         "books": active_course_data["books"] if active_course_data else [],
         "all_books": all_specialization_books,
         "all_videos": [v for c in courses_output for v in c.get("videos", [])]
