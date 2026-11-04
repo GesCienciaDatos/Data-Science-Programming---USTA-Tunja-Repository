@@ -50,6 +50,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 - ⚡ **Instalación y Configuración de WSL2 y Docker (Big Data)**: [Ver en YouTube](https://youtu.be/nPWZi9Plljo)
 - 🧱 **Tutorial Databricks Community Edition, MLflow y MLOps (Trabajo de Grado 1)**: [Ver en YouTube](https://www.youtube.com/watch?v=B-8HK8GJfZM)
 - ☁️ **Tutorial Databricks en AWS: Data Lakehouse S3, IAM y Despliegue Cloud (Trabajo de Grado 1)**: [Ver en YouTube](https://youtu.be/bnK78l0DeZc)
+- 🔷 **Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking (Trabajo de Grado 1)**: [Ver en YouTube](https://youtu.be/OBnE-UgaoUU)
 
 ---
 
@@ -66,7 +67,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 | **7** | **Big Data** | Semestre II | 🟢 **Activo (50 Cuadernos • Video Tutorial)** | [`Big Data/`](Big%20Data/) |
 | **8** | **Introducción a la Inteligencia Artificial** | Semestre II | 🟢 **Activo (50 Cuadernos • 32 Libros)** | [`Introduccion a la Inteligencia Artificial/`](Introduccion%20a%20la%20Inteligencia%20Artificial/) |
 | **9** | **Visual Analytics and Critical Thinking** | Semestre II | 🟢 **Activo (50 Cuadernos • 21 Libros)** | [`Visual Analytics and Critical Thinking/`](Visual%20Analytics%20and%20Critical%20Thinking/) |
-| **10** | **Trabajo de Grado 1** | Semestre II | 🟢 **Activo (Cuadernos MLOps • 28 Libros • 2 Guías PDF • 2 Video Tutoriales)** | [`Trabajo de grado 1/`](Trabajo%20de%20grado%201/) |
+| **10** | **Trabajo de Grado 1** | Semestre II | 🟢 **Activo (Cuadernos MLOps • 28 Libros • 3 Guías PDF • 3 Video Tutoriales)** | [`Trabajo de grado 1/`](Trabajo%20de%20grado%201/) |
 
 ---
 

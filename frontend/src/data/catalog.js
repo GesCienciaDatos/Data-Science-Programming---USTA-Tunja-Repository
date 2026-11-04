@@ -19583,6 +19583,16 @@ export const CATALOG_DATA = {
       "guias": [
         {
           "id": "trabajo-de-grado-1_guia_1",
+          "filename": "guia_azure_databricks.pdf",
+          "title": "Guía Práctica: Azure Databricks y Regularización SVM con MLflow",
+          "module": "🔷 Módulo 03: Azure Databricks",
+          "size_str": "3.4 MB",
+          "path": "Guias/guia_azure_databricks.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_azure_databricks.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_azure_databricks.pdf"
+        },
+        {
+          "id": "trabajo-de-grado-1_guia_2",
           "filename": "guia_databricks_aws.pdf",
           "title": "Guía Práctica: Databricks en AWS y Data Lakehouse S3",
           "module": "☁️ Módulo 02: AWS Databricks y S3",
@@ -19592,7 +19602,7 @@ export const CATALOG_DATA = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_aws.pdf"
         },
         {
-          "id": "trabajo-de-grado-1_guia_2",
+          "id": "trabajo-de-grado-1_guia_3",
           "filename": "guia_databricks_free_edition.pdf",
           "title": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
           "module": "🧱 Módulo 01: Databricks Community",
@@ -19632,6 +19642,21 @@ export const CATALOG_DATA = {
           "lfs_url": "",
           "raw_url": "",
           "github_url": "https://youtu.be/bnK78l0DeZc"
+        },
+        {
+          "id": "vid_tg1_azure_databricks",
+          "filename": "Azure_Databricks.mp4",
+          "title": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking",
+          "module": "🔷 Módulo 03: Azure Databricks y MLOps Cloud",
+          "size_mb": 90.0,
+          "path": "https://youtu.be/OBnE-UgaoUU",
+          "youtube_id": "OBnE-UgaoUU",
+          "youtube_url": "https://youtu.be/OBnE-UgaoUU",
+          "embed_url": "https://www.youtube.com/embed/OBnE-UgaoUU",
+          "thumbnail": "https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg",
+          "lfs_url": "",
+          "raw_url": "",
+          "github_url": "https://youtu.be/OBnE-UgaoUU"
         }
       ],
       "books": [
@@ -20567,8 +20592,8 @@ export const CATALOG_DATA = {
         "total_modules": 3,
         "total_homeworks": 0,
         "total_datasets": 1,
-        "total_guias": 2,
-        "total_videos": 2,
+        "total_guias": 3,
+        "total_videos": 3,
         "total_books": 28
       }
     }
@@ -27458,6 +27483,16 @@ export const CATALOG_DATA = {
     },
     {
       "id": "trabajo-de-grado-1_guia_1",
+      "filename": "guia_azure_databricks.pdf",
+      "title": "Guía Práctica: Azure Databricks y Regularización SVM con MLflow",
+      "module": "🔷 Módulo 03: Azure Databricks",
+      "size_str": "3.4 MB",
+      "path": "Guias/guia_azure_databricks.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_azure_databricks.pdf",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_azure_databricks.pdf"
+    },
+    {
+      "id": "trabajo-de-grado-1_guia_2",
       "filename": "guia_databricks_aws.pdf",
       "title": "Guía Práctica: Databricks en AWS y Data Lakehouse S3",
       "module": "☁️ Módulo 02: AWS Databricks y S3",
@@ -27467,7 +27502,7 @@ export const CATALOG_DATA = {
       "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_aws.pdf"
     },
     {
-      "id": "trabajo-de-grado-1_guia_2",
+      "id": "trabajo-de-grado-1_guia_3",
       "filename": "guia_databricks_free_edition.pdf",
       "title": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
       "module": "🧱 Módulo 01: Databricks Community",
@@ -33825,6 +33860,21 @@ export const CATALOG_DATA = {
       "lfs_url": "",
       "raw_url": "",
       "github_url": "https://youtu.be/bnK78l0DeZc"
+    },
+    {
+      "id": "vid_tg1_azure_databricks",
+      "filename": "Azure_Databricks.mp4",
+      "title": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking",
+      "module": "🔷 Módulo 03: Azure Databricks y MLOps Cloud",
+      "size_mb": 90.0,
+      "path": "https://youtu.be/OBnE-UgaoUU",
+      "youtube_id": "OBnE-UgaoUU",
+      "youtube_url": "https://youtu.be/OBnE-UgaoUU",
+      "embed_url": "https://www.youtube.com/embed/OBnE-UgaoUU",
+      "thumbnail": "https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg",
+      "lfs_url": "",
+      "raw_url": "",
+      "github_url": "https://youtu.be/OBnE-UgaoUU"
     }
   ]
 };

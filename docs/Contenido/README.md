@@ -31,3 +31,22 @@
 3. Configuración de roles IAM y políticas de acceso para integración segura con Databricks.
 4. Persistencia de datasets analíticos en formato Delta Lake con consistencia transaccional ACID.
 5. Experiment tracking y versionamiento con MLflow en entorno cloud de alto rendimiento.
+
+---
+
+## 🎬 Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking
+
+* **Enlace oficial de YouTube:** [https://youtu.be/OBnE-UgaoUU](https://youtu.be/OBnE-UgaoUU)
+* **Título:** Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking
+* **Autor / Canal:** Gestor Virtual Ciencia de Datos USTA Tunja
+* **Duración:** ~15 minutos
+* **Resolución:** Full HD 1080p
+
+### Resumen del contenido:
+1. Activación de la suscripción Azure for Students y verificación académica con correo institucional USTA Tunja.
+2. Aprovisionamiento y despliegue del área de trabajo (Workspace) Azure Databricks desde Azure Portal.
+3. Creación y asignación de clústeres Single-Node y arquitectura de cómputo serverless en la nube.
+4. Importación del cuaderno interactivo `04_Experimento_ML_Azure_Databricks.ipynb` y carga del dataset biomédico.
+5. Ejecución del experimento de regularización con Support Vector Machines (SVM lineal y kernel RBF) para optimización del trade-off sesgo-varianza.
+6. Seguimiento integral (*experiment tracking*) de parámetros ($C$, kernel), métricas (Accuracy, Recall, AUC-ROC) y artefactos con MLflow.
+7. Registro formal en el Model Registry y directrices de seguridad y optimización de costos en Azure.

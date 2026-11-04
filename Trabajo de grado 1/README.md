@@ -11,8 +11,8 @@
   <img src="https://img.shields.io/badge/Topics-AWS%20S3%20%7C%20Azure%20%7C%20Delta%20Lake%20%7C%20MLflow-0ea5e9?style=for-the-badge" alt="Temas"/>
   <img src="https://img.shields.io/badge/Course-Trabajo%20de%20Grado%201-6366f1?style=for-the-badge" alt="Course"/>
   <img src="https://img.shields.io/badge/📚%20Biblioteca-28%20Libros%20de%20Referencia-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="28 Libros"/>
-  <img src="https://img.shields.io/badge/📖%20Guías%20PDF-2%20Documentos%20Oficiales-f59e0b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Guías PDF"/>
-  <img src="https://img.shields.io/badge/🎬%20YouTube-2%20Video%20Tutoriales-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="2 Videos"/>
+  <img src="https://img.shields.io/badge/📖%20Guías%20PDF-3%20Documentos%20Oficiales-f59e0b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Guías PDF"/>
+  <img src="https://img.shields.io/badge/🎬%20YouTube-3%20Video%20Tutoriales-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="3 Videos"/>
   <img src="https://img.shields.io/badge/Status-🟢%20100%25%20Completado-10b981?style=for-the-badge" alt="100% Completado"/>
 </p>
 
@@ -58,6 +58,20 @@ Como parte del material pedagógico del espacio académico, se encuentra disponi
 > 4. Pipeline de transformación y almacenamiento optimizado en formato Delta Lake / Parquet.
 > 5. Prácticas de gobernanza y experiment tracking en entorno de producción cloud.
 
+### 3. Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking
+* **Enlace directo:** [Ver en YouTube — Azure Databricks (OBnE-UgaoUU)](https://youtu.be/OBnE-UgaoUU)
+
+[![Tutorial Azure Databricks](https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg)](https://youtu.be/OBnE-UgaoUU)
+
+> **Contenido del Tutorial:**
+> 1. Activación de suscripción Azure for Students y verificación académica con correo institucional.
+> 2. Aprovisionamiento y despliegue del área de trabajo (Workspace) Azure Databricks en Azure Portal.
+> 3. Configuración de clústeres Single-Node y arquitectura de cómputo serverless en la nube.
+> 4. Importación del cuaderno interactivo y carga del conjunto de datos biomédico.
+> 5. Experimento de regularización con Máquinas de Vectores de Soporte (SVM lineal y kernel RBF).
+> 6. Seguimiento integral (*experiment tracking*) de parámetros, métricas y artefactos con MLflow.
+> 7. Registro de modelos en el Model Registry y buenas prácticas de optimización de costos en Azure.
+
 ---
 
 ## 📚 Estructura de Módulos y Cuadernos Interactivos
@@ -74,26 +88,30 @@ El repositorio organiza el ciclo de vida del proyecto en tres módulos práctico
 * **Cuaderno Interactivo:** [`02 - AWS Databricks y Lakehouse S3/03_DataLakehouse_AWS_S3_MLOps.ipynb`](./02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/03_DataLakehouse_AWS_S3_MLOps.ipynb)
 * **Script de Producción:** [`02 - AWS Databricks y Lakehouse S3/03_DataLakehouse_AWS_S3_MLOps.py`](./02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/03_DataLakehouse_AWS_S3_MLOps.py)
 * **Dataset de Práctica:** [`02 - AWS Databricks y Lakehouse S3/data/california_housing_raw.csv`](./02%20-%20AWS%20Databricks%20y%20Lakehouse%20S3/data/california_housing_raw.csv)
-* **Guía de Apoyo:** [`Guias/guia_databricks_aws.pdf`](./Guias/guia_databricks_aws.pdf) (6.3 MB)
+* **Guía de Apoyo PDF:** [`Guias/guia_databricks_aws.pdf`](./Guias/guia_databricks_aws.pdf) (6.3 MB)
+* **Guía Técnica Markdown:** [`Guias/guia_03_databricks_aws.md`](./Guias/guia_03_databricks_aws.md)
 * **Objetivo:** Conexión y persistencia en buckets de Amazon S3 como Data Lakehouse (capas raw, curated y models), orquestación en Databricks Serverless sobre AWS, evaluación de convergencia de hiperparámetros (`n_estimators`) frente a RMSE en el dataset California Housing.
 
 ### 🔷 Módulo 03: Microsoft Azure Databricks & Model Serving
 * **Cuaderno Interactivo:** [`03 - Azure Databricks y MLOps/04_Experimento_ML_Azure_Databricks.ipynb`](./03%20-%20Azure%20Databricks%20y%20MLOps/04_Experimento_ML_Azure_Databricks.ipynb)
 * **Script de Producción:** [`03 - Azure Databricks y MLOps/04_Experimento_ML_Azure_Databricks.py`](./03%20-%20Azure%20Databricks%20y%20MLOps/04_Experimento_ML_Azure_Databricks.py)
+* **Guía de Apoyo PDF:** [`Guias/guia_azure_databricks.pdf`](./Guias/guia_azure_databricks.pdf) (3.4 MB)
+* **Guía Técnica Markdown:** [`Guias/guia_04_azure_databricks.md`](./Guias/guia_04_azure_databricks.md)
 * **Objetivo:** Despliegue de analítica en Azure Databricks (recurso 1st-party autenticado con Microsoft Entra ID), almacenamiento en Azure Data Lake Storage Gen2 (ADLS Gen2), regularización con Support Vector Machines (SVM con kernel RBF) para optimización de sensibilidad clínica (*Recall*) y control de falsos negativos.
 
 ---
 
 ## 📖 Guías Prácticas Oficiales en PDF (`Guias/`)
 
-El espacio académico cuenta con **documentos técnicos oficiales en formato PDF** de alta fidelidad, con diagramas arquitectónicos, flujos paso a paso y códigos listos para producción:
+El espacio académico cuenta con **documentos técnicos oficiales en formato PDF** de alta fidelidad, complementados con guías de arquitectura en Markdown, diagramas interactivos y códigos listos para producción:
 
-| Documento | Título Oficial | Tamaño | Temas Tratados | Enlace Directo |
+| Documento | Título Oficial | Tamaño | Temas Tratados | Enlaces |
 |---|---|:---:|---|:---:|
-| 🧱 `guia_databricks_free_edition.pdf` | **Guía Práctica: Databricks Community Edition y Calidad de Vinos** | 3.7 MB | Creación de cuenta Community, configuración de clústeres serverless, persistencia en Delta Lake, experiment tracking con MLflow, registro en Model Registry. | [📄 Abrir PDF](./Guias/guia_databricks_free_edition.pdf) |
-| ☁️ `guia_databricks_aws.pdf` | **Guía Práctica: Databricks en AWS y Data Lakehouse S3** | 6.3 MB | Arquitectura AWS S3 por capas (raw/curated/models), roles y políticas IAM de seguridad, conexión Databricks-S3, orquestación serverless y monitoreo MLOps. | [📄 Abrir PDF](./Guias/guia_databricks_aws.pdf) |
+| 🧱 `guia_databricks_free_edition.pdf` | **Guía Práctica: Databricks Community Edition y Calidad de Vinos** | 3.7 MB | Creación de cuenta Community, configuración de clústeres serverless, persistencia en Delta Lake, experiment tracking con MLflow, registro en Model Registry. | [📄 PDF](./Guias/guia_databricks_free_edition.pdf) |
+| ☁️ `guia_databricks_aws.pdf` | **Guía Práctica: Databricks en AWS y Data Lakehouse S3** | 6.3 MB | Arquitectura AWS S3 por capas (raw/curated/models), roles y políticas IAM de seguridad, conexión Databricks-S3, orquestación serverless y monitoreo MLOps. | [📄 PDF](./Guias/guia_databricks_aws.pdf) • [📝 MD](./Guias/guia_03_databricks_aws.md) |
+| 🔷 `guia_azure_databricks.pdf` | **Guía Práctica: Azure Databricks y Regularización SVM con MLflow** | 3.4 MB | Activación de suscripción Azure for Students, aprovisionamiento de workspace Databricks, clústeres Single-Node, regularización SVM y tracking con MLflow. | [📄 PDF](./Guias/guia_azure_databricks.pdf) • [📝 MD](./Guias/guia_04_azure_databricks.md) |
 
-> 💡 **Visor Web Integrado:** Ambas guías cuentan con visor PDF interactivo incorporado en la [Plataforma Web del Laboratorio Virtual](https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/), permitiendo lectura en línea, zoom y descarga directa.
+> 💡 **Visor Web Integrado:** Las tres guías cuentan con visor PDF interactivo incorporado en la [Plataforma Web del Laboratorio Virtual](https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/), permitiendo lectura en línea, zoom y descarga directa.
 
 ---
 

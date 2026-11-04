@@ -777,6 +777,7 @@ KNOWN_TITLES = {
     "Creacion_VENV.pdf": "Guía de Creación de Entornos Virtuales (VENV)",
     "guia_databricks_aws.pdf": "Guía Práctica: Databricks en AWS y Data Lakehouse S3",
     "guia_databricks_free_edition.pdf": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
+    "guia_azure_databricks.pdf": "Guía Práctica: Azure Databricks y Regularización SVM con MLflow",
     "Instalacion_WSL2_y_Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
     "Instalacion WSL2 y Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
     "Instalacion_Power_BI.mp4": "Instalación y Configuración de Power BI",
@@ -787,10 +788,17 @@ KNOWN_TITLES = {
     "04_Experimento_ML_Azure_Databricks.ipynb": "Azure Databricks: Clasificación y Regularización SVM",
     "Databricks_Tutorial.mp4": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
     "Databricks_Free_Edition_final.mp4": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
-    "Databricks_en_AWS.mp4": "Tutorial Databricks en AWS: Data Lakehouse S3, IAM y Despliegue Cloud"
+    "Databricks_en_AWS.mp4": "Tutorial Databricks en AWS: Data Lakehouse S3, IAM y Despliegue Cloud",
+    "Azure_Databricks.mp4": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking"
 }
 
 KNOWN_YOUTUBE_VIDEOS = {
+    "azure_databricks.mp4": {
+        "youtube_id": "OBnE-UgaoUU",
+        "youtube_url": "https://youtu.be/OBnE-UgaoUU",
+        "embed_url": "https://www.youtube.com/embed/OBnE-UgaoUU",
+        "thumbnail": "https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg"
+    },
     "databricks_en_aws.mp4": {
         "youtube_id": "bnK78l0DeZc",
         "youtube_url": "https://youtu.be/bnK78l0DeZc",
@@ -954,6 +962,21 @@ COURSE_EXTRA_VIDEOS = {
             "lfs_url": "",
             "raw_url": "",
             "github_url": "https://youtu.be/bnK78l0DeZc"
+        },
+        {
+            "id": "vid_tg1_azure_databricks",
+            "filename": "Azure_Databricks.mp4",
+            "title": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking",
+            "module": "🔷 Módulo 03: Azure Databricks y MLOps Cloud",
+            "size_mb": 90.0,
+            "path": "https://youtu.be/OBnE-UgaoUU",
+            "youtube_id": "OBnE-UgaoUU",
+            "youtube_url": "https://youtu.be/OBnE-UgaoUU",
+            "embed_url": "https://www.youtube.com/embed/OBnE-UgaoUU",
+            "thumbnail": "https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://youtu.be/OBnE-UgaoUU"
         }
     ],
     "Trabajo de grado 1": [
@@ -986,6 +1009,21 @@ COURSE_EXTRA_VIDEOS = {
             "lfs_url": "",
             "raw_url": "",
             "github_url": "https://youtu.be/bnK78l0DeZc"
+        },
+        {
+            "id": "vid_tg1_azure_databricks",
+            "filename": "Azure_Databricks.mp4",
+            "title": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking",
+            "module": "🔷 Módulo 03: Azure Databricks y MLOps Cloud",
+            "size_mb": 90.0,
+            "path": "https://youtu.be/OBnE-UgaoUU",
+            "youtube_id": "OBnE-UgaoUU",
+            "youtube_url": "https://youtu.be/OBnE-UgaoUU",
+            "embed_url": "https://www.youtube.com/embed/OBnE-UgaoUU",
+            "thumbnail": "https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://youtu.be/OBnE-UgaoUU"
         }
     ]
 }
