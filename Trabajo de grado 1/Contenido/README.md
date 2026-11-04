@@ -50,3 +50,4 @@
 5. Ejecución del experimento de regularización con Support Vector Machines (SVM lineal y kernel RBF) para optimización del trade-off sesgo-varianza.
 6. Seguimiento integral (*experiment tracking*) de parámetros ($C$, kernel), métricas (Accuracy, Recall, AUC-ROC) y artefactos con MLflow.
 7. Registro formal en el Model Registry y directrices de seguridad y optimización de costos en Azure.
+
