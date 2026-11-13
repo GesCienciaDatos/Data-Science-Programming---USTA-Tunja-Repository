@@ -1,6 +1,6 @@
 # Guía de Laboratorio: Aprovisionamiento de Azure Databricks y Experimento de Regularización SVM con MLflow
 
-Esta guía técnica complementa el video tutorial oficial **[Azure Databricks](https://youtu.be/OBnE-UgaoUU)** y el documento oficial en PDF [`guia_azure_databricks.pdf`](./guia_azure_databricks.pdf), detallando el aprovisionamiento de un Workspace en Azure Cloud, configuración de clusters y ejecución del pipeline MLOps con seguimiento de experimentos en MLflow.
+Esta guía técnica complementa el video tutorial oficial **[Azure Databricks](https://youtu.be/5hjciCQzjQM)** y el documento oficial en PDF [`guia_azure_databricks.pdf`](./guia_azure_databricks.pdf), detallando el aprovisionamiento de un Workspace en Azure Cloud, configuración de clusters y ejecución del pipeline MLOps con seguimiento de experimentos en MLflow.
 
 ---
 
@@ -132,7 +132,7 @@ graph LR
 ---
 
 ## 📚 Enlaces y Referencias
-- **Video Tutorial en YouTube:** [Azure Databricks (OBnE-UgaoUU)](https://youtu.be/OBnE-UgaoUU)
+- **Video Tutorial en YouTube:** [Azure Databricks (5hjciCQzjQM)](https://youtu.be/5hjciCQzjQM)
 - **Documento PDF Oficial:** [`guias/guia_azure_databricks.pdf`](./guia_azure_databricks.pdf)
 - **Cuaderno del Experimento:** [`04_Experimento_ML_Azure_Databricks.ipynb`](../04_Experimento_ML_Azure_Databricks.ipynb)
 - **Documentación Oficial de Databricks:** [Azure Databricks Documentation](https://learn.microsoft.com/azure/databricks/)

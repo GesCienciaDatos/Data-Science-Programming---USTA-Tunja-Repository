@@ -794,10 +794,10 @@ KNOWN_TITLES = {
 
 KNOWN_YOUTUBE_VIDEOS = {
     "azure_databricks.mp4": {
-        "youtube_id": "OBnE-UgaoUU",
-        "youtube_url": "https://youtu.be/OBnE-UgaoUU",
-        "embed_url": "https://www.youtube.com/embed/OBnE-UgaoUU",
-        "thumbnail": "https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg"
+        "youtube_id": "5hjciCQzjQM",
+        "youtube_url": "https://youtu.be/5hjciCQzjQM",
+        "embed_url": "https://www.youtube.com/embed/5hjciCQzjQM",
+        "thumbnail": "https://img.youtube.com/vi/5hjciCQzjQM/hqdefault.jpg"
     },
     "databricks_en_aws.mp4": {
         "youtube_id": "bnK78l0DeZc",
@@ -969,14 +969,14 @@ COURSE_EXTRA_VIDEOS = {
             "title": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking",
             "module": "🔷 Módulo 03: Azure Databricks y MLOps Cloud",
             "size_mb": 90.0,
-            "path": "https://youtu.be/OBnE-UgaoUU",
-            "youtube_id": "OBnE-UgaoUU",
-            "youtube_url": "https://youtu.be/OBnE-UgaoUU",
-            "embed_url": "https://www.youtube.com/embed/OBnE-UgaoUU",
-            "thumbnail": "https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg",
+            "path": "https://youtu.be/5hjciCQzjQM",
+            "youtube_id": "5hjciCQzjQM",
+            "youtube_url": "https://youtu.be/5hjciCQzjQM",
+            "embed_url": "https://www.youtube.com/embed/5hjciCQzjQM",
+            "thumbnail": "https://img.youtube.com/vi/5hjciCQzjQM/hqdefault.jpg",
             "lfs_url": "",
             "raw_url": "",
-            "github_url": "https://youtu.be/OBnE-UgaoUU"
+            "github_url": "https://youtu.be/5hjciCQzjQM"
         }
     ],
     "Trabajo de grado 1": [
@@ -1016,14 +1016,14 @@ COURSE_EXTRA_VIDEOS = {
             "title": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking",
             "module": "🔷 Módulo 03: Azure Databricks y MLOps Cloud",
             "size_mb": 90.0,
-            "path": "https://youtu.be/OBnE-UgaoUU",
-            "youtube_id": "OBnE-UgaoUU",
-            "youtube_url": "https://youtu.be/OBnE-UgaoUU",
-            "embed_url": "https://www.youtube.com/embed/OBnE-UgaoUU",
-            "thumbnail": "https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg",
+            "path": "https://youtu.be/5hjciCQzjQM",
+            "youtube_id": "5hjciCQzjQM",
+            "youtube_url": "https://youtu.be/5hjciCQzjQM",
+            "embed_url": "https://www.youtube.com/embed/5hjciCQzjQM",
+            "thumbnail": "https://img.youtube.com/vi/5hjciCQzjQM/hqdefault.jpg",
             "lfs_url": "",
             "raw_url": "",
-            "github_url": "https://youtu.be/OBnE-UgaoUU"
+            "github_url": "https://youtu.be/5hjciCQzjQM"
         }
     ]
 }

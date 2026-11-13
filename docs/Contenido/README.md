@@ -36,7 +36,7 @@
 
 ## 🎬 Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking
 
-* **Enlace oficial de YouTube:** [https://youtu.be/OBnE-UgaoUU](https://youtu.be/OBnE-UgaoUU)
+* **Enlace oficial de YouTube:** [https://youtu.be/5hjciCQzjQM](https://youtu.be/5hjciCQzjQM)
 * **Título:** Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking
 * **Autor / Canal:** Gestor Virtual Ciencia de Datos USTA Tunja
 * **Duración:** ~15 minutos
@@ -50,3 +50,4 @@
 5. Ejecución del experimento de regularización con Support Vector Machines (SVM lineal y kernel RBF) para optimización del trade-off sesgo-varianza.
 6. Seguimiento integral (*experiment tracking*) de parámetros ($C$, kernel), métricas (Accuracy, Recall, AUC-ROC) y artefactos con MLflow.
 7. Registro formal en el Model Registry y directrices de seguridad y optimización de costos en Azure.
+

@@ -59,9 +59,9 @@ Como parte del material pedagógico del espacio académico, se encuentra disponi
 > 5. Prácticas de gobernanza y experiment tracking en entorno de producción cloud.
 
 ### 3. Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking
-* **Enlace directo:** [Ver en YouTube — Azure Databricks (OBnE-UgaoUU)](https://youtu.be/OBnE-UgaoUU)
+* **Enlace directo:** [Ver en YouTube — Azure Databricks (5hjciCQzjQM)](https://youtu.be/5hjciCQzjQM)
 
-[![Tutorial Azure Databricks](https://img.youtube.com/vi/OBnE-UgaoUU/hqdefault.jpg)](https://youtu.be/OBnE-UgaoUU)
+[![Tutorial Azure Databricks](https://img.youtube.com/vi/5hjciCQzjQM/hqdefault.jpg)](https://youtu.be/5hjciCQzjQM)
 
 > **Contenido del Tutorial:**
 > 1. Activación de suscripción Azure for Students y verificación académica con correo institucional.

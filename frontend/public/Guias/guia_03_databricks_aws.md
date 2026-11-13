@@ -162,3 +162,4 @@ print("✅ Conexión exitosa. Buckets disponibles:", [b['Name'] for b in respons
 
 1. **Control de Costos:** Al finalizar la sesión, desactive los recursos de cómputo en ejecución y asegúrese de que el bucket S3 contenga únicamente los datos esenciales para no exceder la capa gratuita.
 2. **Seguridad:** En caso de compartir el código o cuaderno, elimine las claves de acceso de AWS del historial de ejecución y revoque las credenciales en la consola de IAM si sospecha exposición.
+

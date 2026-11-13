@@ -36,7 +36,7 @@
 
 ## 🎬 Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking
 
-* **Enlace oficial de YouTube:** [https://youtu.be/OBnE-UgaoUU](https://youtu.be/OBnE-UgaoUU)
+* **Enlace oficial de YouTube:** [https://youtu.be/5hjciCQzjQM](https://youtu.be/5hjciCQzjQM)
 * **Título:** Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking
 * **Autor / Canal:** Gestor Virtual Ciencia de Datos USTA Tunja
 * **Duración:** ~15 minutos

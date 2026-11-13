@@ -50,7 +50,7 @@ Reproductor optimizado para máxima compatibilidad con enlaces directos:
 - ⚡ **Instalación y Configuración de WSL2 y Docker (Big Data)**: [Ver en YouTube](https://youtu.be/nPWZi9Plljo)
 - 🧱 **Tutorial Databricks Community Edition, MLflow y MLOps (Trabajo de Grado 1)**: [Ver en YouTube](https://www.youtube.com/watch?v=B-8HK8GJfZM)
 - ☁️ **Tutorial Databricks en AWS: Data Lakehouse S3, IAM y Despliegue Cloud (Trabajo de Grado 1)**: [Ver en YouTube](https://youtu.be/bnK78l0DeZc)
-- 🔷 **Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking (Trabajo de Grado 1)**: [Ver en YouTube](https://youtu.be/OBnE-UgaoUU)
+- 🔷 **Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking (Trabajo de Grado 1)**: [Ver en YouTube](https://youtu.be/5hjciCQzjQM)
 
 ---
 
