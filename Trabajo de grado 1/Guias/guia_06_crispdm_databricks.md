@@ -102,3 +102,4 @@ sequenceDiagram
 - **Documento PDF Oficial:** [`guias/guia_crispdm_databricks.pdf`](./guia_crispdm_databricks.pdf)
 - **Plataforma Databricks:** [Databricks Login](https://login.databricks.com)
 - **Guía Anterior (Jira Software & Roles Duales):** [`guia_05_jira_software.md`](./guia_05_jira_software.md)
+
