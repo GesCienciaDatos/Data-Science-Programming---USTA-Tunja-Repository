@@ -88,3 +88,4 @@ flowchart LR
 - [Guía Metodológica 06: Databricks y CRISP-DM](../../Guias/guia_06_crispdm_databricks.md)
 - [Video Tutorial: Creación de Tablero en Jira](https://www.youtube.com/watch?v=1EgdFLurvxk)
 - [Video Tutorial: Databricks CRISP-DM y DoE](https://youtu.com/X1JtylnPmsA)
+
