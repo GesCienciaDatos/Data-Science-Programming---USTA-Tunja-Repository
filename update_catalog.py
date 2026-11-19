@@ -740,6 +740,14 @@ MODULES_TRABAJO_GRADO_1 = [
         "icon": "🔷",
         "color": "#0078D4",
         "description": "Servicios analíticos 1st-party en Azure, almacenamiento ADLS Gen2, optimización de hiperparámetros SVM y despliegue de inferencia."
+    },
+    {
+        "id": "04",
+        "name": "04 - Entorno Databricks y Metodologia",
+        "title": "Metodología CRISP-DM, Calidad de Datos y DoE",
+        "icon": "🔄",
+        "color": "#10B981",
+        "description": "Entorno Databricks Free Edition, 6 fases CRISP-DM, compuertas CRISP-ML(Q), Diseño de Experimentos (DoE) con SVM y gobernanza en Jira Software."
     }
 ]
 
@@ -788,6 +796,8 @@ KNOWN_TITLES = {
     "02_Databricks_Community_Calidad_Vinos.ipynb": "Databricks Community Edition: Experimento ML Calidad de Vinos",
     "03_DataLakehouse_AWS_S3_MLOps.ipynb": "Data Lakehouse en AWS S3 & MLOps Serverless",
     "04_Experimento_ML_Azure_Databricks.ipynb": "Azure Databricks: Clasificación y Regularización SVM",
+    "02_CRISP_DM_Auditoria_Calidad_Datos.ipynb": "Auditoría de Calidad de Datos (CRISP-DM Fases 1 a 3 & DAMA)",
+    "03_CRISP_DM_DoE_Modelado_MLflow.ipynb": "Diseño de Experimentos (DoE), SVM y MLflow Tracking (Fase 4)",
     "Databricks_Tutorial.mp4": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
     "Databricks_Free_Edition_final.mp4": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
     "Databricks_en_AWS.mp4": "Tutorial Databricks en AWS: Data Lakehouse S3, IAM y Despliegue Cloud",
@@ -1028,7 +1038,7 @@ COURSE_EXTRA_VIDEOS = {
             "id": "vid_tg1_crispdm",
             "filename": "Databricks_CRISP_DM.mp4",
             "title": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA",
-            "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+            "module": "🔄 Módulo 04: Metodología CRISP-DM, Calidad y DoE",
             "size_mb": 90.0,
             "path": "https://youtu.be/X1JtylnPmsA",
             "youtube_id": "X1JtylnPmsA",
@@ -1105,7 +1115,7 @@ COURSE_EXTRA_VIDEOS = {
             "id": "vid_tg1_crispdm",
             "filename": "Databricks_CRISP_DM.mp4",
             "title": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA",
-            "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+            "module": "🔄 Módulo 04: Metodología CRISP-DM, Calidad y DoE",
             "size_mb": 90.0,
             "path": "https://youtu.be/X1JtylnPmsA",
             "youtube_id": "X1JtylnPmsA",
@@ -4062,6 +4072,19 @@ DATASET_CLEANING_REGISTRY = {
         "cleaning_actions": [
             "Cargar con index_col=0 o eliminar la columna 'Unnamed: 0'"
         ]
+    },
+    "transacciones_fraude.csv": {
+        "requires_cleaning": False,
+        "cleaning_status": "Auditado DAMA / CRISP-ML(Q)",
+        "cleaning_badge": "Auditado DAMA",
+        "cleaning_badge_color": "emerald",
+        "cleaning_level": "Auditoría Completa",
+        "cleaning_reasons": [
+            "Auditado bajo estándar DAMA DMBOK y compuertas CRISP-ML(Q): 100% completitud, 100% unicidad, 260 atípicos IQR preservados."
+        ],
+        "cleaning_actions": [
+            "Aprobado formalmente por el Data Steward en Jira (Hito G1 en FRAUD-3) para modelado experimental DoE con SVM."
+        ]
     }
 }
 
@@ -4209,7 +4232,7 @@ def scan_course_guias(course_id, course_folder_name, course_dir):
             elif "jira" in fname_lower or "scrum" in fname_lower:
                 module_name = "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza"
             elif "crisp" in fname_lower:
-                module_name = "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos"
+                module_name = "🔄 Módulo 04: Metodología CRISP-DM, Calidad y DoE"
             else:
                 module_name = "🎓 Trabajo de Grado 1"
         else:

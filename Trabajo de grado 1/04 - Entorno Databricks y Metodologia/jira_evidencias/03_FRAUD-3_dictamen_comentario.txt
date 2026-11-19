@@ -1,0 +1,7 @@
+DICTAMEN OFICIAL DE AUDITORÍA DE CALIDAD - DATA STEWARD:
+• Hito G1: Verificado sobre muestra real de 4,060 transacciones bancarias. Cero datos sintéticos.
+• Dimensión Completitud: 100.0% (Cero valores nulos en el esquema).
+• Dimensión Unicidad: 100.0% (Cero registros duplicados).
+• Dimensión Consistencia: 260 transacciones atípicas (6.40%) auditadas y conservadas por su valor predictivo (contienen los 60 fraudes confirmados).
+• Target y Prevalencia: 1.48% de fraude real (4,000 legítimas vs 60 fraudes).
+• Veredicto Final: COMPUERTA DE CALIDAD APROBADA para avanzar a la Fase 4 (Modelado DoE).

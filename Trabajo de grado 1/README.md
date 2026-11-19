@@ -103,7 +103,7 @@ Como parte del material pedagógico del espacio académico, se encuentra disponi
 
 ## 📚 Estructura de Módulos y Cuadernos Interactivos
 
-El repositorio organiza el ciclo de vida del proyecto en tres módulos prácticos ejecutables:
+El repositorio organiza el ciclo de vida del proyecto en cuatro módulos prácticos ejecutables:
 
 ### 🧱 Módulo 01: Databricks Standalone & MLOps
 * **Cuaderno Interactivo:** [`01 - Databricks Community Edition/02_Databricks_Community_Calidad_Vinos.ipynb`](./01%20-%20Databricks%20Community%20Edition/02_Databricks_Community_Calidad_Vinos.ipynb)
@@ -125,6 +125,15 @@ El repositorio organiza el ciclo de vida del proyecto en tres módulos práctico
 * **Guía de Apoyo PDF:** [`Guias/guia_azure_databricks.pdf`](./Guias/guia_azure_databricks.pdf) (3.4 MB)
 * **Guía Técnica Markdown:** [`Guias/guia_04_azure_databricks.md`](./Guias/guia_04_azure_databricks.md)
 * **Objetivo:** Despliegue de analítica en Azure Databricks (recurso 1st-party autenticado con Microsoft Entra ID), almacenamiento en Azure Data Lake Storage Gen2 (ADLS Gen2), regularización con Support Vector Machines (SVM con kernel RBF) para optimización de sensibilidad clínica (*Recall*) y control de falsos negativos.
+
+### 🔄 Módulo 04: Metodología CRISP-DM, Calidad de Datos y DoE
+* **Carpeta del Módulo:** [`04 - Entorno Databricks y Metodologia/`](./04%20-%20Entorno%20Databricks%20y%20Metodologia/)
+* **Cuaderno Interactivo Auditoría (Fases 1-3):** [`04 - Entorno Databricks y Metodologia/02_CRISP_DM_Auditoria_Calidad_Datos.ipynb`](./04%20-%20Entorno%20Databricks%20y%20Metodologia/02_CRISP_DM_Auditoria_Calidad_Datos.ipynb) • [Script .py](./04%20-%20Entorno%20Databricks%20y%20Metodologia/02_CRISP_DM_Auditoria_Calidad_Datos.py)
+* **Cuaderno Interactivo DoE y MLflow (Fase 4):** [`04 - Entorno Databricks y Metodologia/03_CRISP_DM_DoE_Modelado_MLflow.ipynb`](./04%20-%20Entorno%20Databricks%20y%20Metodologia/03_CRISP_DM_DoE_Modelado_MLflow.ipynb) • [Script .py](./04%20-%20Entorno%20Databricks%20y%20Metodologia/03_CRISP_DM_DoE_Modelado_MLflow.py)
+* **Dataset Transaccional:** [`04 - Entorno Databricks y Metodologia/transacciones_fraude.csv`](./04%20-%20Entorno%20Databricks%20y%20Metodologia/transacciones_fraude.csv) (4,060 registros bancarios)
+* **Evidencias y Dictámenes Jira:** [`04 - Entorno Databricks y Metodologia/jira_evidencias/`](./04%20-%20Entorno%20Databricks%20y%20Metodologia/jira_evidencias/)
+* **Guías de Apoyo:** [`Guias/guia_crispdm_databricks.pdf`](./Guias/guia_crispdm_databricks.pdf) (2.7 MB) • [`Guias/guia_06_crispdm_databricks.md`](./Guias/guia_06_crispdm_databricks.md) • [`Guias/guia_05_jira_software.md`](./Guias/guia_05_jira_software.md)
+* **Objetivo:** Entorno de experimentación en Databricks Free Edition, auditoría de calidad con métricas DAMA DMBOK y compuertas CRISP-ML(Q), diseño experimental (DoE) con soporte para clases desbalanceadas mediante SVM RBF, matriz de costos asimétricos, registro de corridas en MLflow y enlace bidireccional a las incidencias de gobernanza ágil en Jira Software (`FRAUD-2` y `FRAUD-3`).
 
 ---
 

@@ -1,0 +1,7 @@
+RESULTADOS EXPERIMENTALES REGISTRADOS - DATA CONSUMER:
+• Modelo seleccionado: SVM RBF con C = 1.0 y class_weight='balanced'.
+• Prueba independiente (812 transacciones, 12 fraudes): Recall = 100% (12/12 fraudes capturados), Precision = 100%.
+• Pérdida financiera total: $0 USD frente a $14,400 USD del modelo base que nunca detecta fraude (ahorro del 100%).
+• Cautela estadística: con solo 12 fraudes de prueba el IC 95% (Wilson) del Recall es [75.7%, 100%]; se validará con validación cruzada en el Video 4.
+• Decisión: se rechaza H0 (Recall >= 91.7% y Precision >= 85%).
+• MLflow Tracking: 5 corridas con firma de inferencia en 'Experimento_Deteccion_Fraude_DoE'.

@@ -10844,17 +10844,15 @@ window.VIRTUAL_LAB_CATALOG = {
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Mining/02%20-%20Clasificacion%20y%20Regresion/data/transacciones_fraude.csv",
           "snippet": "import pandas as pd\ndf = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Mining/02%20-%20Clasificacion%20y%20Regresion/data/transacciones_fraude.csv')",
           "requires_cleaning": false,
-          "cleaning_status": "No Requiere Limpieza",
-          "cleaning_badge": "Limpio",
+          "cleaning_status": "Auditado DAMA / CRISP-ML(Q)",
+          "cleaning_badge": "Auditado DAMA",
           "cleaning_badge_color": "emerald",
-          "cleaning_level": "Óptima",
+          "cleaning_level": "Auditoría Completa",
           "cleaning_reasons": [
-            "0 valores nulos",
-            "0 registros duplicados",
-            "Tipos de datos y rangos válidos"
+            "Auditado bajo estándar DAMA DMBOK y compuertas CRISP-ML(Q): 100% completitud, 100% unicidad, 260 atípicos IQR preservados."
           ],
           "cleaning_actions": [
-            "Listo para análisis y modelado predictivo sin preprocesamiento previo"
+            "Aprobado formalmente por el Data Steward en Jira (Hito G1 en FRAUD-3) para modelado experimental DoE con SVM."
           ]
         },
         {
@@ -19438,6 +19436,14 @@ window.VIRTUAL_LAB_CATALOG = {
           "icon": "🔷",
           "color": "#0078D4",
           "description": "Servicios analíticos 1st-party en Azure, almacenamiento ADLS Gen2, optimización de hiperparámetros SVM y despliegue de inferencia."
+        },
+        {
+          "id": "04",
+          "name": "04 - Entorno Databricks y Metodologia",
+          "title": "Metodología CRISP-DM, Calidad de Datos y DoE",
+          "icon": "🔄",
+          "color": "#10B981",
+          "description": "Entorno Databricks Free Edition, 6 fases CRISP-DM, compuertas CRISP-ML(Q), Diseño de Experimentos (DoE) con SVM y gobernanza en Jira Software."
         }
       ],
       "notebooks": [
@@ -19491,9 +19497,101 @@ window.VIRTUAL_LAB_CATALOG = {
           "type": "Teoría y Práctica",
           "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/03%20-%20Azure%20Databricks%20y%20MLOps/04_Experimento_ML_Azure_Databricks.ipynb",
           "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/03%20-%20Azure%20Databricks%20y%20MLOps/04_Experimento_ML_Azure_Databricks.ipynb"
+        },
+        {
+          "id": "04_02_CRISP_DM_Auditoria_Calidad_Datos",
+          "course_name": "Trabajo de Grado 1",
+          "course_folder": "Trabajo de grado 1",
+          "module_id": "04",
+          "module_name": "04 - Entorno Databricks y Metodologia",
+          "filename": "02_CRISP_DM_Auditoria_Calidad_Datos.ipynb",
+          "title": "Auditoría de Calidad de Datos (CRISP-DM Fases 1 a 3 & DAMA) 🔄",
+          "path": "Trabajo de grado 1/04 - Entorno Databricks y Metodologia/02_CRISP_DM_Auditoria_Calidad_Datos.ipynb",
+          "difficulty": "Intermedio",
+          "is_dummies": false,
+          "is_homework": false,
+          "edition": "Estándar",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/02_CRISP_DM_Auditoria_Calidad_Datos.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/02_CRISP_DM_Auditoria_Calidad_Datos.ipynb"
+        },
+        {
+          "id": "04_03_CRISP_DM_DoE_Modelado_MLflow",
+          "course_name": "Trabajo de Grado 1",
+          "course_folder": "Trabajo de grado 1",
+          "module_id": "04",
+          "module_name": "04 - Entorno Databricks y Metodologia",
+          "filename": "03_CRISP_DM_DoE_Modelado_MLflow.ipynb",
+          "title": "Diseño de Experimentos (DoE), SVM y MLflow Tracking (Fase 4) 🔄",
+          "path": "Trabajo de grado 1/04 - Entorno Databricks y Metodologia/03_CRISP_DM_DoE_Modelado_MLflow.ipynb",
+          "difficulty": "Intermedio",
+          "is_dummies": false,
+          "is_homework": false,
+          "edition": "Estándar",
+          "type": "Teoría y Práctica",
+          "colab_url": "https://colab.research.google.com/github/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/03_CRISP_DM_DoE_Modelado_MLflow.ipynb",
+          "github_url": "https://github.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/blob/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/03_CRISP_DM_DoE_Modelado_MLflow.ipynb"
         }
       ],
       "datasets": [
+        {
+          "name": "transacciones_fraude.csv",
+          "format": "CSV",
+          "course_name": "Trabajo de Grado 1",
+          "module": "04 - Entorno Databricks y Metodologia",
+          "path": "Trabajo de grado 1/04 - Entorno Databricks y Metodologia/data/transacciones_fraude.csv",
+          "rows": 4061,
+          "cols": 4,
+          "target": "es_fraude",
+          "features": "monto_transaccion, tiempo_respuesta_ms, intentos_previos, es_fraude",
+          "description": "Dataset oficial de práctica para 04 - Entorno Databricks y Metodologia (Trabajo de Grado 1).",
+          "sample_data": [
+            {
+              "monto_transaccion": "150872.01837359022",
+              "tiempo_respuesta_ms": "131.51223571764868",
+              "intentos_previos": "0",
+              "es_fraude": "0"
+            },
+            {
+              "monto_transaccion": "171758.66764629376",
+              "tiempo_respuesta_ms": "153.48537898366015",
+              "intentos_previos": "1",
+              "es_fraude": "0"
+            },
+            {
+              "monto_transaccion": "14241379.537569698",
+              "tiempo_respuesta_ms": "2505.848176172888",
+              "intentos_previos": "6",
+              "es_fraude": "1"
+            },
+            {
+              "monto_transaccion": "31695.96126131724",
+              "tiempo_respuesta_ms": "202.52467974532777",
+              "intentos_previos": "0",
+              "es_fraude": "0"
+            },
+            {
+              "monto_transaccion": "34941.69600034989",
+              "tiempo_respuesta_ms": "147.1757381012733",
+              "intentos_previos": "0",
+              "es_fraude": "0"
+            }
+          ],
+          "download_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/data/transacciones_fraude.csv",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/data/transacciones_fraude.csv",
+          "snippet": "import pandas as pd\ndf = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/data/transacciones_fraude.csv')",
+          "requires_cleaning": false,
+          "cleaning_status": "Auditado DAMA / CRISP-ML(Q)",
+          "cleaning_badge": "Auditado DAMA",
+          "cleaning_badge_color": "emerald",
+          "cleaning_level": "Auditoría Completa",
+          "cleaning_reasons": [
+            "Auditado bajo estándar DAMA DMBOK y compuertas CRISP-ML(Q): 100% completitud, 100% unicidad, 260 atípicos IQR preservados."
+          ],
+          "cleaning_actions": [
+            "Aprobado formalmente por el Data Steward en Jira (Hito G1 en FRAUD-3) para modelado experimental DoE con SVM."
+          ]
+        },
         {
           "name": "california_housing_raw.csv",
           "format": "CSV",
@@ -19595,7 +19693,7 @@ window.VIRTUAL_LAB_CATALOG = {
           "id": "trabajo-de-grado-1_guia_2",
           "filename": "guia_crispdm_databricks.pdf",
           "title": "Guía Práctica: Databricks y Metodología CRISP-DM (Fases 1 a 3 y Calidad CRISP-ML)",
-          "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+          "module": "🔄 Módulo 04: Metodología CRISP-DM, Calidad y DoE",
           "size_str": "2.7 MB",
           "path": "Guias/guia_crispdm_databricks.pdf",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_crispdm_databricks.pdf",
@@ -19697,7 +19795,7 @@ window.VIRTUAL_LAB_CATALOG = {
           "id": "vid_tg1_crispdm",
           "filename": "Databricks_CRISP_DM.mp4",
           "title": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA",
-          "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+          "module": "🔄 Módulo 04: Metodología CRISP-DM, Calidad y DoE",
           "size_mb": 90.0,
           "path": "https://youtu.be/X1JtylnPmsA",
           "youtube_id": "X1JtylnPmsA",
@@ -20636,12 +20734,12 @@ window.VIRTUAL_LAB_CATALOG = {
         }
       ],
       "stats": {
-        "total_notebooks": 3,
-        "total_standard_notebooks": 3,
+        "total_notebooks": 5,
+        "total_standard_notebooks": 5,
         "total_dummies_notebooks": 0,
-        "total_modules": 3,
+        "total_modules": 4,
         "total_homeworks": 0,
-        "total_datasets": 1,
+        "total_datasets": 2,
         "total_guias": 5,
         "total_videos": 5,
         "total_books": 28
@@ -27231,17 +27329,15 @@ window.VIRTUAL_LAB_CATALOG = {
       "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Mining/02%20-%20Clasificacion%20y%20Regresion/data/transacciones_fraude.csv",
       "snippet": "import pandas as pd\ndf = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Data%20Mining/02%20-%20Clasificacion%20y%20Regresion/data/transacciones_fraude.csv')",
       "requires_cleaning": false,
-      "cleaning_status": "No Requiere Limpieza",
-      "cleaning_badge": "Limpio",
+      "cleaning_status": "Auditado DAMA / CRISP-ML(Q)",
+      "cleaning_badge": "Auditado DAMA",
       "cleaning_badge_color": "emerald",
-      "cleaning_level": "Óptima",
+      "cleaning_level": "Auditoría Completa",
       "cleaning_reasons": [
-        "0 valores nulos",
-        "0 registros duplicados",
-        "Tipos de datos y rangos válidos"
+        "Auditado bajo estándar DAMA DMBOK y compuertas CRISP-ML(Q): 100% completitud, 100% unicidad, 260 atípicos IQR preservados."
       ],
       "cleaning_actions": [
-        "Listo para análisis y modelado predictivo sin preprocesamiento previo"
+        "Aprobado formalmente por el Data Steward en Jira (Hito G1 en FRAUD-3) para modelado experimental DoE con SVM."
       ]
     },
     {
@@ -27357,6 +27453,64 @@ window.VIRTUAL_LAB_CATALOG = {
       ],
       "cleaning_actions": [
         "Listo para análisis y modelado predictivo sin preprocesamiento previo"
+      ]
+    },
+    {
+      "name": "transacciones_fraude.csv",
+      "format": "CSV",
+      "course_name": "Trabajo de Grado 1",
+      "module": "04 - Entorno Databricks y Metodologia",
+      "path": "Trabajo de grado 1/04 - Entorno Databricks y Metodologia/data/transacciones_fraude.csv",
+      "rows": 4061,
+      "cols": 4,
+      "target": "es_fraude",
+      "features": "monto_transaccion, tiempo_respuesta_ms, intentos_previos, es_fraude",
+      "description": "Dataset oficial de práctica para 04 - Entorno Databricks y Metodologia (Trabajo de Grado 1).",
+      "sample_data": [
+        {
+          "monto_transaccion": "150872.01837359022",
+          "tiempo_respuesta_ms": "131.51223571764868",
+          "intentos_previos": "0",
+          "es_fraude": "0"
+        },
+        {
+          "monto_transaccion": "171758.66764629376",
+          "tiempo_respuesta_ms": "153.48537898366015",
+          "intentos_previos": "1",
+          "es_fraude": "0"
+        },
+        {
+          "monto_transaccion": "14241379.537569698",
+          "tiempo_respuesta_ms": "2505.848176172888",
+          "intentos_previos": "6",
+          "es_fraude": "1"
+        },
+        {
+          "monto_transaccion": "31695.96126131724",
+          "tiempo_respuesta_ms": "202.52467974532777",
+          "intentos_previos": "0",
+          "es_fraude": "0"
+        },
+        {
+          "monto_transaccion": "34941.69600034989",
+          "tiempo_respuesta_ms": "147.1757381012733",
+          "intentos_previos": "0",
+          "es_fraude": "0"
+        }
+      ],
+      "download_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/data/transacciones_fraude.csv",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/data/transacciones_fraude.csv",
+      "snippet": "import pandas as pd\ndf = pd.read_csv('https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/04%20-%20Entorno%20Databricks%20y%20Metodologia/data/transacciones_fraude.csv')",
+      "requires_cleaning": false,
+      "cleaning_status": "Auditado DAMA / CRISP-ML(Q)",
+      "cleaning_badge": "Auditado DAMA",
+      "cleaning_badge_color": "emerald",
+      "cleaning_level": "Auditoría Completa",
+      "cleaning_reasons": [
+        "Auditado bajo estándar DAMA DMBOK y compuertas CRISP-ML(Q): 100% completitud, 100% unicidad, 260 atípicos IQR preservados."
+      ],
+      "cleaning_actions": [
+        "Aprobado formalmente por el Data Steward en Jira (Hito G1 en FRAUD-3) para modelado experimental DoE con SVM."
       ]
     },
     {
@@ -27545,7 +27699,7 @@ window.VIRTUAL_LAB_CATALOG = {
       "id": "trabajo-de-grado-1_guia_2",
       "filename": "guia_crispdm_databricks.pdf",
       "title": "Guía Práctica: Databricks y Metodología CRISP-DM (Fases 1 a 3 y Calidad CRISP-ML)",
-      "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+      "module": "🔄 Módulo 04: Metodología CRISP-DM, Calidad y DoE",
       "size_str": "2.7 MB",
       "path": "Guias/guia_crispdm_databricks.pdf",
       "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_crispdm_databricks.pdf",
@@ -33965,7 +34119,7 @@ window.VIRTUAL_LAB_CATALOG = {
       "id": "vid_tg1_crispdm",
       "filename": "Databricks_CRISP_DM.mp4",
       "title": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA",
-      "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+      "module": "🔄 Módulo 04: Metodología CRISP-DM, Calidad y DoE",
       "size_mb": 90.0,
       "path": "https://youtu.be/X1JtylnPmsA",
       "youtube_id": "X1JtylnPmsA",
