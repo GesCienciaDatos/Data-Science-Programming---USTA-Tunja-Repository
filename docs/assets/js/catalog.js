@@ -19610,6 +19610,16 @@ window.VIRTUAL_LAB_CATALOG = {
           "path": "Guias/guia_databricks_free_edition.pdf",
           "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_databricks_free_edition.pdf",
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_free_edition.pdf"
+        },
+        {
+          "id": "trabajo-de-grado-1_guia_4",
+          "filename": "guia_jira_software.pdf",
+          "title": "Guía Práctica: Jira Software, Gestión Ágil Scrum/Kanban y Gobernanza de Datos",
+          "module": "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza",
+          "size_str": "5.2 MB",
+          "path": "Guias/guia_jira_software.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_jira_software.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_jira_software.pdf"
         }
       ],
       "videos": [
@@ -19657,6 +19667,21 @@ window.VIRTUAL_LAB_CATALOG = {
           "lfs_url": "",
           "raw_url": "",
           "github_url": "https://youtu.be/5hjciCQzjQM"
+        },
+        {
+          "id": "vid_tg1_jira_software",
+          "filename": "Creacion_de_tablero_en_JIRA.mp4",
+          "title": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza",
+          "module": "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza",
+          "size_mb": 85.0,
+          "path": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+          "youtube_id": "1EgdFLurvxk",
+          "youtube_url": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+          "embed_url": "https://www.youtube.com/embed/1EgdFLurvxk",
+          "thumbnail": "https://img.youtube.com/vi/1EgdFLurvxk/hqdefault.jpg",
+          "lfs_url": "",
+          "raw_url": "",
+          "github_url": "https://www.youtube.com/watch?v=1EgdFLurvxk"
         }
       ],
       "books": [
@@ -20592,8 +20617,8 @@ window.VIRTUAL_LAB_CATALOG = {
         "total_modules": 3,
         "total_homeworks": 0,
         "total_datasets": 1,
-        "total_guias": 3,
-        "total_videos": 3,
+        "total_guias": 4,
+        "total_videos": 4,
         "total_books": 28
       }
     }
@@ -27510,6 +27535,16 @@ window.VIRTUAL_LAB_CATALOG = {
       "path": "Guias/guia_databricks_free_edition.pdf",
       "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_databricks_free_edition.pdf",
       "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_free_edition.pdf"
+    },
+    {
+      "id": "trabajo-de-grado-1_guia_4",
+      "filename": "guia_jira_software.pdf",
+      "title": "Guía Práctica: Jira Software, Gestión Ágil Scrum/Kanban y Gobernanza de Datos",
+      "module": "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza",
+      "size_str": "5.2 MB",
+      "path": "Guias/guia_jira_software.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_jira_software.pdf",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_jira_software.pdf"
     }
   ],
   "books": [
@@ -33875,6 +33910,21 @@ window.VIRTUAL_LAB_CATALOG = {
       "lfs_url": "",
       "raw_url": "",
       "github_url": "https://youtu.be/5hjciCQzjQM"
+    },
+    {
+      "id": "vid_tg1_jira_software",
+      "filename": "Creacion_de_tablero_en_JIRA.mp4",
+      "title": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza",
+      "module": "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza",
+      "size_mb": 85.0,
+      "path": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+      "youtube_id": "1EgdFLurvxk",
+      "youtube_url": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+      "embed_url": "https://www.youtube.com/embed/1EgdFLurvxk",
+      "thumbnail": "https://img.youtube.com/vi/1EgdFLurvxk/hqdefault.jpg",
+      "lfs_url": "",
+      "raw_url": "",
+      "github_url": "https://www.youtube.com/watch?v=1EgdFLurvxk"
     }
   ]
 };

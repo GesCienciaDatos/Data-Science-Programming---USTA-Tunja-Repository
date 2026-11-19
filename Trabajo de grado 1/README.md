@@ -11,8 +11,8 @@
   <img src="https://img.shields.io/badge/Topics-AWS%20S3%20%7C%20Azure%20%7C%20Delta%20Lake%20%7C%20MLflow-0ea5e9?style=for-the-badge" alt="Temas"/>
   <img src="https://img.shields.io/badge/Course-Trabajo%20de%20Grado%201-6366f1?style=for-the-badge" alt="Course"/>
   <img src="https://img.shields.io/badge/📚%20Biblioteca-28%20Libros%20de%20Referencia-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="28 Libros"/>
-  <img src="https://img.shields.io/badge/📖%20Guías%20PDF-3%20Documentos%20Oficiales-f59e0b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Guías PDF"/>
-  <img src="https://img.shields.io/badge/🎬%20YouTube-3%20Video%20Tutoriales-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="3 Videos"/>
+  <img src="https://img.shields.io/badge/📖%20Guías%20PDF-4%20Documentos%20Oficiales-f59e0b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Guías PDF"/>
+  <img src="https://img.shields.io/badge/🎬%20YouTube-4%20Video%20Tutoriales-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="4 Videos"/>
   <img src="https://img.shields.io/badge/Status-🟢%20100%25%20Completado-10b981?style=for-the-badge" alt="100% Completado"/>
 </p>
 
@@ -72,6 +72,19 @@ Como parte del material pedagógico del espacio académico, se encuentra disponi
 > 6. Seguimiento integral (*experiment tracking*) de parámetros, métricas y artefactos con MLflow.
 > 7. Registro de modelos en el Model Registry y buenas prácticas de optimización de costos en Azure.
 
+### 4. Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza
+* **Enlace directo:** [Ver en YouTube — Creación de tablero en JIRA (1EgdFLurvxk)](https://www.youtube.com/watch?v=1EgdFLurvxk)
+
+[![Tutorial Jira Software y Gobernanza](https://img.youtube.com/vi/1EgdFLurvxk/hqdefault.jpg)](https://www.youtube.com/watch?v=1EgdFLurvxk)
+
+> **Contenido del Tutorial:**
+> 1. Registro e implementación de Jira Cloud con cuenta institucional USTA.
+> 2. Creación y parametrización del proyecto Scrum administrado por el equipo (`FRAUD`).
+> 3. Definición y configuración de los cuatro roles duales de gobernanza (Scrum + DAMA-DMBOK): `PO-DataOwner`, `SM-DataSteward`, `Dev-DataCustodian`, `Dev-DataConsumer`.
+> 4. Planificación y estructuración de los 5 Sprints basados en las fases del ciclo de vida CRISP-DM.
+> 5. Configuración del tablero Kanban con límite de trabajo en curso (**WIP Limit = 2**) para aseguramiento de calidad.
+> 6. Creación y estimación de historias de usuario, etiquetado por rol y ejecución de ceremonias ágiles (retrospectiva).
+
 ---
 
 ## 📚 Estructura de Módulos y Cuadernos Interactivos
@@ -110,8 +123,9 @@ El espacio académico cuenta con **documentos técnicos oficiales en formato PDF
 | 🧱 `guia_databricks_free_edition.pdf` | **Guía Práctica: Databricks Community Edition y Calidad de Vinos** | 3.7 MB | Creación de cuenta Community, configuración de clústeres serverless, persistencia en Delta Lake, experiment tracking con MLflow, registro en Model Registry. | [📄 PDF](./Guias/guia_databricks_free_edition.pdf) |
 | ☁️ `guia_databricks_aws.pdf` | **Guía Práctica: Databricks en AWS y Data Lakehouse S3** | 6.3 MB | Arquitectura AWS S3 por capas (raw/curated/models), roles y políticas IAM de seguridad, conexión Databricks-S3, orquestación serverless y monitoreo MLOps. | [📄 PDF](./Guias/guia_databricks_aws.pdf) • [📝 MD](./Guias/guia_03_databricks_aws.md) |
 | 🔷 `guia_azure_databricks.pdf` | **Guía Práctica: Azure Databricks y Regularización SVM con MLflow** | 3.4 MB | Activación de suscripción Azure for Students, aprovisionamiento de workspace Databricks, clústeres Single-Node, regularización SVM y tracking con MLflow. | [📄 PDF](./Guias/guia_azure_databricks.pdf) • [📝 MD](./Guias/guia_04_azure_databricks.md) |
+| 📋 `guia_jira_software.pdf` | **Guía Práctica: Jira Software, Gestión Ágil Scrum/Kanban y Gobernanza de Datos** | 5.2 MB | Registro en Jira Cloud, espacios Scrum, roles duales DAMA-DMBOK/Scrum, 5 Sprints CRISP-DM, tablero Kanban con límite WIP = 2 y retrospectivas. | [📄 PDF](./Guias/guia_jira_software.pdf) • [📝 MD](./Guias/guia_05_jira_software.md) |
 
-> 💡 **Visor Web Integrado:** Las tres guías cuentan con visor PDF interactivo incorporado en la [Plataforma Web del Laboratorio Virtual](https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/), permitiendo lectura en línea, zoom y descarga directa.
+> 💡 **Visor Web Integrado:** Las cuatro guías cuentan con visor PDF interactivo incorporado en la [Plataforma Web del Laboratorio Virtual](https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/), permitiendo lectura en línea, zoom y descarga directa.
 
 ---
 

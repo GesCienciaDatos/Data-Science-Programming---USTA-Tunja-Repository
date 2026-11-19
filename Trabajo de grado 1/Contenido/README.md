@@ -51,3 +51,20 @@
 6. Seguimiento integral (*experiment tracking*) de parámetros ($C$, kernel), métricas (Accuracy, Recall, AUC-ROC) y artefactos con MLflow.
 7. Registro formal en el Model Registry y directrices de seguridad y optimización de costos en Azure.
 
+---
+
+## 🎬 Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza
+
+* **Enlace oficial de YouTube:** [https://www.youtube.com/watch?v=1EgdFLurvxk](https://www.youtube.com/watch?v=1EgdFLurvxk)
+* **Título:** Creación de tablero en JIRA (Gestión Ágil Scrum/Kanban y Gobernanza de Datos)
+* **Autor / Canal:** Gestor Virtual Ciencia de Datos USTA Tunja
+* **Duración:** ~18 minutos
+* **Resolución:** Full HD 1080p
+
+### Resumen del contenido:
+1. Registro e inicialización de Jira Cloud con cuenta institucional de la Universidad Santo Tomás.
+2. Creación del espacio de trabajo administrado por el equipo bajo plantilla Scrum (`FRAUD`).
+3. Definición de la matriz de los cuatro roles duales de gobernanza (Scrum + DAMA-DMBOK): `PO-DataOwner`, `SM-DataSteward`, `Dev-DataCustodian`, `Dev-DataConsumer`.
+4. Estructuración y cronograma de los 5 Sprints correspondientes a las fases de CRISP-DM.
+5. Configuración del tablero Kanban con límite de trabajo en curso (**WIP Limit = 2**) para aseguramiento de calidad en revisiones.
+6. Redacción de historias de usuario, asignación de criterios de aceptación, estimación y ceremonias de retrospectiva ágil.

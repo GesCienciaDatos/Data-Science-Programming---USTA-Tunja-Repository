@@ -778,6 +778,7 @@ KNOWN_TITLES = {
     "guia_databricks_aws.pdf": "Guía Práctica: Databricks en AWS y Data Lakehouse S3",
     "guia_databricks_free_edition.pdf": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
     "guia_azure_databricks.pdf": "Guía Práctica: Azure Databricks y Regularización SVM con MLflow",
+    "guia_jira_software.pdf": "Guía Práctica: Jira Software, Gestión Ágil Scrum/Kanban y Gobernanza de Datos",
     "Instalacion_WSL2_y_Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
     "Instalacion WSL2 y Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
     "Instalacion_Power_BI.mp4": "Instalación y Configuración de Power BI",
@@ -789,10 +790,25 @@ KNOWN_TITLES = {
     "Databricks_Tutorial.mp4": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
     "Databricks_Free_Edition_final.mp4": "Tutorial Databricks Community Edition: Despliegue, MLflow y MLOps",
     "Databricks_en_AWS.mp4": "Tutorial Databricks en AWS: Data Lakehouse S3, IAM y Despliegue Cloud",
-    "Azure_Databricks.mp4": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking"
+    "Azure_Databricks.mp4": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking",
+    "Creacion_de_tablero_en_JIRA.mp4": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza",
+    "Creacion de tablero en JIRA.mp4": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza",
+    "Jira_Software.mp4": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza"
 }
 
 KNOWN_YOUTUBE_VIDEOS = {
+    "creacion de tablero en jira.mp4": {
+        "youtube_id": "1EgdFLurvxk",
+        "youtube_url": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+        "embed_url": "https://www.youtube.com/embed/1EgdFLurvxk",
+        "thumbnail": "https://img.youtube.com/vi/1EgdFLurvxk/hqdefault.jpg"
+    },
+    "jira_software.mp4": {
+        "youtube_id": "1EgdFLurvxk",
+        "youtube_url": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+        "embed_url": "https://www.youtube.com/embed/1EgdFLurvxk",
+        "thumbnail": "https://img.youtube.com/vi/1EgdFLurvxk/hqdefault.jpg"
+    },
     "azure_databricks.mp4": {
         "youtube_id": "5hjciCQzjQM",
         "youtube_url": "https://youtu.be/5hjciCQzjQM",
@@ -977,6 +993,21 @@ COURSE_EXTRA_VIDEOS = {
             "lfs_url": "",
             "raw_url": "",
             "github_url": "https://youtu.be/5hjciCQzjQM"
+        },
+        {
+            "id": "vid_tg1_jira_software",
+            "filename": "Creacion_de_tablero_en_JIRA.mp4",
+            "title": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza",
+            "module": "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza",
+            "size_mb": 85.0,
+            "path": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+            "youtube_id": "1EgdFLurvxk",
+            "youtube_url": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+            "embed_url": "https://www.youtube.com/embed/1EgdFLurvxk",
+            "thumbnail": "https://img.youtube.com/vi/1EgdFLurvxk/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://www.youtube.com/watch?v=1EgdFLurvxk"
         }
     ],
     "Trabajo de grado 1": [
@@ -1024,6 +1055,21 @@ COURSE_EXTRA_VIDEOS = {
             "lfs_url": "",
             "raw_url": "",
             "github_url": "https://youtu.be/5hjciCQzjQM"
+        },
+        {
+            "id": "vid_tg1_jira_software",
+            "filename": "Creacion_de_tablero_en_JIRA.mp4",
+            "title": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza",
+            "module": "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza",
+            "size_mb": 85.0,
+            "path": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+            "youtube_id": "1EgdFLurvxk",
+            "youtube_url": "https://www.youtube.com/watch?v=1EgdFLurvxk",
+            "embed_url": "https://www.youtube.com/embed/1EgdFLurvxk",
+            "thumbnail": "https://img.youtube.com/vi/1EgdFLurvxk/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://www.youtube.com/watch?v=1EgdFLurvxk"
         }
     ]
 }
@@ -4115,6 +4161,8 @@ def scan_course_guias(course_id, course_folder_name, course_dir):
                 module_name = "☁️ Módulo 02: AWS Databricks y S3"
             elif "azure" in fname_lower:
                 module_name = "🔷 Módulo 03: Azure Databricks"
+            elif "jira" in fname_lower or "scrum" in fname_lower:
+                module_name = "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza"
             else:
                 module_name = "🎓 Trabajo de Grado 1"
         else:
