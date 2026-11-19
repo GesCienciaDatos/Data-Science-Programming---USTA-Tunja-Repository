@@ -11,8 +11,8 @@
   <img src="https://img.shields.io/badge/Topics-AWS%20S3%20%7C%20Azure%20%7C%20Delta%20Lake%20%7C%20MLflow-0ea5e9?style=for-the-badge" alt="Temas"/>
   <img src="https://img.shields.io/badge/Course-Trabajo%20de%20Grado%201-6366f1?style=for-the-badge" alt="Course"/>
   <img src="https://img.shields.io/badge/📚%20Biblioteca-28%20Libros%20de%20Referencia-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="28 Libros"/>
-  <img src="https://img.shields.io/badge/📖%20Guías%20PDF-4%20Documentos%20Oficiales-f59e0b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Guías PDF"/>
-  <img src="https://img.shields.io/badge/🎬%20YouTube-4%20Video%20Tutoriales-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="4 Videos"/>
+  <img src="https://img.shields.io/badge/📖%20Guías%20PDF-5%20Documentos%20Oficiales-f59e0b?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Guías PDF"/>
+  <img src="https://img.shields.io/badge/🎬%20YouTube-5%20Video%20Tutoriales-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="5 Videos"/>
   <img src="https://img.shields.io/badge/Status-🟢%20100%25%20Completado-10b981?style=for-the-badge" alt="100% Completado"/>
 </p>
 
@@ -85,6 +85,20 @@ Como parte del material pedagógico del espacio académico, se encuentra disponi
 > 5. Configuración del tablero Kanban con límite de trabajo en curso (**WIP Limit = 2**) para aseguramiento de calidad.
 > 6. Creación y estimación de historias de usuario, etiquetado por rol y ejecución de ceremonias ágiles (retrospectiva).
 
+### 5. Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA
+* **Enlace directo:** [Ver en YouTube — Databricks CRISP DM (X1JtylnPmsA)](https://youtu.be/X1JtylnPmsA)
+
+[![Tutorial Databricks y CRISP-DM](https://img.youtube.com/vi/X1JtylnPmsA/hqdefault.jpg)](https://youtu.be/X1JtylnPmsA)
+
+> **Contenido del Tutorial:**
+> 1. Acceso a Databricks Free Edition mediante autenticación institucional Microsoft.
+> 2. Importación y estructuración del cuaderno analítico `02_CRISP_DM_Auditoria_Calidad_Datos.py` y del dataset transaccional (4.060 registros).
+> 3. Marco metodológico comparado: De CRISP-DM tradicional al aseguramiento formal con **CRISP-ML(Q)**.
+> 4. Ejecución de la **Compuerta 2.1 (Completitud y Unicidad)**: verificación al 100% sin nulos ni duplicados.
+> 5. Ejecución de la **Compuerta 2.2 (Consistencia IQR)**: detección e interpretación de atípicos en montos financieros.
+> 6. Ejecución de la **Compuerta 2.3 (Desbalance de Clases)**: cuantificación de la asimetría de fraude (~1.8%) y criterios para modelado.
+> 7. Transición en Jira de la tarea `FRAUD-3` al estado *Listo* con dictamen técnico formal registrado por el Data Steward.
+
 ---
 
 ## 📚 Estructura de Módulos y Cuadernos Interactivos
@@ -124,8 +138,9 @@ El espacio académico cuenta con **documentos técnicos oficiales en formato PDF
 | ☁️ `guia_databricks_aws.pdf` | **Guía Práctica: Databricks en AWS y Data Lakehouse S3** | 6.3 MB | Arquitectura AWS S3 por capas (raw/curated/models), roles y políticas IAM de seguridad, conexión Databricks-S3, orquestación serverless y monitoreo MLOps. | [📄 PDF](./Guias/guia_databricks_aws.pdf) • [📝 MD](./Guias/guia_03_databricks_aws.md) |
 | 🔷 `guia_azure_databricks.pdf` | **Guía Práctica: Azure Databricks y Regularización SVM con MLflow** | 3.4 MB | Activación de suscripción Azure for Students, aprovisionamiento de workspace Databricks, clústeres Single-Node, regularización SVM y tracking con MLflow. | [📄 PDF](./Guias/guia_azure_databricks.pdf) • [📝 MD](./Guias/guia_04_azure_databricks.md) |
 | 📋 `guia_jira_software.pdf` | **Guía Práctica: Jira Software, Gestión Ágil Scrum/Kanban y Gobernanza de Datos** | 5.2 MB | Registro en Jira Cloud, espacios Scrum, roles duales DAMA-DMBOK/Scrum, 5 Sprints CRISP-DM, tablero Kanban con límite WIP = 2 y retrospectivas. | [📄 PDF](./Guias/guia_jira_software.pdf) • [📝 MD](./Guias/guia_05_jira_software.md) |
+| 🔄 `guia_crispdm_databricks.pdf` | **Guía Práctica: Databricks y Metodología CRISP-DM (Fases 1 a 3 y Calidad CRISP-ML)** | 2.7 MB | Databricks Free Edition, 6 fases CRISP-DM, compuertas de calidad CRISP-ML(Q), auditoría de 4.060 transacciones y dictamen QA en Jira. | [📄 PDF](./Guias/guia_crispdm_databricks.pdf) • [📝 MD](./Guias/guia_06_crispdm_databricks.md) |
 
-> 💡 **Visor Web Integrado:** Las cuatro guías cuentan con visor PDF interactivo incorporado en la [Plataforma Web del Laboratorio Virtual](https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/), permitiendo lectura en línea, zoom y descarga directa.
+> 💡 **Visor Web Integrado:** Las cinco guías cuentan con visor PDF interactivo incorporado en la [Plataforma Web del Laboratorio Virtual](https://sazuniga06.github.io/Data-Science-Programming---USTA-Tunja-Repository/), permitiendo lectura en línea, zoom y descarga directa.
 
 ---
 

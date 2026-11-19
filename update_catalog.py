@@ -779,6 +779,7 @@ KNOWN_TITLES = {
     "guia_databricks_free_edition.pdf": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
     "guia_azure_databricks.pdf": "Guía Práctica: Azure Databricks y Regularización SVM con MLflow",
     "guia_jira_software.pdf": "Guía Práctica: Jira Software, Gestión Ágil Scrum/Kanban y Gobernanza de Datos",
+    "guia_crispdm_databricks.pdf": "Guía Práctica: Databricks y Metodología CRISP-DM (Fases 1 a 3 y Calidad CRISP-ML)",
     "Instalacion_WSL2_y_Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
     "Instalacion WSL2 y Docker.mp4": "Instalación y Configuración de WSL2 y Docker",
     "Instalacion_Power_BI.mp4": "Instalación y Configuración de Power BI",
@@ -793,10 +794,24 @@ KNOWN_TITLES = {
     "Azure_Databricks.mp4": "Tutorial Azure Databricks: Aprovisionamiento Cloud, SVM y MLflow Tracking",
     "Creacion_de_tablero_en_JIRA.mp4": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza",
     "Creacion de tablero en JIRA.mp4": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza",
-    "Jira_Software.mp4": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza"
+    "Jira_Software.mp4": "Tutorial Jira Software: Creación de Tablero, Gestión Ágil Scrum/Kanban y Gobernanza",
+    "Databricks_CRISP_DM.mp4": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA",
+    "Databricks CRISP DM.mp4": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA"
 }
 
 KNOWN_YOUTUBE_VIDEOS = {
+    "databricks_crisp_dm.mp4": {
+        "youtube_id": "X1JtylnPmsA",
+        "youtube_url": "https://youtu.be/X1JtylnPmsA",
+        "embed_url": "https://www.youtube.com/embed/X1JtylnPmsA",
+        "thumbnail": "https://img.youtube.com/vi/X1JtylnPmsA/hqdefault.jpg"
+    },
+    "databricks crisp dm.mp4": {
+        "youtube_id": "X1JtylnPmsA",
+        "youtube_url": "https://youtu.be/X1JtylnPmsA",
+        "embed_url": "https://www.youtube.com/embed/X1JtylnPmsA",
+        "thumbnail": "https://img.youtube.com/vi/X1JtylnPmsA/hqdefault.jpg"
+    },
     "creacion de tablero en jira.mp4": {
         "youtube_id": "1EgdFLurvxk",
         "youtube_url": "https://www.youtube.com/watch?v=1EgdFLurvxk",
@@ -1008,6 +1023,21 @@ COURSE_EXTRA_VIDEOS = {
             "lfs_url": "",
             "raw_url": "",
             "github_url": "https://www.youtube.com/watch?v=1EgdFLurvxk"
+        },
+        {
+            "id": "vid_tg1_crispdm",
+            "filename": "Databricks_CRISP_DM.mp4",
+            "title": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA",
+            "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+            "size_mb": 90.0,
+            "path": "https://youtu.be/X1JtylnPmsA",
+            "youtube_id": "X1JtylnPmsA",
+            "youtube_url": "https://youtu.be/X1JtylnPmsA",
+            "embed_url": "https://www.youtube.com/embed/X1JtylnPmsA",
+            "thumbnail": "https://img.youtube.com/vi/X1JtylnPmsA/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://youtu.be/X1JtylnPmsA"
         }
     ],
     "Trabajo de grado 1": [
@@ -1070,6 +1100,21 @@ COURSE_EXTRA_VIDEOS = {
             "lfs_url": "",
             "raw_url": "",
             "github_url": "https://www.youtube.com/watch?v=1EgdFLurvxk"
+        },
+        {
+            "id": "vid_tg1_crispdm",
+            "filename": "Databricks_CRISP_DM.mp4",
+            "title": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA",
+            "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+            "size_mb": 90.0,
+            "path": "https://youtu.be/X1JtylnPmsA",
+            "youtube_id": "X1JtylnPmsA",
+            "youtube_url": "https://youtu.be/X1JtylnPmsA",
+            "embed_url": "https://www.youtube.com/embed/X1JtylnPmsA",
+            "thumbnail": "https://img.youtube.com/vi/X1JtylnPmsA/hqdefault.jpg",
+            "lfs_url": "",
+            "raw_url": "",
+            "github_url": "https://youtu.be/X1JtylnPmsA"
         }
     ]
 }
@@ -4163,6 +4208,8 @@ def scan_course_guias(course_id, course_folder_name, course_dir):
                 module_name = "🔷 Módulo 03: Azure Databricks"
             elif "jira" in fname_lower or "scrum" in fname_lower:
                 module_name = "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza"
+            elif "crisp" in fname_lower:
+                module_name = "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos"
             else:
                 module_name = "🎓 Trabajo de Grado 1"
         else:

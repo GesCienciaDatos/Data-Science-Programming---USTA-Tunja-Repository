@@ -19593,6 +19593,16 @@ export const CATALOG_DATA = {
         },
         {
           "id": "trabajo-de-grado-1_guia_2",
+          "filename": "guia_crispdm_databricks.pdf",
+          "title": "Guía Práctica: Databricks y Metodología CRISP-DM (Fases 1 a 3 y Calidad CRISP-ML)",
+          "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+          "size_str": "2.7 MB",
+          "path": "Guias/guia_crispdm_databricks.pdf",
+          "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_crispdm_databricks.pdf",
+          "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_crispdm_databricks.pdf"
+        },
+        {
+          "id": "trabajo-de-grado-1_guia_3",
           "filename": "guia_databricks_aws.pdf",
           "title": "Guía Práctica: Databricks en AWS y Data Lakehouse S3",
           "module": "☁️ Módulo 02: AWS Databricks y S3",
@@ -19602,7 +19612,7 @@ export const CATALOG_DATA = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_aws.pdf"
         },
         {
-          "id": "trabajo-de-grado-1_guia_3",
+          "id": "trabajo-de-grado-1_guia_4",
           "filename": "guia_databricks_free_edition.pdf",
           "title": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
           "module": "🧱 Módulo 01: Databricks Community",
@@ -19612,7 +19622,7 @@ export const CATALOG_DATA = {
           "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_free_edition.pdf"
         },
         {
-          "id": "trabajo-de-grado-1_guia_4",
+          "id": "trabajo-de-grado-1_guia_5",
           "filename": "guia_jira_software.pdf",
           "title": "Guía Práctica: Jira Software, Gestión Ágil Scrum/Kanban y Gobernanza de Datos",
           "module": "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza",
@@ -19682,6 +19692,21 @@ export const CATALOG_DATA = {
           "lfs_url": "",
           "raw_url": "",
           "github_url": "https://www.youtube.com/watch?v=1EgdFLurvxk"
+        },
+        {
+          "id": "vid_tg1_crispdm",
+          "filename": "Databricks_CRISP_DM.mp4",
+          "title": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA",
+          "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+          "size_mb": 90.0,
+          "path": "https://youtu.be/X1JtylnPmsA",
+          "youtube_id": "X1JtylnPmsA",
+          "youtube_url": "https://youtu.be/X1JtylnPmsA",
+          "embed_url": "https://www.youtube.com/embed/X1JtylnPmsA",
+          "thumbnail": "https://img.youtube.com/vi/X1JtylnPmsA/hqdefault.jpg",
+          "lfs_url": "",
+          "raw_url": "",
+          "github_url": "https://youtu.be/X1JtylnPmsA"
         }
       ],
       "books": [
@@ -20617,8 +20642,8 @@ export const CATALOG_DATA = {
         "total_modules": 3,
         "total_homeworks": 0,
         "total_datasets": 1,
-        "total_guias": 4,
-        "total_videos": 4,
+        "total_guias": 5,
+        "total_videos": 5,
         "total_books": 28
       }
     }
@@ -27518,6 +27543,16 @@ export const CATALOG_DATA = {
     },
     {
       "id": "trabajo-de-grado-1_guia_2",
+      "filename": "guia_crispdm_databricks.pdf",
+      "title": "Guía Práctica: Databricks y Metodología CRISP-DM (Fases 1 a 3 y Calidad CRISP-ML)",
+      "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+      "size_str": "2.7 MB",
+      "path": "Guias/guia_crispdm_databricks.pdf",
+      "raw_url": "https://raw.githubusercontent.com/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/Trabajo%20de%20grado%201/Guias/guia_crispdm_databricks.pdf",
+      "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_crispdm_databricks.pdf"
+    },
+    {
+      "id": "trabajo-de-grado-1_guia_3",
       "filename": "guia_databricks_aws.pdf",
       "title": "Guía Práctica: Databricks en AWS y Data Lakehouse S3",
       "module": "☁️ Módulo 02: AWS Databricks y S3",
@@ -27527,7 +27562,7 @@ export const CATALOG_DATA = {
       "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_aws.pdf"
     },
     {
-      "id": "trabajo-de-grado-1_guia_3",
+      "id": "trabajo-de-grado-1_guia_4",
       "filename": "guia_databricks_free_edition.pdf",
       "title": "Guía Práctica: Databricks Community Edition y Calidad de Vinos",
       "module": "🧱 Módulo 01: Databricks Community",
@@ -27537,7 +27572,7 @@ export const CATALOG_DATA = {
       "lfs_url": "https://media.githubusercontent.com/media/sazuniga06/Data-Science-Programming---USTA-Tunja-Repository/main/docs/Guias/guia_databricks_free_edition.pdf"
     },
     {
-      "id": "trabajo-de-grado-1_guia_4",
+      "id": "trabajo-de-grado-1_guia_5",
       "filename": "guia_jira_software.pdf",
       "title": "Guía Práctica: Jira Software, Gestión Ágil Scrum/Kanban y Gobernanza de Datos",
       "module": "📋 Gestión Ágil: Jira Software, Scrum y Gobernanza",
@@ -33925,6 +33960,21 @@ export const CATALOG_DATA = {
       "lfs_url": "",
       "raw_url": "",
       "github_url": "https://www.youtube.com/watch?v=1EgdFLurvxk"
+    },
+    {
+      "id": "vid_tg1_crispdm",
+      "filename": "Databricks_CRISP_DM.mp4",
+      "title": "Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA",
+      "module": "🔄 Metodología: Databricks, CRISP-DM y Calidad de Datos",
+      "size_mb": 90.0,
+      "path": "https://youtu.be/X1JtylnPmsA",
+      "youtube_id": "X1JtylnPmsA",
+      "youtube_url": "https://youtu.be/X1JtylnPmsA",
+      "embed_url": "https://www.youtube.com/embed/X1JtylnPmsA",
+      "thumbnail": "https://img.youtube.com/vi/X1JtylnPmsA/hqdefault.jpg",
+      "lfs_url": "",
+      "raw_url": "",
+      "github_url": "https://youtu.be/X1JtylnPmsA"
     }
   ]
 };

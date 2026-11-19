@@ -68,3 +68,22 @@
 4. Estructuración y cronograma de los 5 Sprints correspondientes a las fases de CRISP-DM.
 5. Configuración del tablero Kanban con límite de trabajo en curso (**WIP Limit = 2**) para aseguramiento de calidad en revisiones.
 6. Redacción de historias de usuario, asignación de criterios de aceptación, estimación y ceremonias de retrospectiva ágil.
+
+---
+
+## 🎬 Tutorial Databricks y CRISP-DM: Fases 1 a 3, Auditoría de Calidad y Jira QA
+
+* **Enlace oficial de YouTube:** [https://youtu.be/X1JtylnPmsA](https://youtu.be/X1JtylnPmsA)
+* **Título:** Databricks CRISP DM: Fases 1 a 3 y Compuertas de Calidad CRISP-ML(Q)
+* **Autor / Canal:** Gestor Virtual Ciencia de Datos USTA Tunja
+* **Duración:** ~16 minutos
+* **Resolución:** Full HD 1080p
+
+### Resumen del contenido:
+1. Acceso a Databricks Free Edition mediante autenticación institucional Microsoft.
+2. Importación del cuaderno `02_CRISP_DM_Auditoria_Calidad_Datos.py` y del dataset transaccional `transacciones_fraude.csv` (4.060 registros).
+3. Marco metodológico comparado: De CRISP-DM tradicional al aseguramiento formal de calidad con **CRISP-ML(Q)**.
+4. Ejecución de la **Compuerta 2.1 (Completitud y Unicidad)**: verificación al 100% sin nulos ni duplicados.
+5. Ejecución de la **Compuerta 2.2 (Consistencia IQR)**: detección e interpretación de atípicos en montos financieros.
+6. Ejecución de la **Compuerta 2.3 (Desbalance de Clases)**: cuantificación de la asimetría de fraude (~1.8%) y criterios para modelado.
+7. Transición en Jira de la tarea `FRAUD-3` al estado *Listo* con dictamen técnico formal registrado por el Data Steward.
