@@ -181,8 +181,8 @@ export const translations = {
       datasetFallbackDesc: 'Dataset disponible para descarga inmediata y carga directa mediante pd.read_csv() en los cuadernos del curso.'
     },
     booksLibrary: {
-      title: 'Biblioteca Digital de Libros & Referencias',
-      subtitle: 'Catálogo bibliográfico especializado en Ciencia de Datos, Machine Learning, Estadística y Big Data.',
+      title: 'Catálogo Bibliográfico & Libros de Referencia',
+      subtitle: 'Referencias académicas y fichas bibliográficas especializadas en Ciencia de Datos, Machine Learning, Estadística y Cloud.',
       searchPlaceholder: 'Buscar por título, autor, editorial, tema...',
       allAreas: 'Todas las Áreas',
       allCategories: 'Todas',
@@ -190,8 +190,12 @@ export const translations = {
       topicsLabel: 'TEMAS',
       authorLabel: 'Autor',
       publisherLabel: 'Editorial',
-      emptyTitle: 'No se encontraron libros',
-      emptySubtitle: 'Prueba con otro término de búsqueda o selecciona otra categoría.'
+      emptyTitle: 'No se encontraron referencias',
+      emptySubtitle: 'Prueba con otro término de búsqueda o selecciona otra categoría.',
+      referenceBadge: 'Referencia Bibliográfica',
+      referenceConsult: 'Biblioteca / Editorial',
+      noticeTitle: 'Aviso de Propiedad Intelectual y Consulta Académica',
+      legalNotice: 'Los títulos presentados corresponden exclusivamente a fichas y citas bibliográficas recomendadas para consulta académica. La plataforma no aloja ni distribuye copias digitales ni archivos PDF con derechos de autor. Consulte las obras completas mediante bibliotecas institucionales o canales editoriales autorizados.'
     },
     guiasView: {
       title: 'Guías de Laboratorio & Documentación PDF',
@@ -439,8 +443,8 @@ export const translations = {
       datasetFallbackDesc: 'Dataset available for immediate download and direct loading via pd.read_csv() in course notebooks.'
     },
     booksLibrary: {
-      title: 'Digital Library of Books & References',
-      subtitle: 'Specialized bibliographic catalog in Data Science, Machine Learning, Statistics, and Big Data.',
+      title: 'Bibliographic Catalog & Reference Books',
+      subtitle: 'Academic references and specialized bibliographic records in Data Science, Machine Learning, Statistics, and Cloud.',
       searchPlaceholder: 'Search by title, author, publisher, topic...',
       allAreas: 'All Areas',
       allCategories: 'All',
@@ -448,8 +452,12 @@ export const translations = {
       topicsLabel: 'TOPICS',
       authorLabel: 'Author',
       publisherLabel: 'Publisher',
-      emptyTitle: 'No books found',
-      emptySubtitle: 'Try another search term or select another category.'
+      emptyTitle: 'No references found',
+      emptySubtitle: 'Try another search term or select another category.',
+      referenceBadge: 'Bibliographic Reference',
+      referenceConsult: 'Library / Publisher',
+      noticeTitle: 'Intellectual Property & Academic Citation Notice',
+      legalNotice: 'All titles listed correspond exclusively to bibliographic records and recommended academic citations. This platform does not host or distribute copyrighted digital files or PDF copies. Please consult complete textbooks through institutional libraries or authorized publisher channels.'
     },
     guiasView: {
       title: 'Laboratory Guides & PDF Documentation',

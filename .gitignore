@@ -182,3 +182,11 @@ graphify-out/
 node_modules/
 .npm/
 
+# ------------------------------------------------------------------------------
+# 12. Libros y Textos Comerciales con Copyright (Solo referencias bibliográficas)
+# ------------------------------------------------------------------------------
+# Se excluyen todos los archivos PDF de libros comerciales para proteger derechos de autor.
+# La plataforma solo mantiene portadas y metadatos de referencia académica.
+**/Libros/*.pdf
+**/Libros/**/*.pdf
+

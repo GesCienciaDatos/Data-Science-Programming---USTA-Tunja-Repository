@@ -13,7 +13,7 @@
       <img src="https://img.shields.io/badge/🌐%20Portal%20de%20Materias-GitHub%20Pages-0284C7?style=for-the-badge&logo=githubpages&logoColor=white" alt="Virtual Lab Pages" />
     </a>
     <img src="https://img.shields.io/badge/⚡%20Cuadernos-471%20Notebooks-0ea5e9?style=for-the-badge&logo=jupyter&logoColor=white" alt="471 Notebooks" />
-    <img src="https://img.shields.io/badge/📚%20Biblioteca-172%20Libros%20Open%20Access-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="172 Libros" />
+    <img src="https://img.shields.io/badge/📚%20Bibliografía-172%20Libros%20Referenciados-10b981?style=for-the-badge&logo=gitbook&logoColor=white" alt="172 Libros" />
     <img src="https://img.shields.io/badge/💡%20Modo%20Dummies-277%20Adaptados-f59e0b?style=for-the-badge&logo=lightbulb&logoColor=white" alt="Modo Dummies" />
     <img src="https://img.shields.io/badge/🎬%20YouTube-Video%20Clases-FF0000?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube" />
     <img src="https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
@@ -33,8 +33,8 @@
 ### 💡 Modo Dummies Interactivo ("Programación para No Ingenieros")
 El laboratorio incluye un selector interactivo **Modo Dummies** en el portal web que filtra y prioriza cuadernos adaptados con analogías cotidianas, explicaciones paso a paso sin jerga técnica y modelos mentales intuitivos (cajas de cartón con etiquetas, bandejas de huevos, recetas de cocina, sombras 3D y peritos de avalúo).
 
-### 📚 Biblioteca Digital & Libros de Referencia (172 Textos Open Access)
-Sección integrada con **172 textos especializados** de referencia mundial organizados por áreas (Python, Estadística, Data Mining, Machine Learning, Inteligencia Artificial, Visual Analytics, Power BI, Cloud Architecture AWS/Azure, Databricks y MLOps) con resúmenes pedagógicos, portadas oficiales en alta resolución, etiquetas temáticas, visor PDF integrado y enlaces de descarga directa sin restricciones:
+### 📚 Catálogo Bibliográfico & Libros de Referencia (172 Obras Especializadas)
+Sección integrada con **172 textos especializados** de referencia mundial organizados por áreas (Python, Estadística, Data Mining, Machine Learning, Inteligencia Artificial, Visual Analytics, Power BI, Cloud Architecture AWS/Azure, Databricks y MLOps) con resúmenes pedagógicos, portadas oficiales en alta resolución, etiquetas temáticas y fichas de referencia académica orientadas a la consulta en bibliotecas institucionales o canales editoriales autorizados:
 - **Python & Data Science**: 11 libros (*Python Data Science Handbook*, *Automate the Boring Stuff*, *Fluent Python*, *Data Structures with Python*, etc.).
 - **Estadística & Análisis de Datos**: 22 libros (*All of Statistics*, *Applied Linear Statistical Models*, *Bayesian Analysis with Python*, *Data Science from Scratch*, *Essential Statistics for Non-STEM Data Analysts*, *Practical Statistics for Data Scientists*, *Time Series Analysis*, *Forecasting: Principles and Practice*, etc.).
 - **Data Mining & KDD**: 18 libros (*Data Mining: The Textbook*, *Data Mining Concepts and Techniques (Han & Kamber)*, *Web Data Mining*, *Introduction to Data Mining (Tan, Steinbach, Kumar)*, etc.).

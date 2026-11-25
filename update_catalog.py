@@ -1194,10 +1194,12 @@ def sync_course_assets(course_id, course_folder_name, course_dir):
 
     src_libros = course_dir / "Libros"
     if src_libros.exists() and src_libros.is_dir():
+        # Sincronizar ÚNICAMENTE portadas e imágenes de referencia, NUNCA archivos PDF
+        image_exts = {".jpg", ".jpeg", ".png", ".webp"}
         if course_id == "data-science-programming":
             dest_libros = DOCS_DIR / "Libros"
             for item in src_libros.rglob("*"):
-                if item.is_file():
+                if item.is_file() and item.suffix.lower() in image_exts:
                     rel = item.relative_to(src_libros)
                     target_file = dest_libros / rel
                     target_file.parent.mkdir(parents=True, exist_ok=True)
@@ -1209,7 +1211,7 @@ def sync_course_assets(course_id, course_folder_name, course_dir):
             dest_libros = DOCS_DIR / "Libros" / subname
             dest_libros.mkdir(parents=True, exist_ok=True)
             for item in src_libros.rglob("*"):
-                if item.is_file() and not item.name.startswith("."):
+                if item.is_file() and not item.name.startswith(".") and item.suffix.lower() in image_exts:
                     rel = item.relative_to(src_libros)
                     target_file = dest_libros / rel
                     target_file.parent.mkdir(parents=True, exist_ok=True)
@@ -4351,75 +4353,22 @@ def find_book_cover_image(pdf_stem, libros_dir, course_id):
     return ""
 
 def scan_course_books(course_id, c_folder, c_dir):
-    books = []
-    libros_dir = c_dir / "Libros"
-    if not libros_dir.exists():
-        return []
-
-    subname = SUBFOLDER_MAP.get(course_id, c_folder)
-
-    for f in sorted(libros_dir.rglob("*.pdf")):
-        fname = f.name
-        key = fname.lower()
-        meta = BOOKS_METADATA.get(key, {})
-        
-        if course_id == "data-science-programming":
-            rel_sub = f.relative_to(libros_dir).as_posix()
-            web_path = f"Libros/{rel_sub}"
-        else:
-            web_path = f"Libros/{subname}/{f.name}"
-
-        encoded_web_path = "/".join(urllib.parse.quote(part) for part in web_path.split("/"))
-        
-        size_mb = f"{round(f.stat().st_size / (1024 * 1024), 1)} MB"
-        cover_img_url = find_book_cover_image(f.stem, libros_dir, course_id)
-        
-        title = meta.get("title", format_title(fname))
-        subtitle = meta.get("subtitle", f"Biblioteca Digital USTA — {subname}")
-        author = meta.get("author", "Referencia Académica")
-        publisher = meta.get("publisher", "Editorial Especializada")
-        year = meta.get("year", "2024")
-        edition = meta.get("edition", "PDF Completo")
-        category = meta.get("category", "Ciencia de Datos & Análisis")
-        level = meta.get("level", "Intermedio")
-        dummies_friendly = meta.get("dummies_friendly", any(k in fname.lower() for k in ["crash", "boring", "head first", "beginner", "best practice", "dummies"]))
-        summary_dummies = meta.get("summary_dummies", f"Texto de referencia '{title}' disponible en PDF completo ({size_mb}) para consulta y descarga directa.")
-        topics = meta.get("topics", [subname, "Data Science", "Analítica"])
-        cover_gradient = meta.get("cover_gradient", "from-teal-600 via-slate-700 to-slate-950")
-        cover_bg = meta.get("cover_bg", "#0f766e")
-        accent_color = meta.get("accent_color", "#14b8a6")
-        icon = meta.get("icon", "📘")
-        
-        books.append({
-            "id": f"book_{course_id}_{len(books) + 1}",
-            "course_id": course_id,
-            "course_name": c_folder,
-            "subject": subname,
-            "title": title,
-            "filename": fname,
-            "subtitle": subtitle,
-            "author": author,
-            "publisher": publisher,
-            "year": year,
-            "edition": edition,
-            "size_mb": size_mb,
-            "cover_image": cover_img_url,
-            "has_cover_image": bool(cover_img_url),
-            "category": category,
-            "level": level,
-            "dummies_friendly": dummies_friendly,
-            "summary_dummies": summary_dummies,
-            "topics": topics,
-            "cover_gradient": cover_gradient,
-            "cover_bg": cover_bg,
-            "accent_color": accent_color,
-            "icon": icon,
-            "download_url": encoded_web_path,
-            "pdf_url": encoded_web_path,
-            "has_local_pdf": True,
-            "local_pdf_path": web_path
-        })
-    return books
+    """
+    Retorna el catálogo bibliográfico de referencia académica para la materia.
+    Para evitar contingencias de derechos de autor y problemas legales, los libros
+    se mantienen estrictamente como mención bibliográfica de consulta (fichas técnicas,
+    portadas, autores, editoriales y resúmenes) sin alojar ni distribuir archivos PDF.
+    """
+    ref_catalog_path = BASE_DIR / "books_reference_catalog.json"
+    if ref_catalog_path.exists():
+        try:
+            with open(ref_catalog_path, "r", encoding="utf-8") as f:
+                catalog_data = json.load(f)
+            if course_id in catalog_data:
+                return catalog_data[course_id]
+        except Exception as e:
+            print(f"Error cargando catálogo bibliográfico de referencia: {e}")
+    return []
 
 def rebuild_catalog_js():
     print("🚀 Iniciando escaneo multi-materia de la Especialización...")

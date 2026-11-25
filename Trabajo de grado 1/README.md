@@ -153,9 +153,9 @@ El espacio académico cuenta con **documentos técnicos oficiales en formato PDF
 
 ---
 
-## 📚 Biblioteca Digital de Referencia (28 Libros con Portadas Oficiales)
+## 📚 Catálogo Bibliográfico de Referencia (28 Libros con Portadas Oficiales)
 
-Sección integrada en la plataforma web con **28 textos especializados de referencia internacional** orientados a proyectos de grado, computación en la nube, ingeniería de datos y MLOps. Todos los libros disponen de su respectiva portada oficial digitalizada, metadatos enriquecidos, visor integrado y descarga directa:
+Sección integrada en la plataforma web con **28 textos especializados de referencia internacional** orientados a proyectos de grado, computación en la nube, ingeniería de datos y MLOps. Todos los libros disponen de su respectiva portada oficial digitalizada, metadatos enriquecidos y fichas de referencia académica para consulta bibliográfica:
 
 ### ☁️ 1. Amazon Web Services (AWS) & Cloud Infrastructure (8 Libros)
 1. **AWS Certified AI Practitioner Study Guide** — *Tom Taull*

@@ -226,18 +226,17 @@ function handlePlayVideo(video) {
                     {{ book.title }}
                   </h5>
                   <p class="font-mono text-[10px] text-slate-400 truncate">
-                    {{ book.publisher }} ({{ book.year }}) • {{ book.size_mb }}
+                    {{ book.publisher }} ({{ book.year }}) • {{ t('booksLibrary.referenceBadge') }}
                   </p>
                 </div>
               </div>
 
-              <button 
-                @click="handleOpenBook(book)"
-                class="px-2.5 py-1 rounded bg-amber-500 hover:bg-amber-600 text-slate-950 font-mono text-[10px] font-semibold shrink-0 flex items-center gap-1 cursor-pointer"
+              <span 
+                class="px-2 py-1 rounded bg-slate-100 dark:bg-space-950 border border-slate-200 dark:border-slate-800 text-slate-500 font-mono text-[10px] font-medium shrink-0 flex items-center gap-1"
               >
-                <span>{{ t('globalSearch.btnRead') }}</span>
-                <span class="material-symbols-outlined text-xs">visibility</span>
-              </button>
+                <span>{{ t('booksLibrary.referenceConsult') }}</span>
+                <span class="material-symbols-outlined text-xs">account_balance</span>
+              </span>
             </div>
           </div>
         </div>

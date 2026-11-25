@@ -118,6 +118,19 @@ const filteredBooks = computed(() => {
       </div>
     </div>
 
+    <!-- Legal Notice Banner: Purely Bibliographic Reference -->
+    <div class="p-3.5 rounded-xl bg-slate-100/80 dark:bg-space-900/80 border border-slate-200 dark:border-slate-800 flex items-start gap-3 text-xs text-slate-600 dark:text-slate-400">
+      <span class="material-symbols-outlined text-brand-cyan text-lg shrink-0 mt-0.5">verified_user</span>
+      <div class="space-y-0.5">
+        <p class="font-semibold text-slate-900 dark:text-slate-200">
+          {{ t('booksLibrary.noticeTitle') }}
+        </p>
+        <p class="text-[11px] leading-relaxed text-slate-500 dark:text-slate-400">
+          {{ t('booksLibrary.legalNotice') }}
+        </p>
+      </div>
+    </div>
+
     <!-- Subject Area Tabs -->
     <div class="flex items-center gap-2 overflow-x-auto pb-1 font-mono text-xs border-b border-slate-200/60 dark:border-slate-800/60">
       <button 
@@ -166,8 +179,9 @@ const filteredBooks = computed(() => {
               </span>
             </div>
             <div class="flex items-center gap-1.5 shrink-0">
-              <span class="px-1.5 py-0.5 rounded text-[9px] font-mono border border-slate-200 dark:border-slate-700 text-slate-500">
-                {{ book.size_mb || 'PDF' }}
+              <span class="px-1.5 py-0.5 rounded text-[9px] font-mono border border-slate-200 dark:border-slate-700 text-slate-500 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[10px] text-brand-cyan">menu_book</span>
+                {{ t('booksLibrary.referenceBadge') }}
               </span>
               <span v-if="book.dummies_friendly" class="px-1.5 py-0.5 rounded text-[9px] font-mono bg-brand-amber/10 text-brand-amber border border-brand-amber/30 font-semibold">
                 DUMMIES
@@ -229,26 +243,16 @@ const filteredBooks = computed(() => {
           </div>
         </div>
 
-        <!-- Action Buttons: Leer PDF / Descargar -->
-        <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2">
-          <button 
-            @click="emit('open-pdf', book)"
-            class="px-3 py-1.5 rounded-md bg-slate-900 dark:bg-slate-100 hover:bg-slate-800 dark:hover:bg-white text-white dark:text-slate-950 font-mono text-xs font-semibold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer"
-          >
-            <span class="material-symbols-outlined text-sm">visibility</span>
-            <span>{{ t('common.readInViewer') }}</span>
-          </button>
-
-          <a 
-            :href="book.download_url || book.pdf_url" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            download
-            class="p-1.5 rounded-md bg-slate-100 dark:bg-space-900 hover:bg-slate-200 dark:hover:bg-space-850 text-slate-600 dark:text-slate-300 transition-colors"
-            :title="t('common.downloadPdf')"
-          >
-            <span class="material-symbols-outlined text-base">download</span>
-          </a>
+        <!-- Bibliographic Reference Notice (No Hosted Content / No Direct PDF) -->
+        <div class="pt-3 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 text-xs font-mono">
+          <div class="flex items-center gap-1.5 text-slate-600 dark:text-slate-400">
+            <span class="material-symbols-outlined text-brand-cyan text-sm">auto_stories</span>
+            <span class="text-[11px] font-medium">{{ t('booksLibrary.referenceBadge') }}</span>
+          </div>
+          <span class="inline-flex items-center gap-1 text-[10px] text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-space-950 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-800">
+            <span class="material-symbols-outlined text-xs">account_balance</span>
+            {{ t('booksLibrary.referenceConsult') }}
+          </span>
         </div>
 
       </div>
